@@ -1,0 +1,1 @@
+public record DeckDto(int id, string name, string description);

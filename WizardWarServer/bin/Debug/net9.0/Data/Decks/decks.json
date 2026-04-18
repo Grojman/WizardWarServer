@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Gran mago",
+    "description": "Mago serio, mago confiable. Sus cartas son seguras, no se anda con tonter\u00EDas. Nunca bebe en las fiestas porque sabe que le tocar\u00E1 conducir despu\u00E9s."
+  },
+  {
+    "id": 2,
+    "name": "Mago silly",
+    "description": "Se\u00F1or y due\u00F1o de todas las tontunas. Rinde tu alma ante \u00E9l y ser\u00E1s recompensado con la frustraci\u00F3n de tus rivales."
+  },
+  {
+    "id": 3,
+    "name": "Don Bola de Fuego Jr",
+    "description": "Reduce a cenizas a quienes se enfrentan a \u00E9l, y con suerte sus aliados escapan a su c\u00F3lera. Eso s\u00ED: que nadie le pregunte qu\u00E9 le pas\u00F3 a Don Bola de Fuego padre."
+  },
+  {
+    "id": 4,
+    "name": "???",
+    "description": "Nadie conoce realmente el origen de esta criatura, si es una o varias; pero es majo y tranquilo, as\u00ED que se le hace un hueco. Es cuesti\u00F3n tuya si aceptar sus dudosos ofrecimientos o no."
+  }
+]

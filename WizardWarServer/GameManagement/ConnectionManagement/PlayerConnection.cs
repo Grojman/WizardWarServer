@@ -1,0 +1,36 @@
+using System.Net.WebSockets;
+
+public class PlayerConnection
+{
+    public int SelectedDeckId { get; set; } = -1;
+    public Guid Guid = Guid.NewGuid();
+    public WebSocket Socket { get; }
+
+    public string Name { get; set; } = string.Empty;
+
+    public GameSession? Game { get; set; }
+
+    public PlayerConnection(WebSocket socket)
+    {
+        Socket = socket;
+    }
+
+    public async Task Send(string type, object obj)
+    {
+
+        var json = System.Text.Json.JsonSerializer.Serialize(
+            new JsonMessage(
+                type,
+                obj
+            )
+        );
+
+        var bytes = System.Text.Encoding.UTF8.GetBytes(json);
+
+        await Socket.SendAsync(
+            bytes,
+            WebSocketMessageType.Text,
+            true,
+            CancellationToken.None);
+    }
+}

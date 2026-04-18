@@ -1,0 +1,83 @@
+[
+  {
+    "Id": "1",
+    "Name": "Aprendiz de mago",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": []
+  },
+  {
+    "Id": "1",
+    "Name": "Aprendiz de mago",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": []
+  },
+  {
+    "Id": "1",
+    "Name": "Aprendiz de mago",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": []
+  },
+  {
+    "Id": "1",
+    "Name": "Aprendiz de mago",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": []
+  },
+  {
+    "Id": "1",
+    "Name": "Aprendiz de mago",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": []
+  },
+  {
+    "Id": "3",
+    "Name": "Mago consumado",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 6,
+    "BaseHealth": 6,
+    "Effects": []
+  },
+  {
+    "Id": "2",
+    "Name": "Truco gitano",
+    "Type": 1,
+    "Description": "Roba dos cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effect": {
+          "$type": "DrawCardEffect",
+          "CardAmount": 2
+        },
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCardId": "00000000-0000-0000-0000-000000000000",
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "ff128226-ee23-4cde-9b6b-202e5dead166"
+      }
+    ]
+  }
+]
