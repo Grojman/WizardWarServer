@@ -18,7 +18,7 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
     public EffectDuration Duration { get; set; }
     public EffectCondition? Condition { get; set; } = null;
 
-    public Guid SourceCardId { get; set; }
+    public CardInstance SourceCard { get; set; }
 
     public Guid PlayerSourceId { get; set; }
     public bool Expired { get => Duration.IsExpired(); }
@@ -29,7 +29,7 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         return new()
         {
             Trigger = Trigger,
-            SourceCardId = SourceCardId,
+            SourceCard = SourceCard,
             PlayerSourceId = PlayerSourceId,
             Duration = Duration.Clone(),
             Condition = Condition?.Clone(),
@@ -44,13 +44,13 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         if (Expired)
             return;
 
-        if (!(Condition?.Check(PlayerSourceId, SourceCardId, state, ev) ?? true))
+        if (!(Condition?.Check(PlayerSourceId, SourceCard, state, ev) ?? true))
             return;
 
         if (ev is not null && ev.Source.Id == Id)
             return;
 
-        Effect.Execute(PlayerSourceId, SourceCardId, state, ev);
+        Effect.Execute(PlayerSourceId, SourceCard, state, ev);
 
         Duration.NotifyExecution();
     }

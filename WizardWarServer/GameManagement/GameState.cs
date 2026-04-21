@@ -23,14 +23,14 @@ public class GameState
             Id = c1.Guid,
             Name = c1.Name,
             Connection = c1,
-            Deck = new Deck(deck1.name, dD1, c1.Guid)
+            Deck = new Deck(deck1.name, dD1, c1.Guid, deck1.id)
         };
         Player2 = new PlayerState()
         {
             Id = c2.Guid,
             Name = c2.Name,
             Connection = c2,
-            Deck = new Deck(deck2.name, dD2, c2.Guid)
+            Deck = new Deck(deck2.name, dD2, c2.Guid, deck2.id)
         };
 
         GameActionResult.Events.Enqueue(

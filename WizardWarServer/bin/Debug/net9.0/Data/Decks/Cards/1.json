@@ -73,10 +73,10 @@
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
         },
-        "SourceCardId": "00000000-0000-0000-0000-000000000000",
+        "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "8100533b-4987-4c56-a45f-101f6d8535eb"
+        "Id": "b361b59e-8638-49bb-8c9e-24b7b6c1ef24"
       }
     ]
   }

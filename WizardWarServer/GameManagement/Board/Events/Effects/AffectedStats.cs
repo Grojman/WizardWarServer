@@ -1,0 +1,1 @@
+public enum AffectedStats { DAMAGE, HEALTH, BOTH }

@@ -30,3 +30,4 @@ C:\Users\Yllum\Desktop\REPOSITORIOS_Y_PROYECTOS\WizardWarServer\WizardWarServer\
 C:\Users\Yllum\Desktop\REPOSITORIOS_Y_PROYECTOS\WizardWarServer\WizardWarServer\bin\Debug\net9.0\Data\Decks\Cards\2.json
 C:\Users\Yllum\Desktop\REPOSITORIOS_Y_PROYECTOS\WizardWarServer\WizardWarServer\bin\Debug\net9.0\Data\Decks\Cards\3.json
 C:\Users\Yllum\Desktop\REPOSITORIOS_Y_PROYECTOS\WizardWarServer\WizardWarServer\bin\Debug\net9.0\Data\Decks\Cards\4.json
+C:\Users\Yllum\Desktop\REPOSITORIOS_Y_PROYECTOS\WizardWarServer\WizardWarServer\obj\Debug\net9.0\WizardWarServer.sourcelink.json

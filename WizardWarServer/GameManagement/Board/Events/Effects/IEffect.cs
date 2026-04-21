@@ -9,7 +9,7 @@ public interface IEffect
 {
     void Execute(
         Guid playerId,
-        Guid cardId,
+        CardInstance cardId,
         GameState state,
         GameEvent? ev);
 }

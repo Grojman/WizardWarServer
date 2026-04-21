@@ -24,7 +24,7 @@ public class CardInstance : IdentificableObject
         foreach(EffectInstance e in Effects)
         {
             e.PlayerSourceId = PlayerGuid;
-            e.SourceCardId = Id;
+            e.SourceCard = this;
         }
     }
 }

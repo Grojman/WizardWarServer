@@ -1,11 +1,13 @@
 public class Deck
 {
+    public int Id {get; }
     public string Name { get; }
     public Guid PlayerId { get; }
     private Stack<CardInstance> cards;
 
-    public Deck(string name, IEnumerable<CardDefinition> definitions, Guid playerId)
+    public Deck(string name, IEnumerable<CardDefinition> definitions, Guid playerId, int deckId)
     {
+        Id = deckId;
         Name = name;
         PlayerId = playerId;
         var list = definitions
