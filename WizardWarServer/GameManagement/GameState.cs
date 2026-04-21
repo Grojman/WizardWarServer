@@ -62,6 +62,49 @@ public class GameState
         }
     }
 
+    public void AddCard(PlayerState target, PlayerState playerSource, CardInstance cardToAdd, IdentificableObject Source)
+    {
+        var gevent = new GameEvent.AddedCardToDeck()
+        {
+            Source = Source,
+            PlayerSource = playerSource,
+            TargetedPlayer = target,
+            AddedCard = cardToAdd
+        };
+
+        target.Deck.AddCard(cardToAdd);
+
+        GameActionResult.Events.Enqueue(gevent);
+
+        ApplyEffect(TriggerType.CardAddedToDeck, gevent);
+    }
+
+    public void AlterDeck(PlayerState target, IdentificableObject Source, PlayerState playerSource, Predicate<CardInstance> condition, Action<CardInstance> effect)
+    {
+        List<CardInstance> affectedCards = [];
+
+        for(int i = 0; i < target.Deck.cards.Count; i++)
+        {
+            if(condition(target.Deck.cards[i]))
+            {
+                affectedCards.Add(target.Deck.cards [i]);
+                effect(target.Deck.cards[i]);
+            }
+        }
+
+        var gevent = new GameEvent.DeckModifiedStats()
+        {
+            Source = Source,
+            PlayerSource = playerSource,
+            TargetedPlayer = target,
+            AffectedCards = affectedCards
+        };
+
+        GameActionResult.Events.Enqueue(gevent);
+
+        ApplyEffect(TriggerType.DeckModified, gevent);
+    }
+
     public void ApplyAction(
         PlayerConnection player,
         PlayerAction action)

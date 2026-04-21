@@ -3,20 +3,18 @@ public class Deck
     public int Id {get; }
     public string Name { get; }
     public Guid PlayerId { get; }
-    private Stack<CardInstance> cards;
+    public List<CardInstance> cards;
 
     public Deck(string name, IEnumerable<CardDefinition> definitions, Guid playerId, int deckId)
     {
         Id = deckId;
         Name = name;
         PlayerId = playerId;
-        var list = definitions
+        cards = definitions
             .Select(d => new CardInstance(d, PlayerId))
             .ToList();
 
-        Shuffle(list);
-
-        cards = new Stack<CardInstance>(list);
+        Shuffle(cards);
     }
 
     public CardInstance? Draw()
@@ -24,7 +22,11 @@ public class Deck
         if (cards.Count == 0)
             return null;
 
-        return cards.Pop();
+        var card = cards[0];
+
+        cards.RemoveAt(0);
+
+        return card;
     }
 
     public int Count => cards.Count;
@@ -40,4 +42,12 @@ public class Deck
             (list[i], list[j]) = (list[j], list[i]);
         }
     }
+
+    public void AddCard(CardInstance card)
+    {
+        var index = new Random().Next(cards.Count);
+        cards.Insert(index, card);
+    }
+
+    public void AddCard(CardDefinition card) => AddCard(new CardInstance(card, PlayerId));
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WizardWarServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e3fe3c74bbc7790cf6d5fc3261cff3a9a8d775e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e60bf9a17b3254149e810082b1fa9fbed0ce2e8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WizardWarServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WizardWarServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

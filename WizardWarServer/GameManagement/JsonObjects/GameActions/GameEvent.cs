@@ -52,4 +52,16 @@ public abstract class GameEvent
         public required TargetType TargetType { get; set; }
         public required int TargetIndex { get; set; }
     }
+
+    public class AddedCardToDeck : GameEvent
+    {
+        public required PlayerState TargetedPlayer { get; set; }
+        public required CardInstance AddedCard { get; set; }
+    }
+
+    public class DeckModifiedStats : GameEvent
+    {
+        public required PlayerState TargetedPlayer { get; set; }
+        public required List<CardInstance> AffectedCards { get; set; }
+    }
 }
