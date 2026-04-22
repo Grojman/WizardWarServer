@@ -5,14 +5,15 @@ public class Deck
     public Guid PlayerId { get; }
     public List<CardInstance> cards;
 
-    public Deck(string name, IEnumerable<CardDefinition> definitions, Guid playerId, int deckId)
+    public Deck(string name, Dictionary<CardDefinition, int> definitions, Guid playerId, int deckId)
     {
         Id = deckId;
         Name = name;
         PlayerId = playerId;
-        cards = definitions
-            .Select(d => new CardInstance(d, PlayerId))
-            .ToList();
+
+        cards = [];
+
+        foreach(var k in definitions) for(int i = 0; i < k.Value; i++) cards.Add(new CardInstance(k.Key, PlayerId)); 
 
         Shuffle(cards);
     }

@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(JoinQueueAction), "JoinQueueAction")]
 [JsonDerivedType(typeof(LeaveQueueAction), "LeaveQueueAction")]
 [JsonDerivedType(typeof(GetDecksAction), "GetDecksAction")]
+[JsonDerivedType(typeof(GetAllCardsAction), "GetAllCardsAction")]
 public interface UserAction
 {
     public class ChangeNameAction : UserAction
@@ -20,5 +21,7 @@ public interface UserAction
     public class LeaveQueueAction : UserAction {}
 
     public class GetDecksAction : UserAction {}
+
+    public class GetAllCardsAction : UserAction {}
 
 }

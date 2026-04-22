@@ -4,7 +4,7 @@ public class CardDefinition
     {
     }
 
-    public CardDefinition(string id, string name, CardType type, string description, int baseAttack, int baseHealth, List<EffectInstance> effects)
+    public CardDefinition(string id, string name, CardType type, string description, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families)
     {
         Id = id;
         Name = name;
@@ -13,8 +13,10 @@ public class CardDefinition
         BaseAttack = baseAttack;
         BaseHealth = baseHealth;
         Effects = effects;
+        Families = families;
     }
 
+    public string[] Families { get; set; } = [];
     public string Id { get; set; } = string.Empty;
 
     public string Name { get; set; } = string.Empty;

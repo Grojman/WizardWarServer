@@ -1,0 +1,405 @@
+[
+  {
+    "Families": [
+      "Gitano"
+    ],
+    "Id": "1",
+    "Name": "Gitano promedio",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 2,
+    "BaseHealth": 3,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "2",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "3",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "4",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "5",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "6",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "7",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "8",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "9",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "10",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "11",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "12",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "13",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "14",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "15",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "16",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "17",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "18",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "19",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "20",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "21",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "22",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "23",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "24",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "25",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "26",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "27",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "28",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "29",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "30",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "31",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "32",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "33",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  },
+  {
+    "Families": [
+      "Gitano",
+      "L\u00EDder"
+    ],
+    "Id": "34",
+    "Name": "Patriarca",
+    "Type": 0,
+    "Description": "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo \u002B2/\u002B2",
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": []
+  },
+  {
+    "Families": [],
+    "Id": "35",
+    "Name": "Truco Gitano",
+    "Type": 1,
+    "Description": "Roba tres cartas",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": []
+  }
+]

@@ -82,6 +82,9 @@ public class GameManager
                 case UserAction.GetDecksAction:
                     await player.Send("get_decks", CardManager.Decks);
                     break;
+                case UserAction.GetAllCardsAction:
+                    await player.Send("get_cards", CardManager.Cards.Select(n => CardDto.Generate(n.Value)));
+                    break;
                 default:
                     Console.WriteLine($"Unauthorized message!! {json}");
                     break;

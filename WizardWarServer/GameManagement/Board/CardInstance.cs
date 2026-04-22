@@ -8,6 +8,8 @@ public class CardInstance : IdentificableObject
 
     public int CurrentHealth { get; set; }
 
+    public List<string> CurrentFamilies { get; set; }
+
     public List<EffectInstance> Effects { get; set; }
 
     public CardInstance(CardDefinition def, Guid PlayerId)
@@ -17,6 +19,8 @@ public class CardInstance : IdentificableObject
 
         CurrentAttack = def.BaseAttack;
         CurrentHealth = def.BaseHealth;
+
+        CurrentFamilies = [.. def.Families];
 
         Effects = new();
         foreach(EffectInstance e in def.Effects) Effects.Add(e.Clone());

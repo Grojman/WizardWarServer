@@ -65,3 +65,4 @@ c:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\obj\Debug\ne
 c:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\obj\Debug\net9.0\WizardWarServer.pdb
 C:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\obj\Debug\net9.0\WizardWarServer.genruntimeconfig.cache
 C:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\obj\Debug\net9.0\ref\WizardWarServer.dll
+c:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\bin\Debug\net9.0\Data\Decks\cards.json

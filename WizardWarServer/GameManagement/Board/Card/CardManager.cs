@@ -3,63 +3,152 @@ using System.Text.Json;
 public static class CardManager
 {
     private const string DECKS_FILE_PATH = "Data/Decks/decks.json";
-    private const string CARDS_FOLDER = "Data/Decks/Cards";
+    private const string CARDS_FILE_PATH = "Data/Decks/cards.json";
 
     public static List<DeckDto> Decks { get; set; } = new();
-    public static DeckDto GetById(int id) => Decks.First(n => n.id == id);
-    static Dictionary<int, List<CardDefinition>> Cards { get; set; } = new();
-    
+
+    // Cartas globales
+    public static Dictionary<string, CardDefinition> Cards { get; set; }
+        = new();
+
+    private static Dictionary<int, Dictionary<string, int>> DeckCards
+        = new();
+
+    public static DeckDto GetById(int id)
+        => Decks.First(n => n.id == id);
+
     public static void Initialize()
     {
-            if (!File.Exists(DECKS_FILE_PATH))
-                throw new CardManagerException($"Decks file not found at: {DECKS_FILE_PATH}");
+        if (!File.Exists(DECKS_FILE_PATH))
+            throw new CardManagerException(
+                $"Decks file not found at: {DECKS_FILE_PATH}");
 
-            if (!Directory.Exists(CARDS_FOLDER))
-                throw new CardManagerException($"Cards folder not found at: {CARDS_FOLDER}");
+        if (!File.Exists(CARDS_FILE_PATH))
+            throw new CardManagerException(
+                $"Cards file not found at: {CARDS_FILE_PATH}");
 
-            string decksJson = File.ReadAllText(DECKS_FILE_PATH);
-            Decks = JsonSerializer.Deserialize<List<DeckDto>>(decksJson) ?? new();
+        // =========================
+        // CARGAR CARTAS GLOBALES
+        // =========================
 
-            foreach (var deck in Decks)
-            {
-                string cardFilePath = Path.Combine(CARDS_FOLDER, $"{deck.id}.json");
-                if (!File.Exists(cardFilePath))
-                    throw new CardManagerException($"Card file not found at: {cardFilePath}");
+        string cardsJson =
+            File.ReadAllText(CARDS_FILE_PATH);
 
-                string cardsJson = File.ReadAllText(cardFilePath);
-                var cardDefinitions = JsonSerializer.Deserialize<List<CardDefinition>>(cardsJson) ?? new();
-                Cards[deck.id] = cardDefinitions;
-            }
+        var cardList =
+            JsonSerializer.Deserialize<List<CardDefinition>>(cardsJson)
+            ?? new();
+
+        Cards = cardList.ToDictionary(c => c.Id);
+
+        // =========================
+        // CARGAR MAZOS + CARTAS
+        // =========================
+
+        string decksJson =
+            File.ReadAllText(DECKS_FILE_PATH);
+
+        var deckWrappers =
+            JsonSerializer.Deserialize<List<DeckWithCardsDto>>(decksJson)
+            ?? new();
+
+        Decks.Clear();
+        DeckCards.Clear();
+
+        foreach (var wrapper in deckWrappers)
+        {
+            Decks.Add(wrapper.Deck);
+
+            DeckCards[wrapper.Deck.id]
+                = wrapper.Cards;
+        }
     }
 
     public class CardManagerException : Exception
     {
-        public CardManagerException(string message) : base(message) {}
+        public CardManagerException(string message)
+            : base(message) { }
     }
 
-    public static List<CardDefinition> GetDefinitionsByDeck(DeckDto deck) => Cards[deck.id];
-    public static List<CardDefinition> GetDefinitionsByDeck(int deckId) => Cards[deckId];
-    public static void EmptyCardsFolder()
+
+    public static CardDefinition GetCardById(string id)
     {
-        if (Directory.Exists(CARDS_FOLDER))
+        if (!Cards.ContainsKey(id))
+            throw new CardManagerException(
+                $"Card with id {id} not found");
+
+        return Cards[id];
+    }
+
+
+    public static Dictionary<CardDefinition, int> GetDefinitionsByDeck(int deckId)
+    {
+        Dictionary<CardDefinition, int> data = new();
+        foreach(var k in DeckCards[deckId]) data.Add(GetCardById(k.Key), k.Value);
+        return data;
+    }
+
+    public static void SerializeCards(
+        List<CardDefinition> cards)
+    {
+        string cardsJson =
+            JsonSerializer.Serialize(
+                cards,
+                new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+        File.WriteAllText(
+            CARDS_FILE_PATH,
+            cardsJson);
+
+        Cards = cards.ToDictionary(c => c.Id);
+    }
+
+    // =========================
+    // SERIALIZAR MAZOS + CARTAS
+    // =========================
+
+    public static void SerializeDeck(
+        DeckDto deck,
+        Dictionary<string, int> cardCopies)
+    {
+        var existing =
+            Decks.FirstOrDefault(d => d.id == deck.id);
+
+        if (existing != null)
         {
-            foreach (var file in Directory.GetFiles(CARDS_FOLDER))
-            {
-                File.Delete(file);
-            }
+            Decks.Remove(existing);
+            DeckCards.Remove(deck.id);
         }
+
+        Decks.Add(deck);
+        DeckCards[deck.id] = cardCopies;
+
+        SaveAllDecks();
     }
 
-    public static void SerializeDecks(List<DeckDto> decks)
+    private static void SaveAllDecks()
     {
-        string decksJson = JsonSerializer.Serialize(decks, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(DECKS_FILE_PATH, decksJson);
-    }
+        var wrappers =
+            Decks.Select(d => new DeckWithCardsDto
+            {
+                Deck = d,
+                Cards = DeckCards.ContainsKey(d.id)
+                    ? DeckCards[d.id]
+                    : new()
+            }).ToList();
 
-    public static void SerializeCards(DeckDto deck, List<CardDefinition> newCards)
-    {
-        string cardFilePath = Path.Combine(CARDS_FOLDER, $"{deck.id}.json");
-        string cardsJson = JsonSerializer.Serialize(newCards, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(cardFilePath, cardsJson);
+        string decksJson =
+            JsonSerializer.Serialize(
+                wrappers,
+                new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+        File.WriteAllText(
+            DECKS_FILE_PATH,
+            decksJson);
     }
 }

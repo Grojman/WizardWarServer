@@ -9,11 +9,9 @@ app.UseWebSockets();
 GameManager gameManager = new GameManager();
 
 
-CardManager.SerializeDecks(MockData.data.Keys.ToList());
-foreach (var item in MockData.data)
-{
-    CardManager.SerializeCards(item.Key, item.Value);
-}    
+CardManager.SerializeCards(MockData.Cards);
+
+foreach(var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
 
 CardManager.Initialize();
 
