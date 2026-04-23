@@ -6,7 +6,7 @@ public class CardDefinition
     {
     }
 
-    public CardDefinition(string id, string name, CardType type, string description, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families, string imagUrl)
+    public CardDefinition(string id, string name, CardType type, string description, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families, string imageUrl)
     {
         Id = id;
         Name = name;
