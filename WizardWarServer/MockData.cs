@@ -4,390 +4,61 @@ public static class MockData
     [
         new CardDefinition(
             "1",
-            "Gitano promedio",
-            CardType.Unit,
-            "",
-            2,
-            3,
-            [
-                
-            ],
-            ["Gitano"]
-        ),
-        new CardDefinition(
-            "2",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "3",
             "Truco Gitano",
             CardType.Spell,
             "Roba tres cartas",
             -1,
             -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "4",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
             [
-                
+                new EffectInstance(
+                    TriggerType.SpellPlayed,
+                    new DrawCardEffect(3),
+                    new DurationByExecutions(1),
+                    new IHaveBeenPlayedCondition()
+                )
             ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "5",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
             [],
-            []
+            ""
         ),
-        new CardDefinition(
-            "6",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "7",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "8",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "9",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "10",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "11",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "12",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "13",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "14",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "15",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "16",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "17",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "18",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "19",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "20",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "21",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "22",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "23",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "24",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "25",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "26",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "27",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "28",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "29",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "30",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "31",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "32",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "33",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
-        new CardDefinition(
-            "34",
-            "Patriarca",
-            CardType.Unit,
-            "Cuando se me juega, agrego un Truco Gitano en el mazo del jugador. Cada vez que juegues un Truco Gitano, consigo +2/+2",
-            4,
-            4,
-            [
-                
-            ],
-            ["Gitano", "Líder"]
-        ),
-        new CardDefinition(
-            "35",
-            "Truco Gitano",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [],
-            []
-        ),
+        new CardDefinition("2",
+        "Rata", CardType.Unit, "", 1, 1, [], ["Rata"], ""),
+        new CardDefinition("3",
+        "Familia de ratas", CardType.Unit, "Cuando muero, añado dos ratas al mazo del rival.", 2, 1, [
+            new EffectInstance(
+                TriggerType.UnitDeath,
+                new AppendRatas(2),
+                new DurationByExecutions(1),
+                new IHaveDiedCondition()
+            )
+        ],
+        ["Rata"], ""),
+        new CardDefinition("4",
+        "Flautista de Hamelin", CardType.Unit, "Cuando se juega una rata en mesa, consigo +1/+1", 2, 4, [
+            new EffectInstance(
+                TriggerType.UnitPlayed,
+                new GrowStatsBasedOnCardPlayed("Rata", 1, 1, true),
+                new Always(),
+                null
+            )
+        ],
+        [], ""),
+        new CardDefinition("5",
+        "Mr bombastic", CardType.Unit, "", 4, 4, [], ["Rata"], "/images/cards/1.jpg"),
+        new CardDefinition("6", "Flow rata", CardType.Spell, "Curo al jugador uno  por cada rata que tenga el rival en el mazo.", -1, -1, [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                new DamagePlayerBasedOnCards(
+                    ["Rata"],
+                    true,
+                    1,
+                    PlayerType.RIVAL,
+                    PlayerType.NONE,
+                    true
+                ),
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ], [], "")
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -407,7 +78,11 @@ public static class MockData
             "Señor y dueño de todas las tontunas. Rinde tu alma ante él y serás recompensado con la frustración de tus rivales."),
             new()
             {
-                
+                { "1", 2},
+                { "3", 3},
+                { "4", 2},
+                { "5", 4},
+                { "6", 1},
             }
         },
         {

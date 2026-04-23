@@ -5,6 +5,11 @@ public class DurationByExecutions : EffectDuration
     {
     }
 
+    public DurationByExecutions(int times)
+    {
+        this.times = times;
+    }
+
     public DurationByExecutions(bool isExpired, int times, int triggerCounter)
     {
         this.isExpired = isExpired;

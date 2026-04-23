@@ -340,6 +340,7 @@ public class GameState
 
     public void AlterUnitDamage(IdentificableObject source, CardInstance Unit, int Amount)
     {
+        if (Amount == 0) return;
         Unit.CurrentAttack += Amount;
         var gevent = new GameEvent.UnitDamageChanged()
         {

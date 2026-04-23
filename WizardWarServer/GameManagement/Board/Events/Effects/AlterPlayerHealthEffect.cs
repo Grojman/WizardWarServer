@@ -1,8 +1,8 @@
 
 public class AlterPlayerHealthEffect : IEffect
 {
-    public int Amount;
-    public bool ToRival;
+    public int Amount { get; set; }
+    public bool ToRival { get; set; }
 
     public AlterPlayerHealthEffect(int amount, bool toRival)
     {

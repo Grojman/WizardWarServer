@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Mvc.Routing;
+
 public class CardDefinition
 {
     public CardDefinition()
     {
     }
 
-    public CardDefinition(string id, string name, CardType type, string description, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families)
+    public CardDefinition(string id, string name, CardType type, string description, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families, string imagUrl)
     {
         Id = id;
         Name = name;
@@ -14,6 +16,7 @@ public class CardDefinition
         BaseHealth = baseHealth;
         Effects = effects;
         Families = families;
+        this.imageUrl = imageUrl;
     }
 
     public string[] Families { get; set; } = [];
@@ -30,6 +33,8 @@ public class CardDefinition
     public int BaseHealth { get; set; } = 0;
 
     public List<EffectInstance> Effects { get; set; } = [];
+
+    public string imageUrl { get; set; } = string.Empty;
 
     
 }

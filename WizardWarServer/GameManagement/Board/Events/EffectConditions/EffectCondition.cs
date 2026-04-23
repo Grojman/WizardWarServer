@@ -3,6 +3,8 @@ using System.Text.Json.Serialization;
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
 [JsonDerivedType(typeof(IHaveBeenPlayedCondition), nameof(IHaveBeenPlayedCondition))]
+[JsonDerivedType(typeof(IHaveDiedCondition), nameof(IHaveDiedCondition))]
+[JsonDerivedType(typeof(PlayerCardCondition), nameof(PlayerCardCondition))]
 
 //TODO: ADD DERIVED TYPES HERE
 public abstract class EffectCondition : ICloneable<EffectCondition>

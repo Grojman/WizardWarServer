@@ -1,12 +1,12 @@
 
 public class AlterUnitStatsEffect : IEffect
 {
-    public int AffectedCards;
+    public int AffectedCards {get; set; }
     int counter = 0;
-    public Direction WhichWay;
-    public AffectedStats AffectedStats;
-    public int Damage;
-    public int Healht;
+    public Direction WhichWay {  get; set; }
+    public AffectedStats AffectedStats { get; set; }
+    public int Damage { get; set; }
+    public int Healht { get; set; }
 
 
     public AlterUnitStatsEffect(Direction whichWay, int damage, int affectedCards)

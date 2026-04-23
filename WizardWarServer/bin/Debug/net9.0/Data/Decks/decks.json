@@ -13,7 +13,13 @@
       "name": "Mago silly",
       "description": "Se\u00F1or y due\u00F1o de todas las tontunas. Rinde tu alma ante \u00E9l y ser\u00E1s recompensado con la frustraci\u00F3n de tus rivales."
     },
-    "Cards": {}
+    "Cards": {
+      "1": 2,
+      "3": 3,
+      "4": 2,
+      "5": 4,
+      "6": 1
+    }
   },
   {
     "Deck": {
