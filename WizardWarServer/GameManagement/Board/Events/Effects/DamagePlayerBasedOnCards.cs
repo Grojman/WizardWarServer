@@ -24,7 +24,9 @@ public class DamagePlayerBasedOnCards : IEffect
     public PlayerType WhichDeckToSearch { get; set; }
     public PlayerType WhichBoardToSearch { get; set; }
     public PlayerType TargetPlayer { get; set; }
-    
+
+    public IEffect Clone() => new DamagePlayerBasedOnCards(FamiliesToSearch, RoundedUp, Relation, WhichDeckToSearch, WhichBoardToSearch, MustHaveAllFamilies);
+
     public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         int cardCounter = 0;

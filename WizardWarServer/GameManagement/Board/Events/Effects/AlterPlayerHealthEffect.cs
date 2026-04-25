@@ -16,4 +16,6 @@ public class AlterPlayerHealthEffect : IEffect
 
         state.AlterPlayerHealth(cardId, player, Amount);
     }
+
+    public IEffect Clone() => new AlterPlayerHealthEffect(Amount, ToRival);
 }

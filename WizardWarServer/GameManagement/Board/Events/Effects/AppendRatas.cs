@@ -22,4 +22,6 @@ public class AppendRatas : IEffect
             state.AddCard(rival, player, new CardInstance(rataInstance, rival.Id), cardId);
         }
     }
+
+    public IEffect Clone() => new AppendRatas(ratasAmount);
 }

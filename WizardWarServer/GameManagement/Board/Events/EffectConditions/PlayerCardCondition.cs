@@ -1,7 +1,7 @@
 
 public class PlayerCardCondition : EffectCondition
 {
-    public bool Me;
+    public bool Me { get; set; } = false;
     public PlayerCardCondition(bool me)
     {
         Me = me;

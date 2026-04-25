@@ -18,10 +18,13 @@ public static class MockData
                 )
             ],
             [],
-            ""
+            "",
+            null,
+            null,
+            0
         ),
         new CardDefinition("2",
-        "Rata", CardType.Unit, "", 1, 1, [], ["Rata"], ""),
+        "Rata", CardType.Unit, "", 1, 1, [], ["Rata"], "", null, null, 0),
         new CardDefinition("3",
         "Familia de ratas", CardType.Unit, "Cuando muero, añado dos ratas al mazo del rival.", 2, 1, [
             new EffectInstance(
@@ -29,9 +32,9 @@ public static class MockData
                 new AppendRatas(2),
                 new DurationByExecutions(1),
                 new IHaveDiedCondition()
-            )
+            ),
         ],
-        ["Rata"], ""),
+        ["Rata"], "", null, null, 0),
         new CardDefinition("4",
         "Flautista de Hamelin", CardType.Unit, "Cuando se juega una rata en mesa, consigo +1/+1", 2, 4, [
             new EffectInstance(
@@ -41,9 +44,9 @@ public static class MockData
                 new PlayerCardCondition(false)
             )
         ],
-        [], ""),
+        [], "", null, null, 0),
         new CardDefinition("5",
-        "Mr bombastic", CardType.Unit, "", 4, 4, [], ["Rata"], "/images/cards/1.jpg"),
+        "Mr bombastic", CardType.Unit, "", 4, 4, [], ["Rata"], "/images/cards/1.jpg", null, null, 0),
         new CardDefinition("6", "Flow rata", CardType.Spell, "Curo al jugador uno  por cada rata que tenga el rival en el mazo.", -1, -1, [
             new EffectInstance(
                 TriggerType.SpellPlayed,
@@ -58,7 +61,7 @@ public static class MockData
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ], [], "")
+        ], [], "", null, null, 0)
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()

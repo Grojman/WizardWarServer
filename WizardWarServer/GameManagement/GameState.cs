@@ -268,20 +268,27 @@ public class GameState
                 Source = card,
                 Attacker = card,
                 TargetIndex = target,
-                TargetType = targetType
+                TargetType = targetType,
+                Deffender = null
             };
-            GameActionResult.Events.Enqueue(gevent);
-            ApplyEffect(TriggerType.CardAttacked, gevent);
             switch (targetType)
             {
                 case TargetType.PLAYER:
+                    GameActionResult.Events.Enqueue(gevent);
+                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     AlterPlayerHealth(card, player, -card.CurrentAttack, false);
+
                     break;
                 case TargetType.RIVAL:
+                    GameActionResult.Events.Enqueue(gevent);
+                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     AlterPlayerHealth(card, GetRival(player.Id), -card.CurrentAttack, false);
                     break;
                 case TargetType.ENEMY_BOARD:
                     var cardTarget = GetRival(player.Id).Board[target];
+                    gevent.Deffender = cardTarget;
+                    GameActionResult.Events.Enqueue(gevent);
+                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     if(cardTarget is null)
                     {
                         Console.WriteLine($"WTF. Attacking a card that doesnt exists on rival board");
@@ -295,6 +302,9 @@ public class GameState
                     break;
                 case TargetType.OWN_BOARD:
                     var cardTarget2 = player.Board[target];
+                    gevent.Deffender = cardTarget2;
+                    GameActionResult.Events.Enqueue(gevent);
+                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     if(cardTarget2 is null)
                     {
                         Console.WriteLine($"WTF. Attacking a card that doesnt exists on own board");

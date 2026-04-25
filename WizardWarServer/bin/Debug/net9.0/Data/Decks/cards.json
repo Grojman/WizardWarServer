@@ -23,10 +23,13 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5a218762-269f-4c84-bbbb-217ba62bd804"
+        "Id": "8a89a49a-245c-42fc-aac1-f16a7ed01a03"
       }
     ],
-    "imageUrl": ""
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [
@@ -39,7 +42,10 @@
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [],
-    "imageUrl": ""
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [
@@ -66,10 +72,13 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "1b577f55-2e19-4f43-9053-d41ef30edab6"
+        "Id": "21916ff2-eebf-45ce-853c-2fae7fae2149"
       }
     ],
-    "imageUrl": ""
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [],
@@ -92,14 +101,20 @@
         "Duration": {
           "$type": "Always"
         },
-        "Condition": null,
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": false
+        },
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "9a7f44ec-f346-4bb9-b1a6-ffd7c01f25f3"
+        "Id": "2e6b659d-fe8c-43e5-ad8d-0feafdeb8967"
       }
     ],
-    "imageUrl": ""
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [
@@ -112,7 +127,10 @@
     "BaseAttack": 4,
     "BaseHealth": 4,
     "Effects": [],
-    "imageUrl": "/images/cards/1.jpg"
+    "imageUrl": "/images/cards/1.jpg",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [],
@@ -146,9 +164,12 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "b401b86e-2748-4468-8d6e-d7ddd99e7776"
+        "Id": "46ea4d10-744e-4e45-8eb0-a2f746a8a4b4"
       }
     ],
-    "imageUrl": ""
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   }
 ]

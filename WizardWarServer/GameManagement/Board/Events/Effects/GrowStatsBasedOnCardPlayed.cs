@@ -15,6 +15,8 @@ public class GrowStatsBasedOnCardPlayed : IEffect
 
     public bool ApplyToMyself { get; set; } = true;
 
+    public IEffect Clone() => new GrowStatsBasedOnCardPlayed(FamilyType, Health, Damage, ApplyToMyself);
+
     public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         if(ev is GameEvent.UnitPlayed e && (e.Unit.CurrentFamilies.Contains(FamilyType) || string.IsNullOrWhiteSpace(FamilyType)))

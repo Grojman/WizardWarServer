@@ -49,6 +49,7 @@ public abstract class GameEvent
     public class CardAttacked : GameEvent
     {
         public required CardInstance Attacker { get; set; }
+        public required CardInstance? Deffender { get; set; }
         public required TargetType TargetType { get; set; }
         public required int TargetIndex { get; set; }
     }

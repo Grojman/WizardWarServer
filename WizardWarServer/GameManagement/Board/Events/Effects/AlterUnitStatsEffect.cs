@@ -58,4 +58,6 @@ public class AlterUnitStatsEffect : IEffect
             }
         }
     }
+
+    public IEffect Clone() => new AlterUnitStatsEffect(WhichWay, Damage, AffectedCards);
 }
