@@ -64,4 +64,10 @@ public abstract class GameEvent
         public required PlayerState TargetedPlayer { get; set; }
         public required List<CardInstance> AffectedCards { get; set; }
     }
+
+    public class CardEventPlayed : GameEvent
+    {
+        public required CardInstance Card { get; set; }
+    }
+
 }

@@ -1,12 +1,12 @@
-public record CardDto(string id, string name, string description, List<string> families, int attack, int health, string type, string imageUrl)
+public record CardDto(string id, string name, string description, List<string> families, int attack, int health, string type, string imageUrl, bool canPlay, bool hasEffect, int effectTimes)
 {
-    public static CardDto Generate(CardInstance card)
+    public static CardDto Generate(CardInstance card, GameState state)
     {
-        return new CardDto(card.Id.ToString(), card.Definition.Name, card.Definition.Description, card.CurrentFamilies, card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), card.Definition.imageUrl);
+        return new CardDto(card.Id.ToString(), card.Definition.Name, card.Definition.Description, card.CurrentFamilies, card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), card.Definition.imageUrl, card.CanPlay?.Check(card.PlayerGuid, card, state, null) ?? true, card.SpecialEffect is not null, card.MaxSpecialEffectTimes);
     }
 
     public static CardDto Generate(CardDefinition card)
     {
-        return new CardDto(card.Id, card.Name, card.Description, card.Families.ToList(), card.BaseAttack, card.BaseHealth, card.Type.ToString(), card.imageUrl);
+        return new CardDto(card.Id, card.Name, card.Description, card.Families.ToList(), card.BaseAttack, card.BaseHealth, card.Type.ToString(), card.imageUrl, true, card.PlayEffect is not null, card.PlayEffectTriggerTimes);
     }
 }

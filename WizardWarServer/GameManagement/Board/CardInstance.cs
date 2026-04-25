@@ -11,6 +11,10 @@ public class CardInstance : IdentificableObject
     public List<string> CurrentFamilies { get; set; }
 
     public List<EffectInstance> Effects { get; set; }
+    public EffectCondition? CanPlay { get; set; }
+    public IEffect? SpecialEffect { get; set; }
+    public int MaxSpecialEffectTimes { get; set; }
+    public bool DeathChecked { get; set; } = false;
 
     public CardInstance(CardDefinition def, Guid PlayerId)
     {
@@ -21,6 +25,10 @@ public class CardInstance : IdentificableObject
         CurrentHealth = def.BaseHealth;
 
         CurrentFamilies = [.. def.Families];
+
+        CanPlay = def.ConditionToPlay?.Clone();
+        MaxSpecialEffectTimes = def.PlayEffectTriggerTimes;
+        SpecialEffect = def.PlayEffect?.Clone();
 
         Effects = new();
         foreach(EffectInstance e in def.Effects) Effects.Add(e.Clone());

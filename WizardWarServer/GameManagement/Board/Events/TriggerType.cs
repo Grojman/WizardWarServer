@@ -9,6 +9,8 @@ public enum TriggerType
     SpellPlayed,
     UnitDeath,
     CardAddedToDeck,
-    DeckModified
+    DeckModified,
+    CardAttacked,
+    CardEffectPlayed
     
 }

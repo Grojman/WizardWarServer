@@ -4,8 +4,13 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(DrawCardAction), nameof(DrawCardAction))]
 [JsonDerivedType(typeof(PlayCardAction), nameof(PlayCardAction))]
 [JsonDerivedType(typeof(AttackAction), nameof(AttackAction))]
+[JsonDerivedType(typeof(CardEffectActivated), nameof(CardEffectActivated))]
 public interface PlayerAction
 {
+    public class CardEffectActivated : PlayerAction
+    {
+        public required int CardIndex { get; set; }
+    }
     public class DrawCardAction : PlayerAction {}
     public class PlayCardAction : PlayerAction
     {

@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(GrowStatsBasedOnCardPlayed), nameof(GrowStatsBasedOnCardPlayed))]
 
 //TODO: ADD DERIVED TYPES HERE
-public interface IEffect
+public interface IEffect : ICloneable<IEffect>
 {
     void Execute(
         Guid playerId,

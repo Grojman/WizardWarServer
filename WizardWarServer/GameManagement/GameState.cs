@@ -105,12 +105,42 @@ public class GameState
         ApplyEffect(TriggerType.DeckModified, gevent);
     }
 
+    public void ApplyEffect(PlayerConnection player, int cardIndex)
+    {
+        var state = GetState(player.Guid);
+
+        if (cardIndex != -1 && cardIndex >= state.Board.Length)
+        {
+            Console.WriteLine("WTF. Index is not valid for an effect to play");
+        } else if(state.Board[cardIndex]?.SpecialEffect is null)
+        {
+            Console.WriteLine("WTF. The card either doesnt exist or it has no play effect");
+        } else
+        {
+            var card = state.Board[cardIndex];
+            card?.SpecialEffect.Execute(state.Id, card, this, null);
+
+            var gevent  = new GameEvent.CardEventPlayed()
+            {
+                Source = card,
+                Card = card,
+                PlayerSource = state,
+            };
+
+            GameActionResult.Events.Enqueue(gevent);
+            ApplyEffect(TriggerType.CardEffectPlayed, gevent);
+        }
+    }
+
     public void ApplyAction(
         PlayerConnection player,
         PlayerAction action)
     {
         switch (action)
         {
+            case PlayerAction.CardEffectActivated a:
+                ApplyEffect(player, a.CardIndex);
+                return;
             case PlayerAction.DrawCardAction:
                 DrawCard(player);
                 break;
@@ -241,13 +271,14 @@ public class GameState
                 TargetType = targetType
             };
             GameActionResult.Events.Enqueue(gevent);
+            ApplyEffect(TriggerType.CardAttacked, gevent);
             switch (targetType)
             {
                 case TargetType.PLAYER:
-                    AlterPlayerHealth(card, player, -card.CurrentAttack);
+                    AlterPlayerHealth(card, player, -card.CurrentAttack, false);
                     break;
                 case TargetType.RIVAL:
-                    AlterPlayerHealth(card, GetRival(player.Id), -card.CurrentAttack);
+                    AlterPlayerHealth(card, GetRival(player.Id), -card.CurrentAttack, false);
                     break;
                 case TargetType.ENEMY_BOARD:
                     var cardTarget = GetRival(player.Id).Board[target];
@@ -256,7 +287,10 @@ public class GameState
                         Console.WriteLine($"WTF. Attacking a card that doesnt exists on rival board");
                     } else
                     {
-                        AlterUnitHealth(card, cardTarget, -card.CurrentAttack);
+                        AlterUnitHealth(card, cardTarget, -card.CurrentAttack, false, false);
+                        AlterUnitHealth(cardTarget, card, -cardTarget.CurrentAttack, false, false);
+                        CheckKill(card, cardTarget);
+                        CheckKill(cardTarget, card);
                     }
                     break;
                 case TargetType.OWN_BOARD:
@@ -266,7 +300,10 @@ public class GameState
                         Console.WriteLine($"WTF. Attacking a card that doesnt exists on own board");
                     } else
                     {
-                        AlterUnitHealth(card, cardTarget2, -card.CurrentAttack);
+                        AlterUnitHealth(card, cardTarget2, -card.CurrentAttack, false, false);
+                        AlterUnitHealth(cardTarget2, card, -cardTarget2.CurrentAttack, false, false);
+                        CheckKill(card, cardTarget2);
+                        CheckKill(cardTarget2, card);
                     }
                     break;
                 default:
@@ -318,7 +355,7 @@ public class GameState
     }
 
 
-    public void AlterUnitHealth(IdentificableObject source, CardInstance Unit, int Amount)
+    public void AlterUnitHealth(IdentificableObject source, CardInstance Unit, int Amount, bool checkKill = true, bool enqueueToUsers = true)
     {
         Unit.CurrentHealth += Amount;
         var gevent = new GameEvent.UnitHealthChanged()
@@ -329,9 +366,14 @@ public class GameState
             Amount = Amount
         };
 
-        GameActionResult.Events.Enqueue(gevent);
+        if (enqueueToUsers) GameActionResult.Events.Enqueue(gevent);
         ApplyEffect(TriggerType.UnitHealthChanged, gevent);
 
+        if (checkKill) CheckKill(source, Unit);
+    }
+
+    void CheckKill(IdentificableObject source, CardInstance Unit)
+    {
         if (Unit.CurrentHealth <= 0)
         {
             KillUnit(source, Unit);
@@ -354,7 +396,7 @@ public class GameState
         ApplyEffect(TriggerType.UnitDamageChanged, gevent);
     }
 
-    public void AlterPlayerHealth(IdentificableObject source, PlayerState player, int Amount)
+    public void AlterPlayerHealth(IdentificableObject source, PlayerState player, int Amount, bool enqueueToUsers = true)
     {
         player.Health += Amount;
         var gevent = new GameEvent.PlayerHealthChanged()
@@ -371,12 +413,14 @@ public class GameState
             GameActionResult.GameEnded = true;
         }
 
-        GameActionResult.Events.Enqueue(gevent);
+        if (enqueueToUsers) GameActionResult.Events.Enqueue(gevent);
         ApplyEffect(TriggerType.PlayerHealthChanged, gevent);
     }
 
     public void KillUnit(IdentificableObject source, CardInstance Unit)
     {
+        if (Unit.DeathChecked) return;
+        Unit.DeathChecked = true;
         var position = RemoveFromBoard(Unit);
         var gevent = new GameEvent.UnitDeath()
         {

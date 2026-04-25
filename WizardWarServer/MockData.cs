@@ -38,7 +38,7 @@ public static class MockData
                 TriggerType.UnitPlayed,
                 new GrowStatsBasedOnCardPlayed("Rata", 1, 1, true),
                 new Always(),
-                null
+                new PlayerCardCondition(false)
             )
         ],
         [], ""),
