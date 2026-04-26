@@ -23,7 +23,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "8a89a49a-245c-42fc-aac1-f16a7ed01a03"
+        "Id": "4e00acaa-e0b8-4163-ab53-e8f359758c1a"
       }
     ],
     "imageUrl": "",
@@ -38,14 +38,18 @@
     "Id": "2",
     "Name": "Rata",
     "Type": 0,
-    "Description": "",
+    "Description": "HABILIDAD: Inflinge uno de da\u00F1o a su propio jugador",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [],
     "imageUrl": "",
     "ConditionToPlay": null,
-    "PlayEffect": null,
-    "PlayEffectTriggerTimes": 0
+    "PlayEffect": {
+      "$type": "AlterPlayerHealthEffect",
+      "Amount": -1,
+      "ToRival": false
+    },
+    "PlayEffectTriggerTimes": 1
   },
   {
     "Families": [
@@ -72,7 +76,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "21916ff2-eebf-45ce-853c-2fae7fae2149"
+        "Id": "bb179468-8c6c-46bf-b290-e811d2e5cc32"
       }
     ],
     "imageUrl": "",
@@ -108,7 +112,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "2e6b659d-fe8c-43e5-ad8d-0feafdeb8967"
+        "Id": "63d71d04-4148-45c4-a0a4-1e2388bbe225"
       }
     ],
     "imageUrl": "",
@@ -164,7 +168,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "46ea4d10-744e-4e45-8eb0-a2f746a8a4b4"
+        "Id": "7763700e-6bae-42c7-9dbc-f7a3d9e39844"
       }
     ],
     "imageUrl": "",

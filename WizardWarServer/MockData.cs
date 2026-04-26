@@ -24,7 +24,7 @@ public static class MockData
             0
         ),
         new CardDefinition("2",
-        "Rata", CardType.Unit, "", 1, 1, [], ["Rata"], "", null, null, 0),
+        "Rata", CardType.Unit, "HABILIDAD: Inflinge uno de daño a su propio jugador", 1, 1, [], ["Rata"], "", null, new AlterPlayerHealthEffect(-1, false), 1),
         new CardDefinition("3",
         "Familia de ratas", CardType.Unit, "Cuando muero, añado dos ratas al mazo del rival.", 2, 1, [
             new EffectInstance(
@@ -81,11 +81,7 @@ public static class MockData
             "Señor y dueño de todas las tontunas. Rinde tu alma ante él y serás recompensado con la frustración de tus rivales."),
             new()
             {
-                { "1", 2},
-                { "3", 3},
-                { "4", 2},
-                { "5", 4},
-                { "6", 1},
+                
             }
         },
         {
@@ -104,6 +100,19 @@ public static class MockData
             new()
             {
                 
+            }
+        },
+        {
+            new DeckDto(5,
+            "Rata mágica",
+            "¿Pero qué? ¿Quién ha dejado una rata entrar en la guerra? Si además lleva sombrero y todo, y parece que se ha traído a todos sus parientes. En fin, no seré yo quien la juzgue, pero no parece que trame nada bueno."),
+            new()
+            {
+                { "1", 2},
+                { "3", 3},
+                { "4", 2},
+                { "5", 3},
+                { "6", 1},
             }
         }
         

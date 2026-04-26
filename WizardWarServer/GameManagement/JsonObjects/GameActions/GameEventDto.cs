@@ -14,6 +14,7 @@ using System.Threading.Channels;
 [JsonDerivedType(typeof(DeckOutOfCards), nameof(DeckOutOfCards))]
 [JsonDerivedType(typeof(AddedCardToDeck), nameof(AddedCardToDeck))]
 [JsonDerivedType(typeof(DeckModifiedStats), nameof(DeckModifiedStats))]
+[JsonDerivedType(typeof(CardEventPlayed), nameof(CardEventPlayed))]
 public record GameEventDto(Guid Source, Guid PlayerSource)
 {
     public static GameEventDto Generate(GameEvent e, GameState state)
@@ -31,6 +32,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
             GameEvent.CardAttacked ca => new CardAttacked(ca.Source.Id, ca.PlayerSource.Id, ca.Attacker.Id, ca.TargetType.ToString(), ca.TargetIndex, ca.Attacker.CurrentAttack, ca.Deffender?.CurrentAttack ?? 0),
             GameEvent.AddedCardToDeck acd => new AddedCardToDeck(acd.Source.Id, acd.PlayerSource.Id, acd.TargetedPlayer.Id),
             GameEvent.DeckModifiedStats dms => new DeckModifiedStats(dms.Source.Id, dms.PlayerSource.Id, dms.TargetedPlayer.Id),
+            GameEvent.CardEventPlayed cep => new CardEventPlayed(cep.Source.Id, cep.PlayerSource.Id, cep.Card.Id),
             _ => throw new ArgumentException($"Unknown event type: {e.GetType().Name}")
         };
     }
@@ -48,5 +50,6 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
     public record AddedCardToDeck(Guid Source, Guid PlayerSource, Guid TargetedPlayer) : GameEventDto(Source, PlayerSource) {}
 
     public record DeckModifiedStats(Guid Source, Guid PlayerSource, Guid TargetedPlayer) : GameEventDto(Source, PlayerSource);
+    public record CardEventPlayed(Guid Source, Guid PlayerSource, Guid Card) : GameEventDto(Source, PlayerSource) {}
     
 }
