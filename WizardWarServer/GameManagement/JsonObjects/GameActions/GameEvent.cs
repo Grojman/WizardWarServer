@@ -2,6 +2,10 @@ public abstract class GameEvent
 {
     public required PlayerState PlayerSource { get; set; }
     public required IdentificableObject Source { get; set; }
+    public class TextMessage : GameEvent
+    {
+        public required string Message { get; set; }
+    }
     public class CardDrawnEvent : GameEvent
     {
         public required Guid PlayerId { get; set; }

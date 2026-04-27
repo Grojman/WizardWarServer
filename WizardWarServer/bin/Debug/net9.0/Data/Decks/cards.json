@@ -23,7 +23,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "4e00acaa-e0b8-4163-ab53-e8f359758c1a"
+        "Id": "5ce6a74e-6727-405b-994b-c5e49e22031d"
       }
     ],
     "imageUrl": "",
@@ -65,7 +65,8 @@
       {
         "Trigger": 7,
         "Effect": {
-          "$type": "AppendRatas"
+          "$type": "AppendCardToDeck",
+          "CardId": "2"
         },
         "Duration": {
           "$type": "DurationByExecutions"
@@ -76,7 +77,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "bb179468-8c6c-46bf-b290-e811d2e5cc32"
+        "Id": "793596e2-fee7-4ea8-a532-f13bab0d8f8e"
       }
     ],
     "imageUrl": "",
@@ -112,7 +113,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "63d71d04-4148-45c4-a0a4-1e2388bbe225"
+        "Id": "215ad32d-9eeb-4738-ac03-4f86fe239db5"
       }
     ],
     "imageUrl": "",
@@ -149,15 +150,10 @@
         "Trigger": 6,
         "Effect": {
           "$type": "DamagePlayerBasedOnCards",
-          "FamiliesToSearch": [
-            "Rata"
-          ],
-          "MustHaveAllFamilies": true,
-          "RoundedUp": true,
-          "Relation": 1,
-          "WhichDeckToSearch": 1,
-          "WhichBoardToSearch": 3,
-          "TargetPlayer": 0
+          "RoundedUp": false,
+          "Relation": 0,
+          "TargetPlayer": 0,
+          "Filter": null
         },
         "Duration": {
           "$type": "DurationByExecutions"
@@ -168,7 +164,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "7763700e-6bae-42c7-9dbc-f7a3d9e39844"
+        "Id": "08ce24d5-2285-4b97-adec-13ab7a935376"
       }
     ],
     "imageUrl": "",

@@ -42,6 +42,21 @@ public class GameSession
         var action =
             JsonSerializer.Deserialize<PlayerAction>(json);
 
+        if (action is PlayerAction.TextMessage m)
+        {
+            await p1.Send("text_message", new {
+                player = player.Guid,
+                message = m.Message
+            });
+
+            await p2.Send("text_message", new {
+                player = player.Guid,
+                message = m.Message
+            });
+
+            return;
+        }
+
         state.ApplyAction(player, action);
 
         await SendState();

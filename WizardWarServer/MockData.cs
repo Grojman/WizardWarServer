@@ -56,10 +56,7 @@ public static class MockData
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ], [], "", null, null, 0),
-        new CardDefinition("7", "Rey Rata", CardType.Unit, "Al jugarme, todas las ratas en mesa consiguen +1/+1. Cuando golpeo, añado una rata en el mazo del rival", 3, 2, [
-            new EffectInstance(TriggerType.UnitPlayed, )
-        ])
+        ], [], "", null, null, 0)
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
