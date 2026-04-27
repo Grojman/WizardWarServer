@@ -29,7 +29,7 @@ public static class MockData
         "Familia de ratas", CardType.Unit, "Cuando muero, añado dos ratas al mazo del rival.", 2, 1, [
             new EffectInstance(
                 TriggerType.UnitDeath,
-                new AppendRatas(2),
+                new AppendCardToDeck(2, "2", true   ),
                 new DurationByExecutions(1),
                 new IHaveDiedCondition()
             ),
@@ -51,17 +51,15 @@ public static class MockData
             new EffectInstance(
                 TriggerType.SpellPlayed,
                 new DamagePlayerBasedOnCards(
-                    ["Rata"],
-                    true,
-                    1,
-                    PlayerType.RIVAL,
-                    PlayerType.NONE,
-                    true
+                    
                 ),
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ], [], "", null, null, 0)
+        ], [], "", null, null, 0),
+        new CardDefinition("7", "Rey Rata", CardType.Unit, "Al jugarme, todas las ratas en mesa consiguen +1/+1. Cuando golpeo, añado una rata en el mazo del rival", 3, 2, [
+            new EffectInstance(TriggerType.UnitPlayed, )
+        ])
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()

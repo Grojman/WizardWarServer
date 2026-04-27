@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(DrawCardEffect), nameof(DrawCardEffect))]
 [JsonDerivedType(typeof(AlterPlayerHealthEffect), nameof(AlterPlayerHealthEffect))]
 [JsonDerivedType(typeof(AlterUnitStatsEffect), nameof(AlterUnitStatsEffect))]
-[JsonDerivedType(typeof(AppendRatas), nameof(AppendRatas))]
+[JsonDerivedType(typeof(AppendCardToDeck), nameof(AppendCardToDeck))]
 [JsonDerivedType(typeof(DamagePlayerBasedOnCards), nameof(DamagePlayerBasedOnCards))]
 [JsonDerivedType(typeof(GrowStatsBasedOnCardPlayed), nameof(GrowStatsBasedOnCardPlayed))]
 

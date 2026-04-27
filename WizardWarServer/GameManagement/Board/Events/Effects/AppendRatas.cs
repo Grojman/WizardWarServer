@@ -1,27 +1,30 @@
 
-public class AppendRatas : IEffect
+public class AppendCardToDeck : IEffect
 {
-    const string RATA_ID = "2";
-    int ratasAmount  { get; set; } = 1;
+    public string CardId { get; set; } = string.Empty;
+    int CardsAmount  { get; set; } = 1;
+    bool ToRival { get; set; } = false;
 
-    public AppendRatas() {}
-    public AppendRatas(int ratasAmount)
+    public AppendCardToDeck() {}
+    public AppendCardToDeck(int cardsAmount, string cardId, bool toRival)
     {
-        this.ratasAmount = ratasAmount;
+        this.CardsAmount = cardsAmount;
+        CardId = cardId;
+        ToRival = toRival;
     }
 
     public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        var rataInstance = CardManager.GetCardById(RATA_ID);
+        var cardInstance = CardManager.GetCardById(CardId);
 
         var rival = state.GetRival(playerId);
         var player = state.GetState(playerId);
 
-        for (int i = 0; i < ratasAmount; i++)
+        for (int i = 0; i < CardsAmount; i++)
         {
-            state.AddCard(rival, player, new CardInstance(rataInstance, rival.Id), cardId);
+            state.AddCard(ToRival ? rival : player, ToRival ? player : rival, new CardInstance(cardInstance,(ToRival ? rival : player).Id), cardId);
         }
     }
 
-    public IEffect Clone() => new AppendRatas(ratasAmount);
+    public IEffect Clone() => new AppendCardToDeck(CardsAmount, CardId, ToRival);
 }
