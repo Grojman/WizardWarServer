@@ -1,37 +1,41 @@
 public class GameFilter
 {
-    public CardFilter Filter { get; set; }
+    public required CardFilter Filter { get; set; }
     public PlayerType WhichDeckToSearch { get; set; }
     public PlayerType WhichBoardToSearch { get; set; }
 
+    public IEnumerable<CardInstance> GetMeetingCardsOnRivalBoard(GameState state, Guid playerId)
+    {
+        return WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetRival(playerId).Board.Where(n => n is not null && Filter.Check(n)) : [];
+    }
+
+    public IEnumerable<CardInstance> GetMeetingCardsOnPlayerBoard(GameState state, Guid playerId)
+    {
+        return WhichBoardToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Board.Where(n => n is not null && Filter.Check(n)) : [];
+    }
+
+    public IEnumerable<CardInstance> GetMeetingCardsOnRivalDeck(GameState state, Guid playerId)
+    {
+        return WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetRival(playerId).Deck.cards.Where(Filter.Check) : [];
+    }
+
+    public IEnumerable<CardInstance> GetMeetingCardsOnPlayerDeck(GameState state, Guid playerId)
+    {
+        return WhichBoardToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Deck.cards.Where(Filter.Check) : [];
+    }
+
+    public IEnumerable<CardInstance> GetMeetingCardsOnBoard(GameState state, Guid playerId)
+    {
+        return GetMeetingCardsOnPlayerBoard(state, playerId).Concat(GetMeetingCardsOnRivalBoard(state, playerId));
+    }
+
+    public IEnumerable<CardInstance> GetMeetingCardsOffBoard(GameState state, Guid playerId)
+    {
+        return GetMeetingCardsOnPlayerDeck(state, playerId).Concat(GetMeetingCardsOnRivalDeck(state, playerId));
+    }
+
     public IEnumerable<CardInstance> GetMeetingCards(GameState state, Guid playerId)
     {
-        List<CardInstance> list = new();
-
-        var rival = state.GetRival(playerId);
-        var player = state.GetState(playerId);
-
-        if (WhichDeckToSearch is PlayerType.PLAYER or PlayerType.BOTH)
-        {
-            foreach (var item in player.Deck.cards) if(Filter.Check(item)) list.Add(item);
-        }
-
-        if (WhichDeckToSearch is PlayerType.RIVAL or PlayerType.BOTH)
-        {
-            foreach (var item in rival.Deck.cards) if(Filter.Check(item)) list.Add(item);
-        }
-
-
-        if (WhichBoardToSearch is PlayerType.PLAYER or PlayerType.BOTH)
-        {
-            foreach (var item in player.Board) if(item is not null && Filter.Check(item)) list.Add(item);
-        }
-
-        if (WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH)
-        {
-            foreach (var item in rival.Board) if(item is not null && Filter.Check(item)) list.Add(item);
-        }
-
-        return list;
+        return GetMeetingCardsOnBoard(state, playerId).Concat(GetMeetingCardsOffBoard(state, playerId));
     }
 }

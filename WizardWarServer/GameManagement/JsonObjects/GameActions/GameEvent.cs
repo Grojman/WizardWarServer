@@ -67,7 +67,7 @@ public abstract class GameEvent
     public class DeckModifiedStats : GameEvent
     {
         public required PlayerState TargetedPlayer { get; set; }
-        public required List<CardInstance> AffectedCards { get; set; }
+        public required IEnumerable<CardInstance> AffectedCards { get; set; }
     }
 
     public class CardEventPlayed : GameEvent

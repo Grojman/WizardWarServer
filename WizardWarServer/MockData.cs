@@ -1,10 +1,12 @@
+using Microsoft.Extensions.Logging.Abstractions;
+
 public static class MockData
 {
     public static List<CardDefinition> Cards =
     [
         new CardDefinition(
             "1",
-            "Truco Gitano",
+            "Truco Ratero",
             CardType.Spell,
             "Roba tres cartas",
             -1,
@@ -56,7 +58,21 @@ public static class MockData
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ], [], "", null, null, 0)
+        ], [], "", null, null, 0),
+        new CardDefinition("7", "Queso", CardType.Spell, "Curo 3 de vida al usuario", -1, -1, [
+            new EffectInstance(TriggerType.SpellPlayed, new AlterPlayerHealthEffect(3, false), new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ], [], "", null, null, -1),
+        new CardDefinition("8", "Madriguera de ratas", CardType.Unit, "Fin de ronda: me inflinjo 2 de daño y añado 1 rata al mazo rival", 0, 6, [
+            new EffectInstance(TriggerType.TurnEnd, new AppendCardToDeck(1, "2", true), new Always(), null),
+            new EffectInstance(TriggerType.TurnEnd, new AlterMySelf(0, -2), new Always(), null)
+        ],
+        ["Rata"], "", null, null, 0),
+        new CardDefinition("9", "Matarratas defectuoso", CardType.Spell, "+1/+1 a todas las ratas de la mesa y el mazo", -1, -1, [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                
+            )
+        ])
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()

@@ -1,63 +1,35 @@
 
+
 public class AlterUnitStatsEffect : IEffect
 {
-    public int AffectedCards {get; set; }
-    int counter = 0;
-    public Direction WhichWay {  get; set; }
-    public AffectedStats AffectedStats { get; set; }
+    public AlterUnitStatsEffect(int health, int damage, GameFilter filter)
+    {
+        Health = health;
+        Damage = damage;
+        Filter = filter;
+    }
+
+    public int Health { get; set; }
     public int Damage { get; set; }
-    public int Healht { get; set; }
 
+    public GameFilter Filter { get; set; }
 
-    public AlterUnitStatsEffect(Direction whichWay, int damage, int affectedCards)
+    public IEffect Clone() =>  new AlterUnitStatsEffect(Health, Damage, Filter);
+
+    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        AffectedCards = affectedCards;
-        WhichWay = whichWay;
-        Damage = damage;
-        AffectedStats = AffectedStats.DAMAGE;
-    }
-
-    public AlterUnitStatsEffect(int healht, Direction whichWay, int affectedCards)
-    {
-        AffectedCards = affectedCards;
-        Healht = healht;
-        WhichWay = whichWay;
-        AffectedStats = AffectedStats.HEALTH;
-    }
-
-    public AlterUnitStatsEffect(Direction whichWay, int damage, int health, int affectedCards)
-    {
-        AffectedCards = affectedCards;
-        WhichWay = whichWay;
-        Damage = damage;
-        Healht = health;
-    }
-
-    public void Execute(Guid playerId, CardInstance source, GameState state, GameEvent? ev)
-    {
-        var rival = state.GetRival(playerId);
-        counter = 0;
-
-        int start = WhichWay == Direction.LEFT_TO_RIGHT ? 0 : rival.Board.Length;
-        int end = WhichWay == Direction.LEFT_TO_RIGHT ? rival.Board.Length : -1;
-        int step = WhichWay == Direction.LEFT_TO_RIGHT ? 1 : -1;
-
-        for(int i = start; i != end && counter < AffectedCards; i += step)
+        var rivalDeck = Filter.GetMeetingCardsOnRivalDeck(state, playerId);
+        if(rivalDeck.Count() != 0)
         {
-            if (rival.Board[i] is not null)
+            foreach(var c in rivalDeck)
             {
-                if (AffectedStats is AffectedStats.DAMAGE or AffectedStats.BOTH)
-                {
-                    state.AlterUnitDamage(source, rival.Board[i], Damage);
-                }
-                if (AffectedStats is AffectedStats.HEALTH or AffectedStats.BOTH)
-                {
-                    state.AlterUnitHealth(source, rival.Board[i], Healht);
-                }
-                counter++;
+                c.CurrentAttack += Damage;
+                c.CurrentHealth += Health;
             }
-        }
-    }
 
-    public IEffect Clone() => new AlterUnitStatsEffect(WhichWay, Damage, AffectedCards);
+            state.AlterDeck(state.GetRival(playerId), cardId, state.GetState(playerId), rivalDeck);
+        }
+
+        
+    }
 }

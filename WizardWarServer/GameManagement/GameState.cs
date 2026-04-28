@@ -79,19 +79,9 @@ public class GameState
         ApplyEffect(TriggerType.CardAddedToDeck, gevent);
     }
 
-    public void AlterDeck(PlayerState target, IdentificableObject Source, PlayerState playerSource, Predicate<CardInstance> condition, Action<CardInstance> effect)
+
+    public void AlterDeck(PlayerState target, IdentificableObject Source, PlayerState playerSource, IEnumerable<CardInstance> affectedCards)
     {
-        List<CardInstance> affectedCards = [];
-
-        for(int i = 0; i < target.Deck.cards.Count; i++)
-        {
-            if(condition(target.Deck.cards[i]))
-            {
-                affectedCards.Add(target.Deck.cards [i]);
-                effect(target.Deck.cards[i]);
-            }
-        }
-
         var gevent = new GameEvent.DeckModifiedStats()
         {
             Source = Source,
