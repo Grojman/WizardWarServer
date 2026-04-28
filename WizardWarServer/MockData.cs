@@ -70,9 +70,22 @@ public static class MockData
         new CardDefinition("9", "Matarratas defectuoso", CardType.Spell, "+1/+1 a todas las ratas de la mesa y el mazo", -1, -1, [
             new EffectInstance(
                 TriggerType.SpellPlayed,
+                new AlterUnitStatsEffect(1, 1, 
+                    new GameFilter()
+                    {
+                        Filter = new CardFilter()
+                        {
+                            CurrentFamilies = ["Rata"]
+                        },
+                        WhichBoardToSearch = PlayerType.PLAYER,
+                        WhichDeckToSearch = PlayerType.PLAYER
+                    }
+                ),
+                new DurationByExecutions(1),
+                null
                 
             )
-        ])
+        ], [], "", null, null, 0)
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
