@@ -1,10 +1,10 @@
 
+using System.Diagnostics.CodeAnalysis;
+
 public class DamagePlayerBasedOnCards : IEffect
 {
-    public DamagePlayerBasedOnCards()
-    {
-    }
 
+    [SetsRequiredMembers]
     public DamagePlayerBasedOnCards(bool roundedUp, float relation, PlayerType targetPlayer, GameFilter filter)
     {
         RoundedUp = roundedUp;
@@ -16,7 +16,7 @@ public class DamagePlayerBasedOnCards : IEffect
     public bool RoundedUp { get; set; }
     public float Relation { get; set; }
     public PlayerType TargetPlayer { get; set; }
-    public GameFilter Filter { get; set; }
+    public required GameFilter Filter { get; set; }
 
 
     public IEffect Clone() => new DamagePlayerBasedOnCards(RoundedUp, Relation, TargetPlayer, Filter);

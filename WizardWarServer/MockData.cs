@@ -48,13 +48,23 @@ public static class MockData
         ],
         [], "", null, null, 0),
         new CardDefinition("5",
-        "Mr bombastic", CardType.Unit, "", 4, 4, [], ["Rata"], "/images/cards/1.jpg", null, null, 0),
+        "Mr bombastic", CardType.Unit, "Solo se puede jugar en turnos pares", 4, 4, [], ["Rata"], "/images/cards/1.jpg", new EvenTurnCondition(), null, 0),
         new CardDefinition("6", "Flow rata", CardType.Spell, "Curo al jugador uno  por cada rata que tenga el rival en el mazo.", -1, -1, [
             new EffectInstance(
                 TriggerType.SpellPlayed,
                 new DamagePlayerBasedOnCards(
-                    
-                ),
+                    true,
+                    1,
+                    PlayerType.PLAYER,
+                    new GameFilter()
+                    {
+                        Filter = new CardFilter()
+                        {
+                            CurrentFamilies = ["Rata"]
+                        },
+                        WhichDeckToSearch = PlayerType.RIVAL
+                    }
+                    ),
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
@@ -67,7 +77,7 @@ public static class MockData
             new EffectInstance(TriggerType.TurnEnd, new AlterMySelf(0, -2), new Always(), null)
         ],
         ["Rata"], "", null, null, 0),
-        new CardDefinition("9", "Matarratas defectuoso", CardType.Spell, "+1/+1 a todas las ratas de la mesa y el mazo", -1, -1, [
+        new CardDefinition("9", "Matarratas defectuoso", CardType.Spell, "+1/+1 a todas tus ratas de la mesa y el mazo", -1, -1, [
             new EffectInstance(
                 TriggerType.SpellPlayed,
                 new AlterUnitStatsEffect(1, 1, 
@@ -137,6 +147,9 @@ public static class MockData
                 { "4", 2},
                 { "5", 3},
                 { "6", 1},
+                { "7", 3},
+                { "8", 3},
+                { "9", 2},
             }
         }
         

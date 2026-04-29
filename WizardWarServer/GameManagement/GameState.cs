@@ -7,6 +7,8 @@ public class GameState
     public PlayerState Player2 { get; set; }
     public int CurrentTurn { get; set; }
 
+    public int TurnCounter { get; set; }
+
     public void Initialize(
         PlayerConnection c1,
         PlayerConnection c2
@@ -164,6 +166,8 @@ public class GameState
         if (CurrentTurn == 1)
         {
             ApplyEffect(TriggerType.TurnEnd, null);
+
+            TurnCounter++;
         }
         CleanExpiredEffects();
     }

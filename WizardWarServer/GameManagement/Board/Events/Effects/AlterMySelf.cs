@@ -20,7 +20,7 @@ public class AlterMySelf : IEffect
 
         if(Health != 0)
         {
-            state.AlterUnitDamage(cardId, cardId, Health);
+            state.AlterUnitHealth(cardId, cardId, Health);
         }
     }
 }

@@ -23,7 +23,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5bf44d43-d097-4670-b136-e2b952264cd5"
+        "Id": "3305073c-fa68-4c53-bef7-176490315be3"
       }
     ],
     "imageUrl": "",
@@ -77,7 +77,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "d1adfc62-2167-479c-b8de-fb35ce66478b"
+        "Id": "95985827-7478-4237-98a6-330b20f6b15a"
       }
     ],
     "imageUrl": "",
@@ -113,7 +113,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "99c329d2-8228-4812-bee3-27f553927ee5"
+        "Id": "c7e4b6fc-8a1d-4d3b-a62b-58efb6d8fa13"
       }
     ],
     "imageUrl": "",
@@ -128,12 +128,14 @@
     "Id": "5",
     "Name": "Mr bombastic",
     "Type": 0,
-    "Description": "",
+    "Description": "Solo se puede jugar en turnos pares",
     "BaseAttack": 4,
     "BaseHealth": 4,
     "Effects": [],
     "imageUrl": "/images/cards/1.jpg",
-    "ConditionToPlay": null,
+    "ConditionToPlay": {
+      "$type": "EvenTurnCondition"
+    },
     "PlayEffect": null,
     "PlayEffectTriggerTimes": 0
   },
@@ -150,10 +152,28 @@
         "Trigger": 6,
         "Effect": {
           "$type": "DamagePlayerBasedOnCards",
-          "RoundedUp": false,
-          "Relation": 0,
+          "RoundedUp": true,
+          "Relation": 1,
           "TargetPlayer": 0,
-          "Filter": null
+          "Filter": {
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "Rata"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "WhichDeckToSearch": 1,
+            "WhichBoardToSearch": 3
+          }
         },
         "Duration": {
           "$type": "DurationByExecutions"
@@ -164,7 +184,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "f5cdbb99-cd5f-438a-97b0-d1d754e03d4e"
+        "Id": "2f286c1a-fee0-44d8-9e4b-728229329115"
       }
     ],
     "imageUrl": "",
@@ -197,7 +217,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "7bcdbcd3-a7f0-4bd8-89dd-90af3a41ee76"
+        "Id": "9dfb1c21-861c-4b47-9e25-6fddebfa2ae6"
       }
     ],
     "imageUrl": "",
@@ -229,7 +249,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "85b61a96-4c74-4b95-8486-5231889f0168"
+        "Id": "df1689b3-af33-4510-89e0-98399f1836b4"
       },
       {
         "Trigger": 0,
@@ -245,7 +265,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "1a585190-4e8f-4cce-83d4-d03b172e60c3"
+        "Id": "041400be-18f4-4ce1-90af-7e1af2555dfd"
       }
     ],
     "imageUrl": "",
@@ -258,7 +278,7 @@
     "Id": "9",
     "Name": "Matarratas defectuoso",
     "Type": 1,
-    "Description": "\u002B1/\u002B1 a todas las ratas de la mesa y el mazo",
+    "Description": "\u002B1/\u002B1 a todas tus ratas de la mesa y el mazo",
     "BaseAttack": -1,
     "BaseHealth": -1,
     "Effects": [
@@ -295,7 +315,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "6bb227f1-dfcd-4244-8b43-d2492c3ee9bb"
+        "Id": "279b6028-c4e4-465d-904f-73152956e51a"
       }
     ],
     "imageUrl": "",

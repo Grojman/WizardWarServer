@@ -2,8 +2,8 @@
 public class AppendCardToDeck : IEffect
 {
     public string CardId { get; set; } = string.Empty;
-    int CardsAmount  { get; set; } = 1;
-    bool ToRival { get; set; } = false;
+    public int CardsAmount  { get; set; } = 1;
+    public bool ToRival { get; set; } = false;
 
     public AppendCardToDeck() {}
     public AppendCardToDeck(int cardsAmount, string cardId, bool toRival)
@@ -17,8 +17,8 @@ public class AppendCardToDeck : IEffect
     {
         var cardInstance = CardManager.GetCardById(CardId);
 
-        var rival = state.GetRival(playerId);
-        var player = state.GetState(playerId);
+        var rival = state.GetRival(cardId.PlayerGuid);
+        var player = state.GetState(cardId.PlayerGuid);
 
         for (int i = 0; i < CardsAmount; i++)
         {

@@ -1,8 +1,8 @@
 public class GameFilter
 {
     public required CardFilter Filter { get; set; }
-    public PlayerType WhichDeckToSearch { get; set; }
-    public PlayerType WhichBoardToSearch { get; set; }
+    public PlayerType WhichDeckToSearch { get; set; } = PlayerType.NONE;
+    public PlayerType WhichBoardToSearch { get; set; } = PlayerType.NONE;
 
     public IEnumerable<CardInstance> GetMeetingCardsOnRivalBoard(GameState state, Guid playerId)
     {
