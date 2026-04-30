@@ -1,38 +1,6 @@
 [
   {
     "Deck": {
-      "id": 1,
-      "name": "Gran mago",
-      "description": "Mago serio, mago confiable. Sus cartas son seguras, no se anda con tonter\u00EDas. Nunca bebe en las fiestas porque sabe que le tocar\u00E1 conducir despu\u00E9s."
-    },
-    "Cards": {}
-  },
-  {
-    "Deck": {
-      "id": 2,
-      "name": "Mago silly",
-      "description": "Se\u00F1or y due\u00F1o de todas las tontunas. Rinde tu alma ante \u00E9l y ser\u00E1s recompensado con la frustraci\u00F3n de tus rivales."
-    },
-    "Cards": {}
-  },
-  {
-    "Deck": {
-      "id": 3,
-      "name": "Don Bola de Fuego Jr",
-      "description": "Reduce a cenizas a quienes se enfrentan a \u00E9l, y con suerte sus aliados escapan a su c\u00F3lera. Eso s\u00ED: que nadie le pregunte qu\u00E9 le pas\u00F3 a Don Bola de Fuego padre."
-    },
-    "Cards": {}
-  },
-  {
-    "Deck": {
-      "id": 4,
-      "name": "???",
-      "description": "Nadie conoce realmente el origen de esta criatura, si es una o varias; pero es majo y tranquilo, as\u00ED que se le hace un hueco. Es cuesti\u00F3n tuya si aceptar sus dudosos ofrecimientos o no."
-    },
-    "Cards": {}
-  },
-  {
-    "Deck": {
       "id": 5,
       "name": "Rata m\u00E1gica",
       "description": "\u00BFPero qu\u00E9? \u00BFQui\u00E9n ha dejado una rata entrar en la guerra? Si adem\u00E1s lleva sombrero y todo, y parece que se ha tra\u00EDdo a todos sus parientes. En fin, no ser\u00E9 yo quien la juzgue, pero no parece que trame nada bueno."
@@ -43,9 +11,11 @@
       "4": 2,
       "5": 3,
       "6": 1,
-      "7": 3,
+      "7": 1,
       "8": 3,
-      "9": 2
+      "9": 2,
+      "10": 3,
+      "11": 2
     }
   }
 ]

@@ -1,0 +1,1 @@
+public enum CountType { AT_LEAST, AT_MAX, EXACTLY, AT_LEAST_OVER, AT_MAX_UNDER}

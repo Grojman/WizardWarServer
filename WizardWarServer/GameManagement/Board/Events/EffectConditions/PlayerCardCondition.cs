@@ -2,20 +2,25 @@
 public class PlayerCardCondition : EffectCondition
 {
     public bool Me { get; set; } = false;
-    public PlayerCardCondition(bool me)
+    public CardFilter? Filter { get; set; }
+    public PlayerCardCondition(bool me, CardFilter? filter)
     {
         Me = me;
+        Filter = filter;
     }
     public override bool Check(Guid playerId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
-        if (ev is GameEvent.UnitPlayed u) return Me ? u.PlayerSource.Id == sourceCard.PlayerGuid : u.PlayerSource.Id != sourceCard.PlayerGuid;
-        if (ev is GameEvent.SpellPlayed s) return Me ? s.PlayerSource.Id == sourceCard.PlayerGuid : s.PlayerSource.Id != sourceCard.PlayerGuid;
+        CardInstance? card = null;
 
-        return false;
+        if (ev is GameEvent.UnitPlayed u) card = u.Unit;
+        if (ev is GameEvent.SpellPlayed s) card = s.Spell;
+
+        return (Me ? card?.PlayerGuid == sourceCard.PlayerGuid : card?.PlayerGuid != sourceCard.PlayerGuid)  &&
+                (Filter?.Check(card) ?? true);
     }
 
     public override EffectCondition Clone()
     {
-        return new PlayerCardCondition(Me);
+        return new PlayerCardCondition(Me, Filter);
     }
 }

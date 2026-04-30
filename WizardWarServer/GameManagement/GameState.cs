@@ -211,6 +211,7 @@ public class GameState
         } else
         {
             var card = player.GetFromHand(handIndex);
+            player.PlayedCards.Add(card);
 
             if (card.Definition.Type == CardType.Unit)
             {

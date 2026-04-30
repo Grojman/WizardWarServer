@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(DamagePlayerBasedOnCards), nameof(DamagePlayerBasedOnCards))]
 [JsonDerivedType(typeof(GrowStatsBasedOnCardPlayed), nameof(GrowStatsBasedOnCardPlayed))]
 [JsonDerivedType(typeof(AlterMySelf), nameof(AlterMySelf))]
+[JsonDerivedType(typeof(AppendGlobalEffect), nameof(AppendGlobalEffect))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

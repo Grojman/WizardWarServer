@@ -38,12 +38,12 @@ public static class MockData
         ],
         ["Rata"], "", null, null, 0),
         new CardDefinition("4",
-        "Flautista de Hamelin", CardType.Unit, "Cuando se juega una rata en mesa, consigo +1/+1", 2, 4, [
+        "Flautista de Hamelin", CardType.Unit, "Cuando se juega una rata en la mesa rival, consigo +1/+1", 2, 4, [
             new EffectInstance(
                 TriggerType.UnitPlayed,
                 new GrowStatsBasedOnCardPlayed("Rata", 1, 1, true),
                 new Always(),
-                new PlayerCardCondition(false)
+                new PlayerCardCondition(false, null)
             )
         ],
         [], "", null, null, 0),
@@ -93,49 +93,82 @@ public static class MockData
                 ),
                 new DurationByExecutions(1),
                 null
-                
             )
-        ], [], "", null, null, 0)
+        ], [], "", null, null, 0),
+        new CardDefinition("10", "Primo de Remi", CardType.Unit, "Cuando soy jugado, planto 3 Quesos en el mazo de mi jugador", 2, 3, [
+            new EffectInstance(
+                TriggerType.UnitPlayed,
+                new AppendCardToDeck(3, "7", false),
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            ),
+        ], [ "Rata" ], "", null, null, 0),
+        new CardDefinition("11", "El poder de los sumideros", CardType.Spell, "Has tenido que jugar al menos 3 ratas para poder jugarme. A partir de ahora, cada vez que juegues una rata consigue +1/+1", -1, -1, [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                new AppendGlobalEffect(
+                    new EffectInstance(
+                        TriggerType.UnitPlayed,
+                        new AlterMySelf(1, 1),
+                        new Always(),
+                        new PlayerCardCondition(true, new CardFilter()
+                        {
+                            CurrentFamilies = ["Rata"]
+                        })
+                    )
+                ),
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ], [], "", new CountPlayedCardsCondition(
+                    new CardFilter()
+                    {
+                        CurrentFamilies = ["Rata"]
+                    },
+                    PlayerType.PLAYER,
+                    3,
+                    CountType.AT_LEAST
+                ), null,0)
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
     {
-        {
-            new DeckDto(1,
-            "Gran mago", 
-            "Mago serio, mago confiable. Sus cartas son seguras, no se anda con tonterías. Nunca bebe en las fiestas porque sabe que le tocará conducir después."),
-            new()
-            {
+        // {
+        //     new DeckDto(1,
+        //     "Gran mago", 
+        //     "Mago serio, mago confiable. Sus cartas son seguras, no se anda con tonterías. Nunca bebe en las fiestas porque sabe que le tocará conducir después."),
+        //     new()
+        //     {
                 
-            }
-        },
-        {
-            new DeckDto(2,
-            "Mago silly",
-            "Señor y dueño de todas las tontunas. Rinde tu alma ante él y serás recompensado con la frustración de tus rivales."),
-            new()
-            {
+        //     }
+        // },
+        // {
+        //     new DeckDto(2,
+        //     "Mago silly",
+        //     "Señor y dueño de todas las tontunas. Rinde tu alma ante él y serás recompensado con la frustración de tus rivales."),
+        //     new()
+        //     {
                 
-            }
-        },
-        {
-            new DeckDto(3,
-            "Don Bola de Fuego Jr",
-            "Reduce a cenizas a quienes se enfrentan a él, y con suerte sus aliados escapan a su cólera. Eso sí: que nadie le pregunte qué le pasó a Don Bola de Fuego padre."),
-            new()
-            {
+        //     }
+        // },
+        // {
+        //     new DeckDto(3,
+        //     "Don Bola de Fuego Jr",
+        //     "Reduce a cenizas a quienes se enfrentan a él, y con suerte sus aliados escapan a su cólera. Eso sí: que nadie le pregunte qué le pasó a Don Bola de Fuego padre."),
+        //     new()
+        //     {
                 
-            }
-        },
-        {
-            new DeckDto(4,
-            "???",
-            "Nadie conoce realmente el origen de esta criatura, si es una o varias; pero es majo y tranquilo, así que se le hace un hueco. Es cuestión tuya si aceptar sus dudosos ofrecimientos o no."),
-            new()
-            {
+        //     }
+        // },
+        // {
+        //     new DeckDto(4,
+        //     "???",
+        //     "Nadie conoce realmente el origen de esta criatura, si es una o varias; pero es majo y tranquilo, así que se le hace un hueco. Es cuestión tuya si aceptar sus dudosos ofrecimientos o no."),
+        //     new()
+        //     {
                 
-            }
-        },
+        //     }
+        // },
         {
             new DeckDto(5,
             "Rata mágica",
@@ -147,9 +180,11 @@ public static class MockData
                 { "4", 2},
                 { "5", 3},
                 { "6", 1},
-                { "7", 3},
+                { "7", 1},
                 { "8", 3},
                 { "9", 2},
+                { "10", 3},
+                { "11", 2},
             }
         }
         

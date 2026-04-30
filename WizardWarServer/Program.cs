@@ -3,7 +3,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://0.0.0.0:5182");
+builder.WebHost.UseUrls("http://10.154.20.72:5182");
 var app = builder.Build();
 
 app.UseWebSockets();
@@ -13,9 +13,9 @@ app.UseWebSockets();
 GameManager gameManager = new GameManager();
 
 
-CardManager.SerializeCards(MockData.Cards);
+// CardManager.SerializeCards(MockData.Cards);
 
-foreach(var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
+// foreach(var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
 
 CardManager.Initialize();
 

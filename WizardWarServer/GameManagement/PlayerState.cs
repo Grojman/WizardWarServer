@@ -1,5 +1,6 @@
 public class PlayerState : IdentificableObject
 {
+    public List<CardInstance> PlayedCards { get; set; } = new();
     public PlayerConnection Connection { get; set; }
     public required string Name { get; set; }
     public int Health { get; set; } = 20;

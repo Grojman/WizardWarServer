@@ -23,7 +23,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "ef2572c4-4af2-4cf2-bda5-556f3e33be92"
+        "Id": "55dc015c-ec11-4514-8059-23d8e9f3b05f"
       }
     ],
     "imageUrl": "",
@@ -66,7 +66,9 @@
         "Trigger": 7,
         "Effect": {
           "$type": "AppendCardToDeck",
-          "CardId": "2"
+          "CardId": "2",
+          "CardsAmount": 2,
+          "ToRival": true
         },
         "Duration": {
           "$type": "DurationByExecutions"
@@ -77,7 +79,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "13f16dfc-ed2f-400f-8fc6-348d6a04ef53"
+        "Id": "3e1e8d70-9884-450a-94d7-731de05f0b71"
       }
     ],
     "imageUrl": "",
@@ -90,7 +92,7 @@
     "Id": "4",
     "Name": "Flautista de Hamelin",
     "Type": 0,
-    "Description": "Cuando se juega una rata en mesa, consigo \u002B1/\u002B1",
+    "Description": "Cuando se juega una rata en la mesa rival, consigo \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [
@@ -108,12 +110,13 @@
         },
         "Condition": {
           "$type": "PlayerCardCondition",
-          "Me": false
+          "Me": false,
+          "Filter": null
         },
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "c22960b2-e6b0-49d7-b8f5-453b15e8f47d"
+        "Id": "8638c99f-8a74-4f72-b608-a2f0ddb02d43"
       }
     ],
     "imageUrl": "",
@@ -184,7 +187,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "a988fc74-2d2f-483a-8b9b-ff08281c53bf"
+        "Id": "30b1539b-cede-4e03-a36b-be300520bb88"
       }
     ],
     "imageUrl": "",
@@ -217,7 +220,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "3ab168d4-e4d4-4c85-8c22-3399295f7455"
+        "Id": "ff23787c-c119-4444-99e3-09a561bbf472"
       }
     ],
     "imageUrl": "",
@@ -240,7 +243,9 @@
         "Trigger": 0,
         "Effect": {
           "$type": "AppendCardToDeck",
-          "CardId": "2"
+          "CardId": "2",
+          "CardsAmount": 1,
+          "ToRival": true
         },
         "Duration": {
           "$type": "Always"
@@ -249,7 +254,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "d640197b-3c5d-4457-b681-2a6bc3ff5782"
+        "Id": "b69c502c-8966-4bd5-ac95-b830457859c9"
       },
       {
         "Trigger": 0,
@@ -265,7 +270,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "f801eab9-4ec6-4472-aed5-7a3720d76da8"
+        "Id": "ebf77d06-6b8e-4ed0-bbb7-184e8880d655"
       }
     ],
     "imageUrl": "",
@@ -315,11 +320,132 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "d1fd3f9a-ba7e-4ea6-b995-c693ea22aaa8"
+        "Id": "9a53cfd8-9649-45f8-aa0e-8cffa0d12d05"
       }
     ],
     "imageUrl": "",
     "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Rata"
+    ],
+    "Id": "10",
+    "Name": "Primo de Remi",
+    "Type": 0,
+    "Description": "Cuando soy jugado, planto 3 Quesos en el mazo de mi jugador",
+    "BaseAttack": 2,
+    "BaseHealth": 3,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effect": {
+          "$type": "AppendCardToDeck",
+          "CardId": "7",
+          "CardsAmount": 3,
+          "ToRival": false
+        },
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "484c1100-fef6-402b-8140-ea92fe3807db"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "11",
+    "Name": "El poder de los sumideros",
+    "Type": 1,
+    "Description": "Has tenido que jugar al menos 3 ratas para poder jugarme. A partir de ahora, cada vez que juegues una rata consigue \u002B1/\u002B1",
+    "BaseAttack": -1,
+    "BaseHealth": -1,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effect": {
+          "$type": "AppendGlobalEffect",
+          "Effect": {
+            "Trigger": 5,
+            "Effect": {
+              "$type": "AlterMySelf",
+              "Damage": 1,
+              "Health": 1
+            },
+            "Duration": {
+              "$type": "Always"
+            },
+            "Condition": {
+              "$type": "PlayerCardCondition",
+              "Me": true,
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": [
+                  "Rata"
+                ],
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              }
+            },
+            "SourceCard": null,
+            "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+            "Expired": false,
+            "Id": "3057bc75-1538-4501-84db-7835fb3ce63f"
+          }
+        },
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "a53ddc59-ee2a-445f-8586-9a251a3d6018"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountPlayedCardsCondition",
+      "Filter": {
+        "CurrentAttack": null,
+        "CurrentHealth": null,
+        "Attack": null,
+        "Health": null,
+        "Families": null,
+        "CurrentFamilies": [
+          "Rata"
+        ],
+        "DefinitionId": null,
+        "Id": null,
+        "HasEffect": null,
+        "NumberOfTriggersLeft": null,
+        "MustMeetAllCriteria": false
+      },
+      "Target": 0,
+      "Amount": 3,
+      "CountType": 0
+    },
     "PlayEffect": null,
     "PlayEffectTriggerTimes": 0
   }

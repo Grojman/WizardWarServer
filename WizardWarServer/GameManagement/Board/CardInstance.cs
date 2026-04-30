@@ -33,10 +33,12 @@ public class CardInstance : IdentificableObject
         Effects = new();
         foreach(EffectInstance e in def.Effects) Effects.Add(e.Clone());
 
-        foreach(EffectInstance e in Effects)
-        {
-            e.PlayerSourceId = PlayerGuid;
-            e.SourceCard = this;
-        }
+        foreach(EffectInstance e in Effects) AssignEffect(e);
+    }
+
+    public void AssignEffect(EffectInstance e)
+    {
+        e.PlayerSourceId = PlayerGuid;
+        e.SourceCard = this;
     }
 }
