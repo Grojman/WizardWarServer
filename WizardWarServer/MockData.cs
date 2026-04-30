@@ -109,7 +109,7 @@ public static class MockData
                 new AppendGlobalEffect(
                     new EffectInstance(
                         TriggerType.UnitPlayed,
-                        new AlterMySelf(1, 1),
+                        new AlterMySelf(1, 1, true),
                         new Always(),
                         new PlayerCardCondition(true, new CardFilter()
                         {

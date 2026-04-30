@@ -3,7 +3,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://10.154.20.72:5182");
+builder.WebHost.UseUrls("http://localhost:5182");
 var app = builder.Build();
 
 app.UseWebSockets();

@@ -22,12 +22,12 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
     {
         return e switch
         {
-            GameEvent.CardDrawnEvent cde => new CardDrawnEvent(cde.Source.Id, cde.PlayerSource.Id, CardDto.Generate(cde.CardInstance, state)),
+            GameEvent.CardDrawnEvent cde => new CardDrawnEvent(cde.Source.Id, cde.PlayerSource.Id, CardDto.Generate(cde.CardInstance, state, false)),
             GameEvent.PlayerHealthChanged phc => new PlayerHealthChanged(phc.Source.Id, phc.PlayerSource.Id, phc.Amount),
             GameEvent.UnitHealthChanged uhc => new UnitHealthChanged(uhc.Source.Id, uhc.PlayerSource.Id, uhc.Card.Id, uhc.Amount),
             GameEvent.UnitDamageChanged udc => new UnitDamageChanged(udc.Source.Id, udc.PlayerSource.Id, udc.Card.Id, udc.Amount),
-            GameEvent.UnitPlayed up => new UnitPlayed(up.Source.Id, up.PlayerSource.Id, CardDto.Generate(up.Unit, state), up.BoardPosition),
-            GameEvent.SpellPlayed sp => new SpellPlayed(sp.Source.Id, sp.PlayerSource.Id, CardDto.Generate(sp.Spell, state)),
+            GameEvent.UnitPlayed up => new UnitPlayed(up.Source.Id, up.PlayerSource.Id, CardDto.Generate(up.Unit, state, false), up.BoardPosition),
+            GameEvent.SpellPlayed sp => new SpellPlayed(sp.Source.Id, sp.PlayerSource.Id, CardDto.Generate(sp.Spell, state, false)),
             GameEvent.UnitDeath ud => new UnitDeath(ud.Source.Id, ud.PlayerSource.Id, ud.Unit.Id),
             GameEvent.DeckOutOfCards doc => new DeckOutOfCards(doc.Source.Id, doc.PlayerSource.Id),
             GameEvent.CardAttacked ca => new CardAttacked(ca.Source.Id, ca.PlayerSource.Id, ca.Attacker.Id, ca.TargetType.ToString(), ca.TargetIndex, ca.Attacker.CurrentAttack, ca.Deffender?.CurrentAttack ?? 0),

@@ -4,10 +4,10 @@ public record PlayerStateDto(Guid Id, string Name, CardDto?[] Board, int Health,
     {
         return new (state.Id,
                     state.Name,
-                    [.. state.Board.Select(n => n is null ? null : CardDto.Generate(n, gameState))],
+                    [.. state.Board.Select(n => n is null ? null : CardDto.Generate(n, gameState, true))],
                     state.Health,
                     state.Hand.Count,
-                    hidden ? [] : [.. state.Hand.Select(n => CardDto.Generate(n, gameState))],
+                    hidden ? [] : [.. state.Hand.Select(n => CardDto.Generate(n, gameState, false))],
                     DeckStateDto.Generate(state.Deck));
     }
 }
