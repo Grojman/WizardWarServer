@@ -11,6 +11,8 @@ public class PlayerState : IdentificableObject
 
     public CardInstance?[] Board { get; set; } = new CardInstance[4];
 
+    public CardInstance? LastSpellPlayed = null;
+
     public CardInstance GetFromHand(int index)
     {
         var card = Hand[index];

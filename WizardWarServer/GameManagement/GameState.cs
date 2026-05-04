@@ -2,12 +2,17 @@ public class GameState
 {
     const int INITIAL_HAND = 3;
     public List<EffectInstance> GlobalEffects{ get; } = new();
-    public GameActionResult GameActionResult { get; set; } = new();
+    public GameActionResult GameActionResult { get; set; }
     public PlayerState Player1 { get; set; }
     public PlayerState Player2 { get; set; }
     public int CurrentTurn { get; set; }
 
     public int TurnCounter { get; set; }
+
+    public GameState()
+    {
+        GameActionResult = new() { State = this };
+    }
 
     public void Initialize(
         PlayerConnection c1,
@@ -35,7 +40,7 @@ public class GameState
             Deck = new Deck(deck2.name, dD2, c2.Guid, deck2.id)
         };
 
-        GameActionResult.Events.Enqueue(
+        GameActionResult.AddEvent(
             new GameEvent.PlayerHealthChanged()
             {
                 PlayerSource = Player1,
@@ -45,7 +50,7 @@ public class GameState
             }
         );
 
-        GameActionResult.Events.Enqueue(
+        GameActionResult.AddEvent(
             new GameEvent.PlayerHealthChanged()
             {
                 PlayerSource = Player2,
@@ -76,7 +81,7 @@ public class GameState
 
         target.Deck.AddCard(cardToAdd);
 
-        GameActionResult.Events.Enqueue(gevent);
+        GameActionResult.AddEvent(gevent);
 
         ApplyEffect(TriggerType.CardAddedToDeck, gevent);
     }
@@ -92,7 +97,7 @@ public class GameState
             AffectedCards = affectedCards
         };
 
-        GameActionResult.Events.Enqueue(gevent);
+        GameActionResult.AddEvent(gevent);
 
         ApplyEffect(TriggerType.DeckModified, gevent);
     }
@@ -101,7 +106,7 @@ public class GameState
     {
         var state = GetState(player.Guid);
 
-        if (cardIndex != -1 && cardIndex >= state.Board.Length)
+        if (cardIndex != -1 && cardIndex >= state.Board.Length + 1)
         {
             Console.WriteLine("WTF. Index is not valid for an effect to play");
         } else if(state.Board[cardIndex]?.SpecialEffect is null)
@@ -109,8 +114,8 @@ public class GameState
             Console.WriteLine("WTF. The card either doesnt exist or it has no play effect");
         } else
         {
-            var card = state.Board[cardIndex];
-            card?.SpecialEffect.Execute(state.Id, card, this, null);
+            var card = cardIndex == state.Board.Length ? state.LastSpellPlayed : state.Board[cardIndex];
+            card?.SpecialEffect?.Execute(state.Id, card, this, null);
 
             var gevent  = new GameEvent.CardEventPlayed()
             {
@@ -119,7 +124,7 @@ public class GameState
                 PlayerSource = state,
             };
 
-            GameActionResult.Events.Enqueue(gevent);
+            GameActionResult.AddEvent(gevent);
             ApplyEffect(TriggerType.CardEffectPlayed, gevent);
         }
     }
@@ -168,6 +173,12 @@ public class GameState
             ApplyEffect(TriggerType.TurnEnd, null);
 
             TurnCounter++;
+
+            if (TurnCounter % 2 == 0)
+            {
+                DrawCard(Player1.Connection);
+                DrawCard(Player2.Connection);
+            }
         }
         CleanExpiredEffects();
     }
@@ -182,7 +193,7 @@ public class GameState
         {
             GameActionResult.GameEnded = true;
             GameActionResult.Winner = GetRival(player.Id).Id;
-            GameActionResult.Events.Enqueue(new GameEvent.DeckOutOfCards()
+            GameActionResult.AddEvent(new GameEvent.DeckOutOfCards()
             {
                 PlayerSource = player,
                 Source = player
@@ -197,7 +208,7 @@ public class GameState
                 CardInstance = card,
                 PlayerId = player.Id
             };
-            GameActionResult.Events.Enqueue(gevent);
+            GameActionResult.AddEvent(gevent);
             ApplyEffect(TriggerType.DrawCard, gevent);
         }
     }
@@ -227,17 +238,18 @@ public class GameState
                     BoardPosition = boardIndex,
                     Unit = card
                 };
-                GameActionResult.Events.Enqueue(gevent);
+                GameActionResult.AddEvent(gevent);
                 ApplyEffect(TriggerType.UnitPlayed, gevent);
             } else
             {
+                player.LastSpellPlayed = card;
                 var gevent = new GameEvent.SpellPlayed()
                 {
                     PlayerSource = player,
                     Source = player,
                     Spell = card
                 };
-                GameActionResult.Events.Enqueue(gevent);
+                GameActionResult.AddEvent(gevent);
                 ApplyEffect(card, TriggerType.SpellPlayed, gevent);
                 ApplyEffect(TriggerType.SpellPlayed, gevent);   
             }
@@ -269,20 +281,20 @@ public class GameState
             switch (targetType)
             {
                 case TargetType.PLAYER:
-                    GameActionResult.Events.Enqueue(gevent);
+                    GameActionResult.AddEvent(gevent);
                     ApplyEffect(TriggerType.CardAttacked, gevent);
                     AlterPlayerHealth(card, player, -card.CurrentAttack, false);
 
                     break;
                 case TargetType.RIVAL:
-                    GameActionResult.Events.Enqueue(gevent);
+                    GameActionResult.AddEvent(gevent);
                     ApplyEffect(TriggerType.CardAttacked, gevent);
                     AlterPlayerHealth(card, GetRival(player.Id), -card.CurrentAttack, false);
                     break;
                 case TargetType.ENEMY_BOARD:
                     var cardTarget = GetRival(player.Id).Board[target];
                     gevent.Deffender = cardTarget;
-                    GameActionResult.Events.Enqueue(gevent);
+                    GameActionResult.AddEvent(gevent);
                     ApplyEffect(TriggerType.CardAttacked, gevent);
                     if(cardTarget is null)
                     {
@@ -298,7 +310,7 @@ public class GameState
                 case TargetType.OWN_BOARD:
                     var cardTarget2 = player.Board[target];
                     gevent.Deffender = cardTarget2;
-                    GameActionResult.Events.Enqueue(gevent);
+                    GameActionResult.AddEvent(gevent);
                     ApplyEffect(TriggerType.CardAttacked, gevent);
                     if(cardTarget2 is null)
                     {
@@ -371,7 +383,7 @@ public class GameState
             Amount = Amount
         };
 
-        if (enqueueToUsers) GameActionResult.Events.Enqueue(gevent);
+        if (enqueueToUsers) GameActionResult.AddEvent(gevent);
         ApplyEffect(TriggerType.UnitHealthChanged, gevent);
 
         if (checkKill) CheckKill(source, Unit);
@@ -397,7 +409,7 @@ public class GameState
             Amount = Amount
         };
 
-        GameActionResult.Events.Enqueue(gevent);
+        GameActionResult.AddEvent(gevent);
         ApplyEffect(TriggerType.UnitDamageChanged, gevent);
     }
 
@@ -418,7 +430,7 @@ public class GameState
             GameActionResult.GameEnded = true;
         }
 
-        if (enqueueToUsers) GameActionResult.Events.Enqueue(gevent);
+        if (enqueueToUsers) GameActionResult.AddEvent(gevent);
         ApplyEffect(TriggerType.PlayerHealthChanged, gevent);
     }
 
@@ -437,7 +449,7 @@ public class GameState
 
         foreach(EffectInstance e in Unit.Effects) if (e.Trigger == TriggerType.UnitDeath) e.TryExecute(this, gevent);
 
-        GameActionResult.Events.Enqueue(gevent);
+        GameActionResult.AddEvent(gevent);
         ApplyEffect(TriggerType.UnitDeath, gevent);
     }
 

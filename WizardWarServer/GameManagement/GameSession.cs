@@ -72,8 +72,8 @@ public class GameSession
         await p1.Send("game_state", GameStateDto.Generate(state.Player1, state.Player2, state.CurrentTurn == 1, state));
         await p2.Send("game_state", GameStateDto.Generate(state.Player2, state.Player1, state.CurrentTurn == 2, state));
 
-        await p1.Send("game_events", state.GameActionResult.Events.Select(n => GameEventDto.Generate(n, state)));
-        await p2.Send("game_events", state.GameActionResult.Events.Select(n => GameEventDto.Generate(n, state)));
+        await p1.Send("game_events", state.GameActionResult.Events);
+        await p2.Send("game_events", state.GameActionResult.Events);
 
         state.GameActionResult.Events.Clear();
     }

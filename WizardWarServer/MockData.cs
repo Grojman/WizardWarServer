@@ -74,7 +74,7 @@ public static class MockData
         ], [], "", null, null, -1),
         new CardDefinition("8", "Madriguera de ratas", CardType.Unit, "Fin de ronda: me inflinjo 2 de daño y añado 1 rata al mazo rival", 0, 6, [
             new EffectInstance(TriggerType.TurnEnd, new AppendCardToDeck(1, "2", true), new Always(), null),
-            new EffectInstance(TriggerType.TurnEnd, new AlterMySelf(0, -2), new Always(), null)
+            new EffectInstance(TriggerType.TurnEnd, new AlterMySelf(0, -2, false), new Always(), null)
         ],
         ["Rata"], "", null, null, 0),
         new CardDefinition("9", "Matarratas defectuoso", CardType.Spell, "+1/+1 a todas tus ratas de la mesa y el mazo", -1, -1, [
@@ -128,7 +128,48 @@ public static class MockData
                     PlayerType.PLAYER,
                     3,
                     CountType.AT_LEAST
-                ), null,0)
+                ), null,0),
+        new CardDefinition("12", "Arañazos", CardType.Spell, "0/-1 a la mesa enemiga ahora, y al final de este turno", -1, -1, [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                new AlterUnitStatsEffect(-1, 0, 
+                    new GameFilter()
+                    {
+                        WhichBoardToSearch = PlayerType.RIVAL,
+                        Filter = new CardFilter()
+                    }
+                ),
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            ),
+            new EffectInstance(
+                TriggerType.TurnEnd,
+                new AlterUnitStatsEffect(-1, 0, 
+                    new GameFilter()
+                    {
+                        WhichBoardToSearch = PlayerType.RIVAL,
+                        Filter = new CardFilter()
+                    }
+                ),
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ], [ "Rata" ], "", null, null, 0),
+        new CardDefinition("13", "Mordedura de rata", CardType.Spell, "0/-3 a un enemigo en la mesa (izq). HABILIDAD: Roba una carta", -1, -1, [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                new AlterUnitStatsEffect(
+                    -3, 0, new GameFilter()
+                    {
+                        WhichBoardToSearch = PlayerType.RIVAL,
+                        MaxLength = 1,
+                        Filter = new CardFilter()
+                    }
+                ),
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ], [ "Rata" ], "", null, new DrawCardEffect(), 1)
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -185,6 +226,8 @@ public static class MockData
                 { "9", 2},
                 { "10", 3},
                 { "11", 2},
+                { "12", 3},
+                { "13", 2},
             }
         }
         
