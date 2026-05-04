@@ -169,7 +169,47 @@ public static class MockData
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ], [ "Rata" ], "", null, new DrawCardEffect(), 1)
+        ], [ "Rata" ], "", null, new DrawCardEffect(), 1),
+
+
+        new CardDefinition("14", "Libro de Caballería", CardType.Spell, "Roba una carta y cura 2 de vida al jugador", -1, -1, [
+            new EffectInstance(TriggerType.SpellPlayed, new DrawCardEffect(), new DurationByExecutions(1),new IHaveBeenPlayedCondition()),
+            new EffectInstance(TriggerType.SpellPlayed, new AlterPlayerHealthEffect(2, false), new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ], ["Libro"], "", null, null, 0),
+        new CardDefinition("15", "La venta", CardType.Unit, "Cuando se juega una unidad, se le otorga +2/-1", 2, 5, [
+            new EffectInstance(
+                TriggerType.UnitPlayed, new AlterMySelf(2, -1, true), new Always(), new PlayerCardCondition(true, null)
+            )
+        ], [], "", null, null, 0),
+        new CardDefinition("16", "Molino de viento", CardType.Unit, "", 3, 3, [], ["Paranoia"], "", null, null, 0),
+        new CardDefinition("17", "Rebaño de corderos", CardType.Unit, "", 2, 2, [], ["Paranoia"], "", null, null, 0),
+        new CardDefinition("18", "Dulcinea del Toboso", CardType.Unit, "Final de ronda: +2/+3 a Don Quijote, si se encuentra en mesa", 3, 6, [
+            new EffectInstance(TriggerType.TurnEnd, new AlterUnitStatsEffect(3, 2, new()
+            {
+                WhichBoardToSearch = PlayerType.PLAYER,
+                Filter = new() {DefinitionId = "19"}
+            }), new Always(), null)
+        ], ["Paranoia"], "", null, null, 0),
+        new CardDefinition("19", "El Ingenioso Hidalgo Don Quijote de la Mancha", CardType.Unit, "Has jugado al menos 5 libros de caballería. Las Paranoias ganan +4/+4. Cuando se juega un libro de caballería, curo otros 2 de vida a mi jugador", 8, 8, [
+            new EffectInstance(TriggerType.UnitPlayed, new AlterUnitStatsEffect(4, 4, 
+                new GameFilter()
+                {
+                    WhichBoardToSearch = PlayerType.PLAYER,
+                    WhichDeckToSearch = PlayerType.PLAYER,
+                    Filter = new CardFilter()
+                    {
+                        CurrentFamilies = ["Paranoia"]
+                    }
+                }
+            ), new DurationByExecutions(1), new IHaveBeenPlayedCondition()),
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                new AlterPlayerHealthEffect(2, false), new Always(), new FilterPlayerCardCondition(new ()
+                {
+                    DefinitionId = "14"
+                })
+            )
+        ], ["Caballero"], "", new CountPlayedCardsCondition(new() {DefinitionId = "14"}, PlayerType.PLAYER, 5 ,CountType.AT_LEAST), null, 0)
         
     ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
