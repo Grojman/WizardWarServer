@@ -8,14 +8,12 @@ var app = builder.Build();
 
 app.UseWebSockets();
 
-//TODO: HAY QUE GENERAR LOS EVENTOS NADA MÁS SE AGREGUEN A LA LISTA PORQUE LAS CARTAS SON REFERENCIAS DE OBJETOS Y SI SE HACE DESPUÉS SALDRÁN DIRECTAMENTE MODIFICADAS. ADEMÁS, HACER QUE DESPUÉS DE CADA RONDA LOS JUGADORES ROBEN UNA CARTA
 
-GameManager gameManager = new GameManager();
+GameManager gameManager = new();
 
+CardManager.SerializeCards(MockData.Cards);
 
-// CardManager.SerializeCards(MockData.Cards);
-
-// foreach(var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
+foreach(var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
 
 CardManager.Initialize();
 

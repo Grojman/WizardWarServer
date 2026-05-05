@@ -8,6 +8,8 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(EvenTurnCondition), nameof(EvenTurnCondition))]
 [JsonDerivedType(typeof(CountPlayedCardsCondition), nameof(CountPlayedCardsCondition))]
 [JsonDerivedType(typeof(FilterPlayerCardCondition), nameof(FilterPlayerCardCondition))]
+[JsonDerivedType(typeof(MultiEffectCondition), nameof(MultiEffectCondition))]
+[JsonDerivedType(typeof(CountCardCondition), nameof(CountCardCondition))]
 
 //TODO: ADD DERIVED TYPES HERE
 public abstract class EffectCondition : ICloneable<EffectCondition>

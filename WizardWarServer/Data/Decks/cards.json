@@ -5,15 +5,17 @@
     "Name": "Truco Ratero",
     "Type": 1,
     "Description": "Roba tres cartas",
-    "BaseAttack": -1,
-    "BaseHealth": -1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
     "Effects": [
       {
         "Trigger": 6,
-        "Effect": {
-          "$type": "DrawCardEffect",
-          "CardAmount": 3
-        },
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 3
+          }
+        ],
         "Duration": {
           "$type": "DurationByExecutions"
         },
@@ -23,7 +25,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "55dc015c-ec11-4514-8059-23d8e9f3b05f"
+        "Id": "aa0fd325-1e32-4b2c-800b-e793e7058ad3"
       }
     ],
     "imageUrl": "",
@@ -64,12 +66,14 @@
     "Effects": [
       {
         "Trigger": 7,
-        "Effect": {
-          "$type": "AppendCardToDeck",
-          "CardId": "2",
-          "CardsAmount": 2,
-          "ToRival": true
-        },
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "2",
+            "CardsAmount": 2,
+            "ToRival": true
+          }
+        ],
         "Duration": {
           "$type": "DurationByExecutions"
         },
@@ -79,7 +83,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "3e1e8d70-9884-450a-94d7-731de05f0b71"
+        "Id": "777c9a03-5335-4772-afaf-1a13ba63ca39"
       }
     ],
     "imageUrl": "",
@@ -98,13 +102,15 @@
     "Effects": [
       {
         "Trigger": 5,
-        "Effect": {
-          "$type": "GrowStatsBasedOnCardPlayed",
-          "FamilyType": "Rata",
-          "Health": 1,
-          "Damage": 1,
-          "ApplyToMyself": true
-        },
+        "Effects": [
+          {
+            "$type": "GrowStatsBasedOnCardPlayed",
+            "FamilyType": "Rata",
+            "Health": 1,
+            "Damage": 1,
+            "ApplyToMyself": true
+          }
+        ],
         "Duration": {
           "$type": "Always"
         },
@@ -116,7 +122,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "8638c99f-8a74-4f72-b608-a2f0ddb02d43"
+        "Id": "8c74e412-d231-4baf-9ee9-4cb7cd596289"
       }
     ],
     "imageUrl": "",
@@ -147,37 +153,40 @@
     "Id": "6",
     "Name": "Flow rata",
     "Type": 1,
-    "Description": "Curo al jugador uno  por cada rata que tenga el rival en el mazo.",
-    "BaseAttack": -1,
-    "BaseHealth": -1,
+    "Description": "Curo al jugador uno por cada rata que tenga el rival en el mazo.",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
     "Effects": [
       {
         "Trigger": 6,
-        "Effect": {
-          "$type": "DamagePlayerBasedOnCards",
-          "RoundedUp": true,
-          "Relation": 1,
-          "TargetPlayer": 0,
-          "Filter": {
+        "Effects": [
+          {
+            "$type": "DamagePlayerBasedOnCards",
+            "RoundedUp": true,
+            "Relation": 1,
+            "TargetPlayer": 0,
             "Filter": {
-              "CurrentAttack": null,
-              "CurrentHealth": null,
-              "Attack": null,
-              "Health": null,
-              "Families": null,
-              "CurrentFamilies": [
-                "Rata"
-              ],
-              "DefinitionId": null,
-              "Id": null,
-              "HasEffect": null,
-              "NumberOfTriggersLeft": null,
-              "MustMeetAllCriteria": false
-            },
-            "WhichDeckToSearch": 1,
-            "WhichBoardToSearch": 3
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": [
+                  "Rata"
+                ],
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 1,
+              "WhichBoardToSearch": 3,
+              "MaxLength": 0
+            }
           }
-        },
+        ],
         "Duration": {
           "$type": "DurationByExecutions"
         },
@@ -187,7 +196,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "30b1539b-cede-4e03-a36b-be300520bb88"
+        "Id": "83a144cb-1654-40dc-bf30-bd661c160f02"
       }
     ],
     "imageUrl": "",
@@ -201,16 +210,18 @@
     "Name": "Queso",
     "Type": 1,
     "Description": "Curo 3 de vida al usuario",
-    "BaseAttack": -1,
-    "BaseHealth": -1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
     "Effects": [
       {
         "Trigger": 6,
-        "Effect": {
-          "$type": "AlterPlayerHealthEffect",
-          "Amount": 3,
-          "ToRival": false
-        },
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 3,
+            "ToRival": false
+          }
+        ],
         "Duration": {
           "$type": "DurationByExecutions"
         },
@@ -220,13 +231,13 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "ff23787c-c119-4444-99e3-09a561bbf472"
+        "Id": "07d8621c-891b-48d7-a492-bc2deee7cb2f"
       }
     ],
     "imageUrl": "",
     "ConditionToPlay": null,
     "PlayEffect": null,
-    "PlayEffectTriggerTimes": -1
+    "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [
@@ -241,12 +252,14 @@
     "Effects": [
       {
         "Trigger": 0,
-        "Effect": {
-          "$type": "AppendCardToDeck",
-          "CardId": "2",
-          "CardsAmount": 1,
-          "ToRival": true
-        },
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "2",
+            "CardsAmount": 1,
+            "ToRival": true
+          }
+        ],
         "Duration": {
           "$type": "Always"
         },
@@ -254,15 +267,18 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "b69c502c-8966-4bd5-ac95-b830457859c9"
+        "Id": "1cd3d20f-39fa-4d7f-af99-335c150c457a"
       },
       {
         "Trigger": 0,
-        "Effect": {
-          "$type": "AlterMySelf",
-          "Damage": 0,
-          "Health": -2
-        },
+        "Effects": [
+          {
+            "$type": "AlterMySelf",
+            "Damage": 0,
+            "Health": -2,
+            "UseGameEvent": false
+          }
+        ],
         "Duration": {
           "$type": "Always"
         },
@@ -270,7 +286,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "ebf77d06-6b8e-4ed0-bbb7-184e8880d655"
+        "Id": "7609a7cf-3e28-440f-a749-dd61815dec08"
       }
     ],
     "imageUrl": "",
@@ -284,43 +300,48 @@
     "Name": "Matarratas defectuoso",
     "Type": 1,
     "Description": "\u002B1/\u002B1 a todas tus ratas de la mesa y el mazo",
-    "BaseAttack": -1,
-    "BaseHealth": -1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
     "Effects": [
       {
         "Trigger": 6,
-        "Effect": {
-          "$type": "AlterUnitStatsEffect",
-          "Health": 1,
-          "Damage": 1,
-          "Filter": {
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": 1,
+            "Damage": 1,
             "Filter": {
-              "CurrentAttack": null,
-              "CurrentHealth": null,
-              "Attack": null,
-              "Health": null,
-              "Families": null,
-              "CurrentFamilies": [
-                "Rata"
-              ],
-              "DefinitionId": null,
-              "Id": null,
-              "HasEffect": null,
-              "NumberOfTriggersLeft": null,
-              "MustMeetAllCriteria": false
-            },
-            "WhichDeckToSearch": 0,
-            "WhichBoardToSearch": 0
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": [
+                  "Rata"
+                ],
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 0,
+              "WhichBoardToSearch": 0,
+              "MaxLength": 0
+            }
           }
-        },
+        ],
         "Duration": {
           "$type": "DurationByExecutions"
         },
-        "Condition": null,
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "9a53cfd8-9649-45f8-aa0e-8cffa0d12d05"
+        "Id": "422c7ccc-2ecf-481f-8733-18686b4d122b"
       }
     ],
     "imageUrl": "",
@@ -341,12 +362,14 @@
     "Effects": [
       {
         "Trigger": 5,
-        "Effect": {
-          "$type": "AppendCardToDeck",
-          "CardId": "7",
-          "CardsAmount": 3,
-          "ToRival": false
-        },
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "7",
+            "CardsAmount": 3,
+            "ToRival": false
+          }
+        ],
         "Duration": {
           "$type": "DurationByExecutions"
         },
@@ -356,7 +379,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "484c1100-fef6-402b-8140-ea92fe3807db"
+        "Id": "e42f0ee8-f1e1-4e8d-8409-c0750b35cee6"
       }
     ],
     "imageUrl": "",
@@ -369,49 +392,54 @@
     "Id": "11",
     "Name": "El poder de los sumideros",
     "Type": 1,
-    "Description": "Has tenido que jugar al menos 3 ratas para poder jugarme. A partir de ahora, cada vez que juegues una rata consigue \u002B1/\u002B1",
-    "BaseAttack": -1,
-    "BaseHealth": -1,
+    "Description": "Has tenido que jugar al menos 3 ratas...",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
     "Effects": [
       {
         "Trigger": 6,
-        "Effect": {
-          "$type": "AppendGlobalEffect",
-          "Effect": {
-            "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AppendGlobalEffect",
             "Effect": {
-              "$type": "AlterMySelf",
-              "Damage": 1,
-              "Health": 1
-            },
-            "Duration": {
-              "$type": "Always"
-            },
-            "Condition": {
-              "$type": "PlayerCardCondition",
-              "Me": true,
-              "Filter": {
-                "CurrentAttack": null,
-                "CurrentHealth": null,
-                "Attack": null,
-                "Health": null,
-                "Families": null,
-                "CurrentFamilies": [
-                  "Rata"
-                ],
-                "DefinitionId": null,
-                "Id": null,
-                "HasEffect": null,
-                "NumberOfTriggersLeft": null,
-                "MustMeetAllCriteria": false
-              }
-            },
-            "SourceCard": null,
-            "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
-            "Expired": false,
-            "Id": "3057bc75-1538-4501-84db-7835fb3ce63f"
+              "Trigger": 5,
+              "Effects": [
+                {
+                  "$type": "AlterMySelf",
+                  "Damage": 1,
+                  "Health": 1,
+                  "UseGameEvent": true
+                }
+              ],
+              "Duration": {
+                "$type": "Always"
+              },
+              "Condition": {
+                "$type": "PlayerCardCondition",
+                "Me": true,
+                "Filter": {
+                  "CurrentAttack": null,
+                  "CurrentHealth": null,
+                  "Attack": null,
+                  "Health": null,
+                  "Families": null,
+                  "CurrentFamilies": [
+                    "Rata"
+                  ],
+                  "DefinitionId": null,
+                  "Id": null,
+                  "HasEffect": null,
+                  "NumberOfTriggersLeft": null,
+                  "MustMeetAllCriteria": false
+                }
+              },
+              "SourceCard": null,
+              "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+              "Expired": false,
+              "Id": "a424e789-f3e3-4885-902d-de55e28308d9"
+            }
           }
-        },
+        ],
         "Duration": {
           "$type": "DurationByExecutions"
         },
@@ -421,7 +449,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "a53ddc59-ee2a-445f-8586-9a251a3d6018"
+        "Id": "f963a017-4ca7-47f4-b635-7bc24dc56989"
       }
     ],
     "imageUrl": "",
@@ -448,5 +476,844 @@
     },
     "PlayEffect": null,
     "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Rata"
+    ],
+    "Id": "12",
+    "Name": "Ara\u00F1azos",
+    "Type": 1,
+    "Description": "0/-1 a la mesa enemiga ahora y al final de este turno",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": -1,
+            "Damage": 0,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 1,
+              "MaxLength": 0
+            }
+          },
+          {
+            "$type": "AppendGlobalEffect",
+            "Effect": {
+              "Trigger": 0,
+              "Effects": [
+                {
+                  "$type": "AlterUnitStatsEffect",
+                  "Health": -1,
+                  "Damage": 0,
+                  "Filter": {
+                    "Filter": {
+                      "CurrentAttack": null,
+                      "CurrentHealth": null,
+                      "Attack": null,
+                      "Health": null,
+                      "Families": null,
+                      "CurrentFamilies": null,
+                      "DefinitionId": null,
+                      "Id": null,
+                      "HasEffect": null,
+                      "NumberOfTriggersLeft": null,
+                      "MustMeetAllCriteria": false
+                    },
+                    "WhichDeckToSearch": 3,
+                    "WhichBoardToSearch": 1,
+                    "MaxLength": 0
+                  }
+                }
+              ],
+              "Duration": {
+                "$type": "DurationByExecutions"
+              },
+              "Condition": {
+                "$type": "IHaveBeenPlayedCondition"
+              },
+              "SourceCard": null,
+              "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+              "Expired": false,
+              "Id": "24649931-cce4-4b70-88df-53b2b13ff0b5"
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "a903004e-1b1c-426e-8170-b54d32f13ae1"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Rata"
+    ],
+    "Id": "13",
+    "Name": "Mordedura de rata",
+    "Type": 1,
+    "Description": "0/-3 a un enemigo en la mesa (izq). HABILIDAD: Roba una carta",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": -3,
+            "Damage": 0,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 1,
+              "MaxLength": 1
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "9e76891e-ff43-4732-ab73-1522b89a9e7f"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": {
+      "$type": "DrawCardEffect",
+      "CardAmount": 0
+    },
+    "PlayEffectTriggerTimes": 1
+  },
+  {
+    "Families": [
+      "Libro"
+    ],
+    "Id": "14",
+    "Name": "Libro de Caballer\u00EDa",
+    "Type": 1,
+    "Description": "Necesitas al menos 1 caballero en mesa. Roba una carta y cura 2 de vida al jugador",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 0
+          },
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 2,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "288b3251-60c5-458a-b85e-44f2e5f3ef8b"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "Families": null,
+          "CurrentFamilies": [
+            "Caballero"
+          ],
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 3,
+        "WhichBoardToSearch": 0,
+        "MaxLength": 0
+      },
+      "Amount": 1,
+      "CountType": 0
+    },
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "15",
+    "Name": "La venta",
+    "Type": 0,
+    "Description": "Cuando se juega una unidad, se le otorga \u002B2/-1",
+    "BaseAttack": 2,
+    "BaseHealth": 5,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AlterMySelf",
+            "Damage": 2,
+            "Health": -1,
+            "UseGameEvent": true
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": true,
+          "Filter": null
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "7c9e02a8-2072-4d79-b538-fbe3ed8ba887"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Paranoia"
+    ],
+    "Id": "16",
+    "Name": "Molino de viento",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": [],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Paranoia"
+    ],
+    "Id": "17",
+    "Name": "Reba\u00F1o de corderos",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 2,
+    "BaseHealth": 2,
+    "Effects": [],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Paranoia",
+      "Castellano"
+    ],
+    "Id": "18",
+    "Name": "Dulcinea del Toboso",
+    "Type": 0,
+    "Description": "Final de ronda: \u002B2/\u002B3 a Don Quijote, si se encuentra en mesa",
+    "BaseAttack": 3,
+    "BaseHealth": 6,
+    "Effects": [
+      {
+        "Trigger": 0,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": 3,
+            "Damage": 2,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": "19",
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 0,
+              "MaxLength": 0
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "20c39247-c7c6-49ae-ab69-ca8e5c119a62"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Caballero",
+      "Castellano"
+    ],
+    "Id": "19",
+    "Name": "El Ingenioso Hidalgo Don Quijote de la Mancha",
+    "Type": 0,
+    "Description": "Has jugado al menos 5 libros de caballer\u00EDa o una Dulcinea del Toboso. Las Paranoias ganan \u002B4/\u002B4. Cuando se juega un libro de caballer\u00EDa, curo otros 2 de vida a mi jugador",
+    "BaseAttack": 8,
+    "BaseHealth": 8,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": 4,
+            "Damage": 4,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": [
+                  "Paranoia"
+                ],
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 0,
+              "WhichBoardToSearch": 0,
+              "MaxLength": 0
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "e886649d-5b2c-417b-92ad-f28674155581"
+      },
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 2,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "FilterPlayerCardCondition",
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": "14",
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          }
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "553b5d2f-48b7-4e83-b4fd-6d5f40df2a5d"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "MultiEffectCondition",
+      "Conditions": [
+        {
+          "$type": "CountPlayedCardsCondition",
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": "14",
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          },
+          "Target": 0,
+          "Amount": 5,
+          "CountType": 0
+        },
+        {
+          "$type": "CountPlayedCardsCondition",
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": "18",
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          },
+          "Target": 0,
+          "Amount": 1,
+          "CountType": 0
+        }
+      ],
+      "IsOr": true
+    },
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "20",
+    "Name": "Locuras de Hidalgo",
+    "Type": 1,
+    "Description": "A\u00F1ade una paranoia de cada tipo en el mazo",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "16",
+            "CardsAmount": 1,
+            "ToRival": false
+          },
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "17",
+            "CardsAmount": 1,
+            "ToRival": false
+          },
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "18",
+            "CardsAmount": 1,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "55af498a-746a-4dfd-b980-9333d4f5f7c6"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Caballo"
+    ],
+    "Id": "21",
+    "Name": "Rocinante",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": [],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "22",
+    "Name": "How Hungry",
+    "Type": 1,
+    "Description": "Si hay alg\u00FAn caballo en tu mesa o m\u00E1s, los mato y el jugador se cura el total de la vida de todos",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterPlayerBasedOnCardStats",
+            "Relation": 1,
+            "Target": 0,
+            "BoardSearch": 0,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "Caballo"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "Stats": 1
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "31786b47-2187-4bf5-9919-59d25302c882"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "Families": null,
+          "CurrentFamilies": [
+            "Caballo"
+          ],
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 3,
+        "WhichBoardToSearch": 0,
+        "MaxLength": 0
+      },
+      "Amount": 1,
+      "CountType": 0
+    },
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Caballero"
+    ],
+    "Id": "23",
+    "Name": "Honoroso Caballero",
+    "Type": 0,
+    "Description": "",
+    "BaseAttack": 2,
+    "BaseHealth": 3,
+    "Effects": [],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "24",
+    "Name": "Cura Pero P\u00E9rez",
+    "Type": 0,
+    "Description": "Fin de ronda: Creo un Libro de Caballer\u00EDa y lo a\u00F1ado en el mazo",
+    "BaseAttack": 1,
+    "BaseHealth": 4,
+    "Effects": [
+      {
+        "Trigger": 0,
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "14",
+            "CardsAmount": 1,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "6a0d821a-3118-44be-aa64-20e0c18c81ab"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Caballero"
+    ],
+    "Id": "25",
+    "Name": "El Loco de Sierra Morena",
+    "Type": 0,
+    "Description": "Si entra Don Quijote o Sancho Panza en el juego, le inflinjo 4 de da\u00F1o",
+    "BaseAttack": 4,
+    "BaseHealth": 5,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AlterMySelf",
+            "Damage": 0,
+            "Health": -4,
+            "UseGameEvent": true
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "MultiEffectCondition",
+          "Conditions": [
+            {
+              "$type": "PlayerCardCondition",
+              "Me": true,
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": "26",
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              }
+            },
+            {
+              "$type": "PlayerCardCondition",
+              "Me": true,
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": "19",
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              }
+            }
+          ],
+          "IsOr": true
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "f3f3ce26-329a-4f3c-9c9e-432882435ef0"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Castellano"
+    ],
+    "Id": "26",
+    "Name": "Sancho Panza",
+    "Type": 0,
+    "Description": "Fin de Ronda: Si no hay otros Castellanos en juego, 0/-1 a las cartas en el campo. HABILIDAD: \u002B2/\u002B2 a las cartas de la mesa",
+    "BaseAttack": 1,
+    "BaseHealth": 6,
+    "Effects": [
+      {
+        "Trigger": 0,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": -1,
+            "Damage": 0,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 0,
+              "MaxLength": 0
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "CountCardCondition",
+          "Filter": {
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "Castellano"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "WhichDeckToSearch": 3,
+            "WhichBoardToSearch": 0,
+            "MaxLength": 0
+          },
+          "Amount": 1,
+          "CountType": 0
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "93ed1357-efcd-43c2-9233-64de5bab41ca"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": {
+      "$type": "AlterUnitStatsEffect",
+      "Health": 2,
+      "Damage": 2,
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "Families": null,
+          "CurrentFamilies": null,
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 3,
+        "WhichBoardToSearch": 0,
+        "MaxLength": 0
+      }
+    },
+    "PlayEffectTriggerTimes": 2
   }
 ]

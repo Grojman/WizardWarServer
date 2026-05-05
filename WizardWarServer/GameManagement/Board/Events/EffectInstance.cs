@@ -4,16 +4,16 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
     {
     }
 
-    public EffectInstance(TriggerType trigger, IEffect effect, EffectDuration duration, EffectCondition? condition)
+    public EffectInstance(TriggerType trigger, List<IEffect> effect, EffectDuration duration, EffectCondition? condition)
     {
         Trigger = trigger;
-        Effect = effect;
+        Effects = effect;
         Duration = duration;
         Condition = condition;
     }
 
     public TriggerType Trigger { get; set; }
-    public IEffect Effect { get; set; }
+    public List<IEffect> Effects { get; set; }
 
     public EffectDuration Duration { get; set; }
     public EffectCondition? Condition { get; set; } = null;
@@ -33,7 +33,7 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
             PlayerSourceId = PlayerSourceId,
             Duration = Duration.Clone(),
             Condition = Condition?.Clone(),
-            Effect = Effect
+            Effects = Effects
         };
     }
 
@@ -50,7 +50,7 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         if (ev is not null && ev.Source.Id == Id)
             return;
 
-        Effect.Execute(PlayerSourceId, SourceCard, state, ev);
+        Effects.ForEach(n => n.Execute(PlayerSourceId, SourceCard, state, ev));
 
         Duration.NotifyExecution();
     }

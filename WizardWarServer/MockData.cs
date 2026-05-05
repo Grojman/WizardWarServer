@@ -1,217 +1,600 @@
-using Microsoft.Extensions.Logging.Abstractions;
 
 public static class MockData
 {
     public static List<CardDefinition> Cards =
-    [
-        new CardDefinition(
-            "1",
-            "Truco Ratero",
-            CardType.Spell,
-            "Roba tres cartas",
-            -1,
-            -1,
-            [
-                new EffectInstance(
-                    TriggerType.SpellPlayed,
-                    new DrawCardEffect(3),
-                    new DurationByExecutions(1),
-                    new IHaveBeenPlayedCondition()
-                )
-            ],
-            [],
-            "",
-            null,
-            null,
-            0
-        ),
-        new CardDefinition("2",
-        "Rata", CardType.Unit, "HABILIDAD: Inflinge uno de daño a su propio jugador", 1, 1, [], ["Rata"], "", null, new AlterPlayerHealthEffect(-1, false), 1),
-        new CardDefinition("3",
-        "Familia de ratas", CardType.Unit, "Cuando muero, añado dos ratas al mazo del rival.", 2, 1, [
+[
+    new CardDefinition
+    {
+        Id = "1",
+        Name = "Truco Ratero",
+        Type = CardType.Spell,
+        Description = "Roba tres cartas",
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [new DrawCardEffect(3)],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "2",
+        Name = "Rata",
+        Description = "HABILIDAD: Inflinge uno de daño a su propio jugador",
+        BaseAttack = 1,
+        BaseHealth = 1,
+        Families = ["Rata"],
+        PlayEffect = new AlterPlayerHealthEffect(-1, false),
+        PlayEffectTriggerTimes = 1
+    },
+
+    new CardDefinition
+    {
+        Id = "3",
+        Name = "Familia de ratas",
+        Description = "Cuando muero, añado dos ratas al mazo del rival.",
+        BaseAttack = 2,
+        BaseHealth = 1,
+        Families = ["Rata"],
+        Effects =
+        [
             new EffectInstance(
                 TriggerType.UnitDeath,
-                new AppendCardToDeck(2, "2", true   ),
+                [new AppendCardToDeck(2, "2", true)],
                 new DurationByExecutions(1),
                 new IHaveDiedCondition()
-            ),
-        ],
-        ["Rata"], "", null, null, 0),
-        new CardDefinition("4",
-        "Flautista de Hamelin", CardType.Unit, "Cuando se juega una rata en la mesa rival, consigo +1/+1", 2, 4, [
+            )
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "4",
+        Name = "Flautista de Hamelin",
+        Description = "Cuando se juega una rata en la mesa rival, consigo +1/+1",
+        BaseAttack = 2,
+        BaseHealth = 4,
+        Effects =
+        [
             new EffectInstance(
                 TriggerType.UnitPlayed,
-                new GrowStatsBasedOnCardPlayed("Rata", 1, 1, true),
+                [new GrowStatsBasedOnCardPlayed("Rata", 1, 1, true)],
                 new Always(),
                 new PlayerCardCondition(false, null)
             )
-        ],
-        [], "", null, null, 0),
-        new CardDefinition("5",
-        "Mr bombastic", CardType.Unit, "Solo se puede jugar en turnos pares", 4, 4, [], ["Rata"], "/images/cards/1.jpg", new EvenTurnCondition(), null, 0),
-        new CardDefinition("6", "Flow rata", CardType.Spell, "Curo al jugador uno  por cada rata que tenga el rival en el mazo.", -1, -1, [
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "5",
+        Name = "Mr bombastic",
+        Description = "Solo se puede jugar en turnos pares",
+        BaseAttack = 4,
+        BaseHealth = 4,
+        Families = ["Rata"],
+        imageUrl = "/images/cards/1.jpg",
+        ConditionToPlay = new EvenTurnCondition()
+    },
+
+    new CardDefinition
+    {
+        Id = "6",
+        Name = "Flow rata",
+        Type = CardType.Spell,
+        Description = "Curo al jugador uno por cada rata que tenga el rival en el mazo.",
+        Effects =
+        [
             new EffectInstance(
                 TriggerType.SpellPlayed,
-                new DamagePlayerBasedOnCards(
-                    true,
-                    1,
-                    PlayerType.PLAYER,
-                    new GameFilter()
-                    {
-                        Filter = new CardFilter()
+                [
+                    new DamagePlayerBasedOnCards(
+                        true,
+                        1,
+                        PlayerType.PLAYER,
+                        new GameFilter
                         {
-                            CurrentFamilies = ["Rata"]
-                        },
-                        WhichDeckToSearch = PlayerType.RIVAL
-                    }
-                    ),
-                new DurationByExecutions(1),
-                new IHaveBeenPlayedCondition()
-            )
-        ], [], "", null, null, 0),
-        new CardDefinition("7", "Queso", CardType.Spell, "Curo 3 de vida al usuario", -1, -1, [
-            new EffectInstance(TriggerType.SpellPlayed, new AlterPlayerHealthEffect(3, false), new DurationByExecutions(1), new IHaveBeenPlayedCondition())
-        ], [], "", null, null, -1),
-        new CardDefinition("8", "Madriguera de ratas", CardType.Unit, "Fin de ronda: me inflinjo 2 de daño y añado 1 rata al mazo rival", 0, 6, [
-            new EffectInstance(TriggerType.TurnEnd, new AppendCardToDeck(1, "2", true), new Always(), null),
-            new EffectInstance(TriggerType.TurnEnd, new AlterMySelf(0, -2, false), new Always(), null)
-        ],
-        ["Rata"], "", null, null, 0),
-        new CardDefinition("9", "Matarratas defectuoso", CardType.Spell, "+1/+1 a todas tus ratas de la mesa y el mazo", -1, -1, [
-            new EffectInstance(
-                TriggerType.SpellPlayed,
-                new AlterUnitStatsEffect(1, 1, 
-                    new GameFilter()
-                    {
-                        Filter = new CardFilter()
-                        {
-                            CurrentFamilies = ["Rata"]
-                        },
-                        WhichBoardToSearch = PlayerType.PLAYER,
-                        WhichDeckToSearch = PlayerType.PLAYER
-                    }
-                ),
-                new DurationByExecutions(1),
-                null
-            )
-        ], [], "", null, null, 0),
-        new CardDefinition("10", "Primo de Remi", CardType.Unit, "Cuando soy jugado, planto 3 Quesos en el mazo de mi jugador", 2, 3, [
-            new EffectInstance(
-                TriggerType.UnitPlayed,
-                new AppendCardToDeck(3, "7", false),
-                new DurationByExecutions(1),
-                new IHaveBeenPlayedCondition()
-            ),
-        ], [ "Rata" ], "", null, null, 0),
-        new CardDefinition("11", "El poder de los sumideros", CardType.Spell, "Has tenido que jugar al menos 3 ratas para poder jugarme. A partir de ahora, cada vez que juegues una rata consigue +1/+1", -1, -1, [
-            new EffectInstance(
-                TriggerType.SpellPlayed,
-                new AppendGlobalEffect(
-                    new EffectInstance(
-                        TriggerType.UnitPlayed,
-                        new AlterMySelf(1, 1, true),
-                        new Always(),
-                        new PlayerCardCondition(true, new CardFilter()
-                        {
-                            CurrentFamilies = ["Rata"]
-                        })
+                            Filter = new CardFilter { CurrentFamilies = ["Rata"] },
+                            WhichDeckToSearch = PlayerType.RIVAL
+                        }
                     )
-                ),
+                ],
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ], [], "", new CountPlayedCardsCondition(
-                    new CardFilter()
-                    {
-                        CurrentFamilies = ["Rata"]
-                    },
-                    PlayerType.PLAYER,
-                    3,
-                    CountType.AT_LEAST
-                ), null,0),
-        new CardDefinition("12", "Arañazos", CardType.Spell, "0/-1 a la mesa enemiga ahora, y al final de este turno", -1, -1, [
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "7",
+        Name = "Queso",
+        Type = CardType.Spell,
+        Description = "Curo 3 de vida al usuario",
+        Effects =
+        [
             new EffectInstance(
                 TriggerType.SpellPlayed,
-                new AlterUnitStatsEffect(-1, 0, 
-                    new GameFilter()
-                    {
-                        WhichBoardToSearch = PlayerType.RIVAL,
-                        Filter = new CardFilter()
-                    }
-                ),
+                [new AlterPlayerHealthEffect(3, false)],
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
+            )
+        ],
+    },
+
+    new CardDefinition
+    {
+        Id = "8",
+        Name = "Madriguera de ratas",
+        Description = "Fin de ronda: me inflinjo 2 de daño y añado 1 rata al mazo rival",
+        BaseAttack = 0,
+        BaseHealth = 6,
+        Families = ["Rata"],
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.TurnEnd,
+                [new AppendCardToDeck(1, "2", true)],
+                new Always(),
+                null
             ),
             new EffectInstance(
                 TriggerType.TurnEnd,
-                new AlterUnitStatsEffect(-1, 0, 
-                    new GameFilter()
-                    {
-                        WhichBoardToSearch = PlayerType.RIVAL,
-                        Filter = new CardFilter()
-                    }
-                ),
-                new DurationByExecutions(1),
-                new IHaveBeenPlayedCondition()
+                [new AlterMySelf(0, -2, false)],
+                new Always(),
+                null
             )
-        ], [ "Rata" ], "", null, null, 0),
-        new CardDefinition("13", "Mordedura de rata", CardType.Spell, "0/-3 a un enemigo en la mesa (izq). HABILIDAD: Roba una carta", -1, -1, [
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "9",
+        Name = "Matarratas defectuoso",
+        Type = CardType.Spell,
+        Description = "+1/+1 a todas tus ratas de la mesa y el mazo",
+        Effects =
+        [
             new EffectInstance(
                 TriggerType.SpellPlayed,
-                new AlterUnitStatsEffect(
-                    -3, 0, new GameFilter()
-                    {
-                        WhichBoardToSearch = PlayerType.RIVAL,
-                        MaxLength = 1,
-                        Filter = new CardFilter()
-                    }
-                ),
+                [
+                    new AlterUnitStatsEffect(
+                        1, 1,
+                        new GameFilter
+                        {
+                            Filter = new CardFilter { CurrentFamilies = ["Rata"] },
+                            WhichBoardToSearch = PlayerType.PLAYER,
+                            WhichDeckToSearch = PlayerType.PLAYER
+                        }
+                    )
+                ],
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ], [ "Rata" ], "", null, new DrawCardEffect(), 1),
+        ]
+    },
 
-
-        new CardDefinition("14", "Libro de Caballería", CardType.Spell, "Roba una carta y cura 2 de vida al jugador", -1, -1, [
-            new EffectInstance(TriggerType.SpellPlayed, new DrawCardEffect(), new DurationByExecutions(1),new IHaveBeenPlayedCondition()),
-            new EffectInstance(TriggerType.SpellPlayed, new AlterPlayerHealthEffect(2, false), new DurationByExecutions(1), new IHaveBeenPlayedCondition())
-        ], ["Libro"], "", null, null, 0),
-        new CardDefinition("15", "La venta", CardType.Unit, "Cuando se juega una unidad, se le otorga +2/-1", 2, 5, [
+    new CardDefinition
+    {
+        Id = "10",
+        Name = "Primo de Remi",
+        Description = "Cuando soy jugado, planto 3 Quesos en el mazo de mi jugador",
+        BaseAttack = 2,
+        BaseHealth = 3,
+        Families = ["Rata"],
+        Effects =
+        [
             new EffectInstance(
-                TriggerType.UnitPlayed, new AlterMySelf(2, -1, true), new Always(), new PlayerCardCondition(true, null)
+                TriggerType.UnitPlayed,
+                [new AppendCardToDeck(3, "7", false)],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
             )
-        ], [], "", null, null, 0),
-        new CardDefinition("16", "Molino de viento", CardType.Unit, "", 3, 3, [], ["Paranoia"], "", null, null, 0),
-        new CardDefinition("17", "Rebaño de corderos", CardType.Unit, "", 2, 2, [], ["Paranoia"], "", null, null, 0),
-        new CardDefinition("18", "Dulcinea del Toboso", CardType.Unit, "Final de ronda: +2/+3 a Don Quijote, si se encuentra en mesa", 3, 6, [
-            new EffectInstance(TriggerType.TurnEnd, new AlterUnitStatsEffect(3, 2, new()
-            {
-                WhichBoardToSearch = PlayerType.PLAYER,
-                Filter = new() {DefinitionId = "19"}
-            }), new Always(), null)
-        ], ["Paranoia"], "", null, null, 0),
-        new CardDefinition("19", "El Ingenioso Hidalgo Don Quijote de la Mancha", CardType.Unit, "Has jugado al menos 5 libros de caballería. Las Paranoias ganan +4/+4. Cuando se juega un libro de caballería, curo otros 2 de vida a mi jugador", 8, 8, [
-            new EffectInstance(TriggerType.UnitPlayed, new AlterUnitStatsEffect(4, 4, 
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "11",
+        Name = "El poder de los sumideros",
+        Type = CardType.Spell,
+        Description = "Has tenido que jugar al menos 3 ratas...",
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [
+                    new AppendGlobalEffect(
+                        new EffectInstance(
+                            TriggerType.UnitPlayed,
+                            [new AlterMySelf(1, 1, true)],
+                            new Always(),
+                            new PlayerCardCondition(true,
+                                new CardFilter { CurrentFamilies = ["Rata"] })
+                        )
+                    )
+                ],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ],
+        ConditionToPlay = new CountPlayedCardsCondition(
+            new CardFilter { CurrentFamilies = ["Rata"] },
+            PlayerType.PLAYER,
+            3,
+            CountType.AT_LEAST
+        )
+    },
+
+    new CardDefinition
+    {
+        Id = "12",
+        Name = "Arañazos",
+        Type = CardType.Spell,
+        Description = "0/-1 a la mesa enemiga ahora y al final de este turno",
+        Families = ["Rata"],
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [
+                    new AlterUnitStatsEffect(-1, 0,
+                        new GameFilter
+                        {
+                            WhichBoardToSearch = PlayerType.RIVAL,
+                            Filter = new CardFilter()
+                        }),
+                    new AppendGlobalEffect(
+                        new EffectInstance(
+                            TriggerType.TurnEnd,
+                            [
+                                new AlterUnitStatsEffect(-1, 0,
+                                    new GameFilter
+                                    {
+                                        WhichBoardToSearch = PlayerType.RIVAL,
+                                        Filter = new CardFilter()
+                                    })
+                            ],
+                            new DurationByExecutions(1),
+                            new IHaveBeenPlayedCondition()
+                        )
+                    )
+                ],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "13",
+        Name = "Mordedura de rata",
+        Type = CardType.Spell,
+        Description = "0/-3 a un enemigo en la mesa (izq). HABILIDAD: Roba una carta",
+        Families = ["Rata"],
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [
+                    new AlterUnitStatsEffect(-3, 0,
+                        new GameFilter
+                        {
+                            WhichBoardToSearch = PlayerType.RIVAL,
+                            MaxLength = 1,
+                            Filter = new CardFilter()
+                        })
+                ],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ],
+        PlayEffect = new DrawCardEffect(),
+        PlayEffectTriggerTimes = 1
+    },
+        new CardDefinition
+    {
+        Id = "14",
+        Name = "Libro de Caballería",
+        Type = CardType.Spell,
+        Description = "Necesitas al menos 1 caballero en mesa. Roba una carta y cura 2 de vida al jugador",
+        Families = ["Libro"],
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [new DrawCardEffect(1), new AlterPlayerHealthEffect(2, false)],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ],
+        ConditionToPlay = 
+            new CountCardCondition(
                 new GameFilter()
                 {
                     WhichBoardToSearch = PlayerType.PLAYER,
-                    WhichDeckToSearch = PlayerType.PLAYER,
-                    Filter = new CardFilter()
+                    Filter = new()
                     {
-                        CurrentFamilies = ["Paranoia"]
+                        CurrentFamilies = ["Caballero"]
                     }
-                }
-            ), new DurationByExecutions(1), new IHaveBeenPlayedCondition()),
+                },
+                1,
+                CountType.AT_LEAST
+            )
+    },
+
+    new CardDefinition
+    {
+        Id = "15",
+        Name = "La venta",
+        Description = "Cuando se juega una unidad, se le otorga +2/-1",
+        BaseAttack = 2,
+        BaseHealth = 5,
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.UnitPlayed,
+                [new AlterMySelf(2, -1, true)],
+                new Always(),
+                new PlayerCardCondition(true, null)
+            )
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "16",
+        Name = "Molino de viento",
+        BaseAttack = 3,
+        BaseHealth = 3,
+        Families = ["Paranoia"]
+    },
+
+    new CardDefinition
+    {
+        Id = "17",
+        Name = "Rebaño de corderos",
+        BaseAttack = 2,
+        BaseHealth = 2,
+        Families = ["Paranoia"]
+    },
+
+    new CardDefinition
+    {
+        Id = "18",
+        Name = "Dulcinea del Toboso",
+        Description = "Final de ronda: +2/+3 a Don Quijote, si se encuentra en mesa",
+        BaseAttack = 3,
+        BaseHealth = 6,
+        Families = ["Paranoia", "Castellano"],
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.TurnEnd,
+                [
+                    new AlterUnitStatsEffect(3, 2,
+                        new GameFilter
+                        {
+                            WhichBoardToSearch = PlayerType.PLAYER,
+                            Filter = new CardFilter { DefinitionId = "19" }
+                        })
+                ],
+                new Always(),
+                null
+            )
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "19",
+        Name = "El Ingenioso Hidalgo Don Quijote de la Mancha",
+        Description = "Has jugado al menos 5 libros de caballería o una Dulcinea del Toboso. Las Paranoias ganan +4/+4. Cuando se juega un libro de caballería, curo otros 2 de vida a mi jugador",
+        BaseAttack = 8,
+        BaseHealth = 8,
+        Families = ["Caballero", "Castellano"],
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.UnitPlayed,
+                [
+                    new AlterUnitStatsEffect(4, 4,
+                        new GameFilter
+                        {
+                            WhichBoardToSearch = PlayerType.PLAYER,
+                            WhichDeckToSearch = PlayerType.PLAYER,
+                            Filter = new CardFilter { CurrentFamilies = ["Paranoia"] }
+                        })
+                ],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            ),
             new EffectInstance(
                 TriggerType.SpellPlayed,
-                new AlterPlayerHealthEffect(2, false), new Always(), new FilterPlayerCardCondition(new ()
-                {
-                    DefinitionId = "14"
-                })
+                [new AlterPlayerHealthEffect(2, false)],
+                new Always(),
+                new FilterPlayerCardCondition(
+                    new CardFilter { DefinitionId = "14" }
+                )
             )
-        ], ["Caballero"], "", new CountPlayedCardsCondition(new() {DefinitionId = "14"}, PlayerType.PLAYER, 5 ,CountType.AT_LEAST), null, 0)
-        
-    ];
+        ],
+        ConditionToPlay = new MultiEffectCondition(
+            [
+                new CountPlayedCardsCondition(
+                    new CardFilter { DefinitionId = "14" },
+                    PlayerType.PLAYER,
+                    5,
+                    CountType.AT_LEAST
+                ),
+                new CountPlayedCardsCondition(
+                    new CardFilter { DefinitionId = "18" },
+                    PlayerType.PLAYER,
+                    1,
+                    CountType.AT_LEAST
+                )
+            ],
+            true
+        )
+    },
+
+    new CardDefinition
+    {
+        Id = "20",
+        Name = "Locuras de Hidalgo",
+        Type = CardType.Spell,
+        Description = "Añade una paranoia de cada tipo en el mazo",
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [
+                    new AppendCardToDeck(1, "16", false),
+                    new AppendCardToDeck(1, "17", false),
+                    new AppendCardToDeck(1, "18", false)
+                ],
+                new DurationByExecutions(1),
+                null
+            )
+        ]
+    },
+
+    new CardDefinition
+    {
+        Id = "21",
+        Name = "Rocinante",
+        BaseAttack = 3,
+        BaseHealth = 3,
+        Families = ["Caballo"]
+    },
+
+    new CardDefinition
+    {
+        Id = "22",
+        Name = "How Hungry",
+        Type = CardType.Spell,
+        Description = "Si hay algún caballo en tu mesa o más, los mato y el jugador se cura el total de la vida de todos",
+        Effects =
+        [
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [
+                    new AlterPlayerBasedOnCardStats(
+                        PlayerType.PLAYER,
+                        new CardFilter { CurrentFamilies = ["Caballo"] },
+                        AffectedStats.HEALTH,
+                        PlayerType.PLAYER,
+                        1
+                    )
+                ],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+        ],
+        ConditionToPlay = new CountCardCondition(
+            new GameFilter
+            {
+                WhichBoardToSearch = PlayerType.PLAYER,
+                Filter = new CardFilter { CurrentFamilies = ["Caballo"] }
+            },
+            1,
+            CountType.AT_LEAST
+        )
+    },
+    new CardDefinition()
+    {
+        Id = "23",
+        Type = CardType.Unit,
+        Name = "Honoroso Caballero",
+        Families = ["Caballero"],
+        BaseAttack = 2,
+        BaseHealth = 3
+    },
+    new CardDefinition()
+    {
+        Id = "24",
+        Name = "Cura Pero Pérez",
+        Type = CardType.Unit,
+        BaseAttack = 1,
+        BaseHealth = 4,
+        Description = "Fin de ronda: Creo un Libro de Caballería y lo añado en el mazo",
+        Effects = [
+            new EffectInstance(
+                TriggerType.TurnEnd,
+                [
+                    new AppendCardToDeck(1, "14", false)
+                ],
+                new Always(),
+                null
+            )
+        ]
+    },
+    new CardDefinition()
+    {
+        Id = "25",
+        Name = "El Loco de Sierra Morena",
+        Type = CardType.Unit,
+        BaseAttack = 4,
+        BaseHealth = 5,
+        Families = ["Caballero"],
+        Description = "Si entra Don Quijote o Sancho Panza en el juego, le inflinjo 4 de daño",
+        Effects = [
+            new EffectInstance(
+                TriggerType.UnitPlayed,
+                [
+                    new AlterMySelf(0, -4, true)
+                ],
+                new Always(),
+                new MultiEffectCondition(
+                    [
+                        new PlayerCardCondition(true, new() { DefinitionId = "26" }),
+                        new PlayerCardCondition(true, new() { DefinitionId = "19" }),
+                    ],
+                    true
+                )
+            )
+        ]
+    },
+    new CardDefinition()
+    {
+        Id = "26",
+        Name = "Sancho Panza",
+        Type = CardType.Unit,
+        BaseAttack = 1,
+        BaseHealth = 6,
+        Families = ["Castellano"],
+        Description = "Fin de Ronda: Si no hay otros Castellanos en juego, 0/-1 a las cartas en el campo. HABILIDAD: +2/+2 a las cartas de la mesa",
+        Effects = [
+            new EffectInstance(
+                TriggerType.TurnEnd,
+                [
+                    new AlterUnitStatsEffect(
+                        -1, 0, new(){
+                            WhichBoardToSearch = PlayerType.PLAYER,
+                            Filter = new()
+                        }
+                    )
+                ],
+                new Always(),
+                new CountCardCondition(
+                    new()
+                    {
+                        WhichBoardToSearch = PlayerType.PLAYER,
+                        Filter = new() {CurrentFamilies = ["Castellano"]}
+                    },
+                    1,
+                    CountType.AT_LEAST
+                )
+            )
+        ],
+        PlayEffect = new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
+        PlayEffectTriggerTimes = 2
+    }
+];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
     {
         // {
@@ -268,6 +651,28 @@ public static class MockData
                 { "11", 2},
                 { "12", 3},
                 { "13", 2},
+            }
+        },
+        {
+            new DeckDto(6,
+                "El Ingenioso Hidalgo Don Quijote de la Mancha",
+                "Primero una rata, y ahora este tío. Habla de un modo muy extraño, nadie le entiende y... parece que se está pegando con unos molinos. No para de hablar de enemigos y de una tal Dulcinea; menos mal que esos monstruos no son reales, ¿Verdad?"
+            ),
+            new()
+            {
+                { "14", 5},
+                { "15", 3},
+                { "16", 3},
+                { "17", 3},
+                { "18", 1},
+                { "19", 1},
+                { "20", 2},
+                { "21", 3},
+                { "22", 1},
+                { "23", 4},
+                { "24", 2},
+                { "25", 2},
+                { "26", 2},
             }
         }
         

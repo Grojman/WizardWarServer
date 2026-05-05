@@ -19,13 +19,13 @@ public class GameFilter
 
     public IEnumerable<CardInstance> GetMeetingCardsOnRivalDeck(GameState state, Guid playerId)
     {
-        var result = WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetRival(playerId).Deck.cards.Where(Filter.Check) : [];
+        var result = WhichDeckToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetRival(playerId).Deck.cards.Where(Filter.Check) : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnPlayerDeck(GameState state, Guid playerId)
     {
-        var result = WhichBoardToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Deck.cards.Where(Filter.Check) : [];
+        var result = WhichDeckToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Deck.cards.Where(Filter.Check) : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 

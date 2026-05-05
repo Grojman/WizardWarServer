@@ -15,7 +15,31 @@
       "8": 3,
       "9": 2,
       "10": 3,
-      "11": 2
+      "11": 2,
+      "12": 3,
+      "13": 2
+    }
+  },
+  {
+    "Deck": {
+      "id": 6,
+      "name": "El Ingenioso Hidalgo Don Quijote de la Mancha",
+      "description": "Primero una rata, y ahora este t\u00EDo. Habla de un modo muy extra\u00F1o, nadie le entiende y... parece que se est\u00E1 pegando con unos molinos. No para de hablar de enemigos y de una tal Dulcinea; menos mal que esos monstruos no son reales, \u00BFVerdad?"
+    },
+    "Cards": {
+      "14": 5,
+      "15": 3,
+      "16": 3,
+      "17": 3,
+      "18": 1,
+      "19": 1,
+      "20": 2,
+      "21": 3,
+      "22": 1,
+      "23": 4,
+      "24": 2,
+      "25": 2,
+      "26": 2
     }
   }
 ]
