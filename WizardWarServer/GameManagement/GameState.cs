@@ -183,11 +183,11 @@ public class GameState
         CleanExpiredEffects();
     }
 
-    public void DrawCard(PlayerConnection p)
+    public void DrawCard(PlayerConnection p, CardFilter? filter = null)
     {
         var player = GetState(p.Guid);
         
-        var card = player.Deck.Draw();
+        var card = filter is null ? player.Deck.Draw() : player.Deck.Draw(filter);
 
         if(card is null)
         {
