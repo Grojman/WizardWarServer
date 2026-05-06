@@ -35,13 +35,17 @@ public class GameSession
         await SendState();
     }
 
-    public async Task HandleAction(
-        PlayerConnection player,
-        string json)
+    public async Task HandleAction(PlayerConnection player, string json)
     {
         var action =
             JsonSerializer.Deserialize<PlayerAction>(json);
+        await HandleAction(player, action);
+    }
 
+    public async Task HandleAction(
+        PlayerConnection player,
+        PlayerAction action)
+    {
         if (action is PlayerAction.TextMessage m)
         {
             await p1.Send("text_message", new {

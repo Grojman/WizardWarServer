@@ -32,6 +32,17 @@ public class GameManager
         }
     }
 
+    public async void AddBotGame(PlayerConnection player)
+    {
+        var bot = new BotConnection();
+
+        var game = new GameSession(player, bot, this);
+
+        games.Add(game);
+        
+        await game.Start();
+    }
+
     public async void RemovePlayer(PlayerConnection player)
     {
         if (players.Contains(player)) players.Remove(player);
@@ -71,6 +82,10 @@ public class GameManager
             {
                 case UserAction.ChangeNameAction a:
                     player.Name = a.NewName;
+                    break;
+                case UserAction.StartBotGameAction c:
+                    player.SelectedDeckId = c.DeckId;
+                    AddBotGame(player);
                     break;
                 case UserAction.JoinQueueAction b:
                     player.SelectedDeckId = b.DeckId;

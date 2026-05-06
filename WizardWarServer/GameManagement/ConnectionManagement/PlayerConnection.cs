@@ -15,7 +15,7 @@ public class PlayerConnection
         Socket = socket;
     }
 
-    public async Task Send(string type, object obj)
+    public virtual async Task Send(string type, object obj)
     {
 
         var json = System.Text.Json.JsonSerializer.Serialize(

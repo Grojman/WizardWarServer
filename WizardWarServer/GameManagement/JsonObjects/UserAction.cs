@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(LeaveQueueAction), "LeaveQueueAction")]
 [JsonDerivedType(typeof(GetDecksAction), "GetDecksAction")]
 [JsonDerivedType(typeof(GetAllCardsAction), "GetAllCardsAction")]
+[JsonDerivedType(typeof(StartBotGameAction), "StartBotGameAction")]
 public interface UserAction
 {
     public class ChangeNameAction : UserAction
@@ -14,6 +15,11 @@ public interface UserAction
     }
 
     public class JoinQueueAction : UserAction
+    {
+        public required int DeckId { get; set; }
+    }
+
+    public class StartBotGameAction : UserAction
     {
         public required int DeckId { get; set; }
     }
