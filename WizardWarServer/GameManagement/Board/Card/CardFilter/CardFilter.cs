@@ -4,6 +4,7 @@ public class CardFilter
     public int? CurrentHealth { get; set; } = null;
     public int? Attack { get; set; } = null;
     public int? Health { get; set; } = null;
+    public CardType? CardType { get; set; } = null;
     public string[]? Families { get; set; } = null;
     public string[]? CurrentFamilies { get; set; } = null;
     public string? DefinitionId { get; set; } = null;
@@ -17,6 +18,10 @@ public class CardFilter
     {
         var criteria = new List<bool>();
 
+        if(CardType.HasValue)
+        {
+            criteria.Add(card.Definition.Type == CardType.Value);
+        }
         if (CurrentAttack.HasValue)
         {
             criteria.Add(card.CurrentAttack == CurrentAttack.Value);

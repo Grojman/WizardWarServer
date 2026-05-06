@@ -13,7 +13,7 @@ public static class MockData
         [
             new EffectInstance(
                 TriggerType.SpellPlayed,
-                [new DrawCardEffect(3)],
+                [new DrawCardEffect(){CardAmount = 3}],
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
@@ -308,7 +308,7 @@ public static class MockData
         [
             new EffectInstance(
                 TriggerType.SpellPlayed,
-                [new DrawCardEffect(1), new AlterPlayerHealthEffect(2, false)],
+                [new DrawCardEffect(){CardAmount = 1}, new AlterPlayerHealthEffect(2, false)],
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
@@ -593,6 +593,131 @@ public static class MockData
         ],
         PlayEffect = new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
         PlayEffectTriggerTimes = 2
+    },
+    new()
+    {
+        Id = "27",
+        Name = "Bola de fuego",
+        Families = ["Ceniza"],
+        Type = CardType.Spell,
+        Description = "0/-4 A un enemigo (izq)",
+        Effects = [
+            new()
+            {
+                Trigger = TriggerType.SpellPlayed,
+                Effects = [
+                    new AlterUnitStatsEffect(-4, 0, new(){
+                        WhichBoardToSearch = PlayerType.RIVAL,
+                        MaxLength = 1,
+                        Filter = new()
+                    })
+                ],
+                Condition = new IHaveBeenPlayedCondition(),
+                Duration = new DurationByExecutions(1)
+            }
+        ]
+    },
+    new()
+    {
+        Id = "28",
+        Name = "Aprendiz de mago",
+        Families = ["Hechicero"],
+        Type = CardType.Unit,
+        BaseAttack = 3,
+        BaseHealth = 3,
+        Description = "Cuando me juegas, creo una bola de fuego",
+        Effects = [
+            new()
+            {
+                Trigger = TriggerType.UnitPlayed,
+                Effects = [
+                    new AppendCardToDeck(1, "27", false)
+                ],
+                Condition = new IHaveBeenPlayedCondition(),
+                Duration = new DurationByExecutions(1)
+            }
+        ]
+    },
+    new()
+    {
+        Id = "29",
+        Name = "Maestro de la ceniza",
+        Type = CardType.Unit,
+        Families = ["Hechicero"],
+        BaseAttack = 6,
+        BaseHealth = 7,
+        Description = "Has jugado 6 bolas de fuego o más. Fin de Ronda: creo una bola de fuego en el mazo",
+        Effects = [
+            new()
+            {
+                Trigger = TriggerType.TurnEnd,
+                Effects = [
+                    new AppendCardToDeck(1, "27", false)
+                ],
+                Duration = new Always(),
+            }
+        ]
+    },
+    new()
+    {
+        Id = "30",
+        Name = "Espíritu del fuego",
+        BaseAttack = 2,
+        BaseHealth = 4,
+        Description = "Cuando juegas una bola de fuego, inflinjo 1 de daño al rival",
+        Type = CardType.Unit,
+        Families = ["Ceniza"],
+        Effects = [
+            new(
+                TriggerType.SpellPlayed,
+                [new AlterPlayerHealthEffect(-1, true)],
+                new Always(),
+                new PlayerCardCondition(true, new() { DefinitionId = "27"})
+            )
+        ]
+    },
+    new()
+    {
+        Id = "31",
+        Name = "Tierras yermas",
+        Type = CardType.Spell,
+        Description = "-2/-2 a la mesa enemiga",
+        Effects = [
+            new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(-2, -2, new() {
+                WhichBoardToSearch = PlayerType.RIVAL,
+                Filter = new()
+            })], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ]
+    },
+    new()
+    {
+        Id = "32",
+        Name = "Conjuro del dios del fuego",
+        Type = CardType.Spell,
+        Description = "Roba dos hechizos",
+        Effects = [
+            new(TriggerType.SpellPlayed, [new DrawCardEffect(2, new() {CardType = CardType.Spell})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ]
+    },
+    new()
+    {
+        Id = "33",
+        Name = "La llamada de la ceniza",
+        Type = CardType.Spell,
+        Description = "Roba una carta ceniza",
+        Effects = [
+            new(TriggerType.SpellPlayed, [new DrawCardEffect(1, new() {CurrentFamilies = ["Ceniza"]})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ]
+    },
+    new()
+    {
+        Id = "34",
+        Name = "La ira del dios del fuego",
+        Type = CardType.Spell,
+        Description = "MATA a TODAS las unidades en mesa",
+        Effects = [
+            new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.BOTH)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ]
     }
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -615,15 +740,22 @@ public static class MockData
                 
         //     }
         // },
-        // {
-        //     new DeckDto(3,
-        //     "Don Bola de Fuego Jr",
-        //     "Reduce a cenizas a quienes se enfrentan a él, y con suerte sus aliados escapan a su cólera. Eso sí: que nadie le pregunte qué le pasó a Don Bola de Fuego padre."),
-        //     new()
-        //     {
-                
-        //     }
-        // },
+        {
+            new DeckDto(7,
+            "Don Bola de Fuego Jr",
+            "Reduce a cenizas a quienes se enfrentan a él, y con suerte sus aliados escapan a su cólera. Eso sí: que nadie le pregunte qué le pasó a Don Bola de Fuego padre."),
+            new()
+            {
+                {"27", 2},
+                {"28", 3},
+                {"29", 1},
+                {"30", 3},
+                {"31", 4},
+                {"32", 3},
+                {"33", 2},
+                {"34", 1},
+            }
+        },
         // {
         //     new DeckDto(4,
         //     "???",

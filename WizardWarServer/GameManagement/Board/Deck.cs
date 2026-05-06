@@ -30,6 +30,23 @@ public class Deck
         return card;
     }
 
+    public CardInstance? Draw(CardFilter filter)
+    {
+        if (cards.Count == 0)
+            return null;
+        for (int i = 0; i < cards.Count; i++)
+        {
+            if (filter.Check(cards[i]))
+            {
+                var card = cards[i];
+                cards.RemoveAt(i);
+                return card;
+            }
+        }
+
+        return null;
+    }
+
     public int Count => cards.Count;
 
     private void Shuffle(List<CardInstance> list)
