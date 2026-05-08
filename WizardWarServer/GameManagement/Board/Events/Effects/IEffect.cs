@@ -11,6 +11,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(AlterMySelf), nameof(AlterMySelf))]
 [JsonDerivedType(typeof(AppendGlobalEffect), nameof(AppendGlobalEffect))]
 [JsonDerivedType(typeof(AlterPlayerBasedOnCardStats), nameof(AlterPlayerBasedOnCardStats))]
+[JsonDerivedType(typeof(KillCards), nameof(KillCards))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

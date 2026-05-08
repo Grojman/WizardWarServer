@@ -260,7 +260,7 @@ public static class MockData
                                     })
                             ],
                             new DurationByExecutions(1),
-                            new IHaveBeenPlayedCondition()
+                            null
                         )
                     )
                 ],
@@ -587,12 +587,22 @@ public static class MockData
                         Filter = new() {CurrentFamilies = ["Castellano"]}
                     },
                     1,
-                    CountType.AT_LEAST
+                    CountType.AT_MAX
                 )
             )
         ],
         PlayEffect = new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
         PlayEffectTriggerTimes = 2
+    },
+    new()
+    {
+        Id = "26_1",
+        Name = "Llamada de auxilio",
+        Type = CardType.Spell,
+        Description = "Roba dos caballeros",
+        Effects = [
+            new(TriggerType.SpellPlayed, [new DrawCardEffect(2, new(){CurrentFamilies = ["Caballero"]})], new DurationByExecutions(1), null)
+        ]
     },
     new()
     {
@@ -656,7 +666,13 @@ public static class MockData
                 ],
                 Duration = new Always(),
             }
-        ]
+        ],
+        ConditionToPlay = new CountPlayedCardsCondition(
+            new() {DefinitionId = "27"},
+            PlayerType.PLAYER,
+            5,
+            CountType.AT_LEAST
+        )
     },
     new()
     {
@@ -718,6 +734,30 @@ public static class MockData
         Effects = [
             new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.BOTH)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
+    },
+
+    //TODO: AÑADIR AL FILTRO PARA PODER BUSCAR EN LAS MANOS TMB
+    new()
+    {
+        Id = "35",
+        Name = "Ratoncio Ratonez",
+        Type = CardType.Unit,
+        Description = "Fin de ronda: -1 de daño al rival por cada carta Rata que tenga en la mano",
+        Families = ["Rata"],
+        BaseHealth = 3,
+        BaseAttack = 1,
+        Effects = [
+            new EffectInstance(
+                TriggerType.TurnEnd,
+                [
+                    new DamagePlayerBasedOnCards(
+                        true,
+                        -1,
+                        PlayerType.RIVAL,
+                    )
+                ]
+            )
+        ]
     }
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -746,6 +786,7 @@ public static class MockData
             "Reduce a cenizas a quienes se enfrentan a él, y con suerte sus aliados escapan a su cólera. Eso sí: que nadie le pregunte qué le pasó a Don Bola de Fuego padre."),
             new()
             {
+                //19
                 {"27", 2},
                 {"28", 3},
                 {"29", 1},
@@ -767,16 +808,17 @@ public static class MockData
         // },
         {
             new DeckDto(5,
-            "Rata mágica",
+            "El mago del queso",
             "¿Pero qué? ¿Quién ha dejado una rata entrar en la guerra? Si además lleva sombrero y todo, y parece que se ha traído a todos sus parientes. En fin, no seré yo quien la juzgue, pero no parece que trame nada bueno."),
             new()
             {
+                //29
                 { "1", 2},
                 { "3", 3},
                 { "4", 2},
                 { "5", 3},
-                { "6", 1},
-                { "7", 1},
+                { "6", 2},
+                { "7", 2},
                 { "8", 3},
                 { "9", 2},
                 { "10", 3},
@@ -792,6 +834,7 @@ public static class MockData
             ),
             new()
             {
+                //32
                 { "14", 5},
                 { "15", 3},
                 { "16", 3},

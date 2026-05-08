@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 
 public class BotConnection : PlayerConnection
 {
+    bool Resend { get; set; } = false;
     public readonly string[] BOT_NAMES = ["Cartman"];
     public readonly string[] TEXT_RESPONSES = [
 "¡Respeta mi autoridad, maldita sea! Esa carta no debería ni existir.",
@@ -61,7 +62,7 @@ public class BotConnection : PlayerConnection
 
     async void DecideNextAction(GameStateDto state)
     {
-        if (!state.IsMyTurn) return;
+        if (!state.IsMyTurn || Game is null) return;
         Thread.Sleep(new Random().Next(1000, 3000));
         List<Func<GameStateDto, Task>> options = new();
 
@@ -78,10 +79,11 @@ public class BotConnection : PlayerConnection
         await Game.HandleAction(this, new PlayerAction.DrawCardAction());
     }
 
-    bool CanDraw(GameStateDto state) => true;
+    bool CanDraw(GameStateDto state) => state.Me.HandData.Count() < 5;
 
     async Task Attack(GameStateDto state)
     {
+        if (Game is null) return;
         var rivalPositions = state.Rival.Board.Select((a, b) => new {a, b}).Where(n => n.a is not null).Select(n => n.b);
         var playerPositions = state.Me.Board.Select((a, b) => new {a, b}).Where(n => n.a is not null).Select(n => n.b);
         TargetType[] options = !rivalPositions.Any() ? [TargetType.RIVAL] : [TargetType.RIVAL, TargetType.ENEMY_BOARD];
@@ -97,6 +99,8 @@ public class BotConnection : PlayerConnection
 
     async Task PlayCard(GameStateDto state)
     {
+        if (Game is null) return;
+
         var isPlace = state.Me.Board.Any(n => n is null);
         var boardIndexes = state.Me.Board.Select((a,b) => new {a, b}).Where(n => n.a is null).Select(n => n.b);
         var cardIndexes = state.Me.HandData.Select((a, b) => new{a, b}).Where(n => n.a.canPlay && (n.a.type == "Spell" || isPlace)).Select(n => n.b);
@@ -113,7 +117,9 @@ public class BotConnection : PlayerConnection
 
     async Task SendMessage()
     {
-        Thread.Sleep(new Random().Next(1000, 2000));
+        if (Game is null) return;
+
+        Thread.Sleep(new Random().Next(250, 750));
         await Game.HandleAction(this, new PlayerAction.TextMessage()
         {
             Message = TEXT_RESPONSES.GetRandom()
@@ -122,6 +128,8 @@ public class BotConnection : PlayerConnection
 
     public override Task Send(string type, object obj)
     {
+        if (Game is null) Task.FromResult(0);
+
         Task.Run(async() =>
         {
              switch(type)
@@ -130,7 +138,25 @@ public class BotConnection : PlayerConnection
                 DecideNextAction(obj as GameStateDto);
                 break;
                 case "text_message":
-                SendMessage();
+                var type = obj.GetType();
+                var messageProperty = type.GetProperty("message");
+                var playerProperty = type.GetProperty("player");
+
+                var playerValue = (Guid)playerProperty.GetValue(obj, null);
+                
+                if(playerValue != Guid)
+                    {
+                var messageValue = (string)messageProperty.GetValue(obj, null);
+
+                Resend = messageValue == ":04:"; // Qué poner ?
+                        
+                    }
+                if (playerValue != Guid || Resend)
+                {
+
+                    SendMessage();
+
+                }
                 break;
             }
         });

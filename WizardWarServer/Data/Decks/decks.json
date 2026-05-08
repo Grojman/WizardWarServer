@@ -1,8 +1,25 @@
 [
   {
     "Deck": {
+      "id": 7,
+      "name": "Don Bola de Fuego Jr",
+      "description": "Reduce a cenizas a quienes se enfrentan a \u00E9l, y con suerte sus aliados escapan a su c\u00F3lera. Eso s\u00ED: que nadie le pregunte qu\u00E9 le pas\u00F3 a Don Bola de Fuego padre."
+    },
+    "Cards": {
+      "27": 2,
+      "28": 3,
+      "29": 1,
+      "30": 3,
+      "31": 4,
+      "32": 3,
+      "33": 2,
+      "34": 1
+    }
+  },
+  {
+    "Deck": {
       "id": 5,
-      "name": "Rata m\u00E1gica",
+      "name": "El mago del queso",
       "description": "\u00BFPero qu\u00E9? \u00BFQui\u00E9n ha dejado una rata entrar en la guerra? Si adem\u00E1s lleva sombrero y todo, y parece que se ha tra\u00EDdo a todos sus parientes. En fin, no ser\u00E9 yo quien la juzgue, pero no parece que trame nada bueno."
     },
     "Cards": {

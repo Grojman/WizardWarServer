@@ -13,7 +13,8 @@
         "Effects": [
           {
             "$type": "DrawCardEffect",
-            "CardAmount": 3
+            "CardAmount": 3,
+            "Filter": null
           }
         ],
         "Duration": {
@@ -25,7 +26,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "ce41621b-0406-4d81-9443-92ee236d2a00"
+        "Id": "2d42c49d-a698-40cd-a038-40333ae63add"
       }
     ],
     "imageUrl": "",
@@ -83,7 +84,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "58143899-175d-41be-876e-799a93b71e25"
+        "Id": "e8cfc6b4-21a9-4a9c-b84f-dcf96a4f82b8"
       }
     ],
     "imageUrl": "",
@@ -122,7 +123,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "c79a61ce-d976-4aac-97b7-eafb45340d76"
+        "Id": "d67e9ac1-3d80-479d-840c-33f8387a1b9c"
       }
     ],
     "imageUrl": "",
@@ -171,6 +172,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
                   "Rata"
@@ -196,7 +198,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "10773683-9505-4180-915f-439e47ec36ad"
+        "Id": "f7b4eefb-8281-43b5-95b7-0f3f742b4cca"
       }
     ],
     "imageUrl": "",
@@ -231,7 +233,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "dd98608c-509a-4be3-b5fc-15403ae4e0da"
+        "Id": "286d723f-fe5f-4e55-aebf-6bcfef149fda"
       }
     ],
     "imageUrl": "",
@@ -267,7 +269,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "2ee7baa1-3673-45e0-8ae1-58468230c926"
+        "Id": "bb42656e-9390-4d6c-bd54-5b842b21297d"
       },
       {
         "Trigger": 0,
@@ -286,7 +288,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "1ae9c402-ccfb-4397-8ec1-a081739b769b"
+        "Id": "178d54aa-ba27-424f-8a86-5a0cee6b4b7a"
       }
     ],
     "imageUrl": "",
@@ -316,6 +318,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
                   "Rata"
@@ -341,7 +344,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "e1b4ffc6-fe48-4205-9657-aba9ab7a01c5"
+        "Id": "32cfa8dd-ce80-4893-824a-09910b983a15"
       }
     ],
     "imageUrl": "",
@@ -379,7 +382,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "317154a6-d78e-43ea-9e19-0f7d9c871f80"
+        "Id": "4f664fb7-e8d0-4314-8429-3145c5c54ccf"
       }
     ],
     "imageUrl": "",
@@ -422,6 +425,7 @@
                   "CurrentHealth": null,
                   "Attack": null,
                   "Health": null,
+                  "CardType": null,
                   "Families": null,
                   "CurrentFamilies": [
                     "Rata"
@@ -436,7 +440,7 @@
               "SourceCard": null,
               "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
               "Expired": false,
-              "Id": "37a9ab5e-163a-4715-ac3e-8aa8d188212a"
+              "Id": "c028537a-ef4c-469b-a014-fb124ab00214"
             }
           }
         ],
@@ -449,7 +453,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "83e88114-97c9-45f3-9552-ab7fdff63a18"
+        "Id": "0272d6ba-2e71-465d-83f0-570e691cbdf5"
       }
     ],
     "imageUrl": "",
@@ -460,6 +464,7 @@
         "CurrentHealth": null,
         "Attack": null,
         "Health": null,
+        "CardType": null,
         "Families": null,
         "CurrentFamilies": [
           "Rata"
@@ -501,6 +506,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": null,
                 "DefinitionId": null,
@@ -529,6 +535,7 @@
                       "CurrentHealth": null,
                       "Attack": null,
                       "Health": null,
+                      "CardType": null,
                       "Families": null,
                       "CurrentFamilies": null,
                       "DefinitionId": null,
@@ -546,13 +553,11 @@
               "Duration": {
                 "$type": "DurationByExecutions"
               },
-              "Condition": {
-                "$type": "IHaveBeenPlayedCondition"
-              },
+              "Condition": null,
               "SourceCard": null,
               "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
               "Expired": false,
-              "Id": "4a4d430d-d1c3-489b-853f-af6a5c528043"
+              "Id": "8e12be8c-6777-4700-9a93-51cc1b294c23"
             }
           }
         ],
@@ -565,7 +570,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "68710580-7327-485e-ae1e-6d84fa4a2ca1"
+        "Id": "baf2f330-f72d-489f-9868-cba383506729"
       }
     ],
     "imageUrl": "",
@@ -597,6 +602,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": null,
                 "DefinitionId": null,
@@ -620,14 +626,15 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5fde9bbb-0323-45d2-afd3-fae8787517b8"
+        "Id": "19eb8dfb-941c-4a42-b0ae-b80bf9ac24e9"
       }
     ],
     "imageUrl": "",
     "ConditionToPlay": null,
     "PlayEffect": {
       "$type": "DrawCardEffect",
-      "CardAmount": 0
+      "CardAmount": 0,
+      "Filter": null
     },
     "PlayEffectTriggerTimes": 1
   },
@@ -647,7 +654,8 @@
         "Effects": [
           {
             "$type": "DrawCardEffect",
-            "CardAmount": 1
+            "CardAmount": 1,
+            "Filter": null
           },
           {
             "$type": "AlterPlayerHealthEffect",
@@ -664,7 +672,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "c8a65974-af7a-4945-b8a6-f4c6342d9651"
+        "Id": "c863328d-d76d-4113-a594-41c0bc169c53"
       }
     ],
     "imageUrl": "",
@@ -676,6 +684,7 @@
           "CurrentHealth": null,
           "Attack": null,
           "Health": null,
+          "CardType": null,
           "Families": null,
           "CurrentFamilies": [
             "Caballero"
@@ -726,7 +735,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "063e223c-919f-42d0-b4b7-277bfa82d3b2"
+        "Id": "2c528072-5624-4fdc-959c-7e3220675df8"
       }
     ],
     "imageUrl": "",
@@ -791,6 +800,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": null,
                 "DefinitionId": "19",
@@ -812,7 +822,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "014bc8bb-f142-42fb-9309-aea38bbbfe3d"
+        "Id": "5577aacc-6f7b-4d63-a996-0f8943c94b41"
       }
     ],
     "imageUrl": "",
@@ -845,6 +855,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
                   "Paranoia"
@@ -870,7 +881,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "398a1e6e-4222-4a84-937d-d32ae30f0273"
+        "Id": "6b60aded-9017-4b1c-a712-92586b39e567"
       },
       {
         "Trigger": 6,
@@ -891,6 +902,7 @@
             "CurrentHealth": null,
             "Attack": null,
             "Health": null,
+            "CardType": null,
             "Families": null,
             "CurrentFamilies": null,
             "DefinitionId": "14",
@@ -903,7 +915,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "ca1e4469-0b84-4624-a3f0-efaf66e65791"
+        "Id": "1ea8bb83-cd4a-4d7f-a24b-5bb139d2ea8d"
       }
     ],
     "imageUrl": "",
@@ -917,6 +929,7 @@
             "CurrentHealth": null,
             "Attack": null,
             "Health": null,
+            "CardType": null,
             "Families": null,
             "CurrentFamilies": null,
             "DefinitionId": "14",
@@ -936,6 +949,7 @@
             "CurrentHealth": null,
             "Attack": null,
             "Health": null,
+            "CardType": null,
             "Families": null,
             "CurrentFamilies": null,
             "DefinitionId": "18",
@@ -992,7 +1006,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "6c9760e0-2c1d-4e51-8da0-f4e15e3ff917"
+        "Id": "700b9891-73fc-4e68-bd33-dc27c245923b"
       }
     ],
     "imageUrl": "",
@@ -1038,6 +1052,7 @@
               "CurrentHealth": null,
               "Attack": null,
               "Health": null,
+              "CardType": null,
               "Families": null,
               "CurrentFamilies": [
                 "Caballo"
@@ -1060,7 +1075,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "c3dd34c7-7f72-4cb7-b3b8-d0c1205de9cc"
+        "Id": "5076f5f0-e842-4bb0-8ca6-61c37d936fa5"
       }
     ],
     "imageUrl": "",
@@ -1072,6 +1087,7 @@
           "CurrentHealth": null,
           "Attack": null,
           "Health": null,
+          "CardType": null,
           "Families": null,
           "CurrentFamilies": [
             "Caballo"
@@ -1134,7 +1150,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "943bf336-872e-457d-9e4b-45e2b9cc61d8"
+        "Id": "87a57e7c-bf78-42a4-9bcd-27860cb46a7e"
       }
     ],
     "imageUrl": "",
@@ -1177,6 +1193,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": null,
                 "DefinitionId": "26",
@@ -1194,6 +1211,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": null,
                 "DefinitionId": "19",
@@ -1209,7 +1227,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "305a70f7-9c8e-4905-aa8b-e116ee395e50"
+        "Id": "ed6cf5f1-acc2-4948-b618-88aa998aecbe"
       }
     ],
     "imageUrl": "",
@@ -1241,6 +1259,7 @@
                 "CurrentHealth": null,
                 "Attack": null,
                 "Health": null,
+                "CardType": null,
                 "Families": null,
                 "CurrentFamilies": null,
                 "DefinitionId": null,
@@ -1266,6 +1285,7 @@
               "CurrentHealth": null,
               "Attack": null,
               "Health": null,
+              "CardType": null,
               "Families": null,
               "CurrentFamilies": [
                 "Castellano"
@@ -1286,7 +1306,7 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "e25fee66-4f37-42cb-ac40-4ace0d7a0327"
+        "Id": "5ba3eb00-b397-470f-8b11-816bf7a0855a"
       }
     ],
     "imageUrl": "",
@@ -1301,6 +1321,7 @@
           "CurrentHealth": null,
           "Attack": null,
           "Health": null,
+          "CardType": null,
           "Families": null,
           "CurrentFamilies": null,
           "DefinitionId": null,
@@ -1315,5 +1336,454 @@
       }
     },
     "PlayEffectTriggerTimes": 2
+  },
+  {
+    "Families": [],
+    "Id": "26_1",
+    "Name": "Llamada de auxilio",
+    "Type": 1,
+    "Description": "Roba dos caballeros",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 2,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "Caballero"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "cb800ede-ea9e-4902-953e-8adc5d536775"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Ceniza"
+    ],
+    "Id": "27",
+    "Name": "Bola de fuego",
+    "Type": 1,
+    "Description": "0/-4 A un enemigo (izq)",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": -4,
+            "Damage": 0,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 1,
+              "MaxLength": 1
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "5e581d6c-9533-45ea-b303-4fc5f5d3ad36"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Hechicero"
+    ],
+    "Id": "28",
+    "Name": "Aprendiz de mago",
+    "Type": 0,
+    "Description": "Cuando me juegas, creo una bola de fuego",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "27",
+            "CardsAmount": 1,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "2c39e495-a297-403d-89c5-a5f8112ff95a"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Hechicero"
+    ],
+    "Id": "29",
+    "Name": "Maestro de la ceniza",
+    "Type": 0,
+    "Description": "Has jugado 6 bolas de fuego o m\u00E1s. Fin de Ronda: creo una bola de fuego en el mazo",
+    "BaseAttack": 6,
+    "BaseHealth": 7,
+    "Effects": [
+      {
+        "Trigger": 0,
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "27",
+            "CardsAmount": 1,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "7ce348c3-2c73-4100-a758-384889d465fa"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountPlayedCardsCondition",
+      "Filter": {
+        "CurrentAttack": null,
+        "CurrentHealth": null,
+        "Attack": null,
+        "Health": null,
+        "CardType": null,
+        "Families": null,
+        "CurrentFamilies": null,
+        "DefinitionId": "27",
+        "Id": null,
+        "HasEffect": null,
+        "NumberOfTriggersLeft": null,
+        "MustMeetAllCriteria": false
+      },
+      "Target": 0,
+      "Amount": 5,
+      "CountType": 0
+    },
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Ceniza"
+    ],
+    "Id": "30",
+    "Name": "Esp\u00EDritu del fuego",
+    "Type": 0,
+    "Description": "Cuando juegas una bola de fuego, inflinjo 1 de da\u00F1o al rival",
+    "BaseAttack": 2,
+    "BaseHealth": 4,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": -1,
+            "ToRival": true
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": true,
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": "27",
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          }
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "7314b67f-3f3d-413e-b976-1674a853b6bb"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "31",
+    "Name": "Tierras yermas",
+    "Type": 1,
+    "Description": "-2/-2 a la mesa enemiga",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": -2,
+            "Damage": -2,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 1,
+              "MaxLength": 0
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "a0a390cb-7d1e-4556-ba45-0074ad6c9c25"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "32",
+    "Name": "Conjuro del dios del fuego",
+    "Type": 1,
+    "Description": "Roba dos hechizos",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 2,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": 1,
+              "Families": null,
+              "CurrentFamilies": null,
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "c700ecc5-caeb-441f-b8d8-d579bb745de5"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "33",
+    "Name": "La llamada de la ceniza",
+    "Type": 1,
+    "Description": "Roba una carta ceniza",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "Ceniza"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "973cb70a-8286-48ab-8b1b-76d9d94df30b"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "34",
+    "Name": "La ira del dios del fuego",
+    "Type": 1,
+    "Description": "MATA a TODAS las unidades en mesa",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "KillCards",
+            "BoardSearch": 2,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": null,
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions"
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Id": "de789dd9-063f-4b85-8d27-5bef74840ca1"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   }
 ]

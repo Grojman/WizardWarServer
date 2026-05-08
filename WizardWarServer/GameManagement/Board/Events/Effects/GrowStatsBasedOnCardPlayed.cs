@@ -19,10 +19,10 @@ public class GrowStatsBasedOnCardPlayed : IEffect
 
     public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        if(ev is GameEvent.UnitPlayed e && (e.Unit.CurrentFamilies.Contains(FamilyType) || string.IsNullOrWhiteSpace(FamilyType)))
+        if(ev is GameEvent.UnitPlayed e && (e.Card.CurrentFamilies.Contains(FamilyType) || string.IsNullOrWhiteSpace(FamilyType)))
         {
-            state.AlterUnitDamage(cardId, ApplyToMyself ? cardId : e.Unit, Damage);
-            state.AlterUnitHealth(cardId, ApplyToMyself ? cardId : e.Unit, Health);
+            state.AlterUnitDamage(cardId, ApplyToMyself ? cardId : e.Card, Damage);
+            state.AlterUnitHealth(cardId, ApplyToMyself ? cardId : e.Card, Health);
         }
     }
 }

@@ -2,14 +2,19 @@ public abstract class GameEvent
 {
     public required PlayerState PlayerSource { get; set; }
     public required IdentificableObject Source { get; set; }
+
+    public abstract class GameEventCard : GameEvent
+    {
+        public required CardInstance Card { get; set;}
+    }
+
     public class TextMessage : GameEvent
     {
         public required string Message { get; set; }
     }
-    public class CardDrawnEvent : GameEvent
+    public class CardDrawnEvent : GameEventCard
     {
         public required Guid PlayerId { get; set; }
-        public required CardInstance CardInstance { get; set; }
     }
 
     public class PlayerHealthChanged : GameEvent
@@ -18,34 +23,29 @@ public abstract class GameEvent
         public required int Amount { get; set; }
     }
 
-    public class UnitHealthChanged : GameEvent
+    public class UnitHealthChanged : GameEventCard
     {
-        public required CardInstance Card { get; set;}
 
         public required int Amount { get; set; }
     }
 
-    public class UnitDamageChanged : GameEvent
+    public class UnitDamageChanged : GameEventCard
     {
-        public required CardInstance Card { get; set; }
         public required int Amount { get; set; }
     }
 
-    public class UnitPlayed : GameEvent
+    public class UnitPlayed : GameEventCard
     {
         public required int BoardPosition { get; set; }
-        public required CardInstance Unit { get; set; }
     }
 
-    public class SpellPlayed : GameEvent
+    public class SpellPlayed : GameEventCard
     {
-        public required CardInstance Spell { get; set; }
     }
 
-    public class UnitDeath : GameEvent
+    public class UnitDeath : GameEventCard
     {
         public required int BoardPosition { get; set; }
-        public required CardInstance Unit { get; set; }
     }
 
     public class DeckOutOfCards : GameEvent {}
@@ -58,10 +58,9 @@ public abstract class GameEvent
         public required int TargetIndex { get; set; }
     }
 
-    public class AddedCardToDeck : GameEvent
+    public class AddedCardToDeck : GameEventCard
     {
         public required PlayerState TargetedPlayer { get; set; }
-        public required CardInstance AddedCard { get; set; }
     }
 
     public class DeckModifiedStats : GameEvent
@@ -70,9 +69,8 @@ public abstract class GameEvent
         public required IEnumerable<CardInstance> AffectedCards { get; set; }
     }
 
-    public class CardEventPlayed : GameEvent
+    public class CardEventPlayed : GameEventCard
     {
-        public required CardInstance Card { get; set; }
     }
 
 }

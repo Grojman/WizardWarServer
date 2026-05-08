@@ -76,7 +76,7 @@ public class GameState
             Source = Source,
             PlayerSource = playerSource,
             TargetedPlayer = target,
-            AddedCard = cardToAdd
+            Card = cardToAdd
         };
 
         target.Deck.AddCard(cardToAdd);
@@ -205,7 +205,7 @@ public class GameState
             {
                 PlayerSource = player,
                 Source = player,
-                CardInstance = card,
+                Card = card,
                 PlayerId = player.Id
             };
             GameActionResult.AddEvent(gevent);
@@ -236,7 +236,7 @@ public class GameState
                     PlayerSource = player,
                     Source = player,
                     BoardPosition = boardIndex,
-                    Unit = card
+                    Card = card
                 };
                 GameActionResult.AddEvent(gevent);
                 ApplyEffect(TriggerType.UnitPlayed, gevent);
@@ -247,7 +247,7 @@ public class GameState
                 {
                     PlayerSource = player,
                     Source = player,
-                    Spell = card
+                    Card = card
                 };
                 GameActionResult.AddEvent(gevent);
                 ApplyEffect(card, TriggerType.SpellPlayed, gevent);
@@ -443,7 +443,7 @@ public class GameState
         {
             PlayerSource = GetState(Unit.PlayerGuid),
             Source = source,
-            Unit = Unit,
+            Card = Unit,
             BoardPosition = position
         };
 

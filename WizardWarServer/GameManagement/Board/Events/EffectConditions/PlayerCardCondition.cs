@@ -12,8 +12,7 @@ public class PlayerCardCondition : EffectCondition
     {
         CardInstance? card = null;
 
-        if (ev is GameEvent.UnitPlayed u) card = u.Unit;
-        if (ev is GameEvent.SpellPlayed s) card = s.Spell;
+        if (ev is GameEvent.GameEventCard u) card = u.Card;
 
         return (Me ? card?.PlayerGuid == sourceCard.PlayerGuid : card?.PlayerGuid != sourceCard.PlayerGuid)  &&
                 (Filter?.Check(card) ?? true);

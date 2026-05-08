@@ -11,8 +11,7 @@ public class FilterPlayerCardCondition : EffectCondition
     {
         CardInstance? card = null;
 
-        if(ev is GameEvent.UnitPlayed e) card = e.Unit;
-        if(ev is GameEvent.SpellPlayed f) card = f.Spell;
+        if(ev is GameEvent.GameEventCard e) card = e.Card;
 
         return card is not null && Filter.Check(card);
     }

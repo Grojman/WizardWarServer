@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj": {}
+    "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS_Y_PROYECTOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj": {
+    "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS_Y_PROYECTOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj",
+        "projectUniqueName": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS_Y_PROYECTOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj",
         "projectName": "WizardWarServer",
-        "projectPath": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj",
+        "projectPath": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS_Y_PROYECTOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj",
         "packagesPath": "C:\\Users\\Yllum\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS\\WizardWarServer\\WizardWarServer\\obj\\",
+        "outputPath": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS_Y_PROYECTOS\\WizardWarServer\\WizardWarServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
