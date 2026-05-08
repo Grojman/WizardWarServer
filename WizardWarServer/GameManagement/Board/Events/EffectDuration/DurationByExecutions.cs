@@ -25,9 +25,9 @@ public class DurationByExecutions : EffectDuration
     {
         return new DurationByExecutions()
         {
-            isExpired = isExpired,
+            isExpired = false,
             times = times,
-            triggerCounter = triggerCounter
+            triggerCounter = 0
         };
     }
 

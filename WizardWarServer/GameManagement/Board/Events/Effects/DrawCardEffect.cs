@@ -11,7 +11,7 @@ public class DrawCardEffect : IEffect
         Filter = filter;
     }
 
-    public int CardAmount { get; set; }
+    public int CardAmount { get; set; } = 1;
     public CardFilter? Filter { get; set; }
 
     public IEffect Clone() => new DrawCardEffect(CardAmount, Filter);

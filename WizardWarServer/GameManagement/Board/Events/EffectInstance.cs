@@ -23,6 +23,7 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
     public Guid PlayerSourceId { get; set; }
     public bool Expired { get => Duration.IsExpired(); }
 
+    public string Description { get; set; }
 
     public EffectInstance Clone()
     {
@@ -33,7 +34,7 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
             PlayerSourceId = PlayerSourceId,
             Duration = Duration.Clone(),
             Condition = Condition?.Clone(),
-            Effects = Effects
+            Effects = [.. Effects.Select(n => n.Clone())]
         };
     }
 

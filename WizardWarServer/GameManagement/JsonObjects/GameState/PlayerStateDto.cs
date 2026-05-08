@@ -1,4 +1,4 @@
-public record PlayerStateDto(Guid Id, string Name, CardDto?[] Board, int Health, int HandSize, CardDto[] HandData, DeckStateDto Deck)
+public record PlayerStateDto(Guid Id, string Name, CardDto?[] Board, int Health, int HandSize, CardDto[] HandData, DeckStateDto Deck, IEnumerable<string> GlobalEffects)
 {
     public static PlayerStateDto Generate(PlayerState state, bool hidden, GameState gameState)
     {
@@ -8,6 +8,7 @@ public record PlayerStateDto(Guid Id, string Name, CardDto?[] Board, int Health,
                     state.Health,
                     state.Hand.Count,
                     hidden ? [] : [.. state.Hand.Select(n => CardDto.Generate(n, gameState, false))],
-                    DeckStateDto.Generate(state.Deck));
+                    DeckStateDto.Generate(state.Deck),
+                    state.GlobalEffects.Select(n => n.Description));
     }
 }

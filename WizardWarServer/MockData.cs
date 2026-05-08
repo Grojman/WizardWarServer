@@ -215,7 +215,8 @@ public static class MockData
                             new Always(),
                             new PlayerCardCondition(true,
                                 new CardFilter { CurrentFamilies = ["Rata"] })
-                        )
+                        ),
+                        "+1/+1 Si la carta es una Rata"
                     )
                 ],
                 new DurationByExecutions(1),
@@ -261,7 +262,8 @@ public static class MockData
                             ],
                             new DurationByExecutions(1),
                             null
-                        )
+                        ),
+                        "0/-1 en el próximo final de turno"
                     )
                 ],
                 new DurationByExecutions(1),
@@ -735,30 +737,6 @@ public static class MockData
             new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.BOTH)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
     },
-
-    //TODO: AÑADIR AL FILTRO PARA PODER BUSCAR EN LAS MANOS TMB
-    new()
-    {
-        Id = "35",
-        Name = "Ratoncio Ratonez",
-        Type = CardType.Unit,
-        Description = "Fin de ronda: -1 de daño al rival por cada carta Rata que tenga en la mano",
-        Families = ["Rata"],
-        BaseHealth = 3,
-        BaseAttack = 1,
-        Effects = [
-            new EffectInstance(
-                TriggerType.TurnEnd,
-                [
-                    new DamagePlayerBasedOnCards(
-                        true,
-                        -1,
-                        PlayerType.RIVAL,
-                    )
-                ]
-            )
-        ]
-    }
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
     {
@@ -823,7 +801,7 @@ public static class MockData
                 { "9", 2},
                 { "10", 3},
                 { "11", 2},
-                { "12", 3},
+                { "12", 27},
                 { "13", 2},
             }
         },

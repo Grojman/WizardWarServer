@@ -1,7 +1,6 @@
 public class GameState
 {
     const int INITIAL_HAND = 3;
-    public List<EffectInstance> GlobalEffects{ get; } = new();
     public GameActionResult GameActionResult { get; set; }
     public PlayerState Player1 { get; set; }
     public PlayerState Player2 { get; set; }
@@ -109,10 +108,7 @@ public class GameState
         if (cardIndex != -1 && cardIndex >= state.Board.Length + 1)
         {
             Console.WriteLine("WTF. Index is not valid for an effect to play");
-        } else if(state.Board[cardIndex]?.SpecialEffect is null)
-        {
-            Console.WriteLine("WTF. The card either doesnt exist or it has no play effect");
-        } else
+        }  else
         {
             var card = cardIndex == state.Board.Length ? state.LastSpellPlayed : state.Board[cardIndex];
             card?.SpecialEffect?.Execute(state.Id, card, this, null);
@@ -344,7 +340,15 @@ public class GameState
 
     void ApplyEffect(TriggerType type, GameEvent? ev)
     {
-        foreach(EffectInstance e in GlobalEffects)
+        foreach(EffectInstance e in Player1.GlobalEffects)
+        {
+            if(e.Trigger == type)
+            {
+                e.TryExecute(this, ev);
+            }
+        }
+
+        foreach(EffectInstance e in Player2.GlobalEffects)
         {
             if(e.Trigger == type)
             {
@@ -366,7 +370,8 @@ public class GameState
 
     void CleanExpiredEffects()
     {
-        GlobalEffects.RemoveAll(n => n.Expired);
+        Player1.GlobalEffects.RemoveAll(n => n.Expired);
+        Player2.GlobalEffects.RemoveAll(n => n.Expired);
         foreach(CardInstance? e in Player1.Board) e?.Effects.RemoveAll(n => n.Expired);
         foreach(CardInstance? e in Player2.Board) e?.Effects.RemoveAll(n => n.Expired);
     }

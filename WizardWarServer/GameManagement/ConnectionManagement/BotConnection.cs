@@ -66,9 +66,9 @@ public class BotConnection : PlayerConnection
         Thread.Sleep(new Random().Next(1000, 3000));
         List<Func<GameStateDto, Task>> options = new();
 
-        if(CanDraw(state)) options.Add(DrawCardAsync);
         if(CanPlayCard(state)) options.Add(PlayCard);
         if(CanAttack(state)) options.Add(Attack);
+        if(CanDraw(state, options)) options.Add(DrawCardAsync);
 
         await options.GetRandom()(state);
     }
@@ -79,7 +79,7 @@ public class BotConnection : PlayerConnection
         await Game.HandleAction(this, new PlayerAction.DrawCardAction());
     }
 
-    bool CanDraw(GameStateDto state) => state.Me.HandData.Count() < 5;
+    bool CanDraw(GameStateDto state, List<Func<GameStateDto, Task>> options) => options.Count == 0 || state.Me.HandData.Count() < 5;
 
     async Task Attack(GameStateDto state)
     {
@@ -90,8 +90,8 @@ public class BotConnection : PlayerConnection
         await Game.HandleAction(this, new PlayerAction.AttackAction()
         {
             TargetType = options.GetRandom(),
-            TargetIndex = rivalPositions.GetRandom(),
-            AttackerIndex = playerPositions.GetRandom()
+            TargetIndex = !rivalPositions.Any() ? 0 : rivalPositions.GetRandom(),
+            AttackerIndex = !playerPositions.Any() ? 0 : playerPositions.GetRandom()
         });
     }
 

@@ -26,7 +26,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "fa44324d-2c64-481f-bdea-cc4295384329"
+        "Description": null,
+        "Id": "6adc6e51-8f40-4f31-89eb-6d4ec668e302"
       }
     ],
     "imageUrl": "",
@@ -84,7 +85,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "108a465e-414c-440e-a74f-3a242c38ae30"
+        "Description": null,
+        "Id": "64020666-1e4b-4c4c-9434-86a17d957cc3"
       }
     ],
     "imageUrl": "",
@@ -123,7 +125,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "3762d5d7-3d20-4780-b916-239c995cb0c7"
+        "Description": null,
+        "Id": "52a3203e-762f-4bf9-a82f-4242052f97c8"
       }
     ],
     "imageUrl": "",
@@ -198,7 +201,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5712a27a-99c6-469e-81da-98e89677d8af"
+        "Description": null,
+        "Id": "105c45f8-6d94-4e25-a530-ae5f654b2c87"
       }
     ],
     "imageUrl": "",
@@ -233,7 +237,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "2fb34f10-03b1-4e95-9462-6edf5f441959"
+        "Description": null,
+        "Id": "15f6233f-6390-4efa-ae9d-34660151491c"
       }
     ],
     "imageUrl": "",
@@ -269,7 +274,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "51eadbdb-e69e-439b-9e81-53200305099f"
+        "Description": null,
+        "Id": "e9e5d103-e830-4ce4-b1b5-58855267f071"
       },
       {
         "Trigger": 0,
@@ -288,7 +294,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5d276159-2165-4cee-84a1-99daa8f313cd"
+        "Description": null,
+        "Id": "7280bdc6-5518-482f-9d3a-3508f2b14c62"
       }
     ],
     "imageUrl": "",
@@ -344,7 +351,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "218d05b5-1d34-419e-bb25-76b55500e0a1"
+        "Description": null,
+        "Id": "dbdf3a1c-9c13-4888-ae9b-950490b1dcff"
       }
     ],
     "imageUrl": "",
@@ -382,7 +390,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "f459f751-bbec-4824-8e14-d132ced08927"
+        "Description": null,
+        "Id": "2083966d-fa8c-4d56-af15-f5e505403fc3"
       }
     ],
     "imageUrl": "",
@@ -404,6 +413,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
+            "Description": "\u002B1/\u002B1 Si la carta es una Rata",
             "Effect": {
               "Trigger": 5,
               "Effects": [
@@ -440,7 +450,8 @@
               "SourceCard": null,
               "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
               "Expired": false,
-              "Id": "06ad1243-fd3c-4aa4-93aa-c9ea594359fb"
+              "Description": "\u002B1/\u002B1 Si la carta es una Rata",
+              "Id": "a306cd01-cce8-4569-9c78-db5b1ad14227"
             }
           }
         ],
@@ -453,7 +464,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "e52a80c6-6307-4414-9fd3-1ada963e4aa3"
+        "Description": null,
+        "Id": "314f0a4f-4a60-4d79-a54a-352a3df6330a"
       }
     ],
     "imageUrl": "",
@@ -522,6 +534,7 @@
           },
           {
             "$type": "AppendGlobalEffect",
+            "Description": "0/-1 en el pr\u00F3ximo final de turno",
             "Effect": {
               "Trigger": 0,
               "Effects": [
@@ -557,7 +570,8 @@
               "SourceCard": null,
               "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
               "Expired": false,
-              "Id": "43d94a2b-d2a1-4dc6-92dd-c5cfe6c9aa95"
+              "Description": "0/-1 en el pr\u00F3ximo final de turno",
+              "Id": "512ee17e-ac85-45d6-8ec8-f1f2fc5df4c7"
             }
           }
         ],
@@ -570,7 +584,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5fac19ff-cc52-4ebf-9404-748fa8657be3"
+        "Description": null,
+        "Id": "a0c4918c-a504-4ea9-bfd6-4f075f2aa91b"
       }
     ],
     "imageUrl": "",
@@ -626,14 +641,15 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "ee2d8731-cf69-40d1-b99d-80ac1c4c951c"
+        "Description": null,
+        "Id": "2218c9e4-5a30-492d-8276-afb70c6fa0a4"
       }
     ],
     "imageUrl": "",
     "ConditionToPlay": null,
     "PlayEffect": {
       "$type": "DrawCardEffect",
-      "CardAmount": 0,
+      "CardAmount": 1,
       "Filter": null
     },
     "PlayEffectTriggerTimes": 1
@@ -672,7 +688,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "4956e995-fd20-4743-9d13-20543c04bd2c"
+        "Description": null,
+        "Id": "fc3de889-e411-4543-b219-8b45104ae718"
       }
     ],
     "imageUrl": "",
@@ -735,7 +752,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "7dae4e94-aff5-4545-bfc6-9c639dcc75f5"
+        "Description": null,
+        "Id": "ef7a9acc-1d5e-4f41-ac12-1150e2803b13"
       }
     ],
     "imageUrl": "",
@@ -822,7 +840,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "82e68d10-5af7-4f71-8e8f-2cc6e2cb69f5"
+        "Description": null,
+        "Id": "48597863-6528-4808-a00d-e887946c77dd"
       }
     ],
     "imageUrl": "",
@@ -881,7 +900,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "78f36ef6-0b7b-469b-b91b-966eb0446904"
+        "Description": null,
+        "Id": "e273e404-ab41-464c-bf41-99438c15a17c"
       },
       {
         "Trigger": 6,
@@ -915,7 +935,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5760f94d-db33-4de7-b99b-e7d6ce6e2ee7"
+        "Description": null,
+        "Id": "8457e62d-b826-480d-b6d8-43dd71086e99"
       }
     ],
     "imageUrl": "",
@@ -1006,7 +1027,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "a292f25e-283c-4acf-be8f-2bdebc170154"
+        "Description": null,
+        "Id": "9ff0ae6a-07cd-49ca-a411-549e36526390"
       }
     ],
     "imageUrl": "",
@@ -1075,7 +1097,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "4e0d8020-7b1d-4183-a7c4-20be45077009"
+        "Description": null,
+        "Id": "7504eab2-e841-4ac6-9432-eaecd1823cd1"
       }
     ],
     "imageUrl": "",
@@ -1150,7 +1173,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "5154b043-1017-4498-a82f-e69f524f11b7"
+        "Description": null,
+        "Id": "7b0de90f-d7b1-42a5-9c57-4b8574c20584"
       }
     ],
     "imageUrl": "",
@@ -1227,7 +1251,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "a7af49cf-3e25-4631-a111-70fa538800e4"
+        "Description": null,
+        "Id": "0143824a-5599-4be6-b216-3c86f16ef06b"
       }
     ],
     "imageUrl": "",
@@ -1301,12 +1326,13 @@
             "MaxLength": 0
           },
           "Amount": 1,
-          "CountType": 0
+          "CountType": 1
         },
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "c76c7988-320f-45bb-af2e-b5db889c3d10"
+        "Description": null,
+        "Id": "6196341e-4374-4f75-98df-a5eefac88a1a"
       }
     ],
     "imageUrl": "",
@@ -1377,7 +1403,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "28a5bc54-8468-4a52-86c7-eacdd4d1bcd7"
+        "Description": null,
+        "Id": "04a4106c-a6f6-460a-a634-a691bbdc503d"
       }
     ],
     "imageUrl": "",
@@ -1433,7 +1460,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "fac659d1-2607-4555-a036-1acff0dc42c6"
+        "Description": null,
+        "Id": "7c3679ab-3cbc-4b35-b04a-aa5fe622341a"
       }
     ],
     "imageUrl": "",
@@ -1471,7 +1499,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "ecda86d8-02a2-4b49-9a4f-015b06bb16db"
+        "Description": null,
+        "Id": "ecd1741e-5c88-41c5-8236-244d60c81264"
       }
     ],
     "imageUrl": "",
@@ -1507,7 +1536,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "cbb41b6f-d09d-4eda-937c-5ef6ecb69386"
+        "Description": null,
+        "Id": "06725575-9c70-4bf7-9b15-d51e4ce0d0ea"
       }
     ],
     "imageUrl": "",
@@ -1578,7 +1608,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "174c3e00-cc82-4501-89a2-ad74e54b020b"
+        "Description": null,
+        "Id": "ffaf5d47-5108-48e4-a11f-7b3e50089bff"
       }
     ],
     "imageUrl": "",
@@ -1632,7 +1663,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "999366fd-73a8-495b-89de-ba6d4db06255"
+        "Description": null,
+        "Id": "bd88fa97-8014-4915-a718-e49f5e7e1c48"
       }
     ],
     "imageUrl": "",
@@ -1680,7 +1712,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "a629fcdf-0c63-45f1-ad0e-ad21a4de6527"
+        "Description": null,
+        "Id": "5845a7da-195f-4201-83cc-4798f05157ad"
       }
     ],
     "imageUrl": "",
@@ -1730,7 +1763,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "43f22819-2227-41eb-a368-193621aaaeb3"
+        "Description": null,
+        "Id": "49cbfbe8-2396-44ea-b2dc-720b05a82490"
       }
     ],
     "imageUrl": "",
@@ -1778,7 +1812,8 @@
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
-        "Id": "1ac615e1-bc84-4669-b6b3-928dab03b650"
+        "Description": null,
+        "Id": "6399a4cc-77c3-49c9-a3cc-3e83f6236e5f"
       }
     ],
     "imageUrl": "",
