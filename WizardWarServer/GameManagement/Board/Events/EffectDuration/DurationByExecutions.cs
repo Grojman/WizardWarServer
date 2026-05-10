@@ -19,7 +19,7 @@ public class DurationByExecutions : EffectDuration
     
 
     private bool isExpired { get; set; } = false;
-    private int times { get; set; } = 1;
+    public int times { get; set; } = 1;
     private int triggerCounter { get; set; } = 0;
     public override EffectDuration Clone()
     {

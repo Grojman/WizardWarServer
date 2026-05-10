@@ -18,7 +18,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -27,7 +28,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "f07122f8-931e-483f-b14e-401961f7a332"
+        "Id": "5c004131-590d-47b5-8505-605dcef87166"
       }
     ],
     "imageUrl": "",
@@ -77,7 +78,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveDiedCondition"
@@ -86,7 +88,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "b5207a13-3a45-43ec-b80a-5db4900db16e"
+        "Id": "eb0cea3f-e4b4-420d-9fd7-a42e10a7812c"
       }
     ],
     "imageUrl": "",
@@ -107,11 +109,10 @@
         "Trigger": 5,
         "Effects": [
           {
-            "$type": "GrowStatsBasedOnCardPlayed",
-            "FamilyType": "Rata",
-            "Health": 1,
+            "$type": "AlterMySelf",
             "Damage": 1,
-            "ApplyToMyself": true
+            "Health": 1,
+            "UseGameEvent": true
           }
         ],
         "Duration": {
@@ -120,13 +121,28 @@
         "Condition": {
           "$type": "PlayerCardCondition",
           "Me": false,
-          "Filter": null
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": null,
+            "Families": null,
+            "CurrentFamilies": [
+              "Rata"
+            ],
+            "DefinitionId": null,
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          }
         },
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "070a4e59-f3b8-42c0-8758-9112bc9a9560"
+        "Id": "dc7bcb5e-76cc-4538-bb81-cf0f551a8d95"
       }
     ],
     "imageUrl": "",
@@ -193,7 +209,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -202,7 +219,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "5ca89d47-4a8a-486c-a325-e29f6848f60b"
+        "Id": "05216b02-c500-4123-a9fc-36aeebdf8a25"
       }
     ],
     "imageUrl": "",
@@ -229,7 +246,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -238,7 +256,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "b78a508a-1ad4-45f2-a8b7-d109adb4da3c"
+        "Id": "b1fc2020-d87b-47a1-a547-5c2263429fa0"
       }
     ],
     "imageUrl": "",
@@ -275,7 +293,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "0c87c165-5af0-455b-9167-dc751d35c415"
+        "Id": "fe90b8f8-0800-46ea-9dd0-000a6d61cd79"
       },
       {
         "Trigger": 0,
@@ -295,7 +313,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "2efd9051-68a9-43dc-b5ba-7c48ffb2cba0"
+        "Id": "ac62ee6f-74ee-49d1-8fcb-a6402c999847"
       }
     ],
     "imageUrl": "",
@@ -343,7 +361,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -352,7 +371,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "0dac7e0d-c4da-4385-8ad6-cde093c8efad"
+        "Id": "48db1105-bac3-4e53-ac96-32b8eeb8c456"
       }
     ],
     "imageUrl": "",
@@ -382,7 +401,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -391,7 +411,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "b16553f6-3768-4568-aac2-4a2312a9acbe"
+        "Id": "efab76d4-cdda-4456-ba19-00e3faa8ea60"
       }
     ],
     "imageUrl": "",
@@ -451,12 +471,13 @@
               "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
               "Expired": false,
               "Description": "\u002B1/\u002B1 Si la carta es una Rata",
-              "Id": "ca7f78be-133d-471c-a3a8-fcaa63f9be0c"
+              "Id": "77234dfb-530a-40f3-b81f-330bdbde9be4"
             }
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -465,7 +486,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "b8c09d0e-f7a9-47ce-834b-1822aa3b56a0"
+        "Id": "4e3200a1-1bbe-4b7e-8663-cac634e45c15"
       }
     ],
     "imageUrl": "",
@@ -564,19 +585,21 @@
                 }
               ],
               "Duration": {
-                "$type": "DurationByExecutions"
+                "$type": "DurationByExecutions",
+                "times": 1
               },
               "Condition": null,
               "SourceCard": null,
               "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
               "Expired": false,
               "Description": "0/-1 en el pr\u00F3ximo final de turno",
-              "Id": "54b27c76-cf29-42d9-bdd2-460b6f432ca1"
+              "Id": "6d2c2c40-26f2-4967-a41a-07ac7d3eea45"
             }
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -585,7 +608,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "269845a7-a8d1-4c2d-85ec-8c1c9560e6f2"
+        "Id": "092404b8-3daa-43e8-a426-876c8b17fad2"
       }
     ],
     "imageUrl": "",
@@ -633,7 +656,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -642,7 +666,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "fb3ff602-d985-47a1-adaf-773ddfa95961"
+        "Id": "008fcd81-cce7-4c20-a3f3-b6f690573b8c"
       }
     ],
     "imageUrl": "",
@@ -653,6 +677,59 @@
       "Filter": null
     },
     "PlayEffectTriggerTimes": 1
+  },
+  {
+    "Families": [],
+    "Id": "13_1",
+    "Name": "Exterminador de plagas",
+    "Type": 0,
+    "Description": "Cuando el jugador rival roba una carta, y es una rata, le inflinjo 1 de da\u00F1o",
+    "BaseAttack": 1,
+    "BaseHealth": 2,
+    "Effects": [
+      {
+        "Trigger": 1,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": -1,
+            "ToRival": true
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": false,
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": null,
+            "Families": null,
+            "CurrentFamilies": [
+              "Rata"
+            ],
+            "DefinitionId": null,
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          }
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Description": null,
+        "Id": "4a3c0fa7-6c10-426e-a39e-66524ab0e6fb"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [
@@ -680,7 +757,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -689,7 +767,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "77457b7e-11d5-49ae-a7e0-33cb00f7376e"
+        "Id": "ffdea18a-19df-4d2b-bd33-5133a6250ec1"
       }
     ],
     "imageUrl": "",
@@ -753,7 +831,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "d909bde1-a3c2-4821-b608-e836975024d7"
+        "Id": "4f01b41f-f41e-44ec-9d68-151b93cf9633"
       }
     ],
     "imageUrl": "",
@@ -841,7 +919,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "220081cd-ba2e-4574-90bf-2e2861979888"
+        "Id": "42d93809-dc82-4395-83f5-c3dd76aa5286"
       }
     ],
     "imageUrl": "",
@@ -892,7 +970,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -901,7 +980,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "9bfec0e0-bf5c-44bf-bae2-270171a8cce2"
+        "Id": "bdef34a3-f313-4c3e-b008-43c5d160a686"
       },
       {
         "Trigger": 6,
@@ -936,7 +1015,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "9fa389ac-fc90-47b2-8ad8-7f57b21f0959"
+        "Id": "c7f9317a-b27b-42fd-a582-d08af9dde41b"
       }
     ],
     "imageUrl": "",
@@ -1021,14 +1100,15 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": null,
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "3995e376-b029-4965-81c0-8177d6376c75"
+        "Id": "ebc450be-db66-44ab-94f0-58950192ba42"
       }
     ],
     "imageUrl": "",
@@ -1089,7 +1169,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -1098,7 +1179,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "a8f39a62-2167-4e49-af99-02557d92589a"
+        "Id": "8866626f-b67e-4c86-a9be-eb253fb09d5f"
       }
     ],
     "imageUrl": "",
@@ -1174,7 +1255,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "17716b8c-b8dc-484e-aabd-80871af19346"
+        "Id": "3bcd40c0-c466-454e-9815-0f11ccc28643"
       }
     ],
     "imageUrl": "",
@@ -1252,7 +1333,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "f29a276a-9c2f-48f1-9aab-883bfcc95fc2"
+        "Id": "5f2d696d-9c84-4865-8a63-ed2b069ac0b4"
       }
     ],
     "imageUrl": "",
@@ -1332,7 +1413,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "0d7541c4-a0f0-4775-b71f-482fe9e2ed22"
+        "Id": "7c6b2396-e0b2-4591-9950-dc3d5db34bed"
       }
     ],
     "imageUrl": "",
@@ -1397,14 +1478,15 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": null,
         "SourceCard": null,
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "5169f89e-6982-4011-876b-c05f04a0dcc7"
+        "Id": "e34f2693-bb6c-487b-acf9-0a4fa39f2648"
       }
     ],
     "imageUrl": "",
@@ -1452,7 +1534,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -1461,7 +1544,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "b2cd5e21-9ecd-4cc0-a226-a965c456beb6"
+        "Id": "9a2e19a7-52f4-42cc-9eaf-52ffb9fc8416"
       }
     ],
     "imageUrl": "",
@@ -1471,7 +1554,7 @@
   },
   {
     "Families": [
-      "Hechicero"
+      "Brujo"
     ],
     "Id": "28",
     "Name": "Aprendiz de mago",
@@ -1491,7 +1574,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -1500,7 +1584,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "51dd3d09-b1d2-402e-9bf2-16d98ac98b17"
+        "Id": "283b834a-6b68-44b3-8f0e-f600446b1ff6"
       }
     ],
     "imageUrl": "",
@@ -1510,7 +1594,8 @@
   },
   {
     "Families": [
-      "Hechicero"
+      "Brujo",
+      "Ceniza"
     ],
     "Id": "29",
     "Name": "Maestro de la ceniza",
@@ -1537,7 +1622,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "f1663540-6200-4083-b629-1a0c0baa3259"
+        "Id": "b08bd04a-343c-48ca-b189-963813e0d2c2"
       }
     ],
     "imageUrl": "",
@@ -1558,7 +1643,7 @@
         "MustMeetAllCriteria": false
       },
       "Target": 0,
-      "Amount": 5,
+      "Amount": 6,
       "CountType": 0
     },
     "PlayEffect": null,
@@ -1609,7 +1694,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "b9501397-1edf-4c52-9311-37fd4994cd21"
+        "Id": "8552c741-103f-4223-887d-28d6c531bf7e"
       }
     ],
     "imageUrl": "",
@@ -1618,7 +1703,9 @@
     "PlayEffectTriggerTimes": 0
   },
   {
-    "Families": [],
+    "Families": [
+      "Destrucci\u00F3n"
+    ],
     "Id": "31",
     "Name": "Tierras yermas",
     "Type": 1,
@@ -1655,7 +1742,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -1664,7 +1752,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "5d24e9ae-56d0-448d-b01c-816589398ee0"
+        "Id": "c2c84c7a-9a3c-49b8-9166-435ea068815d"
       }
     ],
     "imageUrl": "",
@@ -1704,7 +1792,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -1713,7 +1802,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "ea85a430-eb87-4126-89cb-09c7323baece"
+        "Id": "6f981a6a-2fc9-4160-a8eb-dcb289cdf141"
       }
     ],
     "imageUrl": "",
@@ -1755,7 +1844,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -1764,7 +1854,7 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "9a6218db-526d-46d3-98b1-29c7163ef3cd"
+        "Id": "e5794abc-14e2-41d3-abfc-3540d5fa396d"
       }
     ],
     "imageUrl": "",
@@ -1773,7 +1863,9 @@
     "PlayEffectTriggerTimes": 0
   },
   {
-    "Families": [],
+    "Families": [
+      "Destrucci\u00F3n"
+    ],
     "Id": "34",
     "Name": "La ira del dios del fuego",
     "Type": 1,
@@ -1804,7 +1896,8 @@
           }
         ],
         "Duration": {
-          "$type": "DurationByExecutions"
+          "$type": "DurationByExecutions",
+          "times": 1
         },
         "Condition": {
           "$type": "IHaveBeenPlayedCondition"
@@ -1813,7 +1906,308 @@
         "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
         "Expired": false,
         "Description": null,
-        "Id": "2143a5d1-8590-482d-be5a-1f4bb86d736a"
+        "Id": "b51c3912-6146-4bb3-8d99-186d08d966b6"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Destrucci\u00F3n",
+      "Maligno"
+    ],
+    "Id": "35",
+    "Name": "Chispas escurridizas",
+    "Type": 0,
+    "Description": "El pr\u00F3ximo hechizo que juegues, curo 1 y quito 1 al rival",
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AppendGlobalEffect",
+            "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
+            "Effect": {
+              "Trigger": 6,
+              "Effects": [
+                {
+                  "$type": "AlterPlayerHealthEffect",
+                  "Amount": 1,
+                  "ToRival": false
+                },
+                {
+                  "$type": "AlterPlayerHealthEffect",
+                  "Amount": -1,
+                  "ToRival": true
+                }
+              ],
+              "Duration": {
+                "$type": "DurationByExecutions",
+                "times": 1
+              },
+              "Condition": {
+                "$type": "PlayerCardCondition",
+                "Me": true,
+                "Filter": null
+              },
+              "SourceCard": null,
+              "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+              "Expired": false,
+              "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
+              "Id": "d5d37a0d-ea2f-4fe4-962f-6944248d9f4d"
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Description": null,
+        "Id": "908ed616-794c-4983-a53f-d62be53525ce"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Brujo"
+    ],
+    "Id": "36",
+    "Name": "Instructor de las llamas",
+    "Type": 0,
+    "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
+    "BaseAttack": 2,
+    "BaseHealth": 2,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AppendGlobalEffect",
+            "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
+            "Effect": {
+              "Trigger": 5,
+              "Effects": [
+                {
+                  "$type": "AlterMySelf",
+                  "Damage": 1,
+                  "Health": 1,
+                  "UseGameEvent": true
+                }
+              ],
+              "Duration": {
+                "$type": "DurationByExecutions",
+                "times": 2
+              },
+              "Condition": {
+                "$type": "PlayerCardCondition",
+                "Me": true,
+                "Filter": null
+              },
+              "SourceCard": null,
+              "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+              "Expired": false,
+              "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
+              "Id": "e0bfd42e-8e45-4905-8764-0e808fc9b142"
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Description": null,
+        "Id": "b49f4064-f62d-4d0e-8b9d-65c11033a354"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "37",
+    "Name": "Comuni\u00F3n Espiritual",
+    "Type": 1,
+    "Description": "Has jugado una llamada de la ceniza. Las unidades en mesa consiguen \u002B1/\u002B1.",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": 1,
+            "Damage": 1,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 0,
+              "MaxLength": 0
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Description": null,
+        "Id": "519554bc-0366-4c0b-a5cf-5fc6cf7aca5b"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountPlayedCardsCondition",
+      "Filter": {
+        "CurrentAttack": null,
+        "CurrentHealth": null,
+        "Attack": null,
+        "Health": null,
+        "CardType": null,
+        "Families": null,
+        "CurrentFamilies": null,
+        "DefinitionId": "33",
+        "Id": null,
+        "HasEffect": null,
+        "NumberOfTriggersLeft": null,
+        "MustMeetAllCriteria": false
+      },
+      "Target": 0,
+      "Amount": 1,
+      "CountType": 0
+    },
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Maligno"
+    ],
+    "Id": "38",
+    "Name": "Gran negador",
+    "Type": 0,
+    "Description": "\u002B3/\u002B3 si no has jugado un hechizo antes",
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AlterMySelf",
+            "Damage": 3,
+            "Health": 3,
+            "UseGameEvent": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "CountPlayedCardsCondition",
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": 1,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": null,
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          },
+          "Target": 0,
+          "Amount": 0,
+          "CountType": 1
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Description": null,
+        "Id": "8cec1fdc-d938-43e3-ab55-511c1345987a"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffect": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Brujo",
+      "Maligno"
+    ],
+    "Id": "39",
+    "Name": "Maquiavelo el maquiav\u00E9lico",
+    "Type": 0,
+    "Description": "Cuando juegas un hechizo, consigo \u002B1/\u002B1",
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterMySelf",
+            "Damage": 1,
+            "Health": 1,
+            "UseGameEvent": false
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": true,
+          "Filter": null
+        },
+        "SourceCard": null,
+        "PlayerSourceId": "00000000-0000-0000-0000-000000000000",
+        "Expired": false,
+        "Description": null,
+        "Id": "00e503d1-411d-434f-bcb7-f79ff0bb8532"
       }
     ],
     "imageUrl": "",

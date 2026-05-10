@@ -62,9 +62,11 @@ public static class MockData
         [
             new EffectInstance(
                 TriggerType.UnitPlayed,
-                [new GrowStatsBasedOnCardPlayed("Rata", 1, 1, true)],
+                [
+                    new AlterMySelf(1, 1, true)
+                ],
                 new Always(),
-                new PlayerCardCondition(false, null)
+                new PlayerCardCondition(false, new() { CurrentFamilies = ["Rata"]})
             )
         ]
     },
@@ -298,6 +300,25 @@ public static class MockData
         ],
         PlayEffect = new DrawCardEffect(),
         PlayEffectTriggerTimes = 1
+    },
+    new()
+    {
+        Id = "13_1",
+        Name = "Exterminador de plagas",
+        BaseAttack = 1,
+        BaseHealth = 2,
+        Description = "Cuando el jugador rival roba una carta, y es una rata, le inflinjo 1 de daño",
+        Type = CardType.Unit,
+        Effects = [
+            new(
+                TriggerType.DrawCard,
+                [
+                    new AlterPlayerHealthEffect(-1, true)
+                ],
+                new Always(),
+                new PlayerCardCondition(false, new() { CurrentFamilies = ["Rata"]})
+            )
+        ]  
     },
         new CardDefinition
     {
@@ -633,7 +654,7 @@ public static class MockData
     {
         Id = "28",
         Name = "Aprendiz de mago",
-        Families = ["Hechicero"],
+        Families = ["Brujo"],
         Type = CardType.Unit,
         BaseAttack = 3,
         BaseHealth = 3,
@@ -655,7 +676,7 @@ public static class MockData
         Id = "29",
         Name = "Maestro de la ceniza",
         Type = CardType.Unit,
-        Families = ["Hechicero"],
+        Families = ["Brujo", "Ceniza"],
         BaseAttack = 6,
         BaseHealth = 7,
         Description = "Has jugado 6 bolas de fuego o más. Fin de Ronda: creo una bola de fuego en el mazo",
@@ -672,7 +693,7 @@ public static class MockData
         ConditionToPlay = new CountPlayedCardsCondition(
             new() {DefinitionId = "27"},
             PlayerType.PLAYER,
-            5,
+            6,
             CountType.AT_LEAST
         )
     },
@@ -698,6 +719,7 @@ public static class MockData
     {
         Id = "31",
         Name = "Tierras yermas",
+        Families = ["Destrucción"],
         Type = CardType.Spell,
         Description = "-2/-2 a la mesa enemiga",
         Effects = [
@@ -731,12 +753,130 @@ public static class MockData
     {
         Id = "34",
         Name = "La ira del dios del fuego",
+        Families = ["Destrucción"],
         Type = CardType.Spell,
         Description = "MATA a TODAS las unidades en mesa",
         Effects = [
             new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.BOTH)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
     },
+    new()
+    {
+        Id = "35",
+        Name = "Chispas escurridizas",
+        Families = ["Destrucción", "Maligno"],
+        Type = CardType.Unit,
+        BaseAttack = 1,
+        BaseHealth = 1,
+        Description = "El próximo hechizo que juegues, curo 1 y quito 1 al rival",
+        Effects = [
+            new EffectInstance(
+                TriggerType.UnitPlayed,
+                [
+                    new AppendGlobalEffect(
+                        new(
+                            TriggerType.SpellPlayed,
+                            [
+                                new AlterPlayerHealthEffect(1, false),
+                                new AlterPlayerHealthEffect(-1, true),
+                            ],
+                            new DurationByExecutions(1),
+                            new PlayerCardCondition(true, null)
+                        ),
+                        "El próximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1"
+                    )
+                ],
+                new DurationByExecutions(1),
+                null)
+        ]
+    },
+    new ()
+    {
+        Id = "36",
+        Name = "Instructor de las llamas",
+        Families = ["Brujo"],
+        Type = CardType.Unit,
+        Description = "Las próximas dos unidades que juegues consiguen +1/+1",
+        BaseAttack = 2,
+        BaseHealth = 2,
+        Effects = [
+            new(
+                TriggerType.UnitPlayed,
+                [
+                    new AppendGlobalEffect(
+                        new(
+                            TriggerType.UnitPlayed,
+                            [
+                                new AlterMySelf(1, 1, true)
+                            ],
+                            new DurationByExecutions(2),
+                            new PlayerCardCondition(true, null)
+                        ),
+                        "Las próximas dos unidades que juegues consiguen +1/+1"
+                    )
+                ],
+                new DurationByExecutions(1),
+                new IHaveBeenPlayedCondition()
+            )
+            
+        ]
+    },
+    new()
+    {
+        Id = "37",
+        Type = CardType.Spell,
+        Name = "Comunión Espiritual",
+        Description = "Has jugado una llamada de la ceniza. Las unidades en mesa consiguen +1/+1.",
+        Effects = [
+            new(
+                TriggerType.SpellPlayed,
+                [
+                    new AlterUnitStatsEffect(1, 1, new() {Filter = new(), WhichBoardToSearch = PlayerType.PLAYER})
+                ],
+                new DurationByExecutions(1),
+                null
+            )
+        ],
+        ConditionToPlay = new CountPlayedCardsCondition(new() {DefinitionId = "33"}, PlayerType.PLAYER, 1, CountType.AT_LEAST)
+    },
+    new()
+    {
+        Id = "38",
+        Name = "Gran negador",
+        Families = ["Maligno"],
+        Description = "+3/+3 si no has jugado un hechizo antes",
+        Type = CardType.Unit,
+        BaseAttack = 1,
+        BaseHealth = 1,
+        Effects = [
+            new
+            (
+                TriggerType.UnitPlayed,
+                [new AlterMySelf(3, 3, false)],
+                new DurationByExecutions(1),
+                new CountPlayedCardsCondition(new() { CardType = CardType.Spell}, PlayerType.PLAYER, 0, CountType.AT_MAX)
+            )
+        ]
+    },
+    new()
+    {
+        Id = "39",
+        Name = "Maquiavelo el maquiavélico",
+        Families = ["Brujo", "Maligno"],
+        Description = "Cuando juegas un hechizo, consigo +1/+1",
+        BaseHealth = 1,
+        BaseAttack = 1,
+        Type = CardType.Unit,
+        Effects = [
+            new(
+                TriggerType.SpellPlayed,
+                [ new AlterMySelf(1, 1, false)],
+                new Always(),
+                new PlayerCardCondition(true, null)
+            )
+        ]
+    }
+
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
     {
@@ -764,8 +904,8 @@ public static class MockData
             "Reduce a cenizas a quienes se enfrentan a él, y con suerte sus aliados escapan a su cólera. Eso sí: que nadie le pregunte qué le pasó a Don Bola de Fuego padre."),
             new()
             {
-                //19
-                {"27", 2},
+                //34
+                {"27", 4},
                 {"28", 3},
                 {"29", 1},
                 {"30", 3},
@@ -773,6 +913,11 @@ public static class MockData
                 {"32", 3},
                 {"33", 2},
                 {"34", 1},
+                {"35", 4},
+                {"36", 2},
+                {"37", 2},
+                {"38", 2},
+                {"39", 3},
             }
         },
         // {
@@ -790,7 +935,7 @@ public static class MockData
             "¿Pero qué? ¿Quién ha dejado una rata entrar en la guerra? Si además lleva sombrero y todo, y parece que se ha traído a todos sus parientes. En fin, no seré yo quien la juzgue, pero no parece que trame nada bueno."),
             new()
             {
-                //29
+                //32
                 { "1", 2},
                 { "3", 3},
                 { "4", 2},
@@ -801,8 +946,9 @@ public static class MockData
                 { "9", 2},
                 { "10", 3},
                 { "11", 2},
-                { "12", 27},
+                { "12", 3},
                 { "13", 2},
+                { "13_1", 3},
             }
         },
         {
@@ -812,10 +958,11 @@ public static class MockData
             ),
             new()
             {
-                //32
+                //33
                 { "14", 5},
                 { "15", 3},
                 { "16", 3},
+                { "26_1", 1},
                 { "17", 3},
                 { "18", 1},
                 { "19", 1},
