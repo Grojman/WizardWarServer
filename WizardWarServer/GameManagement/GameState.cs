@@ -1,10 +1,15 @@
+// TODO: AHORA QUE SE TIENE EN CUENTA QUE PUEDEN HABER MÁS DE UN JUGADOR, TIENE QUE HABER UNA MANERA PARA LOS HECHIZOS DE TENER UN TARGET O ALGO POR EL ESTILO
+// IDEA: EN EL CLIENTE CONSTANTEMENTE HAY UNA FLECHITA APUNTANDO A TU TARGET, LA CUAL PUEDES CAMBIAR SI QUIERES ANTES DE HACER CUALQUIER JUGADA
+
+
 public class GameState
 {
     const int INITIAL_HAND = 3;
     public GameActionResult GameActionResult { get; set; }
-    public PlayerState Player1 { get; set; }
-    public PlayerState Player2 { get; set; }
-    public int CurrentTurn { get; set; }
+    public List<PlayerState> Players { get; set; }
+    List<PlayerState> DeadPlayers { get; set; } = new();
+
+    public int CurrentPlayerIndex { get; set; } = 0;
 
     public int TurnCounter { get; set; }
 
@@ -14,57 +19,42 @@ public class GameState
     }
 
     public void Initialize(
-        PlayerConnection c1,
-        PlayerConnection c2
+        IEnumerable<PlayerConnection> connections
     )
     {
-        var deck1 = CardManager.GetById(c1.SelectedDeckId);
-        var deck2 = CardManager.GetById(c2.SelectedDeckId);
-
-        var dD1 = CardManager.GetDefinitionsByDeck(c1.SelectedDeckId);
-        var dD2 = CardManager.GetDefinitionsByDeck(c2.SelectedDeckId);
-
-        Player1 = new PlayerState()
+        var players = new List<PlayerState>();
+        foreach(var con in connections)
         {
-            Id = c1.Guid,
-            Name = c1.Name,
-            Connection = c1,
-            Deck = new Deck(deck1.name, dD1, c1.Guid, deck1.id)
-        };
-        Player2 = new PlayerState()
+            var deck = CardManager.GetById(con.SelectedDeckId);
+
+            var definitions = CardManager.GetDefinitionsByDeck(con.SelectedDeckId);
+
+            var player = new PlayerState()
+            {
+                Id = con.Guid,
+                Name = con.Name,
+                Connection = con,
+                Deck = null
+            };
+
+            player.Deck = new Deck(deck.name, definitions, player, deck.id);
+
+            players.Add(player);
+        }
+
+        for(int i = 0; i < players.Count - 1; i++)
         {
-            Id = c2.Guid,
-            Name = c2.Name,
-            Connection = c2,
-            Deck = new Deck(deck2.name, dD2, c2.Guid, deck2.id)
-        };
+            players[i].PlayerTarget = players[i + 1];
+        }
 
-        GameActionResult.AddEvent(
-            new GameEvent.PlayerHealthChanged()
-            {
-                PlayerSource = Player1,
-                PlayerId = Player1.Id,
-                Source = Player1,
-                Amount = Player1.Health
-            }
-        );
+        players[^1].PlayerTarget = players[0];
 
-        GameActionResult.AddEvent(
-            new GameEvent.PlayerHealthChanged()
-            {
-                PlayerSource = Player2,
-                PlayerId = Player2.Id,
-                Source = Player2,
-                Amount = Player2.Health
-            }
-        );
-
-        CurrentTurn = 1;
+        Players = players;
+        Players.ElementAt(0).IsMyTurn = true;
 
         for (int i = 0; i < INITIAL_HAND; i++)
         {
-            DrawCard(c1);
-            DrawCard(c2);
+            DrawCard(); 
         }
     }
 
@@ -111,7 +101,7 @@ public class GameState
         }  else
         {
             var card = cardIndex == state.Board.Length ? state.LastSpellPlayed : state.Board[cardIndex];
-            card?.SpecialEffect?.Execute(state.Id, card, this, null);
+            card?.SpecialEffect?.Execute(state.Id, state.PlayerTarget.Id, card, this, null);
 
             var gevent  = new GameEvent.CardEventPlayed()
             {
@@ -125,12 +115,30 @@ public class GameState
         }
     }
 
+    public void ChangeTarget(PlayerConnection player, Guid target)
+    {
+        var state = GetState(player.Guid);
+
+        var newTarget = Players.First(n => n.Id == target);
+        state.PlayerTarget = newTarget;
+
+        GameActionResult.AddEvent(new GameEvent.TargetPlayerChanged()
+        {
+            Source = state,
+            PlayerSource = state,
+            NewTarget = target
+        });
+    }
+
     public void ApplyAction(
         PlayerConnection player,
         PlayerAction action)
     {
         switch (action)
         {
+            case PlayerAction.ChangeTarget a:
+                ChangeTarget(player, a.NewTarget);
+                return;
             case PlayerAction.CardEffectActivated a:
                 ApplyEffect(player, a.CardIndex);
                 return;
@@ -144,6 +152,7 @@ public class GameState
 
             case PlayerAction.AttackAction a:
                 Attack(player,
+                        a.PlayerTarget,
                        a.AttackerIndex,
                        a.TargetType,
                        a.TargetIndex);
@@ -156,15 +165,16 @@ public class GameState
         NextTurn();
     }
 
-    public PlayerState GetState(Guid id) => Player1.Id == id ? Player1 : Player2;
-    public PlayerState GetRival(Guid id) => Player1.Id == id ? Player2 : Player1;
+    public PlayerState GetState(Guid id) => Players.First(n => n.Id == id);
+    public IEnumerable<PlayerState> GetRivals(Guid id) => Players.Where(n => n.Id != id);
 
     void NextTurn()
     {
-        CurrentTurn =
-            CurrentTurn == 1 ? 2 : 1;
+        Players.ElementAt(CurrentPlayerIndex).IsMyTurn = false;
+        CurrentPlayerIndex = CurrentPlayerIndex >= Players.Count() - 1 ? 0 : CurrentPlayerIndex + 1;
+        Players.ElementAt(CurrentPlayerIndex).IsMyTurn = true;
 
-        if (CurrentTurn == 1)
+        if (CurrentPlayerIndex == 0)
         {
             ApplyEffect(TriggerType.TurnEnd, null);
 
@@ -172,11 +182,37 @@ public class GameState
 
             if (TurnCounter % 2 == 0)
             {
-                DrawCard(Player1.Connection);
-                DrawCard(Player2.Connection);
+                DrawCard();
             }
         }
         CleanExpiredEffects();
+    }
+
+    public void DrawCard(CardFilter? filter = null)
+    {
+        foreach(var p in Players) DrawCard(p.Connection, filter);
+    }
+
+    public void KillPlayer(PlayerState state)
+    {
+        //¿Qué pasa si se elimina el jugador justo cuando es su turno?
+        Players.Remove(state);
+        DeadPlayers.Add(state);
+
+        var gevent = new GameEvent.PlayerDeath()
+        {
+            PlayerSource = state,
+            Source = state
+        };
+
+        GameActionResult.AddEvent(gevent);
+
+
+        if (Players.Count == 1)
+        {
+            GameActionResult.GameEnded = true;
+            GameActionResult.Winner = Players[0].Id;
+        }
     }
 
     public void DrawCard(PlayerConnection p, CardFilter? filter = null)
@@ -187,13 +223,7 @@ public class GameState
 
         if(card is null)
         {
-            GameActionResult.GameEnded = true;
-            GameActionResult.Winner = GetRival(player.Id).Id;
-            GameActionResult.AddEvent(new GameEvent.DeckOutOfCards()
-            {
-                PlayerSource = player,
-                Source = player
-            });
+            KillPlayer(player);
         } else
         {
             player.Hand.Add(card);
@@ -254,11 +284,13 @@ public class GameState
 
     void Attack(
         PlayerConnection p,
+        Guid targetedPlayerId,
         int attacker,
         TargetType targetType,
         int target)
     {
         var player = GetState(p.Guid);
+        var targetedPlayer = GetState(targetedPlayerId);
         var card = player.Board[attacker];
         if (card is null)
         {
@@ -268,6 +300,7 @@ public class GameState
             var gevent = new GameEvent.CardAttacked()
             {
                 PlayerSource = player,
+                PlayerTarget = targetedPlayer,
                 Source = card,
                 Attacker = card,
                 TargetIndex = target,
@@ -279,16 +312,11 @@ public class GameState
                 case TargetType.PLAYER:
                     GameActionResult.AddEvent(gevent);
                     ApplyEffect(TriggerType.CardAttacked, gevent);
-                    AlterPlayerHealth(card, player, -card.CurrentAttack, false);
+                    AlterPlayerHealth(card, targetedPlayer, -card.CurrentAttack, false);
 
                     break;
-                case TargetType.RIVAL:
-                    GameActionResult.AddEvent(gevent);
-                    ApplyEffect(TriggerType.CardAttacked, gevent);
-                    AlterPlayerHealth(card, GetRival(player.Id), -card.CurrentAttack, false);
-                    break;
-                case TargetType.ENEMY_BOARD:
-                    var cardTarget = GetRival(player.Id).Board[target];
+                case TargetType.BOARD:
+                    var cardTarget = targetedPlayer.Board[target];
                     gevent.Deffender = cardTarget;
                     GameActionResult.AddEvent(gevent);
                     ApplyEffect(TriggerType.CardAttacked, gevent);
@@ -301,22 +329,6 @@ public class GameState
                         AlterUnitHealth(cardTarget, card, -cardTarget.CurrentAttack, false, false);
                         CheckKill(card, cardTarget);
                         CheckKill(cardTarget, card);
-                    }
-                    break;
-                case TargetType.OWN_BOARD:
-                    var cardTarget2 = player.Board[target];
-                    gevent.Deffender = cardTarget2;
-                    GameActionResult.AddEvent(gevent);
-                    ApplyEffect(TriggerType.CardAttacked, gevent);
-                    if(cardTarget2 is null)
-                    {
-                        Console.WriteLine($"WTF. Attacking a card that doesnt exists on own board");
-                    } else
-                    {
-                        AlterUnitHealth(card, cardTarget2, -card.CurrentAttack, false, false);
-                        AlterUnitHealth(cardTarget2, card, -cardTarget2.CurrentAttack, false, false);
-                        CheckKill(card, cardTarget2);
-                        CheckKill(cardTarget2, card);
                     }
                     break;
                 default:
@@ -340,49 +352,41 @@ public class GameState
 
     void ApplyEffect(TriggerType type, GameEvent? ev)
     {
-        foreach(EffectInstance e in Player1.GlobalEffects)
+        foreach(var player in Players)
         {
-            if(e.Trigger == type)
+            foreach(EffectInstance e in player.GlobalEffects)
             {
-                e.TryExecute(this, ev);
+                if(e.Trigger == type)
+                {
+                    e.TryExecute(this, ev);
+                }
             }
         }
 
-        foreach(EffectInstance e in Player2.GlobalEffects)
+        foreach(var player in Players)
         {
-            if(e.Trigger == type)
+            foreach(CardInstance? e in player.Board)
             {
-                e.TryExecute(this, ev);
+                if (e is not null) ApplyEffect(e, type, ev);    
             }
-        }
-
-        foreach(CardInstance? e in Player1.Board)
-        {
-            if (e is not null) ApplyEffect(e, type, ev);    
-        }
-        
-
-        foreach(CardInstance? e in Player2.Board)
-        {
-            if (e is not null) ApplyEffect(e, type, ev);    
         }
     }
 
     void CleanExpiredEffects()
     {
-        Player1.GlobalEffects.RemoveAll(n => n.Expired);
-        Player2.GlobalEffects.RemoveAll(n => n.Expired);
-        foreach(CardInstance? e in Player1.Board) e?.Effects.RemoveAll(n => n.Expired);
-        foreach(CardInstance? e in Player2.Board) e?.Effects.RemoveAll(n => n.Expired);
+        foreach(var player in Players)
+        {
+            player.GlobalEffects.RemoveAll(n => n.Expired);
+            foreach(CardInstance? e in player.Board) e?.Effects.RemoveAll(n => n.Expired);
+        }
     }
-
 
     public void AlterUnitHealth(IdentificableObject source, CardInstance Unit, int Amount, bool checkKill = true, bool enqueueToUsers = true)
     {
         Unit.CurrentHealth += Amount;
         var gevent = new GameEvent.UnitHealthChanged()
         {
-            PlayerSource = GetState(Unit.PlayerGuid),
+            PlayerSource = Unit.Player,
             Card = Unit,
             Source = source,
             Amount = Amount
@@ -408,7 +412,7 @@ public class GameState
         Unit.CurrentAttack += Amount;
         var gevent = new GameEvent.UnitDamageChanged()
         {
-            PlayerSource = GetState(Unit.PlayerGuid),
+            PlayerSource = Unit.Player,
             Card = Unit,
             Source = source,
             Amount = Amount
@@ -431,8 +435,7 @@ public class GameState
 
         if (player.Health <= 0)
         {
-            GameActionResult.Winner = GetRival(player.Id).Id;
-            GameActionResult.GameEnded = true;
+            KillPlayer(player);
         }
 
         if (enqueueToUsers) GameActionResult.AddEvent(gevent);
@@ -446,7 +449,7 @@ public class GameState
         var position = RemoveFromBoard(Unit);
         var gevent = new GameEvent.UnitDeath()
         {
-            PlayerSource = GetState(Unit.PlayerGuid),
+            PlayerSource = Unit.Player,
             Source = source,
             Card = Unit,
             BoardPosition = position
@@ -460,7 +463,7 @@ public class GameState
 
     int RemoveFromBoard(CardInstance unit)
     {
-        var player = Player1.Id == unit.PlayerGuid ? Player1 : Player2;
+        var player = unit.Player;
 
         for(int i = 0; i < player.Board.Length; i++)
         {

@@ -1,5 +1,7 @@
 public class PlayerState : IdentificableObject
 {
+    public PlayerState PlayerTarget { get; set; }
+    public bool IsMyTurn { get; set; } = false;
     public List<EffectInstance> GlobalEffects { get; set; } = new();
     public List<CardInstance> PlayedCards { get; set; } = new();
     public PlayerConnection Connection { get; set; }

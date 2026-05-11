@@ -18,6 +18,7 @@ public interface IEffect : ICloneable<IEffect>
 {
     void Execute(
         Guid playerId,
+        Guid rivalId,
         CardInstance cardId,
         GameState state,
         GameEvent? ev);

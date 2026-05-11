@@ -13,7 +13,7 @@ public class AlterCardEffect : IEffect
     public string NewFamily { get; set; }
     public IEffect Clone() => new AlterCardEffect(Health, Damage, NewFamily);
 
-    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
+    public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         CardInstance? card = (ev as GameEvent.GameEventCard)?.Card;
 

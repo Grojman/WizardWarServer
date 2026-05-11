@@ -1,6 +1,6 @@
 public class CardInstance : IdentificableObject
 {
-    public Guid PlayerGuid { get; }
+    public PlayerState Player { get; set; }
 
     public CardDefinition Definition { get; }
 
@@ -16,9 +16,9 @@ public class CardInstance : IdentificableObject
     public int MaxSpecialEffectTimes { get; set; }
     public bool DeathChecked { get; set; } = false;
 
-    public CardInstance(CardDefinition def, Guid PlayerId)
+    public CardInstance(CardDefinition def, PlayerState player)
     {
-        PlayerGuid = PlayerId;
+        Player = player;
         Definition = def;
 
         CurrentAttack = def.BaseAttack;
@@ -38,7 +38,7 @@ public class CardInstance : IdentificableObject
 
     public void AssignEffect(EffectInstance e)
     {
-        e.PlayerSourceId = PlayerGuid;
+        e.Player = Player;
         e.SourceCard = this;
     }
 }

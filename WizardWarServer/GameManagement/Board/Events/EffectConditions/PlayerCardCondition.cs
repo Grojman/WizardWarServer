@@ -8,13 +8,13 @@ public class PlayerCardCondition : EffectCondition
         Me = me;
         Filter = filter;
     }
-    public override bool Check(Guid playerId, CardInstance sourceCard, GameState state, GameEvent? ev)
+    public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
         CardInstance? card = null;
 
         if (ev is GameEvent.GameEventCard u) card = u.Card;
 
-        return (Me ? card?.PlayerGuid == sourceCard.PlayerGuid : card?.PlayerGuid != sourceCard.PlayerGuid)  &&
+        return (Me ? card?.Player.Id == sourceCard.Player.Id : card?.Player.Id != sourceCard.Player.Id)  &&
                 (Filter?.Check(card) ?? true);
     }
 

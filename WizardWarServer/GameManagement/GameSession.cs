@@ -1,24 +1,20 @@
 using System.Text.Json;
 
 public class GameSession
-{
-    PlayerConnection p1;
-    PlayerConnection p2;
+{  
+    IEnumerable<PlayerConnection> Connections;
 
     GameState state;
     
     readonly GameManager manager;
 
     public GameSession(
-        PlayerConnection a,
-        PlayerConnection b,
+        IEnumerable<PlayerConnection> connections,
         GameManager manager)
     {
-        p1 = a;
-        p2 = b;
+        Connections = connections;
 
-        p1.Game = this;
-        p2.Game = this;
+        foreach(var c in Connections) c.Game = this;
 
         this.manager = manager;
 
@@ -27,10 +23,9 @@ public class GameSession
 
     public async Task Start()
     {
-        await p1.Send("start_game", null);
-        await p2.Send("start_game", null);
+        foreach(var c in Connections) await c.Send("start_game", null);
 
-        state.Initialize(p1, p2);
+        state.Initialize(Connections);
 
         await SendState();
     }
@@ -48,12 +43,7 @@ public class GameSession
     {
         if (action is PlayerAction.TextMessage m)
         {
-            await p1.Send("text_message", new {
-                player = player.Guid,
-                message = m.Message
-            });
-
-            await p2.Send("text_message", new {
+            foreach(var c in Connections) await c.Send("text_message", new {
                 player = player.Guid,
                 message = m.Message
             });
@@ -73,11 +63,11 @@ public class GameSession
 
     async Task SendState()
     {
-        await p1.Send("game_state", GameStateDto.Generate(state.Player1, state.Player2, state.CurrentTurn == 1, state));
-        await p2.Send("game_state", GameStateDto.Generate(state.Player2, state.Player1, state.CurrentTurn == 2, state));
-
-        await p1.Send("game_events", state.GameActionResult.Events);
-        await p2.Send("game_events", state.GameActionResult.Events);
+        foreach(var c in Connections)
+        {
+            await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state));
+            await c.Send("game_events", state.GameActionResult.Events);
+        }
 
         state.GameActionResult.Events.Clear();
     }
@@ -89,11 +79,10 @@ public class GameSession
             winner,
             forced
         };
-        await p1.Send("end_game", msg);
 
-        await p2.Send("end_game", msg);
+        foreach(var c in Connections) await c.Send("end_game", msg); 
 
-        manager.RemoveGameSession(this, p1, p2);
+        manager.RemoveGameSession(this, Connections);
     }
 
     

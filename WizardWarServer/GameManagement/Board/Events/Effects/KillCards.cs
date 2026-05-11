@@ -16,9 +16,9 @@ public class KillCards : IEffect
     public CardFilter Filter { get; set; }
     public IEffect Clone() => new KillCards(Filter, BoardSearch);
 
-    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
+    public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        var list = gameFilter.GetMeetingCardsOnBoard(state, playerId);
+        var list = gameFilter.GetMeetingCardsOnBoard(state, playerId, rivalId);
         foreach(var a in list) state.KillUnit(cardId, a);
     }
 }

@@ -13,9 +13,9 @@ public class CountCardCondition : EffectCondition
     public int Amount { get; set; }
     public CountType CountType { get; set; }
 
-    public override bool Check(Guid playerId, CardInstance sourceCard, GameState state, GameEvent? ev)
+    public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
-        var count = Filter.GetMeetingCards(state, playerId).Count();
+        var count = Filter.GetMeetingCards(state, playerId, rivalId).Count();
         return CountType switch
         {
             CountType.AT_LEAST => count >= Amount,

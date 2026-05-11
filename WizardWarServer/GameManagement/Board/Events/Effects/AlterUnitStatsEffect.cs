@@ -16,7 +16,7 @@ public class AlterUnitStatsEffect : IEffect
 
     public IEffect Clone() =>  new AlterUnitStatsEffect(Health, Damage, Filter);
 
-    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
+    public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         var rivalDeck = Filter.GetMeetingCardsOnRivalDeck(state, playerId);
         if(rivalDeck.Count() != 0)
@@ -27,7 +27,7 @@ public class AlterUnitStatsEffect : IEffect
                 c.CurrentHealth += Health;
             }
 
-            state.AlterDeck(state.GetRival(playerId), cardId, state.GetState(playerId), rivalDeck);
+            state.AlterDeck(state.GetState(rivalId), cardId, state.GetState(playerId), rivalDeck);
         }
 
         var playerDeck = Filter.GetMeetingCardsOnPlayerDeck(state, playerId);

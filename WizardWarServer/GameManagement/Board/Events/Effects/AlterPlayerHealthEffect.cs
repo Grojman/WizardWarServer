@@ -10,9 +10,9 @@ public class AlterPlayerHealthEffect : IEffect
         ToRival = toRival;
     }
 
-    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
+    public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        var player = ToRival ? state.GetRival(cardId.PlayerGuid) :  state.GetState(cardId.PlayerGuid);
+        var player = state.GetState( ToRival ?  rivalId : playerId);
 
         state.AlterPlayerHealth(cardId, player, Amount);
     }

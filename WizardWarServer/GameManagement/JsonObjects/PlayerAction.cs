@@ -6,8 +6,13 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(AttackAction), nameof(AttackAction))]
 [JsonDerivedType(typeof(CardEffectActivated), nameof(CardEffectActivated))]
 [JsonDerivedType(typeof(TextMessage), nameof(TextMessage))]
+[JsonDerivedType(typeof(ChangeTarget), nameof(ChangeTarget))]
 public interface PlayerAction
 {
+    public class ChangeTarget : PlayerAction
+    {
+        public required Guid NewTarget { get; set; }
+    }
     public class TextMessage : PlayerAction
     {
         public required string Message { get; set; }
@@ -29,5 +34,7 @@ public interface PlayerAction
         public required TargetType TargetType { get; set;}
         public required int AttackerIndex { get; set; }
         public required int TargetIndex { get; set; }
+        public required Guid PlayerTarget { get; set; }
+
     }
 }

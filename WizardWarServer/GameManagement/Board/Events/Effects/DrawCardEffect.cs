@@ -15,7 +15,7 @@ public class DrawCardEffect : IEffect
     public CardFilter? Filter { get; set; }
 
     public IEffect Clone() => new DrawCardEffect(CardAmount, Filter);
-    public void Execute(Guid player, CardInstance card, GameState state, GameEvent? ev)
+    public void Execute(Guid player, Guid rivalId, CardInstance card, GameState state, GameEvent? ev)
     {
         for (int i = 0; i < CardAmount; i++)
         {

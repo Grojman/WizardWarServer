@@ -1,13 +1,14 @@
 public class GameFilter
 {
+    //TODO: HAY QEU REFACTORIZAR ESTO. HAY FUNCIONES QUE TIENEN EL MISMO CÓDIGO EN REALIDAD
     public required CardFilter Filter { get; set; }
     public PlayerType WhichDeckToSearch { get; set; } = PlayerType.NONE;
     public PlayerType WhichBoardToSearch { get; set; } = PlayerType.NONE;
     public int MaxLength { get; set; } = 0;
 
-    public IEnumerable<CardInstance> GetMeetingCardsOnRivalBoard(GameState state, Guid playerId)
+    public IEnumerable<CardInstance> GetMeetingCardsOnRivalBoard(GameState state, Guid rivalPlayer)
     {
-        var result = WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetRival(playerId).Board.Where(n => n is not null && Filter.Check(n)) : [];
+        var result = WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetState(rivalPlayer).Board.Where(n => n is not null && Filter.Check(n)) : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
@@ -17,9 +18,9 @@ public class GameFilter
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
-    public IEnumerable<CardInstance> GetMeetingCardsOnRivalDeck(GameState state, Guid playerId)
+    public IEnumerable<CardInstance> GetMeetingCardsOnRivalDeck(GameState state, Guid rivalId)
     {
-        var result = WhichDeckToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetRival(playerId).Deck.cards.Where(Filter.Check) : [];
+        var result = WhichDeckToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetState(rivalId).Deck.cards.Where(Filter.Check) : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
@@ -29,21 +30,21 @@ public class GameFilter
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
-    public IEnumerable<CardInstance> GetMeetingCardsOnBoard(GameState state, Guid playerId)
+    public IEnumerable<CardInstance> GetMeetingCardsOnBoard(GameState state, Guid playerId, Guid rivalId)
     {
-        var result = GetMeetingCardsOnPlayerBoard(state, playerId).Concat(GetMeetingCardsOnRivalBoard(state, playerId));
+        var result = GetMeetingCardsOnPlayerBoard(state, playerId).Concat(GetMeetingCardsOnRivalBoard(state, rivalId));
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
-    public IEnumerable<CardInstance> GetMeetingCardsOffBoard(GameState state, Guid playerId)
+    public IEnumerable<CardInstance> GetMeetingCardsOffBoard(GameState state, Guid playerId, Guid rivalId)
     {
-        var result = GetMeetingCardsOnPlayerDeck(state, playerId).Concat(GetMeetingCardsOnRivalDeck(state, playerId));
+        var result = GetMeetingCardsOnPlayerDeck(state, playerId).Concat(GetMeetingCardsOnRivalDeck(state, rivalId));
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
-    public IEnumerable<CardInstance> GetMeetingCards(GameState state, Guid playerId)
+    public IEnumerable<CardInstance> GetMeetingCards(GameState state, Guid playerId, Guid rivalId)
     {
-        var result = GetMeetingCardsOnBoard(state, playerId).Concat(GetMeetingCardsOffBoard(state, playerId));
+        var result = GetMeetingCardsOnBoard(state, playerId, rivalId).Concat(GetMeetingCardsOffBoard(state, playerId, rivalId));
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 }

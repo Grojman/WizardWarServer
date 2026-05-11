@@ -2,6 +2,7 @@ using System.Text.Json;
 
 public class GameManager
 {
+    public const int NUMBER_OF_PLAYERS = 2;
     public int PlayerCount { get => players.Count; }
     List<PlayerConnection> players = new();
     List<PlayerConnection> queue = new();
@@ -17,14 +18,13 @@ public class GameManager
     {
         queue.Add(player);
 
-        if (queue.Count >= 2)
+        if (queue.Count >= NUMBER_OF_PLAYERS)
         {
-            var p1 = queue[0];
-            var p2 = queue[1];
+            var players = queue.GetRange(0, NUMBER_OF_PLAYERS);
 
-            queue.RemoveRange(0, 2);
+            queue.RemoveRange(0, NUMBER_OF_PLAYERS);
 
-            var game = new GameSession(p1, p2, this);
+            var game = new GameSession(players, this);
 
             games.Add(game);
 
@@ -34,9 +34,17 @@ public class GameManager
 
     public async void AddBotGame(PlayerConnection player)
     {
-        var bot = new BotConnection();
+        var botList = new List<PlayerConnection>
+        {
+            player
+        };
+        for (int i = 0; i < NUMBER_OF_PLAYERS - 1; i++)
+        {
+            botList.Add(new BotConnection());
+        }
 
-        var game = new GameSession(player, bot, this);
+
+        var game = new GameSession(botList, this);
 
         games.Add(game);
         
@@ -107,9 +115,9 @@ public class GameManager
         }
     }
 
-    public async void RemoveGameSession(GameSession session, PlayerConnection c1, PlayerConnection c2)
+    public async void RemoveGameSession(GameSession session, IEnumerable<PlayerConnection> connections)
     {
         games.Remove(session);
-        c1.Game = c2.Game = null;
+        foreach(var c in connections) c.Game = null;
     }
 }

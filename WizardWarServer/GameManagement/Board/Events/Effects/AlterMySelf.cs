@@ -13,7 +13,7 @@ public class AlterMySelf : IEffect
     public bool UseGameEvent { get; set; }
     public IEffect Clone() => new AlterMySelf(Damage, Health, UseGameEvent);
 
-    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
+    public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         var card = UseGameEvent ? (ev as GameEvent.GameEventCard).Card: cardId;
 

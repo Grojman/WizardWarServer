@@ -62,7 +62,7 @@ public class BotConnection : PlayerConnection
 
     async void DecideNextAction(GameStateDto state)
     {
-        if (!state.IsMyTurn || Game is null) return;
+        if (!state.Me.IsMyturn || Game is null) return;
         Thread.Sleep(new Random().Next(1000, 3000));
         List<Func<GameStateDto, Task>> options = new();
 
@@ -84,11 +84,12 @@ public class BotConnection : PlayerConnection
     async Task Attack(GameStateDto state)
     {
         if (Game is null) return;
-        var rivalPositions = state.Rival.Board.Select((a, b) => new {a, b}).Where(n => n.a is not null).Select(n => n.b);
+        var rivalPositions = state.Rivals.First(n => n.Id == state.Me.TargetPlayer).Board.Select((a, b) => new {a, b}).Where(n => n.a is not null).Select(n => n.b);
         var playerPositions = state.Me.Board.Select((a, b) => new {a, b}).Where(n => n.a is not null).Select(n => n.b);
-        TargetType[] options = !rivalPositions.Any() ? [TargetType.RIVAL] : [TargetType.RIVAL, TargetType.ENEMY_BOARD];
+        TargetType[] options = !rivalPositions.Any() ? [TargetType.PLAYER] : [TargetType.PLAYER, TargetType.BOARD];
         await Game.HandleAction(this, new PlayerAction.AttackAction()
         {
+            PlayerTarget = state.Me.TargetPlayer,
             TargetType = options.GetRandom(),
             TargetIndex = !rivalPositions.Any() ? 0 : rivalPositions.GetRandom(),
             AttackerIndex = !playerPositions.Any() ? 0 : playerPositions.GetRandom()

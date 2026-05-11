@@ -3,9 +3,19 @@ public abstract class GameEvent
     public required PlayerState PlayerSource { get; set; }
     public required IdentificableObject Source { get; set; }
 
+
     public abstract class GameEventCard : GameEvent
     {
         public required CardInstance Card { get; set;}
+    }
+    public class TargetPlayerChanged : GameEvent
+    {
+        public required Guid NewTarget { get; set; }
+    }
+
+    public class PlayerDeath : GameEvent
+    {
+        
     }
 
     public class TextMessage : GameEvent
@@ -56,6 +66,8 @@ public abstract class GameEvent
         public required CardInstance? Deffender { get; set; }
         public required TargetType TargetType { get; set; }
         public required int TargetIndex { get; set; }
+        public required PlayerState PlayerTarget { get; set; }
+
     }
 
     public class AddedCardToDeck : GameEventCard

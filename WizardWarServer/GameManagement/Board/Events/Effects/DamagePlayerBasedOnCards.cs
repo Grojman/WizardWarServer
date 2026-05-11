@@ -21,11 +21,11 @@ public class DamagePlayerBasedOnCards : IEffect
 
     public IEffect Clone() => new DamagePlayerBasedOnCards(RoundedUp, Relation, TargetPlayer, Filter);
 
-    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
+    public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        int cardCounter = Filter.GetMeetingCards(state, playerId).Count();
+        int cardCounter = Filter.GetMeetingCards(state, playerId, rivalId).Count();
 
-        var rival = state.GetRival(playerId);
+        var rival = state.GetState(rivalId);
         var player = state.GetState(playerId);
 
         float calculatedDamage = cardCounter * Relation;

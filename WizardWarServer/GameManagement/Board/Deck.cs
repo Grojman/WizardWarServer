@@ -2,18 +2,18 @@ public class Deck
 {
     public int Id {get; }
     public string Name { get; }
-    public Guid PlayerId { get; }
+    public PlayerState Player { get; }
     public List<CardInstance> cards;
 
-    public Deck(string name, Dictionary<CardDefinition, int> definitions, Guid playerId, int deckId)
+    public Deck(string name, Dictionary<CardDefinition, int> definitions, PlayerState player, int deckId)
     {
         Id = deckId;
         Name = name;
-        PlayerId = playerId;
+        Player = player;
 
         cards = [];
 
-        foreach(var k in definitions) for(int i = 0; i < k.Value; i++) cards.Add(new CardInstance(k.Key, PlayerId)); 
+        foreach(var k in definitions) for(int i = 0; i < k.Value; i++) cards.Add(new CardInstance(k.Key, player)); 
 
         Shuffle(cards);
     }
@@ -67,5 +67,5 @@ public class Deck
         cards.Insert(index, card);
     }
 
-    public void AddCard(CardDefinition card) => AddCard(new CardInstance(card, PlayerId));
+    public void AddCard(CardDefinition card) => AddCard(new CardInstance(card, Player));
 }

@@ -23,9 +23,9 @@ public class AlterPlayerBasedOnCardStats : IEffect
     }
 
     public IEffect Clone() => new AlterPlayerBasedOnCardStats(BoardSearch, Filter, Stats, Target, Relation);
-    public void Execute(Guid playerId, CardInstance cardId, GameState state, GameEvent? ev)
+    public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        var lista = boardFilter.GetMeetingCardsOnBoard(state, playerId);
+        var lista = boardFilter.GetMeetingCardsOnBoard(state, playerId, rivalId);
 
         int counter = 0;
 
@@ -48,6 +48,6 @@ public class AlterPlayerBasedOnCardStats : IEffect
         counter *= Relation;
 
         if (Target is PlayerType.PLAYER or PlayerType.BOTH) state.AlterPlayerHealth(cardId, state.GetState(playerId), counter);
-        if (Target is PlayerType.RIVAL or PlayerType.BOTH) state.AlterPlayerHealth(cardId, state.GetRival(playerId), counter);
+        if (Target is PlayerType.RIVAL or PlayerType.BOTH) state.AlterPlayerHealth(cardId, state.GetState(rivalId), counter);
     }
 }

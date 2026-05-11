@@ -1,7 +1,7 @@
 
 public class EvenTurnCondition : EffectCondition
 {
-    public override bool Check(Guid playerId, CardInstance sourceCard, GameState state, GameEvent? ev)
+    public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
         return state.TurnCounter % 2 == 0;
     }

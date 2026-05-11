@@ -1,7 +1,7 @@
 
 public class IHaveBeenPlayedCondition : EffectCondition
 {
-    public override bool Check(Guid playerId, CardInstance card, GameState state, GameEvent? ev)
+    public override bool Check(Guid playerId, Guid rivalId, CardInstance card, GameState state, GameEvent? ev)
     {
         Guid? myCard = null;
         if(ev is GameEvent.GameEventCard e) myCard = e.Card.Id;

@@ -16,12 +16,15 @@ using System.Threading.Channels;
 [JsonDerivedType(typeof(DeckModifiedStats), nameof(DeckModifiedStats))]
 [JsonDerivedType(typeof(CardEventPlayed), nameof(CardEventPlayed))]
 [JsonDerivedType(typeof(TextMessage), nameof(TextMessage))]
+[JsonDerivedType(typeof(TargetPlayerChanged), nameof(TargetPlayerChanged))]
 public record GameEventDto(Guid Source, Guid PlayerSource)
 {
     public static GameEventDto Generate(GameEvent e, GameState state)
     {
         return e switch
         {
+            GameEvent.PlayerDeath pd => new PlayerDeath(pd.Source.Id, pd.PlayerSource.Id),
+            GameEvent.TargetPlayerChanged tpc => new TargetPlayerChanged(tpc.Source.Id, tpc.PlayerSource.Id, tpc.NewTarget),
             GameEvent.CardDrawnEvent cde => new CardDrawnEvent(cde.Source.Id, cde.PlayerSource.Id, CardDto.Generate(cde.Card, state, false)),
             GameEvent.PlayerHealthChanged phc => new PlayerHealthChanged(phc.Source.Id, phc.PlayerSource.Id, phc.Amount),
             GameEvent.UnitHealthChanged uhc => new UnitHealthChanged(uhc.Source.Id, uhc.PlayerSource.Id, uhc.Card.Id, uhc.Amount),
@@ -30,7 +33,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
             GameEvent.SpellPlayed sp => new SpellPlayed(sp.Source.Id, sp.PlayerSource.Id, CardDto.Generate(sp.Card, state, true)),
             GameEvent.UnitDeath ud => new UnitDeath(ud.Source.Id, ud.PlayerSource.Id, ud.Card.Id),
             GameEvent.DeckOutOfCards doc => new DeckOutOfCards(doc.Source.Id, doc.PlayerSource.Id),
-            GameEvent.CardAttacked ca => new CardAttacked(ca.Source.Id, ca.PlayerSource.Id, ca.Attacker.Id, ca.TargetType.ToString(), ca.TargetIndex, ca.Attacker.CurrentAttack, ca.Deffender?.CurrentAttack ?? 0),
+            GameEvent.CardAttacked ca => new CardAttacked(ca.Source.Id, ca.PlayerSource.Id, ca.PlayerTarget.Id, ca.Attacker.Id, ca.TargetType.ToString(), ca.TargetIndex, ca.Attacker.CurrentAttack, ca.Deffender?.CurrentAttack ?? 0),
             GameEvent.AddedCardToDeck acd => new AddedCardToDeck(acd.Source.Id, acd.PlayerSource.Id, acd.TargetedPlayer.Id),
             GameEvent.DeckModifiedStats dms => new DeckModifiedStats(dms.Source.Id, dms.PlayerSource.Id, dms.TargetedPlayer.Id),
             GameEvent.CardEventPlayed cep => new CardEventPlayed(cep.Source.Id, cep.PlayerSource.Id, cep.Card.Id),
@@ -38,7 +41,8 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
             _ => throw new ArgumentException($"Unknown event type: {e.GetType().Name}")
         };
     }
-
+    public record PlayerDeath(Guid Source, Guid PlayerSource) : GameEventDto(Source, PlayerSource) {}
+    public record TargetPlayerChanged(Guid Source, Guid PlayerSource, Guid NewTarget): GameEventDto(Source, PlayerSource){}
     public record CardDrawnEvent(Guid Source, Guid PlayerSource, CardDto Card) : GameEventDto(Source, PlayerSource){}
     public record PlayerHealthChanged(Guid Source, Guid PlayerSource, int Amount) : GameEventDto(Source, PlayerSource){}
     public record UnitHealthChanged(Guid Source, Guid PlayerSource, Guid Card, int Amount) : GameEventDto(Source, PlayerSource){}
@@ -47,7 +51,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
     public record SpellPlayed(Guid Source, Guid PlayerSource, CardDto Spell) : GameEventDto(Source, PlayerSource){}
     public record UnitDeath(Guid Source, Guid PlayerSource, Guid Unit) : GameEventDto(Source, PlayerSource){}
     public record DeckOutOfCards(Guid Source, Guid PlayerSource) : GameEventDto(Source, PlayerSource){}
-    public record CardAttacked(Guid Source, Guid PlayerSource, Guid Attacker, string TargetType, int TargetIndex, int AttackerDamage, int DefenderDamage) : GameEventDto(Source, PlayerSource){}
+    public record CardAttacked(Guid Source, Guid PlayerSource, Guid PlayerTarget, Guid Attacker, string TargetType, int TargetIndex, int AttackerDamage, int DefenderDamage) : GameEventDto(Source, PlayerSource){}
 
     public record AddedCardToDeck(Guid Source, Guid PlayerSource, Guid TargetedPlayer) : GameEventDto(Source, PlayerSource) {}
 

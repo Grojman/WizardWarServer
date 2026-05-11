@@ -15,9 +15,9 @@ public class CountPlayedCardsCondition : EffectCondition
     public int Amount { get; set; }
     public CountType CountType { get; set; }
 
-    public override bool Check(Guid playerId, CardInstance sourceCard, GameState state, GameEvent? ev)
+    public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
-        var count = (Target == PlayerType.PLAYER ? state.GetState(sourceCard.PlayerGuid) : state.GetRival(sourceCard.PlayerGuid)).PlayedCards.Count(Filter.Check);
+        var count = state.GetState( Target == PlayerType.PLAYER ? playerId : rivalId).PlayedCards.Count(Filter.Check);
 
         return CountType switch
         {
