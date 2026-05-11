@@ -18,7 +18,7 @@ public class AlterUnitStatsEffect : IEffect
 
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        var rivalDeck = Filter.GetMeetingCardsOnRivalDeck(state, playerId);
+        var rivalDeck = Filter.GetMeetingCardsOnRivalDeck(state, rivalId);
         if(rivalDeck.Count() != 0)
         {
             foreach(var c in rivalDeck)
@@ -42,7 +42,7 @@ public class AlterUnitStatsEffect : IEffect
             state.AlterDeck(state.GetState(playerId), cardId, state.GetState(playerId), playerDeck);
         }
 
-        var rivalBoard = Filter.GetMeetingCardsOnRivalBoard(state, playerId);
+        var rivalBoard = Filter.GetMeetingCardsOnRivalBoard(state, rivalId);
         if(rivalBoard.Count() != 0)
         {
             foreach(var c in rivalBoard)

@@ -28,7 +28,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "61b7bd97-0c06-4819-88c8-fea1d455d782"
+        "Id": "bce05af4-a38b-44b5-bdb3-e20aad625302"
       }
     ],
     "imageUrl": "",
@@ -88,7 +88,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6cb507e0-4f81-4282-9c43-1b02369ea4be"
+        "Id": "e959d5be-2b3e-489f-ad00-fb861fca76c2"
       }
     ],
     "imageUrl": "",
@@ -112,7 +112,7 @@
             "$type": "AlterMySelf",
             "Damage": 1,
             "Health": 1,
-            "UseGameEvent": true
+            "UseGameEvent": false
           }
         ],
         "Duration": {
@@ -142,7 +142,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f0563ae3-4861-4ffe-af12-fcad3a217555"
+        "Id": "49acac87-1313-4d14-8038-bfa8f8fc33cf"
       }
     ],
     "imageUrl": "",
@@ -219,7 +219,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b8d1c0bf-10a2-4eee-90b2-5b1ad7ea4350"
+        "Id": "039b8c38-7096-4820-9ddc-644f46c2483a"
       }
     ],
     "imageUrl": "",
@@ -256,7 +256,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "36c80b64-b133-4f73-a744-c2b19463d7a3"
+        "Id": "30eccd68-c5ab-4a8b-aa4c-c1b023acf1f5"
       }
     ],
     "imageUrl": "",
@@ -293,7 +293,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "837e40c0-8889-4046-96ee-053812cc29d5"
+        "Id": "4104ccec-c380-4f80-aefc-2789975f6019"
       },
       {
         "Trigger": 0,
@@ -313,7 +313,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "774598e8-7a18-441e-8df8-98cf26b25d02"
+        "Id": "7ef1ba19-0b53-4e21-8cf0-ac5cc799b3ae"
       }
     ],
     "imageUrl": "",
@@ -371,7 +371,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "4e159dc2-647a-4ed7-8d30-302692b59d9d"
+        "Id": "89050d38-67eb-47dc-a460-863f126f73c6"
       }
     ],
     "imageUrl": "",
@@ -411,7 +411,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f1f74edc-dbd7-4b15-9690-e43861a05586"
+        "Id": "02258583-ed5d-4e00-a26f-338711b83860"
       }
     ],
     "imageUrl": "",
@@ -471,7 +471,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B1/\u002B1 Si la carta es una Rata",
-              "Id": "40a06d62-1f78-4f05-b3d1-0d54ba837093"
+              "Id": "25139846-58dd-4abb-9a74-a5ee0c3615bb"
             }
           }
         ],
@@ -486,7 +486,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "9cc78992-42cb-4f6c-bb01-1361772c754d"
+        "Id": "645cec63-44e3-42d5-9c0a-5e441cda0abe"
       }
     ],
     "imageUrl": "",
@@ -593,7 +593,7 @@
               "Player": null,
               "Expired": false,
               "Description": "0/-1 en el pr\u00F3ximo final de turno",
-              "Id": "1a91e1e2-8529-4ed9-9294-fd92ff837845"
+              "Id": "ddcac9e6-ae20-49ff-aa06-a923206f75bb"
             }
           }
         ],
@@ -608,7 +608,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "563055c4-39ea-4661-9038-d2ca32b655f9"
+        "Id": "7b4228d1-7ef7-41c2-acc1-eb22cf378ff7"
       }
     ],
     "imageUrl": "",
@@ -666,7 +666,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "9729a1ae-7743-46d6-9661-1971905a8458"
+        "Id": "bf4077cd-004d-43eb-b42f-1684e2a05bcd"
       }
     ],
     "imageUrl": "",
@@ -723,7 +723,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "007c9b64-5411-4da3-a403-32d766ffa3f6"
+        "Id": "7c3eb233-45d6-439b-a497-ec0efe332a18"
       }
     ],
     "imageUrl": "",
@@ -767,7 +767,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5a77f63e-57dd-4f96-b1dd-5ce68d874a36"
+        "Id": "b057e99e-86d3-4028-b21b-a79ed0a8aa98"
       }
     ],
     "imageUrl": "",
@@ -831,7 +831,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "56a66adb-115b-4422-88a7-2917c61100f0"
+        "Id": "1b807d6c-b127-4101-81a7-1549be716a77"
       }
     ],
     "imageUrl": "",
@@ -919,7 +919,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "04463d19-26d4-480d-be0e-6fdff965895c"
+        "Id": "27181bf9-fa41-4c1e-ad6c-49e4118fc720"
       }
     ],
     "imageUrl": "",
@@ -980,7 +980,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "bcfd4f8d-9de9-460c-8cea-66c26cf5d5fb"
+        "Id": "863805cd-6d1e-4114-a372-7554389dc0f1"
       },
       {
         "Trigger": 6,
@@ -1015,7 +1015,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e83f609c-dc58-44ee-9ff3-b60bb75c3151"
+        "Id": "3dcd3707-98e6-470f-93f6-0f90a0a8a7bd"
       }
     ],
     "imageUrl": "",
@@ -1108,7 +1108,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e319eac2-2b32-4448-8037-c2cc08aa707f"
+        "Id": "0ac7fa40-d914-4171-9f30-fa05c7b24b93"
       }
     ],
     "imageUrl": "",
@@ -1179,7 +1179,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "27e0ecfc-52c0-4382-aeac-1a819060e807"
+        "Id": "4e8123ee-0d6d-4862-aa54-2d699372fb97"
       }
     ],
     "imageUrl": "",
@@ -1255,7 +1255,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "0b8cab65-8111-4917-815f-f6cec2a08ff1"
+        "Id": "6571dd21-f81e-467c-b828-29d2ab20d922"
       }
     ],
     "imageUrl": "",
@@ -1333,7 +1333,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a75f181b-974a-4e93-ac46-d39c7ab7bc93"
+        "Id": "eb744c3f-32ed-4ec1-b4e9-9b3f45ffd8b8"
       }
     ],
     "imageUrl": "",
@@ -1413,7 +1413,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c8dd4d0f-ea24-4b4b-8693-7d1800f3079a"
+        "Id": "bd076a8d-5e3d-4e9c-ae1a-db4e9f221793"
       }
     ],
     "imageUrl": "",
@@ -1486,7 +1486,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "357154c0-dd98-4b37-a525-183dfa538075"
+        "Id": "08698e26-ecd2-48c3-b3ff-694b931d49a9"
       }
     ],
     "imageUrl": "",
@@ -1544,7 +1544,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a8ed2aa0-61fb-466e-af6e-195dc7d39ed0"
+        "Id": "e7552bea-552c-4724-8c5f-5da49d1451c0"
       }
     ],
     "imageUrl": "",
@@ -1584,7 +1584,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "58c74e11-c391-48e2-8937-f9afc142d1b3"
+        "Id": "2c608fd0-a9a2-45a9-8c02-a68e7730cc8f"
       }
     ],
     "imageUrl": "",
@@ -1622,7 +1622,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "dffbf746-98ae-42a0-b8fe-99bdf3505f4a"
+        "Id": "208223bb-934e-4c73-a71e-244fc67b927f"
       }
     ],
     "imageUrl": "",
@@ -1694,7 +1694,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6968371d-0c7b-47e2-ab7c-dbd6485a7fe0"
+        "Id": "2fd4ff9d-9511-4014-bcee-0a3f32350ab9"
       }
     ],
     "imageUrl": "",
@@ -1752,7 +1752,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "623b1ab3-05f8-4675-8348-e09cc2255b5f"
+        "Id": "bb3fb121-1481-4ba3-a3a9-fc356d74436a"
       }
     ],
     "imageUrl": "",
@@ -1802,7 +1802,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "de4c33b3-adee-431a-a8d0-1e673747e62d"
+        "Id": "5b099e90-5540-40ac-932c-909a43803cd4"
       }
     ],
     "imageUrl": "",
@@ -1854,7 +1854,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "07d7f6e6-7e42-4d0e-910e-1dda2585015c"
+        "Id": "7e06448f-100e-44d5-aba0-3baa1427ae42"
       }
     ],
     "imageUrl": "",
@@ -1906,7 +1906,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3592641c-a7f4-4cf2-bbe2-0918e8cee35c"
+        "Id": "1ff49185-38a2-4949-942b-a14abd4e7081"
       }
     ],
     "imageUrl": "",
@@ -1959,7 +1959,7 @@
               "Player": null,
               "Expired": false,
               "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
-              "Id": "79c0bc16-33d8-4bee-9fac-ce253e47b0f0"
+              "Id": "e9931220-1d1a-4544-af6b-a81325f27ee5"
             }
           }
         ],
@@ -1972,7 +1972,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "10d40ea5-1e56-41c1-a2be-ee5f858bcb11"
+        "Id": "8703f838-c9a5-46b3-8821-d3b098c04f52"
       }
     ],
     "imageUrl": "",
@@ -2020,7 +2020,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-              "Id": "96dfb7e9-5320-4b8c-9ba7-a46da1c2815b"
+              "Id": "cda399a3-4207-48b4-9a5e-55c53fd65f8f"
             }
           }
         ],
@@ -2035,7 +2035,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "704525a2-38ec-4d51-a0a5-462f2c333de2"
+        "Id": "89859477-6200-4e8c-9bd9-59106edcd2b0"
       }
     ],
     "imageUrl": "",
@@ -2089,7 +2089,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ead055c5-aa6c-429e-bfbd-507fdad41681"
+        "Id": "04245a54-9356-45c3-96b3-68700738b479"
       }
     ],
     "imageUrl": "",
@@ -2165,7 +2165,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5ebc8a3d-2199-4fa5-b456-72ce9d1651b3"
+        "Id": "8f8a51f9-7a83-4c6f-a29c-d0fd8dcd12cb"
       }
     ],
     "imageUrl": "",
@@ -2207,7 +2207,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "08d9c2f7-fe7c-475c-9196-94b9df0ebb33"
+        "Id": "c4eb89dd-79c1-41e2-be63-815623d1ae55"
       }
     ],
     "imageUrl": "",

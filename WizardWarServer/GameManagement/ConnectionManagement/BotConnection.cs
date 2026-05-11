@@ -62,7 +62,7 @@ public class BotConnection : PlayerConnection
 
     async void DecideNextAction(GameStateDto state)
     {
-        if (!state.Me.IsMyturn || Game is null) return;
+        if (!state.Me.IsMyTurn || Game is null) return;
         Thread.Sleep(new Random().Next(1000, 3000));
         List<Func<GameStateDto, Task>> options = new();
 

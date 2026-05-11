@@ -63,7 +63,7 @@ public static class MockData
             new EffectInstance(
                 TriggerType.UnitPlayed,
                 [
-                    new AlterMySelf(1, 1, true)
+                    new AlterMySelf(1, 1,false)
                 ],
                 new Always(),
                 new PlayerCardCondition(false, new() { CurrentFamilies = ["Rata"]})
