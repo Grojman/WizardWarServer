@@ -18,19 +18,26 @@ public class PlayerConnection
     public virtual async Task Send(string type, object obj)
     {
 
-        var json = System.Text.Json.JsonSerializer.Serialize(
+        try
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(
             new JsonMessage(
                 type,
                 obj
             )
-        );
+            );
 
-        var bytes = System.Text.Encoding.UTF8.GetBytes(json);
+            var bytes = System.Text.Encoding.UTF8.GetBytes(json);
 
-        await Socket.SendAsync(
-            bytes,
-            WebSocketMessageType.Text,
-            true,
-            CancellationToken.None);
+            await Socket.SendAsync(
+                bytes,
+                WebSocketMessageType.Text,
+                true,
+                CancellationToken.None);    
+        } catch(Exception e)
+        {
+            Console.WriteLine($"Couldn't send message to client: {e}");
+        }
+        
     }
 }

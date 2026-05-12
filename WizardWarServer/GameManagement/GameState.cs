@@ -8,6 +8,7 @@ public class GameState
     public GameActionResult GameActionResult { get; set; }
     public List<PlayerState> Players { get; set; }
     List<PlayerState> DeadPlayers { get; set; } = new();
+    List<PlayerState> AlivePlayers { get; set; } = new();
 
     public int CurrentPlayerIndex { get; set; } = 0;
 
@@ -50,6 +51,7 @@ public class GameState
         players[^1].PlayerTarget = players[0];
 
         Players = players;
+        AlivePlayers = [.. Players];
         Players.ElementAt(0).IsMyTurn = true;
 
         for (int i = 0; i < INITIAL_HAND; i++)
@@ -196,8 +198,8 @@ public class GameState
     public void KillPlayer(PlayerState state)
     {
         //¿Qué pasa si se elimina el jugador justo cuando es su turno?
-        Players.Remove(state);
         DeadPlayers.Add(state);
+        AlivePlayers.Remove(state);
 
         var gevent = new GameEvent.PlayerDeath()
         {
@@ -208,10 +210,10 @@ public class GameState
         GameActionResult.AddEvent(gevent);
 
 
-        if (Players.Count == 1)
+        if (AlivePlayers.Count == 1)
         {
             GameActionResult.GameEnded = true;
-            GameActionResult.Winner = Players[0].Id;
+            GameActionResult.Winner = AlivePlayers[0].Id;
         }
     }
 

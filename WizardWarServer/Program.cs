@@ -45,25 +45,31 @@ app.Run();
 
 async Task ReceiveLoop(PlayerConnection player, GameManager manager)
 {
-    var buffer = new byte[4096];
-
-    while (player.Socket.State == WebSocketState.Open)
+    try
     {
-        var result = await player.Socket.ReceiveAsync(
-            new ArraySegment<byte>(buffer),
-            CancellationToken.None);
+        var buffer = new byte[4096];
 
-        if (result.MessageType == WebSocketMessageType.Close || result.Count == 0)
+        while (player.Socket.State == WebSocketState.Open)
         {
-            Console.WriteLine("Socket is closed, removing...");
-            break;
+            var result = await player.Socket.ReceiveAsync(
+                new ArraySegment<byte>(buffer),
+                CancellationToken.None);
+
+            if (result.MessageType == WebSocketMessageType.Close || result.Count == 0)
+            {
+                Console.WriteLine("Socket is closed, removing...");
+                break;
+            }
+
+            var json = Encoding.UTF8.GetString(buffer, 0, result.Count);
+
+            Console.WriteLine($"Json recieved: {json}");
+
+            await manager.HandleMessage(player, json);
         }
-
-        var json = Encoding.UTF8.GetString(buffer, 0, result.Count);
-
-        Console.WriteLine($"Json recieved: {json}");
-
-        await manager.HandleMessage(player, json);
+    } catch (Exception e)
+    {
+        Console.WriteLine($"Socket session has ended because of an exception: {e}");
     }
 
     manager.RemovePlayer(player);

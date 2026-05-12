@@ -108,7 +108,7 @@ public class BotConnection : PlayerConnection
 
         await Game.HandleAction(this, new PlayerAction.PlayCardAction()
         {
-            BoardIndex = boardIndexes.GetRandom(),
+            BoardIndex = boardIndexes.Count() == 0 ? -1 : boardIndexes.GetRandom(),
             CardIndex = cardIndexes.GetRandom()
         });
     }
