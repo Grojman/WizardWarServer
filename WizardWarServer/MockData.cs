@@ -28,7 +28,7 @@ public static class MockData
         BaseAttack = 1,
         BaseHealth = 1,
         Families = ["Rata"],
-        PlayEffect = new AlterPlayerHealthEffect(-1, false),
+        PlayEffects = [new AlterPlayerHealthEffect(-1, false)],
         PlayEffectTriggerTimes = 1
     },
 
@@ -298,7 +298,7 @@ public static class MockData
                 new IHaveBeenPlayedCondition()
             )
         ],
-        PlayEffect = new DrawCardEffect(),
+        PlayEffects = [new DrawCardEffect()],
         PlayEffectTriggerTimes = 1
     },
     new()
@@ -614,7 +614,7 @@ public static class MockData
                 )
             )
         ],
-        PlayEffect = new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
+        PlayEffects = [new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})],
         PlayEffectTriggerTimes = 2
     },
     new()
@@ -721,12 +721,12 @@ public static class MockData
         Name = "Tierras yermas",
         Families = ["Destrucción"],
         Type = CardType.Spell,
-        Description = "-2/-2 a la mesa enemiga",
+        Description = "-2/-2 a la mesa enemiga. El jugador pierde 2 de vida",
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(-2, -2, new() {
                 WhichBoardToSearch = PlayerType.RIVAL,
                 Filter = new()
-            })], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+            }), new AlterPlayerHealthEffect(-2, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
     },
     new()
@@ -875,7 +875,196 @@ public static class MockData
                 new PlayerCardCondition(true, null)
             )
         ]
-    }
+    },
+
+
+    new()
+    {
+        Id = "40",
+        Name = "GymRat",
+        Families = ["Gym"],
+        Type = CardType.Unit,
+        BaseAttack = 1,
+        BaseHealth = 2
+    },
+
+    new()
+    {
+        Id = "41",
+        Name = "Día de pierna",
+        Families = ["Entrenamiento"],
+        Type = CardType.Spell,
+        Description = "0/+2 a la mesa. Las cartas Gym en mesa pierden 3 de vida",
+        Effects = [
+            new(
+                TriggerType.SpellPlayed,
+                [
+                    new AlterUnitStatsEffect(2, 0, new GameFilter()
+                        {
+                            Filter = new(){},
+                            WhichBoardToSearch = PlayerType.PLAYER
+                        }),
+                    new AlterUnitStatsEffect(-3, 0, new GameFilter()
+                        {
+                            Filter = new(){ CurrentFamilies = ["Gym"]},
+                            WhichBoardToSearch = PlayerType.PLAYER
+                        }),
+                ], new DurationByExecutions(1), new IHaveBeenPlayedCondition()
+            )
+        ]
+    },
+    new()
+    {
+        Id = "42",
+        Name = "Batido de proteínas",
+        Description = "La primera carta de la izquierda consigue 0/+4",
+        Type = CardType.Spell,
+        Effects = [
+            new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(4, 0, new GameFilter()
+                        {
+                            Filter = new(){ },
+                            WhichBoardToSearch = PlayerType.PLAYER,
+                            MaxLength = 1
+                        })], new DurationByExecutions(1), null)
+        ],
+        Families = ["Entrenamiento"]
+    },
+    new()
+    {
+        Id = "43",
+        Name = "Entrenador personal",
+        Description = "Crea dos batidos de proteínas en el mazo",
+        Type = CardType.Unit,
+        Effects = [
+            new(TriggerType.UnitPlayed, [new AppendCardToDeck(2, "42", false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ],
+        BaseHealth = 2,
+        BaseAttack = 2
+    },
+    new()
+    {
+        Id = "44",
+        Name = "El señor de las mancuernas",
+        Type = CardType.Unit,
+        Description = "Final de ronda: 0/+1 a mi y a la carta más a la izquierda",
+        Effects = [
+            new(TriggerType.TurnEnd, [new AlterMySelf(0, 1, false), new AlterUnitStatsEffect(1, 0, new GameFilter()
+                        {
+                            Filter = new(){ },
+                            WhichBoardToSearch = PlayerType.PLAYER,
+                            MaxLength = 1
+                        })], new Always(), null)
+        ]
+    },
+    new()
+    {
+        Id = "45",
+        Name = "Gerente del Basic Fit",
+        Description = "No hace nada",
+        Type = CardType.Unit,
+        BaseAttack = 1,
+        BaseHealth = 1
+    },
+    new()
+    {
+        Id = "46",
+        Name = "David Goggins",
+        Type = CardType.Unit,
+        Description = "Después de golpear, consigo 0/+2",
+        Effects = [
+            new (TriggerType.CardAttacked, [new AlterMySelf(0, 2, false)], new Always(), new IHaveBeenPlayedCondition())
+        ],
+        BaseAttack = 2,
+        BaseHealth = 1
+    },
+    new()
+    {
+        Id = "47",
+        Name = "Señor chino viejo motivado",
+        Description = "Final de ronda: Si hay una unidad en tu mesa que tenga 1 de ataque, +1/+1 a la mesa",
+        Type = CardType.Unit,
+        BaseAttack = 0,
+        BaseHealth = 2,
+        Effects = [
+            new(TriggerType.TurnEnd, [new AlterUnitStatsEffect(1, 1, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new Always(), new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentAttack = 1}}, 1, CountType.EXACTLY))
+        ]
+    },
+    new()
+    {
+        Id = "48",
+        Name = "Tik Tok motivacional",
+        Description = "Necesitas una carta con 6 de vida en mesa. Las dos primeras unidades (IZQ) ganan +2/+2",
+        Type = CardType.Spell,
+        Effects = [
+            new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(), MaxLength = 2})], new DurationByExecutions(1), null)
+        ],
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentHealth = 6}}, 1, CountType.AT_LEAST)
+    },
+    new()
+    {
+        Id = "49",
+        Name = "No pain, no gain",
+        Description = "Inflinge 1 de daño a 2 unidades y roba una carta. HABILIDAD: inflinge 1 de daño a todas las cartas en mesa y les otorgas +2/0",
+        Type = CardType.Spell,
+        Effects = [
+          new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(-1, 0, new(){WhichBoardToSearch = PlayerType.PLAYER, MaxLength = 2, Filter = new()}), new DrawCardEffect()], new DurationByExecutions(1), null)  
+        ],
+        PlayEffects = [
+            new AlterUnitStatsEffect(-1, 0, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
+            new AlterUnitStatsEffect(0, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
+        ],
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 1, CountType.AT_LEAST)
+    },
+    new()
+    {
+        Id = "50",
+        Name = "Esteroides",
+        Description = "Me curo la cantidad de vida total de mis tropas",
+        Type = CardType.Spell,
+        Effects = [
+            new(TriggerType.SpellPlayed, [new AlterPlayerBasedOnCardStats(PlayerType.PLAYER, new(), AffectedStats.HEALTH, PlayerType.PLAYER, 1)], new DurationByExecutions(1), null)
+        ]
+    },
+    new()
+    {
+        Id = "51",
+        Name = "Biscuit Oliva",
+        Families = ["Leyenda"],
+        Type = CardType.Unit,
+        BaseAttack = 3,
+        BaseHealth = 3,
+        Description = "Necesitas al menos 3 tropas de Gym. Cuando entro al campo, +2/+2 a la mesa. Cuando haces un entrenamiento, consigo +1/+1",
+        Effects = [
+            new(TriggerType.UnitPlayed, [new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), null),
+            new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Entrenamiento"]}))
+        ],
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentFamilies = ["Gym"]}}, 3, CountType.AT_LEAST)
+    },
+    new()
+    {
+        Id = "52",
+        Name = "Flexeo de músculos",
+        Description = "El jugador tiene 10 de vida o más. Roba 2 cartas",
+        Type = CardType.Spell,
+        Effects = [new(TriggerType.SpellPlayed, [new DrawCardEffect(2, null)], new DurationByExecutions(1), null)],
+        ConditionToPlay = new PlayerHealthCondition(true, CountType.AT_LEAST, 10)
+    },
+
+    new()
+    {
+        Id = "13_2",
+        Name = "Rey rata",
+        Type = CardType.Unit,
+        Description = "Has jugado 6 ratas o más. Cuando golpeo, añado una rata al mazo rival. Cuando juegas un queso, consigo +1/+1",
+        BaseAttack = 3,
+        BaseHealth = 3,
+        ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Rata"]}, PlayerType.PLAYER, 6, CountType.AT_LEAST),
+        Effects = [
+            new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new(){DefinitionId = "7"})),
+            new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IHaveBeenPlayedCondition())
+        ]
+
+    }   
 
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -935,7 +1124,7 @@ public static class MockData
             "¿Pero qué? ¿Quién ha dejado una rata entrar en la guerra? Si además lleva sombrero y todo, y parece que se ha traído a todos sus parientes. En fin, no seré yo quien la juzgue, pero no parece que trame nada bueno."),
             new()
             {
-                //32
+                //34
                 { "1", 2},
                 { "3", 3},
                 { "4", 2},
@@ -949,6 +1138,7 @@ public static class MockData
                 { "12", 3},
                 { "13", 2},
                 { "13_1", 3},
+                { "13_2", 2},
             }
         },
         {
@@ -973,6 +1163,25 @@ public static class MockData
                 { "24", 2},
                 { "25", 2},
                 { "26", 2},
+            }
+        },
+        {
+            new DeckDto(8, "Mago cachas", "Sus artes son simlpes pero devastadoras. La mancuernamancia ha ganado no pocas guerras, y no se va a contentar con reunir una victoria más: ha apostado con el resto de magos que quien pierda tendrá que dar 5 vueltas al campo de batalla."),
+            new(){
+                //34
+                {"40", 4},
+                {"41", 2},
+                {"42", 3},
+                {"43", 2},
+                {"44", 3},
+                {"45", 3},
+                {"46", 1},
+                {"47", 2},
+                {"48", 3},
+                {"49", 4},
+                {"50", 2},
+                {"51", 3},
+                {"52", 2},
             }
         }
         

@@ -12,7 +12,7 @@ public class CardInstance : IdentificableObject
 
     public List<EffectInstance> Effects { get; set; }
     public EffectCondition? CanPlay { get; set; }
-    public IEffect? SpecialEffect { get; set; }
+    public List<IEffect>? SpecialEffects { get; set; }
     public int MaxSpecialEffectTimes { get; set; }
     public bool DeathChecked { get; set; } = false;
 
@@ -28,7 +28,9 @@ public class CardInstance : IdentificableObject
 
         CanPlay = def.ConditionToPlay?.Clone();
         MaxSpecialEffectTimes = def.PlayEffectTriggerTimes;
-        SpecialEffect = def.PlayEffect?.Clone();
+
+        SpecialEffects = new();
+        foreach(IEffect e in def.PlayEffects ?? []) SpecialEffects.Add(e.Clone());
 
         Effects = new();
         foreach(EffectInstance e in def.Effects) Effects.Add(e.Clone());

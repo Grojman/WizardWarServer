@@ -14,4 +14,17 @@ public static class Extensions
     {
         return array.ElementAt(new Random().Next(array.Count()));
     }
+
+    public static bool Evaluate(this CountType type, int count, int Amount)
+    {
+        return type switch
+        {
+            CountType.AT_LEAST => count >= Amount,
+            CountType.AT_MAX => count <= Amount,
+            CountType.EXACTLY => count == Amount,
+            CountType.AT_LEAST_OVER => count > Amount,
+            CountType.AT_MAX_UNDER => count < Amount,
+            _ => false
+        };
+    }
 }

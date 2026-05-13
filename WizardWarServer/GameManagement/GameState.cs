@@ -103,7 +103,8 @@ public class GameState
         }  else
         {
             var card = cardIndex == state.Board.Length ? state.LastSpellPlayed : state.Board[cardIndex];
-            card?.SpecialEffect?.Execute(state.Id, state.PlayerTarget.Id, card, this, null);
+            
+            foreach(var e in card?.SpecialEffects ?? []) e.Execute(state.Id, state.PlayerTarget.Id, card, this, null);
 
             var gevent  = new GameEvent.CardEventPlayed()
             {
