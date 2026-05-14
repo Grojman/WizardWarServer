@@ -945,7 +945,7 @@ public static class MockData
     {
         Id = "44",
         Name = "El señor de las mancuernas",
-        Type = CardType.Unit,
+        Type = CardType.Spell,
         Description = "Final de ronda: 0/+1 a mi y a la carta más a la izquierda",
         Effects = [
             new(TriggerType.TurnEnd, [new AlterMySelf(0, 1, false), new AlterUnitStatsEffect(1, 0, new GameFilter()

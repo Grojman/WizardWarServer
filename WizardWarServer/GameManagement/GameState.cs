@@ -123,14 +123,19 @@ public class GameState
         var state = GetState(player.Guid);
 
         var newTarget = Players.First(n => n.Id == target);
-        state.PlayerTarget = newTarget;
 
-        GameActionResult.AddEvent(new GameEvent.TargetPlayerChanged()
+        if (state.PlayerTarget.Id != target)
         {
-            Source = state,
-            PlayerSource = state,
-            NewTarget = target
-        });
+            state.PlayerTarget = newTarget;
+
+            GameActionResult.AddEvent(new GameEvent.TargetPlayerChanged()
+            {
+                Source = state,
+                PlayerSource = state,
+                NewTarget = target
+            });
+        }
+        
     }
 
     public void ApplyAction(

@@ -40,7 +40,8 @@
       "11": 2,
       "12": 3,
       "13": 2,
-      "13_1": 3
+      "13_1": 3,
+      "13_2": 2
     }
   },
   {
@@ -64,6 +65,28 @@
       "24": 2,
       "25": 2,
       "26": 2
+    }
+  },
+  {
+    "Deck": {
+      "id": 8,
+      "name": "Mago cachas",
+      "description": "Sus artes son simlpes pero devastadoras. La mancuernamancia ha ganado no pocas guerras, y no se va a contentar con reunir una victoria m\u00E1s: ha apostado con el resto de magos que quien pierda tendr\u00E1 que dar 5 vueltas al campo de batalla."
+    },
+    "Cards": {
+      "40": 4,
+      "41": 2,
+      "42": 3,
+      "43": 2,
+      "44": 3,
+      "45": 3,
+      "46": 1,
+      "47": 2,
+      "48": 3,
+      "49": 4,
+      "50": 2,
+      "51": 3,
+      "52": 2
     }
   }
 ]

@@ -2,7 +2,7 @@ using System.Text.Json;
 
 public class GameManager
 {
-    public const int NUMBER_OF_PLAYERS = 2;
+    public const int NUMBER_OF_PLAYERS = 3;
     public int PlayerCount { get => players.Count; }
     List<PlayerConnection> players = new();
     List<PlayerConnection> queue = new();

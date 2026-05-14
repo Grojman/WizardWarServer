@@ -70,7 +70,7 @@ public class CardFilter
         }
         if (HasEffect.HasValue)
         {
-            criteria.Add(card.SpecialEffects is not null);
+            criteria.Add(card.SpecialEffects is not null && card.SpecialEffects.Count > 0);
         }
         if (NumberOfTriggersLeft.HasValue)
         {
