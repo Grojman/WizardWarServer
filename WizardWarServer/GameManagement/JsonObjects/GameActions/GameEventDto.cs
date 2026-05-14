@@ -17,6 +17,7 @@ using System.Threading.Channels;
 [JsonDerivedType(typeof(CardEventPlayed), nameof(CardEventPlayed))]
 [JsonDerivedType(typeof(TextMessage), nameof(TextMessage))]
 [JsonDerivedType(typeof(TargetPlayerChanged), nameof(TargetPlayerChanged))]
+[JsonDerivedType(typeof(PlayerDeath), nameof(PlayerDeath))]
 public record GameEventDto(Guid Source, Guid PlayerSource)
 {
     public static GameEventDto Generate(GameEvent e, GameState state)

@@ -178,9 +178,10 @@ public class GameState
 
     void NextTurn()
     {
+        //Limpiar en jugadores por si se ha muerto al que le tocaba turno
         Players.ElementAt(CurrentPlayerIndex).IsMyTurn = false;
-        CurrentPlayerIndex = CurrentPlayerIndex >= Players.Count() - 1 ? 0 : CurrentPlayerIndex + 1;
-        Players.ElementAt(CurrentPlayerIndex).IsMyTurn = true;
+        CurrentPlayerIndex = CurrentPlayerIndex >= AlivePlayers.Count() - 1 ? 0 : CurrentPlayerIndex + 1;
+        AlivePlayers.ElementAt(CurrentPlayerIndex).IsMyTurn = true;
 
         if (CurrentPlayerIndex == 0)
         {
@@ -198,10 +199,10 @@ public class GameState
 
     public void DrawCard(CardFilter? filter = null)
     {
-        foreach(var p in Players) DrawCard(p.Connection, filter);
+        foreach(var p in AlivePlayers) DrawCard(p.Connection, filter);
     }
 
-    public void KillPlayer(PlayerState state)
+    public void KillPlayer(PlayerState state, bool forceChangeTurn = false)
     {
         //¿Qué pasa si se elimina el jugador justo cuando es su turno?
         DeadPlayers.Add(state);
@@ -214,6 +215,11 @@ public class GameState
         };
 
         GameActionResult.AddEvent(gevent);
+
+        if(forceChangeTurn && state.IsMyTurn)
+        {
+            NextTurn();
+        }
 
 
         if (AlivePlayers.Count == 1)
@@ -229,10 +235,10 @@ public class GameState
         
         var card = filter is null ? player.Deck.Draw() : player.Deck.Draw(filter);
 
-        if(card is null)
+        if(card is null && player.Deck.Count == 0)
         {
             KillPlayer(player);
-        } else
+        } else if (card is not null)
         {
             player.Hand.Add(card);
             var gevent = new GameEvent.CardDrawnEvent()

@@ -2,15 +2,16 @@ using System.Text.Json;
 
 public class GameSession
 {  
-    IEnumerable<PlayerConnection> Connections;
+    bool botSession = false;
+    List<PlayerConnection> Connections;
 
     GameState state;
     
     readonly GameManager manager;
 
     public GameSession(
-        IEnumerable<PlayerConnection> connections,
-        GameManager manager)
+        List<PlayerConnection> connections,
+        GameManager manager, bool botSession = false)
     {
         Connections = connections;
 
@@ -19,6 +20,8 @@ public class GameSession
         this.manager = manager;
 
         state = new GameState();
+
+        this.botSession = botSession;
     }
 
     public async Task Start()
@@ -63,10 +66,11 @@ public class GameSession
 
     async Task SendState()
     {
+        var events = state.GameActionResult.Events.ToList();
         foreach(var c in Connections)
         {
             await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state));
-            await c.Send("game_events", state.GameActionResult.Events);
+            await c.Send("game_events", events);
         }
 
         state.GameActionResult.Events.Clear();
@@ -85,5 +89,21 @@ public class GameSession
         manager.RemoveGameSession(this, Connections);
     }
 
-    
+    public async Task RemovePlayer(PlayerConnection c)
+    {
+        state.KillPlayer(state.GetState(c.Guid), true);
+        c.Game = null;
+        Connections.Remove(c);
+
+        if(botSession)
+        {
+            Connections.Clear();
+            manager.RemoveGameSession(this, []);
+        } else if(state.GameActionResult.GameEnded)
+        {
+            await End(state.GameActionResult.Winner);
+        }
+
+        await SendState();
+    }
 }

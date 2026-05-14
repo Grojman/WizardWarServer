@@ -58,7 +58,7 @@ public class GameManager
 
         if (player.Game != null)
         {
-            await player.Game.End(null, true);
+            await player.Game.RemovePlayer(player);
         }
     }
 
