@@ -945,7 +945,9 @@ public static class MockData
     {
         Id = "44",
         Name = "El señor de las mancuernas",
-        Type = CardType.Spell,
+        Type = CardType.Unit,
+        BaseAttack = 2,
+        BaseHealth = 2,
         Description = "Final de ronda: 0/+1 a mi y a la carta más a la izquierda",
         Effects = [
             new(TriggerType.TurnEnd, [new AlterMySelf(0, 1, false), new AlterUnitStatsEffect(1, 0, new GameFilter()
@@ -1013,6 +1015,7 @@ public static class MockData
             new AlterUnitStatsEffect(-1, 0, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
             new AlterUnitStatsEffect(0, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
         ],
+        PlayEffectTriggerTimes = 1,
         ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 1, CountType.AT_LEAST)
     },
     new()

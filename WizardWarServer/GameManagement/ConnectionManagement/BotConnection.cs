@@ -1,6 +1,3 @@
-
-using System.Threading.Tasks;
-
 public class BotConnection : PlayerConnection
 {
     bool Resend { get; set; } = false;
@@ -118,7 +115,7 @@ public class BotConnection : PlayerConnection
 
     async Task SendMessage()
     {
-        if (Game is null) return;
+        if (Game?.HasEnded ?? true) return;
 
         Thread.Sleep(new Random().Next(250, 750));
         await Game.HandleAction(this, new PlayerAction.TextMessage()
@@ -129,7 +126,7 @@ public class BotConnection : PlayerConnection
 
     public override Task Send(string type, object obj)
     {
-        if (Game is null) Task.FromResult(0);
+        if (Game?.HasEnded ?? true) return Task.FromResult(0);
 
         Task.Run(async() =>
         {

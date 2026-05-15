@@ -44,7 +44,7 @@ public class GameManager
         }
 
 
-        var game = new GameSession(botList, this);
+        var game = new GameSession(botList, this, true);
 
         games.Add(game);
         
@@ -56,12 +56,8 @@ public class GameManager
         if (players.Contains(player)) players.Remove(player);
         queue.Remove(player);
 
-        if (player.Game != null)
-        {
-            await player.Game.RemovePlayer(player);
-        }
+        if(player.Game is not null) await player.Game.RemovePlayer(player);        
     }
-
     public async Task UnqueuePlayer(PlayerConnection player)
     {
         queue.Remove(player);
@@ -84,34 +80,49 @@ public class GameManager
         } else
         {
             Console.WriteLine("Not a game action");
-            var action = JsonSerializer.Deserialize<UserAction>(json);
+            UserAction? action = null;
 
-            switch(action)
+            try
             {
-                case UserAction.ChangeNameAction a:
-                    player.Name = a.NewName;
-                    break;
-                case UserAction.StartBotGameAction c:
-                    player.SelectedDeckId = c.DeckId;
-                    AddBotGame(player);
-                    break;
-                case UserAction.JoinQueueAction b:
-                    player.SelectedDeckId = b.DeckId;
-                    QueuePlayer(player);
-                    break;
-                case UserAction.LeaveQueueAction:
-                    UnqueuePlayer(player);
-                    break;
-                case UserAction.GetDecksAction:
-                    await player.Send("get_decks", CardManager.Decks);
-                    break;
-                case UserAction.GetAllCardsAction:
-                    await player.Send("get_cards", CardManager.Cards.Select(n => CardDto.Generate(n.Value)));
-                    break;
-                default:
-                    Console.WriteLine($"Unauthorized message!! {json}");
-                    break;
+                action = JsonSerializer.Deserialize<UserAction>(json);
+
+                switch(action)
+                {
+                    case UserAction.ChangeNameAction a:
+                        player.Name = a.NewName;
+                        break;
+                    case UserAction.StartBotGameAction c:
+                        player.SelectedDeckId = c.DeckId;
+                        AddBotGame(player);
+                        break;
+                    case UserAction.JoinQueueAction b:
+                        player.SelectedDeckId = b.DeckId;
+                        QueuePlayer(player);
+                        break;
+                    case UserAction.LeaveQueueAction:
+                        UnqueuePlayer(player);
+                        break;
+                    case UserAction.GetDecksAction:
+                        await player.Send("get_decks", CardManager.Decks);
+                        break;
+                    case UserAction.GetAllCardsAction:
+                        await player.Send("get_cards", CardManager.Cards.Select(n => CardDto.Generate(n.Value)));
+                        break;
+                    default:
+                        Console.WriteLine($"Unauthorized message!! {json}");
+                        break;
+                }
             }
+            catch (JsonException)
+            {
+                Console.WriteLine("JSON inválido");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            
         }
     }
 

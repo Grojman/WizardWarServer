@@ -7,8 +7,10 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(CardEffectActivated), nameof(CardEffectActivated))]
 [JsonDerivedType(typeof(TextMessage), nameof(TextMessage))]
 [JsonDerivedType(typeof(ChangeTarget), nameof(ChangeTarget))]
+[JsonDerivedType(typeof(LeaveGame), nameof(LeaveGame))]
 public interface PlayerAction
 {
+    public class LeaveGame : PlayerAction {}
     public class ChangeTarget : PlayerAction
     {
         public required Guid NewTarget { get; set; }

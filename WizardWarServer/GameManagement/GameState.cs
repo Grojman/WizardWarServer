@@ -77,14 +77,22 @@ public class GameState
         ApplyEffect(TriggerType.CardAddedToDeck, gevent);
     }
 
+    public void ClearState()
+    {
+        AlivePlayers.Clear();
+        DeadPlayers.Clear();
+        Players.ForEach(n => n.PlayerTarget = null);
+        Players.Clear();
+    }
+
 
     public void AlterDeck(PlayerState target, IdentificableObject Source, PlayerState playerSource, IEnumerable<CardInstance> affectedCards)
     {
         var gevent = new GameEvent.DeckModifiedStats()
         {
+            TargetedPlayer = target,
             Source = Source,
             PlayerSource = playerSource,
-            TargetedPlayer = target,
             AffectedCards = affectedCards
         };
 

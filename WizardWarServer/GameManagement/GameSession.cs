@@ -9,6 +9,8 @@ public class GameSession
     
     readonly GameManager manager;
 
+    public bool HasEnded { get => state.GameActionResult.GameEnded; }
+
     public GameSession(
         List<PlayerConnection> connections,
         GameManager manager, bool botSession = false)
@@ -52,6 +54,10 @@ public class GameSession
             });
 
             return;
+        } else if (action is PlayerAction.LeaveGame)
+        {
+            await RemovePlayer(player);
+            return;
         }
 
         state.ApplyAction(player, action);
@@ -85,7 +91,7 @@ public class GameSession
         };
 
         foreach(var c in Connections) await c.Send("end_game", msg); 
-
+        state.ClearState();
         manager.RemoveGameSession(this, Connections);
     }
 
@@ -97,8 +103,9 @@ public class GameSession
 
         if(botSession)
         {
+            manager.RemoveGameSession(this, Connections);
             Connections.Clear();
-            manager.RemoveGameSession(this, []);
+            state.ClearState();
         } else if(state.GameActionResult.GameEnded)
         {
             await End(state.GameActionResult.Winner);
