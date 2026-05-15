@@ -111,8 +111,15 @@ public class GameState
         }  else
         {
             var card = cardIndex == state.Board.Length ? state.LastSpellPlayed : state.Board[cardIndex];
+
+            if(card is null || card.MaxSpecialEffectTimes <= 0)
+            {
+                return;
+            }
             
             foreach(var e in card?.SpecialEffects ?? []) e.Execute(state.Id, state.PlayerTarget.Id, card, this, null);
+
+            card!.MaxSpecialEffectTimes--;
 
             var gevent  = new GameEvent.CardEventPlayed()
             {
@@ -261,7 +268,42 @@ public class GameState
         }
     }
 
-    void PlayCard(PlayerConnection p, int handIndex, int boardIndex)
+    public void PlayCard(PlayerState player, CardInstance card, int boardIndex)
+    {
+        player.PlayedCards.Add(card);
+
+        if (card.Definition.Type == CardType.Unit)
+        {
+            if (player.Board[boardIndex] is not null)
+            {
+                Console.WriteLine($"WTF: setting boardIndex when that place is occupied");
+            } 
+            player.Board[boardIndex] = card;
+            var gevent = new GameEvent.UnitPlayed()
+            {
+                PlayerSource = player,
+                Source = player,
+                BoardPosition = boardIndex,
+                Card = card
+            };
+            GameActionResult.AddEvent(gevent);
+            ApplyEffect(TriggerType.UnitPlayed, gevent);
+        } else
+        {
+            player.LastSpellPlayed = card;
+            var gevent = new GameEvent.SpellPlayed()
+            {
+                PlayerSource = player,
+                Source = player,
+                Card = card
+            };
+            GameActionResult.AddEvent(gevent);
+            ApplyEffect(card, TriggerType.SpellPlayed, gevent);
+            ApplyEffect(TriggerType.SpellPlayed, gevent);   
+        }
+    }
+
+    public void PlayCard(PlayerConnection p, int handIndex, int boardIndex)
     {
         var player = GetState(p.Guid);
         if (player.Hand.Count <= handIndex)
@@ -270,37 +312,7 @@ public class GameState
         } else
         {
             var card = player.GetFromHand(handIndex);
-            player.PlayedCards.Add(card);
-
-            if (card.Definition.Type == CardType.Unit)
-            {
-                if (player.Board[boardIndex] is not null)
-                {
-                    Console.WriteLine($"WTF: setting boardIndex when that place is occupied");
-                } 
-                player.Board[boardIndex] = card;
-                var gevent = new GameEvent.UnitPlayed()
-                {
-                    PlayerSource = player,
-                    Source = player,
-                    BoardPosition = boardIndex,
-                    Card = card
-                };
-                GameActionResult.AddEvent(gevent);
-                ApplyEffect(TriggerType.UnitPlayed, gevent);
-            } else
-            {
-                player.LastSpellPlayed = card;
-                var gevent = new GameEvent.SpellPlayed()
-                {
-                    PlayerSource = player,
-                    Source = player,
-                    Card = card
-                };
-                GameActionResult.AddEvent(gevent);
-                ApplyEffect(card, TriggerType.SpellPlayed, gevent);
-                ApplyEffect(TriggerType.SpellPlayed, gevent);   
-            }
+            PlayCard(player, card, boardIndex);
         }
     }
 

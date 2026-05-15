@@ -1,6 +1,27 @@
 [
   {
     "Deck": {
+      "id": 9,
+      "name": "Archimago del invierno",
+      "description": "Nadie sabe si este anciano domina el hielo o si simplemente el mundo se congela para evitar escucharle hablar durante horas. All\u00ED por donde pasa, las espadas pesan m\u00E1s, los h\u00E9roes tiemblan y hasta los dragones prefieren quedarse en casa."
+    },
+    "Cards": {
+      "53": 4,
+      "54": 3,
+      "55": 4,
+      "56": 3,
+      "57": 3,
+      "58": 3,
+      "59": 2,
+      "60": 3,
+      "61": 2,
+      "62": 1,
+      "63": 3,
+      "64": 3
+    }
+  },
+  {
+    "Deck": {
       "id": 7,
       "name": "Don Bola de Fuego Jr",
       "description": "Reduce a cenizas a quienes se enfrentan a \u00E9l, y con suerte sus aliados escapan a su c\u00F3lera. Eso s\u00ED: que nadie le pregunte qu\u00E9 le pas\u00F3 a Don Bola de Fuego padre."
@@ -54,7 +75,7 @@
       "14": 5,
       "15": 3,
       "16": 3,
-      "26_1": 1,
+      "26_1": 2,
       "17": 3,
       "18": 1,
       "19": 1,

@@ -204,7 +204,7 @@ public static class MockData
         Id = "11",
         Name = "El poder de los sumideros",
         Type = CardType.Spell,
-        Description = "Has tenido que jugar al menos 3 ratas...",
+        Description = "Has tenido que jugar al menos 3 ratas. A partir de ahora, las cartas Rata que juegues ganan +1/+1",
         Effects =
         [
             new EffectInstance(
@@ -356,8 +356,8 @@ public static class MockData
         Id = "15",
         Name = "La venta",
         Description = "Cuando se juega una unidad, se le otorga +2/-1",
-        BaseAttack = 2,
-        BaseHealth = 5,
+        BaseAttack = 1,
+        BaseHealth = 4,
         Effects =
         [
             new EffectInstance(
@@ -393,7 +393,7 @@ public static class MockData
         Name = "Dulcinea del Toboso",
         Description = "Final de ronda: +2/+3 a Don Quijote, si se encuentra en mesa",
         BaseAttack = 3,
-        BaseHealth = 6,
+        BaseHealth = 1,
         Families = ["Paranoia", "Castellano"],
         Effects =
         [
@@ -418,8 +418,8 @@ public static class MockData
         Id = "19",
         Name = "El Ingenioso Hidalgo Don Quijote de la Mancha",
         Description = "Has jugado al menos 5 libros de caballería o una Dulcinea del Toboso. Las Paranoias ganan +4/+4. Cuando se juega un libro de caballería, curo otros 2 de vida a mi jugador",
-        BaseAttack = 8,
-        BaseHealth = 8,
+        BaseAttack = 5,
+        BaseHealth = 5,
         Families = ["Caballero", "Castellano"],
         Effects =
         [
@@ -500,6 +500,7 @@ public static class MockData
         Id = "22",
         Name = "How Hungry",
         Type = CardType.Spell,
+        Families = ["Caballo"],
         Description = "Si hay algún caballo en tu mesa o más, los mato y el jugador se cura el total de la vida de todos",
         Effects =
         [
@@ -561,8 +562,8 @@ public static class MockData
         Id = "25",
         Name = "El Loco de Sierra Morena",
         Type = CardType.Unit,
-        BaseAttack = 4,
-        BaseHealth = 5,
+        BaseAttack = 3,
+        BaseHealth = 4,
         Families = ["Caballero"],
         Description = "Si entra Don Quijote o Sancho Panza en el juego, le inflinjo 4 de daño",
         Effects = [
@@ -588,9 +589,9 @@ public static class MockData
         Name = "Sancho Panza",
         Type = CardType.Unit,
         BaseAttack = 1,
-        BaseHealth = 6,
+        BaseHealth = 5,
         Families = ["Castellano"],
-        Description = "Fin de Ronda: Si no hay otros Castellanos en juego, 0/-1 a las cartas en el campo. HABILIDAD: +2/+2 a las cartas de la mesa",
+        Description = "Fin de Ronda: Si no hay otros Castellanos en juego, 0/-1 a las cartas en el campo. HABILIDAD: +1/+1 a las cartas de la mesa",
         Effects = [
             new EffectInstance(
                 TriggerType.TurnEnd,
@@ -614,8 +615,8 @@ public static class MockData
                 )
             )
         ],
-        PlayEffects = [new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})],
-        PlayEffectTriggerTimes = 2
+        PlayEffects = [new AlterUnitStatsEffect(1, 1, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})],
+        PlayEffectTriggerTimes = 1
     },
     new()
     {
@@ -744,9 +745,9 @@ public static class MockData
         Id = "33",
         Name = "La llamada de la ceniza",
         Type = CardType.Spell,
-        Description = "Roba una carta ceniza",
+        Description = "Roba una carta ceniza. Curo 2 de vida al jugador.",
         Effects = [
-            new(TriggerType.SpellPlayed, [new DrawCardEffect(1, new() {CurrentFamilies = ["Ceniza"]})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+            new(TriggerType.SpellPlayed, [new DrawCardEffect(1, new() {CurrentFamilies = ["Ceniza"]}), new AlterPlayerHealthEffect(2, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
     },
     new()
@@ -963,6 +964,7 @@ public static class MockData
         Id = "45",
         Name = "Gerente del Basic Fit",
         Description = "No hace nada",
+        Families = ["Gym"],
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 1
@@ -971,6 +973,7 @@ public static class MockData
     {
         Id = "46",
         Name = "David Goggins",
+        Families = ["Motivacion"],
         Type = CardType.Unit,
         Description = "Después de golpear, consigo 0/+2",
         Effects = [
@@ -985,6 +988,7 @@ public static class MockData
         Name = "Señor chino viejo motivado",
         Description = "Final de ronda: Si hay una unidad en tu mesa que tenga 1 de ataque, +1/+1 a la mesa",
         Type = CardType.Unit,
+        Families = ["Oriental"],
         BaseAttack = 0,
         BaseHealth = 2,
         Effects = [
@@ -995,6 +999,7 @@ public static class MockData
     {
         Id = "48",
         Name = "Tik Tok motivacional",
+        Families = ["Motivacion"],
         Description = "Necesitas una carta con 6 de vida en mesa. Las dos primeras unidades (IZQ) ganan +2/+2",
         Type = CardType.Spell,
         Effects = [
@@ -1006,6 +1011,7 @@ public static class MockData
     {
         Id = "49",
         Name = "No pain, no gain",
+        Families = ["Motivacion"],
         Description = "Inflinge 1 de daño a 2 unidades y roba una carta. HABILIDAD: inflinge 1 de daño a todas las cartas en mesa y les otorgas +2/0",
         Type = CardType.Spell,
         Effects = [
@@ -1067,7 +1073,305 @@ public static class MockData
             new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IHaveBeenPlayedCondition())
         ]
 
-    }   
+    },
+
+new()
+{
+    Id = "53",
+    Name = "Fragmento helado",
+    Type = CardType.Spell,
+    Families = ["Hielo"],
+    Description = "-2/0 a una unidad enemiga (izq)",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new AlterUnitStatsEffect(0, -2, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    MaxLength = 1,
+                    Filter = new()
+                })
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+
+new()
+{
+    Id = "54",
+    Name = "Aprendiz del invierno",
+    Type = CardType.Unit,
+    Families = ["Brujo"],
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Description = "Cuando juegas un hechizo de hielo, consigo +1/+1",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [new AlterMySelf(1, 1, false)],
+            new Always(),
+            new PlayerCardCondition(true, new(){CurrentFamilies = ["Hielo"]})
+        )
+    ]
+},
+
+new()
+{
+    Id = "55",
+    Name = "Ventisca cruel",
+    Type = CardType.Spell,
+    Families = ["Hielo"],
+    Description = "-1/0 a toda la mesa enemiga. Roba una carta",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new AlterUnitStatsEffect(0, -1, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    Filter = new()
+                }),
+                new DrawCardEffect()
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+
+new()
+{
+    Id = "56",
+    Name = "Gólem de escarcha",
+    Type = CardType.Unit,
+    Families = ["Hielo"],
+    BaseAttack = 0,
+    BaseHealth = 6,
+    Description = "Cuando se altera el ataque de las unidades enemigas, consigo +1/0",
+    Effects = [
+        new (TriggerType.UnitDamageChanged, [new AlterMySelf(1, 0, false)], new Always(), new PlayerCardCondition(false, null))
+    ]
+},
+
+new()
+{
+    Id = "57",
+    Name = "Prisión glaciar",
+    Type = CardType.Spell,
+    Families = ["Hielo"],
+    Description = "-4/0 a una unidad enemiga (izq)",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new AlterUnitStatsEffect(0, -4, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    MaxLength = 1,
+                    Filter = new()
+                })
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+
+new()
+{
+    Id = "58",
+    Name = "Sabio de la nieve",
+    Type = CardType.Unit,
+    Families = ["Brujo"],
+    BaseAttack = 1,
+    BaseHealth = 2,
+    Description = "Final de ronda: -1/0 a dos unidades enemigas (izq)",
+    Effects = [
+        new(
+            TriggerType.TurnEnd,
+            [
+                new AlterUnitStatsEffect(0, -1, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    MaxLength = 2,
+                    Filter = new()
+                })
+            ],
+            new Always(),
+            null
+        )
+    ]
+},
+
+new()
+{
+    Id = "59",
+    Name = "Corazón congelado",
+    Type = CardType.Spell,
+    Families = ["Hielo"],
+    Description = "Mata las unidades enemigas que tengan 0 de daño",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new KillCards(new () {CurrentAttack = 0}, PlayerType.RIVAL)
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ],
+    ConditionToPlay = new CountCardCondition(new() {WhichBoardToSearch = PlayerType.RIVAL, Filter = new() {CurrentAttack = 0}}, 1, CountType.AT_LEAST)
+},
+
+new()
+{
+    Id = "60",
+    Name = "Elemental de hielo",
+    Type = CardType.Unit,
+    Families = ["Hielo"],
+    BaseAttack = 2,
+    BaseHealth = 1,
+    Description = "Al jugarme: -1/0 a la mesa rival, y curo a mi jugador 3 de vida.",
+    Effects = [
+        new(
+            TriggerType.UnitPlayed,
+            [new AlterUnitStatsEffect(0, -1, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}), new AlterPlayerHealthEffect(3, false)],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+
+new()
+{
+    Id = "61",
+    Name = "Invierno interminable",
+    Type = CardType.Spell,
+    Families = ["Hielo"],
+    Description = "Durante los próximos dos finales de ronda, -1/0 a la mesa enemiga",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new AppendGlobalEffect(
+                    new(
+                        TriggerType.TurnEnd,
+                        [
+                            new AlterUnitStatsEffect(0, -1, new()
+                            {
+                                WhichBoardToSearch = PlayerType.RIVAL,
+                                Filter = new()
+                            })
+                        ],
+                        new DurationByExecutions(2),
+                        null
+                    ),
+                    "Durante los próximos dos finales de ronda, -1/0 a la mesa enemiga"
+                )
+            ],
+            new DurationByExecutions(1),
+            null
+        )
+    ]
+},
+
+new()
+{
+    Id = "62",
+    Name = "Dragón boreal",
+    Type = CardType.Unit,
+    Families = ["Hielo", "Leyenda", "Dragón"],
+    BaseAttack = 5,
+    BaseHealth = 6,
+    Description = "No hay criaturas en juego, y has jugado 10 cartas de Hielo o más. Final de ronda: si hay hueco, invoco una cría de dragón",
+    Effects = [
+        new(TriggerType.TurnEnd, [
+            new PlayCardEffect("65", false)
+        ], new Always(), null)
+    ],
+    ConditionToPlay = new MultiEffectCondition([
+        new CountPlayedCardsCondition(
+        new() { CurrentFamilies = ["Hielo"] },
+        PlayerType.PLAYER,
+        10,
+        CountType.AT_LEAST
+    ),
+    new CountCardCondition(new(){WhichBoardToSearch = PlayerType.BOTH, Filter = new()}, 0, CountType.EXACTLY)
+    ], false)
+},
+
+new()
+{
+    Id = "63",
+    Name = "Hechicero del cero absoluto",
+    Type = CardType.Unit,
+    Families = ["Hielo", "Brujo"],
+    BaseAttack = 2,
+    BaseHealth = 4,
+    Description = "Cuando una unidad enemiga llega a 0 de ataque, le inflinjo 2 de daño",
+    Effects = [
+        new(
+            TriggerType.UnitHealthChanged,
+            [
+                new AlterUnitStatsEffect(-2, -2, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    Filter = new(){ CurrentAttack = 0 }
+                })
+            ],
+            new Always(),
+            new PlayerCardCondition(false, null)
+        )
+    ]
+},
+
+new()
+{
+    Id = "64",
+    Name = "Avalancha",
+    Type = CardType.Spell,
+    Families = ["Hielo"],
+    Description = "Has jugado 5 hechizos de hielo o más. -2/0 a toda la mesa enemiga. Las unidades con 0 de ataque reciben además -3/-3",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new AlterUnitStatsEffect(0, -2, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    Filter = new()
+                }),
+                new AlterUnitStatsEffect(-3, -3, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    Filter = new(){ CurrentAttack = 0 }
+                })
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ],
+    ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Hielo"], CardType = CardType.Spell}, PlayerType.PLAYER, 5, CountType.AT_LEAST)
+},
+new()
+{
+    Id = "65",
+    Name = "Cría de dragón",
+    Type = CardType.Unit,
+    Families = ["Leyenda", "Dragón"],
+    Description = "HABILIDAD: quito 1 de vida al rival y se lo otorgo a mi jugador",
+    BaseAttack = 2,
+    BaseHealth = 1,
+    PlayEffectTriggerTimes = 1,
+    PlayEffects = [
+        new AlterPlayerHealthEffect(1, false),
+        new AlterPlayerHealthEffect(-1, true),
+    ]
+}
+
 
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -1090,6 +1394,28 @@ public static class MockData
                 
         //     }
         // },
+        {
+            new DeckDto(
+                9,
+                "Archimago del invierno",
+                "Enterrado bajo toneladas de hielo durante milenios, este ser ha decidido resurgir y traer consigo sus nuevas creaciones. Los escalofríos suceden allá por donde pasa, y nadie ha sido todavía capaz de descifrar esa mirada perdida y vacía de vida; no sin haber perdido el juicio antes.") ,
+            new()
+            {
+                //34
+                {"53", 4},
+                {"54", 3},
+                {"55", 4},
+                {"56", 3},
+                {"57", 3},
+                {"58", 3},
+                {"59", 2},
+                {"60", 3},
+                {"61", 2},
+                {"62", 1},
+                {"63", 3},
+                {"64", 3}
+            }
+        },
         {
             new DeckDto(7,
             "Don Bola de Fuego Jr",
@@ -1151,11 +1477,11 @@ public static class MockData
             ),
             new()
             {
-                //33
+                //34
                 { "14", 5},
                 { "15", 3},
                 { "16", 3},
-                { "26_1", 1},
+                { "26_1", 2},
                 { "17", 3},
                 { "18", 1},
                 { "19", 1},
