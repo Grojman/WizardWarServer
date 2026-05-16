@@ -28,7 +28,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5f182db1-f122-4e19-86d2-328b20dc1d88"
+        "Id": "baa531b2-3fcc-4041-849b-80375ea0bc81"
       }
     ],
     "imageUrl": "",
@@ -90,7 +90,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6788732a-d2bb-4592-b38c-ae767759ec68"
+        "Id": "787e2446-c1f4-41e0-9fff-d2e9968480cb"
       }
     ],
     "imageUrl": "",
@@ -144,7 +144,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "033606bc-9fbb-456a-8c2a-95ee7eed9fb1"
+        "Id": "1914925b-6a8c-4990-910a-b914c3528339"
       }
     ],
     "imageUrl": "",
@@ -221,7 +221,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "15c25756-62c5-457b-8a7b-f3d269bf151a"
+        "Id": "cd738f8b-7dce-439e-af09-06cf0c65e3c2"
       }
     ],
     "imageUrl": "",
@@ -258,7 +258,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "801f59f3-313b-4ad9-b3d8-c711919223c5"
+        "Id": "c3948e4b-3e87-4b5e-b30f-7fb1ed87cd0e"
       }
     ],
     "imageUrl": "",
@@ -295,7 +295,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e467dbd8-311e-4464-9c47-3c2823fd55af"
+        "Id": "9caf68d1-acea-4c5c-acdf-3cf0e666b369"
       },
       {
         "Trigger": 0,
@@ -315,7 +315,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "aa0f4b43-758b-4471-b392-f232ab2c3758"
+        "Id": "b5b3fa7a-46c2-4e4e-a4a0-af56480a20a1"
       }
     ],
     "imageUrl": "",
@@ -373,7 +373,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "402b71d0-38c6-46f6-9f56-857790ff795d"
+        "Id": "73901892-0861-4772-ac48-574f287d8748"
       }
     ],
     "imageUrl": "",
@@ -413,7 +413,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "47ae291f-4c40-4d7b-b903-53af2ccf0b51"
+        "Id": "2889a5e6-61fb-456b-89bf-aac4feca312f"
       }
     ],
     "imageUrl": "",
@@ -473,7 +473,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B1/\u002B1 Si la carta es una Rata",
-              "Id": "560a646b-112d-4163-817c-aa2ab62e460b"
+              "Id": "af8c2f52-d1cc-4785-b1ba-8fc834024a34"
             }
           }
         ],
@@ -488,7 +488,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3cf6badd-56b4-4384-a446-8680579c6384"
+        "Id": "a1c83be2-8146-4427-b09c-0a343f1e9023"
       }
     ],
     "imageUrl": "",
@@ -595,7 +595,7 @@
               "Player": null,
               "Expired": false,
               "Description": "0/-1 en el pr\u00F3ximo final de turno",
-              "Id": "1bb64fc6-6f6c-4dd3-bb84-7d701e366c7a"
+              "Id": "a589b3a5-a238-44e7-a04c-e07bd971691f"
             }
           }
         ],
@@ -610,7 +610,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6bb79100-cd35-410a-be3e-a1523879e65f"
+        "Id": "c0054459-ae35-4105-9b9c-43cda961706d"
       }
     ],
     "imageUrl": "",
@@ -668,7 +668,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "4ae307a2-ba0a-4284-9905-0d81718f353c"
+        "Id": "66d9c3ef-dadc-45c3-9afd-4fccb5fc24d3"
       }
     ],
     "imageUrl": "",
@@ -727,7 +727,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "418a110a-abdd-47d0-be02-b893de5d28f6"
+        "Id": "930200d8-a396-4948-bc1b-4a1650fefe01"
       }
     ],
     "imageUrl": "",
@@ -771,7 +771,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c5e5b25d-44cd-433d-b8a1-2c7fe6ac8056"
+        "Id": "09cd0f35-27ed-4d6a-b0e1-b9ded32f6a8a"
       }
     ],
     "imageUrl": "",
@@ -835,7 +835,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "075227b7-49fa-4a99-bcde-4531aaf7aba0"
+        "Id": "45e45c14-fa9c-4c46-80ac-fa4d5d997b9c"
       }
     ],
     "imageUrl": "",
@@ -923,7 +923,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d7771332-9677-4e8c-a571-aa0d841c4db6"
+        "Id": "5560a3f8-32d7-4eaa-9abb-7c961d885792"
       }
     ],
     "imageUrl": "",
@@ -984,7 +984,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "452f1f60-fa02-4339-a5d1-4e3aa3ed9f52"
+        "Id": "359f35e6-9956-45e1-83d2-bb34488bb778"
       },
       {
         "Trigger": 6,
@@ -1019,7 +1019,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "557a6466-fb54-4431-afec-ca41c7761205"
+        "Id": "acf942eb-2a2f-4411-9135-838d65601d73"
       }
     ],
     "imageUrl": "",
@@ -1112,7 +1112,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c0519abe-478e-435c-ae57-ad6a9375f7f9"
+        "Id": "bbd7f607-e421-4280-8498-e11f5e7556bc"
       }
     ],
     "imageUrl": "",
@@ -1185,7 +1185,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a85dce66-5eb3-4728-9fad-661bbcf95884"
+        "Id": "f7b9f808-ae77-4906-a1f4-a7298239ed3b"
       }
     ],
     "imageUrl": "",
@@ -1261,7 +1261,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e00250dc-a1f5-425d-89a6-86ee2db31ad0"
+        "Id": "1585479f-7ff4-43da-b4f3-555fee578151"
       }
     ],
     "imageUrl": "",
@@ -1339,7 +1339,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c7169ca5-7ed0-44a6-9e1c-5d52c18883f6"
+        "Id": "3745be76-fb68-48e2-a42c-5764b7435aab"
       }
     ],
     "imageUrl": "",
@@ -1419,7 +1419,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "8cd3305a-7336-4863-a522-698f43886981"
+        "Id": "61c3f776-f0f6-4dac-a09e-521c4481dc2e"
       }
     ],
     "imageUrl": "",
@@ -1494,7 +1494,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "68421d28-e380-4034-971b-9787f1d0168d"
+        "Id": "67c517dd-b3e9-4dc6-af48-e3ecec5cf2b2"
       }
     ],
     "imageUrl": "",
@@ -1552,7 +1552,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ff291d77-a8ed-4312-96e7-592b189c882d"
+        "Id": "c04db7c9-7b27-4dcd-905a-93edd35c1f1f"
       }
     ],
     "imageUrl": "",
@@ -1592,7 +1592,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "850712a8-0af9-43d1-8d80-ff19e55edc4a"
+        "Id": "d1a1c653-c758-44dc-b0cf-474c90b3b4f1"
       }
     ],
     "imageUrl": "",
@@ -1630,7 +1630,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a38fefe4-5909-476a-9316-ef50528a2432"
+        "Id": "14f69ee3-a3b5-43d1-803b-4aedbd35d2ce"
       }
     ],
     "imageUrl": "",
@@ -1702,7 +1702,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6ab47fcb-9ff8-447b-b94a-09170df2fc49"
+        "Id": "8d6b8df1-d6b3-41d3-9db7-929aec512101"
       }
     ],
     "imageUrl": "",
@@ -1765,7 +1765,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6b0acae5-ed3c-4edb-ab2d-fd2c60ed9b98"
+        "Id": "895dfd2a-2db2-41e4-9a32-2bc9ffa368a4"
       }
     ],
     "imageUrl": "",
@@ -1815,7 +1815,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "cecf47de-7120-4f1f-b5ce-32ce3f8c2f3e"
+        "Id": "f5549c59-1f90-4f78-91f4-8989301ecb02"
       }
     ],
     "imageUrl": "",
@@ -1872,7 +1872,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "52eaaad9-c50a-4da3-a2bb-13bfacf9bc2a"
+        "Id": "b28ee040-c9cb-4a71-ba36-a2b9154e99d9"
       }
     ],
     "imageUrl": "",
@@ -1924,7 +1924,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "65f446d0-d8c6-431f-b3e9-1a25a818ac16"
+        "Id": "626ebd1f-53c9-4a5d-8349-7fd220bdea19"
       }
     ],
     "imageUrl": "",
@@ -1977,7 +1977,7 @@
               "Player": null,
               "Expired": false,
               "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
-              "Id": "64fbe065-3def-4726-805b-7bb67a0b1a10"
+              "Id": "3f722b19-f907-44d6-8996-6ed0eff5e341"
             }
           }
         ],
@@ -1990,7 +1990,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ba04a509-195c-4b75-a601-c11273ef8b13"
+        "Id": "83ac1a48-6373-4546-8939-18f5082bcd85"
       }
     ],
     "imageUrl": "",
@@ -2038,7 +2038,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-              "Id": "ec0a0048-3ee2-40f7-ac08-766dc720f359"
+              "Id": "89a54ae5-8e86-4617-a8c2-7697f5f9bbed"
             }
           }
         ],
@@ -2053,7 +2053,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "9fbf6a8e-e431-446b-8acd-d32b37fcd23e"
+        "Id": "49ac1881-b757-47e4-b5a6-b5872d8ef70b"
       }
     ],
     "imageUrl": "",
@@ -2107,7 +2107,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "fb39ddc6-9b4f-47de-8091-ecc212fbf6eb"
+        "Id": "f5b72867-ee1c-4f81-b840-3040e22d94f1"
       }
     ],
     "imageUrl": "",
@@ -2183,7 +2183,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ff478ec8-b7c3-4ae2-a48d-8e83e3a959fd"
+        "Id": "63f386af-f0f4-481b-9bb6-3fe5a59085bf"
       }
     ],
     "imageUrl": "",
@@ -2225,7 +2225,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3bfcac44-b315-4cc1-a3ed-677b85a97161"
+        "Id": "545dc819-b279-4faf-af9e-6f0f70b88d65"
       }
     ],
     "imageUrl": "",
@@ -2325,7 +2325,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "8b1cde07-294c-421c-98ca-975843b949eb"
+        "Id": "a8f3ca7d-82b0-4f4f-9379-aa067fcc056c"
       }
     ],
     "imageUrl": "",
@@ -2381,7 +2381,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "bf813be7-0f57-4b21-9472-5d2fa4a4cf0d"
+        "Id": "17c511da-9d8c-4273-82dd-b270f5418165"
       }
     ],
     "imageUrl": "",
@@ -2419,7 +2419,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d9767fec-9748-4e7b-8f39-8da807c30a6a"
+        "Id": "264c2896-29c0-42b6-aba8-68e2f5bdf63e"
       }
     ],
     "imageUrl": "",
@@ -2478,7 +2478,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "15b8cc1b-baa6-46d6-a7b7-1a1b097488e8"
+        "Id": "d2e1686c-2896-4a71-86e9-54209dd0766e"
       }
     ],
     "imageUrl": "",
@@ -2533,7 +2533,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "fad65a6e-b7d1-422a-a254-8bc17dba0f9b"
+        "Id": "733ccc34-0919-4122-811f-129cfabc8c86"
       }
     ],
     "imageUrl": "",
@@ -2611,7 +2611,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a034ca67-8fed-47a3-9d70-b8f7aa456271"
+        "Id": "43c807be-0508-465c-8996-ed06258f79ed"
       }
     ],
     "imageUrl": "",
@@ -2667,7 +2667,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "41443b4f-7e43-424f-b57f-875089d4ba31"
+        "Id": "536d162c-cdaa-4353-abb8-001f0101220f"
       }
     ],
     "imageUrl": "",
@@ -2751,7 +2751,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b887d892-5f89-4e09-b51b-1a757d11d447"
+        "Id": "e4551acf-93c1-415f-9034-05cedf752aec"
       }
     ],
     "imageUrl": "",
@@ -2874,7 +2874,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a5282551-6c6d-4c84-9d74-035b721ebe5b"
+        "Id": "237b05f1-0084-42e9-b058-1b98d46abe02"
       }
     ],
     "imageUrl": "",
@@ -2930,7 +2930,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "65c65d52-c5cc-4443-8d09-fd60092d8a7e"
+        "Id": "45e76b8f-983a-4d23-a226-c1d5d5377b49"
       },
       {
         "Trigger": 6,
@@ -2969,7 +2969,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d54e3b0c-da7a-4946-924c-3a62abca1db5"
+        "Id": "84c87ffc-101a-4435-a61f-1bcca9fea688"
       }
     ],
     "imageUrl": "",
@@ -3029,7 +3029,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d2bcba75-48c6-4a36-9cf3-b34790021d64"
+        "Id": "8433c25c-3bd5-41d2-a972-56722c319241"
       }
     ],
     "imageUrl": "",
@@ -3086,7 +3086,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1b13e43c-ac54-4fe1-aaf6-189c2888088b"
+        "Id": "77d017db-78b0-41c1-aa88-18d1d87386a5"
       },
       {
         "Trigger": 10,
@@ -3108,7 +3108,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "87311dae-5fe8-4220-a9e3-1630cf744127"
+        "Id": "2871669d-d64b-44d1-9283-84c04e23320c"
       }
     ],
     "imageUrl": "",
@@ -3153,8 +3153,8 @@
         "Effects": [
           {
             "$type": "AlterUnitStatsEffect",
-            "Health": -2,
-            "Damage": 0,
+            "Health": 0,
+            "Damage": -2,
             "Filter": {
               "Filter": {
                 "CurrentAttack": null,
@@ -3187,7 +3187,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "342698c0-1776-4671-a46c-edccaff75dd2"
+        "Id": "5e446eee-ce82-453e-a67f-5dbecf3d1dc7"
       }
     ],
     "imageUrl": "",
@@ -3203,8 +3203,8 @@
     "Name": "Aprendiz del invierno",
     "Type": 0,
     "Description": "Cuando juegas un hechizo de hielo, consigo \u002B1/\u002B1",
-    "BaseAttack": 2,
-    "BaseHealth": 3,
+    "BaseAttack": 1,
+    "BaseHealth": 1,
     "Effects": [
       {
         "Trigger": 6,
@@ -3243,7 +3243,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "89b30956-119c-460a-8235-bbd283263b13"
+        "Id": "32e11b4a-3ed6-4083-ba69-c3a59b9fdf8b"
       }
     ],
     "imageUrl": "",
@@ -3267,8 +3267,8 @@
         "Effects": [
           {
             "$type": "AlterUnitStatsEffect",
-            "Health": -1,
-            "Damage": 0,
+            "Health": 0,
+            "Damage": -1,
             "Filter": {
               "Filter": {
                 "CurrentAttack": null,
@@ -3306,7 +3306,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "88971acd-6b3d-4dec-98e5-ca407424c1b2"
+        "Id": "3ea028f5-2cb2-4cd1-8e15-b21aa6eba141"
       }
     ],
     "imageUrl": "",
@@ -3347,7 +3347,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6a69e374-240e-4a17-a56f-ca7dfaa691a4"
+        "Id": "05f048fe-eb84-40df-8c27-1870e100b798"
       }
     ],
     "imageUrl": "",
@@ -3371,8 +3371,8 @@
         "Effects": [
           {
             "$type": "AlterUnitStatsEffect",
-            "Health": -4,
-            "Damage": 0,
+            "Health": 0,
+            "Damage": -4,
             "Filter": {
               "Filter": {
                 "CurrentAttack": null,
@@ -3405,7 +3405,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "fc24a9b4-a8ef-48cf-939b-f4deb63d6f8d"
+        "Id": "e371d900-07ad-4893-bbd6-c4cc33db1463"
       }
     ],
     "imageUrl": "",
@@ -3421,16 +3421,16 @@
     "Name": "Sabio de la nieve",
     "Type": 0,
     "Description": "Final de ronda: -1/0 a dos unidades enemigas (izq)",
-    "BaseAttack": 2,
-    "BaseHealth": 4,
+    "BaseAttack": 1,
+    "BaseHealth": 2,
     "Effects": [
       {
         "Trigger": 0,
         "Effects": [
           {
             "$type": "AlterUnitStatsEffect",
-            "Health": -1,
-            "Damage": 0,
+            "Health": 0,
+            "Damage": -1,
             "Filter": {
               "Filter": {
                 "CurrentAttack": null,
@@ -3460,7 +3460,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "654b694b-71fa-42eb-91b4-5c965e7a226f"
+        "Id": "1db61cd9-ca7a-4297-af78-ebc57ad69f69"
       }
     ],
     "imageUrl": "",
@@ -3512,7 +3512,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "fe915ca6-668c-4891-9d5a-e9ae99f9cfd2"
+        "Id": "313301d9-a980-475d-ad8c-47c9431b75f8"
       }
     ],
     "imageUrl": "",
@@ -3551,7 +3551,7 @@
     "Name": "Elemental de hielo",
     "Type": 0,
     "Description": "Al jugarme: -1/0 a la mesa rival, y curo a mi jugador 3 de vida.",
-    "BaseAttack": 4,
+    "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
       {
@@ -3598,7 +3598,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "4ec66757-7afa-4c8e-afaf-3794e5e7216b"
+        "Id": "2d0a40cf-9d0d-45a4-a97a-8eed653f00df"
       }
     ],
     "imageUrl": "",
@@ -3628,8 +3628,8 @@
               "Effects": [
                 {
                   "$type": "AlterUnitStatsEffect",
-                  "Health": -1,
-                  "Damage": 0,
+                  "Health": 0,
+                  "Damage": -1,
                   "Filter": {
                     "Filter": {
                       "CurrentAttack": null,
@@ -3660,7 +3660,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Durante los pr\u00F3ximos dos finales de ronda, -1/0 a la mesa enemiga",
-              "Id": "c943bf28-982c-4698-ac38-daf884dacf63"
+              "Id": "908faed7-546e-4004-aaaa-a476fc4a347b"
             }
           }
         ],
@@ -3673,7 +3673,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "24fffa52-31c7-40a4-92cf-76995a5dc686"
+        "Id": "243ce206-ac02-4fe2-af5f-265cf04f6f8b"
       }
     ],
     "imageUrl": "",
@@ -3711,7 +3711,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b6c221fc-f2ca-4b59-aef7-1adae833cc02"
+        "Id": "fe12150f-5b39-41da-a0bc-1ef9ac6cb2bc"
       }
     ],
     "imageUrl": "",
@@ -3779,8 +3779,8 @@
     "Name": "Hechicero del cero absoluto",
     "Type": 0,
     "Description": "Cuando una unidad enemiga llega a 0 de ataque, le inflinjo 2 de da\u00F1o",
-    "BaseAttack": 3,
-    "BaseHealth": 5,
+    "BaseAttack": 2,
+    "BaseHealth": 4,
     "Effects": [
       {
         "Trigger": 3,
@@ -3822,7 +3822,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "4876841e-e04c-4941-a60f-961fedcf1da8"
+        "Id": "54b87f3e-b6db-4605-8347-9c80502b032a"
       }
     ],
     "imageUrl": "",
@@ -3837,7 +3837,7 @@
     "Id": "64",
     "Name": "Avalancha",
     "Type": 1,
-    "Description": "Has jugado 5 cartas de hielo o m\u00E1s. -2/0 a toda la mesa enemiga. Las unidades con 0 de ataque reciben adem\u00E1s -3/-3",
+    "Description": "Has jugado 5 hechizos de hielo o m\u00E1s. -2/0 a toda la mesa enemiga. Las unidades con 0 de ataque reciben adem\u00E1s -3/-3",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3846,8 +3846,8 @@
         "Effects": [
           {
             "$type": "AlterUnitStatsEffect",
-            "Health": -2,
-            "Damage": 0,
+            "Health": 0,
+            "Damage": -2,
             "Filter": {
               "Filter": {
                 "CurrentAttack": null,
@@ -3904,7 +3904,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b2ebaa15-a59c-48a9-aed5-3d6a119032ec"
+        "Id": "eab5f4d4-7f59-4217-b856-b109c6f91a3d"
       }
     ],
     "imageUrl": "",
@@ -3915,7 +3915,7 @@
         "CurrentHealth": null,
         "Attack": null,
         "Health": null,
-        "CardType": null,
+        "CardType": 1,
         "Families": null,
         "CurrentFamilies": [
           "Hielo"

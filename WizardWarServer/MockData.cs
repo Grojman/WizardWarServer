@@ -1065,12 +1065,13 @@ public static class MockData
         Name = "Rey rata",
         Type = CardType.Unit,
         Description = "Has jugado 6 ratas o más. Cuando golpeo, añado una rata al mazo rival. Cuando juegas un queso, consigo +1/+1",
+        Families = ["Rata"],
         BaseAttack = 3,
         BaseHealth = 3,
         ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Rata"]}, PlayerType.PLAYER, 6, CountType.AT_LEAST),
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new(){DefinitionId = "7"})),
-            new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IHaveBeenPlayedCondition())
+            new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IAttackedCondition())
         ]
 
     },
