@@ -67,3 +67,4 @@ C:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\obj\Debug\ne
 C:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\obj\Debug\net9.0\ref\WizardWarServer.dll
 c:\Users\Yllum\Desktop\REPOSITORIOS\WizardWarServer\WizardWarServer\bin\Debug\net9.0\Data\Decks\cards.json
 C:\Users\Yllum\Desktop\REPOSITORIOS_Y_PROYECTOS\WizardWarServer\WizardWarServer\bin\Debug\net9.0\Data\Decks\cards.json
+C:\Users\Yllum\Desktop\REPOSITORIOS_Y_PROYECTOS\WizardWarServer\WizardWarServer\obj\Debug\net9.0\swae.build.ex.cache

@@ -40,9 +40,10 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
 
     public void TryExecute(
         GameState state,
-        GameEvent? ev)
+        GameEvent? ev,
+        bool checkExpiration = true)
     {
-        if (Expired)
+        if (Expired && checkExpiration)
             return;
 
         if (!(Condition?.Check(Player.Id, Player.PlayerTarget.Id, SourceCard, state, ev) ?? true))

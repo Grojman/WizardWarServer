@@ -25,6 +25,7 @@ public abstract class GameEvent
     public class CardDrawnEvent : GameEventCard
     {
         public required Guid PlayerId { get; set; }
+        public required bool FromDeck { get; set; }
     }
 
     public class PlayerHealthChanged : GameEvent

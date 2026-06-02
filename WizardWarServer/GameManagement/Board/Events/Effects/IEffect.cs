@@ -13,6 +13,13 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(KillCards), nameof(KillCards))]
 [JsonDerivedType(typeof(AlterCardEffect), nameof(AlterCardEffect))]
 [JsonDerivedType(typeof(PlayCardEffect), nameof(PlayCardEffect))]
+[JsonDerivedType(typeof(ReviveLastPlayed), nameof(ReviveLastPlayed))]
+[JsonDerivedType(typeof(DecideTurnEffect), nameof(DecideTurnEffect))]
+[JsonDerivedType(typeof(RetriggerSpellEffect), nameof(RetriggerSpellEffect))]
+[JsonDerivedType(typeof(GeneratePaqueteEffect), nameof(GeneratePaqueteEffect))]
+[JsonDerivedType(typeof(ForcePlayCardInHandEffect), nameof(ForcePlayCardInHandEffect))]
+[JsonDerivedType(typeof(KillMySelf), nameof(KillMySelf))]
+[JsonDerivedType(typeof(AlterPlayerHealthBasedOnMyStats), nameof(AlterPlayerHealthBasedOnMyStats))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

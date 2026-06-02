@@ -1,0 +1,1 @@
+public enum Destination {HAND, BOARD, DECK}

@@ -724,7 +724,8 @@ public static class MockData
         Type = CardType.Spell,
         Description = "-2/-2 a la mesa enemiga. El jugador pierde 2 de vida",
         Effects = [
-            new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(-2, -2, new() {
+            new(TriggerType.SpellPlayed, 
+                [new AlterUnitStatsEffect(-2, -2, new() {
                 WhichBoardToSearch = PlayerType.RIVAL,
                 Filter = new()
             }), new AlterPlayerHealthEffect(-2, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -758,7 +759,7 @@ public static class MockData
         Type = CardType.Spell,
         Description = "MATA a TODAS las unidades en mesa",
         Effects = [
-            new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.BOTH)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+            new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.BOTH, 8)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
     },
     new()
@@ -1218,7 +1219,7 @@ new()
         new(
             TriggerType.SpellPlayed,
             [
-                new KillCards(new () {CurrentAttack = 0}, PlayerType.RIVAL)
+                new KillCards(new () {CurrentAttack = 0}, PlayerType.RIVAL, 4)
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
@@ -1371,8 +1372,477 @@ new()
         new AlterPlayerHealthEffect(1, false),
         new AlterPlayerHealthEffect(-1, true),
     ]
+},
+
+
+new()
+{
+    Id = "66",
+    Name = "Pilluelo",
+    Families = ["Ladrón"],
+    Description = "Cuando muero, roba una carta",
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Type = CardType.Unit,
+    Effects =[
+        new(TriggerType.UnitDeath, [new DrawCardEffect(1, null)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "67",
+    Name = "Fanático creyente",
+    Families = ["Culto"],
+    Description = "Cuando muero, inflinjo 1 de daño al rival",
+    BaseAttack = 1,
+    BaseHealth = 2,
+    Type = CardType.Unit,
+    Effects =[
+        new(TriggerType.UnitDeath, [new AlterPlayerHealthEffect(-1, true)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "68",
+    Name = "Terrible sacrificio",
+    Families = ["Culto"],
+    Description = "Mata a una unidad en mesa (izq) para robar dos cartas",
+    Type = CardType.Spell,
+    Effects =[
+        new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.PLAYER, 1), new DrawCardEffect(2, null)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ],
+    ConditionToPlay = new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 1, CountType.AT_LEAST)
+},
+new()
+{
+    Id = "69",
+    Name = "Venganza sangrienta",
+    Families = ["Culto"],
+    Description = "Mata a una unidad en mesa (izq) para matar otra unidad (izq) en la mesa rival",
+    Type = CardType.Spell,
+    Effects =[
+        new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.PLAYER, 1),new KillCards(new(), PlayerType.RIVAL, 1), ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ],
+    ConditionToPlay = new MultiEffectCondition([
+        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 1, CountType.AT_LEAST),
+        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}, 1, CountType.AT_LEAST)
+    ], false)
+},
+
+
+
+
+new()
+{
+    Id = "70",
+    Name = "RED",
+    Families = ["Capa"],
+    Type = CardType.Unit,
+    BaseHealth = 1,
+    BaseAttack = 1,
+    Description = "Crea ENLACE y BITS en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendCardToDeck(1, "71", false),
+            new AppendCardToDeck(1, "72", false),
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "71",
+    Name = "BITS",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "Curo 1 de vida al jugador",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new AlterPlayerHealthEffect(1, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "72",
+    Name = "ENLACE",
+    Families = ["Capa"],
+    Type = CardType.Unit,
+    BaseHealth = 2,
+    BaseAttack = 2,
+    Description = "Crea RED y Trama en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendCardToDeck(1, "73", false),
+            new AppendCardToDeck(1, "74", false),
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "73",
+    Name = "Trama",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "Roba una carta",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "74",
+    Name = "RED",
+    Families = ["Capa"],
+    Type = CardType.Unit,
+    BaseHealth = 3,
+    BaseAttack = 3,
+    Description = "Crea TRANSPORTE y Paquete en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendCardToDeck(1, "75", false),
+            new AppendCardToDeck(1, "76", false),
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "75",
+    Name = "Paquete",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "0/+1 a las unidades en mesa",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(1, 0, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "76",
+    Name = "TRANSPORTE",
+    Families = ["Capa"],
+    Type = CardType.Unit,
+    BaseHealth = 4,
+    BaseAttack = 4,
+    Description = "Crea SESIÓN y Datagrama en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendCardToDeck(1, "77", false),
+            new AppendCardToDeck(1, "78", false),
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "77",
+    Name = "Datagrama",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "+1/0 a las unidades en mesa",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(0, 1, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "78",
+    Name = "SESIÓN",
+    Families = ["Capa"],
+    Type = CardType.Unit,
+    BaseHealth = 5,
+    BaseAttack = 5,
+    Description = "Crea PRESENTACIÓN y Datos de sesión en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendCardToDeck(1, "79", false),
+            new AppendCardToDeck(1, "80", false),
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "79",
+    Name = "Datos de sesión",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "Curo 4 de vida al jugador",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new AlterPlayerHealthEffect(4, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "80",
+    Name = "PRESENTACIÓN",
+    Families = ["Capa"],
+    Type = CardType.Unit,
+    BaseHealth = 6,
+    BaseAttack = 6,
+    Description = "Crea APLICACIÓN y Datos de presentación en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendCardToDeck(1, "81", false),
+            new AppendCardToDeck(1, "82", false),
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "81",
+    Name = "Datos de presentación",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "+2/+2 a las dos próximas unidades que se jueguen",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendGlobalEffect(
+                new(TriggerType.UnitPlayed, [new AlterMySelf(2, 2, true)], new DurationByExecutions(2), new PlayerCardCondition(true, null)),
+                "+2/+2 a las dos próximas unidades jugadas"
+            )
+            ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "82",
+    Name = "APLICACIÓN",
+    Families = ["Capa"],
+    Type = CardType.Unit,
+    BaseHealth = 7,
+    BaseAttack = 7,
+    Description = "Crea Ex Machina y Datos de aplicación en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendCardToDeck(1, "83", false),
+            new AppendCardToDeck(1, "84", false),
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "83",
+    Name = "Datos de aplicación",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "Roba 3 cartas",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new DrawCardEffect(3, null)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "84",
+    Name = "Ex Machina",
+    Families = ["Machina"],
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 12,
+    Description = "Todas las capas han sido ensambladas. La máquina perfecta. Final de turno: decido por el jugador",
+    Effects = [
+        new(TriggerType.TurnEnd, [new DecideTurnEffect()], new Always(), null)
+    ]
+},
+new()
+{
+    Id = "85",
+    Name = "HUB",
+    Families = ["Nodo"],
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 2,
+    Description = "Cuando el jugador juega un hechizo paquete, se activa una vez más",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new RetriggerSpellEffect()], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
+    ]
+},
+new()
+{
+    Id = "86",
+    Name = "Router",
+    Families = ["Nodo"],
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 3,
+    Description = "Cuando el jugador juega un paquete, creo un paquete de capa menor o igual al jugado y lo añado al mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new GeneratePaqueteEffect()], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
+    ]
+},
+new()
+{
+    Id = "87",
+    Name = "Electricista apañado",
+    Type = CardType.Unit,
+    BaseAttack = 2,
+    BaseHealth = 4,
+    Families = ["Seguridad"]
+},
+new()
+{
+    Id = "88",
+    Name = "Hacker",
+    BaseAttack = 1,
+    BaseHealth = 2,
+    Type = CardType.Unit,
+    Description = "Cuando se juega un paquete, creo un virus en el mazo del rival",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new AppendCardToDeck(1, "89", true)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
+    ],
+    PlayEffectTriggerTimes = 1,
+    PlayEffects = [
+        new DamagePlayerBasedOnCards(true, -1, PlayerType.RIVAL, new() {WhichHandToSearch = PlayerType.RIVAL, Filter = new(){CurrentFamilies = ["Virus"]}})
+    ]
+},
+new()
+{
+    Id = "89",
+    Name = "Malware",
+    Type = CardType.Spell,
+    Families = ["Virus"],
+    Description = "Inflinjo 1 de daño a mi jugador",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new AlterPlayerHealthEffect(-1, false)], new DurationByExecutions(1), null)
+    ]
+},
+new()
+{
+    Id = "90",
+    Name = "Mensaje de broadcast",
+    Families = ["Paquete"],
+    Type = CardType.Spell,
+    Description = "Juega todos los virus que haya en mano del rival",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new ForcePlayCardInHandEffect(PlayerType.RIVAL, new(){CurrentFamilies = ["Virus"]})], new DurationByExecutions(1), null)
+    ]
+},
+new()
+{
+    Id = "91",
+    Name = "Denegación de servicio",
+    Type = CardType.Spell,
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AlterUnitStatsEffect(0, -3, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}),
+            new AppendGlobalEffect(
+                new(TriggerType.TurnEnd, [
+                    new AlterUnitStatsEffect(0, +1, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}),
+                    
+                ], new DurationByExecutions(1), new TurnCounterCondition(2)),
+                "Las unidades del rival conseguirán +1/0 dentro de dos rondas"
+            )   
+        ], new DurationByExecutions(1), null)
+    ],
+    Description = "-3/0 a la mesa del rival, +1/0 dentro de 2 rondas"
+},
+new()
+{
+    Id = "92",
+    Name = "Troyano",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Families = ["Virus"],
+    Description = "Cuando muero, me agrego al mazo rival",
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [
+                new AppendCardToDeck(1, "92", true)
+            ],
+            new Always(),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "93",
+    Name = "Firewall",
+    Families = ["Seguridad"],
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 3,
+    Description = "Cuando el rival juega un virus, consigo +1/+1",
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new AlterMySelf(1, 1, false)
+            ],
+            new Always(),
+            new PlayerCardCondition(false, new(){CurrentFamilies = ["Virus"]})
+        ),
+        new(
+            TriggerType.UnitPlayed,
+            [
+                new AlterMySelf(1, 1, false)
+            ],
+            new Always(),
+            new PlayerCardCondition(false, new(){CurrentFamilies = ["Virus"]})
+        )
+    ]
+},
+new()
+{
+    Id = "94",
+    Name = "Copia de seguridad",
+    Families = ["Seguridad"],
+    Type = CardType.Unit,
+    BaseAttack = 2,
+    BaseHealth = 4,
+    Description = "HABILIDAD: Muero y curo a mi jugador el equivalente a mi vida",
+    PlayEffectTriggerTimes = 1,
+    PlayEffects = [
+        new AlterPlayerHealthBasedOnMyStats(AffectedStats.HEALTH, 1, false),
+        new KillMySelf(),
+    ]
+},
+new()
+{
+    Id = "95",
+    Name = "Prueba Unitaria",
+    Type = CardType.Spell,
+    Description = "Roba una carta. Las cartas de tipo Seguridad ganan 1 de vida",
+    Effects = [
+        new(TriggerType.SpellPlayed,
+        [
+            new AlterUnitStatsEffect(1, 0, new()
+            {
+                WhichBoardToSearch = PlayerType.PLAYER,
+                WhichDeckToSearch = PlayerType.PLAYER,
+                Filter = new()
+                {
+                    CurrentFamilies = ["Seguridad"]
+                }
+            }),
+            
+        ],new DurationByExecutions(1), null)
+    ]
 }
 
+
+
+
+// Capa 2, Hechizo 2 (roba una carta)
+// Capa 3, Hechizo 3 (uno de vida a las unidades en mesa)
+// Capa 4, Hechizo 4 (uno de ataque a las unidades en mesa)
+// Capa 5, Hechizo 5 (cura 4 de vida)
+// Capa 6, Hechizo 6 (+2/+2 a las dos próximas unidades que se jueguen)
+// Capa 7, Hechizo 7 (Roba 3 cartas)
+// Ex machina (0/12 ???? FIN DE RONDA: DECIDE EL TURNO POR JUGADOR)
+
+// TODAS LAS CAPAS tienen n/n de vida, y crean una capa de un nivel superior y su paquete. La última capa crea Ex machina.
+
+// Media: 10 * 2.5 = 15
+// Capa 1, Hechizo 1 (cura 1 de vida a su jugador)
+// Hub (0/2 Vuelve a activar los hechizos de tipo paquete),
+// Router (1/3 Cada vez que se lance un hechizo de tipo paquete, genera uno igual o menor y lo mete en el mazo),
+
+// Electricista Apañado (SEGURIDAD 2/4, clase que tanquea y ya)
+// Hacker (1/2, cuando se juega un paquete, crea un virus en el mazo del rival. HABILIDAD: inflinge 1 de daño por cada virus en mano)
+// Mensaje de broadcast(paquete, juega todos los virus que haya en mano del rival)
+// Denegación de servicio (-2 de ataque a los rivales durante 2 turnos)
+// Troyano (VIRUS 1/1, cuando muero me coloco en el mazo del rival)
+// Firewall (SEGURIDAD, 0/3, cuando el rival juega un VIRUS consigo +1/+1)
+// Copia de seguridad (SEGURIDAD, 2/4, HABILIDAD: me mato para curar mi vida al jugador)
+// Prueba Unitaria (Roba una carta. Las cartas de tipo SEGURIDAD ganan 1 de vida)
 
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -1383,7 +1853,7 @@ new()
         //     "Mago serio, mago confiable. Sus cartas son seguras, no se anda con tonterías. Nunca bebe en las fiestas porque sabe que le tocará conducir después."),
         //     new()
         //     {
-                
+
         //     }
         // },
         // {
@@ -1392,9 +1862,31 @@ new()
         //     "Señor y dueño de todas las tontunas. Rinde tu alma ante él y serás recompensado con la frustración de tus rivales."),
         //     new()
         //     {
-                
+
         //     }
         // },
+        {
+            new DeckDto(
+                10,
+                "Tecnomago",
+                "Una criatura compuesta de metal, cables y energía. No tiene alma. No tiene comunión con el mundo y su energía. Y, de algún modo, es capaz de realizar sus propias obras. Ve por encima del resto, se ha declarado a sí misma como un hechicero, y nadie entiende cuáles son sus propósitos."
+            ),
+            new()
+            {
+                //30
+                {"70", 2},
+                {"85", 2},
+                {"86", 2},
+                {"87", 4},
+                {"88", 3},
+                {"90", 2},
+                {"91", 3},
+                {"92", 3},
+                {"93", 3},
+                {"94", 3},
+                {"95", 3},
+            }
+        },
         {
             new DeckDto(
                 9,

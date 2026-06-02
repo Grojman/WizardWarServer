@@ -26,7 +26,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
         {
             GameEvent.PlayerDeath pd => new PlayerDeath(pd.Source.Id, pd.PlayerSource.Id),
             GameEvent.TargetPlayerChanged tpc => new TargetPlayerChanged(tpc.Source.Id, tpc.PlayerSource.Id, tpc.NewTarget),
-            GameEvent.CardDrawnEvent cde => new CardDrawnEvent(cde.Source.Id, cde.PlayerSource.Id, CardDto.Generate(cde.Card, state, false)),
+            GameEvent.CardDrawnEvent cde => new CardDrawnEvent(cde.Source.Id, cde.PlayerSource.Id, CardDto.Generate(cde.Card, state, false), cde.FromDeck),
             GameEvent.PlayerHealthChanged phc => new PlayerHealthChanged(phc.Source.Id, phc.PlayerSource.Id, phc.Amount),
             GameEvent.UnitHealthChanged uhc => new UnitHealthChanged(uhc.Source.Id, uhc.PlayerSource.Id, uhc.Card.Id, uhc.Amount),
             GameEvent.UnitDamageChanged udc => new UnitDamageChanged(udc.Source.Id, udc.PlayerSource.Id, udc.Card.Id, udc.Amount),
@@ -44,7 +44,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
     }
     public record PlayerDeath(Guid Source, Guid PlayerSource) : GameEventDto(Source, PlayerSource) {}
     public record TargetPlayerChanged(Guid Source, Guid PlayerSource, Guid NewTarget): GameEventDto(Source, PlayerSource){}
-    public record CardDrawnEvent(Guid Source, Guid PlayerSource, CardDto Card) : GameEventDto(Source, PlayerSource){}
+    public record CardDrawnEvent(Guid Source, Guid PlayerSource, CardDto Card, bool FromDeck) : GameEventDto(Source, PlayerSource){}
     public record PlayerHealthChanged(Guid Source, Guid PlayerSource, int Amount) : GameEventDto(Source, PlayerSource){}
     public record UnitHealthChanged(Guid Source, Guid PlayerSource, Guid Card, int Amount) : GameEventDto(Source, PlayerSource){}
     public record UnitDamageChanged(Guid Source, Guid PlayerSource, Guid Card, int Amount) : GameEventDto(Source, PlayerSource){}

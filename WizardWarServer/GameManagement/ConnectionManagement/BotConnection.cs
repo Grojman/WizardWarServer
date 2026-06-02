@@ -63,9 +63,9 @@ public class BotConnection : PlayerConnection
         Thread.Sleep(new Random().Next(1000, 3000));
         List<Func<GameStateDto, Task>> options = new();
 
-        if(CanPlayCard(state)) options.Add(PlayCard);
-        if(CanAttack(state)) options.Add(Attack);
-        if(CanDraw(state, options)) options.Add(DrawCardAsync);
+        if(state.Me.CanPlayCard()) options.Add(PlayCard);
+        if(state.Me.CanAttack()) options.Add(Attack);
+        if(state.Me.CanDraw(options.Count)) options.Add(DrawCardAsync);
 
         await options.GetRandom()(state);
     }
@@ -75,8 +75,6 @@ public class BotConnection : PlayerConnection
     {
         await Game.HandleAction(this, new PlayerAction.DrawCardAction());
     }
-
-    bool CanDraw(GameStateDto state, List<Func<GameStateDto, Task>> options) => options.Count == 0 || state.Me.HandData.Count() < 5;
 
     async Task Attack(GameStateDto state)
     {
@@ -93,7 +91,6 @@ public class BotConnection : PlayerConnection
         });
     }
 
-    bool CanAttack(GameStateDto state) => state.Me.Board.Any(n => n is not null && n.attack > 0);
 
     async Task PlayCard(GameStateDto state)
     {
@@ -110,7 +107,6 @@ public class BotConnection : PlayerConnection
         });
     }
 
-    bool CanPlayCard(GameStateDto state) => state.Me.HandData.Any(n => n.canPlay && (n.type == "Spell" || state.Me.Board.Any(n => n is null)));
 
 
     async Task SendMessage()

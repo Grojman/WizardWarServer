@@ -244,6 +244,20 @@ public class GameState
         }
     }
 
+    public void DrawCard(PlayerState player, CardInstance card, bool fromDeck = false)
+    {
+        player.Hand.Add(card);
+        var gevent = new GameEvent.CardDrawnEvent()
+        {
+            PlayerSource = player,
+            Source = player,
+            Card = card,
+            PlayerId = player.Id,
+            FromDeck = fromDeck
+        };
+        GameActionResult.AddEvent(gevent);
+        ApplyEffect(TriggerType.DrawCard, gevent);
+    }
     public void DrawCard(PlayerConnection p, CardFilter? filter = null)
     {
         var player = GetState(p.Guid);
@@ -255,16 +269,7 @@ public class GameState
             KillPlayer(player);
         } else if (card is not null)
         {
-            player.Hand.Add(card);
-            var gevent = new GameEvent.CardDrawnEvent()
-            {
-                PlayerSource = player,
-                Source = player,
-                Card = card,
-                PlayerId = player.Id
-            };
-            GameActionResult.AddEvent(gevent);
-            ApplyEffect(TriggerType.DrawCard, gevent);
+            DrawCard(player, card, true);
         }
     }
 
@@ -316,7 +321,7 @@ public class GameState
         }
     }
 
-    void Attack(
+    public void Attack(
         PlayerConnection p,
         Guid targetedPlayerId,
         int attacker,
