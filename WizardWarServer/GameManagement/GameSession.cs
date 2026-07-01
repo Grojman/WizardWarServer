@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 
 public class GameSession
@@ -89,10 +90,16 @@ public class GameSession
             winner,
             forced
         };
+        if(!botSession)
+        {
+            StoringData.SaveData(state, forced);
+            StoringData.SaveInFile();
+        }
 
         foreach(var c in Connections) await c.Send("end_game", msg); 
         state.ClearState();
         manager.RemoveGameSession(this, Connections);
+
     }
 
     public async Task RemovePlayer(PlayerConnection c)
@@ -112,5 +119,14 @@ public class GameSession
         }
 
         await SendState();
+    }
+
+    public override string ToString()
+    {
+        StringBuilder sr = new($"[GAME] Bot? : {botSession} Nº Players: {Connections.Count} Ended: {HasEnded}\n");
+
+        foreach(var p in Connections) sr.AppendLine(p.ToString()); 
+
+        return sr.ToString();
     }
 }

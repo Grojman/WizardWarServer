@@ -1,6 +1,13 @@
 
 public static class MockData
 {
+    public static void PrintData()
+    {
+        foreach(var c in Cards)
+        {
+            Console.WriteLine($"[CARD] Id: {c.Id}, Name: {c.Name}, Description: {c.Description}");
+        }
+    }
     public static List<CardDefinition> Cards =
 [
     new CardDefinition
@@ -74,13 +81,18 @@ public static class MockData
     new CardDefinition
     {
         Id = "5",
-        Name = "Mr bombastic",
-        Description = "Solo se puede jugar en turnos pares",
-        BaseAttack = 4,
-        BaseHealth = 4,
+        Name = "Mind Máster",
+        Description = "HABILIDAD: Activa todas las habilidades de la mesa enemiga",
+        BaseAttack = 1,
+        BaseHealth = 1,
+        Type = CardType.Unit,
         Families = ["Rata"],
-        imageUrl = "/images/cards/1.jpg",
-        ConditionToPlay = new EvenTurnCondition()
+        Effects = [
+            new(TriggerType.UnitPlayed, [
+                new TriggerAbilityEffect(PlayerType.RIVAL, null)
+            ]
+            ,new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        ]
     },
 
     new CardDefinition
@@ -325,7 +337,7 @@ public static class MockData
         Id = "14",
         Name = "Libro de Caballería",
         Type = CardType.Spell,
-        Description = "Necesitas al menos 1 caballero en mesa. Roba una carta y cura 2 de vida al jugador",
+        Description = "Roba una carta y cura 2 de vida al jugador",
         Families = ["Libro"],
         Effects =
         [
@@ -335,20 +347,7 @@ public static class MockData
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
             )
-        ],
-        ConditionToPlay = 
-            new CountCardCondition(
-                new GameFilter()
-                {
-                    WhichBoardToSearch = PlayerType.PLAYER,
-                    Filter = new()
-                    {
-                        CurrentFamilies = ["Caballero"]
-                    }
-                },
-                1,
-                CountType.AT_LEAST
-            )
+        ]
     },
 
     new CardDefinition
@@ -919,10 +918,10 @@ public static class MockData
     {
         Id = "42",
         Name = "Batido de proteínas",
-        Description = "La primera carta de la izquierda consigue 0/+4",
+        Description = "La primera carta de la izquierda consigue +1/+2",
         Type = CardType.Spell,
         Effects = [
-            new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(4, 0, new GameFilter()
+            new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(2, 1, new GameFilter()
                         {
                             Filter = new(){ },
                             WhichBoardToSearch = PlayerType.PLAYER,
@@ -950,14 +949,14 @@ public static class MockData
         Type = CardType.Unit,
         BaseAttack = 2,
         BaseHealth = 2,
-        Description = "Final de ronda: 0/+1 a mi y a la carta más a la izquierda",
+        Description = "Cada 2 rondas: 0/+1 a mi y a la carta más a la izquierda",
         Effects = [
             new(TriggerType.TurnEnd, [new AlterMySelf(0, 1, false), new AlterUnitStatsEffect(1, 0, new GameFilter()
                         {
                             Filter = new(){ },
                             WhichBoardToSearch = PlayerType.PLAYER,
                             MaxLength = 1
-                        })], new Always(), null)
+                        })], new Always(), new TurnCounterCondition(2))
         ]
     },
     new()
@@ -976,9 +975,9 @@ public static class MockData
         Name = "David Goggins",
         Families = ["Motivacion"],
         Type = CardType.Unit,
-        Description = "Después de golpear, consigo 0/+2",
+        Description = "Después de golpear, consigo +1/+1",
         Effects = [
-            new (TriggerType.CardAttacked, [new AlterMySelf(0, 2, false)], new Always(), new IHaveBeenPlayedCondition())
+            new (TriggerType.CardAttacked, [new AlterMySelf(1, 1, false)], new Always(), new IHaveBeenPlayedCondition())
         ],
         BaseAttack = 2,
         BaseHealth = 1
@@ -1151,7 +1150,7 @@ new()
     Type = CardType.Unit,
     Families = ["Hielo"],
     BaseAttack = 0,
-    BaseHealth = 6,
+    BaseHealth = 2,
     Description = "Cuando se altera el ataque de las unidades enemigas, consigo +1/0",
     Effects = [
         new (TriggerType.UnitDamageChanged, [new AlterMySelf(1, 0, false)], new Always(), new PlayerCardCondition(false, null))
@@ -1301,7 +1300,7 @@ new()
         10,
         CountType.AT_LEAST
     ),
-    new CountCardCondition(new(){WhichBoardToSearch = PlayerType.BOTH, Filter = new()}, 0, CountType.EXACTLY)
+    new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 0, CountType.EXACTLY)
     ], false)
 },
 
@@ -1442,7 +1441,7 @@ new()
     BaseAttack = 1,
     Description = "Crea ENLACE y BITS en el mazo",
     Effects = [
-        new(TriggerType.SpellPlayed, [
+        new(TriggerType.UnitPlayed, [
             new AppendCardToDeck(1, "71", false),
             new AppendCardToDeck(1, "72", false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1469,7 +1468,7 @@ new()
     BaseAttack = 2,
     Description = "Crea RED y Trama en el mazo",
     Effects = [
-        new(TriggerType.SpellPlayed, [
+        new(TriggerType.UnitPlayed, [
             new AppendCardToDeck(1, "73", false),
             new AppendCardToDeck(1, "74", false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1496,7 +1495,7 @@ new()
     BaseAttack = 3,
     Description = "Crea TRANSPORTE y Paquete en el mazo",
     Effects = [
-        new(TriggerType.SpellPlayed, [
+        new(TriggerType.UnitPlayed, [
             new AppendCardToDeck(1, "75", false),
             new AppendCardToDeck(1, "76", false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1523,7 +1522,7 @@ new()
     BaseAttack = 4,
     Description = "Crea SESIÓN y Datagrama en el mazo",
     Effects = [
-        new(TriggerType.SpellPlayed, [
+        new(TriggerType.UnitPlayed, [
             new AppendCardToDeck(1, "77", false),
             new AppendCardToDeck(1, "78", false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1550,7 +1549,7 @@ new()
     BaseAttack = 5,
     Description = "Crea PRESENTACIÓN y Datos de sesión en el mazo",
     Effects = [
-        new(TriggerType.SpellPlayed, [
+        new(TriggerType.UnitPlayed, [
             new AppendCardToDeck(1, "79", false),
             new AppendCardToDeck(1, "80", false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1577,7 +1576,7 @@ new()
     BaseAttack = 6,
     Description = "Crea APLICACIÓN y Datos de presentación en el mazo",
     Effects = [
-        new(TriggerType.SpellPlayed, [
+        new(TriggerType.UnitPlayed, [
             new AppendCardToDeck(1, "81", false),
             new AppendCardToDeck(1, "82", false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1609,7 +1608,7 @@ new()
     BaseAttack = 7,
     Description = "Crea Ex Machina y Datos de aplicación en el mazo",
     Effects = [
-        new(TriggerType.SpellPlayed, [
+        new(TriggerType.UnitPlayed, [
             new AppendCardToDeck(1, "83", false),
             new AppendCardToDeck(1, "84", false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1669,10 +1668,14 @@ new()
 {
     Id = "87",
     Name = "Electricista apañado",
+    Description = "Cuando me juegas, roba una carta",
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 4,
-    Families = ["Seguridad"]
+    Families = ["Seguridad"],
+    Effects = [
+        new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
 },
 new()
 {
@@ -1681,7 +1684,7 @@ new()
     BaseAttack = 1,
     BaseHealth = 2,
     Type = CardType.Unit,
-    Description = "Cuando se juega un paquete, creo un virus en el mazo del rival",
+    Description = "Cuando se juega un paquete, creo un virus en el mazo del rival. HABILIDAD: daño al rival 1 por cada virus que tenga en la mano",
     Effects = [
         new(TriggerType.SpellPlayed, [new AppendCardToDeck(1, "89", true)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
     ],
@@ -1812,6 +1815,7 @@ new()
                     CurrentFamilies = ["Seguridad"]
                 }
             }),
+            new DrawCardEffect()
             
         ],new DurationByExecutions(1), null)
     ]
@@ -1995,9 +1999,9 @@ new()
                 {"41", 2},
                 {"42", 3},
                 {"43", 2},
-                {"44", 3},
+                {"44", 1},
                 {"45", 3},
-                {"46", 1},
+                {"46", 2},
                 {"47", 2},
                 {"48", 3},
                 {"49", 4},

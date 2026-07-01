@@ -334,8 +334,10 @@ public class GameState
         if (card is null)
         {
             Console.WriteLine($"WTF. Attacking with unexisting card");
-        } else
+        } else  
         {
+            ChangeTarget(player.Connection, targetedPlayerId);            
+
             var gevent = new GameEvent.CardAttacked()
             {
                 PlayerSource = player,

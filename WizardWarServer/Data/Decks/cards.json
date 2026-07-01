@@ -28,7 +28,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "54f6c00f-160d-4806-9d0d-2614f60dffed"
+        "Id": "97b933cc-0215-476d-90d0-342542b8989b"
       }
     ],
     "imageUrl": "",
@@ -90,7 +90,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a335115c-9e18-49d7-9f13-e22e063d12df"
+        "Id": "8c997e9f-bf1d-433f-bd06-0507bd85bb3a"
       }
     ],
     "imageUrl": "",
@@ -144,7 +144,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a3efb5f5-f833-4c46-9c0e-26eccacf6df0"
+        "Id": "b16cccf7-668e-47c6-88c0-d871211f14d4"
       }
     ],
     "imageUrl": "",
@@ -157,16 +157,37 @@
       "Rata"
     ],
     "Id": "5",
-    "Name": "Mr bombastic",
+    "Name": "Mind M\u00E1ster",
     "Type": 0,
-    "Description": "Solo se puede jugar en turnos pares",
-    "BaseAttack": 4,
-    "BaseHealth": 4,
-    "Effects": [],
-    "imageUrl": "/images/cards/1.jpg",
-    "ConditionToPlay": {
-      "$type": "EvenTurnCondition"
-    },
+    "Description": "HABILIDAD: Activa todas las habilidades de la mesa enemiga",
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "TriggerAbilityEffect",
+            "PlayerType": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": null,
+        "Id": "81213b3b-257e-4663-9804-9c1a94d25c63"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   },
@@ -222,7 +243,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "7c8dd483-2711-4cdb-a9c3-30d99fa12a9e"
+        "Id": "3d1f3b85-1c55-41ae-b861-cdef203c9f14"
       }
     ],
     "imageUrl": "",
@@ -259,7 +280,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "be2219f9-69c0-4714-b18a-a3dcfaabab38"
+        "Id": "ced08cf0-72f5-4d87-9de2-8f6f1622cd70"
       }
     ],
     "imageUrl": "",
@@ -296,7 +317,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "074104c9-a8a4-4c97-a9f4-bdc6b379d2be"
+        "Id": "26a74c60-5986-4e26-9081-fa390cb344f1"
       },
       {
         "Trigger": 0,
@@ -316,7 +337,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5c69592c-c2c3-4967-bbb8-47e547a7e031"
+        "Id": "1de713c2-058f-4a07-9951-45b912311e8c"
       }
     ],
     "imageUrl": "",
@@ -375,7 +396,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ce91c10d-daf2-4218-82c5-c1ea0c952125"
+        "Id": "e5d10074-2a46-4f2e-995b-11c3fd06ccd9"
       }
     ],
     "imageUrl": "",
@@ -415,7 +436,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e01a7cc1-f6f0-420d-ad9e-eae6f14cf3f3"
+        "Id": "1c76c7ba-3212-4235-98eb-1dd01b5edbd9"
       }
     ],
     "imageUrl": "",
@@ -475,7 +496,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B1/\u002B1 Si la carta es una Rata",
-              "Id": "0758073c-2d97-4c76-b9ad-c17506246df5"
+              "Id": "c93b29e2-fbb1-4564-b0fd-fc1c1d4cc6e9"
             }
           }
         ],
@@ -490,7 +511,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c102c168-427e-4eff-9b1a-033e587afe17"
+        "Id": "c8fb159c-564d-4944-93d2-c558e5660319"
       }
     ],
     "imageUrl": "",
@@ -599,7 +620,7 @@
               "Player": null,
               "Expired": false,
               "Description": "0/-1 en el pr\u00F3ximo final de turno",
-              "Id": "888c4244-29a1-4408-b1cf-d91db572e930"
+              "Id": "6fc002b7-2aaa-4b8f-bc19-7697dc3bb9fd"
             }
           }
         ],
@@ -614,7 +635,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1c3149fb-3957-4d3d-9aa7-8aa74af486b3"
+        "Id": "47644cd6-7d65-45b8-a41a-d3685842aeb7"
       }
     ],
     "imageUrl": "",
@@ -673,7 +694,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "281b382e-1ccc-4fe6-be68-73a09dbbd967"
+        "Id": "d447b6de-3650-4c1c-b0a8-33628766250c"
       }
     ],
     "imageUrl": "",
@@ -732,7 +753,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1a3c4140-647c-492c-ad6d-1772f087bee7"
+        "Id": "9c3bed8a-b51a-430a-adba-4d055e1d99a8"
       }
     ],
     "imageUrl": "",
@@ -747,7 +768,7 @@
     "Id": "14",
     "Name": "Libro de Caballer\u00EDa",
     "Type": 1,
-    "Description": "Necesitas al menos 1 caballero en mesa. Roba una carta y cura 2 de vida al jugador",
+    "Description": "Roba una carta y cura 2 de vida al jugador",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -776,37 +797,11 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "001c326a-4ad2-4e39-b513-c00d59b7dfd5"
+        "Id": "57db1791-a1d4-4c8a-af59-797a986e5b2b"
       }
     ],
     "imageUrl": "",
-    "ConditionToPlay": {
-      "$type": "CountCardCondition",
-      "Filter": {
-        "Filter": {
-          "CurrentAttack": null,
-          "CurrentHealth": null,
-          "Attack": null,
-          "Health": null,
-          "CardType": null,
-          "Families": null,
-          "CurrentFamilies": [
-            "Caballero"
-          ],
-          "DefinitionId": null,
-          "Id": null,
-          "HasEffect": null,
-          "NumberOfTriggersLeft": null,
-          "MustMeetAllCriteria": false
-        },
-        "WhichDeckToSearch": 3,
-        "WhichBoardToSearch": 0,
-        "WhichHandToSearch": 3,
-        "MaxLength": 0
-      },
-      "Amount": 1,
-      "CountType": 0
-    },
+    "ConditionToPlay": null,
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   },
@@ -841,7 +836,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "86fab48c-33b1-4857-a60b-5d91abe7199c"
+        "Id": "02de5df0-42ae-496b-831d-29c406858d0a"
       }
     ],
     "imageUrl": "",
@@ -930,7 +925,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ba6e5c38-1046-4876-85ed-53aaef8c6ab3"
+        "Id": "ff65cb55-b16f-430b-8900-7669308accd0"
       }
     ],
     "imageUrl": "",
@@ -992,7 +987,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f560a59d-3e02-4397-ac34-1d00a441544b"
+        "Id": "a778c91d-8854-4237-945b-a9e506dea4ae"
       },
       {
         "Trigger": 6,
@@ -1027,7 +1022,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "35caede3-c10b-4a98-9a38-e8a2ee2c0941"
+        "Id": "4984cfa7-daea-41f1-94af-d660ad8af63a"
       }
     ],
     "imageUrl": "",
@@ -1120,7 +1115,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5e5c660b-329b-4593-9fd7-9e8d2dfac1c1"
+        "Id": "d8d2443f-76ff-4c87-a272-4f4cdadf55dd"
       }
     ],
     "imageUrl": "",
@@ -1193,7 +1188,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "677275e5-079a-4a87-b112-904467f27e10"
+        "Id": "60be5955-3d21-4e05-b9b8-488db7d69433"
       }
     ],
     "imageUrl": "",
@@ -1270,7 +1265,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "131881c9-ed71-474c-8e1f-dd12a968c9d4"
+        "Id": "3aec31cd-88eb-4cf7-9541-e628d08be55b"
       }
     ],
     "imageUrl": "",
@@ -1348,7 +1343,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b90f2cff-5e89-42f2-a828-01d17e04e2a9"
+        "Id": "e7b61b06-5763-4dcd-9627-e833789ff5b5"
       }
     ],
     "imageUrl": "",
@@ -1430,7 +1425,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "7dd60302-f1b3-4aa9-b10e-f8376796a887"
+        "Id": "d1cfb63c-c89b-4bf5-b6f1-3f5a02399d1f"
       }
     ],
     "imageUrl": "",
@@ -1506,7 +1501,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "debab103-74cb-4b11-ac43-cb09ac2d7986"
+        "Id": "ad258f3b-38c0-423a-b2d9-cfeeee2239f9"
       }
     ],
     "imageUrl": "",
@@ -1565,7 +1560,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f0b1b003-eeed-4a6d-8d86-1a8683713bb9"
+        "Id": "c3edaa52-0f3a-4511-9c26-c81f712f8522"
       }
     ],
     "imageUrl": "",
@@ -1605,7 +1600,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "69444359-b529-4a6c-baa8-22ed438f98ca"
+        "Id": "bff4a073-03f4-4824-b448-a74656fbb483"
       }
     ],
     "imageUrl": "",
@@ -1643,7 +1638,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a68f79fe-85a8-4718-916b-fb4126c2cd4d"
+        "Id": "18c3105d-5281-4dd0-873b-83348a5f8c27"
       }
     ],
     "imageUrl": "",
@@ -1715,7 +1710,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "51a726af-d526-4871-baea-e7fb982ef3ca"
+        "Id": "a0dbb986-1e7e-4f0f-8aca-292475c70546"
       }
     ],
     "imageUrl": "",
@@ -1779,7 +1774,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b1194cf4-19c8-4237-98cd-35de19ec0d97"
+        "Id": "c4194ca3-0c35-4487-b02a-286b032cfbff"
       }
     ],
     "imageUrl": "",
@@ -1829,7 +1824,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "8b84f10e-6c53-43f7-9215-1fc4769b235c"
+        "Id": "9316cbdb-a77b-44ad-8f8e-b8c8289c0740"
       }
     ],
     "imageUrl": "",
@@ -1886,7 +1881,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "50e56b0f-cd91-4017-831e-3e68a22af1d9"
+        "Id": "c54c86c4-2699-4c41-9661-47458504a2e6"
       }
     ],
     "imageUrl": "",
@@ -1939,7 +1934,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e900ef13-74c5-4199-bde5-ae43c14ff068"
+        "Id": "b474f827-c17f-4ae1-acb7-46eb55d93261"
       }
     ],
     "imageUrl": "",
@@ -1992,7 +1987,7 @@
               "Player": null,
               "Expired": false,
               "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
-              "Id": "c4425462-9b07-42c4-b751-8bc8c760a969"
+              "Id": "258096ce-c97d-4846-8d2d-556ee589f5a1"
             }
           }
         ],
@@ -2005,7 +2000,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "9b951452-2a08-4705-8b99-e36a53757946"
+        "Id": "9c0d6bb9-1487-47ff-85e8-12c9fa998558"
       }
     ],
     "imageUrl": "",
@@ -2053,7 +2048,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-              "Id": "e8704ea3-3bfb-420e-8428-2b7645822eac"
+              "Id": "cab02046-46c3-472d-a568-d53995943806"
             }
           }
         ],
@@ -2068,7 +2063,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "0ad9cc89-9353-4381-9432-631c44314ff0"
+        "Id": "5e1088ca-6936-4a6c-ac62-24a92c151f56"
       }
     ],
     "imageUrl": "",
@@ -2123,7 +2118,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e6f26e78-ec0c-4f92-8a44-610196b3469e"
+        "Id": "6f867983-5819-4c1c-a53a-55d305d212ae"
       }
     ],
     "imageUrl": "",
@@ -2199,7 +2194,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "10db7ad3-ec24-48a2-9712-1cc3d652a2e9"
+        "Id": "485fb874-3c2d-482b-9d30-be34987d75e2"
       }
     ],
     "imageUrl": "",
@@ -2241,7 +2236,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "39787a76-b4c5-4458-91c9-7bbbda5ea79e"
+        "Id": "713fbd0a-018d-4658-b8d4-5cadae8b036a"
       }
     ],
     "imageUrl": "",
@@ -2343,7 +2338,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "abd34dad-a4a4-4798-9e98-713e02f38c02"
+        "Id": "9b846366-aac4-40f0-9dee-4cbfb70cf147"
       }
     ],
     "imageUrl": "",
@@ -2358,7 +2353,7 @@
     "Id": "42",
     "Name": "Batido de prote\u00EDnas",
     "Type": 1,
-    "Description": "La primera carta de la izquierda consigue 0/\u002B4",
+    "Description": "La primera carta de la izquierda consigue \u002B1/\u002B2",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2367,8 +2362,8 @@
         "Effects": [
           {
             "$type": "AlterUnitStatsEffect",
-            "Health": 4,
-            "Damage": 0,
+            "Health": 2,
+            "Damage": 1,
             "Filter": {
               "Filter": {
                 "CurrentAttack": null,
@@ -2400,7 +2395,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "840b56bd-21ee-4959-8fe2-b64b1e75f0d2"
+        "Id": "f7469dce-6662-46ff-9b63-e6c6bc1b88c7"
       }
     ],
     "imageUrl": "",
@@ -2438,7 +2433,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f43b5b09-30d4-480e-b18d-bc947bba9e91"
+        "Id": "537e4bca-3249-4be6-8c3a-b28ee5723034"
       }
     ],
     "imageUrl": "",
@@ -2451,7 +2446,7 @@
     "Id": "44",
     "Name": "El se\u00F1or de las mancuernas",
     "Type": 0,
-    "Description": "Final de ronda: 0/\u002B1 a mi y a la carta m\u00E1s a la izquierda",
+    "Description": "Cada 2 rondas: 0/\u002B1 a mi y a la carta m\u00E1s a la izquierda",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [
@@ -2493,12 +2488,16 @@
         "Duration": {
           "$type": "Always"
         },
-        "Condition": null,
+        "Condition": {
+          "$type": "TurnCounterCondition",
+          "Amount": 2,
+          "AmountCounter": 0
+        },
         "SourceCard": null,
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5821b17f-4c64-4f72-b5d9-9d58b9f3471b"
+        "Id": "ee6010a5-aa84-4c18-9eaf-b70439bd4197"
       }
     ],
     "imageUrl": "",
@@ -2529,7 +2528,7 @@
     "Id": "46",
     "Name": "David Goggins",
     "Type": 0,
-    "Description": "Despu\u00E9s de golpear, consigo 0/\u002B2",
+    "Description": "Despu\u00E9s de golpear, consigo \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -2538,8 +2537,8 @@
         "Effects": [
           {
             "$type": "AlterMySelf",
-            "Damage": 0,
-            "Health": 2,
+            "Damage": 1,
+            "Health": 1,
             "UseGameEvent": false
           }
         ],
@@ -2553,7 +2552,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d893d370-5776-4aff-aeb8-2e470b30707b"
+        "Id": "f77d3fa4-88d0-49e1-986a-f9ed69037006"
       }
     ],
     "imageUrl": "",
@@ -2633,7 +2632,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "70a72ac8-6ee1-4a74-ab0a-ef33e9c1fcbe"
+        "Id": "13ca22d6-a52e-45dc-9937-cb65149eb820"
       }
     ],
     "imageUrl": "",
@@ -2690,7 +2689,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "33a78761-8cd2-4008-b81a-911d169cd83a"
+        "Id": "342611f9-c9e2-490b-8b32-11f1a64f1a46"
       }
     ],
     "imageUrl": "",
@@ -2776,7 +2775,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "27a9a2cd-b7ab-4777-95ee-ac5bbbe30107"
+        "Id": "baea8ec9-b01d-4cd6-b43c-ef89afa570ba"
       }
     ],
     "imageUrl": "",
@@ -2902,7 +2901,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "8b59e748-cb2b-482f-88ce-d0d264499fea"
+        "Id": "3121fa18-3386-4def-9504-94249394b1f6"
       }
     ],
     "imageUrl": "",
@@ -2959,7 +2958,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a5a2f632-1323-494e-8a8a-35271e6edbb8"
+        "Id": "f8464762-9958-4b25-9914-7e4ffeaad4e9"
       },
       {
         "Trigger": 6,
@@ -2998,7 +2997,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "7401de87-8a67-4baf-90a2-832b8ff9b29f"
+        "Id": "d4193e47-d83b-4b12-9a81-3c28b248086f"
       }
     ],
     "imageUrl": "",
@@ -3059,7 +3058,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "bd5cf14f-626a-4a26-9988-073a54399f2a"
+        "Id": "4c622d88-49c1-43c3-a31b-4590f424de52"
       }
     ],
     "imageUrl": "",
@@ -3118,7 +3117,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ec5163c4-48d8-44a8-bb50-0ccb25423dc9"
+        "Id": "2cf411d2-6f51-4ecf-b645-f4a017bcbec1"
       },
       {
         "Trigger": 10,
@@ -3140,7 +3139,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "15c0bf33-c299-4da7-a503-24ca41ff9b12"
+        "Id": "10ef7f91-ca78-44fc-a311-cefafb5b9336"
       }
     ],
     "imageUrl": "",
@@ -3220,7 +3219,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5514fe55-0f0b-4e27-8d01-0fc4eeaec8cf"
+        "Id": "48b83ada-90d0-4162-b5a6-ebc1ca3e679e"
       }
     ],
     "imageUrl": "",
@@ -3276,7 +3275,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "fb691be7-bc31-45e6-b0b7-5efcf9c6fb6c"
+        "Id": "3a5f049d-54c4-43b4-a272-c1173b41a6bb"
       }
     ],
     "imageUrl": "",
@@ -3340,7 +3339,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "0511dbc3-479f-47c1-8d1c-79d73baf9670"
+        "Id": "9c900ad0-e3bc-4a41-87cd-835d1890b619"
       }
     ],
     "imageUrl": "",
@@ -3357,7 +3356,7 @@
     "Type": 0,
     "Description": "Cuando se altera el ataque de las unidades enemigas, consigo \u002B1/0",
     "BaseAttack": 0,
-    "BaseHealth": 6,
+    "BaseHealth": 2,
     "Effects": [
       {
         "Trigger": 4,
@@ -3381,7 +3380,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c434d9de-c8de-4804-af12-21c4c1fdc164"
+        "Id": "1b0e7f23-eca8-4e39-88c8-e281676f8c5c"
       }
     ],
     "imageUrl": "",
@@ -3440,7 +3439,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c200ee37-9b65-4cad-b5fa-3948f2eb0acc"
+        "Id": "7516364c-9002-42ec-84e5-33c6cffb87cf"
       }
     ],
     "imageUrl": "",
@@ -3496,7 +3495,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3174f247-3290-45d1-9297-8bf86aad7db8"
+        "Id": "61d37318-4914-472c-aacc-740e12444716"
       }
     ],
     "imageUrl": "",
@@ -3549,7 +3548,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3eed7878-bba2-441b-9454-2000f6a02b21"
+        "Id": "9ad2d731-bd05-4a65-8e31-94838a6d66c8"
       }
     ],
     "imageUrl": "",
@@ -3637,7 +3636,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "2853e159-5830-4e66-be2e-3f4faa84f070"
+        "Id": "e3fa1c27-7d66-40cc-af9f-b9e741af28ce"
       }
     ],
     "imageUrl": "",
@@ -3700,7 +3699,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Durante los pr\u00F3ximos dos finales de ronda, -1/0 a la mesa enemiga",
-              "Id": "dd122e91-ffc9-43b7-b4ff-af4d6cd972f2"
+              "Id": "b1d24486-c1bc-4a30-a924-70b969163ca3"
             }
           }
         ],
@@ -3713,7 +3712,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a31bca87-8393-4014-b2ae-2464858d7e50"
+        "Id": "f57e47da-dbaf-4146-892d-f47c1f311aca"
       }
     ],
     "imageUrl": "",
@@ -3751,7 +3750,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e508b8ee-532d-453d-a0e4-6009b1f9927a"
+        "Id": "e4c1568a-486d-4726-8fc0-b65443050a7e"
       }
     ],
     "imageUrl": "",
@@ -3798,7 +3797,7 @@
               "MustMeetAllCriteria": false
             },
             "WhichDeckToSearch": 3,
-            "WhichBoardToSearch": 2,
+            "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
             "MaxLength": 0
           },
@@ -3864,7 +3863,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ea53fc72-7e4f-49dc-9770-0caa9fd98e39"
+        "Id": "bde988e1-e948-48ae-8cf4-6fba82358243"
       }
     ],
     "imageUrl": "",
@@ -3948,7 +3947,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "421906eb-1096-4c43-a374-bbf7c557fd49"
+        "Id": "8b5b8410-ce57-48a8-9514-785129773b94"
       }
     ],
     "imageUrl": "",
@@ -4036,7 +4035,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "2c2f8130-871a-4289-8dc1-2117688e5146"
+        "Id": "a5637647-1084-46e7-9f3c-6452bfd8b70b"
       }
     ],
     "imageUrl": "",
@@ -4075,7 +4074,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "36874f77-28ad-477d-a6a7-5de7e841886d"
+        "Id": "f2bcfd20-0825-4585-b421-ca61d17db2c8"
       }
     ],
     "imageUrl": "",
@@ -4133,7 +4132,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f6eb44e3-ac02-4a8a-ba99-c9f89824b2a6"
+        "Id": "31cf519d-97d4-435b-8dba-960d2c2a43c6"
       }
     ],
     "imageUrl": "",
@@ -4229,7 +4228,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "7418189a-183b-4f6e-bf38-72bb9bff029d"
+        "Id": "41feae40-ca58-4f99-8b4c-9cdda2315888"
       }
     ],
     "imageUrl": "",
@@ -4304,7 +4303,7 @@
     "BaseHealth": 1,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 5,
         "Effects": [
           {
             "$type": "AppendCardToDeck",
@@ -4330,7 +4329,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d65e7c44-d2fb-4cdf-b4c5-1f61c3770860"
+        "Id": "c21f258a-eb22-4216-8653-a5045db6bfb0"
       }
     ],
     "imageUrl": "",
@@ -4369,7 +4368,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1889cbd0-3525-4a53-b442-c6d8df8d2ec7"
+        "Id": "0c7a35d6-c816-4473-9990-424957e9eae9"
       }
     ],
     "imageUrl": "",
@@ -4389,7 +4388,7 @@
     "BaseHealth": 2,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 5,
         "Effects": [
           {
             "$type": "AppendCardToDeck",
@@ -4415,7 +4414,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "779ce048-2901-42c6-a226-da8638fda16e"
+        "Id": "00a47af0-7f47-4ace-a665-7c85840f57d2"
       }
     ],
     "imageUrl": "",
@@ -4454,7 +4453,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1fb44186-8eb1-4861-8793-4566a28a208d"
+        "Id": "a7eff43e-5c80-4af5-93ac-b185c393e8b8"
       }
     ],
     "imageUrl": "",
@@ -4474,7 +4473,7 @@
     "BaseHealth": 3,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 5,
         "Effects": [
           {
             "$type": "AppendCardToDeck",
@@ -4500,7 +4499,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "cfffc4c9-1948-4874-8961-5f9f7b96375a"
+        "Id": "d54a7d84-9dfd-4495-990b-b8ecdb5d57e7"
       }
     ],
     "imageUrl": "",
@@ -4559,7 +4558,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1a4d6d3c-6298-435b-a103-681a62c7e571"
+        "Id": "0eb183f2-cafc-4a06-9973-bd972c7db48a"
       }
     ],
     "imageUrl": "",
@@ -4579,7 +4578,7 @@
     "BaseHealth": 4,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 5,
         "Effects": [
           {
             "$type": "AppendCardToDeck",
@@ -4605,7 +4604,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "585a5092-13fd-48c1-ac0a-a6af5219ca9d"
+        "Id": "7b98c2b9-f876-4a5b-a5fd-5f8a306b1150"
       }
     ],
     "imageUrl": "",
@@ -4664,7 +4663,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1f0928ef-5500-4f84-9f75-9a414717ac01"
+        "Id": "79bd19ce-90ed-4a83-a47c-110d49d71970"
       }
     ],
     "imageUrl": "",
@@ -4684,7 +4683,7 @@
     "BaseHealth": 5,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 5,
         "Effects": [
           {
             "$type": "AppendCardToDeck",
@@ -4710,7 +4709,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "cf553b63-f48c-41a2-99f0-a6fa0601c50f"
+        "Id": "5fc9ebeb-365b-41e4-b37a-e0d03cb2c6b3"
       }
     ],
     "imageUrl": "",
@@ -4749,7 +4748,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "18e6af15-a508-475a-935f-ba1fcc4aa48f"
+        "Id": "df4a5bdb-6ebe-4168-a152-f36a4456b809"
       }
     ],
     "imageUrl": "",
@@ -4769,7 +4768,7 @@
     "BaseHealth": 6,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 5,
         "Effects": [
           {
             "$type": "AppendCardToDeck",
@@ -4795,7 +4794,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3b889c4c-4a04-48db-b4d0-6d50dcd6ea96"
+        "Id": "fd2edafb-962a-4130-95d6-f6a8c8aa2775"
       }
     ],
     "imageUrl": "",
@@ -4843,7 +4842,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades jugadas",
-              "Id": "16672181-239c-4686-841c-8d9b0c08d4c5"
+              "Id": "3404218c-43a1-4334-abba-50e1da86463b"
             }
           }
         ],
@@ -4858,7 +4857,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "41b3cd53-46ec-41f1-9f69-edd98d9295f9"
+        "Id": "efd056ea-49b7-4b9a-8ad8-64cc530c270b"
       }
     ],
     "imageUrl": "",
@@ -4878,7 +4877,7 @@
     "BaseHealth": 7,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 5,
         "Effects": [
           {
             "$type": "AppendCardToDeck",
@@ -4904,7 +4903,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "cca04cac-0c90-4655-a4d1-f84b3c88a9af"
+        "Id": "04ce8172-3cc9-43f0-8333-103203ab074e"
       }
     ],
     "imageUrl": "",
@@ -4943,7 +4942,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ca0573ea-4ebb-4163-8e02-55867270c277"
+        "Id": "8ba9359d-4020-431a-8a24-81b45838279a"
       }
     ],
     "imageUrl": "",
@@ -4977,7 +4976,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "86964e3b-e43c-4ac8-8565-8bdc60d48606"
+        "Id": "cd273eb7-2d6c-41d0-8762-59163f0bac0b"
       }
     ],
     "imageUrl": "",
@@ -5030,7 +5029,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "064554cd-9c0f-4059-b1f7-36e9553fdb55"
+        "Id": "ba9871fa-fe94-477a-bcc2-d44656a898a3"
       }
     ],
     "imageUrl": "",
@@ -5083,7 +5082,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ab8a9e9b-4a63-462f-ad3b-8bf4d0ce30df"
+        "Id": "c62a40f0-ab75-4f0d-a696-06f617402d91"
       }
     ],
     "imageUrl": "",
@@ -5098,10 +5097,33 @@
     "Id": "87",
     "Name": "Electricista apa\u00F1ado",
     "Type": 0,
-    "Description": "",
+    "Description": "Cuando me juegas, roba una carta",
     "BaseAttack": 2,
     "BaseHealth": 4,
-    "Effects": [],
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": null,
+        "Id": "61ea999d-5002-4ad0-b03f-f935196a1282"
+      }
+    ],
     "imageUrl": "",
     "ConditionToPlay": null,
     "PlayEffects": null,
@@ -5112,7 +5134,7 @@
     "Id": "88",
     "Name": "Hacker",
     "Type": 0,
-    "Description": "Cuando se juega un paquete, creo un virus en el mazo del rival",
+    "Description": "Cuando se juega un paquete, creo un virus en el mazo del rival. HABILIDAD: da\u00F1o al rival 1 por cada virus que tenga en la mano",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -5153,7 +5175,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "30ec5884-4f88-4f86-b115-a1c7dec37dcd"
+        "Id": "c6b2ceed-a0f0-43fc-9543-6f5726dfa486"
       }
     ],
     "imageUrl": "",
@@ -5219,7 +5241,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a225b79a-1328-4820-bcab-aad340f37e62"
+        "Id": "bce2a4e9-fbde-4347-a2b3-defc23bf3f7a"
       }
     ],
     "imageUrl": "",
@@ -5271,7 +5293,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b9506b40-cc9d-4110-89cf-c81cc25adf18"
+        "Id": "f4c7dff0-8ac2-4975-81f8-c5a384bca604"
       }
     ],
     "imageUrl": "",
@@ -5361,7 +5383,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las unidades del rival conseguir\u00E1n \u002B1/0 dentro de dos rondas",
-              "Id": "d614d360-8594-4be5-ac9d-96daa97b13d4"
+              "Id": "95c7148e-2504-417d-8b05-35b6336cce1a"
             }
           }
         ],
@@ -5374,7 +5396,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ea26351c-60ba-4160-98f8-540a57d5b371"
+        "Id": "cdb196d2-9641-416e-a8bb-15f8fa961e10"
       }
     ],
     "imageUrl": "",
@@ -5413,7 +5435,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "76d34dee-8a37-49c0-9727-5b9520e430d9"
+        "Id": "8e2505e8-af54-4153-a92d-adf1e86a3cf7"
       }
     ],
     "imageUrl": "",
@@ -5469,7 +5491,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "fc071673-d038-417e-b90d-569a6f5d38bd"
+        "Id": "9e4a07d3-804e-4b45-9535-56b076c76756"
       },
       {
         "Trigger": 5,
@@ -5508,7 +5530,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3fe8a364-57c8-453a-bfd8-5a991356f2a1"
+        "Id": "eaa95c8d-067a-4635-be5a-3a24689ecfba"
       }
     ],
     "imageUrl": "",
@@ -5580,6 +5602,11 @@
               "WhichHandToSearch": 3,
               "MaxLength": 0
             }
+          },
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
           }
         ],
         "Duration": {
@@ -5591,7 +5618,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a09075b7-e76a-436a-b249-6dc5422c1256"
+        "Id": "ace4c0d4-6f9a-4c9b-abc0-9f31f538c50c"
       }
     ],
     "imageUrl": "",

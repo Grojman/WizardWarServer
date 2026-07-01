@@ -1,7 +1,7 @@
 public class BotConnection : PlayerConnection
 {
     bool Resend { get; set; } = false;
-    public readonly string[] BOT_NAMES = ["Cartman"];
+    public readonly string[] BOT_NAMES = ["Cartman", "Morgan Freeman", "Julio", "Segismundo", "Godofredo", "Gertrudis", "La rivers", "La marers"];
     public readonly string[] TEXT_RESPONSES = [
 "¡Respeta mi autoridad, maldita sea! Esa carta no debería ni existir.",
 "Oh, claro, porque TÚ siempre robas justo lo que necesitas… qué casualidad.",
@@ -156,5 +156,10 @@ public class BotConnection : PlayerConnection
         });
        
         return Task.FromResult(0);
+    }
+
+    public override string ToString()
+    {
+        return $"[BOT] Player: {Name} Id: {Guid} In-game: {Game is not null}";
     }
 }

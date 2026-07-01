@@ -20,6 +20,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(ForcePlayCardInHandEffect), nameof(ForcePlayCardInHandEffect))]
 [JsonDerivedType(typeof(KillMySelf), nameof(KillMySelf))]
 [JsonDerivedType(typeof(AlterPlayerHealthBasedOnMyStats), nameof(AlterPlayerHealthBasedOnMyStats))]
+[JsonDerivedType(typeof(TriggerAbilityEffect), nameof(TriggerAbilityEffect))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

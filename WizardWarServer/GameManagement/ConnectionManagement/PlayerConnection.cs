@@ -15,6 +15,11 @@ public class PlayerConnection
         Socket = socket;
     }
 
+    public override string ToString()
+    {
+        return $"[CONECTION] Player: {Name} Id: {Guid} In-game: {Game is not null}";
+    }
+
     public virtual async Task Send(string type, object obj)
     {
 

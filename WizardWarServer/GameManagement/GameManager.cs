@@ -131,4 +131,16 @@ public class GameManager
         games.Remove(session);
         foreach(var c in connections) c.Game = null;
     }
+
+    public void PrintPlayers()
+    {
+        Console.WriteLine($"Player count: {PlayerCount}");
+        foreach(var g in players) Console.WriteLine(g);
+    }
+
+    public void PrintGames()
+    {
+        Console.WriteLine($"Games count: {games.Count()}");
+        foreach(var g in games) Console.WriteLine(g);
+    }
 }

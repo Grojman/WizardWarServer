@@ -8,7 +8,8 @@ public class RetriggerSpellEffect : IEffect
         {
             foreach(var a in s.Card.Effects)
             {
-                a.TryExecute(state, null, false);
+                a.ForceExecute(state, ev, false);
+                
             }
         }
     }

@@ -1,6 +1,26 @@
 [
   {
     "Deck": {
+      "id": 10,
+      "name": "Tecnomago",
+      "description": "Una criatura compuesta de metal, cables y energ\u00EDa. No tiene alma. No tiene comuni\u00F3n con el mundo y su energ\u00EDa. Y, de alg\u00FAn modo, es capaz de realizar sus propias obras. Ve por encima del resto, se ha declarado a s\u00ED misma como un hechicero, y nadie entiende cu\u00E1les son sus prop\u00F3sitos."
+    },
+    "Cards": {
+      "70": 2,
+      "85": 2,
+      "86": 2,
+      "87": 4,
+      "88": 3,
+      "90": 2,
+      "91": 3,
+      "92": 3,
+      "93": 3,
+      "94": 3,
+      "95": 3
+    }
+  },
+  {
+    "Deck": {
       "id": 9,
       "name": "Archimago del invierno",
       "description": "Enterrado bajo toneladas de hielo durante milenios, este ser ha decidido resurgir y traer consigo sus nuevas creaciones. Los escalofr\u00EDos suceden all\u00E1 por donde pasa, y nadie ha sido todav\u00EDa capaz de descifrar esa mirada perdida y vac\u00EDa de vida; no sin haber perdido el juicio antes."
@@ -99,9 +119,9 @@
       "41": 2,
       "42": 3,
       "43": 2,
-      "44": 3,
+      "44": 1,
       "45": 3,
-      "46": 1,
+      "46": 2,
       "47": 2,
       "48": 3,
       "49": 4,

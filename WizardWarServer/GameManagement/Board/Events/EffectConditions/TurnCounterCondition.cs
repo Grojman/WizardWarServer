@@ -10,15 +10,16 @@ public class TurnCounterCondition : EffectCondition
     public int Amount { get; set; }
     public int AmountCounter { get; set; } = 0;
 
-    int currentTurn;
+    int currentTurn = -1;
 
     public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
         var result = true;
 
-        if (currentTurn == state.TurnCounter)
+        if (currentTurn != state.TurnCounter)
         {
-            // Amount
+            AmountCounter++;
+            result = AmountCounter >= Amount;
         }
 
         currentTurn = state.TurnCounter;   

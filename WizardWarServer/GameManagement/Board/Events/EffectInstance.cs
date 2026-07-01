@@ -56,4 +56,15 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
 
         Duration.NotifyExecution();
     }
+
+    public void ForceExecute(
+        GameState state,
+        GameEvent? ev,
+        bool notifyExec
+    )
+    {
+        Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget.Id, SourceCard, state, ev));
+
+        if (notifyExec) Duration.NotifyExecution();
+    }
 }
