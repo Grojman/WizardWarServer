@@ -106,7 +106,7 @@ public class GameManager
                         await player.Send("get_decks", CardManager.Decks);
                         break;
                     case UserAction.GetAllCardsAction:
-                        await player.Send("get_cards", CardManager.Cards.Select(n => CardDto.Generate(n.Value)));
+                        await player.Send("get_cards", CardManager.Decks.Select(n => new {n.name, cards = CardManager.GetDefinitionsByDeck(n.id).Select(l =>new KeyValuePair<CardDto, int>(CardDto.Generate(l.Key), l.Value))}));
                         break;
                     default:
                         Console.WriteLine($"Unauthorized message!! {json}");
