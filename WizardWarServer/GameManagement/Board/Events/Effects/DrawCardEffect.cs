@@ -19,7 +19,7 @@ public class DrawCardEffect : IEffect
     {
         for (int i = 0; i < CardAmount; i++)
         {
-            state.DrawCard(state.GetState(player).Connection, Filter);
+            state.DrawCard(state.GetState(player).Connection, card, Filter);
         }
     }
 }

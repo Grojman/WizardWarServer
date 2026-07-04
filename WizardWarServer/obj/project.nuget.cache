@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "83TSEESiN90=",
+  "dgSpecHash": "jER8G8MOwvg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj",
+  "projectFilePath": "C:\\Users\\Yllum\\Desktop\\REPOSITORIOS_Y_PROYECTOS\\WizardWarServer\\WizardWarServer\\WizardWarServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yllum\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.16\\microsoft.netcore.app.ref.9.0.16.nupkg.sha512",
     "C:\\Users\\Yllum\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.16\\microsoft.windowsdesktop.app.ref.9.0.16.nupkg.sha512",

@@ -3,9 +3,8 @@ using System.Text.Json.Serialization;
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
 [JsonDerivedType(typeof(IHaveBeenPlayedCondition), nameof(IHaveBeenPlayedCondition))]
-[JsonDerivedType(typeof(IHaveDiedCondition), nameof(IHaveDiedCondition))]
 [JsonDerivedType(typeof(PlayerCardCondition), nameof(PlayerCardCondition))]
-[JsonDerivedType(typeof(EvenTurnCondition), nameof(EvenTurnCondition))]
+[JsonDerivedType(typeof(IDefendedCondition), nameof(IDefendedCondition))]
 [JsonDerivedType(typeof(CountPlayedCardsCondition), nameof(CountPlayedCardsCondition))]
 [JsonDerivedType(typeof(FilterPlayerCardCondition), nameof(FilterPlayerCardCondition))]
 [JsonDerivedType(typeof(MultiEffectCondition), nameof(MultiEffectCondition))]

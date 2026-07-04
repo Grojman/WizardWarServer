@@ -56,7 +56,7 @@ public class GameState
 
         for (int i = 0; i < INITIAL_HAND; i++)
         {
-            DrawCard(); 
+            DrawCard(null); 
         }
     }
 
@@ -166,7 +166,7 @@ public class GameState
                 ApplyEffect(player, a.CardIndex);
                 return;
             case PlayerAction.DrawCardAction:
-                DrawCard(player);
+                DrawCard(player, null);
                 break;
 
             case PlayerAction.PlayCardAction a:
@@ -206,15 +206,15 @@ public class GameState
 
             if (TurnCounter % 2 == 0)
             {
-                DrawCard();
+                DrawCard(null);
             }
         }
         CleanExpiredEffects();
     }
 
-    public void DrawCard(CardFilter? filter = null)
+    public void DrawCard(IdentificableObject? source, CardFilter? filter = null)
     {
-        foreach(var p in AlivePlayers) DrawCard(p.Connection, filter);
+        foreach(var p in AlivePlayers) DrawCard(p.Connection, source, filter);
     }
 
     public void KillPlayer(PlayerState state, bool forceChangeTurn = false)
@@ -244,13 +244,13 @@ public class GameState
         }
     }
 
-    public void DrawCard(PlayerState player, CardInstance card, bool fromDeck = false)
+    public void DrawCard(PlayerState player, CardInstance card,  IdentificableObject? source, bool fromDeck = false)
     {
         player.Hand.Add(card);
         var gevent = new GameEvent.CardDrawnEvent()
         {
             PlayerSource = player,
-            Source = player,
+            Source = source ?? player,
             Card = card,
             PlayerId = player.Id,
             FromDeck = fromDeck
@@ -258,7 +258,7 @@ public class GameState
         GameActionResult.AddEvent(gevent);
         ApplyEffect(TriggerType.DrawCard, gevent);
     }
-    public void DrawCard(PlayerConnection p, CardFilter? filter = null)
+    public void DrawCard(PlayerConnection p, IdentificableObject? source, CardFilter? filter = null)
     {
         var player = GetState(p.Guid);
         
@@ -269,7 +269,7 @@ public class GameState
             KillPlayer(player);
         } else if (card is not null)
         {
-            DrawCard(player, card, true);
+            DrawCard(player, card, source, true);
         }
     }
 

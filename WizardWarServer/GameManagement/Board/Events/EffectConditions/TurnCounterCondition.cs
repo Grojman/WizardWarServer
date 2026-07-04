@@ -18,11 +18,11 @@ public class TurnCounterCondition : EffectCondition
 
         if (currentTurn != state.TurnCounter)
         {
-            AmountCounter++;
+            if(currentTurn != -1) AmountCounter++; //la primera vez que se comprueba no debe de contar
             result = AmountCounter >= Amount;
+            currentTurn = state.TurnCounter;   
         }
 
-        currentTurn = state.TurnCounter;   
 
         return result;
     }

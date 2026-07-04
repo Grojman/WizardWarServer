@@ -53,7 +53,7 @@ public static class MockData
                 TriggerType.UnitDeath,
                 [new AppendCardToDeck(2, "2", true)],
                 new DurationByExecutions(1),
-                new IHaveDiedCondition()
+                new IHaveBeenPlayedCondition()
             )
         ]
     },
@@ -240,8 +240,7 @@ public static class MockData
         ConditionToPlay = new CountPlayedCardsCondition(
             new CardFilter { CurrentFamilies = ["Rata"] },
             PlayerType.PLAYER,
-            3,
-            CountType.AT_LEAST
+            new(CountType.AT_LEAST, 3)
         )
     },
 
@@ -450,14 +449,12 @@ public static class MockData
                 new CountPlayedCardsCondition(
                     new CardFilter { DefinitionId = "14" },
                     PlayerType.PLAYER,
-                    5,
-                    CountType.AT_LEAST
+                    new(CountType.AT_LEAST, 5)
                 ),
                 new CountPlayedCardsCondition(
                     new CardFilter { DefinitionId = "18" },
                     PlayerType.PLAYER,
-                    1,
-                    CountType.AT_LEAST
+                    new(CountType.AT_LEAST, 1)
                 )
             ],
             true
@@ -524,8 +521,7 @@ public static class MockData
                 WhichBoardToSearch = PlayerType.PLAYER,
                 Filter = new CardFilter { CurrentFamilies = ["Caballo"] }
             },
-            1,
-            CountType.AT_LEAST
+            new(CountType.AT_LEAST, 1)
         )
     },
     new CardDefinition()
@@ -609,8 +605,7 @@ public static class MockData
                         WhichBoardToSearch = PlayerType.PLAYER,
                         Filter = new() {CurrentFamilies = ["Castellano"]}
                     },
-                    1,
-                    CountType.AT_MAX
+                    new(CountType.AT_MAX, 1)
                 )
             )
         ],
@@ -693,8 +688,7 @@ public static class MockData
         ConditionToPlay = new CountPlayedCardsCondition(
             new() {DefinitionId = "27"},
             PlayerType.PLAYER,
-            6,
-            CountType.AT_LEAST
+            new(CountType.AT_LEAST, 6)
         )
     },
     new()
@@ -838,7 +832,7 @@ public static class MockData
                 null
             )
         ],
-        ConditionToPlay = new CountPlayedCardsCondition(new() {DefinitionId = "33"}, PlayerType.PLAYER, 1, CountType.AT_LEAST)
+        ConditionToPlay = new CountPlayedCardsCondition(new() {DefinitionId = "33"}, PlayerType.PLAYER, new(CountType.AT_LEAST, 1))
     },
     new()
     {
@@ -855,7 +849,7 @@ public static class MockData
                 TriggerType.UnitPlayed,
                 [new AlterMySelf(3, 3, false)],
                 new DurationByExecutions(1),
-                new CountPlayedCardsCondition(new() { CardType = CardType.Spell}, PlayerType.PLAYER, 0, CountType.AT_MAX)
+                new CountPlayedCardsCondition(new() { CardType = CardType.Spell}, PlayerType.PLAYER, new(CountType.AT_MAX, 0))
             )
         ]
     },
@@ -968,7 +962,7 @@ public static class MockData
         BaseAttack = 1,
         BaseHealth = 1,
         Effects = [
-            new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new CountCardCondition(new() {Filter = new() {CurrentFamilies = ["Motivacion"]}}, 1, CountType.AT_LEAST))
+            new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new CountCardCondition(new() {Filter = new() {CurrentFamilies = ["Motivacion"]}}, new(CountType.AT_LEAST, 1)))
         ]
     },
     new()
@@ -1007,7 +1001,7 @@ public static class MockData
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(), MaxLength = 2})], new DurationByExecutions(1), null)
         ],
-        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentAttack = 0}}, 1, CountType.AT_LEAST)
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentAttack = new(CountType.EXACTLY, 0)}}, new(CountType.AT_LEAST, 1))
     },
     new()
     {
@@ -1024,7 +1018,7 @@ public static class MockData
             new AlterUnitStatsEffect(0, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}),
         ],
         PlayEffectTriggerTimes = 1,
-        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 1, CountType.AT_LEAST)
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.AT_LEAST, 1))
     },
     new()
     {
@@ -1048,7 +1042,7 @@ public static class MockData
         Effects = [
             new(TriggerType.UnitPlayed, [new AlterUnitStatsEffect(1, 1, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), null),
         ],
-        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentFamilies = ["Gym"]}}, 2, CountType.AT_LEAST)
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentFamilies = ["Gym"]}}, new(CountType.AT_LEAST, 2))
     },
     new()
     {
@@ -1057,7 +1051,7 @@ public static class MockData
         Description = "El jugador tiene 10 de vida o más. Roba 2 cartas",
         Type = CardType.Spell,
         Effects = [new(TriggerType.SpellPlayed, [new DrawCardEffect(2, null)], new DurationByExecutions(1), null)],
-        ConditionToPlay = new PlayerHealthCondition(true, CountType.AT_LEAST, 10)
+        ConditionToPlay = new PlayerHealthCondition(true, new(CountType.AT_LEAST, 10))
     },
 
     new()
@@ -1069,7 +1063,7 @@ public static class MockData
         Families = ["Rata"],
         BaseAttack = 3,
         BaseHealth = 3,
-        ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Rata"]}, PlayerType.PLAYER, 6, CountType.AT_LEAST),
+        ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Rata"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 6)),
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new(){DefinitionId = "7"})),
             new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IAttackedCondition())
@@ -1214,18 +1208,18 @@ new()
     Name = "Corazón congelado",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "Mata las unidades enemigas que tengan 0 de daño",
+    Description = "Mata las unidades enemigas que tengan 0 de daño o menos",
     Effects = [
         new(
             TriggerType.SpellPlayed,
             [
-                new KillCards(new () {CurrentAttack = 0}, PlayerType.RIVAL, 4)
+                new KillCards(new () {CurrentAttack = new(CountType.AT_MAX, 0)}, PlayerType.RIVAL, 4)
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
         )
     ],
-    ConditionToPlay = new CountCardCondition(new() {WhichBoardToSearch = PlayerType.RIVAL, Filter = new() {CurrentAttack = 0}}, 1, CountType.AT_LEAST)
+    ConditionToPlay = new CountCardCondition(new() {WhichBoardToSearch = PlayerType.RIVAL, Filter = new() {CurrentAttack = new(CountType.AT_MAX, 0)}}, new(CountType.AT_LEAST, 1))
 },
 
 new()
@@ -1298,10 +1292,9 @@ new()
         new CountPlayedCardsCondition(
         new() { CurrentFamilies = ["Hielo"] },
         PlayerType.PLAYER,
-        10,
-        CountType.AT_LEAST
+        new(CountType.AT_LEAST, 10)
     ),
-    new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 0, CountType.EXACTLY)
+    new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.EXACTLY, 0))
     ], false)
 },
 
@@ -1321,7 +1314,7 @@ new()
                 new AlterUnitStatsEffect(-2, 0, new()
                 {
                     WhichBoardToSearch = PlayerType.RIVAL,
-                    Filter = new(){ CurrentAttack = 0 }
+                    Filter = new(){ CurrentAttack = new(CountType.EXACTLY, 0) }
                 })
             ],
             new Always(),
@@ -1349,14 +1342,14 @@ new()
                 new AlterUnitStatsEffect(-3, -3, new()
                 {
                     WhichBoardToSearch = PlayerType.RIVAL,
-                    Filter = new(){ CurrentAttack = 0 }
+                    Filter = new(){ CurrentAttack = new(CountType.EXACTLY, 0) }
                 })
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
         )
     ],
-    ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Hielo"], CardType = CardType.Spell}, PlayerType.PLAYER, 5, CountType.AT_LEAST)
+    ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Hielo"], CardType = CardType.Spell}, PlayerType.PLAYER, new(CountType.AT_LEAST, 5))
 },
 new()
 {
@@ -1411,7 +1404,7 @@ new()
     Effects =[
         new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.PLAYER, 1), new DrawCardEffect(2, null)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ],
-    ConditionToPlay = new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 1, CountType.AT_LEAST)
+    ConditionToPlay = new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.AT_LEAST, 1))
 },
 new()
 {
@@ -1424,8 +1417,8 @@ new()
         new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.PLAYER, 1),new KillCards(new(), PlayerType.RIVAL, 1), ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ],
     ConditionToPlay = new MultiEffectCondition([
-        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, 1, CountType.AT_LEAST),
-        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}, 1, CountType.AT_LEAST)
+        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.AT_LEAST, 1)),
+        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}, new(CountType.AT_LEAST, 1))
     ], false)
 },
 

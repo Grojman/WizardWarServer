@@ -1,31 +1,21 @@
 
 public class CountCardCondition : EffectCondition
 {
-    public CountCardCondition(GameFilter filter, int amount, CountType countType)
+    public CountCardCondition(GameFilter filter, NumberFilter value)
     {
         Filter = filter;
-        Amount = amount;
-        CountType = countType;
+        Value = value;
     }
 
 
     public GameFilter Filter { get; set; }
-    public int Amount { get; set; }
-    public CountType CountType { get; set; }
+    public NumberFilter Value { get; set; }
 
     public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
         var count = Filter.GetMeetingCards(state, playerId, rivalId).Count();
-        return CountType switch
-        {
-            CountType.AT_LEAST => count >= Amount,
-            CountType.AT_MAX => count <= Amount,
-            CountType.EXACTLY => count == Amount,
-            CountType.AT_LEAST_OVER => count > Amount,
-            CountType.AT_MAX_UNDER => count < Amount,
-            _ => false
-        };
+        return Value.Compare(count);
     }
 
-    public override EffectCondition Clone() => new CountCardCondition(Filter, Amount, CountType);
+    public override EffectCondition Clone() => new CountCardCondition(Filter, Value);
 }

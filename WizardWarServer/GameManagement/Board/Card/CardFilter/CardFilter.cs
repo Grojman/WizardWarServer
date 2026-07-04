@@ -1,9 +1,9 @@
 public class CardFilter
 {
-    public int? CurrentAttack { get; set; } = null;
-    public int? CurrentHealth { get; set; } = null;
-    public int? Attack { get; set; } = null;
-    public int? Health { get; set; } = null;
+    public NumberFilter? CurrentAttack { get; set; } = null;
+    public NumberFilter? CurrentHealth { get; set; } = null;
+    public NumberFilter? Attack { get; set; } = null;
+    public NumberFilter? Health { get; set; } = null;
     public CardType? CardType { get; set; } = null;
     public string[]? Families { get; set; } = null;
     public string[]? CurrentFamilies { get; set; } = null;
@@ -22,21 +22,21 @@ public class CardFilter
         {
             criteria.Add(card.Definition.Type == CardType.Value);
         }
-        if (CurrentAttack.HasValue)
+        if (CurrentAttack is not null)
         {
-            criteria.Add(card.CurrentAttack == CurrentAttack.Value);
+            criteria.Add(CurrentAttack.Compare(card.CurrentAttack));
         }
-        if (CurrentHealth.HasValue)
+        if (CurrentHealth is not null)
         {
-            criteria.Add(card.CurrentHealth == CurrentHealth.Value);
+            criteria.Add(CurrentHealth.Compare(card.CurrentHealth));
         }
-        if (Attack.HasValue)
+        if (Attack is not null)
         {
-            criteria.Add(card.Definition.BaseAttack == Attack.Value);
+            criteria.Add(Attack.Compare(card.Definition.BaseAttack));
         }
-        if (Health.HasValue)
+        if (Health is not null)
         {
-            criteria.Add(card.Definition.BaseHealth == Health.Value);
+            criteria.Add(Health.Compare(card.Definition.BaseHealth));
         }
         if (Families != null)
         {
