@@ -9,7 +9,7 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // builder.WebHost.UseUrls("http://10.158.7.72:5182");
-        builder.WebHost.UseUrls($"http://{args[0]}:5182");
+        builder.WebHost.UseUrls($"https://localhost:5182");
         var app = builder.Build();
 
         app.UseWebSockets();
@@ -22,6 +22,11 @@ internal class Program
         foreach (var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
 
         CardManager.Initialize();
+
+        app.Map("/", async context =>
+        {
+           context.Response.StatusCode = 200;
+        });
 
         app.Map("/ws", async context =>
         {

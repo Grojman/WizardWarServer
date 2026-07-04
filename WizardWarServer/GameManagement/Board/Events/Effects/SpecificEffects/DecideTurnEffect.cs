@@ -26,7 +26,7 @@ public class DecideTurnEffect : IEffect
 
     void DrawCard(GameState state)
     {
-        state.DrawCard(card.Player.Connection);
+        state.DrawCard(card.Player.Connection, null);
     }
 
     void PlayCard(GameState state)

@@ -43,7 +43,7 @@ public class ReviveLastPlayed : IEffect
                 switch (kvp.Key)
                 {
                     case Destination.HAND:
-                        state.DrawCard(player, card);
+                        state.DrawCard(player, card, null);
                         break;
                     case Destination.BOARD:
                         var boardPosition = player.Board.FindFirstNullPosition();
