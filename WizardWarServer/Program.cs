@@ -9,10 +9,13 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // builder.WebHost.UseUrls("http://10.158.7.72:5182");
-        builder.WebHost.UseUrls($"https://localhost:5182");
+        builder.WebHost.UseUrls($"https://0.0.0.0:5182");
         var app = builder.Build();
 
         app.UseWebSockets();
+
+        app.UseDefaultFiles();
+        app.UseStaticFiles();
 
 
         GameManager gameManager = new();
@@ -51,6 +54,8 @@ internal class Program
                 context.Response.StatusCode = 400;
             }
         });
+
+        app.MapFallbackToFile("index.html");
 
         new Thread(app.Run).Start();
 
