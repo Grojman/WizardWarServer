@@ -5,6 +5,7 @@
 public class GameState
 {
     const int INITIAL_HAND = 3;
+    const int MAX_HAND = 10;
     public GameActionResult GameActionResult { get; set; }
     public List<PlayerState> Players { get; set; }
     List<PlayerState> DeadPlayers { get; set; } = new();
@@ -157,8 +158,10 @@ public class GameState
         PlayerConnection player,
         PlayerAction action)
     {
-        switch (action)
+        try
         {
+            switch (action)
+            {
             case PlayerAction.ChangeTarget a:
                 ChangeTarget(player, a.NewTarget);
                 return;
@@ -183,6 +186,16 @@ public class GameState
             default:
                 Console.WriteLine($"Illegal action inside game!! : {action}");
                 break;
+            }
+        }
+        catch(Exception ex)
+        {
+            try
+            {
+                Console.WriteLine($"Error while applying action from {player?.Guid}: {ex}");
+            }
+            catch {}
+            return;
         }
 
         NextTurn();
@@ -246,6 +259,8 @@ public class GameState
 
     public void DrawCard(PlayerState player, CardInstance card,  IdentificableObject? source, bool fromDeck = false)
     {
+        if (player.Hand.Count >= MAX_HAND) return;
+
         player.Hand.Add(card);
         var gevent = new GameEvent.CardDrawnEvent()
         {
@@ -261,7 +276,9 @@ public class GameState
     public void DrawCard(PlayerConnection p, IdentificableObject? source, CardFilter? filter = null)
     {
         var player = GetState(p.Guid);
-        
+
+        if (player.Hand.Count >= MAX_HAND) return;
+
         var card = filter is null ? player.Deck.Draw() : player.Deck.Draw(filter);
 
         if(card is null && player.Deck.Count == 0)
@@ -434,9 +451,8 @@ public class GameState
         };
 
         if (enqueueToUsers) GameActionResult.AddEvent(gevent);
-        ApplyEffect(TriggerType.UnitHealthChanged, gevent);
-
         if (checkKill) CheckKill(source, Unit);
+        ApplyEffect(TriggerType.UnitHealthChanged, gevent);
     }
 
     void CheckKill(IdentificableObject source, CardInstance Unit)
@@ -450,7 +466,9 @@ public class GameState
     public void AlterUnitDamage(IdentificableObject source, CardInstance Unit, int Amount)
     {
         if (Amount == 0) return;
+        Amount = Unit.CurrentAttack + Amount < 0 ? -Unit.CurrentAttack : Amount;
         Unit.CurrentAttack += Amount;
+
         var gevent = new GameEvent.UnitDamageChanged()
         {
             PlayerSource = Unit.Player,

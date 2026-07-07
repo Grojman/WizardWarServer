@@ -40,8 +40,6 @@ public class AlterPlayerBasedOnCardStats : IEffect
                     AffectedStats.BOTH => a.CurrentAttack + a.CurrentHealth,
                     _ => 0
                 };
-
-                state.KillUnit(cardId, a);
             }
         }
 

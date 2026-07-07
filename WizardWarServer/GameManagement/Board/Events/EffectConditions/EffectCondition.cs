@@ -12,6 +12,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(PlayerHealthCondition), nameof(PlayerHealthCondition))]
 [JsonDerivedType(typeof(IAttackedCondition), nameof(IAttackedCondition))]
 [JsonDerivedType(typeof(TurnCounterCondition), nameof(TurnCounterCondition))]
+[JsonDerivedType(typeof(NumericEventCondition), nameof(NumericEventCondition))]
 
 //TODO: ADD DERIVED TYPES HERE
 public abstract class EffectCondition : ICloneable<EffectCondition>

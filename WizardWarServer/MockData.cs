@@ -349,6 +349,23 @@ public static class MockData
         ]
     },
 
+    new()
+    {
+        Id = "13_2",
+        Name = "Rey rata",
+        Type = CardType.Unit,
+        Description = "Has jugado 6 ratas o más. Cuando golpeo, añado una rata al mazo rival. Cuando juegas un queso, consigo +1/+1",
+        Families = ["Rata"],
+        BaseAttack = 3,
+        BaseHealth = 3,
+        ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Rata"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 6)),
+        Effects = [
+            new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new(){DefinitionId = "7"})),
+            new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IAttackedCondition())
+        ]
+
+    },
+
     new CardDefinition
     {
         Id = "15",
@@ -488,7 +505,11 @@ public static class MockData
         Name = "Rocinante",
         BaseAttack = 3,
         BaseHealth = 3,
-        Families = ["Caballo"]
+        Families = ["Caballo"],
+        Description = "Si juegas a Don Quijote, consigo +2/+2",
+        Effects = [
+            new(TriggerType.UnitPlayed, [new AlterMySelf(2, 2, false)], new DurationByExecutions(1), new PlayerCardCondition(true, new() {DefinitionId = "19"}))
+        ]
     },
 
     new CardDefinition
@@ -530,6 +551,15 @@ public static class MockData
         Type = CardType.Unit,
         Name = "Honoroso Caballero",
         Families = ["Caballero"],
+        Description = "Al morir, la próximas dos unidades que jueges consiguen +1/+1",
+        Effects = [
+            new(
+                TriggerType.UnitDeath, [new AppendGlobalEffect(
+                    new(TriggerType.UnitPlayed, [new AlterMySelf(1, 1, true)], new DurationByExecutions(2), new PlayerCardCondition(true, null))
+                    , "Las próximas dos unidades que juegues consiguen +1/+1"
+                )], new DurationByExecutions(1), new IHaveBeenPlayedCondition()
+            )
+        ],
         BaseAttack = 2,
         BaseHealth = 3
     },
@@ -651,8 +681,8 @@ public static class MockData
         Name = "Aprendiz de mago",
         Families = ["Brujo"],
         Type = CardType.Unit,
-        BaseAttack = 3,
-        BaseHealth = 3,
+        BaseAttack = 2,
+        BaseHealth = 1,
         Description = "Cuando me juegas, creo una bola de fuego",
         Effects = [
             new()
@@ -674,7 +704,7 @@ public static class MockData
         Families = ["Brujo", "Ceniza"],
         BaseAttack = 6,
         BaseHealth = 7,
-        Description = "Has jugado 6 bolas de fuego o más. Fin de Ronda: creo una bola de fuego en el mazo",
+        Description = "Has jugado 5 bolas de fuego o más. Fin de Ronda: creo una bola de fuego en el mazo",
         Effects = [
             new()
             {
@@ -688,7 +718,7 @@ public static class MockData
         ConditionToPlay = new CountPlayedCardsCondition(
             new() {DefinitionId = "27"},
             PlayerType.PLAYER,
-            new(CountType.AT_LEAST, 6)
+            new(CountType.AT_LEAST, 5)
         )
     },
     new()
@@ -761,7 +791,7 @@ public static class MockData
         Name = "Chispas escurridizas",
         Families = ["Destrucción", "Maligno"],
         Type = CardType.Unit,
-        BaseAttack = 1,
+        BaseAttack = 2,
         BaseHealth = 1,
         Description = "El próximo hechizo que juegues, curo 1 y quito 1 al rival",
         Effects = [
@@ -792,8 +822,8 @@ public static class MockData
         Families = ["Brujo"],
         Type = CardType.Unit,
         Description = "Las próximas dos unidades que juegues consiguen +1/+1",
-        BaseAttack = 2,
-        BaseHealth = 2,
+        BaseAttack = 1,
+        BaseHealth = 1,
         Effects = [
             new(
                 TriggerType.UnitPlayed,
@@ -859,8 +889,8 @@ public static class MockData
         Name = "Maquiavelo el maquiavélico",
         Families = ["Brujo", "Maligno"],
         Description = "Cuando juegas un hechizo, consigo +1/+1",
-        BaseHealth = 1,
-        BaseAttack = 1,
+        BaseHealth = 0,
+        BaseAttack = 2,
         Type = CardType.Unit,
         Effects = [
             new(
@@ -962,7 +992,7 @@ public static class MockData
         BaseAttack = 1,
         BaseHealth = 1,
         Effects = [
-            new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new CountCardCondition(new() {Filter = new() {CurrentFamilies = ["Motivacion"]}}, new(CountType.AT_LEAST, 1)))
+            new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new CountCardCondition(new() {Filter = new() {CurrentFamilies = ["Motivacion"]}, WhichBoardToSearch = PlayerType.PLAYER}, new(CountType.AT_LEAST, 1)))
         ]
     },
     new()
@@ -986,9 +1016,16 @@ public static class MockData
         Type = CardType.Unit,
         Families = ["Oriental", "Motivacion"],
         BaseAttack = 0,
-        BaseHealth = 2,
+        BaseHealth = 2, 
         Effects = [
-            new(TriggerType.UnitHealthChanged, [new AlterMySelf(1, 1, false)], new Always(), new IHaveBeenPlayedCondition())
+            new(TriggerType.UnitHealthChanged, [new AlterMySelf(1, 1, true)], new Always(), 
+            new MultiEffectCondition(
+                [
+                    new NumericEventCondition(new(CountType.AT_MAX_UNDER, 0)),
+                    new IHaveBeenPlayedCondition()
+                ],
+                false
+            ))
         ]
     },
     new()
@@ -996,19 +1033,19 @@ public static class MockData
         Id = "48",
         Name = "Tik Tok motivacional",
         Families = ["Motivacion"],
-        Description = "Necesitas una carta con 0 de daño en mesa. Las dos primeras unidades (IZQ) ganan +2/+2",
+        Description = "Necesitas una carta con 1 de daño o menos en mesa. Las dos primeras unidades (IZQ) ganan +2/+2",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(), MaxLength = 2})], new DurationByExecutions(1), null)
         ],
-        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentAttack = new(CountType.EXACTLY, 0)}}, new(CountType.AT_LEAST, 1))
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentAttack = new(CountType.AT_MAX, 1)}}, new(CountType.AT_LEAST, 1))
     },
     new()
     {
         Id = "49",
         Name = "No pain, no gain",
         Families = ["Motivacion"],
-        Description = "Inflinge 1 de daño a 2 unidades y roba una carta. HABILIDAD: inflinge 1 de daño a todas las cartas en mesa y les otorgas +1/0",
+        Description = "Inflinge 1 de daño hasta 2 unidades y roba una carta. HABILIDAD: inflinge 1 de daño a todas las cartas en mesa y les otorgas +2/0",
         Type = CardType.Spell,
         Effects = [
           new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(-1, 0, new(){WhichBoardToSearch = PlayerType.PLAYER, MaxLength = 2, Filter = new()}), new DrawCardEffect()], new DurationByExecutions(1), null)  
@@ -1024,7 +1061,7 @@ public static class MockData
     {
         Id = "50",
         Name = "Esteroides",
-        Description = "Elimina mi mesa completa. Me curo la cantidad de vida total de mis tropas",
+        Description = "Me curo la cantidad de vida total de mis tropas",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterPlayerBasedOnCardStats(PlayerType.PLAYER, new(), AffectedStats.HEALTH, PlayerType.PLAYER, 1)], new DurationByExecutions(1), null)
@@ -1034,7 +1071,7 @@ public static class MockData
     {
         Id = "51",
         Name = "Biscuit Oliva",
-        Families = ["Leyenda"],
+        Families = ["Leyenda", "Motivacion"],
         Type = CardType.Unit,
         BaseAttack = 3,
         BaseHealth = 3,
@@ -1048,28 +1085,13 @@ public static class MockData
     {
         Id = "52",
         Name = "Flexeo de músculos",
-        Description = "El jugador tiene 10 de vida o más. Roba 2 cartas",
+        Description = "El jugador tiene 10 de vida o más. Roba 3 cartas",
         Type = CardType.Spell,
-        Effects = [new(TriggerType.SpellPlayed, [new DrawCardEffect(2, null)], new DurationByExecutions(1), null)],
+        Effects = [new(TriggerType.SpellPlayed, [new DrawCardEffect(3, null)], new DurationByExecutions(1), null)],
         ConditionToPlay = new PlayerHealthCondition(true, new(CountType.AT_LEAST, 10))
     },
 
-    new()
-    {
-        Id = "13_2",
-        Name = "Rey rata",
-        Type = CardType.Unit,
-        Description = "Has jugado 6 ratas o más. Cuando golpeo, añado una rata al mazo rival. Cuando juegas un queso, consigo +1/+1",
-        Families = ["Rata"],
-        BaseAttack = 3,
-        BaseHealth = 3,
-        ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Rata"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 6)),
-        Effects = [
-            new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new(){DefinitionId = "7"})),
-            new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IAttackedCondition())
-        ]
-
-    },
+    
 
 new()
 {
@@ -1077,12 +1099,12 @@ new()
     Name = "Fragmento helado",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "-2/0 a una unidad enemiga (izq)",
+    Description = "-4/0 a una unidad enemiga (izq)",
     Effects = [
         new(
             TriggerType.SpellPlayed,
             [
-                new AlterUnitStatsEffect(0, -2, new()
+                new AlterUnitStatsEffect(0, -4, new()
                 {
                     WhichBoardToSearch = PlayerType.RIVAL,
                     MaxLength = 1,
@@ -1102,12 +1124,19 @@ new()
     Type = CardType.Unit,
     Families = ["Brujo"],
     BaseAttack = 1,
-    BaseHealth = 1,
-    Description = "Al jugarme, -1/0 a dos enemigos (IZQ)",
+    BaseHealth = 3,
+    Description = "Cada vez que juegues un hechizo hielo, -1/0 a un enemigo (IZQ)",
     Effects = [
         new(
             TriggerType.SpellPlayed,
-            [new AlterMySelf(1, 1, false)],
+            [
+                new AlterUnitStatsEffect(0, -1, new()
+                {
+                    WhichBoardToSearch = PlayerType.RIVAL,
+                    MaxLength = 1,
+                    Filter = new()
+                })
+            ],
             new Always(),
             new PlayerCardCondition(true, new(){CurrentFamilies = ["Hielo"]})
         )
@@ -1119,7 +1148,6 @@ new()
     Id = "55",
     Name = "Ventisca cruel",
     Type = CardType.Spell,
-    Families = ["Hielo"],
     Description = "-1/0 a toda la mesa enemiga. Roba una carta",
     Effects = [
         new(
@@ -1145,10 +1173,15 @@ new()
     Type = CardType.Unit,
     Families = ["Hielo"],
     BaseAttack = 0,
-    BaseHealth = 2,
+    BaseHealth = 3,
     Description = "Cuando se altera el ataque de las unidades enemigas, consigo +1/0",
     Effects = [
-        new (TriggerType.UnitDamageChanged, [new AlterMySelf(1, 0, false)], new Always(), new PlayerCardCondition(false, null))
+        new (TriggerType.UnitDamageChanged, [new AlterMySelf(1, 0, false)], new Always(), 
+        new MultiEffectCondition([
+        new PlayerCardCondition(false, null),
+        new NumericEventCondition(new(CountType.AT_MAX_UNDER, 0))    
+        ], false)
+        )
     ]
 },
 
@@ -1208,12 +1241,13 @@ new()
     Name = "Corazón congelado",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "Mata las unidades enemigas que tengan 0 de daño o menos",
+    Description = "Roba tantas cartas como unidades con 0 de daño tenga el rival. Después, mata esas unidades.",
     Effects = [
         new(
             TriggerType.SpellPlayed,
             [
-                new KillCards(new () {CurrentAttack = new(CountType.AT_MAX, 0)}, PlayerType.RIVAL, 4)
+                new DrawCardsBasedOnFilter(1, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new(){ CurrentAttack = new(CountType.AT_MAX, 0)}}, false, null),
+                new KillCards(new () {CurrentAttack = new(CountType.AT_MAX, 0)}, PlayerType.RIVAL, 4),
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
@@ -1230,11 +1264,21 @@ new()
     Families = ["Hielo"],
     BaseAttack = 2,
     BaseHealth = 1,
-    Description = "Al jugarme: -1/0 a la mesa rival, y curo a mi jugador 3 de vida.",
+    Description = "Al jugarme: -1/0 a la mesa rival. Al morir, curo a mi jugador 3 de vida.",
     Effects = [
         new(
             TriggerType.UnitPlayed,
-            [new AlterUnitStatsEffect(0, -1, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}), new AlterPlayerHealthEffect(3, false)],
+            [
+                new AlterUnitStatsEffect(0, -1, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}), 
+                ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        ),
+        new(
+            TriggerType.UnitDeath,
+            [
+                new AlterPlayerHealthEffect(3, false)                
+            ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
         )
@@ -1282,7 +1326,7 @@ new()
     Families = ["Hielo", "Leyenda", "Dragón"],
     BaseAttack = 5,
     BaseHealth = 6,
-    Description = "No hay criaturas en juego, y has jugado 10 cartas de Hielo o más. Final de ronda: si hay hueco, invoco una cría de dragón",
+    Description = "No tienes criaturas en mesa, y has jugado 8 cartas de Hielo o más. Final de ronda: si hay hueco, invoco una cría de dragón",
     Effects = [
         new(TriggerType.TurnEnd, [
             new PlayCardEffect("65", false)
@@ -1292,7 +1336,7 @@ new()
         new CountPlayedCardsCondition(
         new() { CurrentFamilies = ["Hielo"] },
         PlayerType.PLAYER,
-        new(CountType.AT_LEAST, 10)
+        new(CountType.AT_LEAST, 8)
     ),
     new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.EXACTLY, 0))
     ], false)
@@ -1311,14 +1355,10 @@ new()
         new(
             TriggerType.UnitHealthChanged,
             [
-                new AlterUnitStatsEffect(-2, 0, new()
-                {
-                    WhichBoardToSearch = PlayerType.RIVAL,
-                    Filter = new(){ CurrentAttack = new(CountType.EXACTLY, 0) }
-                })
+                new AlterMySelf(0, -2, true)
             ],
             new Always(),
-            new PlayerCardCondition(false, null)
+            new PlayerCardCondition(false, new(){ CurrentAttack = new(CountType.EXACTLY, 0) })
         )
     ]
 },

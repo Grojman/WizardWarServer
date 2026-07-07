@@ -28,7 +28,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f3339c89-863e-4109-b8e7-73d86960e4a9"
+        "Id": "21c9534c-fb44-4ef0-a709-6aeb9582b7f7"
       }
     ],
     "imageUrl": "",
@@ -90,7 +90,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "af3fa1af-1100-4f93-8db3-781ac3ee0f6f"
+        "Id": "a9a2c84c-1a36-45d1-a39f-c5245126d1ae"
       }
     ],
     "imageUrl": "",
@@ -144,7 +144,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "8975da4a-e4b6-41ec-81a6-05ed17089382"
+        "Id": "87f6f12e-d901-4104-b1a1-4582a398441b"
       }
     ],
     "imageUrl": "",
@@ -183,7 +183,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c19b1b6e-b873-4de3-8eca-e0784e546022"
+        "Id": "0a6608d6-37df-4669-b834-312660ec260d"
       }
     ],
     "imageUrl": "",
@@ -243,7 +243,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5f14c5a4-03c0-49b9-974c-2f7d82c208a2"
+        "Id": "34074de0-d56d-42ea-b362-7928babf9002"
       }
     ],
     "imageUrl": "",
@@ -280,7 +280,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a01b4398-9f5c-4947-98a0-8fcad290657f"
+        "Id": "cf265442-5673-40ed-a32b-45d126112f03"
       }
     ],
     "imageUrl": "",
@@ -317,7 +317,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6693f5ad-c31b-4b01-a4cf-963ccd87e662"
+        "Id": "c690aba9-6fcb-4c50-bbbf-caab4911fe76"
       },
       {
         "Trigger": 0,
@@ -337,7 +337,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "db13a412-c7ae-4c90-9709-1be450cf3583"
+        "Id": "6617be44-a100-4b56-90db-0846ba15b6dd"
       }
     ],
     "imageUrl": "",
@@ -396,7 +396,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "47365ef3-ea4a-4d19-ab4b-8c4573e642b2"
+        "Id": "c786e6ed-438c-47ed-8873-2c4326723d8a"
       }
     ],
     "imageUrl": "",
@@ -436,7 +436,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5bd4110f-c525-4c68-86f9-c701b27b80a4"
+        "Id": "dccec28c-41de-4a15-9d56-6b3634b354d4"
       }
     ],
     "imageUrl": "",
@@ -496,7 +496,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B1/\u002B1 Si la carta es una Rata",
-              "Id": "cf5d455f-d481-4a11-849c-462f3d0dd882"
+              "Id": "989d8c20-040b-44bd-a729-aa4b4c7c2a5b"
             }
           }
         ],
@@ -511,7 +511,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f087cbd4-7e8d-40fe-9c67-fb7af5e0ac6b"
+        "Id": "182173a0-b576-403a-99ee-eaef1810ac5f"
       }
     ],
     "imageUrl": "",
@@ -622,7 +622,7 @@
               "Player": null,
               "Expired": false,
               "Description": "0/-1 en el pr\u00F3ximo final de turno",
-              "Id": "44b98f63-6e9e-4bce-a8be-70752c8b887e"
+              "Id": "b92fdc2d-e65a-41d3-9478-bbae691c9f87"
             }
           }
         ],
@@ -637,7 +637,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c6ad4a3e-7ffd-4d46-ad8c-5ea31eb5e108"
+        "Id": "0bc6c40f-323d-4ed8-9330-bef7b4b9b137"
       }
     ],
     "imageUrl": "",
@@ -696,7 +696,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "4ab4fb0d-517b-49fc-8977-8848f4c14e73"
+        "Id": "615293b1-9041-4b1f-8b87-6c5470101b1d"
       }
     ],
     "imageUrl": "",
@@ -755,7 +755,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f566cfb5-568e-4875-a3dc-99a60449c4cf"
+        "Id": "b39a20e5-7801-4d17-84ae-55e431c65913"
       }
     ],
     "imageUrl": "",
@@ -799,11 +799,110 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "75f64cab-504f-41ce-b516-b824e2ae79e2"
+        "Id": "fe95952e-64ec-473c-bd9c-25b87e8b2d4b"
       }
     ],
     "imageUrl": "",
     "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "Rata"
+    ],
+    "Id": "13_2",
+    "Name": "Rey rata",
+    "Type": 0,
+    "Description": "Has jugado 6 ratas o m\u00E1s. Cuando golpeo, a\u00F1ado una rata al mazo rival. Cuando juegas un queso, consigo \u002B1/\u002B1",
+    "BaseAttack": 3,
+    "BaseHealth": 3,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterMySelf",
+            "Damage": 1,
+            "Health": 1,
+            "UseGameEvent": false
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": true,
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": "7",
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          }
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": null,
+        "Id": "452c8029-1b1a-499d-b08f-3250c482be01"
+      },
+      {
+        "Trigger": 10,
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "2",
+            "CardsAmount": 1,
+            "ToRival": true
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "IAttackedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": null,
+        "Id": "7b57469c-5d77-45c7-94fc-a032a09625b0"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountPlayedCardsCondition",
+      "Filter": {
+        "CurrentAttack": null,
+        "CurrentHealth": null,
+        "Attack": null,
+        "Health": null,
+        "CardType": null,
+        "Families": null,
+        "CurrentFamilies": [
+          "Rata"
+        ],
+        "DefinitionId": null,
+        "Id": null,
+        "HasEffect": null,
+        "NumberOfTriggersLeft": null,
+        "MustMeetAllCriteria": false
+      },
+      "Target": 0,
+      "Value": {
+        "Type": 0,
+        "Amount": 6
+      }
+    },
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   },
@@ -838,7 +937,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "5597c5c2-37d3-4830-b437-aaa07a0f9123"
+        "Id": "8b46c877-61be-409b-ae10-95e82fab6193"
       }
     ],
     "imageUrl": "",
@@ -927,7 +1026,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "57e0d757-edcb-4594-8fe9-6009e48b13ae"
+        "Id": "3fb1f07c-ae6b-436d-bb7f-fadd5c177157"
       }
     ],
     "imageUrl": "",
@@ -989,7 +1088,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ad38e3c1-bfd5-4d41-987e-881c1f0a19ba"
+        "Id": "1ee75d5a-9efc-4c3c-a14a-9c40a74b7cd1"
       },
       {
         "Trigger": 6,
@@ -1024,7 +1123,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a8f998ee-ac26-4e28-b252-ed033f8e6126"
+        "Id": "be0328d9-35ee-4fbc-b447-28dbfd6b0329"
       }
     ],
     "imageUrl": "",
@@ -1121,7 +1220,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "58a3b8a0-bcbb-4f96-946f-07d06da01963"
+        "Id": "e2acbeac-98b0-4596-af0c-408c9144b3d2"
       }
     ],
     "imageUrl": "",
@@ -1136,10 +1235,49 @@
     "Id": "21",
     "Name": "Rocinante",
     "Type": 0,
-    "Description": "",
+    "Description": "Si juegas a Don Quijote, consigo \u002B2/\u002B2",
     "BaseAttack": 3,
     "BaseHealth": 3,
-    "Effects": [],
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AlterMySelf",
+            "Damage": 2,
+            "Health": 2,
+            "UseGameEvent": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": true,
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": "19",
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          }
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": null,
+        "Id": "ffca60ba-e4ce-4504-8218-742a81fc5613"
+      }
+    ],
     "imageUrl": "",
     "ConditionToPlay": null,
     "PlayEffects": null,
@@ -1194,7 +1332,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "9c140d68-93c0-455d-95c2-d24dffcb0eda"
+        "Id": "70edeb08-d3d7-413d-b8c1-9f6b54b2c70d"
       }
     ],
     "imageUrl": "",
@@ -1237,10 +1375,57 @@
     "Id": "23",
     "Name": "Honoroso Caballero",
     "Type": 0,
-    "Description": "",
+    "Description": "Al morir, la pr\u00F3ximas dos unidades que jueges consiguen \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 3,
-    "Effects": [],
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "AppendGlobalEffect",
+            "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
+            "Effect": {
+              "Trigger": 5,
+              "Effects": [
+                {
+                  "$type": "AlterMySelf",
+                  "Damage": 1,
+                  "Health": 1,
+                  "UseGameEvent": true
+                }
+              ],
+              "Duration": {
+                "$type": "DurationByExecutions",
+                "times": 2
+              },
+              "Condition": {
+                "$type": "PlayerCardCondition",
+                "Me": true,
+                "Filter": null
+              },
+              "SourceCard": null,
+              "Player": null,
+              "Expired": false,
+              "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
+              "Id": "ec9c1dc1-e938-42cc-9960-7511b78ef94d"
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": null,
+        "Id": "72ddd8be-c2e6-4927-b521-cdc76feb4915"
+      }
+    ],
     "imageUrl": "",
     "ConditionToPlay": null,
     "PlayEffects": null,
@@ -1273,7 +1458,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d03d2624-1da2-4174-8e97-ebe5f094dd0d"
+        "Id": "1c69b89a-d751-49f8-8e31-775fcefb881c"
       }
     ],
     "imageUrl": "",
@@ -1351,7 +1536,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ce033015-146b-41fa-b1d1-85dc4cb3e4b2"
+        "Id": "5d552224-4512-4883-91e2-7413117fd8b7"
       }
     ],
     "imageUrl": "",
@@ -1435,7 +1620,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "b959f667-08b7-45e4-b967-ad6a02d8eaac"
+        "Id": "5f25490b-5f91-4d20-9a7b-90244fbadfb0"
       }
     ],
     "imageUrl": "",
@@ -1511,7 +1696,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ff0b2128-ae5a-4d04-b96f-68f6436ac6c0"
+        "Id": "433bd98d-db8b-428b-82de-0f8b9f2c31a5"
       }
     ],
     "imageUrl": "",
@@ -1570,7 +1755,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "15cd1a89-37f3-4201-a2ee-47a9e052b3a7"
+        "Id": "bfe29981-2d53-4fc1-ab68-a74795c159fb"
       }
     ],
     "imageUrl": "",
@@ -1586,8 +1771,8 @@
     "Name": "Aprendiz de mago",
     "Type": 0,
     "Description": "Cuando me juegas, creo una bola de fuego",
-    "BaseAttack": 3,
-    "BaseHealth": 3,
+    "BaseAttack": 2,
+    "BaseHealth": 1,
     "Effects": [
       {
         "Trigger": 5,
@@ -1610,7 +1795,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "827e6336-31f2-4037-9955-0f07102739cb"
+        "Id": "231ddf34-f06c-4dad-b8b3-a48d4246fc24"
       }
     ],
     "imageUrl": "",
@@ -1626,7 +1811,7 @@
     "Id": "29",
     "Name": "Maestro de la ceniza",
     "Type": 0,
-    "Description": "Has jugado 6 bolas de fuego o m\u00E1s. Fin de Ronda: creo una bola de fuego en el mazo",
+    "Description": "Has jugado 5 bolas de fuego o m\u00E1s. Fin de Ronda: creo una bola de fuego en el mazo",
     "BaseAttack": 6,
     "BaseHealth": 7,
     "Effects": [
@@ -1648,7 +1833,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "efe583b6-8656-403f-8358-097c032e1bb4"
+        "Id": "8475cd5f-be12-4060-bab9-30505f62ab01"
       }
     ],
     "imageUrl": "",
@@ -1671,7 +1856,7 @@
       "Target": 0,
       "Value": {
         "Type": 0,
-        "Amount": 6
+        "Amount": 5
       }
     },
     "PlayEffects": null,
@@ -1722,7 +1907,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "592b1f3f-01a4-421e-8cbf-8d175f86d392"
+        "Id": "c55c054f-876b-4e53-96c5-2a07b4f01a48"
       }
     ],
     "imageUrl": "",
@@ -1786,7 +1971,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "795c6461-672f-47fb-9a65-77ca353d33b9"
+        "Id": "85217dc6-7e05-40e5-bf1c-7dbc67e9315b"
       }
     ],
     "imageUrl": "",
@@ -1836,7 +2021,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6a438a08-f650-4bce-b816-b71bb5812c0c"
+        "Id": "973e0694-d2af-4c1f-b9da-38587081bfea"
       }
     ],
     "imageUrl": "",
@@ -1893,7 +2078,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1783c8c8-cdb9-4611-baf0-139513e131fc"
+        "Id": "38239e27-f9e7-43fc-81db-344bc800cf17"
       }
     ],
     "imageUrl": "",
@@ -1946,7 +2131,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "515d0262-f964-4c16-b9c0-fca40cb4f313"
+        "Id": "69d2bf7f-1dac-444d-8fe4-f16e9b258832"
       }
     ],
     "imageUrl": "",
@@ -1963,7 +2148,7 @@
     "Name": "Chispas escurridizas",
     "Type": 0,
     "Description": "El pr\u00F3ximo hechizo que juegues, curo 1 y quito 1 al rival",
-    "BaseAttack": 1,
+    "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
       {
@@ -1999,7 +2184,7 @@
               "Player": null,
               "Expired": false,
               "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
-              "Id": "0b3ecd0c-5585-46c7-8ba9-a02a94dc61f9"
+              "Id": "16a24116-3e78-4e9a-a8fd-959663b02b1f"
             }
           }
         ],
@@ -2012,7 +2197,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "80bd5f70-6394-4a2d-bef7-65c82cc9a064"
+        "Id": "d973261a-771b-4c80-a953-d40c6334cc65"
       }
     ],
     "imageUrl": "",
@@ -2028,8 +2213,8 @@
     "Name": "Instructor de las llamas",
     "Type": 0,
     "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-    "BaseAttack": 2,
-    "BaseHealth": 2,
+    "BaseAttack": 1,
+    "BaseHealth": 1,
     "Effects": [
       {
         "Trigger": 5,
@@ -2060,7 +2245,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-              "Id": "9b612a35-1b8c-491f-98dd-bec8e7e9b29e"
+              "Id": "5351181a-1601-4ebc-b9de-c97363b06fb5"
             }
           }
         ],
@@ -2075,7 +2260,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "2467a1e4-2b2f-4d53-bc03-e8ceffbc8537"
+        "Id": "e6064c53-d53d-4b85-8b69-63572d6eedc1"
       }
     ],
     "imageUrl": "",
@@ -2130,7 +2315,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a2e142d7-079b-4da7-9f8e-5b4f3eae4091"
+        "Id": "5ebfbcd6-7ae2-4efd-a998-d68dc391e78f"
       }
     ],
     "imageUrl": "",
@@ -2210,7 +2395,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "687d648f-d655-4b70-8777-423ff15c798a"
+        "Id": "4ab1c2ff-c286-46b4-8502-7d2e1981e2ba"
       }
     ],
     "imageUrl": "",
@@ -2227,8 +2412,8 @@
     "Name": "Maquiavelo el maquiav\u00E9lico",
     "Type": 0,
     "Description": "Cuando juegas un hechizo, consigo \u002B1/\u002B1",
-    "BaseAttack": 1,
-    "BaseHealth": 1,
+    "BaseAttack": 2,
+    "BaseHealth": 0,
     "Effects": [
       {
         "Trigger": 6,
@@ -2252,7 +2437,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "76709f45-3b63-40b0-b871-2c4a967c3116"
+        "Id": "7a845f1e-5106-48f9-b606-c292f3c49c6e"
       }
     ],
     "imageUrl": "",
@@ -2292,7 +2477,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ed2efbc5-641a-4010-a1de-9cbaf2beb651"
+        "Id": "a48b1995-0ec7-4140-9ef3-c6d9e4b79e9d"
       }
     ],
     "imageUrl": "",
@@ -2378,7 +2563,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "329bbf0e-593d-40a2-8f83-5f5cb112e9b8"
+        "Id": "2ee4e3f0-2a14-4815-9fe3-09298385507b"
       }
     ],
     "imageUrl": "",
@@ -2435,7 +2620,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "9a75425e-fe87-4d6a-a91b-bfb48fe2dc52"
+        "Id": "c4bc129b-aece-4a8d-9ec1-cdcc22493c17"
       }
     ],
     "imageUrl": "",
@@ -2473,7 +2658,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "cf34a9f7-70dd-4dd0-b3cf-0ea388db7fe3"
+        "Id": "8e06848b-f043-42eb-8b4f-22c79a9261af"
       }
     ],
     "imageUrl": "",
@@ -2525,7 +2710,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1e6e32fb-2cda-4ce7-981d-f14580bcf962"
+        "Id": "f3ffaa34-618b-419d-b101-5d62ec282815"
       }
     ],
     "imageUrl": "",
@@ -2577,7 +2762,7 @@
               "MustMeetAllCriteria": false
             },
             "WhichDeckToSearch": 3,
-            "WhichBoardToSearch": 3,
+            "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
             "MaxLength": 0
           },
@@ -2590,7 +2775,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "3c169eb3-88b7-4546-baae-aaf03311bdfb"
+        "Id": "cfd2afec-9438-4fde-8f1f-586ea72c4bc9"
       }
     ],
     "imageUrl": "",
@@ -2629,7 +2814,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d2885374-57b9-49dd-a3d8-f1d01da21e28"
+        "Id": "36f24dc5-c3cf-49cb-b69a-e4c94e58c99a"
       }
     ],
     "imageUrl": "",
@@ -2656,20 +2841,33 @@
             "$type": "AlterMySelf",
             "Damage": 1,
             "Health": 1,
-            "UseGameEvent": false
+            "UseGameEvent": true
           }
         ],
         "Duration": {
           "$type": "Always"
         },
         "Condition": {
-          "$type": "IHaveBeenPlayedCondition"
+          "$type": "MultiEffectCondition",
+          "Conditions": [
+            {
+              "$type": "NumericEventCondition",
+              "Filter": {
+                "Type": 4,
+                "Amount": 0
+              }
+            },
+            {
+              "$type": "IHaveBeenPlayedCondition"
+            }
+          ],
+          "IsOr": false
         },
         "SourceCard": null,
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6ec6bf95-033e-4229-823a-8e17c77e5bf6"
+        "Id": "a3a72e49-2c46-4edb-90c4-44e00999755e"
       }
     ],
     "imageUrl": "",
@@ -2684,7 +2882,7 @@
     "Id": "48",
     "Name": "Tik Tok motivacional",
     "Type": 1,
-    "Description": "Necesitas una carta con 0 de da\u00F1o en mesa. Las dos primeras unidades (IZQ) ganan \u002B2/\u002B2",
+    "Description": "Necesitas una carta con 1 de da\u00F1o o menos en mesa. Las dos primeras unidades (IZQ) ganan \u002B2/\u002B2",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2726,7 +2924,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1ea609aa-75ae-478e-afb4-6e863ac99f1c"
+        "Id": "8d4aca92-f2ab-4bda-96f0-5e3fef5f7d72"
       }
     ],
     "imageUrl": "",
@@ -2735,8 +2933,8 @@
       "Filter": {
         "Filter": {
           "CurrentAttack": {
-            "Type": 2,
-            "Amount": 0
+            "Type": 1,
+            "Amount": 1
           },
           "CurrentHealth": null,
           "Attack": null,
@@ -2770,7 +2968,7 @@
     "Id": "49",
     "Name": "No pain, no gain",
     "Type": 1,
-    "Description": "Inflinge 1 de da\u00F1o a 2 unidades y roba una carta. HABILIDAD: inflinge 1 de da\u00F1o a todas las cartas en mesa y les otorgas \u002B1/0",
+    "Description": "Inflinge 1 de da\u00F1o hasta 2 unidades y roba una carta. HABILIDAD: inflinge 1 de da\u00F1o a todas las cartas en mesa y les otorgas \u002B2/0",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2817,7 +3015,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "91f272d7-1029-43a6-879a-d13bbad4619f"
+        "Id": "13d3beb3-f28c-4a88-b4f9-0ca4f9c8bb35"
       }
     ],
     "imageUrl": "",
@@ -2907,7 +3105,7 @@
     "Id": "50",
     "Name": "Esteroides",
     "Type": 1,
-    "Description": "Elimina mi mesa completa. Me curo la cantidad de vida total de mis tropas",
+    "Description": "Me curo la cantidad de vida total de mis tropas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2945,7 +3143,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "826811d4-8dd5-4dc1-a04b-f89ea6f35cdf"
+        "Id": "1bd53e94-9fa2-4174-8b96-7406ccfdfd20"
       }
     ],
     "imageUrl": "",
@@ -2955,7 +3153,8 @@
   },
   {
     "Families": [
-      "Leyenda"
+      "Leyenda",
+      "Motivacion"
     ],
     "Id": "51",
     "Name": "Biscuit Oliva",
@@ -3002,7 +3201,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c1915aef-1bd9-46cc-9a6d-e7ef5d900366"
+        "Id": "19c906da-54d4-4a3b-848f-1b035365d8a6"
       }
     ],
     "imageUrl": "",
@@ -3043,7 +3242,7 @@
     "Id": "52",
     "Name": "Flexeo de m\u00FAsculos",
     "Type": 1,
-    "Description": "El jugador tiene 10 de vida o m\u00E1s. Roba 2 cartas",
+    "Description": "El jugador tiene 10 de vida o m\u00E1s. Roba 3 cartas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3052,7 +3251,7 @@
         "Effects": [
           {
             "$type": "DrawCardEffect",
-            "CardAmount": 2,
+            "CardAmount": 3,
             "Filter": null
           }
         ],
@@ -3065,7 +3264,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "eafe1204-cde2-4608-bfe9-efac1d1498ef"
+        "Id": "b7e919af-1fa1-402f-a907-8aee012410fe"
       }
     ],
     "imageUrl": "",
@@ -3082,111 +3281,12 @@
   },
   {
     "Families": [
-      "Rata"
-    ],
-    "Id": "13_2",
-    "Name": "Rey rata",
-    "Type": 0,
-    "Description": "Has jugado 6 ratas o m\u00E1s. Cuando golpeo, a\u00F1ado una rata al mazo rival. Cuando juegas un queso, consigo \u002B1/\u002B1",
-    "BaseAttack": 3,
-    "BaseHealth": 3,
-    "Effects": [
-      {
-        "Trigger": 6,
-        "Effects": [
-          {
-            "$type": "AlterMySelf",
-            "Damage": 1,
-            "Health": 1,
-            "UseGameEvent": false
-          }
-        ],
-        "Duration": {
-          "$type": "Always"
-        },
-        "Condition": {
-          "$type": "PlayerCardCondition",
-          "Me": true,
-          "Filter": {
-            "CurrentAttack": null,
-            "CurrentHealth": null,
-            "Attack": null,
-            "Health": null,
-            "CardType": null,
-            "Families": null,
-            "CurrentFamilies": null,
-            "DefinitionId": "7",
-            "Id": null,
-            "HasEffect": null,
-            "NumberOfTriggersLeft": null,
-            "MustMeetAllCriteria": false
-          }
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": null,
-        "Id": "fd89782f-ed94-45fc-bc04-8d9bdfc90885"
-      },
-      {
-        "Trigger": 10,
-        "Effects": [
-          {
-            "$type": "AppendCardToDeck",
-            "CardId": "2",
-            "CardsAmount": 1,
-            "ToRival": true
-          }
-        ],
-        "Duration": {
-          "$type": "Always"
-        },
-        "Condition": {
-          "$type": "IAttackedCondition"
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": null,
-        "Id": "ba98f18a-b21d-40ec-8460-646e3e39b7ff"
-      }
-    ],
-    "imageUrl": "",
-    "ConditionToPlay": {
-      "$type": "CountPlayedCardsCondition",
-      "Filter": {
-        "CurrentAttack": null,
-        "CurrentHealth": null,
-        "Attack": null,
-        "Health": null,
-        "CardType": null,
-        "Families": null,
-        "CurrentFamilies": [
-          "Rata"
-        ],
-        "DefinitionId": null,
-        "Id": null,
-        "HasEffect": null,
-        "NumberOfTriggersLeft": null,
-        "MustMeetAllCriteria": false
-      },
-      "Target": 0,
-      "Value": {
-        "Type": 0,
-        "Amount": 6
-      }
-    },
-    "PlayEffects": null,
-    "PlayEffectTriggerTimes": 0
-  },
-  {
-    "Families": [
       "Hielo"
     ],
     "Id": "53",
     "Name": "Fragmento helado",
     "Type": 1,
-    "Description": "-2/0 a una unidad enemiga (izq)",
+    "Description": "-4/0 a una unidad enemiga (izq)",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3196,7 +3296,7 @@
           {
             "$type": "AlterUnitStatsEffect",
             "Health": 0,
-            "Damage": -2,
+            "Damage": -4,
             "Filter": {
               "Filter": {
                 "CurrentAttack": null,
@@ -3230,7 +3330,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "d41b2d43-340b-4632-a54d-19ea4c587180"
+        "Id": "4afc5112-a8c5-4315-afbf-eea002aff964"
       }
     ],
     "imageUrl": "",
@@ -3245,18 +3345,37 @@
     "Id": "54",
     "Name": "Aprendiz del invierno",
     "Type": 0,
-    "Description": "Al jugarme, -1/0 a dos enemigos (IZQ)",
+    "Description": "Cada vez que juegues un hechizo hielo, -1/0 a un enemigo (IZQ)",
     "BaseAttack": 1,
-    "BaseHealth": 1,
+    "BaseHealth": 3,
     "Effects": [
       {
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "AlterMySelf",
-            "Damage": 1,
-            "Health": 1,
-            "UseGameEvent": false
+            "$type": "AlterUnitStatsEffect",
+            "Health": 0,
+            "Damage": -1,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 1,
+              "WhichHandToSearch": 3,
+              "MaxLength": 1
+            }
           }
         ],
         "Duration": {
@@ -3286,7 +3405,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ce019a1e-2a99-4671-8464-2a6c611cfcd3"
+        "Id": "9c4e27d8-e96d-4787-a722-fdbcb364e054"
       }
     ],
     "imageUrl": "",
@@ -3295,9 +3414,7 @@
     "PlayEffectTriggerTimes": 0
   },
   {
-    "Families": [
-      "Hielo"
-    ],
+    "Families": [],
     "Id": "55",
     "Name": "Ventisca cruel",
     "Type": 1,
@@ -3350,7 +3467,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "73f58103-ef86-4ad2-b166-215d811205f8"
+        "Id": "eaf9e9c3-42d2-4ae6-8694-9fee944e7cc6"
       }
     ],
     "imageUrl": "",
@@ -3367,7 +3484,7 @@
     "Type": 0,
     "Description": "Cuando se altera el ataque de las unidades enemigas, consigo \u002B1/0",
     "BaseAttack": 0,
-    "BaseHealth": 2,
+    "BaseHealth": 3,
     "Effects": [
       {
         "Trigger": 4,
@@ -3383,15 +3500,28 @@
           "$type": "Always"
         },
         "Condition": {
-          "$type": "PlayerCardCondition",
-          "Me": false,
-          "Filter": null
+          "$type": "MultiEffectCondition",
+          "Conditions": [
+            {
+              "$type": "PlayerCardCondition",
+              "Me": false,
+              "Filter": null
+            },
+            {
+              "$type": "NumericEventCondition",
+              "Filter": {
+                "Type": 4,
+                "Amount": 0
+              }
+            }
+          ],
+          "IsOr": false
         },
         "SourceCard": null,
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "852242b2-ecd2-4bfd-9ec2-144f4a9dc5a8"
+        "Id": "3dcdabc2-c17b-48c8-acfa-d3b341d30cc0"
       }
     ],
     "imageUrl": "",
@@ -3450,7 +3580,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f948e3ab-1843-4bca-acf7-0b7b83409e21"
+        "Id": "764008c8-119c-4753-bfef-d09534525efa"
       }
     ],
     "imageUrl": "",
@@ -3506,7 +3636,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c45c739a-41cd-405b-95af-048aa19b1aec"
+        "Id": "ec89bafe-ca18-43c4-89b5-6555e2a2c4b0"
       }
     ],
     "imageUrl": "",
@@ -3521,13 +3651,42 @@
     "Id": "59",
     "Name": "Coraz\u00F3n congelado",
     "Type": 1,
-    "Description": "Mata las unidades enemigas que tengan 0 de da\u00F1o o menos",
+    "Description": "Roba tantas cartas como unidades con 0 de da\u00F1o tenga el rival. Despu\u00E9s, mata esas unidades.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
       {
         "Trigger": 6,
         "Effects": [
+          {
+            "$type": "DrawCardsBasedOnFilter",
+            "Rival": false,
+            "Relation": 1,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": {
+                  "Type": 1,
+                  "Amount": 0
+                },
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 1,
+              "WhichHandToSearch": 3,
+              "MaxLength": 0
+            },
+            "FilterDrawedCards": null
+          },
           {
             "$type": "KillCards",
             "BoardSearch": 1,
@@ -3562,7 +3721,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ce3aa63b-213f-413a-b02c-921baf5a2908"
+        "Id": "02b64b92-3244-4581-bf68-491dafc28932"
       }
     ],
     "imageUrl": "",
@@ -3606,7 +3765,7 @@
     "Id": "60",
     "Name": "Elemental de hielo",
     "Type": 0,
-    "Description": "Al jugarme: -1/0 a la mesa rival, y curo a mi jugador 3 de vida.",
+    "Description": "Al jugarme: -1/0 a la mesa rival. Al morir, curo a mi jugador 3 de vida.",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -3637,7 +3796,24 @@
               "WhichHandToSearch": 3,
               "MaxLength": 0
             }
-          },
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": null,
+        "Id": "de9017d6-3fb4-45cb-9998-8c6a4c79b361"
+      },
+      {
+        "Trigger": 7,
+        "Effects": [
           {
             "$type": "AlterPlayerHealthEffect",
             "Amount": 3,
@@ -3655,7 +3831,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a50b4fbb-8db0-4011-9ec1-97dcd487650b"
+        "Id": "b3ea5957-2380-4a28-8484-1f29ceb3819a"
       }
     ],
     "imageUrl": "",
@@ -3718,7 +3894,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Durante los pr\u00F3ximos dos finales de ronda, -1/0 a la mesa enemiga",
-              "Id": "bea880aa-5dcb-45a6-a670-4b548b8cfdb2"
+              "Id": "3a2b6159-88a9-496d-9d3f-a31d36e1fd63"
             }
           }
         ],
@@ -3731,7 +3907,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "4a62e71e-6724-485b-bb10-fabf0a26c0d3"
+        "Id": "011c8346-e216-4851-b579-92b86277cfa6"
       }
     ],
     "imageUrl": "",
@@ -3748,7 +3924,7 @@
     "Id": "62",
     "Name": "Drag\u00F3n boreal",
     "Type": 0,
-    "Description": "No hay criaturas en juego, y has jugado 10 cartas de Hielo o m\u00E1s. Final de ronda: si hay hueco, invoco una cr\u00EDa de drag\u00F3n",
+    "Description": "No tienes criaturas en mesa, y has jugado 8 cartas de Hielo o m\u00E1s. Final de ronda: si hay hueco, invoco una cr\u00EDa de drag\u00F3n",
     "BaseAttack": 5,
     "BaseHealth": 6,
     "Effects": [
@@ -3769,7 +3945,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c03c4c36-e959-4178-a2a8-8702a43b1a26"
+        "Id": "51022a3f-91db-4df0-b20c-b9b7b82c741f"
       }
     ],
     "imageUrl": "",
@@ -3797,7 +3973,7 @@
           "Target": 0,
           "Value": {
             "Type": 0,
-            "Amount": 10
+            "Amount": 8
           }
         },
         {
@@ -3849,32 +4025,10 @@
         "Trigger": 3,
         "Effects": [
           {
-            "$type": "AlterUnitStatsEffect",
-            "Health": -2,
+            "$type": "AlterMySelf",
             "Damage": 0,
-            "Filter": {
-              "Filter": {
-                "CurrentAttack": {
-                  "Type": 2,
-                  "Amount": 0
-                },
-                "CurrentHealth": null,
-                "Attack": null,
-                "Health": null,
-                "CardType": null,
-                "Families": null,
-                "CurrentFamilies": null,
-                "DefinitionId": null,
-                "Id": null,
-                "HasEffect": null,
-                "NumberOfTriggersLeft": null,
-                "MustMeetAllCriteria": false
-              },
-              "WhichDeckToSearch": 3,
-              "WhichBoardToSearch": 1,
-              "WhichHandToSearch": 3,
-              "MaxLength": 0
-            }
+            "Health": -2,
+            "UseGameEvent": true
           }
         ],
         "Duration": {
@@ -3883,13 +4037,29 @@
         "Condition": {
           "$type": "PlayerCardCondition",
           "Me": false,
-          "Filter": null
+          "Filter": {
+            "CurrentAttack": {
+              "Type": 2,
+              "Amount": 0
+            },
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": null,
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          }
         },
         "SourceCard": null,
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "a805b63a-7519-49a5-a611-2c51bc6dd4ea"
+        "Id": "7932e659-21ff-4103-a19c-c56714890456"
       }
     ],
     "imageUrl": "",
@@ -3976,7 +4146,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "9d4e9742-935e-4ef2-8181-f3d5b432b5fc"
+        "Id": "96b5745b-565d-4552-828c-538ee58e79d2"
       }
     ],
     "imageUrl": "",
@@ -4066,7 +4236,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "051cebfd-6c69-40d4-88d6-7fbe7e8f7039"
+        "Id": "1204e998-83a4-4160-b9f8-0f3f6852a2f2"
       }
     ],
     "imageUrl": "",
@@ -4105,7 +4275,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "f724202c-1ced-4d16-bb9c-23ea9d2fa9aa"
+        "Id": "8bd1323a-e4ac-4c4c-ba93-dec9c9161eeb"
       }
     ],
     "imageUrl": "",
@@ -4163,7 +4333,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ec6ff65e-315f-462b-abe4-95ed70729011"
+        "Id": "e15444d8-58e8-474d-aa96-9061cf643080"
       }
     ],
     "imageUrl": "",
@@ -4261,7 +4431,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c683f78b-ff0a-4d18-90d8-e24d9ebe8dc9"
+        "Id": "3bc7df4a-a6d2-4ef7-92d1-aca979b1da53"
       }
     ],
     "imageUrl": "",
@@ -4366,7 +4536,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "e0b789b7-b7fc-4a8d-ae0a-4eda859d361d"
+        "Id": "62724293-0695-4815-a862-f12b5cd4b0cc"
       }
     ],
     "imageUrl": "",
@@ -4405,7 +4575,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "79264366-617e-4987-af15-113d126e404c"
+        "Id": "a0589656-131f-44f2-bd56-78b68557e55b"
       }
     ],
     "imageUrl": "",
@@ -4451,7 +4621,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "235516d4-a019-4561-881b-243881358eb2"
+        "Id": "da92981c-28d0-44ab-936e-dd5c968ac52b"
       }
     ],
     "imageUrl": "",
@@ -4490,7 +4660,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "97f1fc90-21ea-448f-86ba-b4772321fb41"
+        "Id": "c7924289-8cea-4c80-9312-03f3b6eda893"
       }
     ],
     "imageUrl": "",
@@ -4536,7 +4706,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "7f0a694c-c8c8-452a-a522-b8b281a28634"
+        "Id": "4a73287c-59dc-4776-9997-bc9943dfe460"
       }
     ],
     "imageUrl": "",
@@ -4595,7 +4765,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "0b1f7a9c-db08-4e62-9c3a-759521376067"
+        "Id": "609f45c0-4a1d-4c06-86d4-b4ff2864b4b4"
       }
     ],
     "imageUrl": "",
@@ -4641,7 +4811,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "278e06b8-a380-47a2-bd16-248d80849c33"
+        "Id": "490b73bc-27b4-42c9-b0a4-a2190f3a00e9"
       }
     ],
     "imageUrl": "",
@@ -4700,7 +4870,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "c495d288-1d75-4521-a260-d635ae92661c"
+        "Id": "35e80204-85b0-4d4c-bc26-686dd581b265"
       }
     ],
     "imageUrl": "",
@@ -4746,7 +4916,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "2a284093-bfe2-467f-9c38-51f170102c59"
+        "Id": "8b7cf0c6-f09f-419e-9a9c-8e4e0fc76204"
       }
     ],
     "imageUrl": "",
@@ -4785,7 +4955,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1483181f-d261-45ee-8594-53f76d6be74f"
+        "Id": "885d26fe-cae3-4a5f-a2eb-1baa7509093e"
       }
     ],
     "imageUrl": "",
@@ -4831,7 +5001,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "45575d23-e31f-4ee6-a5d6-d56b54cc4e64"
+        "Id": "d169a28d-56ba-405a-a2e2-9ed38927db9e"
       }
     ],
     "imageUrl": "",
@@ -4879,7 +5049,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades jugadas",
-              "Id": "6b0a817d-95bd-4faa-9508-c1690bdfde05"
+              "Id": "ffc01e20-bfee-4b6a-8eec-86885d701da9"
             }
           }
         ],
@@ -4894,7 +5064,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "979613ec-178e-4ae3-b33b-0f44adb7409f"
+        "Id": "367fade6-72e7-49d0-9164-3f35200f59bf"
       }
     ],
     "imageUrl": "",
@@ -4940,7 +5110,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "473cf448-3a0b-4842-ae00-7a2e0ab7fe9e"
+        "Id": "28f663b2-37ce-44a9-94dd-bdc542ae7f08"
       }
     ],
     "imageUrl": "",
@@ -4979,7 +5149,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "6a1bf61b-b95d-421b-b45a-85d38f791a2b"
+        "Id": "2ec8725f-13b6-4824-8035-d3a20dda786d"
       }
     ],
     "imageUrl": "",
@@ -5013,7 +5183,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "1706c955-4cac-4783-bc99-3635a7c3d525"
+        "Id": "63fe8a40-a732-43a6-a0af-910ef998a35d"
       }
     ],
     "imageUrl": "",
@@ -5066,7 +5236,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "63db2762-5f52-4480-8f18-6da9eebb4fda"
+        "Id": "7cab44f2-090f-4897-9338-8979517e508c"
       }
     ],
     "imageUrl": "",
@@ -5119,7 +5289,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "7226dfe1-6e23-4afd-921c-0d2ba1563e61"
+        "Id": "9875ad54-8425-44a4-be16-4a92e6132b45"
       }
     ],
     "imageUrl": "",
@@ -5158,7 +5328,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "34aceb34-c4cf-400f-8a15-9f96aef17722"
+        "Id": "3d229f38-d478-4bcf-baab-365aa277f7e8"
       }
     ],
     "imageUrl": "",
@@ -5212,7 +5382,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "86b5e558-082a-4a44-8148-a50ce5535ebb"
+        "Id": "5edbd7e9-f834-4473-a9ee-d1100f1fce41"
       }
     ],
     "imageUrl": "",
@@ -5278,7 +5448,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ab0b8e7b-8ff3-46ff-ad61-f38b17ef971d"
+        "Id": "db38fc89-b739-44c7-a0b7-41fbfe37f4f1"
       }
     ],
     "imageUrl": "",
@@ -5330,7 +5500,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "2ffaa503-6171-4533-ac53-7f35307c594b"
+        "Id": "3ae7128a-3101-40f0-85e0-977ea99d95cc"
       }
     ],
     "imageUrl": "",
@@ -5420,7 +5590,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las unidades del rival conseguir\u00E1n \u002B1/0 dentro de dos rondas",
-              "Id": "045d0565-5ae8-4926-a8e0-2bc0952bef4a"
+              "Id": "20a21932-d841-42fa-b5cd-d1f5d569b455"
             }
           }
         ],
@@ -5433,7 +5603,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "952fc157-0194-462f-b8a4-282aa07a2132"
+        "Id": "e18d40eb-8ba1-44b6-9639-f76a5241c475"
       }
     ],
     "imageUrl": "",
@@ -5472,7 +5642,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ebeb0fd2-874a-442d-bb05-997838e57907"
+        "Id": "d1695b34-ab60-4d1d-8d74-79a58a34bbf8"
       }
     ],
     "imageUrl": "",
@@ -5528,7 +5698,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "0f6982bc-10a3-4da0-bd6b-d91a7e1cbbc4"
+        "Id": "c8040f06-c08a-4434-8504-23d2af0dfadb"
       },
       {
         "Trigger": 5,
@@ -5567,7 +5737,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "04dd9c5b-d6b3-454c-bc4f-45a64d9ead29"
+        "Id": "47e20ec6-cc3e-4227-9e07-41033bb1ba6b"
       }
     ],
     "imageUrl": "",
@@ -5655,7 +5825,7 @@
         "Player": null,
         "Expired": false,
         "Description": null,
-        "Id": "ba027290-ec1e-4011-874d-52b7a03282f9"
+        "Id": "ad8dae85-7193-4845-866a-f1696fabed6d"
       }
     ],
     "imageUrl": "",
