@@ -12,25 +12,29 @@ public class GameFilter
 
     public IEnumerable<CardInstance> GetMeetingCardsOnRivalBoard(GameState state, Guid rivalPlayer)
     {
-        var result = WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetState(rivalPlayer).Board.Where(n => n is not null && Filter.Check(n)) : [];
+        var result = WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH
+            ? state.GetState(rivalPlayer).Board.Where(n => n is not null).Select(n => n!).Where(Filter.Check)
+            : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnPlayerBoard(GameState state, Guid playerId)
     {
-        var result = WhichBoardToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Board.Where(n => n is not null && Filter.Check(n)) : [];
+        var result = WhichBoardToSearch is PlayerType.PLAYER or PlayerType.BOTH
+            ? state.GetState(playerId).Board.Where(n => n is not null).Select(n => n!).Where(Filter.Check)
+            : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnRivalDeck(GameState state, Guid rivalId)
     {
-        var result = WhichDeckToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetState(rivalId).Deck.cards.Where(Filter.Check) : [];
+        var result = WhichDeckToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetState(rivalId).Deck!.cards.Where(Filter.Check) : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnPlayerDeck(GameState state, Guid playerId)
     {
-        var result = WhichDeckToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Deck.cards.Where(Filter.Check) : [];
+        var result = WhichDeckToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Deck!.cards.Where(Filter.Check) : [];
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 

@@ -1,3 +1,5 @@
+using System.Net.WebSockets;
+
 public class BotConnection : PlayerConnection
 {
     bool Resend { get; set; } = false;
@@ -51,15 +53,37 @@ public class BotConnection : PlayerConnection
 "Cállate y acepta tu derrota, tío."
 ];
 
-    public BotConnection() : base(null)
+    public BotConnection() : base(CreateDummyWebSocket())
     {
         SelectedDeckId = CardManager.Decks.GetRandom().id;
         Name = BOT_NAMES.GetRandom();
     }
 
-    async void DecideNextAction(GameStateDto state)
+    private static WebSocket CreateDummyWebSocket()
     {
-        if (!state.Me.IsMyTurn || Game is null) return;
+        return new DummyWebSocket();
+    }
+
+    private sealed class DummyWebSocket : WebSocket
+    {
+        public override WebSocketCloseStatus? CloseStatus => null;
+        public override string? CloseStatusDescription => null;
+        public override WebSocketState State => WebSocketState.Open;
+        public override string? SubProtocol => null;
+
+        public override void Abort() { }
+        public override Task CloseAsync(WebSocketCloseStatus closeStatus, string? statusDescription, CancellationToken cancellationToken) => Task.CompletedTask;
+        public override Task CloseOutputAsync(WebSocketCloseStatus closeStatus, string? statusDescription, CancellationToken cancellationToken) => Task.CompletedTask;
+        public override void Dispose() { }
+        public override Task<WebSocketReceiveResult> ReceiveAsync(ArraySegment<byte> buffer, CancellationToken cancellationToken) => Task.FromResult(new WebSocketReceiveResult(0, WebSocketMessageType.Close, true, null, null));
+        public override Task SendAsync(ArraySegment<byte> buffer, WebSocketMessageType messageType, bool endOfMessage, CancellationToken cancellationToken) => Task.CompletedTask;
+        public override ValueTask<ValueWebSocketReceiveResult> ReceiveAsync(Memory<byte> buffer, CancellationToken cancellationToken) => ValueTask.FromResult(new ValueWebSocketReceiveResult(0, WebSocketMessageType.Close, true));
+        public override ValueTask SendAsync(ReadOnlyMemory<byte> buffer, WebSocketMessageType messageType, bool endOfMessage, CancellationToken cancellationToken) => ValueTask.CompletedTask;
+    }
+
+    async Task DecideNextAction(GameStateDto? state)
+    {
+        if (state is null || !state.Me.IsMyTurn || Game is null) return;
         Thread.Sleep(new Random().Next(1000, 3000));
         List<Func<GameStateDto, Task>> options = new();
 
@@ -73,7 +97,7 @@ public class BotConnection : PlayerConnection
 
     async Task DrawCardAsync(GameStateDto state)
     {
-        await Game.HandleAction(this, new PlayerAction.DrawCardAction());
+        await Game!.HandleAction(this, new PlayerAction.DrawCardAction());
     }
 
     async Task Attack(GameStateDto state)
@@ -122,40 +146,37 @@ public class BotConnection : PlayerConnection
 
     public override Task Send(string type, object obj)
     {
-        if (Game?.HasEnded ?? true) return Task.FromResult(0);
+        if (Game?.HasEnded ?? true) return Task.CompletedTask;
 
-        Task.Run(async() =>
+        _ = Task.Run(async () =>
         {
-             switch(type)
+            switch (type)
             {
                 case "game_state":
-                DecideNextAction(obj as GameStateDto);
-                break;
+                    await DecideNextAction(obj as GameStateDto);
+                    break;
                 case "text_message":
-                var type = obj.GetType();
-                var messageProperty = type.GetProperty("message");
-                var playerProperty = type.GetProperty("player");
+                    var typeInfo = obj.GetType();
+                    var messageProperty = typeInfo.GetProperty("message");
+                    var playerProperty = typeInfo.GetProperty("player");
 
-                var playerValue = (Guid)playerProperty.GetValue(obj, null);
-                
-                if(playerValue != Guid)
+                    var playerValue = playerProperty?.GetValue(obj, null) as Guid?;
+
+                    if (playerValue is Guid otherPlayer && otherPlayer != Guid)
                     {
-                var messageValue = (string)messageProperty.GetValue(obj, null);
+                        var messageValue = messageProperty?.GetValue(obj, null) as string;
+                        Resend = messageValue == ":04:";
 
-                Resend = messageValue == ":04:"; // Qué poner ?
-                        
+                        if (playerValue != Guid || Resend)
+                        {
+                            await SendMessage();
+                        }
                     }
-                if (playerValue != Guid || Resend)
-                {
-
-                    SendMessage();
-
-                }
-                break;
+                    break;
             }
         });
-       
-        return Task.FromResult(0);
+
+        return Task.CompletedTask;
     }
 
     public override string ToString()

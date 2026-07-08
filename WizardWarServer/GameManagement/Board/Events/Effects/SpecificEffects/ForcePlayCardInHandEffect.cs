@@ -31,7 +31,11 @@ public class ForcePlayCardInHandEffect : IEffect
                 {
                     var boardIndexes = player.Board.Select((a,b) => new {a, b}).Where(n => n.a is null).Select(n => n.b);
 
-                    if(c.Definition.Type == CardType.Spell || boardIndexes.Any()) state.PlayCard(player.Connection, i, boardIndexes.GetRandom());
+                    if(c.Definition.Type == CardType.Spell || boardIndexes.Any())
+                    {
+                        var targetIndex = boardIndexes.Any() ? boardIndexes.GetRandom() : -1;
+                        state.PlayCard(player.Connection, i, targetIndex);
+                    }
                 }
             }
         }

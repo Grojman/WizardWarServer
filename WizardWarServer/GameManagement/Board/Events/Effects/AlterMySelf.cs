@@ -15,7 +15,7 @@ public class AlterMySelf : IEffect
 
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        var card = UseGameEvent ? (ev as GameEvent.GameEventCard).Card: cardId;
+        var card = UseGameEvent ? ((ev as GameEvent.GameEventCard)?.Card ?? cardId) : cardId;
 
         state.AlterUnitDamage(cardId, card, Damage);
         state.AlterUnitHealth(cardId, card, Health);

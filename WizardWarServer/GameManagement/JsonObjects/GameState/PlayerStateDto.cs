@@ -2,14 +2,14 @@ public record PlayerStateDto(Guid Id, Guid TargetPlayer, string Name, CardDto?[]
 {
     public static PlayerStateDto Generate(PlayerState state, bool hidden, GameState gameState)
     {
-        return new (state.Id,
-                    state.PlayerTarget.Id,
+        return new(state.Id,
+                    state.PlayerTarget!.Id,
                     state.Name,
                     [.. state.Board.Select(n => n is null ? null : CardDto.Generate(n, gameState, true))],
                     state.Health,
                     state.Hand.Count,
                     hidden ? [] : [.. state.Hand.Select(n => CardDto.Generate(n, gameState, false))],
-                    DeckStateDto.Generate(state.Deck),
+                    DeckStateDto.Generate(state.Deck!),
                     state.GlobalEffects.Select(n => n.Description),
                     state.IsMyTurn,
                     state.LastSpellPlayed is null ? null : CardDto.Generate(state.LastSpellPlayed, gameState, true));

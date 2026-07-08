@@ -29,7 +29,7 @@ public class GameSession
 
     public async Task Start()
     {
-        foreach(var c in Connections) await c.Send("start_game", null);
+        foreach(var c in Connections) await c.Send("start_game", new { });
 
         state.Initialize(Connections);
 
@@ -38,15 +38,24 @@ public class GameSession
 
     public async Task HandleAction(PlayerConnection player, string json)
     {
-        var action =
-            JsonSerializer.Deserialize<PlayerAction>(json);
+        if (player is null || string.IsNullOrWhiteSpace(json))
+        {
+            return;
+        }
+
+        var action = JsonSerializer.Deserialize<PlayerAction>(json);
         await HandleAction(player, action);
     }
 
     public async Task HandleAction(
         PlayerConnection player,
-        PlayerAction action)
+        PlayerAction? action)
     {
+        if (player is null || action is null || !Connections.Contains(player))
+        {
+            return;
+        }
+
         if (action is PlayerAction.TextMessage m)
         {
             foreach(var c in Connections) await c.Send("text_message", new {
@@ -90,11 +99,9 @@ public class GameSession
             winner,
             forced
         };
-        if(!botSession)
-        {
-            StoringData.SaveData(state, forced);
-            StoringData.SaveInFile();
-        }
+
+        StoringData.SaveData(state, forced);
+        StoringData.SaveInFile();
 
         foreach(var c in Connections) await c.Send("end_game", msg); 
         state.ClearState();
@@ -104,6 +111,11 @@ public class GameSession
 
     public async Task RemovePlayer(PlayerConnection c)
     {
+        if (c is null || !Connections.Contains(c))
+        {
+            return;
+        }
+
         state.KillPlayer(state.GetState(c.Guid), true);
         c.Game = null;
         Connections.Remove(c);

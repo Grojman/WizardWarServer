@@ -13,7 +13,7 @@ public class GameData
         Forced = forced;
     }
 
-    public List<int> PlayedDecks { get; set; }
+    public List<int> PlayedDecks { get; set; } = new();
     public int WinnerDeck { get; set; }
     public bool Forced { get; set; }
     
@@ -21,42 +21,61 @@ public class GameData
 
 public static class StoringData
 {
-    public static List<GameData> Data;
+    public static List<GameData> Data { get; private set; } = new();
 
     public const string FILE_PATH = "data.json";
+
+    private static string GetFilePath() => Path.Combine(AppContext.BaseDirectory, FILE_PATH);
+
     public static void GetFromFile()
     {
-        if (!File.Exists(FILE_PATH))
+        var filePath = GetFilePath();
+        if (!File.Exists(filePath))
         {
             Data = new();
             return;
         }
 
-        var res = JsonSerializer.Deserialize<List<GameData>>(FILE_PATH);
-        if (res is null)
+        try
         {
-            Console.WriteLine("No data saved");
+            var json = File.ReadAllText(filePath);
+            var res = JsonSerializer.Deserialize<List<GameData>>(json);
+            Data = res ?? new();
         }
-        Data = res ?? new();
+        catch (JsonException ex)
+        {
+            Console.WriteLine($"No se pudo leer el archivo de datos: {ex.Message}");
+            Data = new();
+        }
     }
 
     public static void SaveInFile()
     {
-        JsonSerializer.Serialize(Data, new JsonSerializerOptions()
+        var filePath = GetFilePath();
+        var directory = Path.GetDirectoryName(filePath);
+        if (!string.IsNullOrEmpty(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        var json = JsonSerializer.Serialize(Data ?? new(), new JsonSerializerOptions()
         {
             WriteIndented = true
         });
+
+        File.WriteAllText(filePath, json);
     }
 
     public static void SaveData(GameState state, bool forced)
     {
+        Console.WriteLine("Saving new data");
         var data = new GameData
         {
-            PlayedDecks = state.Players.Select(n => n.Deck.Id).ToList()
+            PlayedDecks = state.Players.Select(n => n.Deck!.Id).ToList()
         };
         if (state.GameActionResult.Winner is not null)
         {
-            data.WinnerDeck = state.GetState((Guid)state.GameActionResult.Winner).Deck.Id;
+            data.WinnerDeck = state.GetState((Guid)state.GameActionResult.Winner).Deck!.Id;
         }
         data.Forced = forced;
 

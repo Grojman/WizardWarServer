@@ -889,7 +889,7 @@ public static class MockData
         Name = "Maquiavelo el maquiavélico",
         Families = ["Brujo", "Maligno"],
         Description = "Cuando juegas un hechizo, consigo +1/+1",
-        BaseHealth = 0,
+        BaseHealth = 1,
         BaseAttack = 2,
         Type = CardType.Unit,
         Effects = [

@@ -1,14 +1,14 @@
 public class PlayerState : IdentificableObject
 {
-    public PlayerState PlayerTarget { get; set; }
+    public PlayerState? PlayerTarget { get; set; }
     public bool IsMyTurn { get; set; } = false;
     public List<EffectInstance> GlobalEffects { get; set; } = new();
     public List<CardInstance> PlayedCards { get; set; } = new();
-    public PlayerConnection Connection { get; set; }
+    public PlayerConnection Connection { get; set; } = null!;
     public required string Name { get; set; }
     public int Health { get; set; } = 20;
 
-    public Deck Deck { get; set; }
+    public Deck? Deck { get; set; }
 
     public List<CardInstance> Hand { get; set; } = new();
 

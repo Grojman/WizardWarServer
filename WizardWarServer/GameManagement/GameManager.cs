@@ -9,9 +9,10 @@ public class GameManager
 
     List<GameSession> games = new();
 
-    public async void AddPlayer(PlayerConnection player)
+    public Task AddPlayer(PlayerConnection player)
     {
         players.Add(player);
+        return Task.CompletedTask;
     }
 
     public async Task QueuePlayer(PlayerConnection player)
@@ -32,7 +33,7 @@ public class GameManager
         }
     }
 
-    public async void AddBotGame(PlayerConnection player)
+    public async Task AddBotGame(PlayerConnection player)
     {
         var botList = new List<PlayerConnection>
         {
@@ -43,20 +44,19 @@ public class GameManager
             botList.Add(new BotConnection());
         }
 
-
         var game = new GameSession(botList, this, true);
 
         games.Add(game);
-        
+
         await game.Start();
     }
 
-    public async void RemovePlayer(PlayerConnection player)
+    public async Task RemovePlayer(PlayerConnection player)
     {
         if (players.Contains(player)) players.Remove(player);
         queue.Remove(player);
 
-        if(player.Game is not null) await player.Game.RemovePlayer(player);        
+        if (player.Game is not null) await player.Game.RemovePlayer(player);
     }
     public async Task UnqueuePlayer(PlayerConnection player)
     {
@@ -93,14 +93,14 @@ public class GameManager
                         break;
                     case UserAction.StartBotGameAction c:
                         player.SelectedDeckId = c.DeckId;
-                        AddBotGame(player);
+                        await AddBotGame(player);
                         break;
                     case UserAction.JoinQueueAction b:
                         player.SelectedDeckId = b.DeckId;
-                        QueuePlayer(player);
+                        await QueuePlayer(player);
                         break;
                     case UserAction.LeaveQueueAction:
-                        UnqueuePlayer(player);
+                        await UnqueuePlayer(player);
                         break;
                     case UserAction.GetDecksAction:
                         await player.Send("get_decks", CardManager.Decks);
@@ -126,10 +126,10 @@ public class GameManager
         }
     }
 
-    public async void RemoveGameSession(GameSession session, IEnumerable<PlayerConnection> connections)
+    public void RemoveGameSession(GameSession session, IEnumerable<PlayerConnection> connections)
     {
         games.Remove(session);
-        foreach(var c in connections) c.Game = null;
+        foreach (var c in connections) c.Game = null;
     }
 
     public void PrintPlayers()

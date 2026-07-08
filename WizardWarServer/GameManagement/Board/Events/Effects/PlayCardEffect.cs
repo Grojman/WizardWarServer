@@ -17,7 +17,7 @@ public class PlayCardEffect : IEffect
 
         if(FromDeck)
         {
-            card = cardId.Player.Deck.Draw(new(){DefinitionId = CardId});
+            card = cardId.Player.Deck?.Draw(new(){DefinitionId = CardId});
         } else
         {
             card = new (CardManager.GetCardById(CardId), cardId.Player);

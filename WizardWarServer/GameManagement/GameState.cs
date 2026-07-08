@@ -7,7 +7,7 @@ public class GameState
     const int INITIAL_HAND = 3;
     const int MAX_HAND = 10;
     public GameActionResult GameActionResult { get; set; }
-    public List<PlayerState> Players { get; set; }
+    public List<PlayerState> Players { get; set; } = new();
     List<PlayerState> DeadPlayers { get; set; } = new();
     List<PlayerState> AlivePlayers { get; set; } = new();
 
@@ -71,7 +71,7 @@ public class GameState
             Card = cardToAdd
         };
 
-        target.Deck.AddCard(cardToAdd);
+        target.Deck!.AddCard(cardToAdd);
 
         GameActionResult.AddEvent(gevent);
 
@@ -106,9 +106,10 @@ public class GameState
     {
         var state = GetState(player.Guid);
 
-        if (cardIndex != -1 && cardIndex >= state.Board.Length + 1)
+        if (cardIndex != -1 && (cardIndex < 0 || cardIndex > state.Board.Length))
         {
             Console.WriteLine("WTF. Index is not valid for an effect to play");
+            return;
         }  else
         {
             var card = cardIndex == state.Board.Length ? state.LastSpellPlayed : state.Board[cardIndex];
@@ -117,15 +118,16 @@ public class GameState
             {
                 return;
             }
-            
-            foreach(var e in card?.SpecialEffects ?? []) e.Execute(state.Id, state.PlayerTarget.Id, card, this, null);
 
-            card!.MaxSpecialEffectTimes--;
+            var activeCard = card;
+            foreach(var e in activeCard.SpecialEffects ?? []) e.Execute(state.Id, state.PlayerTarget!.Id, activeCard, this, null);
+
+            activeCard.MaxSpecialEffectTimes--;
 
             var gevent  = new GameEvent.CardEventPlayed()
             {
-                Source = card,
-                Card = card,
+                Source = activeCard,
+                Card = activeCard,
                 PlayerSource = state,
             };
 
@@ -140,7 +142,7 @@ public class GameState
 
         var newTarget = Players.First(n => n.Id == target);
 
-        if (state.PlayerTarget.Id != target)
+        if (state.PlayerTarget!.Id != target)
         {
             state.PlayerTarget = newTarget;
 
@@ -279,7 +281,7 @@ public class GameState
 
         if (player.Hand.Count >= MAX_HAND) return;
 
-        var card = filter is null ? player.Deck.Draw() : player.Deck.Draw(filter);
+        var card = filter is null ? player.Deck!.Draw() : player.Deck!.Draw(filter);
 
         if(card is null && player.Deck.Count == 0)
         {
@@ -328,14 +330,20 @@ public class GameState
     public void PlayCard(PlayerConnection p, int handIndex, int boardIndex)
     {
         var player = GetState(p.Guid);
-        if (player.Hand.Count <= handIndex)
+        if (handIndex < 0 || handIndex >= player.Hand.Count)
         {
             Console.WriteLine($"WTF: Hand size smaller than index");
-        } else
-        {
-            var card = player.GetFromHand(handIndex);
-            PlayCard(player, card, boardIndex);
+            return;
         }
+
+        if (boardIndex != -1 && (boardIndex < 0 || boardIndex >= player.Board.Length))
+        {
+            Console.WriteLine($"WTF: Board index is out of range");
+            return;
+        }
+
+        var card = player.GetFromHand(handIndex);
+        PlayCard(player, card, boardIndex);
     }
 
     public void Attack(
@@ -347,6 +355,13 @@ public class GameState
     {
         var player = GetState(p.Guid);
         var targetedPlayer = GetState(targetedPlayerId);
+
+        if (attacker < 0 || attacker >= player.Board.Length)
+        {
+            Console.WriteLine($"WTF. Attacking with invalid board index");
+            return;
+        }
+
         var card = player.Board[attacker];
         if (card is null)
         {
@@ -374,6 +389,12 @@ public class GameState
 
                     break;
                 case TargetType.BOARD:
+                    if (target < 0 || target >= targetedPlayer.Board.Length)
+                    {
+                        Console.WriteLine($"WTF. Attacking a card that doesnt exists on rival board");
+                        return;
+                    }
+
                     var cardTarget = targetedPlayer.Board[target];
                     gevent.Deffender = cardTarget;
                     GameActionResult.AddEvent(gevent);

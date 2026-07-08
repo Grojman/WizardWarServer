@@ -2,7 +2,7 @@ public record CardDto(string id, string name, string description, List<string> f
 {
     public static CardDto Generate(CardInstance card, GameState state, bool dontCheck)
     {
-        return new CardDto(card.Id.ToString(), card.Definition.Name, card.Definition.Description, card.CurrentFamilies, card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), string.IsNullOrWhiteSpace(card.Definition.imageUrl) ? $"{card.Definition.Id}.png" : card.Definition.imageUrl, dontCheck || (card.CanPlay?.Check(card.Player.Id, card.Player.PlayerTarget.Id, card, state, null) ?? true), card.SpecialEffects is not null && card.SpecialEffects.Count >0 , card.MaxSpecialEffectTimes);
+        return new CardDto(card.Id.ToString(), card.Definition.Name, card.Definition.Description, card.CurrentFamilies, card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), string.IsNullOrWhiteSpace(card.Definition.imageUrl) ? $"{card.Definition.Id}.png" : card.Definition.imageUrl, dontCheck || (card.CanPlay?.Check(card.Player.Id, card.Player.PlayerTarget!.Id, card, state, null) ?? true), card.SpecialEffects is not null && card.SpecialEffects.Count > 0, card.MaxSpecialEffectTimes);
     }
 
     public static CardDto Generate(CardDefinition card)

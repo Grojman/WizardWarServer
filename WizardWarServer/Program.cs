@@ -42,7 +42,7 @@ internal class Program
 
                 var player = new PlayerConnection(socket);
 
-                gameManager.AddPlayer(player);
+                await gameManager.AddPlayer(player);
 
                 Console.WriteLine($"Current connections: {gameManager.PlayerCount}");
 
@@ -91,7 +91,7 @@ internal class Program
                 Console.WriteLine($"Socket session has ended because of an exception: {e}");
             }
 
-            manager.RemovePlayer(player);
+            await manager.RemovePlayer(player);
         }
 
         while(true)

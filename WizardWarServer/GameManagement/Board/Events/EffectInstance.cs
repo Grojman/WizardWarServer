@@ -13,17 +13,17 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
     }
 
     public TriggerType Trigger { get; set; }
-    public List<IEffect> Effects { get; set; }
+    public List<IEffect> Effects { get; set; } = new();
 
-    public EffectDuration Duration { get; set; }
+    public EffectDuration Duration { get; set; } = new Always();
     public EffectCondition? Condition { get; set; } = null;
 
-    public CardInstance SourceCard { get; set; }
+    public CardInstance SourceCard { get; set; } = null!;
 
-    public PlayerState Player { get; set; }
+    public PlayerState Player { get; set; } = null!;
     public bool Expired { get => Duration.IsExpired(); }
 
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
     public EffectInstance Clone()
     {
@@ -46,13 +46,13 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         if (Expired && checkExpiration)
             return;
 
-        if (!(Condition?.Check(Player.Id, Player.PlayerTarget.Id, SourceCard, state, ev) ?? true))
+        if (!(Condition?.Check(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev) ?? true))
             return;
 
         if (ev is not null && ev.Source.Id == Id)
             return;
 
-        Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget.Id, SourceCard, state, ev));
+        Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
 
         Duration.NotifyExecution();
     }
@@ -63,7 +63,7 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         bool notifyExec
     )
     {
-        Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget.Id, SourceCard, state, ev));
+        Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
 
         if (notifyExec) Duration.NotifyExecution();
     }
