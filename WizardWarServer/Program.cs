@@ -26,11 +26,6 @@ internal class Program
 
         CardManager.Initialize();
 
-        app.Map("/", async context =>
-        {
-           context.Response.StatusCode = 200;
-        });
-
         app.Map("/ws", async context =>
         {
             Console.WriteLine($"Connection found");
