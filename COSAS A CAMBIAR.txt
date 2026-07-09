@@ -1,3 +1,11 @@
+===================================================================================================
+					COSAS TERMINADAS
+===================================================================================================
+- HACER QUE CUANDO ENTRES AL CHAT SE SCROLEE AUTOMÁTICAMENTE
+
+===================================================================================================
+					COSAS QUE FALTAN POR HACER
+===================================================================================================
 - ante cualquier fallo que haga que se corte el juego, enviar un mensaje al cliente para indicarlo y que le redirija al home o algo o al error yo q se
 - Intenta robar carta cuando no hay cartas en mazo peta el juego wtf bro holy shit
 - SUBIRLE MUCHO LA VIDA AL EX MACHINA	
@@ -28,7 +36,7 @@
 - HACER QUE LA JARRA TENGA VINO
 - BAJARLE LA VIDA AL ESPÍRITU DE FUEGO
 - IMPLEMENTAR NOTIFICACION EN EL CHAT
-- HACER QUE CUANDO ENTRES AL CHAT SE SCROLEE AUTOMÁTICAMENTE
+
 - HACER UQE EL EFECTO DE INSTRUCTOR DE LAS LLAMAS VAYA AL MAZO DEL MAGO CACHAS, Y REEMPLAZAR POR "CUANDO MUERO, ROBO UNA CARTA"
 - CAMBIAR EL ESTILO DEL RESTO DE LA PÁGINA PARA QUE SEA ROLLO TABERNA.
 - CAMBIAR EL ESTILO DE LOS EFECTOS GLOBALES PARA QUE ENCAJEN MÁS CON LA PÁGINA.
