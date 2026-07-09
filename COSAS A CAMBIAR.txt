@@ -13,6 +13,9 @@
 ===================================================================================================
 					COSAS QUE FALTAN POR HACER
 ===================================================================================================
+- Hay cartas que los hr sus grosores son diferentes
+- La carta que a menos de 10 de vida robas en el mago cachas cura en caso contrario
+- David Goggins cambiar a IAttacked
 - ante cualquier fallo que haga que se corte el juego, enviar un mensaje al cliente para indicarlo y que le redirija al home o algo o al error yo q se
 - Intenta robar carta cuando no hay cartas en mazo peta el juego wtf bro holy shit
 - SUBIRLE MUCHO LA VIDA AL EX MACHINA	
