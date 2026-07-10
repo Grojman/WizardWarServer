@@ -31,7 +31,7 @@ public static class MockData
     {
         Id = "2",
         Name = "Rata",
-        Description = "HABILIDAD: Inflinge uno de daño a su propio jugador",
+        Description = "{skill:HABILIDAD}: Inflinge uno de daño a su propio {player:jugador}",
         BaseAttack = 1,
         BaseHealth = 1,
         Families = ["Rata"],
@@ -43,7 +43,7 @@ public static class MockData
     {
         Id = "3",
         Name = "Familia de ratas",
-        Description = "Cuando muero, añado dos ratas al mazo del rival.",
+        Description = "Cuando {die:muero}, {add:añado} dos {family:ratas} al mazo del {rival:rival}.",
         BaseAttack = 2,
         BaseHealth = 1,
         Families = ["Rata"],
@@ -62,7 +62,7 @@ public static class MockData
     {
         Id = "4",
         Name = "Flautista de Hamelin",
-        Description = "Cuando se juega una rata en la mesa rival, consigo +1/+1",
+        Description = "Cuando se {play:juega} una {family:rata} en la mesa {rival:rival}, consigo +1/+1",
         BaseAttack = 2,
         BaseHealth = 4,
         Effects =
@@ -907,7 +907,7 @@ public static class MockData
     {
         Id = "40",
         Name = "GymRat",
-        Families = ["Gym"],
+        Families = ["Gym", "Rata"],
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 2,
