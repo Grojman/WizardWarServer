@@ -1011,10 +1011,10 @@ public static class MockData
     new()
     {
         Id = "47",
-        Name = "Señor chino viejo motivado",
+        Name = "Gran sabio",
         Description = "Cuando recibo daño, consigo +1/+1",
         Type = CardType.Unit,
-        Families = ["Oriental", "Motivacion"],
+        Families = ["Motivacion"],
         BaseAttack = 0,
         BaseHealth = 2, 
         Effects = [
