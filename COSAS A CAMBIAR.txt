@@ -19,15 +19,23 @@
 - HACER QUE SE VEAN LOS TURNOS
 	- HACER TAMBIÉN QUE SE VEA CUÁNDO SE VA A ROBAR CARTA 
 - ALGO LE PASA AL HONROSO CABALLERO, aplica el efecto cuando ataque en lugar de cuando muere
+- hotkey flecha derecha izquierda la rotación si hay más de dos jugadores.
+- Enseñar en los mazos cuantas cartas hay de cada tipo.
+- Hay cartas que los hr sus grosores son diferentes
+- David Goggins cambiar a IAttacked
+- TOPE A LOS NOMBRES.
+- EL ELECTRICISTA NO ES SEGURIDAD, SINO PILLA MUCHA VIDA
 
 
 ===================================================================================================
 					COSAS QUE FALTAN POR HACER
 ===================================================================================================
-- Enseñar en los mazos cuantas cartas hay de cada tipo
-- Hay cartas que los hr sus grosores son diferentes
+- Cuando hay más de 2 jugadores y uno muere, los turnos se van a la mierda
+- Efecto visual para cuando te pegan.
+- Sonidito de campana cuando es tu turno.
+
 - La carta que a menos de 10 de vida robas en el mago cachas cura en caso contrario
-- David Goggins cambiar a IAttacked
+
 - ante cualquier fallo que haga que se corte el juego, enviar un mensaje al cliente para indicarlo y que le redirija al home o algo o al error yo q se
 - Intenta robar carta cuando no hay cartas en mazo peta el juego wtf bro holy shit
 - SUBIRLE MUCHO LA VIDA AL EX MACHINA	
@@ -39,7 +47,7 @@
 - HACER EN EL MAZO DE DON QUIJOTE UNA CARTA QUE CUANDO JUEGUES UN LIBRO DE CABALLERÍA TE AÑADA UN TURNO
 - HACER UQE ALGUNOS DE LOS EFECTOS DE RESTAR DAÑO SE PROPAGUEN, ES DECIR QUE SI EL PRIMERO YA ESTÁ A CERO RESTE DAÑO DEL SIGUIENTE
 
-- TOPE A LOS NOMBRES.
+
 - SECCIÓN DE VER ESTADÍSTICAS.
 - HACER LO DE LETS ENCRYPT PORQUE NO FUNCIONA TODAVÍA
 - F11 ARREGLAR
@@ -80,7 +88,7 @@
 - EL TECNOMAGO TIENE DEMASIADAS DEFENSAS
 - PONER CONTADOR DE CARTAS EN MANO (7/10 CARTAS EJ)
 - CAMBIAR MIND MASTER
-- EL ELECTRICISTA NO ES SEGURIDAD, SINO PILLA MUCHA VIDA
+
 
 - METER MÁS COSAS DE ROBAR CARTAS ESPECÍFICAS EN TECNOMAGO
 - DISTINGUIR TODAVÍA MÁS A LOS HECHIZOS

@@ -9,7 +9,7 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // builder.WebHost.UseUrls("http://10.158.7.72:5182");
-        builder.WebHost.UseUrls($"https://localhost:5182");
+        builder.WebHost.UseUrls($"https://192.168.1.123:443");
         var app = builder.Build();
 
         app.UseWebSockets();
@@ -50,7 +50,7 @@ internal class Program
             }
         });
 
-        app.MapFallbackToFile("index.html");
+        // app.MapFallbackToFile("index.html");
 
         new Thread(app.Run).Start();
 

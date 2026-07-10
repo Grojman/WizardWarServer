@@ -3,6 +3,7 @@ using System.Text.Json;
 public class GameManager
 {
     public int PlayerCount { get => players.Count; }
+    public const int MAX_LENGHT_PLAYER_NAME = 40;
     List<PlayerConnection> players = new();
     Dictionary<int, List<PlayerConnection>> queue = new();
 
@@ -96,6 +97,10 @@ public class GameManager
                 switch(action)
                 {
                     case UserAction.ChangeNameAction a:
+                        if (a.NewName.Length > MAX_LENGHT_PLAYER_NAME)
+                        {
+                            a.NewName = a.NewName.Substring(0, MAX_LENGHT_PLAYER_NAME);
+                        }
                         player.Name = a.NewName;
                         break;
                     case UserAction.StartBotGameAction c:

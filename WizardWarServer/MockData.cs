@@ -15,7 +15,7 @@ public static class MockData
         Id = "1",
         Name = "Truco Ratero",
         Type = CardType.Spell,
-        Description = "Roba tres cartas",
+        Description = "{draw:Roba} tres cartas",
         Effects =
         [
             new EffectInstance(
@@ -31,7 +31,7 @@ public static class MockData
     {
         Id = "2",
         Name = "Rata",
-        Description = "{skill:HABILIDAD}: Inflinge uno de daño a su propio {player:jugador}",
+        Description = "{skill:HABILIDAD}: -1 a su propio {player:jugador}",
         BaseAttack = 1,
         BaseHealth = 1,
         Families = ["Rata"],
@@ -43,7 +43,7 @@ public static class MockData
     {
         Id = "3",
         Name = "Familia de ratas",
-        Description = "Cuando {die:muero}, {add:añado} dos {family:ratas} al mazo del {rival:rival}.",
+        Description = "Cuando {die:muero}, {add:añado} dos {family:ratas} al {deck:mazo} del {rival:rival}.",
         BaseAttack = 2,
         BaseHealth = 1,
         Families = ["Rata"],
@@ -62,7 +62,7 @@ public static class MockData
     {
         Id = "4",
         Name = "Flautista de Hamelin",
-        Description = "Cuando se {play:juega} una {family:rata} en la mesa {rival:rival}, consigo +1/+1",
+        Description = "Cuando se {play:juega} una {family:rata} en la {board:mesa} {rival:rival}, {add:consigo} +1/+1",
         BaseAttack = 2,
         BaseHealth = 4,
         Effects =
@@ -82,7 +82,7 @@ public static class MockData
     {
         Id = "5",
         Name = "Mind Máster",
-        Description = "HABILIDAD: Activa todas las habilidades de la mesa enemiga",
+        Description = "{skill:HABILIDAD}: Activa todas las {skill:habilidades} de la {board:mesa} {rival:rival}",
         BaseAttack = 1,
         BaseHealth = 1,
         Type = CardType.Unit,
@@ -100,7 +100,7 @@ public static class MockData
         Id = "6",
         Name = "Flow rata",
         Type = CardType.Spell,
-        Description = "Curo al jugador uno por cada rata que tenga el rival en el mazo.",
+        Description = "Curo al {player:jugador} uno por cada {family:rata} que tenga el {rival:rival} en el {deck:mazo}.",
         Effects =
         [
             new EffectInstance(
@@ -128,7 +128,7 @@ public static class MockData
         Id = "7",
         Name = "Queso",
         Type = CardType.Spell,
-        Description = "Curo 3 de vida al usuario",
+        Description = "Curo 3 de vida al {player:jugador}",
         Effects =
         [
             new EffectInstance(
@@ -144,7 +144,7 @@ public static class MockData
     {
         Id = "8",
         Name = "Madriguera de ratas",
-        Description = "Fin de ronda: me inflinjo 2 de daño y añado 1 rata al mazo rival",
+        Description = "{endround:Fin de ronda}: me inflinjo 2 de daño y añado 1 {family:rata} al {deck:mazo} {rival:rival}",
         BaseAttack = 0,
         BaseHealth = 6,
         Families = ["Rata"],
@@ -170,7 +170,7 @@ public static class MockData
         Id = "9",
         Name = "Matarratas defectuoso",
         Type = CardType.Spell,
-        Description = "+1/+1 a todas tus ratas de la mesa y el mazo",
+        Description = "+1/+1 a todas tus {family:ratas} de la {board:mesa} y el {deck:mazo}",
         Effects =
         [
             new EffectInstance(
@@ -196,7 +196,7 @@ public static class MockData
     {
         Id = "10",
         Name = "Primo de Remi",
-        Description = "Cuando soy jugado, planto 3 Quesos en el mazo de mi jugador",
+        Description = "Cuando soy {play:jugado}, planto 3 Quesos en el {deck:mazo} de mi {player:jugador}",
         BaseAttack = 2,
         BaseHealth = 3,
         Families = ["Rata"],
@@ -216,7 +216,7 @@ public static class MockData
         Id = "11",
         Name = "El poder de los sumideros",
         Type = CardType.Spell,
-        Description = "Has tenido que jugar al menos 3 ratas. A partir de ahora, las cartas Rata que juegues ganan +1/+1",
+        Description = "Has tenido que {play:jugar} al menos 3 {family:ratas}. A partir de ahora, las cartas {family:Rata} que {play:juegues} {add:ganan} +1/+1",
         Effects =
         [
             new EffectInstance(
@@ -249,7 +249,7 @@ public static class MockData
         Id = "12",
         Name = "Arañazos",
         Type = CardType.Spell,
-        Description = "0/-1 a la mesa enemiga ahora y al final de este turno",
+        Description = "0/-1 a la {deck:mesa} {enemy:enemiga} ahora y al final de este turno",
         Families = ["Rata"],
         Effects =
         [
@@ -290,7 +290,7 @@ public static class MockData
         Id = "13",
         Name = "Mordedura de rata",
         Type = CardType.Spell,
-        Description = "0/-3 a un enemigo en la mesa (izq). HABILIDAD: Roba una carta",
+        Description = "0/-3 a un {enemy:enemigo} en la {board:mesa}, el primero a la izquierda. {skill:HABILIDAD}: {draw:Roba} una carta",
         Families = ["Rata"],
         Effects =
         [
@@ -318,7 +318,7 @@ public static class MockData
         Name = "Exterminador de plagas",
         BaseAttack = 1,
         BaseHealth = 2,
-        Description = "Cuando el jugador rival roba una carta, y es una rata, le inflinjo 1 de daño",
+        Description = "Cuando el {rival:rival} {draw:roba} una carta, y es una {family:rata}, le inflinjo 1 de daño",
         Type = CardType.Unit,
         Effects = [
             new(
@@ -336,7 +336,7 @@ public static class MockData
         Id = "14",
         Name = "Libro de Caballería",
         Type = CardType.Spell,
-        Description = "Roba una carta y cura 2 de vida al jugador",
+        Description = "{draw:Roba} una carta y cura 2 de vida al {player:jugador}",
         Families = ["Libro"],
         Effects =
         [
@@ -354,7 +354,7 @@ public static class MockData
         Id = "13_2",
         Name = "Rey rata",
         Type = CardType.Unit,
-        Description = "Has jugado 6 ratas o más. Cuando golpeo, añado una rata al mazo rival. Cuando juegas un queso, consigo +1/+1",
+        Description = "Has {play:jugado} 6 {family:ratas} o más. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando {play:juegas} un queso, consigo +1/+1",
         Families = ["Rata"],
         BaseAttack = 3,
         BaseHealth = 3,
@@ -1003,7 +1003,7 @@ public static class MockData
         Type = CardType.Unit,
         Description = "Después de golpear, consigo +1/+1",
         Effects = [
-            new (TriggerType.CardAttacked, [new AlterMySelf(1, 1, false)], new Always(), new IHaveBeenPlayedCondition())
+            new (TriggerType.CardAttacked, [new AlterMySelf(1, 1, false)], new Always(), new IAttackedCondition())
         ],
         BaseAttack = 2,
         BaseHealth = 1
@@ -1706,7 +1706,6 @@ new()
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 4,
-    Families = ["Seguridad"],
     Effects = [
         new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]

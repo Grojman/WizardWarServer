@@ -8,7 +8,7 @@ public class GameState
     List<PlayerState> DeadPlayers { get; set; } = new();
     List<PlayerState> AlivePlayers { get; set; } = new();
 
-    public int CurrentPlayerIndex { get; set; } = 0;
+    public PlayerState CurrentPlayer { get; private set; }
 
     public int TurnCounter { get; set; } = 1;
 
@@ -51,6 +51,7 @@ public class GameState
         Players = players;
         AlivePlayers = [.. Players];
         Players.ElementAt(0).IsMyTurn = true;
+        CurrentPlayer = Players[0];
 
         for (int i = 0; i < INITIAL_HAND; i++)
         {
@@ -205,12 +206,16 @@ public class GameState
 
     void NextTurn()
     {
-        //Limpiar en jugadores por si se ha muerto al que le tocaba turno
-        Players.ElementAt(CurrentPlayerIndex).IsMyTurn = false;
-        CurrentPlayerIndex = CurrentPlayerIndex >= AlivePlayers.Count() - 1 ? 0 : CurrentPlayerIndex + 1;
-        AlivePlayers.ElementAt(CurrentPlayerIndex).IsMyTurn = true;
+        var idx = AlivePlayers.IndexOf(CurrentPlayer);
 
-        if (CurrentPlayerIndex == 0)
+        CurrentPlayer.IsMyTurn = false;
+
+        idx = (idx + 1) % AlivePlayers.Count;
+
+        CurrentPlayer = AlivePlayers[idx];
+        CurrentPlayer.IsMyTurn = true;
+
+        if (idx == 0)
         {
             ApplyEffect(TriggerType.TurnEnd, null);
 
@@ -231,7 +236,7 @@ public class GameState
 
     public void KillPlayer(PlayerState state, bool forceChangeTurn = false)
     {
-        //¿Qué pasa si se elimina el jugador justo cuando es su turno?
+        state.IsMyTurn = false;
         DeadPlayers.Add(state);
         AlivePlayers.Remove(state);
 
