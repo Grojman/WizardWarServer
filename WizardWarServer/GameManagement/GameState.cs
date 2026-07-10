@@ -1,6 +1,3 @@
-// TODO: AHORA QUE SE TIENE EN CUENTA QUE PUEDEN HABER MÁS DE UN JUGADOR, TIENE QUE HABER UNA MANERA PARA LOS HECHIZOS DE TENER UN TARGET O ALGO POR EL ESTILO
-// IDEA: EN EL CLIENTE CONSTANTEMENTE HAY UNA FLECHITA APUNTANDO A TU TARGET, LA CUAL PUEDES CAMBIAR SI QUIERES ANTES DE HACER CUALQUIER JUGADA
-
 
 public class GameState
 {
@@ -13,7 +10,7 @@ public class GameState
 
     public int CurrentPlayerIndex { get; set; } = 0;
 
-    public int TurnCounter { get; set; }
+    public int TurnCounter { get; set; } = 1;
 
     public GameState()
     {

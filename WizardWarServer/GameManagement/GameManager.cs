@@ -2,10 +2,9 @@ using System.Text.Json;
 
 public class GameManager
 {
-    public const int NUMBER_OF_PLAYERS = 2;
     public int PlayerCount { get => players.Count; }
     List<PlayerConnection> players = new();
-    List<PlayerConnection> queue = new();
+    Dictionary<int, List<PlayerConnection>> queue = new();
 
     List<GameSession> games = new();
 
@@ -15,22 +14,29 @@ public class GameManager
         return Task.CompletedTask;
     }
 
-    public async Task QueuePlayer(PlayerConnection player)
+    async Task CheckQueue(int n, List<PlayerConnection> players)
     {
-        queue.Add(player);
-
-        if (queue.Count >= NUMBER_OF_PLAYERS)
+        if (players.Count >= n)
         {
-            var players = queue.GetRange(0, NUMBER_OF_PLAYERS);
+            var playersList = players.GetRange(0, n);
 
-            queue.RemoveRange(0, NUMBER_OF_PLAYERS);
+            players.RemoveRange(0, n);
 
-            var game = new GameSession(players, this);
+            var game = new GameSession(playersList, this);
 
             games.Add(game);
 
             await game.Start();
         }
+    }
+
+    public async Task QueuePlayer(PlayerConnection player)
+    {
+        if (!queue.ContainsKey(player.NumberOfPlayersInGame)) queue[player.NumberOfPlayersInGame] = new();
+
+        queue[player.NumberOfPlayersInGame].Add(player);
+
+        await CheckQueue(player.NumberOfPlayersInGame, queue[player.NumberOfPlayersInGame]);
     }
 
     public async Task AddBotGame(PlayerConnection player)
@@ -39,7 +45,7 @@ public class GameManager
         {
             player
         };
-        for (int i = 0; i < NUMBER_OF_PLAYERS - 1; i++)
+        for (int i = 0; i < player.NumberOfPlayersInGame - 1; i++)
         {
             botList.Add(new BotConnection());
         }
@@ -53,14 +59,15 @@ public class GameManager
 
     public async Task RemovePlayer(PlayerConnection player)
     {
-        if (players.Contains(player)) players.Remove(player);
-        queue.Remove(player);
+        players.Remove(player);
+
+        if(queue.TryGetValue(player.NumberOfPlayersInGame, out List<PlayerConnection>? value)) value.Remove(player);
 
         if (player.Game is not null) await player.Game.RemovePlayer(player);
     }
     public async Task UnqueuePlayer(PlayerConnection player)
     {
-        queue.Remove(player);
+        queue[player.NumberOfPlayersInGame].Remove(player);
 
         if (player.Game != null)
         {
@@ -93,10 +100,12 @@ public class GameManager
                         break;
                     case UserAction.StartBotGameAction c:
                         player.SelectedDeckId = c.DeckId;
+                        player.NumberOfPlayersInGame = c.NumberOfPlayers;
                         await AddBotGame(player);
                         break;
                     case UserAction.JoinQueueAction b:
                         player.SelectedDeckId = b.DeckId;
+                        player.NumberOfPlayersInGame = b.NumberOfPlayers;
                         await QueuePlayer(player);
                         break;
                     case UserAction.LeaveQueueAction:

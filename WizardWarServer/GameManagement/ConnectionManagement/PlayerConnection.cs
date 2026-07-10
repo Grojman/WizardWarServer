@@ -10,6 +10,8 @@ public class PlayerConnection
 
     public GameSession? Game { get; set; }
 
+    public int NumberOfPlayersInGame { get; set; } = -1;
+
     public PlayerConnection(WebSocket socket)
     {
         Socket = socket;
