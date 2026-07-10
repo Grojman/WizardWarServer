@@ -17,11 +17,15 @@ public interface UserAction
     public class JoinQueueAction : UserAction
     {
         public required int DeckId { get; set; }
+
+        public required int NumberOfPlayers { get; set; }
     }
 
     public class StartBotGameAction : UserAction
     {
         public required int DeckId { get; set; }
+
+        public required int NumberOfPlayers { get; set; }
     }
     
     public class LeaveQueueAction : UserAction {}
