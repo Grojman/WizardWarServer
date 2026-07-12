@@ -1,8 +1,8 @@
 
 public class GameState
 {
-    const int INITIAL_HAND = 3;
-    const int MAX_HAND = 10;
+    public const int INITIAL_HAND = 3;
+    public const int MAX_HAND = 10;
     public GameActionResult GameActionResult { get; set; }
     public List<PlayerState> Players { get; set; } = new();
     List<PlayerState> DeadPlayers { get; set; } = new();

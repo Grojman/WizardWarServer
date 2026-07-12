@@ -7,6 +7,7 @@ public class GameFilter
     public PlayerType WhichDeckToSearch { get; set; } = PlayerType.NONE;
     public PlayerType WhichBoardToSearch { get; set; } = PlayerType.NONE;
     public PlayerType WhichHandToSearch { get; set; } = PlayerType.NONE;
+    public PlayerType WhichPlayedCardsToSearch { get; set; } = PlayerType.NONE;
     public int MaxLength { get; set; } = 0;
 
 
@@ -65,11 +66,27 @@ public class GameFilter
         return cards;
     }
 
+    public IEnumerable<CardInstance> GetPlayedCards(GameState state, Guid playerId, Guid rivalId)
+    {
+        IEnumerable<CardInstance> cards = new List<CardInstance>();
+        if (WhichPlayedCardsToSearch is PlayerType.PLAYER or PlayerType.BOTH)
+        {
+            cards = cards.Concat(state.GetState(playerId).PlayedCards.Where(Filter.Check));
+        }
+        if (WhichPlayedCardsToSearch is PlayerType.RIVAL or PlayerType.BOTH)
+        {
+            cards = cards.Concat(state.GetState(rivalId).PlayedCards.Where(Filter.Check));
+        }
+
+        return cards;
+    }
+
     public IEnumerable<CardInstance> GetMeetingCards(GameState state, Guid playerId, Guid rivalId)
     {
         var result = GetMeetingCardsOnBoard(state, playerId, rivalId).
                         Concat(GetMeetingCardsOffBoard(state, playerId, rivalId)).
-                        Concat(GetCardsOnHand(state, playerId, rivalId));
+                        Concat(GetCardsOnHand(state, playerId, rivalId)).
+                        Concat(GetPlayedCards(state, playerId, rivalId));
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 }

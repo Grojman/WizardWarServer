@@ -9,7 +9,7 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // builder.WebHost.UseUrls("http://10.158.7.72:5182");
-        builder.WebHost.UseUrls($"https://192.168.1.123:443");
+        builder.WebHost.UseUrls($"https://localhost:443");
         var app = builder.Build();
 
         app.UseWebSockets();

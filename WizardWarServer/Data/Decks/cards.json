@@ -4,7 +4,7 @@
     "Id": "1",
     "Name": "Truco Ratero",
     "Type": 1,
-    "Description": "Roba tres cartas",
+    "Description": "{draw:Roba} tres cartas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -27,8 +27,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "21c9534c-fb44-4ef0-a709-6aeb9582b7f7"
+        "Description": "",
+        "Id": "ddfa90ec-680c-4019-811d-0aa85f066b70"
       }
     ],
     "imageUrl": "",
@@ -43,7 +43,7 @@
     "Id": "2",
     "Name": "Rata",
     "Type": 0,
-    "Description": "HABILIDAD: Inflinge uno de da\u00F1o a su propio jugador",
+    "Description": "{skill:HABILIDAD}: -1 a su propio {player:jugador}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [],
@@ -65,7 +65,7 @@
     "Id": "3",
     "Name": "Familia de ratas",
     "Type": 0,
-    "Description": "Cuando muero, a\u00F1ado dos ratas al mazo del rival.",
+    "Description": "Cuando {die:muero}, {add:a\u00F1ado} dos {family:ratas} al {deck:mazo} del {rival:rival}.",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -89,8 +89,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "a9a2c84c-1a36-45d1-a39f-c5245126d1ae"
+        "Description": "",
+        "Id": "1de200e2-cf70-4baf-9c54-b4fc1f31f3ad"
       }
     ],
     "imageUrl": "",
@@ -103,7 +103,7 @@
     "Id": "4",
     "Name": "Flautista de Hamelin",
     "Type": 0,
-    "Description": "Cuando se juega una rata en la mesa rival, consigo \u002B1/\u002B1",
+    "Description": "Cuando se {play:juega} una {family:rata} en la {board:mesa} {rival:rival}, {add:consigo} \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [
@@ -143,8 +143,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "87f6f12e-d901-4104-b1a1-4582a398441b"
+        "Description": "",
+        "Id": "98cca030-1d6d-476f-9c17-1917c1c3ee7d"
       }
     ],
     "imageUrl": "",
@@ -159,7 +159,7 @@
     "Id": "5",
     "Name": "Mind M\u00E1ster",
     "Type": 0,
-    "Description": "HABILIDAD: Activa todas las habilidades de la mesa enemiga",
+    "Description": "{skill:HABILIDAD}: Activa todas las {skill:habilidades} de la {board:mesa} {rival:rival}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -182,8 +182,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "0a6608d6-37df-4669-b834-312660ec260d"
+        "Description": "",
+        "Id": "163a0e53-a862-4618-98cc-94df85c76df6"
       }
     ],
     "imageUrl": "",
@@ -196,7 +196,7 @@
     "Id": "6",
     "Name": "Flow rata",
     "Type": 1,
-    "Description": "Curo al jugador uno por cada rata que tenga el rival en el mazo.",
+    "Description": "Curo al {player:jugador} uno por cada {family:rata} que tenga el {rival:rival} en el {deck:mazo}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -228,6 +228,7 @@
               "WhichDeckToSearch": 1,
               "WhichBoardToSearch": 3,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -242,8 +243,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "34074de0-d56d-42ea-b362-7928babf9002"
+        "Description": "",
+        "Id": "0d37c72a-4c58-4936-88ba-faf1094391ad"
       }
     ],
     "imageUrl": "",
@@ -256,7 +257,7 @@
     "Id": "7",
     "Name": "Queso",
     "Type": 1,
-    "Description": "Curo 3 de vida al usuario",
+    "Description": "Curo 3 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -279,8 +280,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "cf265442-5673-40ed-a32b-45d126112f03"
+        "Description": "",
+        "Id": "ae36a9e4-65b5-4207-b28d-0ace9a516bc2"
       }
     ],
     "imageUrl": "",
@@ -295,7 +296,7 @@
     "Id": "8",
     "Name": "Madriguera de ratas",
     "Type": 0,
-    "Description": "Fin de ronda: me inflinjo 2 de da\u00F1o y a\u00F1ado 1 rata al mazo rival",
+    "Description": "{endround:Fin de ronda}: me inflinjo 2 de da\u00F1o y a\u00F1ado 1 {family:rata} al {deck:mazo} {rival:rival}",
     "BaseAttack": 0,
     "BaseHealth": 6,
     "Effects": [
@@ -316,8 +317,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "c690aba9-6fcb-4c50-bbbf-caab4911fe76"
+        "Description": "",
+        "Id": "9bebd3d9-a546-4764-99f3-9cd1de1212c5"
       },
       {
         "Trigger": 0,
@@ -336,8 +337,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "6617be44-a100-4b56-90db-0846ba15b6dd"
+        "Description": "",
+        "Id": "61a91015-e069-4a16-b6d7-bf6b86a8a781"
       }
     ],
     "imageUrl": "",
@@ -350,7 +351,7 @@
     "Id": "9",
     "Name": "Matarratas defectuoso",
     "Type": 1,
-    "Description": "\u002B1/\u002B1 a todas tus ratas de la mesa y el mazo",
+    "Description": "\u002B1/\u002B1 a todas tus {family:ratas} de la {board:mesa} y el {deck:mazo}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -381,6 +382,7 @@
               "WhichDeckToSearch": 0,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -395,8 +397,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "c786e6ed-438c-47ed-8873-2c4326723d8a"
+        "Description": "",
+        "Id": "f16d2abd-e4f0-4ef6-85a0-fd9c6fd0b62e"
       }
     ],
     "imageUrl": "",
@@ -411,7 +413,7 @@
     "Id": "10",
     "Name": "Primo de Remi",
     "Type": 0,
-    "Description": "Cuando soy jugado, planto 3 Quesos en el mazo de mi jugador",
+    "Description": "Cuando soy {play:jugado}, planto 3 Quesos en el {deck:mazo} de mi {player:jugador}",
     "BaseAttack": 2,
     "BaseHealth": 3,
     "Effects": [
@@ -435,8 +437,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "dccec28c-41de-4a15-9d56-6b3634b354d4"
+        "Description": "",
+        "Id": "182e99e2-5bcb-4a87-84a9-64b5660ff421"
       }
     ],
     "imageUrl": "",
@@ -449,7 +451,7 @@
     "Id": "11",
     "Name": "El poder de los sumideros",
     "Type": 1,
-    "Description": "Has tenido que jugar al menos 3 ratas. A partir de ahora, las cartas Rata que juegues ganan \u002B1/\u002B1",
+    "Description": "Has tenido que {play:jugar} al menos 3 {family:ratas}. A partir de ahora, las cartas {family:Rata} que {play:juegues} {add:ganan} \u002B1/\u002B1",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -496,7 +498,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B1/\u002B1 Si la carta es una Rata",
-              "Id": "989d8c20-040b-44bd-a729-aa4b4c7c2a5b"
+              "Id": "71eac30d-ba18-4cb8-af33-4cd51b03ff4e"
             }
           }
         ],
@@ -510,8 +512,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "182173a0-b576-403a-99ee-eaef1810ac5f"
+        "Description": "",
+        "Id": "216de576-282f-48db-a628-4ff85a824a57"
       }
     ],
     "imageUrl": "",
@@ -549,7 +551,7 @@
     "Id": "12",
     "Name": "Ara\u00F1azos",
     "Type": 1,
-    "Description": "0/-1 a la mesa enemiga ahora y al final de este turno",
+    "Description": "0/-1 a la {deck:mesa} {enemy:enemiga} ahora y al final de este turno",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -578,6 +580,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -609,6 +612,7 @@
                     "WhichDeckToSearch": 3,
                     "WhichBoardToSearch": 1,
                     "WhichHandToSearch": 3,
+                    "WhichPlayedCardsToSearch": 3,
                     "MaxLength": 0
                   }
                 }
@@ -622,7 +626,7 @@
               "Player": null,
               "Expired": false,
               "Description": "0/-1 en el pr\u00F3ximo final de turno",
-              "Id": "b92fdc2d-e65a-41d3-9478-bbae691c9f87"
+              "Id": "f923f3cc-4c7c-4ad7-9c3d-8997c37568f0"
             }
           }
         ],
@@ -636,8 +640,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "0bc6c40f-323d-4ed8-9330-bef7b4b9b137"
+        "Description": "",
+        "Id": "411a21c5-2f27-42b7-a639-4ede98778329"
       }
     ],
     "imageUrl": "",
@@ -652,7 +656,7 @@
     "Id": "13",
     "Name": "Mordedura de rata",
     "Type": 1,
-    "Description": "0/-3 a un enemigo en la mesa (izq). HABILIDAD: Roba una carta",
+    "Description": "0/-3 a un {enemy:enemigo} en la {board:mesa}, el primero a la izquierda. {skill:HABILIDAD}: {draw:Roba} una carta",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -681,6 +685,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -695,8 +700,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "615293b1-9041-4b1f-8b87-6c5470101b1d"
+        "Description": "",
+        "Id": "4bae5089-9229-4323-83ab-2ced172ee341"
       }
     ],
     "imageUrl": "",
@@ -715,7 +720,7 @@
     "Id": "13_1",
     "Name": "Exterminador de plagas",
     "Type": 0,
-    "Description": "Cuando el jugador rival roba una carta, y es una rata, le inflinjo 1 de da\u00F1o",
+    "Description": "Cuando el {rival:rival} {draw:roba} una carta, y es una {family:rata}, le inflinjo 1 de da\u00F1o",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -754,52 +759,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "b39a20e5-7801-4d17-84ae-55e431c65913"
-      }
-    ],
-    "imageUrl": "",
-    "ConditionToPlay": null,
-    "PlayEffects": null,
-    "PlayEffectTriggerTimes": 0
-  },
-  {
-    "Families": [
-      "Libro"
-    ],
-    "Id": "14",
-    "Name": "Libro de Caballer\u00EDa",
-    "Type": 1,
-    "Description": "Roba una carta y cura 2 de vida al jugador",
-    "BaseAttack": 0,
-    "BaseHealth": 0,
-    "Effects": [
-      {
-        "Trigger": 6,
-        "Effects": [
-          {
-            "$type": "DrawCardEffect",
-            "CardAmount": 1,
-            "Filter": null
-          },
-          {
-            "$type": "AlterPlayerHealthEffect",
-            "Amount": 2,
-            "ToRival": false
-          }
-        ],
-        "Duration": {
-          "$type": "DurationByExecutions",
-          "times": 1
-        },
-        "Condition": {
-          "$type": "IHaveBeenPlayedCondition"
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": null,
-        "Id": "fe95952e-64ec-473c-bd9c-25b87e8b2d4b"
+        "Description": "",
+        "Id": "020d44e0-d46d-4e0e-a22d-5ea1c7baf931"
       }
     ],
     "imageUrl": "",
@@ -814,7 +775,7 @@
     "Id": "13_2",
     "Name": "Rey rata",
     "Type": 0,
-    "Description": "Has jugado 6 ratas o m\u00E1s. Cuando golpeo, a\u00F1ado una rata al mazo rival. Cuando juegas un queso, consigo \u002B1/\u002B1",
+    "Description": "Has {play:jugado} 6 {family:ratas} o m\u00E1s. Cuando {attack:golpeo}, {add:a\u00F1ado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando {play:juegas} un queso, consigo \u002B1/\u002B1",
     "BaseAttack": 3,
     "BaseHealth": 3,
     "Effects": [
@@ -852,8 +813,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "452c8029-1b1a-499d-b08f-3250c482be01"
+        "Description": "",
+        "Id": "31880d20-ec5d-4aa0-82d2-2cc5ecc09f5d"
       },
       {
         "Trigger": 10,
@@ -874,8 +835,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "7b57469c-5d77-45c7-94fc-a032a09625b0"
+        "Description": "",
+        "Id": "d88b3ae0-4628-4b10-8faf-4e9da90bebba"
       }
     ],
     "imageUrl": "",
@@ -907,11 +868,55 @@
     "PlayEffectTriggerTimes": 0
   },
   {
+    "Families": [
+      "Libro"
+    ],
+    "Id": "14",
+    "Name": "Libro de Caballer\u00EDa",
+    "Type": 1,
+    "Description": "{draw:Roba} una carta y cura 2 de vida al {player:jugador}",
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          },
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 2,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "1010cf7e-9e09-400a-aeb3-7e83b5bb0cb6"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
     "Families": [],
     "Id": "15",
     "Name": "La venta",
     "Type": 0,
-    "Description": "Cuando se juega una unidad, se le otorga \u002B2/-1",
+    "Description": "Cuando se {play:juega} una unidad, se le otorga \u002B2/-1",
     "BaseAttack": 1,
     "BaseHealth": 4,
     "Effects": [
@@ -936,8 +941,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "8b46c877-61be-409b-ae10-95e82fab6193"
+        "Description": "",
+        "Id": "5d31a2fc-4bb6-467d-8887-a14afdd0c15e"
       }
     ],
     "imageUrl": "",
@@ -953,8 +958,8 @@
     "Name": "Molino de viento",
     "Type": 0,
     "Description": "",
-    "BaseAttack": 3,
-    "BaseHealth": 3,
+    "BaseAttack": 2,
+    "BaseHealth": 2,
     "Effects": [],
     "imageUrl": "",
     "ConditionToPlay": null,
@@ -969,8 +974,8 @@
     "Name": "Reba\u00F1o de corderos",
     "Type": 0,
     "Description": "",
-    "BaseAttack": 2,
-    "BaseHealth": 2,
+    "BaseAttack": 1,
+    "BaseHealth": 1,
     "Effects": [],
     "imageUrl": "",
     "ConditionToPlay": null,
@@ -985,7 +990,7 @@
     "Id": "18",
     "Name": "Dulcinea del Toboso",
     "Type": 0,
-    "Description": "Final de ronda: \u002B2/\u002B3 a Don Quijote, si se encuentra en mesa",
+    "Description": "{endround:Final de ronda}: \u002B2/\u002B3 a Don Quijote, si se encuentra en {board:mesa}",
     "BaseAttack": 3,
     "BaseHealth": 1,
     "Effects": [
@@ -1014,6 +1019,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -1025,8 +1031,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "3fb1f07c-ae6b-436d-bb7f-fadd5c177157"
+        "Description": "",
+        "Id": "d7aa1520-9b24-4783-b5f1-b41ad6dfbac1"
       }
     ],
     "imageUrl": "",
@@ -1042,7 +1048,7 @@
     "Id": "19",
     "Name": "El Ingenioso Hidalgo Don Quijote de la Mancha",
     "Type": 0,
-    "Description": "Has jugado al menos 5 libros de caballer\u00EDa o una Dulcinea del Toboso. Las Paranoias ganan \u002B4/\u002B4. Cuando se juega un libro de caballer\u00EDa, curo otros 2 de vida a mi jugador",
+    "Description": "Has {play:jugado} al menos 5 libros de caballer\u00EDa o una Dulcinea del Toboso. Las {family:Paranoias} ganan \u002B4/\u002B4. Cuando se {play:juega} un libro de caballer\u00EDa, curo otros 2 de vida a mi {player:jugador}",
     "BaseAttack": 5,
     "BaseHealth": 5,
     "Effects": [
@@ -1073,6 +1079,7 @@
               "WhichDeckToSearch": 0,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -1087,8 +1094,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "1ee75d5a-9efc-4c3c-a14a-9c40a74b7cd1"
+        "Description": "",
+        "Id": "3f772d27-c986-4026-a1c7-32a350b2580f"
       },
       {
         "Trigger": 6,
@@ -1122,8 +1129,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "be0328d9-35ee-4fbc-b447-28dbfd6b0329"
+        "Description": "",
+        "Id": "59863bb4-7adc-45ba-afc4-7c9ae7bec986"
       }
     ],
     "imageUrl": "",
@@ -1185,7 +1192,7 @@
     "Id": "20",
     "Name": "Locuras de Hidalgo",
     "Type": 1,
-    "Description": "A\u00F1ade una paranoia de cada tipo en el mazo",
+    "Description": "{add:A\u00F1ade} una {family:paranoia} de cada tipo en el {deck:mazo}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1219,8 +1226,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "e2acbeac-98b0-4596-af0c-408c9144b3d2"
+        "Description": "",
+        "Id": "846f37f6-2957-4ebc-a812-332f730654c5"
       }
     ],
     "imageUrl": "",
@@ -1235,9 +1242,9 @@
     "Id": "21",
     "Name": "Rocinante",
     "Type": 0,
-    "Description": "Si juegas a Don Quijote, consigo \u002B2/\u002B2",
-    "BaseAttack": 3,
-    "BaseHealth": 3,
+    "Description": "Si {play:juegas} a Don Quijote, consigo \u002B2/\u002B2",
+    "BaseAttack": 2,
+    "BaseHealth": 2,
     "Effects": [
       {
         "Trigger": 5,
@@ -1274,8 +1281,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "ffca60ba-e4ce-4504-8218-742a81fc5613"
+        "Description": "",
+        "Id": "4aa00a7c-a80f-4e8a-b975-25757fc5418f"
       }
     ],
     "imageUrl": "",
@@ -1290,7 +1297,7 @@
     "Id": "22",
     "Name": "How Hungry",
     "Type": 1,
-    "Description": "Si hay alg\u00FAn caballo en tu mesa o m\u00E1s, los mato y el jugador se cura el total de la vida de todos",
+    "Description": "Si hay alg\u00FAn {family:caballo} en tu {board:mesa} o m\u00E1s, el {player:jugador} se cura el total de la vida de todos",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1331,8 +1338,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "70edeb08-d3d7-413d-b8c1-9f6b54b2c70d"
+        "Description": "",
+        "Id": "c66ce1d0-702e-4392-8a56-9eab1e08c835"
       }
     ],
     "imageUrl": "",
@@ -1358,6 +1365,7 @@
         "WhichDeckToSearch": 3,
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -1375,7 +1383,7 @@
     "Id": "23",
     "Name": "Honoroso Caballero",
     "Type": 0,
-    "Description": "Al morir, la pr\u00F3ximas dos unidades que jueges consiguen \u002B1/\u002B1",
+    "Description": "Cuando {die:muero}, las pr\u00F3ximas dos unidades que {play:juegues} consiguen \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 3,
     "Effects": [
@@ -1408,7 +1416,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-              "Id": "ec9c1dc1-e938-42cc-9960-7511b78ef94d"
+              "Id": "0a1036b6-9223-4d60-974e-7f3f1fd840f8"
             }
           }
         ],
@@ -1422,8 +1430,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "72ddd8be-c2e6-4927-b521-cdc76feb4915"
+        "Description": "",
+        "Id": "59508e69-3bf6-4a9f-96a6-fccfe1393de0"
       }
     ],
     "imageUrl": "",
@@ -1432,11 +1440,13 @@
     "PlayEffectTriggerTimes": 0
   },
   {
-    "Families": [],
+    "Families": [
+      "Castellano"
+    ],
     "Id": "24",
     "Name": "Cura Pero P\u00E9rez",
     "Type": 0,
-    "Description": "Fin de ronda: Creo un Libro de Caballer\u00EDa y lo a\u00F1ado en el mazo",
+    "Description": "{endround:Fin de ronda}: {add:Creo} un Libro de Caballer\u00EDa en el {deck:mazo}",
     "BaseAttack": 1,
     "BaseHealth": 4,
     "Effects": [
@@ -1457,8 +1467,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "1c69b89a-d751-49f8-8e31-775fcefb881c"
+        "Description": "",
+        "Id": "42b79d28-14f9-4806-a4ed-fca31db5a057"
       }
     ],
     "imageUrl": "",
@@ -1473,7 +1483,7 @@
     "Id": "25",
     "Name": "El Loco de Sierra Morena",
     "Type": 0,
-    "Description": "Si entra Don Quijote o Sancho Panza en el juego, le inflinjo 4 de da\u00F1o",
+    "Description": "Si entra Don Quijote o Sancho Panza en {board:mesa}, le inflinjo 4 de da\u00F1o",
     "BaseAttack": 3,
     "BaseHealth": 4,
     "Effects": [
@@ -1535,8 +1545,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "5d552224-4512-4883-91e2-7413117fd8b7"
+        "Description": "",
+        "Id": "b3179afb-f06a-4635-8859-c48fbfc23c58"
       }
     ],
     "imageUrl": "",
@@ -1551,7 +1561,7 @@
     "Id": "26",
     "Name": "Sancho Panza",
     "Type": 0,
-    "Description": "Fin de Ronda: Si no hay otros Castellanos en juego, 0/-1 a las cartas en el campo. HABILIDAD: \u002B1/\u002B1 a las cartas de la mesa",
+    "Description": "{endround:Fin de Ronda}: Si no hay otros {family:Castellanos} en juego, 0/-1 a las cartas en el campo. {skill:HABILIDAD}: \u002B1/\u002B1 a las unidades en {board:mesa}",
     "BaseAttack": 1,
     "BaseHealth": 5,
     "Effects": [
@@ -1580,6 +1590,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -1609,6 +1620,7 @@
             "WhichDeckToSearch": 3,
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
+            "WhichPlayedCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -1619,8 +1631,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "5f25490b-5f91-4d20-9a7b-90244fbadfb0"
+        "Description": "",
+        "Id": "710b947f-a60e-4034-8277-0ff35278d2ad"
       }
     ],
     "imageUrl": "",
@@ -1648,6 +1660,7 @@
           "WhichDeckToSearch": 3,
           "WhichBoardToSearch": 0,
           "WhichHandToSearch": 3,
+          "WhichPlayedCardsToSearch": 3,
           "MaxLength": 0
         }
       }
@@ -1659,7 +1672,7 @@
     "Id": "26_1",
     "Name": "Llamada de auxilio",
     "Type": 1,
-    "Description": "Roba dos caballeros",
+    "Description": "{draw:Roba} dos {family:caballeros}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1695,8 +1708,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "433bd98d-db8b-428b-82de-0f8b9f2c31a5"
+        "Description": "",
+        "Id": "aab5c6b9-ae91-4ef1-96ab-c19ce1c52c65"
       }
     ],
     "imageUrl": "",
@@ -1711,7 +1724,7 @@
     "Id": "27",
     "Name": "Bola de fuego",
     "Type": 1,
-    "Description": "0/-4 A un enemigo (izq)",
+    "Description": "Inflinjo -4 al primer enemigo de la izquierda en {board:mesa}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1740,6 +1753,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -1754,8 +1768,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "bfe29981-2d53-4fc1-ab68-a74795c159fb"
+        "Description": "",
+        "Id": "9b03915b-5f35-4365-8e0c-35a47a9b2445"
       }
     ],
     "imageUrl": "",
@@ -1770,7 +1784,7 @@
     "Id": "28",
     "Name": "Aprendiz de mago",
     "Type": 0,
-    "Description": "Cuando me juegas, creo una bola de fuego",
+    "Description": "Cuando me {play:juegas}, {add:creo} una bola de fuego",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -1794,8 +1808,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "231ddf34-f06c-4dad-b8b3-a48d4246fc24"
+        "Description": "",
+        "Id": "ea8e1c91-8a17-4ffe-a9a2-55054c22ef17"
       }
     ],
     "imageUrl": "",
@@ -1811,7 +1825,7 @@
     "Id": "29",
     "Name": "Maestro de la ceniza",
     "Type": 0,
-    "Description": "Has jugado 5 bolas de fuego o m\u00E1s. Fin de Ronda: creo una bola de fuego en el mazo",
+    "Description": "Has {play:jugado} 5 bolas de fuego o m\u00E1s. {endround:Fin de Ronda}: {add:creo} una bola de fuego en el mazo",
     "BaseAttack": 6,
     "BaseHealth": 7,
     "Effects": [
@@ -1832,8 +1846,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "8475cd5f-be12-4060-bab9-30505f62ab01"
+        "Description": "",
+        "Id": "5d0f1f56-a66a-4039-8c21-053086772861"
       }
     ],
     "imageUrl": "",
@@ -1869,9 +1883,9 @@
     "Id": "30",
     "Name": "Esp\u00EDritu del fuego",
     "Type": 0,
-    "Description": "Cuando juegas una bola de fuego, inflinjo 1 de da\u00F1o al rival",
+    "Description": "Cuando {play:juegas} una bola de fuego, inflinjo 1 de da\u00F1o al {play:rival}",
     "BaseAttack": 2,
-    "BaseHealth": 4,
+    "BaseHealth": 3,
     "Effects": [
       {
         "Trigger": 6,
@@ -1906,8 +1920,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "c55c054f-876b-4e53-96c5-2a07b4f01a48"
+        "Description": "",
+        "Id": "e5a6cb2c-f855-4883-b2c7-c82036b3eb51"
       }
     ],
     "imageUrl": "",
@@ -1922,7 +1936,7 @@
     "Id": "31",
     "Name": "Tierras yermas",
     "Type": 1,
-    "Description": "-2/-2 a la mesa enemiga. El jugador pierde 2 de vida",
+    "Description": "-2/-2 a la {board:mesa} {rival:enemiga}. El {player:jugador} pierde 2 de vida",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1951,6 +1965,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -1970,8 +1985,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "85217dc6-7e05-40e5-bf1c-7dbc67e9315b"
+        "Description": "",
+        "Id": "6825a91c-ff26-4472-aba9-84ed85b93517"
       }
     ],
     "imageUrl": "",
@@ -1984,7 +1999,7 @@
     "Id": "32",
     "Name": "Conjuro del dios del fuego",
     "Type": 1,
-    "Description": "Roba dos hechizos",
+    "Description": "{draw:Roba} dos hechizos",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2020,8 +2035,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "973e0694-d2af-4c1f-b9da-38587081bfea"
+        "Description": "",
+        "Id": "69a6c203-6288-422b-a859-8be2e96a2491"
       }
     ],
     "imageUrl": "",
@@ -2034,7 +2049,7 @@
     "Id": "33",
     "Name": "La llamada de la ceniza",
     "Type": 1,
-    "Description": "Roba una carta ceniza. Curo 2 de vida al jugador.",
+    "Description": "{draw:Roba} una carta {family:ceniza}. Curo 2 de vida al {player:jugador}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2077,8 +2092,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "38239e27-f9e7-43fc-81db-344bc800cf17"
+        "Description": "",
+        "Id": "fb51ea22-c624-4e76-b0f0-bbd964bba8c8"
       }
     ],
     "imageUrl": "",
@@ -2093,7 +2108,7 @@
     "Id": "34",
     "Name": "La ira del dios del fuego",
     "Type": 1,
-    "Description": "MATA a TODAS las unidades en mesa",
+    "Description": "{die:MATA} a TODAS las unidades en {board:mesa}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2130,8 +2145,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "69d2bf7f-1dac-444d-8fe4-f16e9b258832"
+        "Description": "",
+        "Id": "d8367078-86a7-4c0c-b51b-063d1a11a8ec"
       }
     ],
     "imageUrl": "",
@@ -2147,7 +2162,7 @@
     "Id": "35",
     "Name": "Chispas escurridizas",
     "Type": 0,
-    "Description": "El pr\u00F3ximo hechizo que juegues, curo 1 y quito 1 al rival",
+    "Description": "El pr\u00F3ximo hechizo que {play:juegues}, curo 1 y quito 1 al {rival:rival}",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -2184,7 +2199,7 @@
               "Player": null,
               "Expired": false,
               "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
-              "Id": "16a24116-3e78-4e9a-a8fd-959663b02b1f"
+              "Id": "c7d0af38-3369-4209-9282-f7df46389709"
             }
           }
         ],
@@ -2196,8 +2211,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "d973261a-771b-4c80-a953-d40c6334cc65"
+        "Description": "",
+        "Id": "ffab3fab-38dc-45a6-a503-466011a08e05"
       }
     ],
     "imageUrl": "",
@@ -2212,41 +2227,18 @@
     "Id": "36",
     "Name": "Instructor de las llamas",
     "Type": 0,
-    "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
+    "Description": "Al {die:morir}, {add:creo} una bola de fuego en tu mano si hay espacio disponible.",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
       {
-        "Trigger": 5,
+        "Trigger": 7,
         "Effects": [
           {
-            "$type": "AppendGlobalEffect",
-            "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-            "Effect": {
-              "Trigger": 5,
-              "Effects": [
-                {
-                  "$type": "AlterMySelf",
-                  "Damage": 1,
-                  "Health": 1,
-                  "UseGameEvent": true
-                }
-              ],
-              "Duration": {
-                "$type": "DurationByExecutions",
-                "times": 2
-              },
-              "Condition": {
-                "$type": "PlayerCardCondition",
-                "Me": true,
-                "Filter": null
-              },
-              "SourceCard": null,
-              "Player": null,
-              "Expired": false,
-              "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-              "Id": "5351181a-1601-4ebc-b9de-c97363b06fb5"
-            }
+            "$type": "PlayCardEffect",
+            "CardId": "27",
+            "FromDeck": false,
+            "ToHand": true
           }
         ],
         "Duration": {
@@ -2259,8 +2251,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "e6064c53-d53d-4b85-8b69-63572d6eedc1"
+        "Description": "",
+        "Id": "c954730a-0322-4ca2-acce-f9d6614c6647"
       }
     ],
     "imageUrl": "",
@@ -2273,7 +2265,7 @@
     "Id": "37",
     "Name": "Comuni\u00F3n Espiritual",
     "Type": 1,
-    "Description": "Has jugado una llamada de la ceniza. Las unidades en mesa consiguen \u002B1/\u002B1.",
+    "Description": "Has {play:jugado} una llamada de la ceniza. Los {family:brujos} en tu mazo consiguen \u002B1/\u002B1.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2292,16 +2284,19 @@
                 "Health": null,
                 "CardType": null,
                 "Families": null,
-                "CurrentFamilies": null,
+                "CurrentFamilies": [
+                  "Brujo"
+                ],
                 "DefinitionId": null,
                 "Id": null,
                 "HasEffect": null,
                 "NumberOfTriggersLeft": null,
                 "MustMeetAllCriteria": false
               },
-              "WhichDeckToSearch": 3,
-              "WhichBoardToSearch": 0,
+              "WhichDeckToSearch": 0,
+              "WhichBoardToSearch": 3,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -2314,8 +2309,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "5ebfbcd6-7ae2-4efd-a998-d68dc391e78f"
+        "Description": "",
+        "Id": "016ea090-7974-4d63-a6d4-3e3688bf3013"
       }
     ],
     "imageUrl": "",
@@ -2351,7 +2346,7 @@
     "Id": "38",
     "Name": "Gran negador",
     "Type": 0,
-    "Description": "\u002B3/\u002B3 si no has jugado un hechizo antes",
+    "Description": "\u002B3/0 si no has {play:jugado} un hechizo antes. Si no, {draw:roba} una carta.",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -2361,7 +2356,7 @@
           {
             "$type": "AlterMySelf",
             "Damage": 3,
-            "Health": 3,
+            "Health": 0,
             "UseGameEvent": false
           }
         ],
@@ -2370,32 +2365,91 @@
           "times": 1
         },
         "Condition": {
-          "$type": "CountPlayedCardsCondition",
-          "Filter": {
-            "CurrentAttack": null,
-            "CurrentHealth": null,
-            "Attack": null,
-            "Health": null,
-            "CardType": 1,
-            "Families": null,
-            "CurrentFamilies": null,
-            "DefinitionId": null,
-            "Id": null,
-            "HasEffect": null,
-            "NumberOfTriggersLeft": null,
-            "MustMeetAllCriteria": false
-          },
-          "Target": 0,
-          "Value": {
-            "Type": 1,
-            "Amount": 0
-          }
+          "$type": "MultiEffectCondition",
+          "Conditions": [
+            {
+              "$type": "IHaveBeenPlayedCondition"
+            },
+            {
+              "$type": "CountPlayedCardsCondition",
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": 1,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "Target": 0,
+              "Value": {
+                "Type": 1,
+                "Amount": 0
+              }
+            }
+          ],
+          "IsOr": false
         },
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "4ab1c2ff-c286-46b4-8502-7d2e1981e2ba"
+        "Description": "",
+        "Id": "5fb8ebd4-bb88-4cd7-9b66-838f677344d2"
+      },
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "MultiEffectCondition",
+          "Conditions": [
+            {
+              "$type": "IHaveBeenPlayedCondition"
+            },
+            {
+              "$type": "CountPlayedCardsCondition",
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": 1,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "Target": 0,
+              "Value": {
+                "Type": 0,
+                "Amount": 1
+              }
+            }
+          ],
+          "IsOr": false
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "4fbb7e81-56d9-4dc3-b8af-5f002b3c3f56"
       }
     ],
     "imageUrl": "",
@@ -2411,9 +2465,9 @@
     "Id": "39",
     "Name": "Maquiavelo el maquiav\u00E9lico",
     "Type": 0,
-    "Description": "Cuando juegas un hechizo, consigo \u002B1/\u002B1",
-    "BaseAttack": 2,
-    "BaseHealth": 0,
+    "Description": "Cuando {play:juegas} un hechizo, consigo \u002B1/0",
+    "BaseAttack": 1,
+    "BaseHealth": 2,
     "Effects": [
       {
         "Trigger": 6,
@@ -2421,7 +2475,7 @@
           {
             "$type": "AlterMySelf",
             "Damage": 1,
-            "Health": 1,
+            "Health": 0,
             "UseGameEvent": false
           }
         ],
@@ -2436,8 +2490,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "7a845f1e-5106-48f9-b606-c292f3c49c6e"
+        "Description": "",
+        "Id": "9532a31d-12cc-4900-92b3-f81fa4fa95a2"
       }
     ],
     "imageUrl": "",
@@ -2447,12 +2501,13 @@
   },
   {
     "Families": [
-      "Gym"
+      "Gym",
+      "Rata"
     ],
     "Id": "40",
     "Name": "GymRat",
     "Type": 0,
-    "Description": "Cuando muero, creo un batido de prote\u00EDnas en el mazo",
+    "Description": "Cuando {die:muero}, {add:creo} un batido de prote\u00EDnas en el {deck:mazo}",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -2476,8 +2531,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "a48b1995-0ec7-4140-9ef3-c6d9e4b79e9d"
+        "Description": "",
+        "Id": "7737ae39-f0eb-4a11-b941-a2620fd8b027"
       }
     ],
     "imageUrl": "",
@@ -2492,7 +2547,7 @@
     "Id": "41",
     "Name": "D\u00EDa de pierna",
     "Type": 1,
-    "Description": "0/\u002B2 a la mesa. Las cartas Gym en mesa pierden 3 de vida",
+    "Description": "0/\u002B2 a la {board:mesa} aliada. Las cartas {family:Gym} en {board:mesa} aliada pierden 3 de vida",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2521,6 +2576,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -2548,6 +2604,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -2562,8 +2619,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "2ee4e3f0-2a14-4815-9fe3-09298385507b"
+        "Description": "",
+        "Id": "95e874ef-70e3-464e-a617-a49fba1df579"
       }
     ],
     "imageUrl": "",
@@ -2578,7 +2635,7 @@
     "Id": "42",
     "Name": "Batido de prote\u00EDnas",
     "Type": 1,
-    "Description": "La primera carta de la izquierda consigue \u002B1/\u002B2",
+    "Description": "La primera unidad en la {board:mesa} del {player:jugador} consigue \u002B1/\u002B2.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2607,6 +2664,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -2619,8 +2677,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "c4bc129b-aece-4a8d-9ec1-cdcc22493c17"
+        "Description": "",
+        "Id": "79a01d74-f58e-4a58-8225-92d77eb9ce60"
       }
     ],
     "imageUrl": "",
@@ -2633,7 +2691,7 @@
     "Id": "43",
     "Name": "Entrenador personal",
     "Type": 0,
-    "Description": "Crea dos batidos de prote\u00EDnas en el mazo",
+    "Description": "{add:Crea} dos batidos de prote\u00EDnas en el {board:mazo}",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [
@@ -2657,8 +2715,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "8e06848b-f043-42eb-8b4f-22c79a9261af"
+        "Description": "",
+        "Id": "58d70ebb-ca60-4318-8ea2-4ff446bd8073"
       }
     ],
     "imageUrl": "",
@@ -2671,7 +2729,7 @@
     "Id": "44",
     "Name": "El se\u00F1or de las mancuernas",
     "Type": 0,
-    "Description": "Cuando el jugador usa un batido de prote\u00EDnas, consigo \u002B1/0",
+    "Description": "Cuando el {player:jugador} {play:juega} un batido de prote\u00EDnas, consigo \u002B1/0",
     "BaseAttack": 0,
     "BaseHealth": 2,
     "Effects": [
@@ -2709,8 +2767,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "f3ffaa34-618b-419d-b101-5d62ec282815"
+        "Description": "",
+        "Id": "b0932f80-1e11-43c1-bdc4-3d9686d8e177"
       }
     ],
     "imageUrl": "",
@@ -2725,7 +2783,7 @@
     "Id": "45",
     "Name": "Gerente del Basic Fit",
     "Type": 0,
-    "Description": "Si hay una carta Motivacion en la mesa, roba una carta",
+    "Description": "Si hay una carta {family:Gym} en la {board:mesa} del {player:jugador}, {draw:roba} una carta",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -2753,7 +2811,7 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Motivacion"
+                "Gym"
               ],
               "DefinitionId": null,
               "Id": null,
@@ -2764,6 +2822,7 @@
             "WhichDeckToSearch": 3,
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
+            "WhichPlayedCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -2774,8 +2833,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "cfd2afec-9438-4fde-8f1f-586ea72c4bc9"
+        "Description": "",
+        "Id": "ae765981-399f-44cc-bce8-86a7d06028a5"
       }
     ],
     "imageUrl": "",
@@ -2790,7 +2849,7 @@
     "Id": "46",
     "Name": "David Goggins",
     "Type": 0,
-    "Description": "Despu\u00E9s de golpear, consigo \u002B1/\u002B1",
+    "Description": "Despu\u00E9s de {attack:golpear}, consigo \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -2808,13 +2867,13 @@
           "$type": "Always"
         },
         "Condition": {
-          "$type": "IHaveBeenPlayedCondition"
+          "$type": "IAttackedCondition"
         },
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "36f24dc5-c3cf-49cb-b69a-e4c94e58c99a"
+        "Description": "",
+        "Id": "d286b79d-dd88-4d72-aa4b-f9d893aa1d60"
       }
     ],
     "imageUrl": "",
@@ -2824,11 +2883,10 @@
   },
   {
     "Families": [
-      "Oriental",
       "Motivacion"
     ],
     "Id": "47",
-    "Name": "Se\u00F1or chino viejo motivado",
+    "Name": "Gran sabio",
     "Type": 0,
     "Description": "Cuando recibo da\u00F1o, consigo \u002B1/\u002B1",
     "BaseAttack": 0,
@@ -2866,8 +2924,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "a3a72e49-2c46-4edb-90c4-44e00999755e"
+        "Description": "",
+        "Id": "1fa2ddaa-d40d-4e10-af4b-671e0f29d2d3"
       }
     ],
     "imageUrl": "",
@@ -2882,7 +2940,7 @@
     "Id": "48",
     "Name": "Tik Tok motivacional",
     "Type": 1,
-    "Description": "Necesitas una carta con 1 de da\u00F1o o menos en mesa. Las dos primeras unidades (IZQ) ganan \u002B2/\u002B2",
+    "Description": "Necesitas una carta con 1 de da\u00F1o o menos en {board:mesa}. Las dos primeras unidades en la izquierda de tu {board:mesa} ganan \u002B2/\u002B2",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2911,6 +2969,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 2
             }
           }
@@ -2923,8 +2982,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "8d4aca92-f2ab-4bda-96f0-5e3fef5f7d72"
+        "Description": "",
+        "Id": "9d132ca0-747d-4e5c-a59b-150c423ee2bd"
       }
     ],
     "imageUrl": "",
@@ -2951,6 +3010,7 @@
         "WhichDeckToSearch": 3,
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -2968,7 +3028,7 @@
     "Id": "49",
     "Name": "No pain, no gain",
     "Type": 1,
-    "Description": "Inflinge 1 de da\u00F1o hasta 2 unidades y roba una carta. HABILIDAD: inflinge 1 de da\u00F1o a todas las cartas en mesa y les otorgas \u002B2/0",
+    "Description": "Inflinge 1 de da\u00F1o hasta 2 unidades de tu propia {board:mesa}, y {draw:roba} una carta. {skill:HABILIDAD}: inflinge 1 de da\u00F1o a todas las cartas de tu {board:mesa} y les otorgas \u002B2/0",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2997,6 +3057,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 2
             }
           },
@@ -3014,8 +3075,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "13d3beb3-f28c-4a88-b4f9-0ca4f9c8bb35"
+        "Description": "",
+        "Id": "340e9af8-2d09-4729-be7e-23a45b00c606"
       }
     ],
     "imageUrl": "",
@@ -3039,6 +3100,7 @@
         "WhichDeckToSearch": 3,
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3069,6 +3131,7 @@
           "WhichDeckToSearch": 3,
           "WhichBoardToSearch": 0,
           "WhichHandToSearch": 3,
+          "WhichPlayedCardsToSearch": 3,
           "MaxLength": 0
         }
       },
@@ -3094,6 +3157,7 @@
           "WhichDeckToSearch": 3,
           "WhichBoardToSearch": 0,
           "WhichHandToSearch": 3,
+          "WhichPlayedCardsToSearch": 3,
           "MaxLength": 0
         }
       }
@@ -3105,7 +3169,7 @@
     "Id": "50",
     "Name": "Esteroides",
     "Type": 1,
-    "Description": "Me curo la cantidad de vida total de mis tropas",
+    "Description": "Curo la cantidad de vida total de tus unidades en {board:mesa}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3142,8 +3206,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "1bd53e94-9fa2-4174-8b96-7406ccfdfd20"
+        "Description": "",
+        "Id": "b896e413-069e-4f67-ac98-d1e2b52ad78a"
       }
     ],
     "imageUrl": "",
@@ -3159,7 +3223,7 @@
     "Id": "51",
     "Name": "Biscuit Oliva",
     "Type": 0,
-    "Description": "Necesitas al menos 2 tropas de Gym. Cuando entro al campo, \u002B1/\u002B1 a la mesa.",
+    "Description": "Necesitas al menos 2 tropas de {family:Gym}. Cuando me {play:juegas}, \u002B1/\u002B1 a la {board:mesa} aliada.",
     "BaseAttack": 3,
     "BaseHealth": 3,
     "Effects": [
@@ -3188,6 +3252,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -3200,8 +3265,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "19c906da-54d4-4a3b-848f-1b035365d8a6"
+        "Description": "",
+        "Id": "4ec9bb04-eff3-42a2-8a10-4d574130ee14"
       }
     ],
     "imageUrl": "",
@@ -3227,6 +3292,7 @@
         "WhichDeckToSearch": 3,
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3242,7 +3308,7 @@
     "Id": "52",
     "Name": "Flexeo de m\u00FAsculos",
     "Type": 1,
-    "Description": "El jugador tiene 10 de vida o m\u00E1s. Roba 3 cartas",
+    "Description": "Si tienes 10 de vida o m\u00E1s, {draw:roba} 3 cartas. En caso contrario, te curas 5 de vida.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3259,23 +3325,50 @@
           "$type": "DurationByExecutions",
           "times": 1
         },
-        "Condition": null,
+        "Condition": {
+          "$type": "PlayerHealthCondition",
+          "Me": true,
+          "Value": {
+            "Type": 0,
+            "Amount": 10
+          }
+        },
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "b7e919af-1fa1-402f-a907-8aee012410fe"
+        "Description": "",
+        "Id": "97dac328-46a2-4b68-9125-b82dcf0bae9b"
+      },
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 5,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "PlayerHealthCondition",
+          "Me": true,
+          "Value": {
+            "Type": 4,
+            "Amount": 10
+          }
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "809512c8-ce60-4b70-a4b8-1ebc9acd0064"
       }
     ],
     "imageUrl": "",
-    "ConditionToPlay": {
-      "$type": "PlayerHealthCondition",
-      "Me": true,
-      "Value": {
-        "Type": 0,
-        "Amount": 10
-      }
-    },
+    "ConditionToPlay": null,
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   },
@@ -3315,6 +3408,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -3329,8 +3423,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "4afc5112-a8c5-4315-afbf-eea002aff964"
+        "Description": "",
+        "Id": "01e323c8-06fb-4165-bdda-99a92a9c66d6"
       }
     ],
     "imageUrl": "",
@@ -3374,6 +3468,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -3404,8 +3499,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "9c4e27d8-e96d-4787-a722-fdbcb364e054"
+        "Description": "",
+        "Id": "d41d4c50-761b-46a2-bd29-2a658080379b"
       }
     ],
     "imageUrl": "",
@@ -3447,6 +3542,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -3466,8 +3562,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "eaf9e9c3-42d2-4ae6-8694-9fee944e7cc6"
+        "Description": "",
+        "Id": "cb01abaa-8242-46dd-8e96-757d66821d8f"
       }
     ],
     "imageUrl": "",
@@ -3520,8 +3616,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "3dcdabc2-c17b-48c8-acfa-d3b341d30cc0"
+        "Description": "",
+        "Id": "fc77d516-067d-43c7-aa84-246421792f90"
       }
     ],
     "imageUrl": "",
@@ -3565,6 +3661,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -3579,8 +3676,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "764008c8-119c-4753-bfef-d09534525efa"
+        "Description": "",
+        "Id": "e856c864-831c-4366-8634-c904fc272745"
       }
     ],
     "imageUrl": "",
@@ -3624,6 +3721,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 2
             }
           }
@@ -3635,8 +3733,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "ec89bafe-ca18-43c4-89b5-6555e2a2c4b0"
+        "Description": "",
+        "Id": "d57974a1-7feb-4a99-9563-cb634710fde4"
       }
     ],
     "imageUrl": "",
@@ -3683,6 +3781,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             },
             "FilterDrawedCards": null
@@ -3720,8 +3819,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "02b64b92-3244-4581-bf68-491dafc28932"
+        "Description": "",
+        "Id": "2e808d8c-195d-4814-824f-cc47d5998c12"
       }
     ],
     "imageUrl": "",
@@ -3748,6 +3847,7 @@
         "WhichDeckToSearch": 3,
         "WhichBoardToSearch": 1,
         "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3794,6 +3894,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -3808,8 +3909,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "de9017d6-3fb4-45cb-9998-8c6a4c79b361"
+        "Description": "",
+        "Id": "b677bc7e-8ab0-42ad-ad89-1c74d7d294f7"
       },
       {
         "Trigger": 7,
@@ -3830,8 +3931,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "b3ea5957-2380-4a28-8484-1f29ceb3819a"
+        "Description": "",
+        "Id": "3246dbc5-a96b-43e7-944d-fdea506ad1fd"
       }
     ],
     "imageUrl": "",
@@ -3881,6 +3982,7 @@
                     "WhichDeckToSearch": 3,
                     "WhichBoardToSearch": 1,
                     "WhichHandToSearch": 3,
+                    "WhichPlayedCardsToSearch": 3,
                     "MaxLength": 0
                   }
                 }
@@ -3894,7 +3996,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Durante los pr\u00F3ximos dos finales de ronda, -1/0 a la mesa enemiga",
-              "Id": "3a2b6159-88a9-496d-9d3f-a31d36e1fd63"
+              "Id": "aa4ec6b6-2c97-400a-ace2-f5f6ec253758"
             }
           }
         ],
@@ -3906,8 +4008,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "011c8346-e216-4851-b579-92b86277cfa6"
+        "Description": "",
+        "Id": "9f603e75-d251-414b-950f-a624b9d82dda"
       }
     ],
     "imageUrl": "",
@@ -3934,7 +4036,8 @@
           {
             "$type": "PlayCardEffect",
             "CardId": "65",
-            "FromDeck": false
+            "FromDeck": false,
+            "ToHand": false
           }
         ],
         "Duration": {
@@ -3944,8 +4047,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "51022a3f-91db-4df0-b20c-b9b7b82c741f"
+        "Description": "",
+        "Id": "61057913-2e7e-42b7-8b38-3da097b1aba7"
       }
     ],
     "imageUrl": "",
@@ -3996,6 +4099,7 @@
             "WhichDeckToSearch": 3,
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
+            "WhichPlayedCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -4022,7 +4126,7 @@
     "BaseHealth": 4,
     "Effects": [
       {
-        "Trigger": 3,
+        "Trigger": 4,
         "Effects": [
           {
             "$type": "AlterMySelf",
@@ -4058,8 +4162,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "7932e659-21ff-4103-a19c-c56714890456"
+        "Description": "",
+        "Id": "6b1c65b1-664f-424a-bce3-38cb95f98292"
       }
     ],
     "imageUrl": "",
@@ -4103,6 +4207,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -4131,6 +4236,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -4145,8 +4251,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "96b5745b-565d-4552-828c-538ee58e79d2"
+        "Description": "",
+        "Id": "0393f92b-794f-454f-8c90-88e27b5a5d26"
       }
     ],
     "imageUrl": "",
@@ -4235,8 +4341,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "1204e998-83a4-4160-b9f8-0f3f6852a2f2"
+        "Description": "",
+        "Id": "cfd104dd-c7eb-4cc3-8163-3bb6fe320e91"
       }
     ],
     "imageUrl": "",
@@ -4274,8 +4380,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "8bd1323a-e4ac-4c4c-ba93-dec9c9161eeb"
+        "Description": "",
+        "Id": "66a0cf9e-38a2-493f-8cdb-7e36f99b3e73"
       }
     ],
     "imageUrl": "",
@@ -4332,8 +4438,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "e15444d8-58e8-474d-aa96-9061cf643080"
+        "Description": "",
+        "Id": "0afaf01a-9c83-4eae-844c-992ad8e5f57f"
       }
     ],
     "imageUrl": "",
@@ -4357,6 +4463,7 @@
         "WhichDeckToSearch": 3,
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -4430,8 +4537,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "3bc7df4a-a6d2-4ef7-92d1-aca979b1da53"
+        "Description": "",
+        "Id": "11ae2c19-48d0-48b8-b7f6-2426bc58181f"
       }
     ],
     "imageUrl": "",
@@ -4458,6 +4565,7 @@
             "WhichDeckToSearch": 3,
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
+            "WhichPlayedCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -4485,6 +4593,7 @@
             "WhichDeckToSearch": 3,
             "WhichBoardToSearch": 1,
             "WhichHandToSearch": 3,
+            "WhichPlayedCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -4505,7 +4614,7 @@
     "Id": "70",
     "Name": "RED",
     "Type": 0,
-    "Description": "Crea ENLACE y BITS en el mazo",
+    "Description": "{add:Crea} ENLACE y BITS en el {deck:mazo}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -4535,8 +4644,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "62724293-0695-4815-a862-f12b5cd4b0cc"
+        "Description": "",
+        "Id": "f152ce0c-5309-4b2d-9287-2b9800384ca7"
       }
     ],
     "imageUrl": "",
@@ -4551,7 +4660,7 @@
     "Id": "71",
     "Name": "BITS",
     "Type": 1,
-    "Description": "Curo 1 de vida al jugador",
+    "Description": "Curo 1 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4574,8 +4683,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "a0589656-131f-44f2-bd56-78b68557e55b"
+        "Description": "",
+        "Id": "419d48c4-80a3-4258-b5e0-0a53f60b1a75"
       }
     ],
     "imageUrl": "",
@@ -4590,7 +4699,7 @@
     "Id": "72",
     "Name": "ENLACE",
     "Type": 0,
-    "Description": "Crea RED y Trama en el mazo",
+    "Description": "{add:Crea} RED y Trama en el mazo",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [
@@ -4620,8 +4729,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "da92981c-28d0-44ab-936e-dd5c968ac52b"
+        "Description": "",
+        "Id": "81f90a84-009a-4ed0-90e1-c98c570bbdb4"
       }
     ],
     "imageUrl": "",
@@ -4636,7 +4745,7 @@
     "Id": "73",
     "Name": "Trama",
     "Type": 1,
-    "Description": "Roba una carta",
+    "Description": "{draw:Roba} una carta",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4659,8 +4768,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "c7924289-8cea-4c80-9312-03f3b6eda893"
+        "Description": "",
+        "Id": "6804227d-6df9-48c2-b4b6-8e0bcb55236f"
       }
     ],
     "imageUrl": "",
@@ -4675,7 +4784,7 @@
     "Id": "74",
     "Name": "RED",
     "Type": 0,
-    "Description": "Crea TRANSPORTE y Paquete en el mazo",
+    "Description": "{add:Crea} TRANSPORTE y Paquete en el {deck:mazo}",
     "BaseAttack": 3,
     "BaseHealth": 3,
     "Effects": [
@@ -4705,8 +4814,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "4a73287c-59dc-4776-9997-bc9943dfe460"
+        "Description": "",
+        "Id": "ea6c69d9-5273-476a-9824-3f9c2ec46b0c"
       }
     ],
     "imageUrl": "",
@@ -4721,7 +4830,7 @@
     "Id": "75",
     "Name": "Paquete",
     "Type": 1,
-    "Description": "0/\u002B1 a las unidades en mesa",
+    "Description": "0/\u002B1 a las unidades aliadas en {board:mesa}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4750,6 +4859,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -4764,8 +4874,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "609f45c0-4a1d-4c06-86d4-b4ff2864b4b4"
+        "Description": "",
+        "Id": "cd447d46-e98b-4090-96ba-93933476c48d"
       }
     ],
     "imageUrl": "",
@@ -4780,7 +4890,7 @@
     "Id": "76",
     "Name": "TRANSPORTE",
     "Type": 0,
-    "Description": "Crea SESI\u00D3N y Datagrama en el mazo",
+    "Description": "{add:Crea} SESI\u00D3N y Datagrama en el {deck:mazo}",
     "BaseAttack": 4,
     "BaseHealth": 4,
     "Effects": [
@@ -4810,8 +4920,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "490b73bc-27b4-42c9-b0a4-a2190f3a00e9"
+        "Description": "",
+        "Id": "7ce4422f-f86e-4d7e-9538-7bd37dcc7b8a"
       }
     ],
     "imageUrl": "",
@@ -4826,7 +4936,7 @@
     "Id": "77",
     "Name": "Datagrama",
     "Type": 1,
-    "Description": "\u002B1/0 a las unidades en mesa",
+    "Description": "\u002B1/0 a las unidades aliadas en {board:mesa}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4855,6 +4965,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -4869,8 +4980,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "35e80204-85b0-4d4c-bc26-686dd581b265"
+        "Description": "",
+        "Id": "31bbc1d7-cfe2-4a99-93f1-14d1865524c6"
       }
     ],
     "imageUrl": "",
@@ -4885,7 +4996,7 @@
     "Id": "78",
     "Name": "SESI\u00D3N",
     "Type": 0,
-    "Description": "Crea PRESENTACI\u00D3N y Datos de sesi\u00F3n en el mazo",
+    "Description": "{add:Crea} PRESENTACI\u00D3N y Datos de sesi\u00F3n en el {deck:mazo}",
     "BaseAttack": 5,
     "BaseHealth": 5,
     "Effects": [
@@ -4915,8 +5026,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "8b7cf0c6-f09f-419e-9a9c-8e4e0fc76204"
+        "Description": "",
+        "Id": "f953e83f-e529-495c-97ba-a194a8bd3d6e"
       }
     ],
     "imageUrl": "",
@@ -4931,7 +5042,7 @@
     "Id": "79",
     "Name": "Datos de sesi\u00F3n",
     "Type": 1,
-    "Description": "Curo 4 de vida al jugador",
+    "Description": "Curo 4 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4954,8 +5065,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "885d26fe-cae3-4a5f-a2eb-1baa7509093e"
+        "Description": "",
+        "Id": "5c4eaed9-1cbd-4091-a079-75bfb2c680df"
       }
     ],
     "imageUrl": "",
@@ -4970,7 +5081,7 @@
     "Id": "80",
     "Name": "PRESENTACI\u00D3N",
     "Type": 0,
-    "Description": "Crea APLICACI\u00D3N y Datos de presentaci\u00F3n en el mazo",
+    "Description": "{add:Crea} APLICACI\u00D3N y Datos de presentaci\u00F3n en el {deck:mazo}",
     "BaseAttack": 6,
     "BaseHealth": 6,
     "Effects": [
@@ -5000,8 +5111,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "d169a28d-56ba-405a-a2e2-9ed38927db9e"
+        "Description": "",
+        "Id": "1127faf7-531f-43ef-b1e1-181e0683d77c"
       }
     ],
     "imageUrl": "",
@@ -5016,7 +5127,7 @@
     "Id": "81",
     "Name": "Datos de presentaci\u00F3n",
     "Type": 1,
-    "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades que se jueguen",
+    "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades aliadas que se {play:jueguen}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5049,7 +5160,7 @@
               "Player": null,
               "Expired": false,
               "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades jugadas",
-              "Id": "ffc01e20-bfee-4b6a-8eec-86885d701da9"
+              "Id": "3b26b09f-441c-491d-8616-57f4c09e1337"
             }
           }
         ],
@@ -5063,8 +5174,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "367fade6-72e7-49d0-9164-3f35200f59bf"
+        "Description": "",
+        "Id": "450bd5be-110a-44da-9e06-2b636ba57186"
       }
     ],
     "imageUrl": "",
@@ -5079,7 +5190,7 @@
     "Id": "82",
     "Name": "APLICACI\u00D3N",
     "Type": 0,
-    "Description": "Crea Ex Machina y Datos de aplicaci\u00F3n en el mazo",
+    "Description": "{add:Crea} Ex Machina y Datos de aplicaci\u00F3n en el {deck:mazo}",
     "BaseAttack": 7,
     "BaseHealth": 7,
     "Effects": [
@@ -5109,8 +5220,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "28f663b2-37ce-44a9-94dd-bdc542ae7f08"
+        "Description": "",
+        "Id": "67bf2917-4cb8-42d8-9a7c-3a0568928a65"
       }
     ],
     "imageUrl": "",
@@ -5125,7 +5236,7 @@
     "Id": "83",
     "Name": "Datos de aplicaci\u00F3n",
     "Type": 1,
-    "Description": "Roba 3 cartas",
+    "Description": "{draw:Roba} 3 cartas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5148,8 +5259,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "2ec8725f-13b6-4824-8035-d3a20dda786d"
+        "Description": "",
+        "Id": "937fc96e-d634-4580-a442-6dd6aa0819d0"
       }
     ],
     "imageUrl": "",
@@ -5164,9 +5275,9 @@
     "Id": "84",
     "Name": "Ex Machina",
     "Type": 0,
-    "Description": "Todas las capas han sido ensambladas. La m\u00E1quina perfecta. Final de turno: decido por el jugador",
+    "Description": "Todas las capas han sido ensambladas. La m\u00E1quina perfecta. {endround:Final de ronda}: decido por el jugador",
     "BaseAttack": 0,
-    "BaseHealth": 12,
+    "BaseHealth": 25,
     "Effects": [
       {
         "Trigger": 0,
@@ -5182,8 +5293,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "63fe8a40-a732-43a6-a0af-910ef998a35d"
+        "Description": "",
+        "Id": "cdff1954-76e3-4b15-bec3-8f88747d453a"
       }
     ],
     "imageUrl": "",
@@ -5198,9 +5309,9 @@
     "Id": "85",
     "Name": "HUB",
     "Type": 0,
-    "Description": "Cuando el jugador juega un hechizo paquete, se activa una vez m\u00E1s",
+    "Description": "Cuando el {player:jugador} {play:juega} un hechizo {family:paquete}, se activa una vez m\u00E1s",
     "BaseAttack": 0,
-    "BaseHealth": 2,
+    "BaseHealth": 6,
     "Effects": [
       {
         "Trigger": 6,
@@ -5235,8 +5346,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "7cab44f2-090f-4897-9338-8979517e508c"
+        "Description": "",
+        "Id": "d4376a7c-9c19-4d1b-9522-09896fa24c4a"
       }
     ],
     "imageUrl": "",
@@ -5251,7 +5362,7 @@
     "Id": "86",
     "Name": "Router",
     "Type": 0,
-    "Description": "Cuando el jugador juega un paquete, creo un paquete de capa menor o igual al jugado y lo a\u00F1ado al mazo",
+    "Description": "Cuando el {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:paquete} de capa menor o igual al jugado y lo {add:a\u00F1ado} al {deck:mazo}",
     "BaseAttack": 1,
     "BaseHealth": 3,
     "Effects": [
@@ -5288,8 +5399,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "9875ad54-8425-44a4-be16-4a92e6132b45"
+        "Description": "",
+        "Id": "e9af7322-be43-414a-b704-3df4f2237106"
       }
     ],
     "imageUrl": "",
@@ -5298,13 +5409,11 @@
     "PlayEffectTriggerTimes": 0
   },
   {
-    "Families": [
-      "Seguridad"
-    ],
+    "Families": [],
     "Id": "87",
     "Name": "Electricista apa\u00F1ado",
     "Type": 0,
-    "Description": "Cuando me juegas, roba una carta",
+    "Description": "Cuando me {play:juegas}, {draw:roba} una {family:capa}",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [
@@ -5314,7 +5423,22 @@
           {
             "$type": "DrawCardEffect",
             "CardAmount": 1,
-            "Filter": null
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "Capa"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            }
           }
         ],
         "Duration": {
@@ -5327,8 +5451,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "3d229f38-d478-4bcf-baab-365aa277f7e8"
+        "Description": "",
+        "Id": "ab909ad3-abb6-4462-b619-60e144db82e3"
       }
     ],
     "imageUrl": "",
@@ -5341,7 +5465,7 @@
     "Id": "88",
     "Name": "Hacker",
     "Type": 0,
-    "Description": "Cuando se juega un paquete, creo un virus en el mazo del rival. HABILIDAD: da\u00F1o al rival 1 por cada virus que tenga en la mano",
+    "Description": "Cuando se {play:juega} un {family:paquete}, {add:creo} un {family:virus} en el {deck:mazo} del {rival:rival}. {skill:HABILIDAD}: da\u00F1o al {rival:rival} 1 por cada {family:virus} que tenga en la mano",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -5381,8 +5505,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "5edbd7e9-f834-4473-a9ee-d1100f1fce41"
+        "Description": "",
+        "Id": "7df357b1-bbd9-4cc6-a1fa-2aa55ded5a0e"
       }
     ],
     "imageUrl": "",
@@ -5413,6 +5537,7 @@
           "WhichDeckToSearch": 3,
           "WhichBoardToSearch": 3,
           "WhichHandToSearch": 1,
+          "WhichPlayedCardsToSearch": 3,
           "MaxLength": 0
         }
       }
@@ -5426,7 +5551,7 @@
     "Id": "89",
     "Name": "Malware",
     "Type": 1,
-    "Description": "Inflinjo 1 de da\u00F1o a mi jugador",
+    "Description": "Inflinjo 1 de da\u00F1o a mi {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5447,8 +5572,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "db38fc89-b739-44c7-a0b7-41fbfe37f4f1"
+        "Description": "",
+        "Id": "8af34ad8-a97c-4009-a175-74dcf051c230"
       }
     ],
     "imageUrl": "",
@@ -5463,7 +5588,7 @@
     "Id": "90",
     "Name": "Mensaje de broadcast",
     "Type": 1,
-    "Description": "Juega todos los virus que haya en mano del rival",
+    "Description": "{play:Juega} todos los {family:virus} que haya en mano del {rival:rival}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5499,8 +5624,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "3ae7128a-3101-40f0-85e0-977ea99d95cc"
+        "Description": "",
+        "Id": "d566b9cc-4cb7-46cf-ae00-3148355bde53"
       }
     ],
     "imageUrl": "",
@@ -5513,7 +5638,7 @@
     "Id": "91",
     "Name": "Denegaci\u00F3n de servicio",
     "Type": 1,
-    "Description": "-3/0 a la mesa del rival, \u002B1/0 dentro de 2 rondas",
+    "Description": "-3/0 a la {board:mesa} del {rival:rival}, \u002B1/0 a la {board:mesa} del {rival:rival} dentro de 2 rondas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5542,6 +5667,7 @@
               "WhichDeckToSearch": 3,
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -5573,6 +5699,7 @@
                     "WhichDeckToSearch": 3,
                     "WhichBoardToSearch": 1,
                     "WhichHandToSearch": 3,
+                    "WhichPlayedCardsToSearch": 3,
                     "MaxLength": 0
                   }
                 }
@@ -5590,7 +5717,7 @@
               "Player": null,
               "Expired": false,
               "Description": "Las unidades del rival conseguir\u00E1n \u002B1/0 dentro de dos rondas",
-              "Id": "20a21932-d841-42fa-b5cd-d1f5d569b455"
+              "Id": "adf89153-9d95-4417-bce5-cecf7a045c5a"
             }
           }
         ],
@@ -5602,8 +5729,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "e18d40eb-8ba1-44b6-9639-f76a5241c475"
+        "Description": "",
+        "Id": "c6b56b28-fd57-4f2a-a260-b7fda4f64582"
       }
     ],
     "imageUrl": "",
@@ -5618,7 +5745,7 @@
     "Id": "92",
     "Name": "Troyano",
     "Type": 0,
-    "Description": "Cuando muero, me agrego al mazo rival",
+    "Description": "Cuando {die:muero}, me agrego al {deck:mazo} {rival:rival}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -5641,8 +5768,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "d1695b34-ab60-4d1d-8d74-79a58a34bbf8"
+        "Description": "",
+        "Id": "97a30dd2-6ebd-4261-8710-3654f023478d"
       }
     ],
     "imageUrl": "",
@@ -5657,8 +5784,8 @@
     "Id": "93",
     "Name": "Firewall",
     "Type": 0,
-    "Description": "Cuando el rival juega un virus, consigo \u002B1/\u002B1",
-    "BaseAttack": 0,
+    "Description": "Cuando el {rival:rival} {play:juega} un {family:virus}, consigo \u002B1/\u002B1",
+    "BaseAttack": 2,
     "BaseHealth": 3,
     "Effects": [
       {
@@ -5697,8 +5824,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "c8040f06-c08a-4434-8504-23d2af0dfadb"
+        "Description": "",
+        "Id": "44258852-007d-4408-8734-de59b441fb9a"
       },
       {
         "Trigger": 5,
@@ -5736,8 +5863,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "47e20ec6-cc3e-4227-9e07-41033bb1ba6b"
+        "Description": "",
+        "Id": "6249e3b7-1565-4902-85f7-1a893dd4f1f0"
       }
     ],
     "imageUrl": "",
@@ -5752,7 +5879,7 @@
     "Id": "94",
     "Name": "Copia de seguridad",
     "Type": 0,
-    "Description": "HABILIDAD: Muero y curo a mi jugador el equivalente a mi vida",
+    "Description": "{skill:HABILIDAD}: {die:Muero} y curo a mi {player:jugador} el equivalente a mi vida",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [],
@@ -5776,7 +5903,7 @@
     "Id": "95",
     "Name": "Prueba Unitaria",
     "Type": 1,
-    "Description": "Roba una carta. Las cartas de tipo Seguridad ganan 1 de vida",
+    "Description": "{draw:Roba} una {family:capa}. Las cartas de tipo {family:Seguridad} ganan 1 de vida",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5807,13 +5934,29 @@
               "WhichDeckToSearch": 0,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
           },
           {
             "$type": "DrawCardEffect",
             "CardAmount": 1,
-            "Filter": null
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "Capa"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            }
           }
         ],
         "Duration": {
@@ -5824,8 +5967,8 @@
         "SourceCard": null,
         "Player": null,
         "Expired": false,
-        "Description": null,
-        "Id": "ad8dae85-7193-4845-866a-f1696fabed6d"
+        "Description": "",
+        "Id": "99d15c40-52da-4df4-a498-217a50bcbb1b"
       }
     ],
     "imageUrl": "",
