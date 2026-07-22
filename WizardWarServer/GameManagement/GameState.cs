@@ -231,7 +231,15 @@ public class GameState
 
     public void DrawCard(IdentificableObject? source, CardFilter? filter = null)
     {
-        foreach(var p in AlivePlayers) DrawCard(p.Connection, source, filter);
+        for (int i = 0; i < AlivePlayers.Count && !GameActionResult.GameEnded;)
+        {
+            var player = AlivePlayers[i];
+            DrawCard(player.Connection, source, filter);
+
+            // Si el jugador sigue ocupando esta posición, avanzamos.
+            if (i < AlivePlayers.Count && ReferenceEquals(AlivePlayers[i], player))
+                i++;
+        }
     }
 
     public void KillPlayer(PlayerState state, bool forceChangeTurn = false)
@@ -488,7 +496,7 @@ public class GameState
 
     public void AlterUnitDamage(IdentificableObject source, CardInstance Unit, int Amount)
     {
-        if (Amount == 0) return;
+        if (Amount == 0 || (Amount < 0 && Unit.CurrentAttack == 0)) return;
         Amount = Unit.CurrentAttack + Amount < 0 ? -Unit.CurrentAttack : Amount;
         Unit.CurrentAttack += Amount;
 

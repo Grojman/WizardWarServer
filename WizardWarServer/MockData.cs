@@ -971,6 +971,7 @@ public static class MockData
         Name = "Entrenador personal",
         Description = "{add:Crea} dos batidos de proteínas en el {board:mazo}",
         Type = CardType.Unit,
+        Families = ["Gym"],
         Effects = [
             new(TriggerType.UnitPlayed, [new AppendCardToDeck(2, "42", false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ],
@@ -986,7 +987,7 @@ public static class MockData
         BaseHealth = 2,
         Description = "Cuando el {player:jugador} {play:juega} un batido de proteínas, consigo +1/0",
         Effects = [
-            new(TriggerType.SpellPlayed, [new AlterMySelf(0, 1, false)], new Always(), new PlayerCardCondition(true, new() {DefinitionId = "42"})),
+            new(TriggerType.SpellPlayed, [new AlterMySelf(1, 0, false)], new Always(), new PlayerCardCondition(true, new() {DefinitionId = "42"})),
         ]
     },
     new()
