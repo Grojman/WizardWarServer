@@ -7,8 +7,13 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(GetDecksAction), "GetDecksAction")]
 [JsonDerivedType(typeof(GetAllCardsAction), "GetAllCardsAction")]
 [JsonDerivedType(typeof(StartBotGameAction), "StartBotGameAction")]
+[JsonDerivedType(typeof(SendSuggestion), "SendSuggestion")]
 public interface UserAction
 {
+    public class SendSuggestion : UserAction
+    {
+        public required string Suggestion { get; set; }
+    }
     public class ChangeNameAction : UserAction
     {
         public required string NewName { get; set;}

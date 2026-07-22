@@ -24,8 +24,19 @@ public static class StoringData
     public static List<GameData> Data { get; private set; } = new();
 
     public const string FILE_PATH = "data.json";
-
+    public const string SUGGESTIONS_TEXT = "suggestions.txt";
+    public const string SUGGESTION_HEADER = "===================================================";
     private static string GetFilePath() => Path.Combine(AppContext.BaseDirectory, FILE_PATH);
+
+    public static void SaveSuggestion(string suggestion)
+    {
+        using (StreamWriter sr = new(SUGGESTIONS_TEXT, true))
+        {
+            sr.WriteLine(SUGGESTION_HEADER);
+            sr.WriteLine(suggestion);
+            sr.WriteLine(SUGGESTION_HEADER);
+        }
+    }
 
     public static void GetFromFile()
     {
