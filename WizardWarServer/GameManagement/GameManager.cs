@@ -87,7 +87,6 @@ public class GameManager
                 json);
         } else
         {
-            Console.WriteLine("Not a game action");
             UserAction? action = null;
 
             try

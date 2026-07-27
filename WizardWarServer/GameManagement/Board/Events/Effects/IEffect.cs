@@ -22,6 +22,8 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(AlterPlayerHealthBasedOnMyStats), nameof(AlterPlayerHealthBasedOnMyStats))]
 [JsonDerivedType(typeof(TriggerAbilityEffect), nameof(TriggerAbilityEffect))]
 [JsonDerivedType(typeof(DrawCardsBasedOnFilter), nameof(DrawCardsBasedOnFilter))]
+[JsonDerivedType(typeof(UseRandomSpellFromEnemyDeck), nameof(UseRandomSpellFromEnemyDeck))]
+[JsonDerivedType(typeof(CreateRandomCoin), nameof(CreateRandomCoin))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

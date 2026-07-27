@@ -13,6 +13,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(IAttackedCondition), nameof(IAttackedCondition))]
 [JsonDerivedType(typeof(TurnCounterCondition), nameof(TurnCounterCondition))]
 [JsonDerivedType(typeof(NumericEventCondition), nameof(NumericEventCondition))]
+[JsonDerivedType(typeof(RandomCondition), nameof(RandomCondition))]
 
 //TODO: ADD DERIVED TYPES HERE
 public abstract class EffectCondition : ICloneable<EffectCondition>

@@ -118,10 +118,6 @@ public class GameState
             }
 
             var activeCard = card;
-            foreach(var e in activeCard.SpecialEffects ?? []) e.Execute(state.Id, state.PlayerTarget!.Id, activeCard, this, null);
-
-            activeCard.MaxSpecialEffectTimes--;
-
             var gevent  = new GameEvent.CardEventPlayed()
             {
                 Source = activeCard,
@@ -130,6 +126,10 @@ public class GameState
             };
 
             GameActionResult.AddEvent(gevent);
+            foreach(var e in activeCard.SpecialEffects ?? []) e.Execute(state.Id, state.PlayerTarget!.Id, activeCard, this, null);
+
+            activeCard.MaxSpecialEffectTimes--;
+
             ApplyEffect(TriggerType.CardEffectPlayed, gevent);
         }
     }
@@ -394,9 +394,8 @@ public class GameState
             {
                 case TargetType.PLAYER:
                     GameActionResult.AddEvent(gevent);
-                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     AlterPlayerHealth(card, targetedPlayer, -card.CurrentAttack, false);
-
+                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     break;
                 case TargetType.BOARD:
                     if (target < 0 || target >= targetedPlayer.Board.Length)
@@ -408,17 +407,19 @@ public class GameState
                     var cardTarget = targetedPlayer.Board[target];
                     gevent.Deffender = cardTarget;
                     GameActionResult.AddEvent(gevent);
-                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     if(cardTarget is null)
                     {
                         Console.WriteLine($"WTF. Attacking a card that doesnt exists on rival board");
                     } else
                     {
-                        AlterUnitHealth(card, cardTarget, -card.CurrentAttack, false, false);
-                        AlterUnitHealth(cardTarget, card, -cardTarget.CurrentAttack, false, false);
+                        int damage = -card.CurrentAttack;
+                        int targetDamage = -cardTarget.CurrentAttack;
+                        AlterUnitHealth(card, cardTarget, damage, false, false);
+                        AlterUnitHealth(cardTarget, card, targetDamage, false, false);
                         CheckKill(card, cardTarget);
                         CheckKill(cardTarget, card);
                     }
+                    ApplyEffect(TriggerType.CardAttacked, gevent);
                     break;
                 default:
                     Console.WriteLine($"WTF. Unexisting TargetType value");

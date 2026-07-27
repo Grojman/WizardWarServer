@@ -6,22 +6,20 @@ public class GameData
     {
     }
 
-    public GameData(List<int> playedDecks, int winnerDeck, bool forced)
+    public GameData(int wins, int loses)
     {
-        PlayedDecks = playedDecks;
-        WinnerDeck = winnerDeck;
-        Forced = forced;
+        Wins = wins;
+        Loses = loses;
     }
 
-    public List<int> PlayedDecks { get; set; } = new();
-    public int WinnerDeck { get; set; }
-    public bool Forced { get; set; }
+    public int Wins { get; set; }
+    public int Loses { get; set; }
     
 }
 
 public static class StoringData
 {
-    public static List<GameData> Data { get; private set; } = new();
+    public static Dictionary<int, Dictionary<int, GameData>> Data { get; private set; } = new();
 
     public const string FILE_PATH = "data.json";
 
@@ -39,7 +37,7 @@ public static class StoringData
         try
         {
             var json = File.ReadAllText(filePath);
-            var res = JsonSerializer.Deserialize<List<GameData>>(json);
+            var res = JsonSerializer.Deserialize<Dictionary<int, Dictionary<int, GameData>>>(json);
             Data = res ?? new();
         }
         catch (JsonException ex)
@@ -58,9 +56,9 @@ public static class StoringData
             Directory.CreateDirectory(directory);
         }
 
-        var json = JsonSerializer.Serialize(Data ?? new(), new JsonSerializerOptions()
+        var json = JsonSerializer.Serialize(Data ?? [], new JsonSerializerOptions()
         {
-            WriteIndented = true
+            WriteIndented = true,
         });
 
         File.WriteAllText(filePath, json);
@@ -68,18 +66,50 @@ public static class StoringData
 
     public static void SaveData(GameState state, bool forced)
     {
-        Console.WriteLine("Saving new data");
-        var data = new GameData
-        {
-            PlayedDecks = state.Players.Select(n => n.Deck!.Id).ToList()
-        };
         if (state.GameActionResult.Winner is not null)
         {
-            data.WinnerDeck = state.GetState((Guid)state.GameActionResult.Winner).Deck!.Id;
-        }
-        data.Forced = forced;
+            Guid winnerId = (Guid)state.GameActionResult.Winner;
+            int winerDeck = state.GetState(winnerId).Deck!.Id;
 
-        Data.Add(data);
+            Dictionary<int,GameData> values;
+
+            if (!Data.ContainsKey(winerDeck))
+            {
+                values = [];
+                Data.Add(winerDeck, values);
+            } else
+            {
+                values = Data[winerDeck];
+            }
+
+            HashSet<int> appendedIds = [];
+
+            foreach(var player in state.Players.Where(n => n.Id != winnerId))
+            {
+                var id = player.Deck!.Id;
+                if (appendedIds.Add(id))
+                {
+                    if (!Data.ContainsKey(id))
+                    {
+                        Data.Add(id, []);
+                    }
+
+                    if(!Data[id].ContainsKey(winerDeck))
+                    {
+                        Data[id].Add(winerDeck, new());
+                    }
+
+                    if (!Data[winerDeck].ContainsKey(id))
+                    {
+                        Data[winerDeck].Add(id, new());
+                    }
+
+                    Data[winerDeck][id].Wins++;
+                    Data[id][winerDeck].Loses++;
+                }
+            }
+        }
+
     }
 
 }

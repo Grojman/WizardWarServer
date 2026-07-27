@@ -1,13 +1,33 @@
 [
   {
     "Deck": {
+      "id": 11,
+      "name": "Gambler",
+      "description": "Esto es una descripci\u00F3n"
+    },
+    "Cards": {
+      "104": 4,
+      "105": 2,
+      "106": 3,
+      "107": 3,
+      "108": 3,
+      "109": 4,
+      "110": 2,
+      "111": 1,
+      "112": 4,
+      "113": 1,
+      "114": 3
+    }
+  },
+  {
+    "Deck": {
       "id": 10,
       "name": "Tecnomago",
       "description": "Una criatura compuesta de metal, cables y energ\u00EDa. No tiene alma. No tiene comuni\u00F3n con el mundo y su energ\u00EDa. Y, de alg\u00FAn modo, es capaz de realizar sus propias obras. Ve por encima del resto, se ha declarado a s\u00ED misma como un hechicero, y nadie entiende cu\u00E1les son sus prop\u00F3sitos."
     },
     "Cards": {
       "70": 3,
-      "85": 2,
+      "85": 3,
       "86": 2,
       "87": 4,
       "88": 3,

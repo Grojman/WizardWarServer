@@ -1,4 +1,6 @@
 
+using System.Net.Http.Headers;
+
 public static class MockData
 {
     public static void PrintData()
@@ -1417,64 +1419,6 @@ new()
     ]
 },
 
-
-new()
-{
-    Id = "66",
-    Name = "Pilluelo",
-    Families = ["Ladrón"],
-    Description = "Cuando muero, roba una carta",
-    BaseAttack = 1,
-    BaseHealth = 1,
-    Type = CardType.Unit,
-    Effects =[
-        new(TriggerType.UnitDeath, [new DrawCardEffect(1, null)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
-    ]
-},
-new()
-{
-    Id = "67",
-    Name = "Fanático creyente",
-    Families = ["Culto"],
-    Description = "Cuando muero, inflinjo 1 de daño al rival",
-    BaseAttack = 1,
-    BaseHealth = 2,
-    Type = CardType.Unit,
-    Effects =[
-        new(TriggerType.UnitDeath, [new AlterPlayerHealthEffect(-1, true)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
-    ]
-},
-new()
-{
-    Id = "68",
-    Name = "Terrible sacrificio",
-    Families = ["Culto"],
-    Description = "Mata a una unidad en mesa (izq) para robar dos cartas",
-    Type = CardType.Spell,
-    Effects =[
-        new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.PLAYER, 1), new DrawCardEffect(2, null)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
-    ],
-    ConditionToPlay = new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.AT_LEAST, 1))
-},
-new()
-{
-    Id = "69",
-    Name = "Venganza sangrienta",
-    Families = ["Culto"],
-    Description = "Mata a una unidad en mesa (izq) para matar otra unidad (izq) en la mesa rival",
-    Type = CardType.Spell,
-    Effects =[
-        new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.PLAYER, 1),new KillCards(new(), PlayerType.RIVAL, 1), ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
-    ],
-    ConditionToPlay = new MultiEffectCondition([
-        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.AT_LEAST, 1)),
-        new CountCardCondition(new() {WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}, new(CountType.AT_LEAST, 1))
-    ], false)
-},
-
-
-
-
 new()
 {
     Id = "70",
@@ -1862,8 +1806,264 @@ new()
             
         ],new DurationByExecutions(1), null)
     ]
-}
+},
+new()
+{
+    Id = "96",
+    Name = "Moneda de la llamada",
+    Families = ["Moneda del caos"],
+    Type = CardType.Spell,
+    Description = "50% de probabilidades de {play:jugar} un terror agónico en la mesa, si hay hueco",
+    Effects = [
+        new(TriggerType.SpellPlayed,[
+            new PlayCardEffect("97", false, false)
+        ], new DurationByExecutions(1), new RandomCondition(50))
+    ]
+},
+new()
+{
+    Id = "97",
+    Name = "Terror Agónico",
+    Type = CardType.Unit,
+    BaseAttack = 3,
+    BaseHealth = 4   
+},
+new()
+{
+    Id = "98",
+    Name = "Moneda sangrienta",
+    Type = CardType.Spell,
+    Families = ["Moneda del caos"],
+    Description = "50% de probabilidades de curar al jugador 2, y quitarle 2 de vida al rival",
+    Effects = [
+        new(TriggerType.SpellPlayed,[
+            new AlterPlayerHealthEffect(2, false),
+            new AlterPlayerHealthEffect(-2, true)
+        ], new DurationByExecutions(1), new RandomCondition(50))
+    ]
+},
+new()
+{
+    Id = "99",
+    Name = "Moneda de las profundidades",
+    Type = CardType.Spell,
+    Families = ["Moneda del caos"],
+    Description = "50% de probabilidades de -1/-1 a la {board:mesa} {rival:rival}",
+    Effects = [
+        new(TriggerType.SpellPlayed,[
+            new AlterUnitStatsEffect(-1, -1, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new()})
+        ], new DurationByExecutions(1), new RandomCondition(50))
+    ]
+},
+new()
+{
+    Id = "100",
+    Name = "Moneda gloriosa",
+    Type = CardType.Spell,
+    Families = ["Moneda del caos"],
+    Description = "50% de probabilidades de +1/+1 a la {board:mesa} del {player:jugador}",
+    Effects = [
+        new(TriggerType.SpellPlayed,[
+            new AlterUnitStatsEffect(1, 1, new() { WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})
+        ], new DurationByExecutions(1), new RandomCondition(50))
+    ]
+},
+new()
+{
+    Id = "101",
+    Name = "Moneda codiciosa",
+    Type = CardType.Spell,
+    Families = ["Moneda del caos"],
+    Description = "50% de probabilidades de curar 4 de vida al {player:jugador}",
+    Effects = [
+        new(TriggerType.SpellPlayed,[
+            new AlterPlayerHealthEffect(4, false)
+        ], new DurationByExecutions(1), new RandomCondition(50))
+    ]
+},
+new()
+{
+    Id = "102",
+    Name = "Moneda tortuosa",
+    Type = CardType.Spell,
+    Families = ["Moneda del caos"],
+    Description = "50% de probabilidades de quitar 4 de vida al {rival:rival}",
+    Effects = [
+        new(TriggerType.SpellPlayed,[
+            new AlterPlayerHealthEffect(-4, true)
+        ], new DurationByExecutions(1), new RandomCondition(50))
+    ]
+},
+new()
+{
+    Id = "103",
+    Name = "Moneda de las profundidades",
+    Type = CardType.Spell,
+    Families = ["Moneda del caos", "Caos verdadero"],
+    Description = "Copia un hechizo del {deck:mazo} del {rival:rival} y lo {play:juega}",
+    Effects = [
+        new(TriggerType.SpellPlayed,[
+            new UseRandomSpellFromEnemyDeck()
+        ], new DurationByExecutions(1), null)
+    ]
+},
 
+
+new()
+{
+    Id = "104",
+    Name = "Ladrón codicioso",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Description = "Cuando {die:muero}, {add:creo} una moneda del caos en el mazo de mi {player:jugador}",
+    Effects = [
+        new(TriggerType.UnitDeath, [new CreateRandomCoin()], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]   
+},
+new()
+{
+    Id = "105",
+    Name = "Máquina de lotería",
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 3,
+    Description = "Cuando mi jugador {play:juega} una moneda, la vuelvo a jugar",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new RetriggerSpellEffect()], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["Moneda del caos"]}))
+    ]  
+},
+new()
+{
+    Id = "106",
+    Name = "Tesoro maldito",
+    Type = CardType.Spell,
+    Description = "Creo tres monedas en el mazo del jugador",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new CreateRandomCoin(), new CreateRandomCoin(),new CreateRandomCoin(),], new DurationByExecutions(1), null)
+    ]
+},
+new()
+{
+    Id = "107",
+    Type = CardType.Spell,
+    Name = "Pago de sangre",
+    Description = "Mata una una unidad aliada. Inflinge 4 de daño a una unidad rival y crea una moneda en el mazo del jugador",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new KillCards(new(), PlayerType.PLAYER, 1),
+            new AlterUnitStatsEffect(-4, 0, new() {Filter = new(), WhichBoardToSearch = PlayerType.RIVAL, MaxLength = 1}),
+            new CreateRandomCoin()
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ],
+    ConditionToPlay = new CountCardCondition(new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER}, new(CountType.AT_LEAST, 1))
+},
+new()
+{
+    Id = "108",
+    Type = CardType.Unit,
+    BaseAttack = 2,
+    BaseHealth = 2,
+    Name = "Acólito sangriento",
+    Description = "HABILIDAD: pierdo 1 de vida, -1/0 a la mesa enemiga",
+    PlayEffectTriggerTimes = 2,
+    PlayEffects = [
+        new AlterUnitStatsEffect(0, -1, new() {Filter = new(), WhichBoardToSearch = PlayerType.RIVAL}),
+        new AlterMySelf(0, -1, false),
+    ]
+},
+new()
+{
+    Id = "109",
+    Type = CardType.Unit,
+    BaseAttack = 2,
+    BaseHealth = 1,
+    Name = "Adicto al oro",
+    Description = "HABILIDAD: Juego una moneda en la mano",
+    PlayEffectTriggerTimes = 1,
+    PlayEffects = [
+        new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["Moneda del caos"]})
+    ]
+},
+new()
+{
+    Id = "110",
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 4,
+    Name = "Reflejo maldito",
+    Description = "Cuando mi jugador juega una moneda, creo otra en el mazo",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new CreateRandomCoin()
+        ], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["Moneda del caos"]}))
+    ]
+},
+new()
+{
+    Id = "111",
+    Type = CardType.Spell,
+    Name = "Auxilio del caos",
+    Description = "Has jugador 4 monedas o más. Durante los pŕoximos 4 turnos, al acabar el turno juega una moneda del caos de la mano de mi jugador",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new AppendGlobalEffect(
+                new(TriggerType.TurnEnd, [
+                    new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["Moneda del caos"]})
+                ], new DurationByExecutions(4), new TurnCounterCondition(1)),
+                "FINAL DE RONDA: juego una moneda de la mano del jugador"
+            )
+        ], new DurationByExecutions(1), null)
+    ],
+    ConditionToPlay = new CountPlayedCardsCondition(new() { CurrentFamilies = ["Moneda del caos"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 4))
+},
+new()
+{
+    Id = "112",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Name = "Apostador demacrado",
+    Description = "Cuando mi jugador juega una moneda, consigo +1/+1",
+    Effects = [
+        new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["Moneda del caos"]}))
+    ]
+},
+new()
+{
+    Id = "113",
+    Type = CardType.Spell,
+    Name = "Invocación del caos",
+    Description = "Has jugado 10 mondas del caos o más. Crea tres monedas caóticas en la mano",
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new PlayCardEffect("103", false, true),
+            new PlayCardEffect("103", false, true),
+            new PlayCardEffect("103", false, true),
+        ], new DurationByExecutions(1), null)
+    ],
+    ConditionToPlay = new CountPlayedCardsCondition(new() { CurrentFamilies = ["Moneda del caos"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 10))
+},
+new()
+{
+    Id = "114",
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 1,
+    Name = "Invocador de las profundidades",
+    Description = "Las pŕoximas tres monedas que juegue mi jugador, se crea una moneda en el mazo",
+    Effects = [
+        new(TriggerType.UnitPlayed, [
+            new AppendGlobalEffect(
+                new(TriggerType.SpellPlayed,
+                [
+                    new CreateRandomCoin()
+                ], new DurationByExecutions(3), new PlayerCardCondition(true, new(){CurrentFamilies = ["Moneda del caos"]})),
+                "Cuando el juagdor juegue una moneda, creo otra y la añado en el mazoº"
+            )
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+}
 
 
 ];
@@ -1888,6 +2088,28 @@ new()
         //     }
         // },
         {
+            new DeckDto(
+                11,
+                "Gambler",
+                "Esto es una descripción"
+            ),
+            new()
+            {
+                {"104", 4},
+                {"105", 2},
+                {"106", 3},
+                {"107", 3},
+                {"108", 3},
+                {"109", 4},
+                {"110", 2},
+                {"111", 1},
+                {"112", 4},
+                {"113", 1},
+                {"114", 3},
+            }
+        },
+        {
+            
             new DeckDto(
                 10,
                 "Tecnomago",
