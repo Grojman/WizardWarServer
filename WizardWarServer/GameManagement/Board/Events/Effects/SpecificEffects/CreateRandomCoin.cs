@@ -1,7 +1,7 @@
 
 public class CreateRandomCoin : IEffect
 {
-    readonly string[] COINS = ["96", "97", "98", "99", "100", "101", "102"];
+    readonly string[] COINS = ["96", "98", "99", "100", "101", "102"];
     public IEffect Clone() => new CreateRandomCoin();
 
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
