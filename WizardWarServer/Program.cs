@@ -1,37 +1,105 @@
 using System.Net.WebSockets;
 using System.Text;
+using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.RateLimiting;
+using Serilog;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private const string ConnectRateLimiterPolicy = "ws-connect";
+
+    private static async Task<int> Main(string[] args)
     {
-        StoringData.GetFromFile();
-        var builder = WebApplication.CreateBuilder(args);
+        Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .CreateBootstrapLogger();
 
-        // builder.WebHost.UseUrls("http://10.158.7.72:5182");
-        builder.WebHost.UseUrls($"https://localhost:443");
-        var app = builder.Build();
-
-        app.UseWebSockets();
-
-        app.UseDefaultFiles();
-        app.UseStaticFiles();
-
-
-        GameManager gameManager = new();
-
-        CardManager.SerializeCards(MockData.Cards);
-
-        foreach (var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
-
-        CardManager.Initialize();
-
-        app.Map("/ws", async context =>
+        try
         {
-            Console.WriteLine($"Connection found");
-            if (context.WebSockets.IsWebSocketRequest)
+            Log.Information("Starting WizardWarServer");
+
+            var builder = WebApplication.CreateBuilder(args);
+
+            builder.Host.UseSerilog((context, services, configuration) => configuration
+                .ReadFrom.Configuration(context.Configuration));
+
+            var serverOptions = builder.Configuration
+                .GetSection(ServerOptions.SectionName)
+                .Get<ServerOptions>() ?? new ServerOptions();
+
+            builder.Services.AddSingleton(serverOptions);
+
+            builder.Services.AddRateLimiter(rateLimiterOptions =>
             {
-                Console.WriteLine($"Is web socket");
+                rateLimiterOptions.OnRejected = (context, _) =>
+                {
+                    Log.Warning(
+                        "Rejected WebSocket connection attempt from {RemoteIp} (connection rate limit exceeded)",
+                        context.HttpContext.Connection.RemoteIpAddress);
+                    return ValueTask.CompletedTask;
+                };
+
+                rateLimiterOptions.AddPolicy(ConnectRateLimiterPolicy, httpContext =>
+                    RateLimitPartition.GetFixedWindowLimiter(
+                        httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+                        _ => new FixedWindowRateLimiterOptions
+                        {
+                            PermitLimit = Math.Max(1, serverOptions.ConnectionRateLimitPerMinute),
+                            Window = TimeSpan.FromMinutes(1),
+                            QueueLimit = 0
+                        }));
+            });
+
+            var app = builder.Build();
+
+            app.UseRateLimiter();
+
+            app.UseWebSockets();
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
+            StoringData.Configure(serverOptions);
+            StoringData.GetFromFile();
+
+            CardManager.Configure(serverOptions.DataDirectory);
+
+            var forceSeed = args.Contains("--seed");
+            if (forceSeed || !CardManager.DataFilesExist())
+            {
+                Log.Information(
+                    "Seeding card/deck data from MockData ({Reason})",
+                    forceSeed ? "explicit --seed flag" : "data files missing");
+
+                CardManager.SerializeCards(MockData.Cards);
+                foreach (var p in MockData.Decks) CardManager.SerializeDeck(p.Key, p.Value);
+            }
+            else
+            {
+                Log.Information("Existing card/deck data files found; skipping MockData seed (pass --seed to force regeneration)");
+            }
+
+            CardManager.Initialize();
+
+            GameManager gameManager = new(serverOptions);
+
+            app.Map("/ws", async context =>
+            {
+                if (!context.WebSockets.IsWebSocketRequest)
+                {
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return;
+                }
+
+                if (!IsOriginAllowed(context, serverOptions))
+                {
+                    Log.Warning(
+                        "Rejected WebSocket upgrade from disallowed origin {Origin} ({RemoteIp})",
+                        context.Request.Headers.Origin.ToString(),
+                        context.Connection.RemoteIpAddress);
+                    context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                    return;
+                }
 
                 var socket = await context.WebSockets.AcceptWebSocketAsync();
 
@@ -39,68 +107,157 @@ internal class Program
 
                 await gameManager.AddPlayer(player);
 
-                Console.WriteLine($"Current connections: {gameManager.PlayerCount}");
+                Log.Information("Player {PlayerId} connected from {RemoteIp}", player.Guid, context.Connection.RemoteIpAddress);
 
-                await ReceiveLoop(player, gameManager);
+                await ReceiveLoop(player, gameManager, serverOptions, app.Lifetime.ApplicationStopping);
+            }).RequireRateLimiting(ConnectRateLimiterPolicy);
 
-            }
-            else
+            app.Lifetime.ApplicationStopping.Register(() =>
             {
-                context.Response.StatusCode = 400;
+                Log.Information("Server is stopping, closing active connections...");
+                gameManager.CloseAllConnectionsAsync().GetAwaiter().GetResult();
+            });
+
+            if (app.Environment.IsDevelopment())
+            {
+                _ = Task.Run(() => RunDebugConsole(gameManager, app.Lifetime.ApplicationStopping));
             }
+
+            await app.RunAsync();
+
+            return 0;
+        }
+        catch (Exception ex)
+        {
+            Log.Fatal(ex, "WizardWarServer terminated unexpectedly");
+            return 1;
+        }
+        finally
+        {
+            Log.Information("WizardWarServer stopped");
+            await Log.CloseAndFlushAsync();
+        }
+    }
+
+    private static bool IsOriginAllowed(HttpContext context, ServerOptions options)
+    {
+        if (options.AllowedOrigins is null || options.AllowedOrigins.Length == 0) return true;
+
+        var origin = context.Request.Headers.Origin.ToString();
+
+        // Non-browser clients (native game clients) typically don't send an Origin header at all.
+        if (string.IsNullOrEmpty(origin)) return true;
+
+        return options.AllowedOrigins.Contains(origin, StringComparer.OrdinalIgnoreCase);
+    }
+
+    private static async Task ReceiveLoop(
+        PlayerConnection player,
+        GameManager manager,
+        ServerOptions options,
+        CancellationToken stoppingToken)
+    {
+        using var rateLimiter = new TokenBucketRateLimiter(new TokenBucketRateLimiterOptions
+        {
+            TokenLimit = Math.Max(1, options.MessageRateLimitPerSecond),
+            TokensPerPeriod = Math.Max(1, options.MessageRateLimitPerSecond),
+            ReplenishmentPeriod = TimeSpan.FromSeconds(1),
+            AutoReplenishment = true,
+            QueueLimit = 0
         });
 
-        // app.MapFallbackToFile("index.html");
-
-        new Thread(app.Run).Start();
-
-        // app.Run();
-
-        async Task ReceiveLoop(PlayerConnection player, GameManager manager)
+        try
         {
-            try
+            var buffer = new byte[8192];
+
+            using var messageStream = new MemoryStream();
+
+            while (player.Socket.State == WebSocketState.Open)
             {
-                var buffer = new byte[4096];
+                messageStream.SetLength(0);
 
-                while (player.Socket.State == WebSocketState.Open)
+                WebSocketReceiveResult result;
+                do
                 {
-                    var result = await player.Socket.ReceiveAsync(
-                        new ArraySegment<byte>(buffer),
-                        CancellationToken.None);
+                    result = await player.Socket.ReceiveAsync(new ArraySegment<byte>(buffer), stoppingToken);
 
-                    if (result.MessageType == WebSocketMessageType.Close || result.Count == 0)
+                    if (result.MessageType == WebSocketMessageType.Close)
                     {
-                        Console.WriteLine("Socket is closed, removing...");
-                        break;
+                        Log.Information("Player {PlayerId} closed the connection", player.Guid);
+                        return;
                     }
 
-                    var json = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    if (messageStream.Length + result.Count > options.MaxMessageSizeBytes)
+                    {
+                        Log.Warning(
+                            "Player {PlayerId} sent a message exceeding the {MaxSize} byte limit; closing connection",
+                            player.Guid, options.MaxMessageSizeBytes);
+                        await player.Socket.CloseAsync(WebSocketCloseStatus.MessageTooBig, "Message too large", CancellationToken.None);
+                        return;
+                    }
 
-                    Console.WriteLine($"Json recieved: {json}");
+                    messageStream.Write(buffer, 0, result.Count);
+                } while (!result.EndOfMessage);
 
-                    await manager.HandleMessage(player, json);
+                if (messageStream.Length == 0) continue;
+
+                using var lease = rateLimiter.AttemptAcquire();
+                if (!lease.IsAcquired)
+                {
+                    Log.Warning("Player {PlayerId} exceeded the message rate limit; closing connection", player.Guid);
+                    await player.Socket.CloseAsync(WebSocketCloseStatus.PolicyViolation, "Rate limit exceeded", CancellationToken.None);
+                    return;
                 }
+
+                var json = Encoding.UTF8.GetString(messageStream.GetBuffer(), 0, (int)messageStream.Length);
+
+                await manager.HandleMessage(player, json);
             }
-            catch (Exception e)
+        }
+        catch (OperationCanceledException)
+        {
+            Log.Information("Receive loop for player {PlayerId} cancelled (server shutting down)", player.Guid);
+        }
+        catch (WebSocketException wsEx)
+        {
+            Log.Information("WebSocket session for player {PlayerId} ended: {Message}", player.Guid, wsEx.Message);
+        }
+        catch (Exception e)
+        {
+            Log.Error(e, "Socket session for player {PlayerId} ended because of an unexpected exception", player.Guid);
+        }
+        finally
+        {
+            if (player.Socket.State == WebSocketState.Open)
             {
-                Console.WriteLine($"Socket session has ended because of an exception: {e}");
+                try
+                {
+                    await player.Socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
+                }
+                catch (Exception e)
+                {
+                    Log.Debug(e, "Failed to close socket cleanly for player {PlayerId}", player.Guid);
+                }
             }
 
             await manager.RemovePlayer(player);
         }
+    }
 
-        while(true)
+    private static void RunDebugConsole(GameManager gameManager, CancellationToken stoppingToken)
+    {
+        while (!stoppingToken.IsCancellationRequested)
         {
             string res = Console.ReadLine() ?? "";
 
-            switch(res)
+            switch (res)
             {
                 case "players":
-                    gameManager.PrintPlayers();       
-                break;
+                    gameManager.PrintPlayers();
+                    break;
                 case "games":
                     gameManager.PrintGames();
-                break;
+                    break;
                 case "cards":
                     MockData.PrintData();
                     break;

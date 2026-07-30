@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.Json;
+using Serilog;
 
 public class GameSession
 {  
@@ -29,6 +30,8 @@ public class GameSession
 
     public async Task Start()
     {
+        Log.Information("Game session starting with {PlayerCount} players (bot session: {IsBotSession})", Connections.Count, botSession);
+
         foreach(var c in Connections) await c.Send("start_game", new { });
 
         state.Initialize(Connections);
@@ -99,6 +102,8 @@ public class GameSession
             winner,
             forced
         };
+
+        Log.Information("Game session ended. Winner: {Winner} Forced: {Forced}", winner, forced);
 
         StoringData.SaveData(state, forced);
         StoringData.SaveInFile();

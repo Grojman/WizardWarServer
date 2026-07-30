@@ -1,4 +1,5 @@
 using System.Net.WebSockets;
+using Serilog;
 
 public class PlayerConnection
 {
@@ -43,7 +44,7 @@ public class PlayerConnection
                 CancellationToken.None);    
         } catch(Exception e)
         {
-            Console.WriteLine($"Couldn't send message to client: {e}");
+            Log.Warning(e, "Couldn't send message to player {PlayerId}", Guid);
         }
         
     }

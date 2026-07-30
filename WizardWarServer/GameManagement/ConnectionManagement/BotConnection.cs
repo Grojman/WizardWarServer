@@ -1,4 +1,5 @@
 using System.Net.WebSockets;
+using Serilog;
 
 public class BotConnection : PlayerConnection
 {
@@ -84,7 +85,7 @@ public class BotConnection : PlayerConnection
     async Task DecideNextAction(GameStateDto? state)
     {
         if (state is null || !state.Me.IsMyTurn || Game is null) return;
-        Thread.Sleep(new Random().Next(1000, 3000));
+        await Task.Delay(Random.Shared.Next(1000, 3000));
         List<Func<GameStateDto, Task>> options = new();
 
         if(state.Me.CanPlayCard()) options.Add(PlayCard);
@@ -137,7 +138,7 @@ public class BotConnection : PlayerConnection
     {
         if (Game?.HasEnded ?? true) return;
 
-        Thread.Sleep(new Random().Next(250, 750));
+        await Task.Delay(Random.Shared.Next(250, 750));
         await Game.HandleAction(this, new PlayerAction.TextMessage()
         {
             Message = TEXT_RESPONSES.GetRandom()
@@ -150,29 +151,36 @@ public class BotConnection : PlayerConnection
 
         _ = Task.Run(async () =>
         {
-            switch (type)
+            try
             {
-                case "game_state":
-                    await DecideNextAction(obj as GameStateDto);
-                    break;
-                case "text_message":
-                    var typeInfo = obj.GetType();
-                    var messageProperty = typeInfo.GetProperty("message");
-                    var playerProperty = typeInfo.GetProperty("player");
+                switch (type)
+                {
+                    case "game_state":
+                        await DecideNextAction(obj as GameStateDto);
+                        break;
+                    case "text_message":
+                        var typeInfo = obj.GetType();
+                        var messageProperty = typeInfo.GetProperty("message");
+                        var playerProperty = typeInfo.GetProperty("player");
 
-                    var playerValue = playerProperty?.GetValue(obj, null) as Guid?;
+                        var playerValue = playerProperty?.GetValue(obj, null) as Guid?;
 
-                    if (playerValue is Guid otherPlayer && otherPlayer != Guid)
-                    {
-                        var messageValue = messageProperty?.GetValue(obj, null) as string;
-                        Resend = messageValue == ":04:";
-
-                        if (playerValue != Guid || Resend)
+                        if (playerValue is Guid otherPlayer && otherPlayer != Guid)
                         {
-                            await SendMessage();
+                            var messageValue = messageProperty?.GetValue(obj, null) as string;
+                            Resend = messageValue == ":04:";
+
+                            if (playerValue != Guid || Resend)
+                            {
+                                await SendMessage();
+                            }
                         }
-                    }
-                    break;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Bot {PlayerId} ({Name}) failed while deciding its next action", Guid, Name);
             }
         });
 

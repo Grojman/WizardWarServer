@@ -1,3 +1,4 @@
+using Serilog;
 
 public class GameState
 {
@@ -106,7 +107,7 @@ public class GameState
 
         if (cardIndex != -1 && (cardIndex < 0 || cardIndex > state.Board.Length))
         {
-            Console.WriteLine("WTF. Index is not valid for an effect to play");
+            Log.Warning("Invalid card index for an effect to play: {CardIndex}", cardIndex);
             return;
         }  else
         {
@@ -184,7 +185,7 @@ public class GameState
                        a.TargetIndex);
                 break;
             default:
-                Console.WriteLine($"Illegal action inside game!! : {action}");
+                Log.Warning("Illegal action inside game from player {PlayerId}: {Action}", player?.Guid, action);
                 break;
             }
         }
@@ -192,7 +193,7 @@ public class GameState
         {
             try
             {
-                Console.WriteLine($"Error while applying action from {player?.Guid}: {ex}");
+                Log.Error(ex, "Error while applying action from player {PlayerId}", player?.Guid);
             }
             catch {}
             return;
@@ -310,7 +311,7 @@ public class GameState
         {
             if (player.Board[boardIndex] is not null)
             {
-                Console.WriteLine($"WTF: setting boardIndex when that place is occupied");
+                Log.Warning("Setting boardIndex {BoardIndex} when that place is already occupied", boardIndex);
             } 
             player.Board[boardIndex] = card;
             var gevent = new GameEvent.UnitPlayed()
@@ -342,13 +343,13 @@ public class GameState
         var player = GetState(p.Guid);
         if (handIndex < 0 || handIndex >= player.Hand.Count)
         {
-            Console.WriteLine($"WTF: Hand size smaller than index");
+            Log.Warning("Player {PlayerId} sent a hand index out of range: {HandIndex}", p.Guid, handIndex);
             return;
         }
 
         if (boardIndex != -1 && (boardIndex < 0 || boardIndex >= player.Board.Length))
         {
-            Console.WriteLine($"WTF: Board index is out of range");
+            Log.Warning("Player {PlayerId} sent a board index out of range: {BoardIndex}", p.Guid, boardIndex);
             return;
         }
 
@@ -368,15 +369,15 @@ public class GameState
 
         if (attacker < 0 || attacker >= player.Board.Length)
         {
-            Console.WriteLine($"WTF. Attacking with invalid board index");
+            Log.Warning("Player {PlayerId} attacked with an invalid board index: {AttackerIndex}", p.Guid, attacker);
             return;
         }
 
         var card = player.Board[attacker];
         if (card is null)
         {
-            Console.WriteLine($"WTF. Attacking with unexisting card");
-        } else  
+            Log.Warning("Player {PlayerId} attacked with a nonexistent card at index {AttackerIndex}", p.Guid, attacker);
+        } else
         {
             ChangeTarget(player.Connection, targetedPlayerId);            
 
@@ -400,7 +401,7 @@ public class GameState
                 case TargetType.BOARD:
                     if (target < 0 || target >= targetedPlayer.Board.Length)
                     {
-                        Console.WriteLine($"WTF. Attacking a card that doesnt exists on rival board");
+                        Log.Warning("Player {PlayerId} targeted a board index that doesn't exist on the rival board: {TargetIndex}", p.Guid, target);
                         return;
                     }
 
@@ -409,7 +410,7 @@ public class GameState
                     GameActionResult.AddEvent(gevent);
                     if(cardTarget is null)
                     {
-                        Console.WriteLine($"WTF. Attacking a card that doesnt exists on rival board");
+                        Log.Warning("Player {PlayerId} attacked a card that doesn't exist on the rival board at index {TargetIndex}", p.Guid, target);
                     } else
                     {
                         int damage = -card.CurrentAttack;
@@ -422,7 +423,7 @@ public class GameState
                     ApplyEffect(TriggerType.CardAttacked, gevent);
                     break;
                 default:
-                    Console.WriteLine($"WTF. Unexisting TargetType value");
+                    Log.Warning("Player {PlayerId} sent an unknown TargetType value: {TargetType}", p.Guid, targetType);
                     break;
             }
         }

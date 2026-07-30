@@ -1,11 +1,24 @@
 using System.Text.Json;
+using Serilog;
 
 public static class CardManager
 {
-    private const string DECKS_FILE_PATH = "Data/Decks/decks.json";
-    private const string CARDS_FILE_PATH = "Data/Decks/cards.json";
+    private static string DECKS_FILE_PATH = Path.Combine(AppContext.BaseDirectory, "Data/Decks/decks.json");
+    private static string CARDS_FILE_PATH = Path.Combine(AppContext.BaseDirectory, "Data/Decks/cards.json");
 
     public static List<DeckDto> Decks { get; set; } = new();
+
+    public static void Configure(string dataDirectory)
+    {
+        var baseDir = Path.IsPathRooted(dataDirectory)
+            ? dataDirectory
+            : Path.Combine(AppContext.BaseDirectory, dataDirectory);
+
+        DECKS_FILE_PATH = Path.Combine(baseDir, "decks.json");
+        CARDS_FILE_PATH = Path.Combine(baseDir, "cards.json");
+    }
+
+    public static bool DataFilesExist() => File.Exists(DECKS_FILE_PATH) && File.Exists(CARDS_FILE_PATH);
 
     // Cartas globales
     public static Dictionary<string, CardDefinition> Cards { get; set; }
@@ -61,6 +74,8 @@ public static class CardManager
             DeckCards[wrapper.Deck.id]
                 = wrapper.Cards;
         }
+
+        Log.Information("Loaded {CardCount} cards and {DeckCount} decks", Cards.Count, Decks.Count);
     }
 
     public class CardManagerException : Exception
@@ -98,11 +113,19 @@ public static class CardManager
                     WriteIndented = true
                 });
 
+        EnsureDirectoryExists(CARDS_FILE_PATH);
+
         File.WriteAllText(
             CARDS_FILE_PATH,
             cardsJson);
 
         Cards = cards.ToDictionary(c => c.Id);
+    }
+
+    private static void EnsureDirectoryExists(string filePath)
+    {
+        var directory = Path.GetDirectoryName(filePath);
+        if (!string.IsNullOrEmpty(directory)) Directory.CreateDirectory(directory);
     }
 
     // =========================
@@ -146,6 +169,8 @@ public static class CardManager
                 {
                     WriteIndented = true
                 });
+
+        EnsureDirectoryExists(DECKS_FILE_PATH);
 
         File.WriteAllText(
             DECKS_FILE_PATH,

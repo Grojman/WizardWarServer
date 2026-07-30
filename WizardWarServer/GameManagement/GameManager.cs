@@ -1,43 +1,76 @@
 using System.Text.Json;
+using Serilog;
 
 public class GameManager
 {
     public int PlayerCount { get => players.Count; }
     public const int MAX_LENGHT_PLAYER_NAME = 40;
-    List<PlayerConnection> players = new();
-    Dictionary<int, List<PlayerConnection>> queue = new();
 
-    List<GameSession> games = new();
+    private readonly object _sync = new();
+
+    readonly List<PlayerConnection> players = new();
+    readonly Dictionary<int, List<PlayerConnection>> queue = new();
+
+    readonly List<GameSession> games = new();
+
+    readonly ServerOptions options;
+
+    public GameManager(ServerOptions options)
+    {
+        this.options = options;
+    }
 
     public Task AddPlayer(PlayerConnection player)
     {
-        players.Add(player);
+        lock (_sync)
+        {
+            players.Add(player);
+        }
         return Task.CompletedTask;
     }
 
-    async Task CheckQueue(int n, List<PlayerConnection> players)
+    async Task CheckQueue(int n, List<PlayerConnection> queuedPlayers)
     {
-        if (players.Count >= n)
+        List<PlayerConnection>? playersList = null;
+
+        lock (_sync)
         {
-            var playersList = players.GetRange(0, n);
-
-            players.RemoveRange(0, n);
-
-            var game = new GameSession(playersList, this);
-
-            games.Add(game);
-
-            await game.Start();
+            if (queuedPlayers.Count >= n)
+            {
+                playersList = queuedPlayers.GetRange(0, n);
+                queuedPlayers.RemoveRange(0, n);
+            }
         }
+
+        if (playersList is null) return;
+
+        var game = new GameSession(playersList, this);
+
+        lock (_sync)
+        {
+            games.Add(game);
+        }
+
+        await game.Start();
     }
 
     public async Task QueuePlayer(PlayerConnection player)
     {
-        if (!queue.ContainsKey(player.NumberOfPlayersInGame)) queue[player.NumberOfPlayersInGame] = new();
+        List<PlayerConnection> playerQueue;
 
-        queue[player.NumberOfPlayersInGame].Add(player);
+        lock (_sync)
+        {
+            if (!queue.TryGetValue(player.NumberOfPlayersInGame, out var value))
+            {
+                value = new();
+                queue[player.NumberOfPlayersInGame] = value;
+            }
 
-        await CheckQueue(player.NumberOfPlayersInGame, queue[player.NumberOfPlayersInGame]);
+            value.Add(player);
+            playerQueue = value;
+        }
+
+        await CheckQueue(player.NumberOfPlayersInGame, playerQueue);
     }
 
     public async Task AddBotGame(PlayerConnection player)
@@ -53,22 +86,33 @@ public class GameManager
 
         var game = new GameSession(botList, this, true);
 
-        games.Add(game);
+        lock (_sync)
+        {
+            games.Add(game);
+        }
 
         await game.Start();
     }
 
     public async Task RemovePlayer(PlayerConnection player)
     {
-        players.Remove(player);
+        lock (_sync)
+        {
+            players.Remove(player);
 
-        if(queue.TryGetValue(player.NumberOfPlayersInGame, out List<PlayerConnection>? value)) value.Remove(player);
+            if (queue.TryGetValue(player.NumberOfPlayersInGame, out List<PlayerConnection>? value)) value.Remove(player);
+        }
+
+        Log.Information("Player {PlayerId} disconnected", player.Guid);
 
         if (player.Game is not null) await player.Game.RemovePlayer(player);
     }
     public async Task UnqueuePlayer(PlayerConnection player)
     {
-        queue[player.NumberOfPlayersInGame].Remove(player);
+        lock (_sync)
+        {
+            if (queue.TryGetValue(player.NumberOfPlayersInGame, out var value)) value.Remove(player);
+        }
 
         if (player.Game != null)
         {
@@ -103,11 +147,31 @@ public class GameManager
                         player.Name = a.NewName;
                         break;
                     case UserAction.StartBotGameAction c:
+                        if (!options.IsValidPlayerCount(c.NumberOfPlayers))
+                        {
+                            await player.Send("error", new { message = "Invalid number of players." });
+                            break;
+                        }
+                        if (!CardManager.Decks.Any(d => d.id == c.DeckId))
+                        {
+                            await player.Send("error", new { message = "Unknown deck id." });
+                            break;
+                        }
                         player.SelectedDeckId = c.DeckId;
                         player.NumberOfPlayersInGame = c.NumberOfPlayers;
                         await AddBotGame(player);
                         break;
                     case UserAction.JoinQueueAction b:
+                        if (!options.IsValidPlayerCount(b.NumberOfPlayers))
+                        {
+                            await player.Send("error", new { message = "Invalid number of players." });
+                            break;
+                        }
+                        if (!CardManager.Decks.Any(d => d.id == b.DeckId))
+                        {
+                            await player.Send("error", new { message = "Unknown deck id." });
+                            break;
+                        }
                         player.SelectedDeckId = b.DeckId;
                         player.NumberOfPlayersInGame = b.NumberOfPlayers;
                         await QueuePlayer(player);
@@ -125,38 +189,82 @@ public class GameManager
                         StoringData.SaveSuggestion(d.Suggestion);
                         break;
                     default:
-                        Console.WriteLine($"Unauthorized message!! {json}");
+                        Log.Warning("Unrecognized message from player {PlayerId}: {Json}", player.Guid, json);
                         break;
                 }
             }
-            catch (JsonException)
+            catch (JsonException ex)
             {
-                Console.WriteLine("JSON inválido");
+                Log.Warning(ex, "Received invalid JSON from player {PlayerId}", player.Guid);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Log.Error(ex, "Error while handling message from player {PlayerId}", player.Guid);
             }
 
-            
+
         }
     }
 
     public void RemoveGameSession(GameSession session, IEnumerable<PlayerConnection> connections)
     {
-        games.Remove(session);
+        lock (_sync)
+        {
+            games.Remove(session);
+        }
         foreach (var c in connections) c.Game = null;
+    }
+
+    public async Task CloseAllConnectionsAsync()
+    {
+        List<PlayerConnection> snapshot;
+        lock (_sync)
+        {
+            snapshot = new List<PlayerConnection>(players);
+        }
+
+        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+
+        foreach (var player in snapshot)
+        {
+            try
+            {
+                if (player.Socket.State == System.Net.WebSockets.WebSocketState.Open)
+                {
+                    await player.Socket.CloseAsync(
+                        System.Net.WebSockets.WebSocketCloseStatus.NormalClosure,
+                        "Server is shutting down",
+                        cts.Token);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Debug(ex, "Failed to close socket cleanly for player {PlayerId} during shutdown", player.Guid);
+            }
+        }
     }
 
     public void PrintPlayers()
     {
-        Console.WriteLine($"Player count: {PlayerCount}");
-        foreach(var g in players) Console.WriteLine(g);
+        List<PlayerConnection> snapshot;
+        lock (_sync)
+        {
+            snapshot = new List<PlayerConnection>(players);
+        }
+
+        Console.WriteLine($"Player count: {snapshot.Count}");
+        foreach(var g in snapshot) Console.WriteLine(g);
     }
 
     public void PrintGames()
     {
-        Console.WriteLine($"Games count: {games.Count()}");
-        foreach(var g in games) Console.WriteLine(g);
+        List<GameSession> snapshot;
+        lock (_sync)
+        {
+            snapshot = new List<GameSession>(games);
+        }
+
+        Console.WriteLine($"Games count: {snapshot.Count}");
+        foreach(var g in snapshot) Console.WriteLine(g);
     }
 }
