@@ -1441,9 +1441,9 @@ new()
     Name = "BITS",
     Families = ["Paquete"],
     Type = CardType.Spell,
-    Description = "Curo 1 de vida al {player:jugador}",
+    Description = "Curo 2 de vida al {player:jugador}",
     Effects = [
-        new(TriggerType.SpellPlayed, [new AlterPlayerHealthEffect(1, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        new(TriggerType.SpellPlayed, [new AlterPlayerHealthEffect(2, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
 new()
