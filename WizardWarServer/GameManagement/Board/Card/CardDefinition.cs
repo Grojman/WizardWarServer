@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Routing;
-
 public class CardDefinition
 {
     public CardDefinition()

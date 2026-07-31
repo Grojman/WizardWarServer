@@ -1,8 +1,6 @@
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading.RateLimiting;
-using Microsoft.AspNetCore.RateLimiting;
-using Serilog;
 
 internal class Program
 {

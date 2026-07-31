@@ -1,6 +1,3 @@
-
-using System.Net.Http.Headers;
-
 public static class MockData
 {
     public static void PrintData()
@@ -1203,22 +1200,19 @@ new()
     Name = "Prisión glaciar",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "-4/0 a una unidad enemiga (izq)",
+    Description = "Una unidad tuya y del rival pasan a tener 0 de ataque",
     Effects = [
         new(
             TriggerType.SpellPlayed,
             [
-                new AlterUnitStatsEffect(0, -4, new()
-                {
-                    WhichBoardToSearch = PlayerType.RIVAL,
-                    MaxLength = 1,
-                    Filter = new()
-                })
+                new SetUnitToCeroEffect(1, true),
+                new SetUnitToCeroEffect(1, false),
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
         )
-    ]
+    ],
+    ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()}, new(CountType.AT_LEAST, 1))
 },
 
 new()
@@ -1381,7 +1375,7 @@ new()
     Name = "Avalancha",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "Has jugado 5 hechizos de hielo o más. -2/0 a toda la mesa enemiga. Las unidades con 0 de ataque reciben además -3/-3",
+    Description = "Has jugado 5 hechizos de hielo o más. -2/0 a toda la mesa enemiga. -3/-3 a las unidades con 0 de ataque",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1647,9 +1641,9 @@ new()
     Type = CardType.Unit,
     BaseAttack = 1,
     BaseHealth = 3,
-    Description = "Cuando el {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:paquete} de capa menor o igual al jugado y lo {add:añado} al {deck:mazo}",
+    Description = "FINAL DE RONDA: {draw:robo} un {family:paquete}",
     Effects = [
-        new(TriggerType.SpellPlayed, [new GeneratePaqueteEffect()], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
+        new(TriggerType.TurnEnd, [new DrawCardEffect(1, new() {CurrentFamilies = ["Paquete"]})], new Always(), null)
     ]
 },
 new()

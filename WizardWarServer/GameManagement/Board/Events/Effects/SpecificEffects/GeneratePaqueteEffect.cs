@@ -1,5 +1,3 @@
-using Microsoft.Extensions.Options;
-
 public class GeneratePaqueteEffect : IEffect
 {
     const int SMALLEST_PAQUETE_ID = 71;

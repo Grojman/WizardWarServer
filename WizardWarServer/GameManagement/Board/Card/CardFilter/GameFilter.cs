@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Razor;
-
 public class GameFilter
 {
     //TODO: HAY QEU REFACTORIZAR ESTO. HAY FUNCIONES QUE TIENEN EL MISMO CÓDIGO EN REALIDAD

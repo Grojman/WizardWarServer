@@ -1,5 +1,4 @@
 using System.Net.WebSockets;
-using Serilog;
 
 public class PlayerConnection
 {

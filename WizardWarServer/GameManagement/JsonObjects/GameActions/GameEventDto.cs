@@ -1,6 +1,5 @@
 
 using System.Text.Json.Serialization;
-using System.Threading.Channels;
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
 [JsonDerivedType(typeof(CardDrawnEvent), nameof(CardDrawnEvent))]

@@ -1,5 +1,3 @@
-using Serilog;
-
 public class GameState
 {
     public const int INITIAL_HAND = 3;
