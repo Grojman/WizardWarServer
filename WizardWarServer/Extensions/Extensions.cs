@@ -1,3 +1,5 @@
+using Serilog;
+
 public static class Extensions
 {
     public static int FindFirstNullPosition(this object?[] array)

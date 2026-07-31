@@ -1,7 +1,7 @@
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading.RateLimiting;
-
+using Serilog;
 internal class Program
 {
     private const string ConnectRateLimiterPolicy = "ws-connect";

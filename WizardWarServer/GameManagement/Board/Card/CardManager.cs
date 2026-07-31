@@ -1,5 +1,5 @@
 using System.Text.Json;
-
+using Serilog;
 public static class CardManager
 {
     private static string DECKS_FILE_PATH = Path.Combine(AppContext.BaseDirectory, "Data/Decks/decks.json");
