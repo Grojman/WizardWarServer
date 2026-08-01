@@ -46,6 +46,11 @@ public class PlayerConnection
         {
             Log.Warning(e, "Couldn't send message to player {PlayerId}", Guid);
         }
-        
+
+    }
+
+    public Task SendError(string message)
+    {
+        return Send("error", new { message });
     }
 }

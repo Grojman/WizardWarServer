@@ -45,7 +45,19 @@ public class GameSession
             return;
         }
 
-        var action = JsonSerializer.Deserialize<PlayerAction>(json);
+        PlayerAction? action;
+
+        try
+        {
+            action = JsonSerializer.Deserialize<PlayerAction>(json);
+        }
+        catch (JsonException ex)
+        {
+            Log.Warning(ex, "Received invalid in-game JSON from player {PlayerId}", player.Guid);
+            await player.SendError("Your last action could not be understood by the server.");
+            return;
+        }
+
         await HandleAction(player, action);
     }
 
@@ -58,27 +70,35 @@ public class GameSession
             return;
         }
 
-        if (action is PlayerAction.TextMessage m)
+        try
         {
-            foreach(var c in Connections) await c.Send("text_message", new {
-                player = player.Guid,
-                message = m.Message
-            });
+            if (action is PlayerAction.TextMessage m)
+            {
+                foreach(var c in Connections) await c.Send("text_message", new {
+                    player = player.Guid,
+                    message = m.Message
+                });
 
-            return;
-        } else if (action is PlayerAction.LeaveGame)
-        {
-            await RemovePlayer(player);
-            return;
+                return;
+            } else if (action is PlayerAction.LeaveGame)
+            {
+                await RemovePlayer(player);
+                return;
+            }
+
+            state.ApplyAction(player, action);
+
+            await SendState();
+
+            if(state.GameActionResult.GameEnded)
+            {
+                await End(state.GameActionResult.Winner);
+            }
         }
-
-        state.ApplyAction(player, action);
-
-        await SendState();
-
-        if(state.GameActionResult.GameEnded)
+        catch (Exception ex)
         {
-            await End(state.GameActionResult.Winner);
+            Log.Error(ex, "Unexpected error while handling in-game action from player {PlayerId}", player.Guid);
+            await player.SendError("Something went wrong processing your action. Please try again.");
         }
     }
 

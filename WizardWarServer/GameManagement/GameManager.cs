@@ -123,11 +123,21 @@ public class GameManager
         PlayerConnection player,
         string json)
     {
-        if (player.Game != null)
+        var game = player.Game;
+
+        if (game != null)
         {
-            await player.Game.HandleAction(
-                player,
-                json);
+            try
+            {
+                await game.HandleAction(
+                    player,
+                    json);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Unexpected error while handling in-game message from player {PlayerId}", player.Guid);
+                await player.SendError("Something went wrong processing your action. Please try again.");
+            }
         } else
         {
             UserAction? action = null;
@@ -148,12 +158,12 @@ public class GameManager
                     case UserAction.StartBotGameAction c:
                         if (!options.IsValidPlayerCount(c.NumberOfPlayers))
                         {
-                            await player.Send("error", new { message = "Invalid number of players." });
+                            await player.SendError("Invalid number of players.");
                             break;
                         }
                         if (!CardManager.Decks.Any(d => d.id == c.DeckId))
                         {
-                            await player.Send("error", new { message = "Unknown deck id." });
+                            await player.SendError("Unknown deck id.");
                             break;
                         }
                         player.SelectedDeckId = c.DeckId;
@@ -163,12 +173,12 @@ public class GameManager
                     case UserAction.JoinQueueAction b:
                         if (!options.IsValidPlayerCount(b.NumberOfPlayers))
                         {
-                            await player.Send("error", new { message = "Invalid number of players." });
+                            await player.SendError("Invalid number of players.");
                             break;
                         }
                         if (!CardManager.Decks.Any(d => d.id == b.DeckId))
                         {
-                            await player.Send("error", new { message = "Unknown deck id." });
+                            await player.SendError("Unknown deck id.");
                             break;
                         }
                         player.SelectedDeckId = b.DeckId;
@@ -198,10 +208,12 @@ public class GameManager
             catch (JsonException ex)
             {
                 Log.Warning(ex, "Received invalid JSON from player {PlayerId}", player.Guid);
+                await player.SendError("Your last message could not be understood by the server.");
             }
             catch (Exception ex)
             {
                 Log.Error(ex, "Error while handling message from player {PlayerId}", player.Guid);
+                await player.SendError("Something went wrong processing your request. Please try again.");
             }
 
 

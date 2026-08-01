@@ -156,7 +156,7 @@ public static class StoringData
                         registeredDecks.Add(deckId);
                     }
                 }
-                
+
                 stats.TotalGames++;
                 stats.TotalTurns += turns;
 
@@ -168,29 +168,6 @@ public static class StoringData
                 else
                 {
                     stats.Losses++;
-                }
-
-                foreach (var rival in state.GetRivals(player.Id))
-                {
-                    var rivalDeckId = rival.Deck!.Id;
-
-                    if (!stats.VsDeck.TryGetValue(rivalDeckId, out var matchup))
-                    {
-                        matchup = new DeckStats();
-                        stats.VsDeck[rivalDeckId] = matchup;
-                    }
-
-                    matchup.TotalGames++;
-                    matchup.TotalTurns += turns;
-
-                    if (won)
-                    {
-                        matchup.Wins++;
-                    }
-                    else
-                    {
-                        matchup.Losses++;
-                    }
                 }
             }
         }
