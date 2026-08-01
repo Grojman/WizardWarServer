@@ -184,6 +184,9 @@ public class GameManager
                     case UserAction.GetAllCardsAction:
                         await player.Send("get_cards", CardManager.Decks.Select(n => new {n.name, cards = CardManager.GetDefinitionsByDeck(n.id).Select(l =>new KeyValuePair<CardDto, int>(CardDto.Generate(l.Key), l.Value))}));
                         break;
+                    case UserAction.GetStatsAction:
+                        await player.Send("get_stats", StoringData.GetStats());
+                        break;
                     case UserAction.SendSuggestion d:
                         StoringData.SaveSuggestion(d.Suggestion);
                         break;

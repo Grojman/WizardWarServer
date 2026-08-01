@@ -1,28 +1,31 @@
 using System.Text.Json;
 using Serilog;
 
-public class GameData
+public class DeckStats
 {
-    public GameData()
-    {
-    }
-
-    public GameData(int wins, int loses)
-    {
-        Wins = wins;
-        Loses = loses;
-    }
-
     public int Wins { get; set; }
-    public int Loses { get; set; }
+    public int Losses { get; set; }
+    public int TotalGames { get; set; }
+    public int TotalTurns { get; set; }
 
+    public Dictionary<int, DeckStats> VsDeck { get; set; } = new();
+
+    public double AverageTurn => TotalGames == 0 ? 0 : (double)TotalTurns / TotalGames;
+}
+
+internal class PersistedStats
+{
+    public int TotalGamesPlayed { get; set; }
+    public Dictionary<int, DeckStats> DeckStats { get; set; } = new();
 }
 
 public static class StoringData
 {
     private static readonly object _lock = new();
 
-    public static Dictionary<int, Dictionary<int, GameData>> Data { get; private set; } = new();
+    public static Dictionary<int, DeckStats> Data { get; private set; } = new();
+
+    public static int TotalGamesPlayed { get; private set; }
 
     public const string FILE_PATH = "data.json";
     public const string SUGGESTIONS_TEXT = "suggestions.txt";
@@ -69,19 +72,22 @@ public static class StoringData
             if (!File.Exists(_filePath))
             {
                 Data = new();
+                TotalGamesPlayed = 0;
                 return;
             }
 
             try
             {
                 var json = File.ReadAllText(_filePath);
-                var res = JsonSerializer.Deserialize<Dictionary<int, Dictionary<int, GameData>>>(json);
-                Data = res ?? new();
+                var res = JsonSerializer.Deserialize<PersistedStats>(json);
+                Data = res?.DeckStats ?? new();
+                TotalGamesPlayed = res?.TotalGamesPlayed ?? 0;
             }
             catch (JsonException ex)
             {
                 Log.Error(ex, "Could not read data file at {Path}, starting with empty stats", _filePath);
                 Data = new();
+                TotalGamesPlayed = 0;
             }
         }
     }
@@ -96,7 +102,13 @@ public static class StoringData
                 Directory.CreateDirectory(directory);
             }
 
-            var json = JsonSerializer.Serialize(Data ?? [], new JsonSerializerOptions()
+            var persisted = new PersistedStats
+            {
+                TotalGamesPlayed = TotalGamesPlayed,
+                DeckStats = Data
+            };
+
+            var json = JsonSerializer.Serialize(persisted, new JsonSerializerOptions()
             {
                 WriteIndented = true,
             });
@@ -114,54 +126,87 @@ public static class StoringData
 
     public static void SaveData(GameState state, bool forced)
     {
-        if (state.GameActionResult.Winner is not null)
+        if (state.GameActionResult.Winner is null) return;
+
+        Guid winnerId = (Guid)state.GameActionResult.Winner;
+        int turns = state.TurnCounter;
+        var registeredDecks = new List<int>();
+
+        lock (_lock)
         {
-            Guid winnerId = (Guid)state.GameActionResult.Winner;
-            int winerDeck = state.GetState(winnerId).Deck!.Id;
+            TotalGamesPlayed++;
 
-            lock (_lock)
+            foreach (var player in state.Players)
             {
-                Dictionary<int, GameData> values;
+                var deckId = player.Deck!.Id;
+                bool won = player.Id == winnerId;
 
-                if (!Data.ContainsKey(winerDeck))
+                if (!Data.TryGetValue(deckId, out var stats))
                 {
-                    values = [];
-                    Data.Add(winerDeck, values);
+                    stats = new DeckStats();
+                    Data[deckId] = stats;
+                }
+
+                if (registeredDecks.Contains(deckId) && !won)
+                {
+                    return;
+                } else {
+                    if (!won)
+                    {
+                        registeredDecks.Add(deckId);
+                    }
+                }
+                
+                stats.TotalGames++;
+                stats.TotalTurns += turns;
+
+
+                if (won)
+                {
+                    stats.Wins++;
                 }
                 else
                 {
-                    values = Data[winerDeck];
+                    stats.Losses++;
                 }
 
-                HashSet<int> appendedIds = [];
-
-                foreach (var player in state.Players.Where(n => n.Id != winnerId))
+                foreach (var rival in state.GetRivals(player.Id))
                 {
-                    var id = player.Deck!.Id;
-                    if (appendedIds.Add(id))
+                    var rivalDeckId = rival.Deck!.Id;
+
+                    if (!stats.VsDeck.TryGetValue(rivalDeckId, out var matchup))
                     {
-                        if (!Data.ContainsKey(id))
-                        {
-                            Data.Add(id, []);
-                        }
+                        matchup = new DeckStats();
+                        stats.VsDeck[rivalDeckId] = matchup;
+                    }
 
-                        if (!Data[id].ContainsKey(winerDeck))
-                        {
-                            Data[id].Add(winerDeck, new());
-                        }
+                    matchup.TotalGames++;
+                    matchup.TotalTurns += turns;
 
-                        if (!Data[winerDeck].ContainsKey(id))
-                        {
-                            Data[winerDeck].Add(id, new());
-                        }
-
-                        Data[winerDeck][id].Wins++;
-                        Data[id][winerDeck].Loses++;
+                    if (won)
+                    {
+                        matchup.Wins++;
+                    }
+                    else
+                    {
+                        matchup.Losses++;
                     }
                 }
             }
         }
-
     }
 
+    public static StatsDto GetStats()
+    {
+        lock (_lock)
+        {
+            var allDecks = CardManager.Decks.ToList();
+
+            var decks = allDecks
+                .Select(d => DeckStatsDto.Generate(d, Data.TryGetValue(d.id, out var s) ? s : null, allDecks))
+                .ToList();
+
+            return new StatsDto(TotalGamesPlayed, decks);
+        }
+    }
 }

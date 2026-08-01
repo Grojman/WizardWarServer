@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(GetAllCardsAction), "GetAllCardsAction")]
 [JsonDerivedType(typeof(StartBotGameAction), "StartBotGameAction")]
 [JsonDerivedType(typeof(SendSuggestion), "SendSuggestion")]
+[JsonDerivedType(typeof(GetStatsAction), "GetStatsAction")]
 public interface UserAction
 {
     public class SendSuggestion : UserAction
@@ -38,5 +39,7 @@ public interface UserAction
     public class GetDecksAction : UserAction {}
 
     public class GetAllCardsAction : UserAction {}
+
+    public class GetStatsAction : UserAction {}
 
 }

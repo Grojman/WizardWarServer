@@ -256,6 +256,28 @@ public class GameState
 
         GameActionResult.AddEvent(gevent);
 
+        foreach (var p in AlivePlayers)
+        {
+            if (p.PlayerTarget != state) continue;
+
+            var next = state.PlayerTarget;
+            while (next is not null && next != p && !AlivePlayers.Contains(next))
+            {
+                next = next.PlayerTarget;
+            }
+
+            if (next is null || next == p) continue;
+
+            p.PlayerTarget = next;
+
+            GameActionResult.AddEvent(new GameEvent.TargetPlayerChanged()
+            {
+                Source = p,
+                PlayerSource = p,
+                NewTarget = next.Id
+            });
+        }
+
         if(forceChangeTurn && state.IsMyTurn)
         {
             NextTurn();
@@ -444,6 +466,7 @@ public class GameState
     {
         foreach(var player in Players)
         {
+            if (player.Health <= 0) return;
             foreach(EffectInstance e in player.GlobalEffects)
             {
                 if(e.Trigger == type)
