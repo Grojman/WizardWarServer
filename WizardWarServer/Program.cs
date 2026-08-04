@@ -1,4 +1,5 @@
 using System.Net.WebSockets;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.RateLimiting;
 using Serilog;
@@ -26,6 +27,26 @@ internal class Program
                 .Get<ServerOptions>() ?? new ServerOptions();
 
             builder.Services.AddSingleton(serverOptions);
+
+            var certificatePath = Path.Combine(builder.Environment.ContentRootPath, "certificate.pfx");
+            if (File.Exists(certificatePath))
+            {
+                var certificatePassword = Environment.GetEnvironmentVariable("CERT_PASSWORD");
+
+                builder.WebHost.ConfigureKestrel(kestrelOptions =>
+                {
+                    kestrelOptions.ConfigureHttpsDefaults(httpsOptions =>
+                    {
+                        httpsOptions.ServerCertificate = X509CertificateLoader.LoadPkcs12FromFile(certificatePath, certificatePassword);
+                    });
+                });
+
+                Log.Information("Loaded HTTPS certificate from {CertificatePath}", certificatePath);
+            }
+            else
+            {
+                Log.Information("No certificate.pfx found at {CertificatePath}; using default Kestrel HTTPS configuration", certificatePath);
+            }
 
             builder.Services.AddRateLimiter(rateLimiterOptions =>
             {
