@@ -11,6 +11,10 @@ public class PlayerConnection
 
     public GameSession? Game { get; set; }
 
+    public MatchSeries? CurrentSeries { get; set; }
+
+    public PrivateMatchLobby? PendingPrivateMatch { get; set; }
+
     public int NumberOfPlayersInGame { get; set; } = -1;
 
     public PlayerConnection(WebSocket socket)

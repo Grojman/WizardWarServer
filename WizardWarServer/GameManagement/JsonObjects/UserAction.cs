@@ -9,6 +9,9 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(StartBotGameAction), "StartBotGameAction")]
 [JsonDerivedType(typeof(SendSuggestion), "SendSuggestion")]
 [JsonDerivedType(typeof(GetStatsAction), "GetStatsAction")]
+[JsonDerivedType(typeof(CreatePrivateMatchAction), "CreatePrivateMatchAction")]
+[JsonDerivedType(typeof(JoinPrivateMatchAction), "JoinPrivateMatchAction")]
+[JsonDerivedType(typeof(LeavePrivateMatchAction), "LeavePrivateMatchAction")]
 public interface UserAction
 {
     public class SendSuggestion : UserAction
@@ -25,6 +28,9 @@ public interface UserAction
         public required int DeckId { get; set; }
 
         public required int NumberOfPlayers { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public MatchFormat Format { get; set; } = MatchFormat.Single;
     }
 
     public class StartBotGameAction : UserAction
@@ -41,5 +47,24 @@ public interface UserAction
     public class GetAllCardsAction : UserAction {}
 
     public class GetStatsAction : UserAction {}
+
+    public class CreatePrivateMatchAction : UserAction
+    {
+        public required int DeckId { get; set; }
+
+        public required int NumberOfPlayers { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public MatchFormat Format { get; set; } = MatchFormat.Single;
+    }
+
+    public class JoinPrivateMatchAction : UserAction
+    {
+        public required int DeckId { get; set; }
+
+        public required string Code { get; set; }
+    }
+
+    public class LeavePrivateMatchAction : UserAction {}
 
 }

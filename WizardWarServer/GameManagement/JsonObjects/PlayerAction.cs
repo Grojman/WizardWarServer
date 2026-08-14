@@ -8,9 +8,19 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(TextMessage), nameof(TextMessage))]
 [JsonDerivedType(typeof(ChangeTarget), nameof(ChangeTarget))]
 [JsonDerivedType(typeof(LeaveGame), nameof(LeaveGame))]
+[JsonDerivedType(typeof(SelectSeriesDeckAction), nameof(SelectSeriesDeckAction))]
+[JsonDerivedType(typeof(RequestSeriesStateAction), nameof(RequestSeriesStateAction))]
+[JsonDerivedType(typeof(GetDecksAction), nameof(GetDecksAction))]
 public interface PlayerAction
 {
     public class LeaveGame : PlayerAction {}
+    public class GetDecksAction : PlayerAction {}
+
+    public class SelectSeriesDeckAction : PlayerAction
+    {
+        public required int DeckId { get; set; }
+    }
+    public class RequestSeriesStateAction : PlayerAction {}
     public class ChangeTarget : PlayerAction
     {
         public required Guid NewTarget { get; set; }

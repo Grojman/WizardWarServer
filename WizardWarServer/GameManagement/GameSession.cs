@@ -7,14 +7,18 @@ public class GameSession
     List<PlayerConnection> Connections;
 
     GameState state;
-    
+
     readonly GameManager manager;
+    readonly MatchSeries? series;
+    readonly Guid? forcedStarterId;
 
     public bool HasEnded { get => state.GameActionResult.GameEnded; }
 
     public GameSession(
         List<PlayerConnection> connections,
-        GameManager manager, bool botSession = false)
+        GameManager manager, bool botSession = false,
+        MatchSeries? series = null,
+        Guid? forcedStarterId = null)
     {
         Connections = connections;
 
@@ -25,6 +29,8 @@ public class GameSession
         state = new GameState();
 
         this.botSession = botSession;
+        this.series = series;
+        this.forcedStarterId = forcedStarterId;
     }
 
     public async Task Start()
@@ -33,7 +39,7 @@ public class GameSession
 
         foreach(var c in Connections) await c.Send("start_game", new { });
 
-        state.Initialize(Connections);
+        state.Initialize(Connections, forcedStarterId);
 
         await SendState();
     }
@@ -119,7 +125,8 @@ public class GameSession
         var msg = new
         {
             winner,
-            forced
+            forced,
+            isSeriesRound = series is not null
         };
 
         Log.Information("Game session ended. Winner: {Winner} Forced: {Forced}", winner, forced);
@@ -127,10 +134,11 @@ public class GameSession
         StoringData.SaveData(state, forced);
         StoringData.SaveInFile();
 
-        foreach(var c in Connections) await c.Send("end_game", msg); 
+        foreach(var c in Connections) await c.Send("end_game", msg);
         state.ClearState();
         manager.RemoveGameSession(this, Connections);
 
+        if (series is not null) await series.OnRoundEnded(winner, forced);
     }
 
     public async Task RemovePlayer(PlayerConnection c)
@@ -149,9 +157,15 @@ public class GameSession
             manager.RemoveGameSession(this, Connections);
             Connections.Clear();
             state.ClearState();
-        } else if(state.GameActionResult.GameEnded)
+            return;
+        }
+
+        if(state.GameActionResult.GameEnded)
         {
+            // End() already broadcasts end_game and clears state; sending
+            // state afterward would look up players in an already-cleared list.
             await End(state.GameActionResult.Winner);
+            return;
         }
 
         await SendState();

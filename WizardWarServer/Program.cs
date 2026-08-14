@@ -277,6 +277,9 @@ internal class Program
                 case "games":
                     gameManager.PrintGames();
                     break;
+                case "series":
+                    gameManager.PrintSeries();
+                    break;
                 case "cards":
                     MockData.PrintData();
                     break;

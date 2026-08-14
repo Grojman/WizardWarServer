@@ -18,7 +18,8 @@ public class GameState
     }
 
     public void Initialize(
-        IEnumerable<PlayerConnection> connections
+        IEnumerable<PlayerConnection> connections,
+        Guid? forcedStarterId = null
     )
     {
         var players = new List<PlayerState>();
@@ -50,8 +51,13 @@ public class GameState
 
         Players = players;
         AlivePlayers = [.. Players];
-        Players.ElementAt(0).IsMyTurn = true;
-        CurrentPlayer = Players[0];
+
+        var starter = forcedStarterId.HasValue
+            ? players.First(p => p.Id == forcedStarterId.Value)
+            : players[Random.Shared.Next(players.Count)];
+
+        starter.IsMyTurn = true;
+        CurrentPlayer = starter;
 
         for (int i = 0; i < INITIAL_HAND; i++)
         {
