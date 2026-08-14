@@ -16,8 +16,7 @@ public class MatchSeries
     Dictionary<Guid, int?> PendingSelection;
     readonly HashSet<int> UsedDeckIds = new();
 
-    Guid? LastRoundStarter;
-    Guid? currentRoundStarter;
+    Guid? currentPicker;
     Guid? disconnectedPlayerId;
     GameSession? CurrentRound;
 
@@ -32,6 +31,7 @@ public class MatchSeries
 
         Scores = Connections.ToDictionary(p => p.Guid, p => 0);
         PendingSelection = Connections.ToDictionary(p => p.Guid, p => (int?)null);
+        currentPicker = Connections.GetRandom().Guid;
     }
 
     PlayerConnection GetRival(PlayerConnection player) => Connections.First(p => p.Guid != player.Guid);
@@ -129,6 +129,7 @@ public class MatchSeries
         }
 
         PendingSelection[player.Guid] = deckId;
+        currentPicker = Connections[0].Guid == currentPicker ? Connections[1].Guid : Connections[0].Guid;
 
         await BroadcastSeriesState();
 
@@ -140,19 +141,6 @@ public class MatchSeries
 
     async Task StartRound()
     {
-        Guid starterId;
-
-        if (RoundNumber == 2 && LastRoundStarter.HasValue)
-        {
-            starterId = Connections.First(p => p.Guid != LastRoundStarter.Value).Guid;
-        }
-        else
-        {
-            starterId = Connections[Random.Shared.Next(Connections.Count)].Guid;
-        }
-
-        currentRoundStarter = starterId;
-
         foreach (var p in Connections)
         {
             p.SelectedDeckId = PendingSelection[p.Guid]!.Value;
@@ -160,7 +148,7 @@ public class MatchSeries
 
         Phase = SeriesPhase.RoundInProgress;
 
-        CurrentRound = new GameSession(new List<PlayerConnection>(Connections), manager, series: this, forcedStarterId: starterId);
+        CurrentRound = new GameSession([.. Connections], manager, series: this);
 
         manager.RegisterGameSession(CurrentRound);
 
@@ -176,8 +164,11 @@ public class MatchSeries
             if (PendingSelection.TryGetValue(p.Guid, out var d) && d.HasValue) UsedDeckIds.Add(d.Value);
         }
 
-        if (currentRoundStarter.HasValue) LastRoundStarter = currentRoundStarter;
-        currentRoundStarter = null;
+        if (currentPicker.HasValue)
+        {
+            currentPicker = Connections[0].Guid == currentPicker ? Connections[1].Guid : Connections[0].Guid; 
+        }
+
         CurrentRound = null;
 
         if (disconnectedPlayerId.HasValue)
@@ -252,6 +243,7 @@ public class MatchSeries
 
         string rivalStatus;
         int? rivalDeckId;
+        string myStatus;
 
         if (RoundNumber >= 3)
         {
@@ -260,8 +252,22 @@ public class MatchSeries
         }
         else
         {
-            rivalStatus = rivalSelected.HasValue ? "waiting" : "selecting";
+            if (currentPicker == rival.Guid)
+            {
+                rivalStatus = rivalSelected.HasValue ? "waiting" : "selecting";
+            } else
+            {
+                rivalStatus = "waiting_you";
+            }
             rivalDeckId = rivalSelected;
+        }
+
+        if (currentPicker == recipient.Guid)
+        {
+            myStatus = mySelected.HasValue ? "waiting_you" : "selecting";
+        } else
+        {
+            myStatus = "waiting";
         }
 
         var reserved = new HashSet<int>(UsedDeckIds);
@@ -275,7 +281,7 @@ public class MatchSeries
             round = RoundNumber,
             roundsToWin = RoundsToWin,
             scores = Connections.Select(p => new { playerId = p.Guid, name = p.Name, score = Scores.GetValueOrDefault(p.Guid) }),
-            you = new { playerId = recipient.Guid, name = recipient.Name, hasSelected = mySelected.HasValue, deckId = mySelected },
+            you = new { playerId = recipient.Guid, name = recipient.Name, status = myStatus, deckId = mySelected },
             rival = new { playerId = rival.Guid, name = rival.Name, status = rivalStatus, deckId = rivalDeckId },
             availableDecks
         };
