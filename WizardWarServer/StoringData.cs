@@ -126,7 +126,8 @@ public static class StoringData
 
     public static void SaveData(GameState state, bool forced)
     {
-        if (state.GameActionResult.Winner is null) return;
+        if (state.GameActionResult.Winner is null || state.Players.Count != 2) return;
+        if (state.Players[0].Deck!.Id == state.Players[1].Deck!.Id) return;
 
         Guid winnerId = (Guid)state.GameActionResult.Winner;
         int turns = state.TurnCounter;

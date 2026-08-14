@@ -456,7 +456,7 @@ public class GameManager
                             await player.SendError("Invalid number of players.");
                             break;
                         }
-                        if (!CardManager.Decks.Any(d => d.id == b.DeckId))
+                        if (b.Format != MatchFormat.BestOfThree && !CardManager.Decks.Any(d => d.id == b.DeckId))
                         {
                             await player.SendError("Unknown deck id.");
                             break;
