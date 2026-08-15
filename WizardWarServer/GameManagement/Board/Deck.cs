@@ -61,9 +61,10 @@ public class Deck
         }
     }
 
-    public void AddCard(CardInstance card)
+    public void AddCard(CardInstance card, int topDeckDepth = 0)
     {
-        var index = new Random().Next(cards.Count);
+        var upperBound = topDeckDepth > 0 ? Math.Min(topDeckDepth, cards.Count + 1) : cards.Count;
+        var index = new Random().Next(upperBound);
         cards.Insert(index, card);
     }
 

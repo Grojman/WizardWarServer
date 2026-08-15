@@ -56,6 +56,6 @@ public static class Extensions
 
 
     public static bool CanPlayCard(this PlayerStateDto state) => state.HandData.Any(n => n.canPlay && (n.type == "Spell" || state.Board.Any(n => n is null)));
-    public static bool CanPlayCard(this PlayerState state, GameState g) => state.Hand.Any(n => n.CanPlay.Check(state.Id, state.PlayerTarget.Id, n, g, null) && (n.Definition.Type == CardType.Spell || state.Board.Any(n => n is null)));
+    public static bool CanPlayCard(this PlayerState state, GameState g) => state.Hand.Any(n => (n.CanPlay?.Check(state.Id, state.PlayerTarget.Id, n, g, null) ?? true) && (n.Definition.Type == CardType.Spell || state.Board.Any(n => n is null)));
 
 }

@@ -65,7 +65,7 @@ public class GameState
         }
     }
 
-    public void AddCard(PlayerState target, PlayerState playerSource, CardInstance cardToAdd, IdentificableObject Source)
+    public void AddCard(PlayerState target, PlayerState playerSource, CardInstance cardToAdd, IdentificableObject Source, int topDeckDepth = 0)
     {
         var gevent = new GameEvent.AddedCardToDeck()
         {
@@ -75,7 +75,7 @@ public class GameState
             Card = cardToAdd
         };
 
-        target.Deck!.AddCard(cardToAdd);
+        target.Deck!.AddCard(cardToAdd, topDeckDepth);
 
         GameActionResult.AddEvent(gevent);
 

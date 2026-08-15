@@ -1417,16 +1417,16 @@ new()
 new()
 {
     Id = "70",
-    Name = "RED",
+    Name = "FÍSICO",
     Families = ["Capa"],
     Type = CardType.Unit,
     BaseHealth = 1,
     BaseAttack = 1,
-    Description = "{add:Crea} ENLACE y BITS en el {deck:mazo}",
+    Description = "{add:Crea} ENLACE y BITS entre las 10 primeras cartas del {deck:mazo}",
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "71", false),
-            new AppendCardToDeck(1, "72", false),
+            new AppendCardToDeck(1, "71", false, 10),
+            new AppendCardToDeck(1, "72", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1449,11 +1449,11 @@ new()
     Type = CardType.Unit,
     BaseHealth = 2,
     BaseAttack = 2,
-    Description = "{add:Crea} RED y TRAMA en el {deck:mazo}",
+    Description = "{add:Crea} RED y TRAMA entre las 10 primeras cartas del {deck:mazo}",
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "73", false),
-            new AppendCardToDeck(1, "74", false),
+            new AppendCardToDeck(1, "73", false, 10),
+            new AppendCardToDeck(1, "74", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1476,11 +1476,11 @@ new()
     Type = CardType.Unit,
     BaseHealth = 3,
     BaseAttack = 3,
-    Description = "{add:Crea} TRANSPORTE y PAQUETE en el {deck:mazo}",
+    Description = "{add:Crea} TRANSPORTE y PAQUETE entre las 10 primeras cartas del {deck:mazo}",
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "75", false),
-            new AppendCardToDeck(1, "76", false),
+            new AppendCardToDeck(1, "75", false, 10),
+            new AppendCardToDeck(1, "76", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1503,11 +1503,11 @@ new()
     Type = CardType.Unit,
     BaseHealth = 4,
     BaseAttack = 4,
-    Description = "{add:Crea} SESIÓN y DATAGRAMA en el {deck:mazo}",
+    Description = "{add:Crea} SESIÓN y DATAGRAMA entre las 10 primeras cartas del {deck:mazo}",
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "77", false),
-            new AppendCardToDeck(1, "78", false),
+            new AppendCardToDeck(1, "77", false, 10),
+            new AppendCardToDeck(1, "78", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1530,11 +1530,11 @@ new()
     Type = CardType.Unit,
     BaseHealth = 5,
     BaseAttack = 5,
-    Description = "{add:Crea} PRESENTACIÓN y DATOS DE SESIÓN en el {deck:mazo}",
+    Description = "{add:Crea} PRESENTACIÓN y DATOS DE SESIÓN entre las 10 primeras cartas del {deck:mazo}",
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "79", false),
-            new AppendCardToDeck(1, "80", false),
+            new AppendCardToDeck(1, "79", false, 10),
+            new AppendCardToDeck(1, "80", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1557,11 +1557,11 @@ new()
     Type = CardType.Unit,
     BaseHealth = 6,
     BaseAttack = 6,
-    Description = "{add:Crea} APLICACIÓN y DATOS DE PRESENTACIÓN en el {deck:mazo}",
+    Description = "{add:Crea} APLICACIÓN y DATOS DE PRESENTACIÓN entre las 10 primeras cartas del {deck:mazo}",
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "81", false),
-            new AppendCardToDeck(1, "82", false),
+            new AppendCardToDeck(1, "81", false, 10),
+            new AppendCardToDeck(1, "82", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1589,11 +1589,11 @@ new()
     Type = CardType.Unit,
     BaseHealth = 7,
     BaseAttack = 7,
-    Description = "{add:Crea} Ex Machina y DATOS DE APLICACIÓN en el {deck:mazo}",
+    Description = "{add:Crea} Ex Machina y DATOS DE APLICACIÓN entre las 10 primeras cartas del {deck:mazo}",
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "83", false),
-            new AppendCardToDeck(1, "84", false),
+            new AppendCardToDeck(1, "83", false, 10),
+            new AppendCardToDeck(1, "84", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1666,9 +1666,9 @@ new()
     BaseAttack = 1,
     BaseHealth = 2,
     Type = CardType.Unit,
-    Description = "Cuando mi {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:virus} en el {deck:mazo} del {rival:rival}. {skill:HABILIDAD}: inflinjo al {rival:rival} 1 por cada {family:virus} que tenga en la mano",
+    Description = "Cuando mi {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:virus} en la mano del {rival:rival}. {skill:HABILIDAD}: inflinjo al {rival:rival} 1 por cada {family:virus} que tenga en la mano",
     Effects = [
-        new(TriggerType.SpellPlayed, [new AppendCardToDeck(1, "89", true)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
+        new(TriggerType.SpellPlayed, [new CreateCardInHand(1, "89", true)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
     ],
     PlayEffectTriggerTimes = 1,
     PlayEffects = [
@@ -1704,17 +1704,10 @@ new()
     Type = CardType.Spell,
     Effects = [
         new(TriggerType.SpellPlayed, [
-            new AlterUnitStatsEffect(0, -3, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}),
-            new AppendGlobalEffect(
-                new(TriggerType.TurnEnd, [
-                    new AlterUnitStatsEffect(0, +1, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}),
-                    
-                ], new DurationByExecutions(1), new TurnCounterCondition(2)),
-                "Las unidades del rival conseguirán +1/0 dentro de dos rondas"
-            )   
+            new AlterUnitStatsEffect(0, -3, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}),   
         ], new DurationByExecutions(1), null)
     ],
-    Description = "-3/0 a la {board:mesa} del {rival:rival}, +1/0 a la {board:mesa} del {rival:rival} dentro de 2 rondas"
+    Description = "-3/0 a la {board:mesa} del {rival:rival}"
 },
 new()
 {
@@ -1724,12 +1717,12 @@ new()
     BaseAttack = 1,
     BaseHealth = 1,
     Families = ["Virus"],
-    Description = "Cuando soy {play:jugado}, {play:juego} un {family:Virus} de la mano del {rival:rival}. Cuando {die:muero}, me {add:añado} al {deck:mazo} del {rival:rival}",
+    Description = "Cuando soy {play:jugado}, {play:juego} un {family:Virus} de la mano del {rival:rival}. Cuando {die:muero}, me {add:añado} a la mano del {rival:rival}",
     Effects = [
         new(
             TriggerType.UnitDeath,
             [
-                new AppendCardToDeck(1, "92", true)
+                new CreateCardInHand(1, "92", true)
             ],
             new Always(),
             new IHaveBeenPlayedCondition()
