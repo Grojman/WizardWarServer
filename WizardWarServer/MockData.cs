@@ -249,7 +249,7 @@ public static class MockData
         Id = "12",
         Name = "Arañazos",
         Type = CardType.Spell,
-        Description = "0/-1 a la {deck:mesa} {enemy:enemiga} ahora y al final de este turno",
+        Description = "[0/-1] a la {deck:mesa} {enemy:enemiga} ahora y al final de este turno",
         Families = ["Rata"],
         Effects =
         [
@@ -1717,12 +1717,12 @@ new()
     BaseAttack = 1,
     BaseHealth = 1,
     Families = ["Virus"],
-    Description = "Cuando soy {play:jugado}, {play:juego} un {family:Virus} de la mano del {rival:rival}. Cuando {die:muero}, me {add:añado} a la mano del {rival:rival}",
+    Description = "Cuando soy {play:jugado}, {play:juego} un {family:Virus} de la mano del {rival:rival}. Cuando {die:muero}, me {add:creo} un malware en la mano del {rival:rival}",
     Effects = [
         new(
             TriggerType.UnitDeath,
             [
-                new CreateCardInHand(1, "92", true)
+                new CreateCardInHand(1, "89", true)
             ],
             new Always(),
             new IHaveBeenPlayedCondition()
