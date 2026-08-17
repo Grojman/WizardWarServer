@@ -19,11 +19,53 @@ public class GameManager
     static readonly char[] PrivateMatchCodeAlphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789".ToCharArray();
     const int PrivateMatchCodeLength = 6;
 
+    readonly Dictionary<Guid, (GameSession Session, Guid PlayerGuid)> pendingResumes = new();
+
     readonly ServerOptions options;
+    public ServerOptions Options => options;
 
     public GameManager(ServerOptions options)
     {
         this.options = options;
+    }
+
+    public void RegisterPendingResume(Guid clientId, GameSession session, Guid playerGuid)
+    {
+        if (clientId == Guid.Empty) return;
+
+        lock (_sync)
+        {
+            pendingResumes[clientId] = (session, playerGuid);
+        }
+    }
+
+    public void ClearPendingResume(Guid clientId)
+    {
+        if (clientId == Guid.Empty) return;
+
+        lock (_sync)
+        {
+            pendingResumes.Remove(clientId);
+        }
+    }
+
+    public async Task<bool> TryResumeGame(PlayerConnection newConnection)
+    {
+        if (newConnection.ClientId == Guid.Empty) return false;
+
+        (GameSession Session, Guid PlayerGuid)? pending = null;
+
+        lock (_sync)
+        {
+            if (pendingResumes.Remove(newConnection.ClientId, out var value))
+            {
+                pending = value;
+            }
+        }
+
+        if (pending is null) return false;
+
+        return await pending.Value.Session.TryReconnect(newConnection, pending.Value.PlayerGuid);
     }
 
     public Task AddPlayer(PlayerConnection player)
@@ -166,11 +208,13 @@ public class GameManager
 
         await LeavePrivateMatch(player);
 
-        // A series player's round-in-progress GameSession is also reachable via player.Game,
-        // but MatchSeries.RemovePlayer must be the entry point so it can flag the disconnect
-        // and terminate the whole series once the round it delegates to has ended.
-        if (player.CurrentSeries is not null) await player.CurrentSeries.RemovePlayer(player);
-        else if (player.Game is not null) await player.Game.RemovePlayer(player);
+        // A round in progress (standalone game or series round) gets a disconnect grace period
+        // via GameSession.HandleDisconnect; MatchSeries is notified of a final forfeit only if
+        // that grace period actually expires (see GameSession.HandleDisconnect / MarkDisconnected).
+        // A series player with no round running yet (still picking a deck) has no GameSession to
+        // grant a grace period to, so that case keeps the old instant-forfeit path.
+        if (player.Game is not null) await player.Game.HandleDisconnect(player);
+        else if (player.CurrentSeries is not null) await player.CurrentSeries.RemovePlayer(player);
     }
 
     string GenerateUniquePrivateMatchCode()

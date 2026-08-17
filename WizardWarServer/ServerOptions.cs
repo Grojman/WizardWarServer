@@ -13,6 +13,7 @@ public class ServerOptions
     public int MaxPlayersPerGame { get; set; } = 8;
     public bool SeedCardDataIfMissing { get; set; } = true;
     public string DataDirectory { get; set; } = "Data/Decks";
+    public int DisconnectGracePeriodSeconds { get; set; } = 30;
 
     public bool IsValidPlayerCount(int count) => count >= MinPlayersPerGame && count <= MaxPlayersPerGame;
 }

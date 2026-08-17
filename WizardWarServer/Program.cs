@@ -122,11 +122,17 @@ internal class Program
 
                 var socket = await context.WebSockets.AcceptWebSocketAsync();
 
-                var player = new PlayerConnection(socket);
+                Guid.TryParse(context.Request.Query["clientId"].ToString(), out var clientId);
+
+                var player = new PlayerConnection(socket) { ClientId = clientId };
 
                 await gameManager.AddPlayer(player);
 
-                Log.Information("Player {PlayerId} connected from {RemoteIp}", player.Guid, context.Connection.RemoteIpAddress);
+                var resumed = await gameManager.TryResumeGame(player);
+
+                Log.Information(
+                    "Player {PlayerId} connected from {RemoteIp} (resumed: {Resumed})",
+                    player.Guid, context.Connection.RemoteIpAddress, resumed);
 
                 await ReceiveLoop(player, gameManager, serverOptions, app.Lifetime.ApplicationStopping);
             }).RequireRateLimiting(ConnectRateLimiterPolicy);

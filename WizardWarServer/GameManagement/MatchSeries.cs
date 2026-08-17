@@ -193,22 +193,19 @@ public class MatchSeries
         await BroadcastSeriesState();
     }
 
+    // Only reached while no round is running (still picking a deck) - GameManager routes a
+    // disconnect during a round straight to the round's GameSession.HandleDisconnect instead,
+    // which grants a grace period and calls MarkDisconnected only if it truly expires.
     public async Task RemovePlayer(PlayerConnection player)
     {
         if (!Connections.Contains(player) || Phase == SeriesPhase.Finished) return;
 
         var rival = GetRival(player);
 
-        if (Phase == SeriesPhase.Selecting)
-        {
-            await EndSeries(rival.Guid, forfeited: true);
-            return;
-        }
-
-        disconnectedPlayerId = player.Guid;
-
-        if (CurrentRound is not null) await CurrentRound.RemovePlayer(player);
+        await EndSeries(rival.Guid, forfeited: true);
     }
+
+    public void MarkDisconnected(Guid playerId) => disconnectedPlayerId = playerId;
 
     async Task EndSeries(Guid winnerId, bool forfeited)
     {

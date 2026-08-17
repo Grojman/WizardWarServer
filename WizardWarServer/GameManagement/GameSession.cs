@@ -2,7 +2,7 @@ using System.Text;
 using System.Text.Json;
 using Serilog;
 public class GameSession
-{  
+{
     bool botSession = false;
     List<PlayerConnection> Connections;
 
@@ -11,6 +11,9 @@ public class GameSession
     readonly GameManager manager;
     readonly MatchSeries? series;
     readonly Guid? forcedStarterId;
+
+    readonly object _sync = new();
+    readonly Dictionary<Guid, CancellationTokenSource> disconnectGraceTimers = new();
 
     public bool HasEnded { get => state.GameActionResult.GameEnded; }
 
@@ -169,6 +172,112 @@ public class GameSession
         }
 
         await SendState();
+    }
+
+    public async Task HandleDisconnect(PlayerConnection player)
+    {
+        if (player is null || !Connections.Contains(player))
+        {
+            return;
+        }
+
+        if (botSession)
+        {
+            // No other human is waiting on a bot game, so there's nothing to gain from a grace period.
+            await RemovePlayer(player);
+            return;
+        }
+
+        var cts = new CancellationTokenSource();
+
+        lock (_sync)
+        {
+            disconnectGraceTimers[player.Guid] = cts;
+        }
+
+        manager.RegisterPendingResume(player.ClientId, this, player.Guid);
+
+        var secondsToWait = manager.Options.DisconnectGracePeriodSeconds;
+
+        foreach (var c in Connections.Where(c => c != player))
+        {
+            await c.Send("opponent_disconnected", new { playerId = player.Guid, secondsToWait });
+        }
+
+        _ = GraceTimeoutAsync(player, secondsToWait, cts.Token);
+    }
+
+    async Task GraceTimeoutAsync(PlayerConnection player, int secondsToWait, CancellationToken token)
+    {
+        try
+        {
+            await Task.Delay(TimeSpan.FromSeconds(secondsToWait), token);
+        }
+        catch (TaskCanceledException)
+        {
+            return;
+        }
+
+        bool stillPending;
+        lock (_sync)
+        {
+            stillPending = disconnectGraceTimers.Remove(player.Guid);
+        }
+
+        if (!stillPending) return;
+
+        manager.ClearPendingResume(player.ClientId);
+        series?.MarkDisconnected(player.Guid);
+
+        await RemovePlayer(player);
+    }
+
+    public async Task<bool> TryReconnect(PlayerConnection newConnection, Guid targetPlayerGuid)
+    {
+        CancellationTokenSource? cts;
+        int index;
+
+        lock (_sync)
+        {
+            if (!disconnectGraceTimers.TryGetValue(targetPlayerGuid, out cts))
+            {
+                return false;
+            }
+
+            index = Connections.FindIndex(c => c.Guid == targetPlayerGuid);
+            if (index == -1)
+            {
+                disconnectGraceTimers.Remove(targetPlayerGuid);
+                return false;
+            }
+
+            var oldConnection = Connections[index];
+
+            newConnection.Guid = oldConnection.Guid;
+            newConnection.Name = oldConnection.Name;
+            newConnection.ClientId = oldConnection.ClientId;
+            newConnection.SelectedDeckId = oldConnection.SelectedDeckId;
+            newConnection.NumberOfPlayersInGame = oldConnection.NumberOfPlayersInGame;
+            newConnection.Game = this;
+            newConnection.CurrentSeries = series;
+
+            Connections[index] = newConnection;
+
+            disconnectGraceTimers.Remove(targetPlayerGuid);
+        }
+
+        cts.Cancel();
+
+        Log.Information("Player {PlayerId} reconnected", newConnection.Guid);
+
+        foreach (var c in Connections.Where(c => c != newConnection))
+        {
+            await c.Send("opponent_reconnected", new { playerId = newConnection.Guid });
+        }
+
+        await SendState();
+
+        return true;
     }
 
     public override string ToString()

@@ -5,6 +5,7 @@ public class PlayerConnection
 {
     public int SelectedDeckId { get; set; } = -1;
     public Guid Guid = Guid.NewGuid();
+    public Guid ClientId { get; set; } = Guid.Empty;
     public WebSocket Socket { get; }
 
     public string Name { get; set; } = string.Empty;

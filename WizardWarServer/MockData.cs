@@ -61,7 +61,7 @@ public static class MockData
     {
         Id = "4",
         Name = "Flautista de Hamelin",
-        Description = "Cuando se {play:juega} una {family:rata} en la {board:mesa} {rival:rival}, consigo +1/+1",
+        Description = "Cuando se {play:juega} una {family:rata} en la {board:mesa} {rival:rival}, consigo [+1/+1]",
         BaseAttack = 2,
         BaseHealth = 4,
         Effects =
@@ -169,7 +169,7 @@ public static class MockData
         Id = "9",
         Name = "Matarratas defectuoso",
         Type = CardType.Spell,
-        Description = "+1/+1 a todas las {family:ratas} en la {board:mesa} y en el {deck:mazo} de mi jugador. A cambio mi {player:jugador} pierde 3 de vida",
+        Description = "[+1/+1] a todas las {family:ratas} en la {board:mesa} y en el {deck:mazo} de mi jugador. A cambio mi {player:jugador} pierde 3 de vida",
         Effects =
         [
             new EffectInstance(
@@ -216,7 +216,7 @@ public static class MockData
         Id = "11",
         Name = "El poder de los sumideros",
         Type = CardType.Spell,
-        Description = "{condition:Has tenido que {play:jugar} al menos 8 {family:ratas}}. A partir de ahora, las {family:ratas} que {play:juegue} mi {player:jugador} consiguen +1/+1",
+        Description = "{condition:Has tenido que {play:jugar} al menos 8 {family:ratas}}. A partir de ahora, las {family:ratas} que {play:juegue} mi {player:jugador} consiguen [+1/+1]",
         Effects =
         [
             new EffectInstance(
@@ -337,7 +337,7 @@ public static class MockData
         Id = "13_2",
         Name = "Rey rata",
         Type = CardType.Unit,
-        Description = "{condition:Has {play:jugado} 8 {family:ratas} o más}. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando mi {player:juagdor} {play:juega} un queso, consigo +1/+1",
+        Description = "{condition:Has {play:jugado} 8 {family:ratas} o más}. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando mi {player:juagdor} {play:juega} un queso, consigo [+1/+1]",
         Families = ["Rata"],
         BaseAttack = 3,
         BaseHealth = 3,
@@ -373,7 +373,7 @@ public static class MockData
     {
         Id = "15",
         Name = "La venta",
-        Description = "Cuando mi {player:jugador} {play:juega} una unidad, se le otorga +2/-1",
+        Description = "Cuando mi {player:jugador} {play:juega} una unidad, se le otorga [+2/-1]",
         BaseAttack = 1,
         BaseHealth = 4,
         Effects =
@@ -409,7 +409,7 @@ public static class MockData
     {
         Id = "18",
         Name = "Dulcinea del Toboso",
-        Description = "{endround:Final de ronda}: +2/+3 a Don Quijote, si se encuentra en {board:mesa}",
+        Description = "{endround:Final de ronda}: [+2/+3] a Don Quijote, si se encuentra en {board:mesa}",
         BaseAttack = 3,
         BaseHealth = 1,
         Families = ["Paranoia", "Castellano"],
@@ -435,7 +435,7 @@ public static class MockData
     {
         Id = "19",
         Name = "El Ingenioso Hidalgo Don Quijote de la Mancha",
-        Description = "{condition: Has {play:jugado} al menos 5 libros de caballería o una Dulcinea del Toboso}. Las {family:Paranoias} del mazo de mi {player:jugador} ganan +4/+4. Cuando mi {player:jugador} {play:juega} un libro de caballería, le curo otros 2 de vida",
+        Description = "{condition: Has {play:jugado} al menos 5 libros de caballería o una Dulcinea del Toboso}. Las {family:Paranoias} del mazo de mi {player:jugador} ganan [+4/+4]. Cuando mi {player:jugador} {play:juega} un libro de caballería, le curo otros 2 de vida",
         BaseAttack = 5,
         BaseHealth = 5,
         Families = ["Caballero", "Castellano"],
@@ -509,7 +509,7 @@ public static class MockData
         BaseAttack = 2,
         BaseHealth = 2,
         Families = ["Caballo"],
-        Description = "Cuando mi {player:jugador} {play:juega} a Don Quijote, consigo +2/+2",
+        Description = "Cuando mi {player:jugador} {play:juega} a Don Quijote, consigo [+2/+2]",
         Effects = [
             new(TriggerType.UnitPlayed, [new AlterMySelf(2, 2, false)], new DurationByExecutions(1), new PlayerCardCondition(true, new() {DefinitionId = "19"}))
         ]
@@ -554,12 +554,12 @@ public static class MockData
         Type = CardType.Unit,
         Name = "El caballero de la blanca luna",
         Families = ["Caballero"],
-        Description = "Cuando {die:muero}, las próximas dos unidades que {play:juegue} mi {player:jugador} consiguen +1/-1",
+        Description = "Cuando {die:muero}, las próximas dos unidades que {play:juegue} mi {player:jugador} consiguen [+1/-1]",
         Effects = [
             new(
                 TriggerType.UnitDeath, [new AppendGlobalEffect(
                     new(TriggerType.UnitPlayed, [new AlterMySelf(1, -1, true)], new DurationByExecutions(2), new PlayerCardCondition(true, null))
-                    , "Las próximas dos unidades que juegues consiguen +1/-1"
+                    , "Las próximas dos unidades que juegues consiguen [+1/-1]"
                 )], new DurationByExecutions(1), new IHaveBeenPlayedCondition()
             )
         ],
@@ -620,7 +620,7 @@ public static class MockData
         BaseAttack = 1,
         BaseHealth = 5,
         Families = ["Castellano"],
-        Description = "{endround:Fin de Ronda}: Si no hay otros {family:Castellanos} en la {board:mesa} de mi {player:jugador}, 0/-1 a la {board:mesa}. {skill:HABILIDAD}: +1/+1 a las unidades la {board:mesa} de mi {player:jugador}",
+        Description = "{endround:Fin de Ronda}: Si no hay otros {family:Castellanos} en la {board:mesa} de mi {player:jugador}, [0/-1] a la {board:mesa}. {skill:HABILIDAD}: [+1/+1] a las unidades la {board:mesa} de mi {player:jugador}",
         Effects = [
             new EffectInstance(
                 TriggerType.TurnEnd,
@@ -749,7 +749,7 @@ public static class MockData
         Name = "Tierras yermas",
         Families = ["Destrucción"],
         Type = CardType.Spell,
-        Description = "-2/-2 a la {board:mesa} {rival:rival}. Mi {player:jugador} pierde 2 de vida",
+        Description = "[-2/-2] a la {board:mesa} {rival:rival}. Mi {player:jugador} pierde 2 de vida",
         Effects = [
             new(TriggerType.SpellPlayed, 
                 [new AlterUnitStatsEffect(-2, -2, new() {
@@ -845,7 +845,7 @@ public static class MockData
         Id = "37",
         Type = CardType.Spell,
         Name = "Comunión Espiritual",
-        Description = "{condition:Has {play:jugado} una llamada de la ceniza}. Los {family:brujos} del {deck:mazo} de mi {player:jugador} consiguen +1/+1.",
+        Description = "{condition:Has {play:jugado} una llamada de la ceniza}. Los {family:brujos} del {deck:mazo} de mi {player:jugador} consiguen [+1/+1].",
         Effects = [
             new(
                 TriggerType.SpellPlayed,
@@ -863,7 +863,7 @@ public static class MockData
         Id = "38",
         Name = "Gran negador",
         Families = ["Maligno"],
-        Description = "+3/0 si no has {play:jugado} un hechizo antes. Si no, {draw:roba} una carta.",
+        Description = "[+3/0] si no has {play:jugado} un hechizo antes. Si no, {draw:roba} una carta.",
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 1,
@@ -895,7 +895,7 @@ public static class MockData
         Id = "39",
         Name = "Maquiavelo el maquiavélico",
         Families = ["Brujo", "Maligno"],
-        Description = "Cuando mi {player:jugador} {play:juega} un hechizo, consigo +1/0",
+        Description = "Cuando mi {player:jugador} {play:juega} un hechizo, consigo [+1/0]",
         BaseHealth = 2,
         BaseAttack = 1,
         Type = CardType.Unit,
@@ -930,7 +930,7 @@ public static class MockData
         Name = "Día de pierna",
         Families = ["Entrenamiento"],
         Type = CardType.Spell,
-        Description = "0/+2 a la {board:mesa} de mi {player:jugador}. Las cartas {family:Gym} en {board:mesa} de mi {player:jugador} pierden 3 de vida",
+        Description = "[0/+2] a la {board:mesa} de mi {player:jugador}. Las cartas {family:Gym} en {board:mesa} de mi {player:jugador} pierden 3 de vida",
         Effects = [
             new(
                 TriggerType.SpellPlayed,
@@ -953,7 +953,7 @@ public static class MockData
     {
         Id = "42",
         Name = "Batido de proteínas",
-        Description = "La primera unidad en la {board:mesa} de mi {player:jugador} consigue +1/+2.",
+        Description = "La primera unidad en la {board:mesa} de mi {player:jugador} consigue [+1/+2].",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(2, 1, new GameFilter()
@@ -985,7 +985,7 @@ public static class MockData
         Type = CardType.Unit,
         BaseAttack = 0,
         BaseHealth = 2,
-        Description = "Cuando mi {player:jugador} {play:juega} un batido de proteínas, consigo +1/0",
+        Description = "Cuando mi {player:jugador} {play:juega} un batido de proteínas, consigo [+1/0]",
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterMySelf(1, 0, false)], new Always(), new PlayerCardCondition(true, new() {DefinitionId = "42"})),
         ]
@@ -1009,7 +1009,7 @@ public static class MockData
         Name = "David Goggins",
         Families = ["Motivacion"],
         Type = CardType.Unit,
-        Description = "Después de {attack:golpear}, consigo +1/+1",
+        Description = "Después de {attack:golpear}, consigo [+1/+1]",
         Effects = [
             new (TriggerType.CardAttacked, [new AlterMySelf(1, 1, false)], new Always(), new IAttackedCondition())
         ],
@@ -1020,7 +1020,7 @@ public static class MockData
     {
         Id = "47",
         Name = "Gran sabio",
-        Description = "Cuando recibo daño, consigo +1/+1",
+        Description = "Cuando recibo daño, consigo [+1/+1]",
         Type = CardType.Unit,
         Families = ["Motivacion"],
         BaseAttack = 0,
@@ -1041,7 +1041,7 @@ public static class MockData
         Id = "48",
         Name = "Tik Tok motivacional",
         Families = ["Motivacion"],
-        Description = "{condition:Necesitas una carta con 1 de daño o menos en {board:mesa}}. Las dos primeras unidades en la izquierda de la {board:mesa} de mi {player:jugador} ganan +2/+2",
+        Description = "{condition:Necesitas una carta con 1 de daño o menos en {board:mesa}}. Las dos primeras unidades en la izquierda de la {board:mesa} de mi {player:jugador} ganan [+2/+2]",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(2, 2, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(), MaxLength = 2})], new DurationByExecutions(1), null)
@@ -1053,7 +1053,7 @@ public static class MockData
         Id = "49",
         Name = "No pain, no gain",
         Families = ["Motivacion"],
-        Description = "Inflinge 1 de daño hasta 2 unidades de la {board:mesa} de mi {player:jugador}, y {draw:roba} una carta. {skill:HABILIDAD}: inflinge 1 de daño a todas las cartas de la {board:mesa} de mi {player:jugador} y les otorgo +2/0",
+        Description = "Inflinge 1 de daño hasta 2 unidades de la {board:mesa} de mi {player:jugador}, y {draw:roba} una carta. {skill:HABILIDAD}: inflinge 1 de daño a todas las cartas de la {board:mesa} de mi {player:jugador} y les otorgo [+2/0]",
         Type = CardType.Spell,
         Effects = [
           new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(-1, 0, new(){WhichBoardToSearch = PlayerType.PLAYER, MaxLength = 2, Filter = new()}), new DrawCardEffect()], new DurationByExecutions(1), null)  
@@ -1083,7 +1083,7 @@ public static class MockData
         Type = CardType.Unit,
         BaseAttack = 3,
         BaseHealth = 3,
-        Description = "{condition:Necesitas al menos 2 tropas de {family:Gym}}. Cuando soy {play:jugado}, +1/+1 a la {board:mesa} de mi {player:juagdor}.",
+        Description = "{condition:Necesitas al menos 2 tropas de {family:Gym}}. Cuando soy {play:jugado}, [+1/+1] a la {board:mesa} de mi {player:juagdor}.",
         Effects = [
             new(TriggerType.UnitPlayed, [new AlterUnitStatsEffect(1, 1, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), null),
         ],
@@ -1109,7 +1109,7 @@ new()
     Name = "Fragmento helado",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "-4/0 a la primera unidad en la {board:mesa} {rival:rival} (izq)",
+    Description = "[-4/0] a la primera unidad en la {board:mesa} {rival:rival} (izq)",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1135,7 +1135,7 @@ new()
     Families = ["Brujo"],
     BaseAttack = 1,
     BaseHealth = 3,
-    Description = "Cada vez que mi {player:jugador} juegue un hechizo {family:hielo}, -1/0 a la primera unidad en la {board:mesa} {rival:rival} (izq)",
+    Description = "Cada vez que mi {player:jugador} juegue un hechizo {family:hielo}, [-1/0] a la primera unidad en la {board:mesa} {rival:rival} (izq)",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1158,7 +1158,7 @@ new()
     Id = "55",
     Name = "Ventisca cruel",
     Type = CardType.Spell,
-    Description = "-1/0 a la mesa {rival:rival}. Mi {player:jugador} {draw:roba} una carta",
+    Description = "[-1/0] a la mesa {rival:rival}. Mi {player:jugador} {draw:roba} una carta",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1184,7 +1184,7 @@ new()
     Families = ["Hielo"],
     BaseAttack = 0,
     BaseHealth = 3,
-    Description = "Cuando disminuye el ataque de las unidades del {rival:rival}, consigo +1/0",
+    Description = "Cuando disminuye el ataque de las unidades del {rival:rival}, consigo [+1/0]",
     Effects = [
         new (TriggerType.UnitDamageChanged, [new AlterMySelf(1, 0, false)], new Always(), 
         new MultiEffectCondition([
@@ -1201,7 +1201,7 @@ new()
     Name = "Prisión glaciar",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "Una unidad de mi {player:jugador} y del {rival:rival} pasan a tener 0 de ataque",
+    Description = "Una unidad de mi {player:jugador} y del {rival:rival} pasan a tener 0 de ataque (izq)",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1224,7 +1224,7 @@ new()
     Families = ["Brujo"],
     BaseAttack = 1,
     BaseHealth = 2,
-    Description = "{endround:Final de ronda}: -1/0 a dos unidades del {rival:rival} (izq)",
+    Description = "{endround:Final de ronda}: [-1/0] a dos unidades del {rival:rival} (izq)",
     Effects = [
         new(
             TriggerType.TurnEnd,
@@ -1271,7 +1271,7 @@ new()
     Families = ["Hielo"],
     BaseAttack = 2,
     BaseHealth = 1,
-    Description = "Al jugarme: -1/0 a la mesa {rival:rival}. Al {die:morir}, curo a mi {player:jugador} 3 de vida.",
+    Description = "Al jugarme: [-1/0] a la mesa {rival:rival}. Al {die:morir}, curo a mi {player:jugador} 3 de vida.",
     Effects = [
         new(
             TriggerType.UnitPlayed,
@@ -1298,7 +1298,7 @@ new()
     Name = "Invierno interminable",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "Durante los dos próximos {endround:finales de ronda}, -1/0 a la mesa {rival:rival}",
+    Description = "Durante los dos próximos {endround:finales de ronda}, [-1/0] a la mesa {rival:rival}",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1357,7 +1357,7 @@ new()
     Families = ["Hielo", "Brujo"],
     BaseAttack = 2,
     BaseHealth = 4,
-    Description = "Cuando una unidad {rival:rival} llega a 0 de ataque, le inflinjo 0/-2",
+    Description = "Cuando una unidad {rival:rival} llega a 0 de ataque, le inflinjo [0/-2]",
     Effects = [
         new(
             TriggerType.UnitDamageChanged,
@@ -1376,7 +1376,7 @@ new()
     Name = "Avalancha",
     Type = CardType.Spell,
     Families = ["Hielo"],
-    Description = "{condition:Mi {player:jugador} ha {play:jugado} 5 hechizos {family:hielo} o más}. -2/0 a toda la mesa {rival:rival}. 0/-3 a las unidades del {rival:rival} con 0 de ataque",
+    Description = "{condition:Mi {player:jugador} ha {play:jugado} 5 hechizos {family:hielo} o más}. [-2/0] a toda la mesa {rival:rival}. [0/-3] a las unidades del {rival:rival} con 0 de ataque",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1490,7 +1490,7 @@ new()
     Name = "PAQUETE",
     Families = ["Paquete"],
     Type = CardType.Spell,
-    Description = "0/+1 a las unidades de mi {player:jugador} en {board:mesa}",
+    Description = "[0/+1] a las unidades de mi {player:jugador} en {board:mesa}",
     Effects = [
         new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(1, 0, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1517,7 +1517,7 @@ new()
     Name = "DATAGRAMA",
     Families = ["Paquete"],
     Type = CardType.Spell,
-    Description = "+1/0 a las unidades de mi {player:jugador} en {board:mesa}",
+    Description = "[+1/0] a las unidades de mi {player:jugador} en {board:mesa}",
     Effects = [
         new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(0, 1, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1571,12 +1571,12 @@ new()
     Name = "DATOS DE PRESENTACIÓN",
     Families = ["Paquete"],
     Type = CardType.Spell,
-    Description = "+2/+2 a las dos próximas unidades que {play:juegue} mi {player:jugador}",
+    Description = "[+2/+2] a las dos próximas unidades que {play:juegue} mi {player:jugador}",
     Effects = [
         new(TriggerType.SpellPlayed, [
             new AppendGlobalEffect(
                 new(TriggerType.UnitPlayed, [new AlterMySelf(2, 2, true)], new DurationByExecutions(2), new PlayerCardCondition(true, null)),
-                "+2/+2 a las dos próximas unidades jugadas"
+                "[+2/+2] a las dos próximas unidades jugadas"
             )
             ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1707,7 +1707,7 @@ new()
             new AlterUnitStatsEffect(0, -3, new(){WhichBoardToSearch = PlayerType.RIVAL, Filter = new()}),   
         ], new DurationByExecutions(1), null)
     ],
-    Description = "-3/0 a la {board:mesa} del {rival:rival}"
+    Description = "[-3/0] a la {board:mesa} del {rival:rival}"
 },
 new()
 {
@@ -1745,7 +1745,7 @@ new()
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 3,
-    Description = "Cuando el {rival:rival} {play:juega} un {family:virus}, consigo +1/+1",
+    Description = "Cuando el {rival:rival} {play:juega} un {family:virus}, consigo [+1/+]1",
     Effects = [
         new(
             TriggerType.SpellPlayed,
@@ -1844,7 +1844,7 @@ new()
     Name = "Moneda del sufrimiento",
     Type = CardType.Spell,
     Families = ["Moneda del caos"],
-    Description = "50% de probabilidades de -1/-1 a la {board:mesa} {rival:rival}",
+    Description = "50% de probabilidades de [-1/-1] a la {board:mesa} {rival:rival}",
     Effects = [
         new(TriggerType.SpellPlayed,[
             new AlterUnitStatsEffect(-1, -1, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new()})
@@ -1857,7 +1857,7 @@ new()
     Name = "Moneda gloriosa",
     Type = CardType.Spell,
     Families = ["Moneda del caos"],
-    Description = "50% de probabilidades de otorgar +1/+1 a la {board:mesa} y al {deck:mazo} de mi {player:jugador}",
+    Description = "50% de probabilidades de otorgar [+1/+1] a la {board:mesa} y al {deck:mazo} de mi {player:jugador}",
     Effects = [
         new(TriggerType.SpellPlayed,[
             new AlterUnitStatsEffect(1, 1, new() { WhichBoardToSearch = PlayerType.PLAYER, WhichDeckToSearch = PlayerType.PLAYER, Filter = new()})
@@ -1944,7 +1944,7 @@ new()
     Id = "107",
     Type = CardType.Spell,
     Name = "Pago de sangre",
-    Description = "{die:Mato} una una unidad de mi {player:jugador}. 0/-4 a una unidad {rival:rival} y {add:creo} dos {family:monedas del caos} en el mazo de mi {player:jugador}",
+    Description = "{die:Mato} una una unidad de mi {player:jugador}. [0/-4] a una unidad {rival:rival} y {add:creo} dos {family:monedas del caos} en el mazo de mi {player:jugador}",
     Effects = [
         new(TriggerType.SpellPlayed, [
             new KillCards(new(), PlayerType.PLAYER, 1),
@@ -1961,7 +1961,7 @@ new()
     BaseAttack = 2,
     BaseHealth = 2,
     Name = "Acólito sangriento",
-    Description = "{skill:HABILIDAD}: 0/-1 a mí mismo, -1/0 a la mesa {rival:rival}",
+    Description = "{skill:HABILIDAD}: [0/-1] a mí mismo, [-1/0] a la mesa {rival:rival}",
     PlayEffectTriggerTimes = 2,
     PlayEffects = [
         new AlterUnitStatsEffect(0, -1, new() {Filter = new(), WhichBoardToSearch = PlayerType.RIVAL}),
@@ -2020,7 +2020,7 @@ new()
     BaseAttack = 1,
     BaseHealth = 1,
     Name = "Apostador demacrado",
-    Description = "Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, consigo +1/+1",
+    Description = "Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, consigo [+1/+1]",
     Effects = [
         new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["Moneda del caos"]}))
     ]
