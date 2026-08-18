@@ -22,6 +22,7 @@ public class SetUnitToCeroEffect : IEffect
             if (c is not null && counter < Amount)
             {
                 state.AlterUnitDamage(cardId, c, -c.CurrentAttack);
+                counter++;
             }
         }
     }

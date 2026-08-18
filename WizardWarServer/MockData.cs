@@ -249,7 +249,7 @@ public static class MockData
         Id = "12",
         Name = "Arañazos",
         Type = CardType.Spell,
-        Description = "[0/-1] a la {deck:mesa} {enemy:enemiga} ahora y al final de este turno",
+        Description = "[0/-1] a la {deck:mesa} {rival:rival} ahora y al final de este turno",
         Families = ["Rata"],
         Effects =
         [
@@ -290,7 +290,7 @@ public static class MockData
         Id = "13",
         Name = "Mordedura de rata",
         Type = CardType.Spell,
-        Description = "0/-3 a una unidad en la {board:mesa} {rival:rival}, la primera a la izquierda. {skill:HABILIDAD}: {draw:roba} una carta",
+        Description = "[0/-3] a una unidad en la {board:mesa} {rival:rival}, la primera a la izquierda. {skill:HABILIDAD}: {draw:roba} una carta",
         Families = ["Rata"],
         Effects =
         [
@@ -1745,7 +1745,7 @@ new()
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 3,
-    Description = "Cuando el {rival:rival} {play:juega} un {family:virus}, consigo [+1/+]1",
+    Description = "Cuando el {rival:rival} {play:juega} un {family:virus}, consigo [+1/+1]",
     Effects = [
         new(
             TriggerType.SpellPlayed,
