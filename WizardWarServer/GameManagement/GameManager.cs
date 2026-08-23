@@ -234,6 +234,15 @@ public class GameManager
         return code;
     }
 
+    MatchFormat? PeekPrivateMatchFormat(string? rawCode)
+    {
+        var code = rawCode?.Trim().ToUpperInvariant() ?? string.Empty;
+        lock (_sync)
+        {
+            return privateMatches.TryGetValue(code, out var lobby) ? lobby.Format : null;
+        }
+    }
+
     public async Task CreatePrivateMatch(PlayerConnection player, MatchFormat format = MatchFormat.Single)
     {
         await UnqueuePlayer(player);
@@ -527,7 +536,7 @@ public class GameManager
                             await player.SendError("Invalid number of players.");
                             break;
                         }
-                        if (!CardManager.Decks.Any(d => d.id == e.DeckId))
+                        if (e.Format != MatchFormat.BestOfThree && !CardManager.Decks.Any(d => d.id == e.DeckId))
                         {
                             await player.SendError("Unknown deck id.");
                             break;
@@ -537,7 +546,11 @@ public class GameManager
                         await CreatePrivateMatch(player, e.Format);
                         break;
                     case UserAction.JoinPrivateMatchAction f:
-                        if (!CardManager.Decks.Any(d => d.id == f.DeckId))
+                        // Best-of-3 series pick decks per-game once the series starts (see
+                        // MatchSeries.TrySelectDeck), so the lobby's format decides whether
+                        // an upfront DeckId is required. The format lives on the lobby, which
+                        // is looked up by code, not on the action itself.
+                        if (PeekPrivateMatchFormat(f.Code) != MatchFormat.BestOfThree && !CardManager.Decks.Any(d => d.id == f.DeckId))
                         {
                             await player.SendError("Unknown deck id.");
                             break;

@@ -518,22 +518,30 @@ public static class MockData
     new CardDefinition
     {
         Id = "22",
-        Name = "How Hungry",
+        Name = "Don't Quijote",
         Type = CardType.Spell,
-        Families = ["Caballo"],
-        Description = "{condition:Si hay algún {family:caballo} en tu {board:mesa} o más}, mi {player:jugador} se cura la suma de la vida de todos",
+        Description = "{condition:Si hay algún Don Quijote en la mesa, lo {die:mato}. Si es de mi {player:jugador}, lo devuelvo al mazo y le curo 7 de vida.",
         Effects =
         [
             new EffectInstance(
                 TriggerType.SpellPlayed,
                 [
-                    new AlterPlayerBasedOnCardStats(
-                        PlayerType.PLAYER,
-                        new CardFilter { CurrentFamilies = ["Caballo"] },
-                        AffectedStats.HEALTH,
-                        PlayerType.PLAYER,
-                        1
-                    )
+                    new AlterPlayerHealthEffect(7, false),
+                    new AppendCardToDeck(1, "19", false)
+                ],
+                new DurationByExecutions(1),
+                new CountCardCondition(
+                    new GameFilter
+                    {
+                        WhichBoardToSearch = PlayerType.PLAYER,
+                        Filter = new CardFilter { DefinitionId = "19" }
+                    },
+                    new(CountType.AT_LEAST, 1))
+            ),
+            new EffectInstance(
+                TriggerType.SpellPlayed,
+                [
+                    new KillCards(new(){DefinitionId = "19"}, PlayerType.BOTH, 4)
                 ],
                 new DurationByExecutions(1),
                 new IHaveBeenPlayedCondition()
@@ -542,8 +550,8 @@ public static class MockData
         ConditionToPlay = new CountCardCondition(
             new GameFilter
             {
-                WhichBoardToSearch = PlayerType.PLAYER,
-                Filter = new CardFilter { CurrentFamilies = ["Caballo"] }
+                WhichBoardToSearch = PlayerType.BOTH,
+                Filter = new CardFilter { DefinitionId = "19" }
             },
             new(CountType.AT_LEAST, 1)
         )
@@ -2091,6 +2099,14 @@ new()
             ),
             new()
             {
+                {"96", 0},
+                {"97", 0},
+                {"98", 0},
+                {"99", 0},
+                {"100", 0},
+                {"101", 0},
+                {"102", 0},
+                {"103", 0},
                 {"104", 4},
                 {"105", 2},
                 {"106", 3},
@@ -2115,6 +2131,20 @@ new()
             {
                 //32
                 {"70", 2},
+                {"71", 0},
+                {"72", 0},
+                {"73", 0},
+                {"74", 0},
+                {"75", 0},
+                {"76", 0},
+                {"77", 0},
+                {"78", 0},
+                {"79", 0},
+                {"80", 0},
+                {"81", 0},
+                {"82", 0},
+                {"83", 0},
+                {"84", 0},
                 {"85", 3},
                 {"86", 2},
                 {"87", 4},
@@ -2146,7 +2176,8 @@ new()
                 {"61", 2},
                 {"62", 1},
                 {"63", 3},
-                {"64", 3}
+                {"64", 3},
+                {"65", 0},
             }
         },
         {
