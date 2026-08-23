@@ -520,7 +520,7 @@ public static class MockData
         Id = "22",
         Name = "Don't Quijote",
         Type = CardType.Spell,
-        Description = "{condition:Si hay algún Don Quijote en la mesa, lo {die:mato}. Si es de mi {player:jugador}, lo devuelvo al mazo y le curo 7 de vida.",
+        Description = "{condition:Si hay algún Don Quijote en la mesa}, lo {die:mato}. Si es de mi {player:jugador}, lo devuelvo al mazo y le curo 7 de vida.",
         Effects =
         [
             new EffectInstance(
@@ -2094,8 +2094,8 @@ new()
         {
             new DeckDto(
                 11,
-                "Gambler",
-                "Esto es una descripción"
+                "Misterioso adicto",
+                "La gente del Vacío es extraña, desde luego. Todo el mundo sabe que no debes inmiscuirte en sus asuntos. Y aun así aquí aparece, sosteniendo monedas malditas, y buscando a alguien quien quiera seguirle el juego, ¿Serás tú el que se siente a la mesa?"
             ),
             new()
             {
@@ -2214,7 +2214,7 @@ new()
         {
             new DeckDto(5,
             "El mago del queso",
-            "¿Pero qué? ¿Quién ha dejado una rata entrar en la guerra? Si además lleva sombrero y todo, y parece que se ha traído a todos sus parientes. En fin, no seré yo quien la juzgue, pero no parece que trame nada bueno."),
+            "¿Una rata? ¿En nuestro bar? Qué desgracia. Y no viene sola, por supuesto que no. Solo los dioses sabrán de dónde habrá conseguido ese gorro y esos poderes, pero tiene pinta de que no tiene intenciones de marcharse. De hecho, parece que se ha traído a toda la familia."),
             new()
             {
                 //34
@@ -2237,7 +2237,7 @@ new()
         {
             new DeckDto(6,
                 "El Ingenioso Hidalgo Don Quijote de la Mancha",
-                "Primero una rata, y ahora este tío. Habla de un modo muy extraño, nadie le entiende y... parece que se está pegando con unos molinos. No para de hablar de enemigos y de una tal Dulcinea; menos mal que esos monstruos no son reales, ¿Verdad?"
+                "Menudo personaje... aparece acompañado de un hombre con forma de botijo y no para de hablar de monstruos inventados y princesas que nadie conoce. Menos mal que solo son las alucinaciones de un viejo loco, ¿Verdad?"
             ),
             new()
             {
@@ -2259,7 +2259,7 @@ new()
             }
         },
         {
-            new DeckDto(8, "Mago cachas", "Sus artes son simlpes pero devastadoras. La mancuernamancia ha ganado no pocas guerras, y no se va a contentar con reunir una victoria más: ha apostado con el resto de magos que quien pierda tendrá que dar 5 vueltas al campo de batalla."),
+            new DeckDto(8, "Mago cachas", "Sus artes son simlpes pero devastadoras. La mancuernamancia ha ganado no pocas batallas, y no se va a contentar con reunir una victoria más: ha apostado con el resto de magos que quien pierda tendrá que dar 5 vueltas a la taberna."),
             new(){
                 //34
                 {"40", 4},
