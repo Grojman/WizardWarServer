@@ -2063,7 +2063,7 @@ new()
                 [
                     new CreateRandomCoin(2)
                 ], new DurationByExecutions(3), new PlayerCardCondition(true, new(){CurrentFamilies = ["Moneda del caos"]})),
-                "Cuando el juagdor juegue una moneda, creo otra y la añado en el mazoº"
+                "Cuando el juagdor juegue una moneda, creo otra y la añado en el mazo"
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
