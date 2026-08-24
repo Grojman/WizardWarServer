@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using System.Text.Json;
 using Serilog;
@@ -7,7 +8,6 @@ public class GameSession
     List<PlayerConnection> Connections;
 
     GameState state;
-
     readonly GameManager manager;
     readonly MatchSeries? series;
     readonly Guid? forcedStarterId;
@@ -43,6 +43,8 @@ public class GameSession
         foreach(var c in Connections) await c.Send("start_game", new { });
 
         state.Initialize(Connections, forcedStarterId);
+
+        
 
         await SendState();
     }

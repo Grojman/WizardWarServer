@@ -246,6 +246,7 @@ public class MatchSeries
         {
             rivalStatus = "hidden";
             rivalDeckId = null;
+            myStatus = mySelected.HasValue ? "waiting_you" : "selecting";
         }
         else
         {
@@ -257,15 +258,16 @@ public class MatchSeries
                 rivalStatus = "waiting_you";
             }
             rivalDeckId = rivalSelected;
+
+            if (currentPicker == recipient.Guid)
+            {
+                myStatus = mySelected.HasValue ? "waiting_you" : "selecting";
+            } else
+            {
+                myStatus = "waiting";
+            }
         }
 
-        if (currentPicker == recipient.Guid)
-        {
-            myStatus = mySelected.HasValue ? "waiting_you" : "selecting";
-        } else
-        {
-            myStatus = "waiting";
-        }
 
         var reserved = new HashSet<int>(UsedDeckIds);
         if (RoundNumber < 3 && rivalSelected.HasValue) reserved.Add(rivalSelected.Value);

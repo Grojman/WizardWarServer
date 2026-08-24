@@ -12,6 +12,11 @@ public class GameState
 
     public int TurnCounter { get; set; } = 1;
 
+    DateTime Start;
+    DateTime End;
+
+    public int TotalInSeconds { get => (int)(End - Start).TotalSeconds; }
+
     public GameState()
     {
         GameActionResult = new() { State = this };
@@ -22,6 +27,7 @@ public class GameState
         Guid? forcedStarterId = null
     )
     {
+        Start = DateTime.Now;
         var players = new List<PlayerState>();
         foreach(var con in connections)
         {
@@ -179,7 +185,7 @@ public class GameState
                 break;
 
             case PlayerAction.PlayCardAction a:
-                PlayCard(player, a.CardIndex, a.BoardIndex);
+                PlayCard(player, a.CardId, a.BoardIndex);
                 break;
 
             case PlayerAction.AttackAction a:
@@ -293,6 +299,7 @@ public class GameState
         if (AlivePlayers.Count == 1)
         {
             GameActionResult.GameEnded = true;
+            End = DateTime.Now;
             GameActionResult.Winner = AlivePlayers[0].Id;
         }
     }
@@ -365,14 +372,9 @@ public class GameState
         }
     }
 
-    public void PlayCard(PlayerConnection p, int handIndex, int boardIndex)
+    public void PlayCard(PlayerConnection p, Guid cardId, int boardIndex)
     {
         var player = GetState(p.Guid);
-        if (handIndex < 0 || handIndex >= player.Hand.Count)
-        {
-            Log.Warning("Player {PlayerId} sent a hand index out of range: {HandIndex}", p.Guid, handIndex);
-            return;
-        }
 
         if (boardIndex != -1 && (boardIndex < 0 || boardIndex >= player.Board.Length))
         {
@@ -380,7 +382,13 @@ public class GameState
             return;
         }
 
-        var card = player.GetFromHand(handIndex);
+        var card = player.GetFromHand(cardId);
+        if (card is null)
+        {
+            Log.Warning("Player {PlayerId} tried to play a card not in their hand: {CardId}", p.Guid, cardId);
+            return;
+        }
+
         PlayCard(player, card, boardIndex);
     }
 

@@ -123,12 +123,12 @@ public class BotConnection : PlayerConnection
 
         var isPlace = state.Me.Board.Any(n => n is null);
         var boardIndexes = state.Me.Board.Select((a,b) => new {a, b}).Where(n => n.a is null).Select(n => n.b);
-        var cardIndexes = state.Me.HandData.Select((a, b) => new{a, b}).Where(n => n.a.canPlay && (n.a.type == "Spell" || isPlace)).Select(n => n.b);
+        var playableCards = state.Me.HandData.Where(n => n.canPlay && (n.type == "Spell" || isPlace));
 
         await Game.HandleAction(this, new PlayerAction.PlayCardAction()
         {
             BoardIndex = boardIndexes.Count() == 0 ? -1 : boardIndexes.GetRandom(),
-            CardIndex = cardIndexes.GetRandom()
+            CardId = Guid.Parse(playableCards.GetRandom().id)
         });
     }
 

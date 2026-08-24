@@ -36,7 +36,7 @@ public interface PlayerAction
     public class DrawCardAction : PlayerAction {}
     public class PlayCardAction : PlayerAction
     {
-        public required int CardIndex { get; set; }
+        public required Guid CardId { get; set; }
         public required int BoardIndex { get; set; }
     }
 

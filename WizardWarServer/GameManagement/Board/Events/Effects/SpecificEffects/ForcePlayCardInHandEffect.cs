@@ -40,7 +40,7 @@ public class ForcePlayCardInHandEffect : IEffect
                     if(c.Definition.Type == CardType.Spell || boardIndexes.Any())
                     {
                         var targetIndex = boardIndexes.Any() ? boardIndexes.GetRandom() : -1;
-                        state.PlayCard(player.Connection, i, targetIndex);
+                        state.PlayCard(player.Connection, c.Id, targetIndex);
                         played++;
                     }
                 }

@@ -1,3 +1,4 @@
+using System.Diagnostics.Eventing.Reader;
 using System.Text.Json;
 using Serilog;
 
@@ -7,10 +8,12 @@ public class DeckStats
     public int Losses { get; set; }
     public int TotalGames { get; set; }
     public int TotalTurns { get; set; }
+    public int TotalSeconds { get; set; }
 
     public Dictionary<int, DeckStats> VsDeck { get; set; } = new();
 
     public double AverageTurn => TotalGames == 0 ? 0 : (double)TotalTurns / TotalGames;
+    public double AverageSeconds => TotalSeconds == 0 ? 0 : (double)TotalSeconds / TotalGames;
 }
 
 internal class PersistedStats
@@ -124,6 +127,43 @@ public static class StoringData
         }
     }
 
+    private static void UpdateStats(int deckId, int rivalDeck, bool isWinner, int turns, int seconds)
+    {
+        if(!Data.TryGetValue(deckId, out var stats))
+        {
+            stats = new DeckStats();
+            Data[deckId] = stats;
+        }
+
+        if(!Data.TryGetValue(rivalDeck, out var rivalStats))
+        {
+            rivalStats = new DeckStats();
+            Data[rivalDeck] = rivalStats;
+        }
+        stats.TotalGames++;
+        stats.TotalTurns += turns;
+        stats.TotalSeconds += seconds;
+        rivalStats.TotalGames++;
+        rivalStats.TotalSeconds += seconds;
+        rivalStats.TotalTurns += turns;
+
+        if (isWinner)
+        {
+            stats.Wins++;
+            rivalStats.Losses++;
+
+            stats.VsDeck.FirstOrDefault(n => n.Key == rivalDeck).Value.Wins++;
+            rivalStats.VsDeck.FirstOrDefault(n => n.Key == deckId).Value.Losses++;
+        } else
+        {
+            stats.Losses++;
+            rivalStats.Wins++;
+
+            stats.VsDeck.FirstOrDefault(n => n.Key == rivalDeck).Value.Losses++;
+            rivalStats.VsDeck.FirstOrDefault(n => n.Key == deckId).Value.Wins++;
+        }
+    }
+
     public static void SaveData(GameState state, bool forced)
     {
         if (state.GameActionResult.Winner is null || state.Players.Count != 2) return;
@@ -131,46 +171,16 @@ public static class StoringData
 
         Guid winnerId = (Guid)state.GameActionResult.Winner;
         int turns = state.TurnCounter;
-        var registeredDecks = new List<int>();
 
         lock (_lock)
         {
             TotalGamesPlayed++;
 
-            foreach (var player in state.Players)
-            {
-                var deckId = player.Deck!.Id;
-                bool won = player.Id == winnerId;
+            var deckId1 = state.Players[0].Deck!.Id;
+            var deckId2 = state.Players[1].Deck!.Id;
 
-                if (!Data.TryGetValue(deckId, out var stats))
-                {
-                    stats = new DeckStats();
-                    Data[deckId] = stats;
-                }
-
-                if (registeredDecks.Contains(deckId) && !won)
-                {
-                    return;
-                } else {
-                    if (!won)
-                    {
-                        registeredDecks.Add(deckId);
-                    }
-                }
-
-                stats.TotalGames++;
-                stats.TotalTurns += turns;
-
-
-                if (won)
-                {
-                    stats.Wins++;
-                }
-                else
-                {
-                    stats.Losses++;
-                }
-            }
+            UpdateStats(deckId1, deckId2, state.Players[0].Id  == winnerId, turns, state.TotalInSeconds);
+            UpdateStats(deckId2, deckId1, state.Players[1].Id  == winnerId, turns, state.TotalInSeconds);
         }
     }
 

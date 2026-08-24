@@ -16,8 +16,11 @@ public class PlayerState : IdentificableObject
 
     public CardInstance? LastSpellPlayed = null;
 
-    public CardInstance GetFromHand(int index)
+    public CardInstance? GetFromHand(Guid cardId)
     {
+        var index = Hand.FindIndex(c => c.Id == cardId);
+        if (index == -1) return null;
+
         var card = Hand[index];
         Hand.RemoveAt(index);
         return card;

@@ -33,8 +33,8 @@ public class DecideTurnEffect : IEffect
     {
         var isPlace = card.Player.Board.Any(n => n is null);
         var boardIndexes = card.Player.Board.Select((a,b) => new {a, b}).Where(n => n.a is null).Select(n => n.b);
-        var cardIndexes = card.Player.Hand.Select((a, b) => new{a, b}).Where(n => (n.a.CanPlay?.Check(n.a.Player.Id, n.a.Player.PlayerTarget!.Id, n.a, state, null) ?? true) && (n.a.Definition.Type == CardType.Spell || isPlace)).Select(n => n.b);
+        var playableCards = card.Player.Hand.Where(n => (n.CanPlay?.Check(n.Player.Id, n.Player.PlayerTarget!.Id, n, state, null) ?? true) && (n.Definition.Type == CardType.Spell || isPlace));
 
-        state.PlayCard(card.Player.Connection, cardIndexes.GetRandom(), isPlace ? -1 : boardIndexes.GetRandom());
+        state.PlayCard(card.Player.Connection, playableCards.GetRandom().Id, isPlace ? -1 : boardIndexes.GetRandom());
     }
 }
