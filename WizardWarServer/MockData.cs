@@ -337,7 +337,7 @@ public static class MockData
         Id = "13_2",
         Name = "Rey rata",
         Type = CardType.Unit,
-        Description = "{condition:Has {play:jugado} 8 {family:ratas} o más}. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando mi {player:juagdor} {play:juega} un queso, consigo [+1/+1]",
+        Description = "{condition:Has {play:jugado} 8 {family:ratas} o más}. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando mi {player:jugador} {play:juega} un queso, consigo [+1/+1]",
         Families = ["Rata"],
         BaseAttack = 3,
         BaseHealth = 3,

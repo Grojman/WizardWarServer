@@ -147,20 +147,34 @@ public static class StoringData
         rivalStats.TotalSeconds += seconds;
         rivalStats.TotalTurns += turns;
 
+        if (!stats.VsDeck.TryGetValue(rivalDeck, out var sR))
+        {
+            sR = new();
+            stats.VsDeck[rivalDeck] = sR;
+        }
+
+        if (!rivalStats.VsDeck.TryGetValue(deckId, out var sI))
+        {
+            sI = new();
+            rivalStats.VsDeck[deckId] = sI;
+        }
+
+
         if (isWinner)
         {
             stats.Wins++;
             rivalStats.Losses++;
 
-            stats.VsDeck.FirstOrDefault(n => n.Key == rivalDeck).Value.Wins++;
-            rivalStats.VsDeck.FirstOrDefault(n => n.Key == deckId).Value.Losses++;
+
+            sR.Wins++;
+            sI.Losses++;
         } else
         {
             stats.Losses++;
             rivalStats.Wins++;
 
-            stats.VsDeck.FirstOrDefault(n => n.Key == rivalDeck).Value.Losses++;
-            rivalStats.VsDeck.FirstOrDefault(n => n.Key == deckId).Value.Wins++;
+            sR.Losses++;
+            sI.Wins++;
         }
     }
 
@@ -180,7 +194,6 @@ public static class StoringData
             var deckId2 = state.Players[1].Deck!.Id;
 
             UpdateStats(deckId1, deckId2, state.Players[0].Id  == winnerId, turns, state.TotalInSeconds);
-            UpdateStats(deckId2, deckId1, state.Players[1].Id  == winnerId, turns, state.TotalInSeconds);
         }
     }
 
