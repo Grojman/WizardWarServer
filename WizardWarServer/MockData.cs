@@ -2095,7 +2095,7 @@ new()
             new DeckDto(
                 11,
                 "Misterioso adicto",
-                "La gente del Vacío es extraña, desde luego. Todo el mundo sabe que no debes inmiscuirte en sus asuntos. Y aun así aquí aparece, sosteniendo monedas malditas, y buscando a alguien quien quiera seguirle el juego, ¿Serás tú el que se siente a la mesa?"
+                "Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias."
             ),
             new()
             {
@@ -2125,7 +2125,7 @@ new()
             new DeckDto(
                 10,
                 "Tecnomago",
-                "Una criatura compuesta de metal, cables y energía. No tiene alma. No tiene comunión con el mundo y su energía. Y, de algún modo, es capaz de realizar sus propias obras. Ve por encima del resto, se ha declarado a sí misma como un hechicero, y nadie entiende cuáles son sus propósitos."
+                "Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados."
             ),
             new()
             {
@@ -2161,7 +2161,7 @@ new()
             new DeckDto(
                 9,
                 "Archimago del invierno",
-                "Enterrado bajo toneladas de hielo durante milenios, este ser ha decidido resurgir y traer consigo sus nuevas creaciones. Los escalofríos suceden allá por donde pasa, y nadie ha sido todavía capaz de descifrar esa mirada perdida y vacía de vida; no sin haber perdido el juicio antes.") ,
+                "Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad.") ,
             new()
             {
                 //34
@@ -2183,7 +2183,7 @@ new()
         {
             new DeckDto(7,
             "Don Bola de Fuego Jr",
-            "Reduce a cenizas a quienes se enfrentan a él, y con suerte sus aliados escapan a su cólera. Eso sí: que nadie le pregunte qué le pasó a Don Bola de Fuego padre."),
+            "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida."),
             new()
             {
                 //32
@@ -2214,7 +2214,7 @@ new()
         {
             new DeckDto(5,
             "El mago del queso",
-            "¿Una rata? ¿En nuestro bar? Qué desgracia. Y no viene sola, por supuesto que no. Solo los dioses sabrán de dónde habrá conseguido ese gorro y esos poderes, pero tiene pinta de que no tiene intenciones de marcharse. De hecho, parece que se ha traído a toda la familia."),
+            "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien."),
             new()
             {
                 //34
@@ -2237,7 +2237,7 @@ new()
         {
             new DeckDto(6,
                 "El Ingenioso Hidalgo Don Quijote de la Mancha",
-                "Menudo personaje... aparece acompañado de un hombre con forma de botijo y no para de hablar de monstruos inventados y princesas que nadie conoce. Menos mal que solo son las alucinaciones de un viejo loco, ¿Verdad?"
+                "Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve."
             ),
             new()
             {
@@ -2259,7 +2259,7 @@ new()
             }
         },
         {
-            new DeckDto(8, "Mago cachas", "Sus artes son simlpes pero devastadoras. La mancuernamancia ha ganado no pocas batallas, y no se va a contentar con reunir una victoria más: ha apostado con el resto de magos que quien pierda tendrá que dar 5 vueltas a la taberna."),
+            new DeckDto(8, "Mago cachas", "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida."),
             new(){
                 //34
                 {"40", 4},
