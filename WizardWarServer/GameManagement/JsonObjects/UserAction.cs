@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
 [JsonDerivedType(typeof(ChangeNameAction), "ChangeNameAction")]
+[JsonDerivedType(typeof(ChangeLanguageAction), "ChangeLanguageAction")]
 [JsonDerivedType(typeof(JoinQueueAction), "JoinQueueAction")]
 [JsonDerivedType(typeof(LeaveQueueAction), "LeaveQueueAction")]
 [JsonDerivedType(typeof(GetDecksAction), "GetDecksAction")]
@@ -21,6 +22,11 @@ public interface UserAction
     public class ChangeNameAction : UserAction
     {
         public required string NewName { get; set;}
+    }
+
+    public class ChangeLanguageAction : UserAction
+    {
+        public required string Language { get; set; }
     }
 
     public class JoinQueueAction : UserAction

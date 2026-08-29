@@ -65,7 +65,7 @@ public class GameSession
         catch (JsonException ex)
         {
             Log.Warning(ex, "Received invalid in-game JSON from player {PlayerId}", player.Guid);
-            await player.SendError("Your last action could not be understood by the server.");
+            await player.SendError(TranslationKeys.ErrActionNotUnderstood);
             return;
         }
 
@@ -95,6 +95,13 @@ public class GameSession
             {
                 await RemovePlayer(player);
                 return;
+            } else if (action is PlayerAction.ChangeLanguageAction la)
+            {
+                TranslationManager.TryResolveLanguage(la.Language, out var resolvedLanguage);
+                player.Language = resolvedLanguage;
+                await player.SendTranslations();
+                await player.Send("game_state", GameStateDto.Generate(state.GetState(player.Guid), [.. state.GetRivals(player.Guid)], state, player.Language));
+                return;
             }
 
             state.ApplyAction(player, action);
@@ -109,17 +116,17 @@ public class GameSession
         catch (Exception ex)
         {
             Log.Error(ex, "Unexpected error while handling in-game action from player {PlayerId}", player.Guid);
-            await player.SendError("Something went wrong processing your action. Please try again.");
+            await player.SendError(TranslationKeys.ErrActionFailed);
         }
     }
 
     async Task SendState()
     {
-        var events = state.GameActionResult.Events.ToList();
+        var rawEvents = state.GameActionResult.Events.ToList();
         foreach(var c in Connections)
         {
-            await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state));
-            await c.Send("game_events", events);
+            await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state, c.Language));
+            await c.Send("game_events", rawEvents.Select(e => GameEventDto.Generate(e, state, c.Language)).ToList());
         }
 
         state.GameActionResult.Events.Clear();
@@ -257,6 +264,7 @@ public class GameSession
 
             newConnection.Guid = oldConnection.Guid;
             newConnection.Name = oldConnection.Name;
+            newConnection.Language = oldConnection.Language;
             newConnection.ClientId = oldConnection.ClientId;
             newConnection.SelectedDeckId = oldConnection.SelectedDeckId;
             newConnection.NumberOfPlayersInGame = oldConnection.NumberOfPlayersInGame;

@@ -27,6 +27,7 @@ public class CardDefinition
 
     public CardType Type { get; set; } = CardType.Unit;
 
+    // TODO: REMOVE ONCE THE MOCK DATA DATA HAS BEEN SAVED
     public string Description { get; set; } = string.Empty;
 
     public int BaseAttack { get; set; } = 0;

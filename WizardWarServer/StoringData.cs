@@ -197,11 +197,11 @@ public static class StoringData
         }
     }
 
-    public static StatsDto GetStats()
+    public static StatsDto GetStats(string language)
     {
         lock (_lock)
         {
-            var allDecks = CardManager.Decks.ToList();
+            var allDecks = CardManager.Decks.Select(d => TranslationManager.TranslateDeck(d, language)).ToList();
 
             var decks = allDecks
                 .Select(d => DeckStatsDto.Generate(d, Data.TryGetValue(d.id, out var s) ? s : null, allDecks))

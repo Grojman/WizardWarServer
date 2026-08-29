@@ -11,9 +11,15 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(SelectSeriesDeckAction), nameof(SelectSeriesDeckAction))]
 [JsonDerivedType(typeof(RequestSeriesStateAction), nameof(RequestSeriesStateAction))]
 [JsonDerivedType(typeof(GetDecksAction), nameof(GetDecksAction))]
+[JsonDerivedType(typeof(ChangeLanguageAction), nameof(ChangeLanguageAction))]
 public interface PlayerAction
 {
     public class LeaveGame : PlayerAction {}
+
+    public class ChangeLanguageAction : PlayerAction
+    {
+        public required string Language { get; set; }
+    }
     public class GetDecksAction : PlayerAction {}
 
     public class SelectSeriesDeckAction : PlayerAction

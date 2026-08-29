@@ -70,6 +70,8 @@ public class GameManager
 
     public Task AddPlayer(PlayerConnection player)
     {
+        player.Language = options.DefaultLanguage;
+
         lock (_sync)
         {
             players.Add(player);
@@ -284,7 +286,7 @@ public class GameManager
 
         if (code.Length == 0)
         {
-            await player.SendError("Introduce un código de partida.");
+            await player.SendError(TranslationKeys.ErrMatchCodeRequired);
             return;
         }
 
@@ -326,7 +328,7 @@ public class GameManager
 
         if (notFound)
         {
-            await player.SendError("No existe ninguna partida privada con ese código.");
+            await player.SendError(TranslationKeys.ErrMatchCodeNotFound);
             return;
         }
 
@@ -450,7 +452,7 @@ public class GameManager
             catch (Exception ex)
             {
                 Log.Error(ex, "Unexpected error while handling in-game message from player {PlayerId}", player.Guid);
-                await player.SendError("Something went wrong processing your action. Please try again.");
+                await player.SendError(TranslationKeys.ErrActionFailed);
             }
         } else if (series != null)
         {
@@ -461,7 +463,7 @@ public class GameManager
             catch (Exception ex)
             {
                 Log.Error(ex, "Unexpected error while handling series message from player {PlayerId}", player.Guid);
-                await player.SendError("Something went wrong processing your action. Please try again.");
+                await player.SendError(TranslationKeys.ErrActionFailed);
             }
         } else
         {
@@ -480,15 +482,20 @@ public class GameManager
                         }
                         player.Name = a.NewName;
                         break;
+                    case UserAction.ChangeLanguageAction g:
+                        TranslationManager.TryResolveLanguage(g.Language, out var resolvedLanguage);
+                        player.Language = resolvedLanguage;
+                        await player.SendTranslations();
+                        break;
                     case UserAction.StartBotGameAction c:
                         if (!options.IsValidPlayerCount(c.NumberOfPlayers))
                         {
-                            await player.SendError("Invalid number of players.");
+                            await player.SendError(TranslationKeys.ErrInvalidPlayerCount);
                             break;
                         }
                         if (!CardManager.Decks.Any(d => d.id == c.DeckId))
                         {
-                            await player.SendError("Unknown deck id.");
+                            await player.SendError(TranslationKeys.ErrUnknownDeck);
                             break;
                         }
                         player.SelectedDeckId = c.DeckId;
@@ -500,18 +507,18 @@ public class GameManager
                         {
                             if (b.NumberOfPlayers != 2)
                             {
-                                await player.SendError("Best-of-3 matches require exactly 2 players.");
+                                await player.SendError(TranslationKeys.ErrBestOfThreeRequiresTwo);
                                 break;
                             }
                         }
                         else if (!options.IsValidPlayerCount(b.NumberOfPlayers))
                         {
-                            await player.SendError("Invalid number of players.");
+                            await player.SendError(TranslationKeys.ErrInvalidPlayerCount);
                             break;
                         }
                         if (b.Format != MatchFormat.BestOfThree && !CardManager.Decks.Any(d => d.id == b.DeckId))
                         {
-                            await player.SendError("Unknown deck id.");
+                            await player.SendError(TranslationKeys.ErrUnknownDeck);
                             break;
                         }
                         player.SelectedDeckId = b.DeckId;
@@ -527,18 +534,18 @@ public class GameManager
                         {
                             if (e.NumberOfPlayers != 2)
                             {
-                                await player.SendError("Best-of-3 matches require exactly 2 players.");
+                                await player.SendError(TranslationKeys.ErrBestOfThreeRequiresTwo);
                                 break;
                             }
                         }
                         else if (!options.IsValidPlayerCount(e.NumberOfPlayers))
                         {
-                            await player.SendError("Invalid number of players.");
+                            await player.SendError(TranslationKeys.ErrInvalidPlayerCount);
                             break;
                         }
                         if (e.Format != MatchFormat.BestOfThree && !CardManager.Decks.Any(d => d.id == e.DeckId))
                         {
-                            await player.SendError("Unknown deck id.");
+                            await player.SendError(TranslationKeys.ErrUnknownDeck);
                             break;
                         }
                         player.SelectedDeckId = e.DeckId;
@@ -552,7 +559,7 @@ public class GameManager
                         // is looked up by code, not on the action itself.
                         if (PeekPrivateMatchFormat(f.Code) != MatchFormat.BestOfThree && !CardManager.Decks.Any(d => d.id == f.DeckId))
                         {
-                            await player.SendError("Unknown deck id.");
+                            await player.SendError(TranslationKeys.ErrUnknownDeck);
                             break;
                         }
                         player.SelectedDeckId = f.DeckId;
@@ -562,13 +569,13 @@ public class GameManager
                         await LeavePrivateMatch(player);
                         break;
                     case UserAction.GetDecksAction:
-                        await player.Send("get_decks", CardManager.Decks);
+                        await player.Send("get_decks", CardManager.Decks.Select(d => TranslationManager.TranslateDeck(d, player.Language)));
                         break;
                     case UserAction.GetAllCardsAction:
-                        await player.Send("get_cards", CardManager.Decks.Select(n => new {n.name, cards = CardManager.GetDefinitionsByDeck(n.id).Select(l =>new KeyValuePair<CardDto, int>(CardDto.Generate(l.Key), l.Value))}));
+                        await player.Send("get_cards", CardManager.Decks.Select(n => new {name = TranslationManager.Get($"DECK_{n.id}_NAME", player.Language), cards = CardManager.GetDefinitionsByDeck(n.id).Select(l =>new KeyValuePair<CardDto, int>(CardDto.Generate(l.Key, player.Language), l.Value))}));
                         break;
                     case UserAction.GetStatsAction:
-                        await player.Send("get_stats", StoringData.GetStats());
+                        await player.Send("get_stats", StoringData.GetStats(player.Language));
                         break;
                     case UserAction.SendSuggestion d:
                         StoringData.SaveSuggestion(d.Suggestion);
@@ -581,12 +588,12 @@ public class GameManager
             catch (JsonException ex)
             {
                 Log.Warning(ex, "Received invalid JSON from player {PlayerId}", player.Guid);
-                await player.SendError("Your last message could not be understood by the server.");
+                await player.SendError(TranslationKeys.ErrMessageNotUnderstood);
             }
             catch (Exception ex)
             {
                 Log.Error(ex, "Error while handling message from player {PlayerId}", player.Guid);
-                await player.SendError("Something went wrong processing your request. Please try again.");
+                await player.SendError(TranslationKeys.ErrRequestFailed);
             }
 
 

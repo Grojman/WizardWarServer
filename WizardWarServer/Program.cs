@@ -100,6 +100,9 @@ internal class Program
 
             CardManager.Initialize();
 
+            TranslationManager.Configure(serverOptions.TranslationsCsvPath, serverOptions.DefaultLanguage);
+            TranslationManager.Initialize();
+
             GameManager gameManager = new(serverOptions);
 
             app.Map("/ws", async context =>

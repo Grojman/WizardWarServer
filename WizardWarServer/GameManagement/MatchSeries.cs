@@ -59,7 +59,7 @@ public class MatchSeries
         catch (JsonException ex)
         {
             Log.Warning(ex, "Received invalid series JSON from player {PlayerId}", player.Guid);
-            await player.SendError("Your last action could not be understood by the server.");
+            await player.SendError(TranslationKeys.ErrActionNotUnderstood);
             return;
         }
 
@@ -75,7 +75,7 @@ public class MatchSeries
             switch (action)
             {
                 case PlayerAction.GetDecksAction:
-                    await player.Send("get_decks", CardManager.Decks);
+                    await player.Send("get_decks", CardManager.Decks.Select(d => TranslationManager.TranslateDeck(d, player.Language)));
                     break;
                 case PlayerAction.SelectSeriesDeckAction a:
                     await TrySelectDeck(player, a.DeckId);
@@ -85,6 +85,12 @@ public class MatchSeries
                     break;
                 case PlayerAction.LeaveGame:
                     await RemovePlayer(player);
+                    break;
+                case PlayerAction.ChangeLanguageAction la:
+                    TranslationManager.TryResolveLanguage(la.Language, out var resolvedLanguage);
+                    player.Language = resolvedLanguage;
+                    await player.SendTranslations();
+                    await SendSeriesStateTo(player);
                     break;
                 default:
                     // In-round actions are routed straight to the round's GameSession
@@ -96,7 +102,7 @@ public class MatchSeries
         catch (Exception ex)
         {
             Log.Error(ex, "Unexpected error while handling series action from player {PlayerId}", player.Guid);
-            await player.SendError("Something went wrong processing your action. Please try again.");
+            await player.SendError(TranslationKeys.ErrActionFailed);
         }
     }
 
@@ -106,13 +112,13 @@ public class MatchSeries
 
         if (!CardManager.Decks.Any(d => d.id == deckId))
         {
-            await player.SendError("Unknown deck id.");
+            await player.SendError(TranslationKeys.ErrUnknownDeck);
             return;
         }
 
         if (UsedDeckIds.Contains(deckId))
         {
-            await player.SendError("Ese mazo ya ha sido usado en esta serie.");
+            await player.SendError(TranslationKeys.ErrDeckAlreadyUsedInSeries);
             return;
         }
 
@@ -123,7 +129,7 @@ public class MatchSeries
             var rival = GetRival(player);
             if (PendingSelection.TryGetValue(rival.Guid, out var rivalPick) && rivalPick == deckId)
             {
-                await player.SendError("Tu rival ya ha elegido ese mazo.");
+                await player.SendError(TranslationKeys.ErrRivalAlreadyPickedDeck);
                 return;
             }
         }
@@ -272,7 +278,7 @@ public class MatchSeries
         var reserved = new HashSet<int>(UsedDeckIds);
         if (RoundNumber < 3 && rivalSelected.HasValue) reserved.Add(rivalSelected.Value);
 
-        var availableDecks = CardManager.Decks.Where(d => !reserved.Contains(d.id));
+        var availableDecks = CardManager.Decks.Where(d => !reserved.Contains(d.id)).Select(d => TranslationManager.TranslateDeck(d, recipient.Language));
 
         var msg = new
         {

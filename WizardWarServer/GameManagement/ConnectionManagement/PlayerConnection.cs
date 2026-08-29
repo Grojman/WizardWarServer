@@ -10,6 +10,8 @@ public class PlayerConnection
 
     public string Name { get; set; } = string.Empty;
 
+    public string Language { get; set; } = TranslationManager.DefaultLanguage;
+
     public GameSession? Game { get; set; }
 
     public MatchSeries? CurrentSeries { get; set; }
@@ -54,8 +56,13 @@ public class PlayerConnection
 
     }
 
-    public Task SendError(string message)
+    public Task SendError(string key)
     {
-        return Send("error", new { message });
+        return Send("error", new { message = TranslationManager.Get(key, Language) });
+    }
+
+    public Task SendTranslations()
+    {
+        return Send("translations", new { language = Language, values = TranslationManager.GetAll(Language) });
     }
 }
