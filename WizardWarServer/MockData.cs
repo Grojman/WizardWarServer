@@ -33,7 +33,7 @@ public static class MockData
         Description = "{skill:HABILIDAD}: -1 a mi {player:jugador}",
         BaseAttack = 1,
         BaseHealth = 1,
-        Families = ["Rata"],
+        Families = ["RATA"],
         PlayEffects = [new AlterPlayerHealthEffect(-1, false)],
         PlayEffectTriggerTimes = 1
     },
@@ -45,7 +45,7 @@ public static class MockData
         Description = "Cuando {die:muero}, {add:añado} dos {family:ratas} al {deck:mazo} del {rival:rival}.",
         BaseAttack = 2,
         BaseHealth = 1,
-        Families = ["Rata"],
+        Families = ["RATA"],
         Effects =
         [
             new EffectInstance(
@@ -72,7 +72,7 @@ public static class MockData
                     new AlterMySelf(1, 1,false)
                 ],
                 new Always(),
-                new PlayerCardCondition(false, new() { CurrentFamilies = ["Rata"]})
+                new PlayerCardCondition(false, new() { CurrentFamilies = ["RATA"]})
             )
         ]
     },
@@ -85,7 +85,7 @@ public static class MockData
         BaseAttack = 1,
         BaseHealth = 1,
         Type = CardType.Unit,
-        Families = ["Rata"],
+        Families = ["RATA"],
         Effects = [
             new(TriggerType.UnitPlayed, [
                 new TriggerAbilityEffect(PlayerType.RIVAL, null)
@@ -111,7 +111,7 @@ public static class MockData
                         PlayerType.PLAYER,
                         new GameFilter
                         {
-                            Filter = new CardFilter { CurrentFamilies = ["Rata"] },
+                            Filter = new CardFilter { CurrentFamilies = ["RATA"] },
                             WhichDeckToSearch = PlayerType.RIVAL
                         }
                     )
@@ -146,7 +146,7 @@ public static class MockData
         Description = "{endround:Fin de ronda}: me inflinjo 2 de daño y añado 1 {family:rata} al {deck:mazo} {rival:rival}",
         BaseAttack = 0,
         BaseHealth = 6,
-        Families = ["Rata"],
+        Families = ["RATA"],
         Effects =
         [
             new EffectInstance(
@@ -179,7 +179,7 @@ public static class MockData
                         1, 1,
                         new GameFilter
                         {
-                            Filter = new CardFilter { CurrentFamilies = ["Rata"] },
+                            Filter = new CardFilter { CurrentFamilies = ["RATA"] },
                             WhichBoardToSearch = PlayerType.PLAYER,
                             WhichDeckToSearch = PlayerType.PLAYER
                         }
@@ -199,7 +199,7 @@ public static class MockData
         Description = "Cuando soy {play:jugado}, {add:añado} 3 Quesos en el {deck:mazo} de mi {player:jugador}",
         BaseAttack = 2,
         BaseHealth = 3,
-        Families = ["Rata"],
+        Families = ["RATA"],
         Effects =
         [
             new EffectInstance(
@@ -228,7 +228,7 @@ public static class MockData
                             [new AlterMySelf(1, 1, true)],
                             new Always(),
                             new PlayerCardCondition(true,
-                                new CardFilter { CurrentFamilies = ["Rata"] })
+                                new CardFilter { CurrentFamilies = ["RATA"] })
                         ),
                         "+1/+1 Si la carta es una Rata"
                     )
@@ -238,7 +238,7 @@ public static class MockData
             )
         ],
         ConditionToPlay = new CountPlayedCardsCondition(
-            new CardFilter { CurrentFamilies = ["Rata"] },
+            new CardFilter { CurrentFamilies = ["RATA"] },
             PlayerType.PLAYER,
             new(CountType.AT_LEAST, 8)
         )
@@ -250,7 +250,7 @@ public static class MockData
         Name = "Arañazos",
         Type = CardType.Spell,
         Description = "[0/-1] a la {deck:mesa} {rival:rival} ahora y al final de este turno",
-        Families = ["Rata"],
+        Families = ["RATA"],
         Effects =
         [
             new EffectInstance(
@@ -291,7 +291,7 @@ public static class MockData
         Name = "Mordedura de rata",
         Type = CardType.Spell,
         Description = "[0/-3] a una unidad en la {board:mesa} {rival:rival}, la primera a la izquierda. {skill:HABILIDAD}: {draw:roba} una carta",
-        Families = ["Rata"],
+        Families = ["RATA"],
         Effects =
         [
             new EffectInstance(
@@ -327,7 +327,7 @@ public static class MockData
                     new AlterPlayerHealthEffect(-1, true)
                 ],
                 new Always(),
-                new PlayerCardCondition(false, new() { CurrentFamilies = ["Rata"]})
+                new PlayerCardCondition(false, new() { CurrentFamilies = ["RATA"]})
             )
         ]  
     },
@@ -338,10 +338,10 @@ public static class MockData
         Name = "Rey rata",
         Type = CardType.Unit,
         Description = "{condition:Has {play:jugado} 8 {family:ratas} o más}. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando mi {player:jugador} {play:juega} un queso, consigo [+1/+1]",
-        Families = ["Rata"],
+        Families = ["RATA"],
         BaseAttack = 3,
         BaseHealth = 3,
-        ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Rata"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 8)),
+        ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["RATA"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 8)),
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new(){DefinitionId = "7"})),
             new(TriggerType.CardAttacked, [new AppendCardToDeck(1, "2", true)], new Always(), new IAttackedCondition())
@@ -355,7 +355,7 @@ public static class MockData
         Name = "Libro de Caballería",
         Type = CardType.Spell,
         Description = "{draw:Roba} una carta y cura 2 de vida a mi {player:jugador}",
-        Families = ["Libro"],
+        Families = ["LIBRO"],
         Effects =
         [
             new EffectInstance(
@@ -393,7 +393,7 @@ public static class MockData
         Name = "Molino de viento",
         BaseAttack = 2,
         BaseHealth = 2,
-        Families = ["Paranoia"]
+        Families = ["PARANOIA"]
     },
 
     new CardDefinition
@@ -402,7 +402,7 @@ public static class MockData
         Name = "Rebaño de corderos",
         BaseAttack = 1,
         BaseHealth = 1,
-        Families = ["Paranoia"]
+        Families = ["PARANOIA"]
     },
 
     new CardDefinition
@@ -412,7 +412,7 @@ public static class MockData
         Description = "{endround:Final de ronda}: [+2/+3] a Don Quijote, si se encuentra en {board:mesa}",
         BaseAttack = 3,
         BaseHealth = 1,
-        Families = ["Paranoia", "Castellano"],
+        Families = ["PARANOIA", "CASTELLANO"],
         Effects =
         [
             new EffectInstance(
@@ -438,7 +438,7 @@ public static class MockData
         Description = "{condition: Has {play:jugado} al menos 5 libros de caballería o una Dulcinea del Toboso}. Las {family:Paranoias} del mazo de mi {player:jugador} ganan [+4/+4]. Cuando mi {player:jugador} {play:juega} un libro de caballería, le curo otros 2 de vida",
         BaseAttack = 5,
         BaseHealth = 5,
-        Families = ["Caballero", "Castellano"],
+        Families = ["CABALLERO", "CASTELLANO"],
         Effects =
         [
             new EffectInstance(
@@ -449,7 +449,7 @@ public static class MockData
                         {
                             WhichBoardToSearch = PlayerType.PLAYER,
                             WhichDeckToSearch = PlayerType.PLAYER,
-                            Filter = new CardFilter { CurrentFamilies = ["Paranoia"] }
+                            Filter = new CardFilter { CurrentFamilies = ["PARANOIA"] }
                         })
                 ],
                 new DurationByExecutions(1),
@@ -508,7 +508,7 @@ public static class MockData
         Name = "Rocinante",
         BaseAttack = 2,
         BaseHealth = 2,
-        Families = ["Caballo"],
+        Families = ["CABALLO"],
         Description = "Cuando mi {player:jugador} {play:juega} a Don Quijote, consigo [+2/+2]",
         Effects = [
             new(TriggerType.UnitPlayed, [new AlterMySelf(2, 2, false)], new DurationByExecutions(1), new PlayerCardCondition(true, new() {DefinitionId = "19"}))
@@ -561,7 +561,7 @@ public static class MockData
         Id = "23",
         Type = CardType.Unit,
         Name = "El caballero de la blanca luna",
-        Families = ["Caballero"],
+        Families = ["CABALLERO"],
         Description = "Cuando {die:muero}, las próximas dos unidades que {play:juegue} mi {player:jugador} consiguen [+1/-1]",
         Effects = [
             new(
@@ -582,7 +582,7 @@ public static class MockData
         BaseAttack = 1,
         BaseHealth = 4,
         Description = "{endround:Fin de ronda}: {add:Creo} un Libro de Caballería en el {deck:mazo} de mi {player:jugador}",
-        Families = ["Castellano"],
+        Families = ["CASTELLANO"],
         Effects = [
             new EffectInstance(
                 TriggerType.TurnEnd,
@@ -601,7 +601,7 @@ public static class MockData
         Type = CardType.Unit,
         BaseAttack = 3,
         BaseHealth = 4,
-        Families = ["Caballero"],
+        Families = ["CABALLERO"],
         Description = "Si entra Don Quijote o Sancho Panza en la {board:mesa} de mi {player:jugador}, le inflinjo 4 de daño",
         Effects = [
             new EffectInstance(
@@ -627,7 +627,7 @@ public static class MockData
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 5,
-        Families = ["Castellano"],
+        Families = ["CASTELLANO"],
         Description = "{endround:Fin de Ronda}: Si no hay otros {family:Castellanos} en la {board:mesa} de mi {player:jugador}, [0/-1] a la {board:mesa}. {skill:HABILIDAD}: [+1/+1] a las unidades la {board:mesa} de mi {player:jugador}",
         Effects = [
             new EffectInstance(
@@ -645,7 +645,7 @@ public static class MockData
                     new()
                     {
                         WhichBoardToSearch = PlayerType.PLAYER,
-                        Filter = new() {CurrentFamilies = ["Castellano"]}
+                        Filter = new() {CurrentFamilies = ["CASTELLANO"]}
                     },
                     new(CountType.AT_MAX, 1)
                 )
@@ -661,14 +661,14 @@ public static class MockData
         Type = CardType.Spell,
         Description = "{draw:Roba} dos {family:caballeros}",
         Effects = [
-            new(TriggerType.SpellPlayed, [new DrawCardEffect(2, new(){CurrentFamilies = ["Caballero"]})], new DurationByExecutions(1), null)
+            new(TriggerType.SpellPlayed, [new DrawCardEffect(2, new(){CurrentFamilies = ["CABALLERO"]})], new DurationByExecutions(1), null)
         ]
     },
     new()
     {
         Id = "27",
         Name = "Bola de fuego",
-        Families = ["Ceniza"],
+        Families = ["CENIZA"],
         Type = CardType.Spell,
         Description = "Inflinjo -4 a la primera unidad de la izquierda en la {board:mesa} del {rival:rival}.",
         Effects = [
@@ -691,7 +691,7 @@ public static class MockData
     {
         Id = "28",
         Name = "Aprendiz de mago",
-        Families = ["Brujo"],
+        Families = ["BRUJO"],
         Type = CardType.Unit,
         BaseAttack = 2,
         BaseHealth = 1,
@@ -713,7 +713,7 @@ public static class MockData
         Id = "29",
         Name = "Maestro de la ceniza",
         Type = CardType.Unit,
-        Families = ["Brujo", "Ceniza"],
+        Families = ["BRUJO", "CENIZA"],
         BaseAttack = 6,
         BaseHealth = 7,
         Description = "{condition:Has {play:jugado} 5 bolas de fuego o más}. {endround:Fin de Ronda}: {add:creo} una bola de fuego en el mazo de mi {player:jugador}",
@@ -741,7 +741,7 @@ public static class MockData
         BaseHealth = 3,
         Description = "Cuando mi {player:jugador} {play:juega} una bola de fuego, inflinjo 1 de daño al {play:rival}",
         Type = CardType.Unit,
-        Families = ["Ceniza"],
+        Families = ["CENIZA"],
         Effects = [
             new(
                 TriggerType.SpellPlayed,
@@ -755,7 +755,7 @@ public static class MockData
     {
         Id = "31",
         Name = "Tierras yermas",
-        Families = ["Destrucción"],
+        Families = ["DESTRUCCION"],
         Type = CardType.Spell,
         Description = "[-2/-2] a la {board:mesa} {rival:rival}. Mi {player:jugador} pierde 2 de vida",
         Effects = [
@@ -783,14 +783,14 @@ public static class MockData
         Type = CardType.Spell,
         Description = "{draw:Roba} una carta {family:ceniza}. Curo 2 de vida a mi {player:jugador}.",
         Effects = [
-            new(TriggerType.SpellPlayed, [new DrawCardEffect(1, new() {CurrentFamilies = ["Ceniza"]}), new AlterPlayerHealthEffect(2, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+            new(TriggerType.SpellPlayed, [new DrawCardEffect(1, new() {CurrentFamilies = ["CENIZA"]}), new AlterPlayerHealthEffect(2, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
     },
     new()
     {
         Id = "34",
         Name = "La ira del dios del fuego",
-        Families = ["Destrucción"],
+        Families = ["DESTRUCCION"],
         Type = CardType.Spell,
         Description = "{die:MATA} a TODAS las unidades en {board:mesa}",
         Effects = [
@@ -801,7 +801,7 @@ public static class MockData
     {
         Id = "35",
         Name = "Chispas escurridizas",
-        Families = ["Destrucción", "Maligno"],
+        Families = ["DESTRUCCION", "MALIGNO"],
         Type = CardType.Unit,
         BaseAttack = 2,
         BaseHealth = 1,
@@ -831,7 +831,7 @@ public static class MockData
     {
         Id = "36",
         Name = "Instructor de las llamas",
-        Families = ["Brujo"],
+        Families = ["BRUJO"],
         Type = CardType.Unit,
         Description = "Al {die:morir}, {add:creo} una bola de fuego en la mano de mi {player:jugador}, si hay espacio disponible.",
         BaseAttack = 1,
@@ -858,7 +858,7 @@ public static class MockData
             new(
                 TriggerType.SpellPlayed,
                 [
-                    new AlterUnitStatsEffect(1, 1, new() {Filter = new() {CurrentFamilies = ["Brujo"]}, WhichDeckToSearch = PlayerType.PLAYER})
+                    new AlterUnitStatsEffect(1, 1, new() {Filter = new() {CurrentFamilies = ["BRUJO"]}, WhichDeckToSearch = PlayerType.PLAYER})
                 ],
                 new DurationByExecutions(1),
                 null
@@ -870,7 +870,7 @@ public static class MockData
     {
         Id = "38",
         Name = "Gran negador",
-        Families = ["Maligno"],
+        Families = ["MALIGNO"],
         Description = "[+3/0] si no has {play:jugado} un hechizo antes. Si no, {draw:roba} una carta.",
         Type = CardType.Unit,
         BaseAttack = 1,
@@ -902,7 +902,7 @@ public static class MockData
     {
         Id = "39",
         Name = "Maquiavelo el maquiavélico",
-        Families = ["Brujo", "Maligno"],
+        Families = ["BRUJO", "MALIGNO"],
         Description = "Cuando mi {player:jugador} {play:juega} un hechizo, consigo [+1/0]",
         BaseHealth = 2,
         BaseAttack = 1,
@@ -922,7 +922,7 @@ public static class MockData
     {
         Id = "40",
         Name = "GymRat",
-        Families = ["Gym", "Rata"],
+        Families = ["GYM", "RATA"],
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 2,
@@ -936,7 +936,7 @@ public static class MockData
     {
         Id = "41",
         Name = "Día de pierna",
-        Families = ["Entrenamiento"],
+        Families = ["ENTRENAMIENTO"],
         Type = CardType.Spell,
         Description = "[0/+2] a la {board:mesa} de mi {player:jugador}. Las cartas {family:Gym} en {board:mesa} de mi {player:jugador} pierden 3 de vida",
         Effects = [
@@ -950,7 +950,7 @@ public static class MockData
                         }),
                     new AlterUnitStatsEffect(-3, 0, new GameFilter()
                         {
-                            Filter = new(){ CurrentFamilies = ["Gym"]},
+                            Filter = new(){ CurrentFamilies = ["GYM"]},
                             WhichBoardToSearch = PlayerType.PLAYER
                         }),
                 ], new DurationByExecutions(1), new IHaveBeenPlayedCondition()
@@ -971,7 +971,7 @@ public static class MockData
                             MaxLength = 1
                         })], new DurationByExecutions(1), null)
         ],
-        Families = ["Entrenamiento"]
+        Families = ["ENTRENAMIENTO"]
     },
     new()
     {
@@ -979,7 +979,7 @@ public static class MockData
         Name = "Entrenador personal",
         Description = "{add:Crea} dos batidos de proteínas en el {board:mazo} de mi {player:jugador}",
         Type = CardType.Unit,
-        Families = ["Gym"],
+        Families = ["GYM"],
         Effects = [
             new(TriggerType.UnitPlayed, [new AppendCardToDeck(2, "42", false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ],
@@ -1003,19 +1003,19 @@ public static class MockData
         Id = "45",
         Name = "Gerente del Basic Fit",
         Description = "Si hay una carta {family:Gym} en la {board:mesa} de mi {player:jugador}, {draw:roba} una carta",
-        Families = ["Gym"],
+        Families = ["GYM"],
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 1,
         Effects = [
-            new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new CountCardCondition(new() {Filter = new() {CurrentFamilies = ["Gym"]}, WhichBoardToSearch = PlayerType.PLAYER}, new(CountType.AT_LEAST, 1)))
+            new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new CountCardCondition(new() {Filter = new() {CurrentFamilies = ["GYM"]}, WhichBoardToSearch = PlayerType.PLAYER}, new(CountType.AT_LEAST, 1)))
         ]
     },
     new()
     {
         Id = "46",
         Name = "David Goggins",
-        Families = ["Motivacion"],
+        Families = ["MOTIVACION"],
         Type = CardType.Unit,
         Description = "Después de {attack:golpear}, consigo [+1/+1]",
         Effects = [
@@ -1030,7 +1030,7 @@ public static class MockData
         Name = "Gran sabio",
         Description = "Cuando recibo daño, consigo [+1/+1]",
         Type = CardType.Unit,
-        Families = ["Motivacion"],
+        Families = ["MOTIVACION"],
         BaseAttack = 0,
         BaseHealth = 2, 
         Effects = [
@@ -1048,7 +1048,7 @@ public static class MockData
     {
         Id = "48",
         Name = "Tik Tok motivacional",
-        Families = ["Motivacion"],
+        Families = ["MOTIVACION"],
         Description = "{condition:Necesitas una carta con 1 de daño o menos en {board:mesa}}. Las dos primeras unidades en la izquierda de la {board:mesa} de mi {player:jugador} ganan [+2/+2]",
         Type = CardType.Spell,
         Effects = [
@@ -1060,7 +1060,7 @@ public static class MockData
     {
         Id = "49",
         Name = "No pain, no gain",
-        Families = ["Motivacion"],
+        Families = ["MOTIVACION"],
         Description = "Inflinge 1 de daño hasta 2 unidades de la {board:mesa} de mi {player:jugador}, y {draw:roba} una carta. {skill:HABILIDAD}: inflinge 1 de daño a todas las cartas de la {board:mesa} de mi {player:jugador} y les otorgo [+2/0]",
         Type = CardType.Spell,
         Effects = [
@@ -1087,7 +1087,7 @@ public static class MockData
     {
         Id = "51",
         Name = "Biscuit Oliva",
-        Families = ["Leyenda", "Motivacion"],
+        Families = ["LEYENDA", "MOTIVACION"],
         Type = CardType.Unit,
         BaseAttack = 3,
         BaseHealth = 3,
@@ -1095,7 +1095,7 @@ public static class MockData
         Effects = [
             new(TriggerType.UnitPlayed, [new AlterUnitStatsEffect(1, 1, new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new()})], new DurationByExecutions(1), null),
         ],
-        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentFamilies = ["Gym"]}}, new(CountType.AT_LEAST, 2))
+        ConditionToPlay = new CountCardCondition(new(){WhichBoardToSearch = PlayerType.PLAYER, Filter = new(){CurrentFamilies = ["GYM"]}}, new(CountType.AT_LEAST, 2))
     },
     new()
     {
@@ -1116,7 +1116,7 @@ new()
     Id = "53",
     Name = "Fragmento helado",
     Type = CardType.Spell,
-    Families = ["Hielo"],
+    Families = ["HIELO"],
     Description = "[-4/0] a la primera unidad en la {board:mesa} {rival:rival} (izq)",
     Effects = [
         new(
@@ -1140,7 +1140,7 @@ new()
     Id = "54",
     Name = "Aprendiz del invierno",
     Type = CardType.Unit,
-    Families = ["Brujo"],
+    Families = ["BRUJO"],
     BaseAttack = 1,
     BaseHealth = 3,
     Description = "Cada vez que mi {player:jugador} juegue un hechizo {family:hielo}, [-1/0] a la primera unidad en la {board:mesa} {rival:rival} (izq)",
@@ -1156,7 +1156,7 @@ new()
                 })
             ],
             new Always(),
-            new PlayerCardCondition(true, new(){CurrentFamilies = ["Hielo"]})
+            new PlayerCardCondition(true, new(){CurrentFamilies = ["HIELO"]})
         )
     ]
 },
@@ -1189,7 +1189,7 @@ new()
     Id = "56",
     Name = "Gólem de escarcha",
     Type = CardType.Unit,
-    Families = ["Hielo"],
+    Families = ["HIELO"],
     BaseAttack = 0,
     BaseHealth = 3,
     Description = "Cuando disminuye el ataque de las unidades del {rival:rival}, consigo [+1/0]",
@@ -1208,7 +1208,7 @@ new()
     Id = "57",
     Name = "Prisión glaciar",
     Type = CardType.Spell,
-    Families = ["Hielo"],
+    Families = ["HIELO"],
     Description = "Una unidad de mi {player:jugador} y del {rival:rival} pasan a tener 0 de ataque (izq)",
     Effects = [
         new(
@@ -1229,7 +1229,7 @@ new()
     Id = "58",
     Name = "Sabio de la nieve",
     Type = CardType.Unit,
-    Families = ["Brujo"],
+    Families = ["BRUJO"],
     BaseAttack = 1,
     BaseHealth = 2,
     Description = "{endround:Final de ronda}: [-1/0] a dos unidades del {rival:rival} (izq)",
@@ -1255,7 +1255,7 @@ new()
     Id = "59",
     Name = "Corazón congelado",
     Type = CardType.Spell,
-    Families = ["Hielo"],
+    Families = ["HIELO"],
     Description = "Mi {player:jugador} {draw:roba} tantas cartas como unidades con 0 de daño tenga el {rival:rival}. Después, las {die:mata}",
     Effects = [
         new(
@@ -1276,7 +1276,7 @@ new()
     Id = "60",
     Name = "Elemental de hielo",
     Type = CardType.Unit,
-    Families = ["Hielo"],
+    Families = ["HIELO"],
     BaseAttack = 2,
     BaseHealth = 1,
     Description = "Al jugarme: [-1/0] a la mesa {rival:rival}. Al {die:morir}, curo a mi {player:jugador} 3 de vida.",
@@ -1305,7 +1305,7 @@ new()
     Id = "61",
     Name = "Invierno interminable",
     Type = CardType.Spell,
-    Families = ["Hielo"],
+    Families = ["HIELO"],
     Description = "Durante los dos próximos {endround:finales de ronda}, [-1/0] a la mesa {rival:rival}",
     Effects = [
         new(
@@ -1338,7 +1338,7 @@ new()
     Id = "62",
     Name = "Dragón boreal",
     Type = CardType.Unit,
-    Families = ["Hielo", "Leyenda", "Dragón"],
+    Families = ["HIELO", "LEYENDA", "DRAGON"],
     BaseAttack = 5,
     BaseHealth = 6,
     Description = "{condition:Mi {player:jugador}  no tiene criaturas en {board:mesa}, y ha {play:jugado} 8 cartas de {family:Hielo} o más}. {endround:Final de ronda}: si hay hueco, {play:invoco} una cría de dragón en la mesa de mi {player:jugador}",
@@ -1349,7 +1349,7 @@ new()
     ],
     ConditionToPlay = new MultiEffectCondition([
         new CountPlayedCardsCondition(
-        new() { CurrentFamilies = ["Hielo"] },
+        new() { CurrentFamilies = ["HIELO"] },
         PlayerType.PLAYER,
         new(CountType.AT_LEAST, 8)
     ),
@@ -1362,7 +1362,7 @@ new()
     Id = "63",
     Name = "Hechicero del cero absoluto",
     Type = CardType.Unit,
-    Families = ["Hielo", "Brujo"],
+    Families = ["HIELO", "BRUJO"],
     BaseAttack = 2,
     BaseHealth = 4,
     Description = "Cuando una unidad {rival:rival} llega a 0 de ataque, le inflinjo [0/-2]",
@@ -1383,7 +1383,7 @@ new()
     Id = "64",
     Name = "Avalancha",
     Type = CardType.Spell,
-    Families = ["Hielo"],
+    Families = ["HIELO"],
     Description = "{condition:Mi {player:jugador} ha {play:jugado} 5 hechizos {family:hielo} o más}. [-2/0] a toda la mesa {rival:rival}. [0/-3] a las unidades del {rival:rival} con 0 de ataque",
     Effects = [
         new(
@@ -1404,14 +1404,14 @@ new()
             new IHaveBeenPlayedCondition()
         )
     ],
-    ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["Hielo"], CardType = CardType.Spell}, PlayerType.PLAYER, new(CountType.AT_LEAST, 5))
+    ConditionToPlay = new CountPlayedCardsCondition(new(){CurrentFamilies = ["HIELO"], CardType = CardType.Spell}, PlayerType.PLAYER, new(CountType.AT_LEAST, 5))
 },
 new()
 {
     Id = "65",
     Name = "Cría de dragón",
     Type = CardType.Unit,
-    Families = ["Leyenda", "Dragón"],
+    Families = ["LEYENDA", "DRAGON"],
     Description = "{skill:HABILIDAD}: quito 1 de vida al {rival:rival} y se lo otorgo a mi {player:jugador}",
     BaseAttack = 2,
     BaseHealth = 1,
@@ -1426,7 +1426,7 @@ new()
 {
     Id = "70",
     Name = "FÍSICO",
-    Families = ["Capa"],
+    Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 1,
     BaseAttack = 1,
@@ -1442,7 +1442,7 @@ new()
 {
     Id = "71",
     Name = "BITS",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "Curo 2 de vida a mi {player:jugador}",
     Effects = [
@@ -1453,7 +1453,7 @@ new()
 {
     Id = "72",
     Name = "ENLACE",
-    Families = ["Capa"],
+    Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 2,
     BaseAttack = 2,
@@ -1469,7 +1469,7 @@ new()
 {
     Id = "73",
     Name = "TRAMA",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "{draw:Roba} una carta",
     Effects = [
@@ -1480,7 +1480,7 @@ new()
 {
     Id = "74",
     Name = "RED",
-    Families = ["Capa"],
+    Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 3,
     BaseAttack = 3,
@@ -1496,7 +1496,7 @@ new()
 {
     Id = "75",
     Name = "PAQUETE",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "[0/+1] a las unidades de mi {player:jugador} en {board:mesa}",
     Effects = [
@@ -1507,7 +1507,7 @@ new()
 {
     Id = "76",
     Name = "TRANSPORTE",
-    Families = ["Capa"],
+    Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 4,
     BaseAttack = 4,
@@ -1523,7 +1523,7 @@ new()
 {
     Id = "77",
     Name = "DATAGRAMA",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "[+1/0] a las unidades de mi {player:jugador} en {board:mesa}",
     Effects = [
@@ -1534,7 +1534,7 @@ new()
 {
     Id = "78",
     Name = "SESIÓN",
-    Families = ["Capa"],
+    Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 5,
     BaseAttack = 5,
@@ -1550,7 +1550,7 @@ new()
 {
     Id = "79",
     Name = "DATOS DE SESIÓN",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "Curo 4 de vida a mi {player:jugador}",
     Effects = [
@@ -1561,7 +1561,7 @@ new()
 {
     Id = "80",
     Name = "PRESENTACIÓN",
-    Families = ["Capa"],
+    Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 6,
     BaseAttack = 6,
@@ -1577,7 +1577,7 @@ new()
 {
     Id = "81",
     Name = "DATOS DE PRESENTACIÓN",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "[+2/+2] a las dos próximas unidades que {play:juegue} mi {player:jugador}",
     Effects = [
@@ -1593,7 +1593,7 @@ new()
 {
     Id = "82",
     Name = "APLICACIÓN",
-    Families = ["Capa"],
+    Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 7,
     BaseAttack = 7,
@@ -1609,7 +1609,7 @@ new()
 {
     Id = "83",
     Name = "DATOS DE APLICACIÓN",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "{draw:Roba} 3 cartas",
     Effects = [
@@ -1620,7 +1620,7 @@ new()
 {
     Id = "84",
     Name = "Ex Machina",
-    Families = ["Machina"],
+    Families = ["MACHINA"],
     Type = CardType.Unit,
     BaseAttack = 0,
     BaseHealth = 25,
@@ -1633,26 +1633,26 @@ new()
 {
     Id = "85",
     Name = "HUB",
-    Families = ["Nodo"],
+    Families = ["NODO"],
     Type = CardType.Unit,
     BaseAttack = 0,
     BaseHealth = 6,
     Description = "Cuando mi {player:jugador} {play:juega} un hechizo {family:paquete}, se activa una vez más",
     Effects = [
-        new(TriggerType.SpellPlayed, [new RetriggerSpellEffect()], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
+        new(TriggerType.SpellPlayed, [new RetriggerSpellEffect()], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["PAQUETE"]}))
     ]
 },
 new()
 {
     Id = "86",
     Name = "Router",
-    Families = ["Nodo"],
+    Families = ["NODO"],
     Type = CardType.Unit,
     BaseAttack = 1,
     BaseHealth = 3,
     Description = "{endround:Final de ronda}: {draw:robo} un {family:paquete}",
     Effects = [
-        new(TriggerType.TurnEnd, [new DrawCardEffect(1, new() {CurrentFamilies = ["Paquete"]})], new Always(), null)
+        new(TriggerType.TurnEnd, [new DrawCardEffect(1, new() {CurrentFamilies = ["PAQUETE"]})], new Always(), null)
     ]
 },
 new()
@@ -1664,7 +1664,7 @@ new()
     BaseAttack = 2,
     BaseHealth = 4,
     Effects = [
-        new(TriggerType.UnitPlayed, [new DrawCardEffect(1, new(){CurrentFamilies = ["Capa"]})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+        new(TriggerType.UnitPlayed, [new DrawCardEffect(1, new(){CurrentFamilies = ["CAPA"]})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
 new()
@@ -1676,11 +1676,11 @@ new()
     Type = CardType.Unit,
     Description = "Cuando mi {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:virus} en la mano del {rival:rival}. {skill:HABILIDAD}: inflinjo al {rival:rival} 1 por cada {family:virus} que tenga en la mano",
     Effects = [
-        new(TriggerType.SpellPlayed, [new CreateCardInHand(1, "89", true)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["Paquete"]}))
+        new(TriggerType.SpellPlayed, [new CreateCardInHand(1, "89", true)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["PAQUETE"]}))
     ],
     PlayEffectTriggerTimes = 1,
     PlayEffects = [
-        new DamagePlayerBasedOnCards(true, -1, PlayerType.RIVAL, new() {WhichHandToSearch = PlayerType.RIVAL, Filter = new(){CurrentFamilies = ["Virus"]}})
+        new DamagePlayerBasedOnCards(true, -1, PlayerType.RIVAL, new() {WhichHandToSearch = PlayerType.RIVAL, Filter = new(){CurrentFamilies = ["VIRUS"]}})
     ]
 },
 new()
@@ -1688,7 +1688,7 @@ new()
     Id = "89",
     Name = "Malware",
     Type = CardType.Spell,
-    Families = ["Virus"],
+    Families = ["VIRUS"],
     Description = "Inflinjo 1 de daño a mi {player:jugador}",
     Effects = [
         new(TriggerType.SpellPlayed, [new AlterPlayerHealthEffect(-1, false)], new DurationByExecutions(1), null)
@@ -1698,11 +1698,11 @@ new()
 {
     Id = "90",
     Name = "Mensaje de broadcast",
-    Families = ["Paquete"],
+    Families = ["PAQUETE"],
     Type = CardType.Spell,
     Description = "{play:Juega} todos los {family:virus} que haya en mano del {rival:rival}",
     Effects = [
-        new(TriggerType.SpellPlayed, [new ForcePlayCardInHandEffect(PlayerType.RIVAL, new(){CurrentFamilies = ["Virus"]}, int.MaxValue)], new DurationByExecutions(1), null)
+        new(TriggerType.SpellPlayed, [new ForcePlayCardInHandEffect(PlayerType.RIVAL, new(){CurrentFamilies = ["VIRUS"]}, int.MaxValue)], new DurationByExecutions(1), null)
     ]
 },
 new()
@@ -1724,7 +1724,7 @@ new()
     Type = CardType.Unit,
     BaseAttack = 1,
     BaseHealth = 1,
-    Families = ["Virus"],
+    Families = ["VIRUS"],
     Description = "Cuando soy {play:jugado}, {play:juego} un {family:Virus} de la mano del {rival:rival}. Cuando {die:muero}, me {add:creo} un malware en la mano del {rival:rival}",
     Effects = [
         new(
@@ -1738,7 +1738,7 @@ new()
         new(
             TriggerType.UnitPlayed,
             [
-                new ForcePlayCardInHandEffect(PlayerType.RIVAL, new(){CurrentFamilies = ["Virus"]}, 1)
+                new ForcePlayCardInHandEffect(PlayerType.RIVAL, new(){CurrentFamilies = ["VIRUS"]}, 1)
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
@@ -1749,7 +1749,7 @@ new()
 {
     Id = "93",
     Name = "Firewall",
-    Families = ["Seguridad"],
+    Families = ["SEGURIDAD"],
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 3,
@@ -1761,7 +1761,7 @@ new()
                 new AlterMySelf(1, 1, false)
             ],
             new Always(),
-            new PlayerCardCondition(false, new(){CurrentFamilies = ["Virus"]})
+            new PlayerCardCondition(false, new(){CurrentFamilies = ["VIRUS"]})
         ),
         new(
             TriggerType.UnitPlayed,
@@ -1769,7 +1769,7 @@ new()
                 new AlterMySelf(1, 1, false)
             ],
             new Always(),
-            new PlayerCardCondition(false, new(){CurrentFamilies = ["Virus"]})
+            new PlayerCardCondition(false, new(){CurrentFamilies = ["VIRUS"]})
         )
     ]
 },
@@ -1777,7 +1777,7 @@ new()
 {
     Id = "94",
     Name = "Copia de seguridad",
-    Families = ["Seguridad"],
+    Families = ["SEGURIDAD"],
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 4,
@@ -1803,10 +1803,10 @@ new()
                 WhichDeckToSearch = PlayerType.PLAYER,
                 Filter = new()
                 {
-                    CurrentFamilies = ["Seguridad"]
+                    CurrentFamilies = ["SEGURIDAD"]
                 }
             }),
-            new DrawCardEffect(1, new(){CurrentFamilies = ["Capa"]})
+            new DrawCardEffect(1, new(){CurrentFamilies = ["CAPA"]})
             
         ],new DurationByExecutions(1), null)
     ]
@@ -1815,7 +1815,7 @@ new()
 {
     Id = "96",
     Name = "Moneda de la llamada",
-    Families = ["Moneda del caos"],
+    Families = ["MONEDA_DEL_CAOS"],
     Type = CardType.Spell,
     Description = "50% de probabilidades de {play:jugar} un terror agónico en la {board:mesa} de mi {player:jugador}, si hay hueco",
     Effects = [
@@ -1837,7 +1837,7 @@ new()
     Id = "98",
     Name = "Moneda sangrienta",
     Type = CardType.Spell,
-    Families = ["Moneda del caos"],
+    Families = ["MONEDA_DEL_CAOS"],
     Description = "50% de probabilidades de curar a mi {player:juagdor} 2, y quitarle 2 de vida al {rival:rival}",
     Effects = [
         new(TriggerType.SpellPlayed,[
@@ -1851,7 +1851,7 @@ new()
     Id = "99",
     Name = "Moneda del sufrimiento",
     Type = CardType.Spell,
-    Families = ["Moneda del caos"],
+    Families = ["MONEDA_DEL_CAOS"],
     Description = "50% de probabilidades de [-1/-1] a la {board:mesa} {rival:rival}",
     Effects = [
         new(TriggerType.SpellPlayed,[
@@ -1864,7 +1864,7 @@ new()
     Id = "100",
     Name = "Moneda gloriosa",
     Type = CardType.Spell,
-    Families = ["Moneda del caos"],
+    Families = ["MONEDA_DEL_CAOS"],
     Description = "50% de probabilidades de otorgar [+1/+1] a la {board:mesa} y al {deck:mazo} de mi {player:jugador}",
     Effects = [
         new(TriggerType.SpellPlayed,[
@@ -1877,7 +1877,7 @@ new()
     Id = "101",
     Name = "Moneda codiciosa",
     Type = CardType.Spell,
-    Families = ["Moneda del caos"],
+    Families = ["MONEDA_DEL_CAOS"],
     Description = "50% de probabilidades de curar 4 de vida a mi {player:jugador}",
     Effects = [
         new(TriggerType.SpellPlayed,[
@@ -1890,7 +1890,7 @@ new()
     Id = "102",
     Name = "Moneda de la venganza",
     Type = CardType.Spell,
-    Families = ["Moneda del caos"],
+    Families = ["MONEDA_DEL_CAOS"],
     Description = "50% de probabilidades de quitar 4 de vida al {rival:rival}",
     Effects = [
         new(TriggerType.SpellPlayed,[
@@ -1903,7 +1903,7 @@ new()
     Id = "103",
     Name = "Moneda de las profundidades",
     Type = CardType.Spell,
-    Families = ["Moneda del caos", "Caos verdadero"],
+    Families = ["MONEDA_DEL_CAOS", "CAOS_VERDADERO"],
     Description = "Copio un hechizo del {deck:mazo} {rival:rival} y lo {play:juego}",
     Effects = [
         new(TriggerType.SpellPlayed,[
@@ -1934,7 +1934,7 @@ new()
     BaseHealth = 3,
     Description = "Cuando mi jugador {play:juega} una {family:moneda del caos}, la vuelvo a {play:jugar}",
     Effects = [
-        new(TriggerType.SpellPlayed, [new RetriggerSpellEffect()], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["Moneda del caos"]}))
+        new(TriggerType.SpellPlayed, [new RetriggerSpellEffect()], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}))
     ]  
 },
 new()
@@ -1986,7 +1986,7 @@ new()
     Description = "{skill:HABILIDAD}: {play:Juego} una {family:moneda del caos} en la mano de mi {player:jugador}",
     PlayEffectTriggerTimes = 1,
     PlayEffects = [
-        new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["Moneda del caos"]}, 1)
+        new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}, 1)
     ]
 },
 new()
@@ -2000,7 +2000,7 @@ new()
     Effects = [
         new(TriggerType.SpellPlayed, [
             new CreateRandomCoin(2)
-        ], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["Moneda del caos"]}))
+        ], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}))
     ]
 },
 new()
@@ -2013,13 +2013,13 @@ new()
         new(TriggerType.SpellPlayed, [
             new AppendGlobalEffect(
                 new(TriggerType.TurnEnd, [
-                    new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["Moneda del caos"]}, 1)
+                    new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}, 1)
                 ], new DurationByExecutions(4), new TurnCounterCondition(1)),
                 "FINAL DE RONDA: juego una moneda de la mano del jugador"
             )
         ], new DurationByExecutions(1), null)
     ],
-    ConditionToPlay = new CountPlayedCardsCondition(new() { CurrentFamilies = ["Moneda del caos"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 4))
+    ConditionToPlay = new CountPlayedCardsCondition(new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 4))
 },
 new()
 {
@@ -2030,7 +2030,7 @@ new()
     Name = "Apostador demacrado",
     Description = "Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, consigo [+1/+1]",
     Effects = [
-        new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["Moneda del caos"]}))
+        new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}))
     ]
 },
 new()
@@ -2046,7 +2046,7 @@ new()
             new PlayCardEffect("103", false, true),
         ], new DurationByExecutions(1), null)
     ],
-    ConditionToPlay = new CountPlayedCardsCondition(new() { CurrentFamilies = ["Moneda del caos"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 10))
+    ConditionToPlay = new CountPlayedCardsCondition(new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}, PlayerType.PLAYER, new(CountType.AT_LEAST, 10))
 },
 new()
 {
@@ -2062,7 +2062,7 @@ new()
                 new(TriggerType.SpellPlayed,
                 [
                     new CreateRandomCoin(2)
-                ], new DurationByExecutions(3), new PlayerCardCondition(true, new(){CurrentFamilies = ["Moneda del caos"]})),
+                ], new DurationByExecutions(3), new PlayerCardCondition(true, new(){CurrentFamilies = ["MONEDA_DEL_CAOS"]})),
                 "Cuando el juagdor juegue una moneda, creo otra y la añado en el mazo"
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())

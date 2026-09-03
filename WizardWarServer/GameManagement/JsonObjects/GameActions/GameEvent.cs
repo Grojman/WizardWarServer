@@ -48,6 +48,19 @@ public abstract class GameEvent
     public class UnitPlayed : GameEventCard
     {
         public required int BoardPosition { get; set; }
+
+        // Card's own on-play effects (e.g. "when played, +1/+1 to my board")
+        // run synchronously right after this event is queued but before it's
+        // ever serialized, and Card is a live reference — so by the time the
+        // DTO is built at broadcast time, Card.CurrentAttack/CurrentHealth
+        // already include that effect's change. Captured here, at
+        // construction time (see GameState.PlayCard), these hold the stats
+        // as the card was actually placed, so the client can place it at its
+        // pre-effect stats and let the effect's own UnitHealthChanged/
+        // UnitDamageChanged event animate the change on top, instead of
+        // double-applying it.
+        public required int PlacedAttack { get; set; }
+        public required int PlacedHealth { get; set; }
     }
 
     public class SpellPlayed : GameEventCard

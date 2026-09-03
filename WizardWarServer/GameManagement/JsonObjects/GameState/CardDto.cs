@@ -27,11 +27,11 @@ public record CardDto(string id, string serverId, string name, string descriptio
             }
         }
 
-        return new CardDto(card.Id.ToString(), card.Definition.Id, TranslationManager.Get($"CARD_{card.Definition.Id}_NAME", language), TranslationManager.Get($"CARD_{card.Definition.Id}_DESC", language), card.CurrentFamilies, card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), string.IsNullOrWhiteSpace(card.Definition.imageUrl) ? $"{card.Definition.Id}.webp" : card.Definition.imageUrl, dontCheck || (card.CanPlay?.Check(card.Player.Id, card.Player.PlayerTarget!.Id, card, state, null) ?? true), card.SpecialEffects is not null && card.SpecialEffects.Count > 0, card.MaxSpecialEffectTimes, conditionProgress, conditionTarget);
+        return new CardDto(card.Id.ToString(), card.Definition.Id, TranslationManager.Get($"CARD_{card.Definition.Id}_NAME", language), TranslationManager.Get($"CARD_{card.Definition.Id}_DESC", language), TranslationManager.TranslateFamilies(card.CurrentFamilies, language), card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), string.IsNullOrWhiteSpace(card.Definition.imageUrl) ? $"{card.Definition.Id}.webp" : card.Definition.imageUrl, dontCheck || (card.CanPlay?.Check(card.Player.Id, card.Player.PlayerTarget!.Id, card, state, null) ?? true), card.SpecialEffects is not null && card.SpecialEffects.Count > 0, card.MaxSpecialEffectTimes, conditionProgress, conditionTarget);
     }
 
     public static CardDto Generate(CardDefinition card, string language)
     {
-        return new CardDto(card.Id, card.Id, TranslationManager.Get($"CARD_{card.Id}_NAME", language), TranslationManager.Get($"CARD_{card.Id}_DESC", language), card.Families.ToList(), card.BaseAttack, card.BaseHealth, card.Type.ToString(), string.IsNullOrWhiteSpace(card.imageUrl) ? $"{card.Id}.webp" : card.imageUrl, true, card.PlayEffects is not null && card.PlayEffects.Length > 0, card.PlayEffectTriggerTimes, null, null);
+        return new CardDto(card.Id, card.Id, TranslationManager.Get($"CARD_{card.Id}_NAME", language), TranslationManager.Get($"CARD_{card.Id}_DESC", language), TranslationManager.TranslateFamilies(card.Families, language), card.BaseAttack, card.BaseHealth, card.Type.ToString(), string.IsNullOrWhiteSpace(card.imageUrl) ? $"{card.Id}.webp" : card.imageUrl, true, card.PlayEffects is not null && card.PlayEffects.Length > 0, card.PlayEffectTriggerTimes, null, null);
     }
 }

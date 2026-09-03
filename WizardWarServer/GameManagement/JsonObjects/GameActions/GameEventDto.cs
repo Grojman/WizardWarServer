@@ -29,7 +29,14 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
             GameEvent.PlayerHealthChanged phc => new PlayerHealthChanged(phc.Source.Id, phc.PlayerSource.Id, phc.Amount),
             GameEvent.UnitHealthChanged uhc => new UnitHealthChanged(uhc.Source.Id, uhc.PlayerSource.Id, uhc.Card.Id, uhc.Amount),
             GameEvent.UnitDamageChanged udc => new UnitDamageChanged(udc.Source.Id, udc.PlayerSource.Id, udc.Card.Id, udc.Amount),
-            GameEvent.UnitPlayed up => new UnitPlayed(up.Source.Id, up.PlayerSource.Id, CardDto.Generate(up.Card, state, true, language), up.BoardPosition),
+            // The card's own on-play effects (e.g. a self-buff) may have
+            // already altered its live CurrentAttack/CurrentHealth by the
+            // time this DTO is built, so the placement snapshot uses the
+            // pre-effect stats captured when the card was placed (see
+            // GameState.PlayCard) instead — the effect's own
+            // UnitHealthChanged/UnitDamageChanged event (also in this same
+            // batch) is what animates the change on top of that.
+            GameEvent.UnitPlayed up => new UnitPlayed(up.Source.Id, up.PlayerSource.Id, CardDto.Generate(up.Card, state, true, language) with { attack = up.PlacedAttack, health = up.PlacedHealth }, up.BoardPosition),
             GameEvent.SpellPlayed sp => new SpellPlayed(sp.Source.Id, sp.PlayerSource.Id, CardDto.Generate(sp.Card, state, true, language)),
             GameEvent.UnitDeath ud => new UnitDeath(ud.Source.Id, ud.PlayerSource.Id, ud.Card.Id),
             GameEvent.DeckOutOfCards doc => new DeckOutOfCards(doc.Source.Id, doc.PlayerSource.Id),

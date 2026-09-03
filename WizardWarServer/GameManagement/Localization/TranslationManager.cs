@@ -3,8 +3,10 @@ using Serilog;
 public static class TranslationManager
 {
     private static string CsvPath = Path.Combine(AppContext.BaseDirectory, "Data/Translations/translations.csv");
+    private static string CardCsvPath = Path.Combine(AppContext.BaseDirectory, "Data/Translations/cards.csv");
 
-    private static Dictionary<string, Dictionary<string, string>> Entries = new();
+    private static Dictionary<string, Dictionary<string, string>> UiEntries = new();
+    private static Dictionary<string, Dictionary<string, string>> CardEntries = new();
 
     private static readonly HashSet<string> WarnedMissingKeys = new();
 
@@ -12,30 +14,49 @@ public static class TranslationManager
 
     public static string DefaultLanguage { get; private set; } = "es";
 
-    public static void Configure(string csvPath, string defaultLanguage)
+    public static void Configure(string csvPath, string cardCsvPath, string defaultLanguage)
     {
         CsvPath = Path.IsPathRooted(csvPath)
             ? csvPath
             : Path.Combine(AppContext.BaseDirectory, csvPath);
+
+        CardCsvPath = Path.IsPathRooted(cardCsvPath)
+            ? cardCsvPath
+            : Path.Combine(AppContext.BaseDirectory, cardCsvPath);
 
         DefaultLanguage = defaultLanguage;
     }
 
     public static void Initialize()
     {
-        if (!File.Exists(CsvPath))
-            throw new TranslationManagerException($"Translations file not found at: {CsvPath}");
+        var (uiLanguages, uiEntries) = LoadCsv(CsvPath);
+        var (_, cardEntries) = LoadCsv(CardCsvPath);
 
-        var rows = ParseCsv(File.ReadAllText(CsvPath));
+        SupportedLanguages = uiLanguages;
+        UiEntries = uiEntries;
+        CardEntries = cardEntries;
+        WarnedMissingKeys.Clear();
+
+        Log.Information(
+            "Loaded {UiKeyCount} UI translation keys and {CardKeyCount} card/deck translation keys for languages: {Languages}",
+            UiEntries.Count, CardEntries.Count, string.Join(", ", uiLanguages));
+    }
+
+    private static (string[] languages, Dictionary<string, Dictionary<string, string>> entries) LoadCsv(string path)
+    {
+        if (!File.Exists(path))
+            throw new TranslationManagerException($"Translations file not found at: {path}");
+
+        var rows = ParseCsv(File.ReadAllText(path));
 
         if (rows.Count == 0)
-            throw new TranslationManagerException($"Translations file at {CsvPath} is empty (no header row)");
+            throw new TranslationManagerException($"Translations file at {path} is empty (no header row)");
 
         var header = rows[0];
         var languages = header.Skip(1).ToArray();
 
         if (languages.Length == 0)
-            throw new TranslationManagerException("Translations file has no language columns after the key column");
+            throw new TranslationManagerException($"Translations file at {path} has no language columns after the key column");
 
         var entries = new Dictionary<string, Dictionary<string, string>>();
 
@@ -54,11 +75,7 @@ public static class TranslationManager
             entries[key] = values;
         }
 
-        SupportedLanguages = languages;
-        Entries = entries;
-        WarnedMissingKeys.Clear();
-
-        Log.Information("Loaded {KeyCount} translation keys for languages: {Languages}", Entries.Count, string.Join(", ", languages));
+        return (languages, entries);
     }
 
     public static bool IsSupportedLanguage(string language) => SupportedLanguages.Contains(language);
@@ -77,7 +94,7 @@ public static class TranslationManager
 
     public static string Get(string key, string language)
     {
-        if (!Entries.TryGetValue(key, out var values))
+        if (!UiEntries.TryGetValue(key, out var values) && !CardEntries.TryGetValue(key, out values))
         {
             WarnMissingKey(key);
             return key;
@@ -97,12 +114,26 @@ public static class TranslationManager
         return key;
     }
 
+    // Only UI/error strings are meant to be pushed to the client wholesale on a language
+    // change; card/deck text is looked up on demand via Get() when generating card/deck DTOs.
     public static Dictionary<string, string> GetAll(string language)
     {
         var result = new Dictionary<string, string>();
-        foreach (var key in Entries.Keys) result[key] = Get(key, language);
+        foreach (var key in UiEntries.Keys) result[key] = Get(key, language);
         return result;
     }
+
+    public static DeckDto TranslateDeck(DeckDto deck, string language)
+    {
+        return deck with
+        {
+            name = Get($"DECK_{deck.id}_NAME", language),
+            description = Get($"DECK_{deck.id}_DESC", language)
+        };
+    }
+
+    public static List<string> TranslateFamilies(IEnumerable<string> familyIds, string language)
+        => familyIds.Select(id => Get($"FAMILY_{id}", language)).ToList();
 
     private static void WarnMissingKey(string key)
     {
@@ -114,7 +145,56 @@ public static class TranslationManager
 
     private static List<List<string>> ParseCsv(string text)
     {
-        return [.. text.Split('\n').Select(n => n.Split(',').ToList())];
+        var lines = text.Replace("\r\n", "\n").Split('\n');
+        return [.. lines.Select(ParseCsvLine)];
+    }
+
+    private static List<string> ParseCsvLine(string line)
+    {
+        var fields = new List<string>();
+        var current = new System.Text.StringBuilder();
+        bool inQuotes = false;
+
+        for (int i = 0; i < line.Length; i++)
+        {
+            char c = line[i];
+
+            if (inQuotes)
+            {
+                if (c == '"')
+                {
+                    if (i + 1 < line.Length && line[i + 1] == '"')
+                    {
+                        current.Append('"');
+                        i++;
+                    }
+                    else
+                    {
+                        inQuotes = false;
+                    }
+                }
+                else
+                {
+                    current.Append(c);
+                }
+            }
+            else if (c == '"')
+            {
+                inQuotes = true;
+            }
+            else if (c == ',')
+            {
+                fields.Add(current.ToString());
+                current.Clear();
+            }
+            else
+            {
+                current.Append(c);
+            }
+        }
+
+        fields.Add(current.ToString());
+        return fields;
     }
 
     public class TranslationManagerException : Exception

@@ -197,7 +197,7 @@ public class GameState
                 break;
             default:
                 Log.Warning("Illegal action inside game from player {PlayerId}: {Action}", player?.Guid, action);
-                break;
+                return;
             }
         }
         catch(Exception ex)
@@ -353,7 +353,11 @@ public class GameState
                 PlayerSource = player,
                 Source = player,
                 BoardPosition = boardIndex,
-                Card = card
+                Card = card,
+                // Captured now, before the card's own on-play effects (which
+                // can alter its stats) run below.
+                PlacedAttack = card.CurrentAttack,
+                PlacedHealth = card.CurrentHealth
             };
             GameActionResult.AddEvent(gevent);
             ApplyEffect(TriggerType.UnitPlayed, gevent);

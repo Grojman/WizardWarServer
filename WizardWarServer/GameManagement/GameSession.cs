@@ -93,6 +93,12 @@ public class GameSession
                 return;
             } else if (action is PlayerAction.LeaveGame)
             {
+                // Same signal a grace-period timeout gives MatchSeries (see
+                // GraceTimeoutAsync): without it, OnRoundEnded would treat this
+                // as a normal round loss and move the series on to the next
+                // round, leaving this player's CurrentSeries pointed at a
+                // series it just walked away from instead of ending it outright.
+                series?.MarkDisconnected(player.Guid);
                 await RemovePlayer(player);
                 return;
             } else if (action is PlayerAction.ChangeLanguageAction la)
@@ -163,6 +169,18 @@ public class GameSession
         state.KillPlayer(state.GetState(c.Guid), true);
         c.Game = null;
         Connections.Remove(c);
+
+        // c is already out of Connections by this point, so it won't be
+        // included in the SendState()/End() broadcasts below — tell it
+        // directly that it's out (e.g. a player cancelling a resumed match
+        // from the home page needs its own client-side ack to re-enable
+        // the "start new game" buttons).
+        await c.Send("end_game", new
+        {
+            winner = state.GameActionResult.Winner,
+            forced = true,
+            isSeriesRound = series is not null
+        });
 
         if(botSession)
         {

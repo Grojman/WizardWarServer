@@ -15,6 +15,7 @@ public class ServerOptions
     public string DataDirectory { get; set; } = "Data/Decks";
     public int DisconnectGracePeriodSeconds { get; set; } = 30;
     public string TranslationsCsvPath { get; set; } = "Data/Translations/translations.csv";
+    public string CardTranslationsCsvPath { get; set; } = "Data/Translations/cards.csv";
     public string DefaultLanguage { get; set; } = "es";
 
     public bool IsValidPlayerCount(int count) => count >= MinPlayersPerGame && count <= MaxPlayersPerGame;

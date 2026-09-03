@@ -100,7 +100,7 @@ internal class Program
 
             CardManager.Initialize();
 
-            TranslationManager.Configure(serverOptions.TranslationsCsvPath, serverOptions.DefaultLanguage);
+            TranslationManager.Configure(serverOptions.TranslationsCsvPath, serverOptions.CardTranslationsCsvPath, serverOptions.DefaultLanguage);
             TranslationManager.Initialize();
 
             GameManager gameManager = new(serverOptions);

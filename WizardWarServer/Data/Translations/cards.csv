@@ -1,0 +1,265 @@
+key,es,en
+FAMILY_RATA,Rata,Rat
+FAMILY_LIBRO,Libro,Book
+FAMILY_PARANOIA,Paranoia,Paranoia
+FAMILY_CASTELLANO,Castellano,Castilian
+FAMILY_CABALLERO,Caballero,Knight
+FAMILY_CABALLO,Caballo,Horse
+FAMILY_CENIZA,Ceniza,Ash
+FAMILY_BRUJO,Brujo,Warlock
+FAMILY_DESTRUCCION,Destrucción,Destruction
+FAMILY_MALIGNO,Maligno,Malignant
+FAMILY_GYM,Gym,Gym
+FAMILY_ENTRENAMIENTO,Entrenamiento,Training
+FAMILY_MOTIVACION,Motivación,Motivation
+FAMILY_LEYENDA,Leyenda,Legend
+FAMILY_HIELO,Hielo,Ice
+FAMILY_DRAGON,Dragón,Dragon
+FAMILY_CAPA,Capa,Layer
+FAMILY_PAQUETE,Paquete,Packet
+FAMILY_MACHINA,Machina,Machina
+FAMILY_NODO,Nodo,Node
+FAMILY_VIRUS,Virus,Virus
+FAMILY_SEGURIDAD,Seguridad,Security
+FAMILY_MONEDA_DEL_CAOS,Moneda del caos,Chaos Coin
+FAMILY_CAOS_VERDADERO,Caos verdadero,True Chaos
+CARD_1_NAME,Truco Ratero,Sneaky Trick
+CARD_1_DESC,{draw:Roba} tres cartas,{draw:Draw} three cards
+CARD_2_NAME,Rata,Rat
+CARD_2_DESC,{skill:HABILIDAD}: -1 a mi {player:jugador},{skill:SKILL}: -1 to my {player:player}
+CARD_3_NAME,Familia de ratas,Family of Rats
+CARD_3_DESC,"Cuando {die:muero}, {add:añado} dos {family:ratas} al {deck:mazo} del {rival:rival}.","When I {die:die}, I {add:add} two {family:rats} to the {rival:rival}'s {deck:deck}."
+CARD_4_NAME,Flautista de Hamelin,Pied Piper of Hamelin
+CARD_4_DESC,"Cuando se {play:juega} una {family:rata} en la {board:mesa} {rival:rival}, consigo [+1/+1]","When a {family:rat} is {play:played} on the {rival:rival} {board:board}, I get [+1/+1]"
+CARD_5_NAME,Mind Máster,Mind Master
+CARD_5_DESC,{skill:HABILIDAD}: Activa todas las {skill:habilidades} de la {board:mesa} {rival:rival},{skill:SKILL}: Activate all {skill:skills} on the {rival:rival} {board:board}
+CARD_6_NAME,Flow rata,Rat Flow
+CARD_6_DESC,Curo a mi {player:jugador} uno por cada {family:rata} que tenga el {rival:rival} en el {deck:mazo}.,I heal my {player:player} one for each {family:rat} the {rival:rival} has in their {deck:deck}.
+CARD_7_NAME,Queso,Cheese
+CARD_7_DESC,Curo 3 de vida a mi {player:jugador},I heal my {player:player} for 3 life
+CARD_8_NAME,Madriguera de ratas,Rat Burrow
+CARD_8_DESC,{endround:Fin de ronda}: me inflinjo 2 de daño y añado 1 {family:rata} al {deck:mazo} {rival:rival},{endround:End of round}: I deal 2 damage to myself and add 1 {family:rat} to the {rival:rival} {deck:deck}
+CARD_9_NAME,Matarratas defectuoso,Faulty Rat Poison
+CARD_9_DESC,[+1/+1] a todas las {family:ratas} en la {board:mesa} y en el {deck:mazo} de mi jugador. A cambio mi {player:jugador} pierde 3 de vida,[+1/+1] to all {family:rats} on the {board:board} and in my player's {deck:deck}. In exchange my {player:player} loses 3 life
+CARD_10_NAME,Primo de Remi,Remy's Cousin
+CARD_10_DESC,"Cuando soy {play:jugado}, {add:añado} 3 Quesos en el {deck:mazo} de mi {player:jugador}","When I am {play:played}, I {add:add} 3 Cheeses to my {player:player}'s {deck:deck}"
+CARD_11_NAME,El poder de los sumideros,The Power of the Sewers
+CARD_11_DESC,"{condition:Has tenido que {play:jugar} al menos 8 {family:ratas}}. A partir de ahora, las {family:ratas} que {play:juegue} mi {player:jugador} consiguen [+1/+1]","{condition:You must have {play:played} at least 8 {family:rats}}. From now on, the {family:rats} my {player:player} {play:plays} get [+1/+1]"
+CARD_12_NAME,Arañazos,Scratches
+CARD_12_DESC,[0/-1] a la {deck:mesa} {rival:rival} ahora y al final de este turno,[0/-1] to the {rival:rival} {deck:board} now and at the end of this turn
+CARD_13_NAME,Mordedura de rata,Rat Bite
+CARD_13_DESC,"[0/-3] a una unidad en la {board:mesa} {rival:rival}, la primera a la izquierda. {skill:HABILIDAD}: {draw:roba} una carta","[0/-3] to a unit on the {rival:rival} {board:board}, the first one on the left. {skill:SKILL}: {draw:draw} a card"
+CARD_13_1_NAME,Exterminador de plagas,Pest Exterminator
+CARD_13_1_DESC,"Cuando el {rival:rival} {draw:roba} una {family:rata}, le inflinjo 1 de daño","When the {rival:rival} {draw:draws} a {family:rat}, I deal 1 damage to them"
+CARD_13_2_NAME,Rey rata,Rat King
+CARD_13_2_DESC,"{condition:Has {play:jugado} 8 {family:ratas} o más}. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando mi {player:jugador} {play:juega} un queso, consigo [+1/+1]","{condition:You must have {play:played} 8 or more {family:rats}}. When I {attack:attack}, I {add:add} a {family:rat} to the {rival:rival} {deck:deck}. When my {player:player} {play:plays} a cheese, I get [+1/+1]"
+CARD_14_NAME,Libro de Caballería,Book of Chivalry
+CARD_14_DESC,{draw:Roba} una carta y cura 2 de vida a mi {player:jugador},{draw:Draw} a card and heal my {player:player} for 2 life
+CARD_15_NAME,La venta,The Inn
+CARD_15_DESC,"Cuando mi {player:jugador} {play:juega} una unidad, se le otorga [+2/-1]","When my {player:player} {play:plays} a unit, it is granted [+2/-1]"
+CARD_16_NAME,Molino de viento,Windmill
+CARD_16_DESC,,
+CARD_17_NAME,Rebaño de corderos,Flock of Lambs
+CARD_17_DESC,,
+CARD_18_NAME,Dulcinea del Toboso,Dulcinea del Toboso
+CARD_18_DESC,"{endround:Final de ronda}: [+2/+3] a Don Quijote, si se encuentra en {board:mesa}","{endround:End of round}: [+2/+3] to Don Quixote, if he is on the {board:board}"
+CARD_19_NAME,El Ingenioso Hidalgo Don Quijote de la Mancha,The Ingenious Gentleman Don Quixote of La Mancha
+CARD_19_DESC,"{condition: Has {play:jugado} al menos 5 libros de caballería o una Dulcinea del Toboso}. Las {family:Paranoias} del mazo de mi {player:jugador} ganan [+4/+4]. Cuando mi {player:jugador} {play:juega} un libro de caballería, le curo otros 2 de vida","{condition: You must have {play:played} at least 5 Books of Chivalry or a Dulcinea del Toboso}. The {family:Paranoias} in my {player:player}'s deck gain [+4/+4]. When my {player:player} {play:plays} a Book of Chivalry, I heal them for another 2 life"
+CARD_20_NAME,Locuras de Hidalgo,Hidalgo's Madness
+CARD_20_DESC,{add:Añade} una {family:paranoia} de cada tipo en el {deck:mazo} de mi {player:jugador},{add:Add} one {family:paranoia} of each type to my {player:player}'s {deck:deck}
+CARD_21_NAME,Rocinante,Rocinante
+CARD_21_DESC,"Cuando mi {player:jugador} {play:juega} a Don Quijote, consigo [+2/+2]","When my {player:player} {play:plays} Don Quixote, I get [+2/+2]"
+CARD_22_NAME,Don't Quijote,Don't Quijote
+CARD_22_DESC,"{condition:Si hay algún Don Quijote en la mesa}, lo {die:mato}. Si es de mi {player:jugador}, lo devuelvo al mazo y le curo 7 de vida.","{condition:If there is a Don Quixote on the board}, I {die:kill} it. If it belongs to my {player:player}, I return it to the deck and heal it for 7 life."
+CARD_23_NAME,El caballero de la blanca luna,The Knight of the White Moon
+CARD_23_DESC,"Cuando {die:muero}, las próximas dos unidades que {play:juegue} mi {player:jugador} consiguen [+1/-1]","When I {die:die}, the next two units my {player:player} {play:plays} get [+1/-1]"
+CARD_24_NAME,Cura Pero Pérez,Priest Pero Pérez
+CARD_24_DESC,{endround:Fin de ronda}: {add:Creo} un Libro de Caballería en el {deck:mazo} de mi {player:jugador},{endround:End of round}: I {add:create} a Book of Chivalry in my {player:player}'s {deck:deck}
+CARD_25_NAME,El Loco de Sierra Morena,The Madman of Sierra Morena
+CARD_25_DESC,"Si entra Don Quijote o Sancho Panza en la {board:mesa} de mi {player:jugador}, le inflinjo 4 de daño","If Don Quixote or Sancho Panza enters my {player:player}'s {board:board}, I deal 4 damage to them"
+CARD_26_NAME,Sancho Panza,Sancho Panza
+CARD_26_DESC,"{endround:Fin de Ronda}: Si no hay otros {family:Castellanos} en la {board:mesa} de mi {player:jugador}, [0/-1] a la {board:mesa}. {skill:HABILIDAD}: [+1/+1] a las unidades la {board:mesa} de mi {player:jugador}","{endround:End of Round}: If there are no other {family:Castilians} on my {player:player}'s {board:board}, [0/-1] to the {board:board}. {skill:SKILL}: [+1/+1] to the units on my {player:player}'s {board:board}"
+CARD_26_1_NAME,Llamada de auxilio,Call for Help
+CARD_26_1_DESC,{draw:Roba} dos {family:caballeros},{draw:Draw} two {family:knights}
+CARD_27_NAME,Bola de fuego,Fireball
+CARD_27_DESC,Inflinjo -4 a la primera unidad de la izquierda en la {board:mesa} del {rival:rival}.,I deal -4 to the leftmost unit on the {rival:rival}'s {board:board}.
+CARD_28_NAME,Aprendiz de mago,Wizard's Apprentice
+CARD_28_DESC,"Cuando mi {player:jugador} me {play:juega}, {add:creo} una bola de fuego en su {deck:mazo}","When my {player:player} {play:plays} me, I {add:create} a fireball in their {deck:deck}"
+CARD_29_NAME,Maestro de la ceniza,Master of Ash
+CARD_29_DESC,{condition:Has {play:jugado} 5 bolas de fuego o más}. {endround:Fin de Ronda}: {add:creo} una bola de fuego en el mazo de mi {player:jugador},{condition:You must have {play:played} 5 or more fireballs}. {endround:End of Round}: I {add:create} a fireball in my {player:player}'s deck
+CARD_30_NAME,Espíritu del fuego,Spirit of Fire
+CARD_30_DESC,"Cuando mi {player:jugador} {play:juega} una bola de fuego, inflinjo 1 de daño al {play:rival}","When my {player:player} {play:plays} a fireball, I deal 1 damage to the {play:rival}"
+CARD_31_NAME,Tierras yermas,Wastelands
+CARD_31_DESC,[-2/-2] a la {board:mesa} {rival:rival}. Mi {player:jugador} pierde 2 de vida,[-2/-2] to the {rival:rival} {board:board}. My {player:player} loses 2 life
+CARD_32_NAME,Conjuro del dios del fuego,Spell of the Fire God
+CARD_32_DESC,{draw:Roba} dos hechizos,{draw:Draw} two spells
+CARD_33_NAME,La llamada de la ceniza,The Call of Ash
+CARD_33_DESC,{draw:Roba} una carta {family:ceniza}. Curo 2 de vida a mi {player:jugador}.,{draw:Draw} an {family:ash} card. I heal my {player:player} for 2 life.
+CARD_34_NAME,La ira del dios del fuego,The Wrath of the Fire God
+CARD_34_DESC,{die:MATA} a TODAS las unidades en {board:mesa},{die:KILL} ALL units on the {board:board}
+CARD_35_NAME,Chispas escurridizas,Slippery Sparks
+CARD_35_DESC,"El próximo hechizo que {play:juegue} mi {player:jugador}, le curo 1 e inflinjo 1 de daño al {rival:rival}","The next spell my {player:player} {play:plays}, I heal them for 1 and deal 1 damage to the {rival:rival}"
+CARD_36_NAME,Instructor de las llamas,Instructor of Flames
+CARD_36_DESC,"Al {die:morir}, {add:creo} una bola de fuego en la mano de mi {player:jugador}, si hay espacio disponible.","Upon {die:dying}, I {add:create} a fireball in my {player:player}'s hand, if there is space available."
+CARD_37_NAME,Comunión Espiritual,Spiritual Communion
+CARD_37_DESC,{condition:Has {play:jugado} una llamada de la ceniza}. Los {family:brujos} del {deck:mazo} de mi {player:jugador} consiguen [+1/+1].,{condition:You must have {play:played} a Call of Ash}. The {family:warlocks} in my {player:player}'s {deck:deck} get [+1/+1].
+CARD_38_NAME,Gran negador,Great Denier
+CARD_38_DESC,"[+3/0] si no has {play:jugado} un hechizo antes. Si no, {draw:roba} una carta.","[+3/0] if you haven't {play:played} a spell before. Otherwise, {draw:draw} a card."
+CARD_39_NAME,Maquiavelo el maquiavélico,Machiavelli the Machiavellian
+CARD_39_DESC,"Cuando mi {player:jugador} {play:juega} un hechizo, consigo [+1/0]","When my {player:player} {play:plays} a spell, I get [+1/0]"
+CARD_40_NAME,GymRat,GymRat
+CARD_40_DESC,"Cuando {die:muero}, {add:creo} un batido de proteínas en el {deck:mazo} de mi {player:jugador}","When I {die:die}, I {add:create} a protein shake in my {player:player}'s {deck:deck}"
+CARD_41_NAME,Día de pierna,Leg Day
+CARD_41_DESC,[0/+2] a la {board:mesa} de mi {player:jugador}. Las cartas {family:Gym} en {board:mesa} de mi {player:jugador} pierden 3 de vida,[0/+2] to my {player:player}'s {board:board}. {family:Gym} cards on my {player:player}'s {board:board} lose 3 life
+CARD_42_NAME,Batido de proteínas,Protein Shake
+CARD_42_DESC,La primera unidad en la {board:mesa} de mi {player:jugador} consigue [+1/+2].,The first unit on my {player:player}'s {board:board} gets [+1/+2].
+CARD_43_NAME,Entrenador personal,Personal Trainer
+CARD_43_DESC,{add:Crea} dos batidos de proteínas en el {board:mazo} de mi {player:jugador},{add:Create} two protein shakes in my {player:player}'s {board:deck}
+CARD_44_NAME,El señor de las mancuernas,The Lord of the Dumbbells
+CARD_44_DESC,"Cuando mi {player:jugador} {play:juega} un batido de proteínas, consigo [+1/0]","When my {player:player} {play:plays} a protein shake, I get [+1/0]"
+CARD_45_NAME,Gerente del Basic Fit,Basic Fit Manager
+CARD_45_DESC,"Si hay una carta {family:Gym} en la {board:mesa} de mi {player:jugador}, {draw:roba} una carta","If there is a {family:Gym} card on my {player:player}'s {board:board}, {draw:draw} a card"
+CARD_46_NAME,David Goggins,David Goggins
+CARD_46_DESC,"Después de {attack:golpear}, consigo [+1/+1]","After {attack:attacking}, I get [+1/+1]"
+CARD_47_NAME,Gran sabio,Great Sage
+CARD_47_DESC,"Cuando recibo daño, consigo [+1/+1]","When I take damage, I get [+1/+1]"
+CARD_48_NAME,Tik Tok motivacional,Motivational TikTok
+CARD_48_DESC,{condition:Necesitas una carta con 1 de daño o menos en {board:mesa}}. Las dos primeras unidades en la izquierda de la {board:mesa} de mi {player:jugador} ganan [+2/+2],{condition:You need a card with 1 damage or less on the {board:board}}. The first two units on the left of my {player:player}'s {board:board} gain [+2/+2]
+CARD_49_NAME,"No pain, no gain","No pain, no gain"
+CARD_49_DESC,"Inflinge 1 de daño hasta 2 unidades de la {board:mesa} de mi {player:jugador}, y {draw:roba} una carta. {skill:HABILIDAD}: inflinge 1 de daño a todas las cartas de la {board:mesa} de mi {player:jugador} y les otorgo [+2/0]","Deal 1 damage to up to 2 units on my {player:player}'s {board:board}, and {draw:draw} a card. {skill:SKILL}: deal 1 damage to all cards on my {player:player}'s {board:board} and grant them [+2/0]"
+CARD_50_NAME,Esteroides,Steroids
+CARD_50_DESC,Curo a mi {player:jugador} la cantidad de vida total de sus unidades en {board:mesa}.,I heal my {player:player} for the total life of their units on the {board:board}.
+CARD_51_NAME,Biscuit Oliva,Biscuit Oliva
+CARD_51_DESC,"{condition:Necesitas al menos 2 tropas de {family:Gym}}. Cuando soy {play:jugado}, [+1/+1] a la {board:mesa} de mi {player:juagdor}.","{condition:You need at least 2 {family:Gym} troops}. When I am {play:played}, [+1/+1] to my {player:player}'s {board:board}."
+CARD_52_NAME,Flexeo de músculos,Muscle Flex
+CARD_52_DESC,"Si mi {player:jugador} tiene 10 de vida o más, {draw:roba} 3 cartas. En caso contrario, se cura 5 de vida.","If my {player:player} has 10 life or more, {draw:draw} 3 cards. Otherwise, heal 5 life."
+CARD_53_NAME,Fragmento helado,Frozen Fragment
+CARD_53_DESC,[-4/0] a la primera unidad en la {board:mesa} {rival:rival} (izq),[-4/0] to the first unit on the {rival:rival} {board:board} (left)
+CARD_54_NAME,Aprendiz del invierno,Apprentice of Winter
+CARD_54_DESC,"Cada vez que mi {player:jugador} juegue un hechizo {family:hielo}, [-1/0] a la primera unidad en la {board:mesa} {rival:rival} (izq)","Every time my {player:player} plays an {family:ice} spell, [-1/0] to the first unit on the {rival:rival} {board:board} (left)"
+CARD_55_NAME,Ventisca cruel,Cruel Blizzard
+CARD_55_DESC,[-1/0] a la mesa {rival:rival}. Mi {player:jugador} {draw:roba} una carta,[-1/0] to the {rival:rival} board. My {player:player} {draw:draws} a card
+CARD_56_NAME,Gólem de escarcha,Frost Golem
+CARD_56_DESC,"Cuando disminuye el ataque de las unidades del {rival:rival}, consigo [+1/0]","When the {rival:rival}'s units' attack decreases, I get [+1/0]"
+CARD_57_NAME,Prisión glaciar,Glacial Prison
+CARD_57_DESC,Una unidad de mi {player:jugador} y del {rival:rival} pasan a tener 0 de ataque (izq),A unit of my {player:player} and one of the {rival:rival} have their attack set to 0 (left)
+CARD_58_NAME,Sabio de la nieve,Sage of the Snow
+CARD_58_DESC,{endround:Final de ronda}: [-1/0] a dos unidades del {rival:rival} (izq),{endround:End of round}: [-1/0] to two units of the {rival:rival} (left)
+CARD_59_NAME,Corazón congelado,Frozen Heart
+CARD_59_DESC,"Mi {player:jugador} {draw:roba} tantas cartas como unidades con 0 de daño tenga el {rival:rival}. Después, las {die:mata}","My {player:player} {draw:draws} as many cards as units with 0 attack the {rival:rival} has. Then, {die:kill} them"
+CARD_60_NAME,Elemental de hielo,Ice Elemental
+CARD_60_DESC,"Al jugarme: [-1/0] a la mesa {rival:rival}. Al {die:morir}, curo a mi {player:jugador} 3 de vida.","When played: [-1/0] to the {rival:rival} board. Upon {die:dying}, I heal my {player:player} for 3 life."
+CARD_61_NAME,Invierno interminable,Endless Winter
+CARD_61_DESC,"Durante los dos próximos {endround:finales de ronda}, [-1/0] a la mesa {rival:rival}","For the next two {endround:end of rounds}, [-1/0] to the {rival:rival} board"
+CARD_62_NAME,Dragón boreal,Boreal Dragon
+CARD_62_DESC,"{condition:Mi {player:jugador}  no tiene criaturas en {board:mesa}, y ha {play:jugado} 8 cartas de {family:Hielo} o más}. {endround:Final de ronda}: si hay hueco, {play:invoco} una cría de dragón en la mesa de mi {player:jugador}","{condition:My {player:player} has no creatures on the {board:board}, and has {play:played} 8 or more {family:Ice} cards}. {endround:End of round}: if there is space, I {play:summon} a dragon hatchling on my {player:player}'s board"
+CARD_63_NAME,Hechicero del cero absoluto,Sorcerer of Absolute Zero
+CARD_63_DESC,"Cuando una unidad {rival:rival} llega a 0 de ataque, le inflinjo [0/-2]","When a {rival:rival} unit reaches 0 attack, I deal it [0/-2]"
+CARD_64_NAME,Avalancha,Avalanche
+CARD_64_DESC,{condition:Mi {player:jugador} ha {play:jugado} 5 hechizos {family:hielo} o más}. [-2/0] a toda la mesa {rival:rival}. [0/-3] a las unidades del {rival:rival} con 0 de ataque,{condition:My {player:player} has {play:played} 5 or more {family:ice} spells}. [-2/0] to the entire {rival:rival} board. [0/-3] to the {rival:rival}'s units with 0 attack
+CARD_65_NAME,Cría de dragón,Dragon Hatchling
+CARD_65_DESC,{skill:HABILIDAD}: quito 1 de vida al {rival:rival} y se lo otorgo a mi {player:jugador},{skill:SKILL}: I take 1 life from the {rival:rival} and grant it to my {player:player}
+CARD_70_NAME,FÍSICO,PHYSICAL
+CARD_70_DESC,{add:Crea} ENLACE y BITS entre las 10 primeras cartas del {deck:mazo},{add:Create} LINK and BITS among the first 10 cards of the {deck:deck}
+CARD_71_NAME,BITS,BITS
+CARD_71_DESC,Curo 2 de vida a mi {player:jugador},I heal my {player:player} for 2 life
+CARD_72_NAME,ENLACE,LINK
+CARD_72_DESC,{add:Crea} RED y TRAMA entre las 10 primeras cartas del {deck:mazo},{add:Create} NETWORK and FRAME among the first 10 cards of the {deck:deck}
+CARD_73_NAME,TRAMA,FRAME
+CARD_73_DESC,{draw:Roba} una carta,{draw:Draw} a card
+CARD_74_NAME,RED,NETWORK
+CARD_74_DESC,{add:Crea} TRANSPORTE y PAQUETE entre las 10 primeras cartas del {deck:mazo},{add:Create} TRANSPORT and PACKET among the first 10 cards of the {deck:deck}
+CARD_75_NAME,PAQUETE,PACKET
+CARD_75_DESC,[0/+1] a las unidades de mi {player:jugador} en {board:mesa},[0/+1] to my {player:player}'s units on the {board:board}
+CARD_76_NAME,TRANSPORTE,TRANSPORT
+CARD_76_DESC,{add:Crea} SESIÓN y DATAGRAMA entre las 10 primeras cartas del {deck:mazo},{add:Create} SESSION and DATAGRAM among the first 10 cards of the {deck:deck}
+CARD_77_NAME,DATAGRAMA,DATAGRAM
+CARD_77_DESC,[+1/0] a las unidades de mi {player:jugador} en {board:mesa},[+1/0] to my {player:player}'s units on the {board:board}
+CARD_78_NAME,SESIÓN,SESSION
+CARD_78_DESC,{add:Crea} PRESENTACIÓN y DATOS DE SESIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} PRESENTATION and SESSION DATA among the first 10 cards of the {deck:deck}
+CARD_79_NAME,DATOS DE SESIÓN,SESSION DATA
+CARD_79_DESC,Curo 4 de vida a mi {player:jugador},I heal my {player:player} for 4 life
+CARD_80_NAME,PRESENTACIÓN,PRESENTATION
+CARD_80_DESC,{add:Crea} APLICACIÓN y DATOS DE PRESENTACIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} APPLICATION and PRESENTATION DATA among the first 10 cards of the {deck:deck}
+CARD_81_NAME,DATOS DE PRESENTACIÓN,PRESENTATION DATA
+CARD_81_DESC,[+2/+2] a las dos próximas unidades que {play:juegue} mi {player:jugador},[+2/+2] to the next two units my {player:player} {play:plays}
+CARD_82_NAME,APLICACIÓN,APPLICATION
+CARD_82_DESC,{add:Crea} Ex Machina y DATOS DE APLICACIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} Ex Machina and APPLICATION DATA among the first 10 cards of the {deck:deck}
+CARD_83_NAME,DATOS DE APLICACIÓN,APPLICATION DATA
+CARD_83_DESC,{draw:Roba} 3 cartas,{draw:Draw} 3 cards
+CARD_84_NAME,Ex Machina,Ex Machina
+CARD_84_DESC,Todas las capas han sido ensambladas. La máquina perfecta. {endround:Final de ronda}: decido por el jugador,All layers have been assembled. The perfect machine. {endround:End of round}: I decide for the player
+CARD_85_NAME,HUB,HUB
+CARD_85_DESC,"Cuando mi {player:jugador} {play:juega} un hechizo {family:paquete}, se activa una vez más","When my {player:player} {play:plays} a {family:packet} spell, it activates once more"
+CARD_86_NAME,Router,Router
+CARD_86_DESC,{endround:Final de ronda}: {draw:robo} un {family:paquete},{endround:End of round}: {draw:draw} a {family:packet}
+CARD_87_NAME,Electricista apañado,Handy Electrician
+CARD_87_DESC,"Cuando mi {player:jugador} me {play:juega}, {draw:roba} una {family:capa}","When my {player:player} {play:plays} me, {draw:draw} a {family:layer}"
+CARD_88_NAME,Hacker,Hacker
+CARD_88_DESC,"Cuando mi {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:virus} en la mano del {rival:rival}. {skill:HABILIDAD}: inflinjo al {rival:rival} 1 por cada {family:virus} que tenga en la mano","When my {player:player} {play:plays} a {family:packet}, I {add:create} a {family:virus} in the {rival:rival}'s hand. {skill:SKILL}: I deal 1 damage to the {rival:rival} for each {family:virus} they have in hand"
+CARD_89_NAME,Malware,Malware
+CARD_89_DESC,Inflinjo 1 de daño a mi {player:jugador},I deal 1 damage to my {player:player}
+CARD_90_NAME,Mensaje de broadcast,Broadcast Message
+CARD_90_DESC,{play:Juega} todos los {family:virus} que haya en mano del {rival:rival},{play:Play} all {family:virus} cards in the {rival:rival}'s hand
+CARD_91_NAME,Denegación de servicio,Denial of Service
+CARD_91_DESC,[-3/0] a la {board:mesa} del {rival:rival},[-3/0] to the {rival:rival}'s {board:board}
+CARD_92_NAME,Troyano,Trojan
+CARD_92_DESC,"Cuando soy {play:jugado}, {play:juego} un {family:Virus} de la mano del {rival:rival}. Cuando {die:muero}, me {add:creo} un malware en la mano del {rival:rival}","When I am {play:played}, I {play:play} a {family:Virus} from the {rival:rival}'s hand. When I {die:die}, I {add:create} a malware in the {rival:rival}'s hand"
+CARD_93_NAME,Firewall,Firewall
+CARD_93_DESC,"Cuando el {rival:rival} {play:juega} un {family:virus}, consigo [+1/+1]","When the {rival:rival} {play:plays} a {family:virus}, I get [+1/+1]"
+CARD_94_NAME,Copia de seguridad,Backup
+CARD_94_DESC,{skill:HABILIDAD}: {die:Muero} y curo a mi {player:jugador} el equivalente a mi vida,{skill:SKILL}: I {die:die} and heal my {player:player} for the equivalent of my life
+CARD_95_NAME,Prueba Unitaria,Unit Test
+CARD_95_DESC,{draw:Roba} una {family:capa}. Las cartas de tipo {family:Seguridad} en el {deck:mazo} y {board:mesa} de mi {player:jugador} ganan 1 de vida,{draw:Draw} a {family:layer}. {family:Security}-type cards in my {player:player}'s {deck:deck} and {board:board} gain 1 life
+CARD_96_NAME,Moneda de la llamada,Coin of the Call
+CARD_96_DESC,"50% de probabilidades de {play:jugar} un terror agónico en la {board:mesa} de mi {player:jugador}, si hay hueco","50% chance to {play:play} an Agonizing Terror on my {player:player}'s {board:board}, if there is space"
+CARD_97_NAME,Terror Agónico,Agonizing Terror
+CARD_97_DESC,,
+CARD_98_NAME,Moneda sangrienta,Bloody Coin
+CARD_98_DESC,"50% de probabilidades de curar a mi {player:juagdor} 2, y quitarle 2 de vida al {rival:rival}","50% chance to heal my {player:player} for 2, and take 2 life from the {rival:rival}"
+CARD_99_NAME,Moneda del sufrimiento,Coin of Suffering
+CARD_99_DESC,50% de probabilidades de [-1/-1] a la {board:mesa} {rival:rival},50% chance of [-1/-1] to the {rival:rival} {board:board}
+CARD_100_NAME,Moneda gloriosa,Glorious Coin
+CARD_100_DESC,50% de probabilidades de otorgar [+1/+1] a la {board:mesa} y al {deck:mazo} de mi {player:jugador},50% chance to grant [+1/+1] to my {player:player}'s {board:board} and {deck:deck}
+CARD_101_NAME,Moneda codiciosa,Greedy Coin
+CARD_101_DESC,50% de probabilidades de curar 4 de vida a mi {player:jugador},50% chance to heal my {player:player} for 4 life
+CARD_102_NAME,Moneda de la venganza,Coin of Vengeance
+CARD_102_DESC,50% de probabilidades de quitar 4 de vida al {rival:rival},50% chance to take 4 life from the {rival:rival}
+CARD_103_NAME,Moneda de las profundidades,Coin of the Depths
+CARD_103_DESC,Copio un hechizo del {deck:mazo} {rival:rival} y lo {play:juego},I copy a spell from the {rival:rival}'s {deck:deck} and {play:play} it
+CARD_104_NAME,Ladrón codicioso,Greedy Thief
+CARD_104_DESC,"Cuando {die:muero}, {add:creo} dos {family:monedas del caos} en el mazo de mi {player:jugador}","When I {die:die}, I {add:create} two {family:chaos coins} in my {player:player}'s deck"
+CARD_105_NAME,Máquina de lotería,Lottery Machine
+CARD_105_DESC,"Cuando mi jugador {play:juega} una {family:moneda del caos}, la vuelvo a {play:jugar}","When my player {play:plays} a {family:chaos coin}, I {play:play} it again"
+CARD_106_NAME,Tesoro maldito,Cursed Treasure
+CARD_106_DESC,{add:Creo} seis {family:monedas del caos} en el mazo de mi {player:jugador},I {add:create} six {family:chaos coins} in my {player:player}'s deck
+CARD_107_NAME,Pago de sangre,Blood Payment
+CARD_107_DESC,"{die:Mato} una una unidad de mi {player:jugador}. [0/-4] a una unidad {rival:rival} y {add:creo} dos {family:monedas del caos} en el mazo de mi {player:jugador}","I {die:kill} a unit of my {player:player}. [0/-4] to a {rival:rival} unit and I {add:create} two {family:chaos coins} in my {player:player}'s deck"
+CARD_108_NAME,Acólito sangriento,Bloody Acolyte
+CARD_108_DESC,"{skill:HABILIDAD}: [0/-1] a mí mismo, [-1/0] a la mesa {rival:rival}","{skill:SKILL}: [0/-1] to myself, [-1/0] to the {rival:rival} board"
+CARD_109_NAME,Adicto al oro,Gold Addict
+CARD_109_DESC,{skill:HABILIDAD}: {play:Juego} una {family:moneda del caos} en la mano de mi {player:jugador},{skill:SKILL}: I {play:play} a {family:chaos coin} into my {player:player}'s hand
+CARD_110_NAME,Reflejo maldito,Cursed Reflection
+CARD_110_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, {add:creo} dos {family:monedas del caos} en su {deck:mazo}","When my {player:player} {play:plays} a {family:chaos coin}, I {add:create} two {family:chaos coins} in their {deck:deck}"
+CARD_111_NAME,Auxilio del caos,Aid of Chaos
+CARD_111_DESC,"{condition:Mi {player:jugador} ha {play:jugado} 4 {family:monedas del caos} o más}. Durante los pŕoximos 4 turnos, al {endround:acabar el turno} {play:juego} una {family:moneda del caos} de la mano de mi {player:jugador}","{condition:My {player:player} has {play:played} 4 or more {family:chaos coins}}. For the next 4 turns, at the {endround:end of turn} I {play:play} a {family:chaos coin} from my {player:player}'s hand"
+CARD_112_NAME,Apostador demacrado,Gaunt Gambler
+CARD_112_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, consigo [+1/+1]","When my {player:player} {play:plays} a {family:chaos coin}, I get [+1/+1]"
+CARD_113_NAME,Invocación del caos,Summoning of Chaos
+CARD_113_DESC,{condition:Mi {player:jugador} ha {play:jugado} 10 {family:monedas del caos} o más}. {add:Creo} tres monedas de las profundidades en su mano,{condition:My {player:player} has {play:played} 10 or more {family:chaos coins}}. I {add:create} three Coins of the Depths in their hand
+CARD_114_NAME,Invocador de las profundidades,Summoner of the Depths
+CARD_114_DESC,"Las pŕoximas tres {family:moneda del caos} que {play:juegue} mi {player:jugador}, {add:creo} dos en su {deck:mazo}","The next three {family:chaos coins} my {player:player} {play:plays}, I {add:create} two in their {deck:deck}"
+DECK_11_NAME,Misterioso adicto,Mysterious Addict
+DECK_11_DESC,"Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias.","Try your luck. Leave victory in the hands of chance, and play coins that may or may not win you the match. Perfect for forgetting about strategies."
+DECK_10_NAME,Tecnomago,Technomancer
+DECK_10_DESC,Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados.,Scale up the power of your cards little by little while using viruses and backups to stay alive in the match. Perfect for experienced players.
+DECK_9_NAME,Archimago del invierno,Archmage of Winter
+DECK_9_DESC,"Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad.","Deny the enemy units' attack, control the battlefield, and don't let your rival overwhelm you. Perfect for people with anxiety."
+DECK_7_NAME,Don Bola de Fuego Jr,Don Fireball Jr.
+DECK_7_DESC,"Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida.","Your strength lies in your spells. Wipe out the enemy's units before they get a chance to attack, and drain the rival's life little by little. Perfect for those who like to control the match."
+DECK_5_NAME,El mago del queso,The Cheese Wizard
+DECK_5_DESC,"Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien.","Fill the rival's deck with rats, empower your own, and drive them to despair. Perfect for those who want to have a good time."
+DECK_6_NAME,El Ingenioso Hidalgo Don Quijote de la Mancha,The Ingenious Gentleman Don Quixote of La Mancha
+DECK_6_DESC,Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve.,Combine your units' effects to create dangerous creatures. Find Don Quixote and unleash the madness. Perfect for a snowball playstyle.
+DECK_8_NAME,Mago cachas,Buff Wizard
+DECK_8_DESC,"Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida.","Train your cards and make them strong. Don't give your rival time to respond and victory will be yours. Perfect for those who want a quick win."

@@ -16,250 +16,183 @@ HOME_SECTION_REPORT_BUGS,Reportar bugs,Report bugs
 HOME_SECTION_ABOUT_US,Sobre nosotros,About us
 HOME_SECTION_GALLERY,Galería,Gallery
 HOME_SECTION_STATS,Estadísticas,Statistics
+HOME_SECTION_SET_NAME,Introduce tu nombre,Set your name here
+HOME_SECTION_DISABLED_NAME,Introduce tu nombre para poder jugar,You must set your name in order to play
+HOME_SECTION_CANCEL,Cancelar,Cancel
+HOME_SECTION_BACK,Volver atrás,Go back
+HOME_SECTION_SELECT_DECK,Selecciona tu maz  o,Select your deck
+HOME_SECTION_SEARCHING_BOT,Preparando partida contra la máquina...,Creating bot match...
+HOME_SECTION_CREATING_PRIVATE,Creando partida privada...,Creating private match...
+HOME_SECTION_SEARCHING,Buscando partida...,Looking for a match...
+HOME_SECTION_LOADING_DECKS,Cargando mazos...,Loading decks...
+HOME_SECTION_PRIVATE_TITLE,Partida privada,Private match
+HOME_SECTION_PRIVATE_WAITING,Comparte este código con tus amigos:,Share this code with your friends:
+HOME_SECTION_PRIVATE_WAITING_JOIN,Esperando a que se completen los jugadores:,Waiting for other players to join:
+HOME_SECTION_PRIVATE_PLAYERS,Jugadores,Players
+HOME_SECTION_PRIVATE_HOST,(Eres el anfitrión),(You are the host)
+HOME_SECTION_PRIVATE_WAITING_PLAYERS,Esperando jugadores...,Waiting for players...
+HOME_SECTION_JOIN_PRIVATE,Unirse a una partida privada,Join private match
+HOME_SECTION_JOIN,Unirse,Join
+HOME_SECTION_JOINING,Uniéndose,Joining
+HOME_SECTION_SUGGESTION,Envía una sugerencia / Reportar un error,Envía una sugerencia / Reportar un error,Send a suggestion / Bug report
+HOME_SECTION_SUGGESTION_TEXT,No nos vendría mal algo de ayuda; este juego se encuentra en beta al fin de al cabo. Cualquier tipo de problema que hayas sufrido, o una sugerencia que quieras añadir a nuestro sistema, por favor explícalo en este recuadro de aquí delante (las sugerencias son anónimas. Nos dio pereza añadir un campo de nombre):,We would like some help. Any type of problem you may encountered please feel free to comment it here.
+HOME_SECTION_SUGGESTION_PLACEHOLDER,Escribe aquí...,Write here...
+HOME_SECTION_SEND,Enviar,Send
+HOME_SECTION_ABOUT,Creado por,Created by:
+HOME_SECTION_ABOUT_TEAM,CONOCE AL EQUIPO,MEET THE TEAM
+GALLERY_SECTION_TITLE,Galería de cartas,Card's Gallery
+GALLERY_SECTION_SUBTITLE,Explora todas las cartas y descubre sus poderes,Search all cards and their powers
+GALLERY_SECTION_BACK,Volver al inicio,Return to home page
+GALLERY_LOADING,Cargando cartas...,Loading cards...
+GALLERY_SECTION_SELECT_CARD,Haz click en una carta para ver lo que hace,Click on a card to see what it does
+SERIES_HIDDEN_STATUS,Mazo oculto hasta que empiece la partida,Hidden deck until match starts
+SERIES_SECTION_TITLE,Mejor de 3,Best of 3
+SERIES_SECTION_FORFEITED,Tu rival ha abandonado la serie
+SERIES_SECTION_WINNER,¡Serie terminada!,Series Finished!
+SERIES_SECTION_WINNER_YOU,¡Has ganado la serie!,You won!
+SERIES_SECTION_WINNER_RIVAL, ha ganado la serie, has won the series
+SERIES_SECTION_RETURN_HOME,Volver al inicio,Go to the start
+SERIES_SECTION_ROUND,Ronda,Round
+SERIES_SECTION_ROUND_OF, de 3, of 3
+SERIES_SECTION_YOU,Tú,You
+SERIES_SECTION_WAITING,Elige tu mazo,Choose your deck
+SERIES_SECTION_WAITING_YOU,Mazo elegido, esperando a tu rival,Deck chosen. Waiting for rival
+SERIES_SECTION_LOADING_DECKS,Cargando mazos...,Loading decks...
+ERROR_SECTION_TITLE,Conexión perdida con el servidor,Connection with server lost
+ERROR_SECTION_MESSAGE,Lo sentimos. Parece que se ha perdido la conexión con el servidor.,We are sorry. It seems there is a problem with the server
+ERROR_SECTION_SUB_MESSAGE,Nuestro equipo está trabajando en solucionarlo. Por favor vuelve a intentarlo más adelante.,Our team is currently fixing it. Please try again later
+ERROR_SECTION_RETRY,Reintentar conexión,Try reconnecting
+ERROR_SECTION_FOOTER,Gracias por su paciencia,Thanks for your patiente
+GAME_SECTION_TURN,Ronda,Round
+GAME_SECTION_TURN_PLAYER,Al acabar este turno, todos los jugadores roban una carta,At the end of this turn all players draw card
+GAME_SECTION_DISCONNECTED,se ha desconectado. Finalizando la partida en,has leave the match. Ending the game in
+GAME_SECTION_DISCONNECTED_SUBTEXT,si no vuelve...,if it doesnt come back...
+GAME_SECTION_WINNER,es el ganador y le deben una cerveza.,is the winner and they own a beer
+GAME_SECTION_RETURN_HOME,Aceptar,Accept
+GAME_SECTION_ROTATE_PHONE,Por favor rota tu teléfono para jugar.,Please rotate your phone in order to play
+STATS_SECTION_TITLE,Estadísticas de las Barajas,Stats of the decks
+STATS_SECTION_SUBTITLE,Partidas totales jugadas:,Total games played:
+STATS_SECTION_BACK,Volver a inicio,Go to the home page
+STATS_SECTION_NO_DECKS,Todavía no hay estadísticas registradas.,There is no current stats yet
+STATS_SECTION_GAMES,partidas,games
+STATS_SECTION_GAMES_PLAYED, Partidas jugadas:,Played games:
+STATS_SECTION_AVERAGE_TURN,Turno medio de finalización:,Average turn end:
+STATS_SECTION_AVERAGE_SECONDS,Tiempo medio de partida:,Average game duration:
+STATS_SECTION_MATCHUPS,Enfrentamientos por baraja rival,Games against rival deck
+STATS_SECTION_WINS,Victorias,Wins
+STATS_SECTION_LOSSES,Derrotas,Losses
+STATS_SECTION_NO_DECKS,Haz click en una baraja para ver sus estadísticas,Click a deck to see it's stats
+STATS_SECTION_LOADING,Cargando estadísticas...,Loading statistics...
+TEAM_SECTION_TITLE,Conoce al equipo,Meet the team
+TEAM_SECTION_SUBTITLE,Un equipo de decenas de profesionales, que resultan ser las mismas 2 personas.,A team made by lots of professionals. Turns out they are the same 2 people
+TEAM_SECTION_BACK,Volver a inicio,Return to the home page
+TEAM_SECTION_COLLABORATORS,COLABORADOR@S,COLLABORATORS
+CARD_CONDITION_PROGRESS,Progreso:,Progress:
+CHAT_SECTION_TITLE,Chat,Chat
+DECK_SECTION_CARDS,Cartas en el mazo:,Amount of cards:
+HELP_SECTION_TITLE,CÓMO JUGAR,HOW TO PLAY
+HELP_SECTION_CARD_TYPES,TIPOS DE CARTAS,TYPES OF CARDS
+HELP_CARD_TYPE_SPELL,HECHIZO,SPELL
+HELP_CARD_TYPE_SPELL_DESC,Los hechizos son cartas que se juegan y se descartan inmediatamente después de su uso. Pueden tener efectos que afectan a las unidades en juego al jugador o al oponente.,Spells are cards that can be played and discard inmediatly after its use. They can have effects that alter units or the players
+
 SETTINGS_TITLE,Ajustes,Settings
-SETTINGS_LANGUAGE,Idioma,Language
+SETTINGS_LANGUAGE,Idioma,Language,
 SETTINGS_ANIMATION_SPEED,Velocidad de animación,Animation Speed
 SETTINGS_CURRENT_LABEL,Actual:,Current:
 SETTINGS_MUSIC,Música,Music
 SETTINGS_SOUND_EFFECTS,Efectos de sonido,Sound Effects
 SETTINGS_ENABLED,Activado,Enabled
-CARD_1_NAME,Truco Ratero,
-CARD_1_DESC,{draw:Roba} tres cartas,
-CARD_2_NAME,Rata,
-CARD_2_DESC,{skill:HABILIDAD}: -1 a mi {player:jugador},
-CARD_3_NAME,Familia de ratas,
-CARD_3_DESC,"Cuando {die:muero}, {add:añado} dos {family:ratas} al {deck:mazo} del {rival:rival}.",
-CARD_4_NAME,Flautista de Hamelin,
-CARD_4_DESC,"Cuando se {play:juega} una {family:rata} en la {board:mesa} {rival:rival}, consigo [+1/+1]",
-CARD_5_NAME,Mind Máster,
-CARD_5_DESC,{skill:HABILIDAD}: Activa todas las {skill:habilidades} de la {board:mesa} {rival:rival},
-CARD_6_NAME,Flow rata,
-CARD_6_DESC,Curo a mi {player:jugador} uno por cada {family:rata} que tenga el {rival:rival} en el {deck:mazo}.,
-CARD_7_NAME,Queso,
-CARD_7_DESC,Curo 3 de vida a mi {player:jugador},
-CARD_8_NAME,Madriguera de ratas,
-CARD_8_DESC,{endround:Fin de ronda}: me inflinjo 2 de daño y añado 1 {family:rata} al {deck:mazo} {rival:rival},
-CARD_9_NAME,Matarratas defectuoso,
-CARD_9_DESC,[+1/+1] a todas las {family:ratas} en la {board:mesa} y en el {deck:mazo} de mi jugador. A cambio mi {player:jugador} pierde 3 de vida,
-CARD_10_NAME,Primo de Remi,
-CARD_10_DESC,"Cuando soy {play:jugado}, {add:añado} 3 Quesos en el {deck:mazo} de mi {player:jugador}",
-CARD_11_NAME,El poder de los sumideros,
-CARD_11_DESC,"{condition:Has tenido que {play:jugar} al menos 8 {family:ratas}}. A partir de ahora, las {family:ratas} que {play:juegue} mi {player:jugador} consiguen [+1/+1]",
-CARD_12_NAME,Arañazos,
-CARD_12_DESC,[0/-1] a la {deck:mesa} {rival:rival} ahora y al final de este turno,
-CARD_13_NAME,Mordedura de rata,
-CARD_13_DESC,"[0/-3] a una unidad en la {board:mesa} {rival:rival}, la primera a la izquierda. {skill:HABILIDAD}: {draw:roba} una carta",
-CARD_13_1_NAME,Exterminador de plagas,
-CARD_13_1_DESC,"Cuando el {rival:rival} {draw:roba} una {family:rata}, le inflinjo 1 de daño",
-CARD_13_2_NAME,Rey rata,
-CARD_13_2_DESC,"{condition:Has {play:jugado} 8 {family:ratas} o más}. Cuando {attack:golpeo}, {add:añado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando mi {player:jugador} {play:juega} un queso, consigo [+1/+1]",
-CARD_14_NAME,Libro de Caballería,
-CARD_14_DESC,{draw:Roba} una carta y cura 2 de vida a mi {player:jugador},
-CARD_15_NAME,La venta,
-CARD_15_DESC,"Cuando mi {player:jugador} {play:juega} una unidad, se le otorga [+2/-1]",
-CARD_16_NAME,Molino de viento,
-CARD_16_DESC,,
-CARD_17_NAME,Rebaño de corderos,
-CARD_17_DESC,,
-CARD_18_NAME,Dulcinea del Toboso,
-CARD_18_DESC,"{endround:Final de ronda}: [+2/+3] a Don Quijote, si se encuentra en {board:mesa}",
-CARD_19_NAME,El Ingenioso Hidalgo Don Quijote de la Mancha,
-CARD_19_DESC,"{condition: Has {play:jugado} al menos 5 libros de caballería o una Dulcinea del Toboso}. Las {family:Paranoias} del mazo de mi {player:jugador} ganan [+4/+4]. Cuando mi {player:jugador} {play:juega} un libro de caballería, le curo otros 2 de vida",
-CARD_20_NAME,Locuras de Hidalgo,
-CARD_20_DESC,{add:Añade} una {family:paranoia} de cada tipo en el {deck:mazo} de mi {player:jugador},
-CARD_21_NAME,Rocinante,
-CARD_21_DESC,"Cuando mi {player:jugador} {play:juega} a Don Quijote, consigo [+2/+2]",
-CARD_22_NAME,Don't Quijote,
-CARD_22_DESC,"{condition:Si hay algún Don Quijote en la mesa}, lo {die:mato}. Si es de mi {player:jugador}, lo devuelvo al mazo y le curo 7 de vida.",
-CARD_23_NAME,El caballero de la blanca luna,
-CARD_23_DESC,"Cuando {die:muero}, las próximas dos unidades que {play:juegue} mi {player:jugador} consiguen [+1/-1]",
-CARD_24_NAME,Cura Pero Pérez,
-CARD_24_DESC,{endround:Fin de ronda}: {add:Creo} un Libro de Caballería en el {deck:mazo} de mi {player:jugador},
-CARD_25_NAME,El Loco de Sierra Morena,
-CARD_25_DESC,"Si entra Don Quijote o Sancho Panza en la {board:mesa} de mi {player:jugador}, le inflinjo 4 de daño",
-CARD_26_NAME,Sancho Panza,
-CARD_26_DESC,"{endround:Fin de Ronda}: Si no hay otros {family:Castellanos} en la {board:mesa} de mi {player:jugador}, [0/-1] a la {board:mesa}. {skill:HABILIDAD}: [+1/+1] a las unidades la {board:mesa} de mi {player:jugador}",
-CARD_26_1_NAME,Llamada de auxilio,
-CARD_26_1_DESC,{draw:Roba} dos {family:caballeros},
-CARD_27_NAME,Bola de fuego,
-CARD_27_DESC,Inflinjo -4 a la primera unidad de la izquierda en la {board:mesa} del {rival:rival}.,
-CARD_28_NAME,Aprendiz de mago,
-CARD_28_DESC,"Cuando mi {player:jugador} me {play:juega}, {add:creo} una bola de fuego en su {deck:mazo}",
-CARD_29_NAME,Maestro de la ceniza,
-CARD_29_DESC,{condition:Has {play:jugado} 5 bolas de fuego o más}. {endround:Fin de Ronda}: {add:creo} una bola de fuego en el mazo de mi {player:jugador},
-CARD_30_NAME,Espíritu del fuego,
-CARD_30_DESC,"Cuando mi {player:jugador} {play:juega} una bola de fuego, inflinjo 1 de daño al {play:rival}",
-CARD_31_NAME,Tierras yermas,
-CARD_31_DESC,[-2/-2] a la {board:mesa} {rival:rival}. Mi {player:jugador} pierde 2 de vida,
-CARD_32_NAME,Conjuro del dios del fuego,
-CARD_32_DESC,{draw:Roba} dos hechizos,
-CARD_33_NAME,La llamada de la ceniza,
-CARD_33_DESC,{draw:Roba} una carta {family:ceniza}. Curo 2 de vida a mi {player:jugador}.,
-CARD_34_NAME,La ira del dios del fuego,
-CARD_34_DESC,{die:MATA} a TODAS las unidades en {board:mesa},
-CARD_35_NAME,Chispas escurridizas,
-CARD_35_DESC,"El próximo hechizo que {play:juegue} mi {player:jugador}, le curo 1 e inflinjo 1 de daño al {rival:rival}",
-CARD_36_NAME,Instructor de las llamas,
-CARD_36_DESC,"Al {die:morir}, {add:creo} una bola de fuego en la mano de mi {player:jugador}, si hay espacio disponible.",
-CARD_37_NAME,Comunión Espiritual,
-CARD_37_DESC,{condition:Has {play:jugado} una llamada de la ceniza}. Los {family:brujos} del {deck:mazo} de mi {player:jugador} consiguen [+1/+1].,
-CARD_38_NAME,Gran negador,
-CARD_38_DESC,"[+3/0] si no has {play:jugado} un hechizo antes. Si no, {draw:roba} una carta.",
-CARD_39_NAME,Maquiavelo el maquiavélico,
-CARD_39_DESC,"Cuando mi {player:jugador} {play:juega} un hechizo, consigo [+1/0]",
-CARD_40_NAME,GymRat,
-CARD_40_DESC,"Cuando {die:muero}, {add:creo} un batido de proteínas en el {deck:mazo} de mi {player:jugador}",
-CARD_41_NAME,Día de pierna,
-CARD_41_DESC,[0/+2] a la {board:mesa} de mi {player:jugador}. Las cartas {family:Gym} en {board:mesa} de mi {player:jugador} pierden 3 de vida,
-CARD_42_NAME,Batido de proteínas,
-CARD_42_DESC,La primera unidad en la {board:mesa} de mi {player:jugador} consigue [+1/+2].,
-CARD_43_NAME,Entrenador personal,
-CARD_43_DESC,{add:Crea} dos batidos de proteínas en el {board:mazo} de mi {player:jugador},
-CARD_44_NAME,El señor de las mancuernas,
-CARD_44_DESC,"Cuando mi {player:jugador} {play:juega} un batido de proteínas, consigo [+1/0]",
-CARD_45_NAME,Gerente del Basic Fit,
-CARD_45_DESC,"Si hay una carta {family:Gym} en la {board:mesa} de mi {player:jugador}, {draw:roba} una carta",
-CARD_46_NAME,David Goggins,
-CARD_46_DESC,"Después de {attack:golpear}, consigo [+1/+1]",
-CARD_47_NAME,Gran sabio,
-CARD_47_DESC,"Cuando recibo daño, consigo [+1/+1]",
-CARD_48_NAME,Tik Tok motivacional,
-CARD_48_DESC,{condition:Necesitas una carta con 1 de daño o menos en {board:mesa}}. Las dos primeras unidades en la izquierda de la {board:mesa} de mi {player:jugador} ganan [+2/+2],
-CARD_49_NAME,"No pain, no gain",
-CARD_49_DESC,"Inflinge 1 de daño hasta 2 unidades de la {board:mesa} de mi {player:jugador}, y {draw:roba} una carta. {skill:HABILIDAD}: inflinge 1 de daño a todas las cartas de la {board:mesa} de mi {player:jugador} y les otorgo [+2/0]",
-CARD_50_NAME,Esteroides,
-CARD_50_DESC,Curo a mi {player:jugador} la cantidad de vida total de sus unidades en {board:mesa}.,
-CARD_51_NAME,Biscuit Oliva,
-CARD_51_DESC,"{condition:Necesitas al menos 2 tropas de {family:Gym}}. Cuando soy {play:jugado}, [+1/+1] a la {board:mesa} de mi {player:juagdor}.",
-CARD_52_NAME,Flexeo de músculos,
-CARD_52_DESC,"Si mi {player:jugador} tiene 10 de vida o más, {draw:roba} 3 cartas. En caso contrario, se cura 5 de vida.",
-CARD_53_NAME,Fragmento helado,
-CARD_53_DESC,[-4/0] a la primera unidad en la {board:mesa} {rival:rival} (izq),
-CARD_54_NAME,Aprendiz del invierno,
-CARD_54_DESC,"Cada vez que mi {player:jugador} juegue un hechizo {family:hielo}, [-1/0] a la primera unidad en la {board:mesa} {rival:rival} (izq)",
-CARD_55_NAME,Ventisca cruel,
-CARD_55_DESC,[-1/0] a la mesa {rival:rival}. Mi {player:jugador} {draw:roba} una carta,
-CARD_56_NAME,Gólem de escarcha,
-CARD_56_DESC,"Cuando disminuye el ataque de las unidades del {rival:rival}, consigo [+1/0]",
-CARD_57_NAME,Prisión glaciar,
-CARD_57_DESC,Una unidad de mi {player:jugador} y del {rival:rival} pasan a tener 0 de ataque (izq),
-CARD_58_NAME,Sabio de la nieve,
-CARD_58_DESC,{endround:Final de ronda}: [-1/0] a dos unidades del {rival:rival} (izq),
-CARD_59_NAME,Corazón congelado,
-CARD_59_DESC,"Mi {player:jugador} {draw:roba} tantas cartas como unidades con 0 de daño tenga el {rival:rival}. Después, las {die:mata}",
-CARD_60_NAME,Elemental de hielo,
-CARD_60_DESC,"Al jugarme: [-1/0] a la mesa {rival:rival}. Al {die:morir}, curo a mi {player:jugador} 3 de vida.",
-CARD_61_NAME,Invierno interminable,
-CARD_61_DESC,"Durante los dos próximos {endround:finales de ronda}, [-1/0] a la mesa {rival:rival}",
-CARD_62_NAME,Dragón boreal,
-CARD_62_DESC,"{condition:Mi {player:jugador}  no tiene criaturas en {board:mesa}, y ha {play:jugado} 8 cartas de {family:Hielo} o más}. {endround:Final de ronda}: si hay hueco, {play:invoco} una cría de dragón en la mesa de mi {player:jugador}",
-CARD_63_NAME,Hechicero del cero absoluto,
-CARD_63_DESC,"Cuando una unidad {rival:rival} llega a 0 de ataque, le inflinjo [0/-2]",
-CARD_64_NAME,Avalancha,
-CARD_64_DESC,{condition:Mi {player:jugador} ha {play:jugado} 5 hechizos {family:hielo} o más}. [-2/0] a toda la mesa {rival:rival}. [0/-3] a las unidades del {rival:rival} con 0 de ataque,
-CARD_65_NAME,Cría de dragón,
-CARD_65_DESC,{skill:HABILIDAD}: quito 1 de vida al {rival:rival} y se lo otorgo a mi {player:jugador},
-CARD_70_NAME,FÍSICO,
-CARD_70_DESC,{add:Crea} ENLACE y BITS entre las 10 primeras cartas del {deck:mazo},
-CARD_71_NAME,BITS,
-CARD_71_DESC,Curo 2 de vida a mi {player:jugador},
-CARD_72_NAME,ENLACE,
-CARD_72_DESC,{add:Crea} RED y TRAMA entre las 10 primeras cartas del {deck:mazo},
-CARD_73_NAME,TRAMA,
-CARD_73_DESC,{draw:Roba} una carta,
-CARD_74_NAME,RED,
-CARD_74_DESC,{add:Crea} TRANSPORTE y PAQUETE entre las 10 primeras cartas del {deck:mazo},
-CARD_75_NAME,PAQUETE,
-CARD_75_DESC,[0/+1] a las unidades de mi {player:jugador} en {board:mesa},
-CARD_76_NAME,TRANSPORTE,
-CARD_76_DESC,{add:Crea} SESIÓN y DATAGRAMA entre las 10 primeras cartas del {deck:mazo},
-CARD_77_NAME,DATAGRAMA,
-CARD_77_DESC,[+1/0] a las unidades de mi {player:jugador} en {board:mesa},
-CARD_78_NAME,SESIÓN,
-CARD_78_DESC,{add:Crea} PRESENTACIÓN y DATOS DE SESIÓN entre las 10 primeras cartas del {deck:mazo},
-CARD_79_NAME,DATOS DE SESIÓN,
-CARD_79_DESC,Curo 4 de vida a mi {player:jugador},
-CARD_80_NAME,PRESENTACIÓN,
-CARD_80_DESC,{add:Crea} APLICACIÓN y DATOS DE PRESENTACIÓN entre las 10 primeras cartas del {deck:mazo},
-CARD_81_NAME,DATOS DE PRESENTACIÓN,
-CARD_81_DESC,[+2/+2] a las dos próximas unidades que {play:juegue} mi {player:jugador},
-CARD_82_NAME,APLICACIÓN,
-CARD_82_DESC,{add:Crea} Ex Machina y DATOS DE APLICACIÓN entre las 10 primeras cartas del {deck:mazo},
-CARD_83_NAME,DATOS DE APLICACIÓN,
-CARD_83_DESC,{draw:Roba} 3 cartas,
-CARD_84_NAME,Ex Machina,
-CARD_84_DESC,Todas las capas han sido ensambladas. La máquina perfecta. {endround:Final de ronda}: decido por el jugador,
-CARD_85_NAME,HUB,
-CARD_85_DESC,"Cuando mi {player:jugador} {play:juega} un hechizo {family:paquete}, se activa una vez más",
-CARD_86_NAME,Router,
-CARD_86_DESC,{endround:Final de ronda}: {draw:robo} un {family:paquete},
-CARD_87_NAME,Electricista apañado,
-CARD_87_DESC,"Cuando mi {player:jugador} me {play:juega}, {draw:roba} una {family:capa}",
-CARD_88_NAME,Hacker,
-CARD_88_DESC,"Cuando mi {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:virus} en la mano del {rival:rival}. {skill:HABILIDAD}: inflinjo al {rival:rival} 1 por cada {family:virus} que tenga en la mano",
-CARD_89_NAME,Malware,
-CARD_89_DESC,Inflinjo 1 de daño a mi {player:jugador},
-CARD_90_NAME,Mensaje de broadcast,
-CARD_90_DESC,{play:Juega} todos los {family:virus} que haya en mano del {rival:rival},
-CARD_91_NAME,Denegación de servicio,
-CARD_91_DESC,[-3/0] a la {board:mesa} del {rival:rival},
-CARD_92_NAME,Troyano,
-CARD_92_DESC,"Cuando soy {play:jugado}, {play:juego} un {family:Virus} de la mano del {rival:rival}. Cuando {die:muero}, me {add:creo} un malware en la mano del {rival:rival}",
-CARD_93_NAME,Firewall,
-CARD_93_DESC,"Cuando el {rival:rival} {play:juega} un {family:virus}, consigo [+1/+1]",
-CARD_94_NAME,Copia de seguridad,
-CARD_94_DESC,{skill:HABILIDAD}: {die:Muero} y curo a mi {player:jugador} el equivalente a mi vida,
-CARD_95_NAME,Prueba Unitaria,
-CARD_95_DESC,{draw:Roba} una {family:capa}. Las cartas de tipo {family:Seguridad} en el {deck:mazo} y {board:mesa} de mi {player:jugador} ganan 1 de vida,
-CARD_96_NAME,Moneda de la llamada,
-CARD_96_DESC,"50% de probabilidades de {play:jugar} un terror agónico en la {board:mesa} de mi {player:jugador}, si hay hueco",
-CARD_97_NAME,Terror Agónico,
-CARD_97_DESC,,
-CARD_98_NAME,Moneda sangrienta,
-CARD_98_DESC,"50% de probabilidades de curar a mi {player:juagdor} 2, y quitarle 2 de vida al {rival:rival}",
-CARD_99_NAME,Moneda del sufrimiento,
-CARD_99_DESC,50% de probabilidades de [-1/-1] a la {board:mesa} {rival:rival},
-CARD_100_NAME,Moneda gloriosa,
-CARD_100_DESC,50% de probabilidades de otorgar [+1/+1] a la {board:mesa} y al {deck:mazo} de mi {player:jugador},
-CARD_101_NAME,Moneda codiciosa,
-CARD_101_DESC,50% de probabilidades de curar 4 de vida a mi {player:jugador},
-CARD_102_NAME,Moneda de la venganza,
-CARD_102_DESC,50% de probabilidades de quitar 4 de vida al {rival:rival},
-CARD_103_NAME,Moneda de las profundidades,
-CARD_103_DESC,Copio un hechizo del {deck:mazo} {rival:rival} y lo {play:juego},
-CARD_104_NAME,Ladrón codicioso,
-CARD_104_DESC,"Cuando {die:muero}, {add:creo} dos {family:monedas del caos} en el mazo de mi {player:jugador}",
-CARD_105_NAME,Máquina de lotería,
-CARD_105_DESC,"Cuando mi jugador {play:juega} una {family:moneda del caos}, la vuelvo a {play:jugar}",
-CARD_106_NAME,Tesoro maldito,
-CARD_106_DESC,{add:Creo} seis {family:monedas del caos} en el mazo de mi {player:jugador},
-CARD_107_NAME,Pago de sangre,
-CARD_107_DESC,{die:Mato} una una unidad de mi {player:jugador}. [0/-4] a una unidad {rival:rival} y {add:creo} dos {family:monedas del caos} en el mazo de mi {player:jugador},
-CARD_108_NAME,Acólito sangriento,
-CARD_108_DESC,"{skill:HABILIDAD}: [0/-1] a mí mismo, [-1/0] a la mesa {rival:rival}",
-CARD_109_NAME,Adicto al oro,
-CARD_109_DESC,{skill:HABILIDAD}: {play:Juego} una {family:moneda del caos} en la mano de mi {player:jugador},
-CARD_110_NAME,Reflejo maldito,
-CARD_110_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, {add:creo} dos {family:monedas del caos} en su {deck:mazo}",
-CARD_111_NAME,Auxilio del caos,
-CARD_111_DESC,"{condition:Mi {player:jugador} ha {play:jugado} 4 {family:monedas del caos} o más}. Durante los pŕoximos 4 turnos, al {endround:acabar el turno} {play:juego} una {family:moneda del caos} de la mano de mi {player:jugador}",
-CARD_112_NAME,Apostador demacrado,
-CARD_112_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, consigo [+1/+1]",
-CARD_113_NAME,Invocación del caos,
-CARD_113_DESC,{condition:Mi {player:jugador} ha {play:jugado} 10 {family:monedas del caos} o más}. {add:Creo} tres monedas de las profundidades en su mano,
-CARD_114_NAME,Invocador de las profundidades,
-CARD_114_DESC,"Las pŕoximas tres {family:moneda del caos} que {play:juegue} mi {player:jugador}, {add:creo} dos en su {deck:mazo}",
-DECK_11_NAME,Misterioso adicto,
-DECK_11_DESC,"Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias.",
-DECK_10_NAME,Tecnomago,
-DECK_10_DESC,Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados.,
-DECK_9_NAME,Archimago del invierno,
-DECK_9_DESC,"Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad.",
-DECK_7_NAME,Don Bola de Fuego Jr,
-DECK_7_DESC,"Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida.",
-DECK_5_NAME,El mago del queso,
-DECK_5_DESC,"Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien.",
-DECK_6_NAME,El Ingenioso Hidalgo Don Quijote de la Mancha,
-DECK_6_DESC,Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve.,
-DECK_8_NAME,Mago cachas,
-DECK_8_DESC,Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida.,
+ERR_UNEXPECTED,Ha ocurrido un error inesperado.,An unexpected error occurred.
+HOME_SECTION_NAME_LABEL,Nombre,Name
+HOME_SECTION_COPY_CODE_TITLE,Copiar código,Copy code
+HOME_SECTION_JOIN_CODE_PLACEHOLDER,Código de partida,Match code
+HOME_OPTION_PLAY,Jugar,Play
+HOME_OPTION_CREATE,Crear,Create
+HOME_OPTION_JOIN,Unirse,Join
+HOME_OPTION_BOT,Máquina,Bot
+GAME_SECTION_WINNER_PLACEHOLDER,Jugador 1,Player 1
+GAME_SECTION_TARGET_PLAYER,Jugador objetivo:,Target player:
+GAME_SECTION_EFFECTS,Efectos:,Effects:
+ALERT_SECTION_TITLE,Error,Error
+ALERT_SECTION_ACCEPT,Aceptar,Accept
+CHAT_SECTION_MESSAGE_TITLE,Mensaje Arcano,Arcane Message
+CHAT_SECTION_PLACEHOLDER,Escribe un mensaje...,Write a message...
+CHAT_SECTION_SEND,Enviar,Send
+DECK_RANDOM_NAME,Aleatorio,Random
+SERIES_SECTION_RIVAL_SELECTING,Esperando a que elijas,Waiting for you to choose
+SERIES_SECTION_RIVAL_WAITING,Seleccionando mazo...,Selecting deck...
+SERIES_SECTION_RIVAL_WAITING_YOU,Eligiendo mazo...,Choosing deck...
+HELP_CARD_TYPE_UNIT,UNIDAD,UNIT
+HELP_CARD_TYPE_UNIT_DESC,Las unidades son cartas que se juegan y permanecen en el campo de batalla hasta que sean destruidas. Tienen ataque (izq) y vida (drcha). Pueden atacar al oponente y defender al jugador.,Units are cards that are played and remain on the battlefield until destroyed. They have attack (left) and health (right). They can attack the opponent and defend the player.
+HELP_CARD_TYPE_ABILITY,HABILIDAD,ABILITY
+HELP_CARD_TYPE_ABILITY_DESC,Algunas cartas independientemente de su tipo pueden tener habilidades. Las habilidades no gastan turno y solo se pueden usar cuando la carta esté en la mesa o se haya jugado como los hechizos. Las habilidades pueden tener efectos que afectan a las unidades en juego al jugador o al oponente.,Some cards regardless of their type can have abilities. Abilities do not use up a turn and can only be used when the card is on the board or has just been played like spells. Abilities can have effects that affect the units in play the player or the opponent.
+HELP_SECTION_ACTIONS,ACCIONES,ACTIONS
+HELP_VIDEO_PLAY_UNIT,Jugar una unidad,Play a unit
+HELP_VIDEO_USE_ABILITY,Usar habilidad,Use ability
+HELP_VIDEO_PLAY_SPELL,Jugar hechizo,Play spell
+HELP_VIDEO_ATTACK,Atacar,Attack
+HELP_VIDEO_DRAW_CARD,Robar carta,Draw card
+HELP_VIDEO_ATTACK_RIVAL_HEALTH,Atacar vida del rival,Attack rival health
+HELP_VIDEO_INSPECT_CARD,Inspeccionar carta,Inspect card
+HELP_CARD_EXAMPLE_SPELL_NAME,Hechizo,Spell
+HELP_CARD_EXAMPLE_SPELL_DESC,Este es un ejemplo de carta de hechizo.,This is an example of a spell card.
+HELP_CARD_EXAMPLE_UNIT_NAME,Unidad,Unit
+HELP_CARD_EXAMPLE_UNIT_DESC,Este es un ejemplo de carta de unidad.,This is an example of a unit card.
+HELP_CARD_EXAMPLE_ABILITY_NAME,Carta con habilidad,Card with ability
+TEAM_DEV1_ROLE,Área técnica,Technical Area
+TEAM_DEV1_TITLE_01,Director Ejecutivo (CEO),Chief Executive Officer (CEO)
+TEAM_DEV1_TITLE_02,Director Técnico (CTO),Chief Technology Officer (CTO)
+TEAM_DEV1_TITLE_03,Programador Jefe,Lead Programmer
+TEAM_DEV1_TITLE_04,Arquitecto de Software,Software Architect
+TEAM_DEV1_TITLE_05,Desarrollador Backend Senior,Senior Backend Developer
+TEAM_DEV1_TITLE_06,Desarrollador Frontend Senior,Senior Frontend Developer
+TEAM_DEV1_TITLE_07,Desarrollador Full Stack,Full Stack Developer
+TEAM_DEV1_TITLE_08,Ingeniero de Redes,Network Engineer
+TEAM_DEV1_TITLE_09,Ingeniero de WebSockets,WebSocket Engineer
+TEAM_DEV1_TITLE_10,Administrador de Bases de Datos,Database Administrator
+TEAM_DEV1_TITLE_11,Administrador de Servidores,Server Administrator
+TEAM_DEV1_TITLE_12,Ingeniero DevOps,DevOps Engineer
+TEAM_DEV1_TITLE_13,Responsable de Infraestructura en la Nube,Cloud Infrastructure Lead
+TEAM_DEV1_TITLE_14,Ingeniero de Seguridad Informática,Information Security Engineer
+TEAM_DEV1_TITLE_15,Líder de Control de Versiones,Version Control Lead
+TEAM_DEV1_TITLE_16,Ingeniero de Rendimiento,Performance Engineer
+TEAM_DEV1_TITLE_17,Programador de Inteligencia Artificial (los bots),Artificial Intelligence Programmer (the bots)
+TEAM_DEV1_TITLE_18,Diseñador del Motor de Reglas,Rules Engine Designer
+TEAM_DEV1_TITLE_19,Responsable de Matchmaking,Matchmaking Lead
+TEAM_DEV1_TITLE_20,Ingeniero de QA Automatizado,Automated QA Engineer
+TEAM_DEV1_TITLE_21,Cazador de Bugs Oficial,Official Bug Hunter
+TEAM_DEV1_TITLE_22,Responsable de Builds y Despliegues,Builds and Deployments Lead
+TEAM_DEV1_TITLE_23,Soporte Técnico Niveles 1 2 y 3,Tier 1 2 and 3 Technical Support
+TEAM_DEV1_TITLE_24,Redactor de la Documentación Técnica,Technical Documentation Writer
+TEAM_DEV1_TITLE_25,Traductor de COSAS A CAMBIAR.txt,Translator of COSAS A CAMBIAR.txt
+TEAM_DEV1_TITLE_26,Responsable de que el servidor no se caiga a las 3 AM,In charge of keeping the server from crashing at 3 AM
+TEAM_DEV2_ROLE,Área gráfica,Graphic Area
+TEAM_DEV2_TITLE_01,Director Creativo,Creative Director
+TEAM_DEV2_TITLE_02,Director de Arte,Art Director
+TEAM_DEV2_TITLE_03,Diseñador de Personajes,Character Designer
+TEAM_DEV2_TITLE_04,Ilustrador de Cartas,Card Illustrator
+TEAM_DEV2_TITLE_05,Artista de Conceptos,Concept Artist
+TEAM_DEV2_TITLE_06,Diseñador de Interfaz (UI/UX),Interface Designer (UI/UX)
+TEAM_DEV2_TITLE_07,Pintora de Splash Art,Splash Art Painter
+TEAM_DEV2_TITLE_08,Diseñador de Iconos,Icon Designer
+TEAM_DEV2_TITLE_09,Colorista Jefe,Lead Colorist
+TEAM_DEV2_TITLE_10,Diseñador de Mazos,Deck Designer
+TEAM_DEV2_TITLE_11,Artista de Fondos y Escenarios,Backgrounds and Scenery Artist
+TEAM_DEV2_TITLE_12,Responsable de Tipografía,Typography Lead
+TEAM_DEV2_TITLE_13,Diseñador del Esqueleto de la Beta,Beta Skeleton Designer
+TEAM_DEV2_TITLE_14,Diseñador del Logo,Logo Designer
+TEAM_DEV2_TITLE_15,Director de Identidad de Marca,Brand Identity Director
+TEAM_DEV2_TITLE_16,Community Manager Visual,Visual Community Manager
+TEAM_DEV2_TITLE_17,Diseñador de Redes Sociales,Social Media Designer
+TEAM_DEV2_TITLE_18,Responsable de Animaciones,Animations Lead
+TEAM_DEV2_TITLE_19,Artista de Efectos Visuales,Visual Effects Artist
+TEAM_DEV2_TITLE_20,Diseñador de Empaques (para cuando haya cartas físicas),Packaging Designer (for when there are physical cards)
+TEAM_DEV2_TITLE_21,Consultor de Estética General,General Aesthetics Consultant
+TEAM_DEV2_TITLE_22,Encargado de que todo se vea bonito,In charge of making everything look nice
+TEAM_COLLAB1_ROLE,Dibujante,Illustrator
+HOME_SECTION_ACTIVE_MATCH_TITLE,Partida en curso,Match in progress
+HOME_SECTION_ACTIVE_MATCH_MESSAGE,Tienes una partida sin terminar. Puedes continuar jugando o cancelarla.,You have an unfinished match. You can continue playing or cancel it.
+HOME_SECTION_ACTIVE_MATCH_CHECKING,Comprobando si tienes una partida en curso...,Checking for a match in progress...
+HOME_SECTION_CONTINUE_MATCH,Continuar partida,Continue match
+HOME_SECTION_CANCEL_MATCH,Cancelar partida,Cancel match
+HOME_SECTION_CANCELLING_MATCH,Cancelando partida...,Cancelling match...
