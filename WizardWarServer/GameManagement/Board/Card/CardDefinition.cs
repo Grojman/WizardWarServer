@@ -4,10 +4,9 @@ public class CardDefinition
     {
     }
 
-    public CardDefinition(string id, string name, CardType type, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families, string imageUrl, EffectCondition? conditionToPlay, IEffect[]? playEffect, int effectTriggerTimes)
+    public CardDefinition(string id, CardType type, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families, string imageUrl, EffectCondition? conditionToPlay, IEffect[]? playEffect, int effectTriggerTimes)
     {
         Id = id;
-        Name = name;
         Type = type;
         BaseAttack = baseAttack;
         BaseHealth = baseHealth;
@@ -21,8 +20,6 @@ public class CardDefinition
 
     public string[] Families { get; set; } = [];
     public string Id { get; set; } = string.Empty;
-
-    public string Name { get; set; } = string.Empty;
 
     public CardType Type { get; set; } = CardType.Unit;
 

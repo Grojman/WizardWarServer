@@ -4,7 +4,7 @@ public static class MockData
     {
         foreach(var c in Cards)
         {
-            Console.WriteLine($"[CARD] Id: {c.Id}, Name: {c.Name}");
+            Console.WriteLine($"[CARD] Id: {c.Id}");
         }
     }
     public static List<CardDefinition> Cards =
@@ -12,7 +12,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "1",
-        Name = "Truco Ratero",
         Type = CardType.Spell,
         Effects =
         [
@@ -28,7 +27,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "2",
-        Name = "Rata",
         BaseAttack = 1,
         BaseHealth = 1,
         Families = ["RATA"],
@@ -39,7 +37,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "3",
-        Name = "Familia de ratas",
         BaseAttack = 2,
         BaseHealth = 1,
         Families = ["RATA"],
@@ -57,7 +54,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "4",
-        Name = "Flautista de Hamelin",
         BaseAttack = 2,
         BaseHealth = 4,
         Effects =
@@ -76,7 +72,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "5",
-        Name = "Mind Máster",
         BaseAttack = 1,
         BaseHealth = 1,
         Type = CardType.Unit,
@@ -92,7 +87,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "6",
-        Name = "Flow rata",
         Type = CardType.Spell,
         Effects =
         [
@@ -119,7 +113,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "7",
-        Name = "Queso",
         Type = CardType.Spell,
         Effects =
         [
@@ -135,7 +128,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "8",
-        Name = "Madriguera de ratas",
         BaseAttack = 0,
         BaseHealth = 6,
         Families = ["RATA"],
@@ -159,7 +151,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "9",
-        Name = "Matarratas defectuoso",
         Type = CardType.Spell,
         Effects =
         [
@@ -186,7 +177,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "10",
-        Name = "Primo de Remi",
         BaseAttack = 2,
         BaseHealth = 3,
         Families = ["RATA"],
@@ -204,7 +194,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "11",
-        Name = "El poder de los sumideros",
         Type = CardType.Spell,
         Effects =
         [
@@ -236,7 +225,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "12",
-        Name = "Arañazos",
         Type = CardType.Spell,
         Families = ["RATA"],
         Effects =
@@ -276,7 +264,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "13",
-        Name = "Mordedura de rata",
         Type = CardType.Spell,
         Families = ["RATA"],
         Effects =
@@ -302,7 +289,6 @@ public static class MockData
     new()
     {
         Id = "13_1",
-        Name = "Exterminador de plagas",
         BaseAttack = 1,
         BaseHealth = 2,
         Type = CardType.Unit,
@@ -321,7 +307,6 @@ public static class MockData
     new()
     {
         Id = "13_2",
-        Name = "Rey rata",
         Type = CardType.Unit,
         Families = ["RATA"],
         BaseAttack = 3,
@@ -337,7 +322,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "14",
-        Name = "Libro de Caballería",
         Type = CardType.Spell,
         Families = ["LIBRO"],
         Effects =
@@ -356,7 +340,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "15",
-        Name = "La venta",
         BaseAttack = 1,
         BaseHealth = 4,
         Effects =
@@ -373,7 +356,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "16",
-        Name = "Molino de viento",
         BaseAttack = 2,
         BaseHealth = 2,
         Families = ["PARANOIA"]
@@ -382,7 +364,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "17",
-        Name = "Rebaño de corderos",
         BaseAttack = 1,
         BaseHealth = 1,
         Families = ["PARANOIA"]
@@ -391,7 +372,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "18",
-        Name = "Dulcinea del Toboso",
         BaseAttack = 3,
         BaseHealth = 1,
         Families = ["PARANOIA", "CASTELLANO"],
@@ -416,7 +396,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "19",
-        Name = "El Ingenioso Hidalgo Don Quijote de la Mancha",
         BaseAttack = 5,
         BaseHealth = 5,
         Families = ["CABALLERO", "CASTELLANO"],
@@ -465,7 +444,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "20",
-        Name = "Locuras de Hidalgo",
         Type = CardType.Spell,
         Effects =
         [
@@ -485,7 +463,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "21",
-        Name = "Rocinante",
         BaseAttack = 2,
         BaseHealth = 2,
         Families = ["CABALLO"],
@@ -497,7 +474,6 @@ public static class MockData
     new CardDefinition
     {
         Id = "22",
-        Name = "Don't Quijote",
         Type = CardType.Spell,
         Effects =
         [
@@ -538,7 +514,6 @@ public static class MockData
     {
         Id = "23",
         Type = CardType.Unit,
-        Name = "El caballero de la blanca luna",
         Families = ["CABALLERO"],
         Effects = [
             new(
@@ -554,7 +529,6 @@ public static class MockData
     new CardDefinition()
     {
         Id = "24",
-        Name = "Cura Pero Pérez",
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 4,
@@ -573,7 +547,6 @@ public static class MockData
     new CardDefinition()
     {
         Id = "25",
-        Name = "El Loco de Sierra Morena",
         Type = CardType.Unit,
         BaseAttack = 3,
         BaseHealth = 4,
@@ -598,7 +571,6 @@ public static class MockData
     new CardDefinition()
     {
         Id = "26",
-        Name = "Sancho Panza",
         Type = CardType.Unit,
         BaseAttack = 1,
         BaseHealth = 5,
@@ -631,7 +603,6 @@ public static class MockData
     new()
     {
         Id = "26_1",
-        Name = "Llamada de auxilio",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new DrawCardEffect(2, new(){CurrentFamilies = ["CABALLERO"]})], new DurationByExecutions(1), null)
@@ -640,7 +611,6 @@ public static class MockData
     new()
     {
         Id = "27",
-        Name = "Bola de fuego",
         Families = ["CENIZA"],
         Type = CardType.Spell,
         Effects = [
@@ -662,7 +632,6 @@ public static class MockData
     new()
     {
         Id = "28",
-        Name = "Aprendiz de mago",
         Families = ["BRUJO"],
         Type = CardType.Unit,
         BaseAttack = 2,
@@ -682,7 +651,6 @@ public static class MockData
     new()
     {
         Id = "29",
-        Name = "Maestro de la ceniza",
         Type = CardType.Unit,
         Families = ["BRUJO", "CENIZA"],
         BaseAttack = 6,
@@ -706,7 +674,6 @@ public static class MockData
     new()
     {
         Id = "30",
-        Name = "Espíritu del fuego",
         BaseAttack = 2,
         BaseHealth = 3,
         Type = CardType.Unit,
@@ -723,7 +690,6 @@ public static class MockData
     new()
     {
         Id = "31",
-        Name = "Tierras yermas",
         Families = ["DESTRUCCION"],
         Type = CardType.Spell,
         Effects = [
@@ -737,7 +703,6 @@ public static class MockData
     new()
     {
         Id = "32",
-        Name = "Conjuro del dios del fuego",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new DrawCardEffect(2, new() {CardType = CardType.Spell})], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -746,7 +711,6 @@ public static class MockData
     new()
     {
         Id = "33",
-        Name = "La llamada de la ceniza",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new DrawCardEffect(1, new() {CurrentFamilies = ["CENIZA"]}), new AlterPlayerHealthEffect(2, false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -755,7 +719,6 @@ public static class MockData
     new()
     {
         Id = "34",
-        Name = "La ira del dios del fuego",
         Families = ["DESTRUCCION"],
         Type = CardType.Spell,
         Effects = [
@@ -765,7 +728,6 @@ public static class MockData
     new()
     {
         Id = "35",
-        Name = "Chispas escurridizas",
         Families = ["DESTRUCCION", "MALIGNO"],
         Type = CardType.Unit,
         BaseAttack = 2,
@@ -794,7 +756,6 @@ public static class MockData
     new ()
     {
         Id = "36",
-        Name = "Instructor de las llamas",
         Families = ["BRUJO"],
         Type = CardType.Unit,
         BaseAttack = 1,
@@ -815,7 +776,6 @@ public static class MockData
     {
         Id = "37",
         Type = CardType.Spell,
-        Name = "Comunión Espiritual",
         Effects = [
             new(
                 TriggerType.SpellPlayed,
@@ -831,7 +791,6 @@ public static class MockData
     new()
     {
         Id = "38",
-        Name = "Gran negador",
         Families = ["MALIGNO"],
         Type = CardType.Unit,
         BaseAttack = 1,
@@ -862,7 +821,6 @@ public static class MockData
     new()
     {
         Id = "39",
-        Name = "Maquiavelo el maquiavélico",
         Families = ["BRUJO", "MALIGNO"],
         BaseHealth = 2,
         BaseAttack = 1,
@@ -881,11 +839,10 @@ public static class MockData
     new()
     {
         Id = "40",
-        Name = "GymRat",
         Families = ["GYM", "RATA"],
         Type = CardType.Unit,
-        BaseAttack = 1,
-        BaseHealth = 2,
+        BaseAttack = 3,
+        BaseHealth = 1,
         Effects = [
             new(TriggerType.UnitDeath, [new AppendCardToDeck(1, "42", false)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
@@ -894,7 +851,6 @@ public static class MockData
     new()
     {
         Id = "41",
-        Name = "Día de pierna",
         Families = ["ENTRENAMIENTO"],
         Type = CardType.Spell,
         Effects = [
@@ -918,7 +874,6 @@ public static class MockData
     new()
     {
         Id = "42",
-        Name = "Batido de proteínas",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterUnitStatsEffect(2, 1, new GameFilter()
@@ -933,7 +888,6 @@ public static class MockData
     new()
     {
         Id = "43",
-        Name = "Entrenador personal",
         Type = CardType.Unit,
         Families = ["GYM"],
         Effects = [
@@ -945,10 +899,9 @@ public static class MockData
     new()
     {
         Id = "44",
-        Name = "El señor de las mancuernas",
         Type = CardType.Unit,
         BaseAttack = 0,
-        BaseHealth = 2,
+        BaseHealth = 4,
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterMySelf(1, 0, false)], new Always(), new PlayerCardCondition(true, new() {DefinitionId = "42"})),
         ]
@@ -956,10 +909,9 @@ public static class MockData
     new()
     {
         Id = "45",
-        Name = "Gerente del Basic Fit",
         Families = ["GYM"],
         Type = CardType.Unit,
-        BaseAttack = 1,
+        BaseAttack = 2,
         BaseHealth = 1,
         Effects = [
             new(TriggerType.UnitPlayed, [new DrawCardEffect()], new DurationByExecutions(1), new CountCardCondition(new() {Filter = new() {CurrentFamilies = ["GYM"]}, WhichBoardToSearch = PlayerType.PLAYER}, new(CountType.AT_LEAST, 1)))
@@ -968,7 +920,6 @@ public static class MockData
     new()
     {
         Id = "46",
-        Name = "David Goggins",
         Families = ["MOTIVACION"],
         Type = CardType.Unit,
         Effects = [
@@ -980,11 +931,10 @@ public static class MockData
     new()
     {
         Id = "47",
-        Name = "Gran sabio",
         Type = CardType.Unit,
         Families = ["MOTIVACION"],
         BaseAttack = 0,
-        BaseHealth = 2, 
+        BaseHealth = 3, 
         Effects = [
             new(TriggerType.UnitHealthChanged, [new AlterMySelf(1, 1, true)], new Always(), 
             new MultiEffectCondition(
@@ -999,7 +949,6 @@ public static class MockData
     new()
     {
         Id = "48",
-        Name = "Tik Tok motivacional",
         Families = ["MOTIVACION"],
         Type = CardType.Spell,
         Effects = [
@@ -1010,7 +959,6 @@ public static class MockData
     new()
     {
         Id = "49",
-        Name = "No pain, no gain",
         Families = ["MOTIVACION"],
         Type = CardType.Spell,
         Effects = [
@@ -1026,7 +974,6 @@ public static class MockData
     new()
     {
         Id = "50",
-        Name = "Esteroides",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new AlterPlayerBasedOnCardStats(PlayerType.PLAYER, new(), AffectedStats.HEALTH, PlayerType.PLAYER, 1)], new DurationByExecutions(1), null)
@@ -1035,7 +982,6 @@ public static class MockData
     new()
     {
         Id = "51",
-        Name = "Biscuit Oliva",
         Families = ["LEYENDA", "MOTIVACION"],
         Type = CardType.Unit,
         BaseAttack = 3,
@@ -1048,7 +994,6 @@ public static class MockData
     new()
     {
         Id = "52",
-        Name = "Flexeo de músculos",
         Type = CardType.Spell,
         Effects = [
             new(TriggerType.SpellPlayed, [new DrawCardEffect(3, null)], new DurationByExecutions(1), new PlayerHealthCondition(true, new(CountType.AT_LEAST, 10))),
@@ -1061,7 +1006,6 @@ public static class MockData
 new()
 {
     Id = "53",
-    Name = "Fragmento helado",
     Type = CardType.Spell,
     Families = ["HIELO"],
     Effects = [
@@ -1084,7 +1028,6 @@ new()
 new()
 {
     Id = "54",
-    Name = "Aprendiz del invierno",
     Type = CardType.Unit,
     Families = ["BRUJO"],
     BaseAttack = 1,
@@ -1109,7 +1052,6 @@ new()
 new()
 {
     Id = "55",
-    Name = "Ventisca cruel",
     Type = CardType.Spell,
     Effects = [
         new(
@@ -1131,7 +1073,6 @@ new()
 new()
 {
     Id = "56",
-    Name = "Gólem de escarcha",
     Type = CardType.Unit,
     Families = ["HIELO"],
     BaseAttack = 0,
@@ -1149,7 +1090,6 @@ new()
 new()
 {
     Id = "57",
-    Name = "Prisión glaciar",
     Type = CardType.Spell,
     Families = ["HIELO"],
     Effects = [
@@ -1169,7 +1109,6 @@ new()
 new()
 {
     Id = "58",
-    Name = "Sabio de la nieve",
     Type = CardType.Unit,
     Families = ["BRUJO"],
     BaseAttack = 1,
@@ -1194,7 +1133,6 @@ new()
 new()
 {
     Id = "59",
-    Name = "Corazón congelado",
     Type = CardType.Spell,
     Families = ["HIELO"],
     Effects = [
@@ -1214,7 +1152,6 @@ new()
 new()
 {
     Id = "60",
-    Name = "Elemental de hielo",
     Type = CardType.Unit,
     Families = ["HIELO"],
     BaseAttack = 2,
@@ -1242,7 +1179,6 @@ new()
 new()
 {
     Id = "61",
-    Name = "Invierno interminable",
     Type = CardType.Spell,
     Families = ["HIELO"],
     Effects = [
@@ -1274,7 +1210,6 @@ new()
 new()
 {
     Id = "62",
-    Name = "Dragón boreal",
     Type = CardType.Unit,
     Families = ["HIELO", "LEYENDA", "DRAGON"],
     BaseAttack = 5,
@@ -1297,7 +1232,6 @@ new()
 new()
 {
     Id = "63",
-    Name = "Hechicero del cero absoluto",
     Type = CardType.Unit,
     Families = ["HIELO", "BRUJO"],
     BaseAttack = 2,
@@ -1317,7 +1251,6 @@ new()
 new()
 {
     Id = "64",
-    Name = "Avalancha",
     Type = CardType.Spell,
     Families = ["HIELO"],
     Effects = [
@@ -1344,7 +1277,6 @@ new()
 new()
 {
     Id = "65",
-    Name = "Cría de dragón",
     Type = CardType.Unit,
     Families = ["LEYENDA", "DRAGON"],
     BaseAttack = 2,
@@ -1359,7 +1291,6 @@ new()
 new()
 {
     Id = "70",
-    Name = "FÍSICO",
     Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 1,
@@ -1374,7 +1305,6 @@ new()
 new()
 {
     Id = "71",
-    Name = "BITS",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1384,7 +1314,6 @@ new()
 new()
 {
     Id = "72",
-    Name = "ENLACE",
     Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 2,
@@ -1399,7 +1328,6 @@ new()
 new()
 {
     Id = "73",
-    Name = "TRAMA",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1409,7 +1337,6 @@ new()
 new()
 {
     Id = "74",
-    Name = "RED",
     Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 3,
@@ -1424,7 +1351,6 @@ new()
 new()
 {
     Id = "75",
-    Name = "PAQUETE",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1434,7 +1360,6 @@ new()
 new()
 {
     Id = "76",
-    Name = "TRANSPORTE",
     Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 4,
@@ -1449,7 +1374,6 @@ new()
 new()
 {
     Id = "77",
-    Name = "DATAGRAMA",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1459,7 +1383,6 @@ new()
 new()
 {
     Id = "78",
-    Name = "SESIÓN",
     Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 5,
@@ -1474,7 +1397,6 @@ new()
 new()
 {
     Id = "79",
-    Name = "DATOS DE SESIÓN",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1484,7 +1406,6 @@ new()
 new()
 {
     Id = "80",
-    Name = "PRESENTACIÓN",
     Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 6,
@@ -1499,7 +1420,6 @@ new()
 new()
 {
     Id = "81",
-    Name = "DATOS DE PRESENTACIÓN",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1514,7 +1434,6 @@ new()
 new()
 {
     Id = "82",
-    Name = "APLICACIÓN",
     Families = ["CAPA"],
     Type = CardType.Unit,
     BaseHealth = 7,
@@ -1529,7 +1448,6 @@ new()
 new()
 {
     Id = "83",
-    Name = "DATOS DE APLICACIÓN",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1539,7 +1457,6 @@ new()
 new()
 {
     Id = "84",
-    Name = "Ex Machina",
     Families = ["MACHINA"],
     Type = CardType.Unit,
     BaseAttack = 0,
@@ -1551,7 +1468,6 @@ new()
 new()
 {
     Id = "85",
-    Name = "HUB",
     Families = ["NODO"],
     Type = CardType.Unit,
     BaseAttack = 0,
@@ -1563,7 +1479,6 @@ new()
 new()
 {
     Id = "86",
-    Name = "Router",
     Families = ["NODO"],
     Type = CardType.Unit,
     BaseAttack = 1,
@@ -1575,7 +1490,6 @@ new()
 new()
 {
     Id = "87",
-    Name = "Electricista apañado",
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 4,
@@ -1586,7 +1500,6 @@ new()
 new()
 {
     Id = "88",
-    Name = "Hacker",
     BaseAttack = 1,
     BaseHealth = 2,
     Type = CardType.Unit,
@@ -1601,7 +1514,6 @@ new()
 new()
 {
     Id = "89",
-    Name = "Malware",
     Type = CardType.Spell,
     Families = ["VIRUS"],
     Effects = [
@@ -1611,7 +1523,6 @@ new()
 new()
 {
     Id = "90",
-    Name = "Mensaje de broadcast",
     Families = ["PAQUETE"],
     Type = CardType.Spell,
     Effects = [
@@ -1621,7 +1532,6 @@ new()
 new()
 {
     Id = "91",
-    Name = "Denegación de servicio",
     Type = CardType.Spell,
     Effects = [
         new(TriggerType.SpellPlayed, [
@@ -1632,7 +1542,6 @@ new()
 new()
 {
     Id = "92",
-    Name = "Troyano",
     Type = CardType.Unit,
     BaseAttack = 1,
     BaseHealth = 1,
@@ -1659,7 +1568,6 @@ new()
 new()
 {
     Id = "93",
-    Name = "Firewall",
     Families = ["SEGURIDAD"],
     Type = CardType.Unit,
     BaseAttack = 2,
@@ -1686,7 +1594,6 @@ new()
 new()
 {
     Id = "94",
-    Name = "Copia de seguridad",
     Families = ["SEGURIDAD"],
     Type = CardType.Unit,
     BaseAttack = 2,
@@ -1700,7 +1607,6 @@ new()
 new()
 {
     Id = "95",
-    Name = "Prueba Unitaria",
     Type = CardType.Spell,
     Effects = [
         new(TriggerType.SpellPlayed,
@@ -1722,7 +1628,6 @@ new()
 new()
 {
     Id = "96",
-    Name = "Moneda de la llamada",
     Families = ["MONEDA_DEL_CAOS"],
     Type = CardType.Spell,
     Effects = [
@@ -1734,7 +1639,6 @@ new()
 new()
 {
     Id = "97",
-    Name = "Terror Agónico",
     Type = CardType.Unit,
     BaseAttack = 3,
     BaseHealth = 4   
@@ -1742,7 +1646,6 @@ new()
 new()
 {
     Id = "98",
-    Name = "Moneda sangrienta",
     Type = CardType.Spell,
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
@@ -1755,7 +1658,6 @@ new()
 new()
 {
     Id = "99",
-    Name = "Moneda del sufrimiento",
     Type = CardType.Spell,
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
@@ -1767,7 +1669,6 @@ new()
 new()
 {
     Id = "100",
-    Name = "Moneda gloriosa",
     Type = CardType.Spell,
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
@@ -1779,7 +1680,6 @@ new()
 new()
 {
     Id = "101",
-    Name = "Moneda codiciosa",
     Type = CardType.Spell,
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
@@ -1791,7 +1691,6 @@ new()
 new()
 {
     Id = "102",
-    Name = "Moneda de la venganza",
     Type = CardType.Spell,
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
@@ -1803,7 +1702,6 @@ new()
 new()
 {
     Id = "103",
-    Name = "Moneda de las profundidades",
     Type = CardType.Spell,
     Families = ["MONEDA_DEL_CAOS", "CAOS_VERDADERO"],
     Effects = [
@@ -1817,7 +1715,6 @@ new()
 new()
 {
     Id = "104",
-    Name = "Ladrón codicioso",
     Type = CardType.Unit,
     BaseAttack = 1,
     BaseHealth = 1,
@@ -1828,7 +1725,6 @@ new()
 new()
 {
     Id = "105",
-    Name = "Máquina de lotería",
     Type = CardType.Unit,
     BaseAttack = 0,
     BaseHealth = 3,
@@ -1839,7 +1735,6 @@ new()
 new()
 {
     Id = "106",
-    Name = "Tesoro maldito",
     Type = CardType.Spell,
     Effects = [
         new(TriggerType.SpellPlayed, [new CreateRandomCoin(6)], new DurationByExecutions(1), null)
@@ -1849,7 +1744,6 @@ new()
 {
     Id = "107",
     Type = CardType.Spell,
-    Name = "Pago de sangre",
     Effects = [
         new(TriggerType.SpellPlayed, [
             new KillCards(new(), PlayerType.PLAYER, 1),
@@ -1865,7 +1759,6 @@ new()
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 2,
-    Name = "Acólito sangriento",
     PlayEffectTriggerTimes = 2,
     PlayEffects = [
         new AlterUnitStatsEffect(0, -1, new() {Filter = new(), WhichBoardToSearch = PlayerType.RIVAL}),
@@ -1878,7 +1771,6 @@ new()
     Type = CardType.Unit,
     BaseAttack = 2,
     BaseHealth = 1,
-    Name = "Adicto al oro",
     PlayEffectTriggerTimes = 1,
     PlayEffects = [
         new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}, 1)
@@ -1890,7 +1782,6 @@ new()
     Type = CardType.Unit,
     BaseAttack = 0,
     BaseHealth = 4,
-    Name = "Reflejo maldito",
     Effects = [
         new(TriggerType.SpellPlayed, [
             new CreateRandomCoin(2)
@@ -1901,7 +1792,6 @@ new()
 {
     Id = "111",
     Type = CardType.Spell,
-    Name = "Auxilio del caos",
     Effects = [
         new(TriggerType.SpellPlayed, [
             new AppendGlobalEffect(
@@ -1920,7 +1810,6 @@ new()
     Type = CardType.Unit,
     BaseAttack = 1,
     BaseHealth = 1,
-    Name = "Apostador demacrado",
     Effects = [
         new(TriggerType.SpellPlayed, [new AlterMySelf(1, 1, false)], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}))
     ]
@@ -1929,7 +1818,6 @@ new()
 {
     Id = "113",
     Type = CardType.Spell,
-    Name = "Invocación del caos",
     Effects = [
         new(TriggerType.SpellPlayed, [
             new PlayCardEffect("103", false, true),
@@ -1943,9 +1831,8 @@ new()
 {
     Id = "114",
     Type = CardType.Unit,
-    BaseAttack = 0,
+    BaseAttack = 2,
     BaseHealth = 1,
-    Name = "Invocador de las profundidades",
     Effects = [
         new(TriggerType.UnitPlayed, [
             new AppendGlobalEffect(
