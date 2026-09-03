@@ -10,7 +10,7 @@ public record PlayerStateDto(Guid Id, Guid TargetPlayer, string Name, CardDto?[]
                     state.Hand.Count,
                     hidden ? [] : [.. state.Hand.Select(n => CardDto.Generate(n, gameState, false, language))],
                     DeckStateDto.Generate(state.Deck!),
-                    state.GlobalEffects.Select(n => n.Description),
+                    state.GlobalEffects.Select(n => TranslationManager.Get(n.Description, language)),
                     state.IsMyTurn,
                     state.LastSpellPlayed is null ? null : CardDto.Generate(state.LastSpellPlayed, gameState, true, language));
     }

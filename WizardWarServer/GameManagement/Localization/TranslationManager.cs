@@ -97,7 +97,7 @@ public static class TranslationManager
         if (!UiEntries.TryGetValue(key, out var values) && !CardEntries.TryGetValue(key, out values))
         {
             WarnMissingKey(key);
-            return key;
+            return string.Empty;
         }
 
         if (values.TryGetValue(language, out var value) && !string.IsNullOrEmpty(value))

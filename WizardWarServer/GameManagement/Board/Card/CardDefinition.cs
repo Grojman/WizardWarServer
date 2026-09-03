@@ -4,12 +4,11 @@ public class CardDefinition
     {
     }
 
-    public CardDefinition(string id, string name, CardType type, string description, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families, string imageUrl, EffectCondition? conditionToPlay, IEffect[]? playEffect, int effectTriggerTimes)
+    public CardDefinition(string id, string name, CardType type, int baseAttack, int baseHealth, List<EffectInstance> effects, string[] families, string imageUrl, EffectCondition? conditionToPlay, IEffect[]? playEffect, int effectTriggerTimes)
     {
         Id = id;
         Name = name;
         Type = type;
-        Description = description;
         BaseAttack = baseAttack;
         BaseHealth = baseHealth;
         Effects = effects;
@@ -26,9 +25,6 @@ public class CardDefinition
     public string Name { get; set; } = string.Empty;
 
     public CardType Type { get; set; } = CardType.Unit;
-
-    // TODO: REMOVE ONCE THE MOCK DATA DATA HAS BEEN SAVED
-    public string Description { get; set; } = string.Empty;
 
     public int BaseAttack { get; set; } = 0;
 

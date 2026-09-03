@@ -41,7 +41,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
             GameEvent.UnitDeath ud => new UnitDeath(ud.Source.Id, ud.PlayerSource.Id, ud.Card.Id),
             GameEvent.DeckOutOfCards doc => new DeckOutOfCards(doc.Source.Id, doc.PlayerSource.Id),
             GameEvent.CardAttacked ca => new CardAttacked(ca.Source.Id, ca.PlayerSource.Id, ca.PlayerTarget.Id, ca.Attacker.Id, ca.TargetType.ToString(), ca.TargetIndex, ca.Attacker.CurrentAttack, ca.Deffender?.CurrentAttack ?? 0),
-            GameEvent.AddedCardToDeck acd => new AddedCardToDeck(acd.Source.Id, acd.PlayerSource.Id, acd.TargetedPlayer.Id),
+            GameEvent.AddedCardToDeck acd => new AddedCardToDeck(acd.Source.Id, acd.PlayerSource.Id, acd.TargetedPlayer.Id, acd.Card.Definition.Id),
             GameEvent.DeckModifiedStats dms => new DeckModifiedStats(dms.Source.Id, dms.PlayerSource.Id, dms.TargetedPlayer.Id),
             GameEvent.CardEventPlayed cep => new CardEventPlayed(cep.Source.Id, cep.PlayerSource.Id, cep.Card.Id),
             GameEvent.TextMessage tm => new TextMessage(tm.Source.Id, tm.PlayerSource.Id, tm.Message),
@@ -60,7 +60,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
     public record DeckOutOfCards(Guid Source, Guid PlayerSource) : GameEventDto(Source, PlayerSource){}
     public record CardAttacked(Guid Source, Guid PlayerSource, Guid PlayerTarget, Guid Attacker, string TargetType, int TargetIndex, int AttackerDamage, int DefenderDamage) : GameEventDto(Source, PlayerSource){}
 
-    public record AddedCardToDeck(Guid Source, Guid PlayerSource, Guid TargetedPlayer) : GameEventDto(Source, PlayerSource) {}
+    public record AddedCardToDeck(Guid Source, Guid PlayerSource, Guid TargetedPlayer, string CardId) : GameEventDto(Source, PlayerSource) {}
 
     public record DeckModifiedStats(Guid Source, Guid PlayerSource, Guid TargetedPlayer) : GameEventDto(Source, PlayerSource);
     public record CardEventPlayed(Guid Source, Guid PlayerSource, Guid Card) : GameEventDto(Source, PlayerSource) {}

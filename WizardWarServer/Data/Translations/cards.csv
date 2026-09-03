@@ -45,8 +45,10 @@ CARD_10_NAME,Primo de Remi,Remy's Cousin
 CARD_10_DESC,"Cuando soy {play:jugado}, {add:añado} 3 Quesos en el {deck:mazo} de mi {player:jugador}","When I am {play:played}, I {add:add} 3 Cheeses to my {player:player}'s {deck:deck}"
 CARD_11_NAME,El poder de los sumideros,The Power of the Sewers
 CARD_11_DESC,"{condition:Has tenido que {play:jugar} al menos 8 {family:ratas}}. A partir de ahora, las {family:ratas} que {play:juegue} mi {player:jugador} consiguen [+1/+1]","{condition:You must have {play:played} at least 8 {family:rats}}. From now on, the {family:rats} my {player:player} {play:plays} get [+1/+1]"
+CARD_11_GLOBAL_EFFECT,+1/+1 Si la carta es una Rata,+1/+1 if the card is a Rat
 CARD_12_NAME,Arañazos,Scratches
 CARD_12_DESC,[0/-1] a la {deck:mesa} {rival:rival} ahora y al final de este turno,[0/-1] to the {rival:rival} {deck:board} now and at the end of this turn
+CARD_12_GLOBAL_EFFECT,0/-1 en el próximo final de turno,0/-1 on the next end of turn
 CARD_13_NAME,Mordedura de rata,Rat Bite
 CARD_13_DESC,"[0/-3] a una unidad en la {board:mesa} {rival:rival}, la primera a la izquierda. {skill:HABILIDAD}: {draw:roba} una carta","[0/-3] to a unit on the {rival:rival} {board:board}, the first one on the left. {skill:SKILL}: {draw:draw} a card"
 CARD_13_1_NAME,Exterminador de plagas,Pest Exterminator
@@ -73,6 +75,7 @@ CARD_22_NAME,Don't Quijote,Don't Quijote
 CARD_22_DESC,"{condition:Si hay algún Don Quijote en la mesa}, lo {die:mato}. Si es de mi {player:jugador}, lo devuelvo al mazo y le curo 7 de vida.","{condition:If there is a Don Quixote on the board}, I {die:kill} it. If it belongs to my {player:player}, I return it to the deck and heal it for 7 life."
 CARD_23_NAME,El caballero de la blanca luna,The Knight of the White Moon
 CARD_23_DESC,"Cuando {die:muero}, las próximas dos unidades que {play:juegue} mi {player:jugador} consiguen [+1/-1]","When I {die:die}, the next two units my {player:player} {play:plays} get [+1/-1]"
+CARD_23_GLOBAL_EFFECT,Las próximas dos unidades que juegues consiguen +1/-1,The next 2 units you play get +1/-1
 CARD_24_NAME,Cura Pero Pérez,Priest Pero Pérez
 CARD_24_DESC,{endround:Fin de ronda}: {add:Creo} un Libro de Caballería en el {deck:mazo} de mi {player:jugador},{endround:End of round}: I {add:create} a Book of Chivalry in my {player:player}'s {deck:deck}
 CARD_25_NAME,El Loco de Sierra Morena,The Madman of Sierra Morena
@@ -99,6 +102,7 @@ CARD_34_NAME,La ira del dios del fuego,The Wrath of the Fire God
 CARD_34_DESC,{die:MATA} a TODAS las unidades en {board:mesa},{die:KILL} ALL units on the {board:board}
 CARD_35_NAME,Chispas escurridizas,Slippery Sparks
 CARD_35_DESC,"El próximo hechizo que {play:juegue} mi {player:jugador}, le curo 1 e inflinjo 1 de daño al {rival:rival}","The next spell my {player:player} {play:plays}, I heal them for 1 and deal 1 damage to the {rival:rival}"
+CARD_35_GLOBAL_EFFECT,El próximo hechizo que juegue este jugador consigue 1 de vida y el rival -1,The next spell that my player plays he gets 1 life and -1 for the rival
 CARD_36_NAME,Instructor de las llamas,Instructor of Flames
 CARD_36_DESC,"Al {die:morir}, {add:creo} una bola de fuego en la mano de mi {player:jugador}, si hay espacio disponible.","Upon {die:dying}, I {add:create} a fireball in my {player:player}'s hand, if there is space available."
 CARD_37_NAME,Comunión Espiritual,Spiritual Communion
@@ -151,6 +155,7 @@ CARD_60_NAME,Elemental de hielo,Ice Elemental
 CARD_60_DESC,"Al jugarme: [-1/0] a la mesa {rival:rival}. Al {die:morir}, curo a mi {player:jugador} 3 de vida.","When played: [-1/0] to the {rival:rival} board. Upon {die:dying}, I heal my {player:player} for 3 life."
 CARD_61_NAME,Invierno interminable,Endless Winter
 CARD_61_DESC,"Durante los dos próximos {endround:finales de ronda}, [-1/0] a la mesa {rival:rival}","For the next two {endround:end of rounds}, [-1/0] to the {rival:rival} board"
+CARD_61_GLOBAL_EFFECT,Durante los próximos dos finales de ronda, -1/0 a la mesa enemiga,For the next 2 ends of round, -1/0 to the enemy board
 CARD_62_NAME,Dragón boreal,Boreal Dragon
 CARD_62_DESC,"{condition:Mi {player:jugador}  no tiene criaturas en {board:mesa}, y ha {play:jugado} 8 cartas de {family:Hielo} o más}. {endround:Final de ronda}: si hay hueco, {play:invoco} una cría de dragón en la mesa de mi {player:jugador}","{condition:My {player:player} has no creatures on the {board:board}, and has {play:played} 8 or more {family:Ice} cards}. {endround:End of round}: if there is space, I {play:summon} a dragon hatchling on my {player:player}'s board"
 CARD_63_NAME,Hechicero del cero absoluto,Sorcerer of Absolute Zero
@@ -243,6 +248,7 @@ CARD_110_NAME,Reflejo maldito,Cursed Reflection
 CARD_110_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, {add:creo} dos {family:monedas del caos} en su {deck:mazo}","When my {player:player} {play:plays} a {family:chaos coin}, I {add:create} two {family:chaos coins} in their {deck:deck}"
 CARD_111_NAME,Auxilio del caos,Aid of Chaos
 CARD_111_DESC,"{condition:Mi {player:jugador} ha {play:jugado} 4 {family:monedas del caos} o más}. Durante los pŕoximos 4 turnos, al {endround:acabar el turno} {play:juego} una {family:moneda del caos} de la mano de mi {player:jugador}","{condition:My {player:player} has {play:played} 4 or more {family:chaos coins}}. For the next 4 turns, at the {endround:end of turn} I {play:play} a {family:chaos coin} from my {player:player}'s hand"
+CARD_111_GLOBAL_EFFECT,FINAL DE RONDA: juego una moneda de la mano del jugador,END OF ROUND: I play a coin from the hand of the player
 CARD_112_NAME,Apostador demacrado,Gaunt Gambler
 CARD_112_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, consigo [+1/+1]","When my {player:player} {play:plays} a {family:chaos coin}, I get [+1/+1]"
 CARD_113_NAME,Invocación del caos,Summoning of Chaos
