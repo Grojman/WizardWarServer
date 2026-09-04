@@ -26,6 +26,12 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(UseRandomSpellFromEnemyDeck), nameof(UseRandomSpellFromEnemyDeck))]
 [JsonDerivedType(typeof(CreateRandomCoin), nameof(CreateRandomCoin))]
 [JsonDerivedType(typeof(SetUnitToCeroEffect), nameof(SetUnitToCeroEffect))]
+[JsonDerivedType(typeof(ColorMarkerEffect), nameof(ColorMarkerEffect))]
+[JsonDerivedType(typeof(RotateColorEffect), nameof(RotateColorEffect))]
+[JsonDerivedType(typeof(RotateColorAndBranchEffect), nameof(RotateColorAndBranchEffect))]
+[JsonDerivedType(typeof(BranchOnColorInclusiveEffect), nameof(BranchOnColorInclusiveEffect))]
+[JsonDerivedType(typeof(MixColorEffect), nameof(MixColorEffect))]
+[JsonDerivedType(typeof(DrawCardPerBoardUnitEffect), nameof(DrawCardPerBoardUnitEffect))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

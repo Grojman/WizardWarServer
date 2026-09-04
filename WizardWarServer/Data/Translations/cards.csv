@@ -269,3 +269,24 @@ DECK_6_NAME,El Ingenioso Hidalgo Don Quijote de la Mancha,The Ingenious Gentlema
 DECK_6_DESC,Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve.,Combine your units' effects to create dangerous creatures. Find Don Quixote and unleash the madness. Perfect for a snowball playstyle.
 DECK_8_NAME,Mago cachas,Buff Wizard
 DECK_8_DESC,"Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida.","Train your cards and make them strong. Don't give your rival time to respond and victory will be yours. Perfect for those who want a quick win."
+DECK_12_NAME,El Alquimista Cromático,The Chromatic Alchemist
+DECK_12_DESC,"Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial.","Master the cycle of colors: red strikes, green heals and blue draws cards. Rotate or mix the colors at the right time to unleash their full potential."
+FAMILY_CROMATICO,Cromático,Chromatic
+CARD_115_NAME,Espíritu Cromático,Chromatic Spirit
+CARD_115_DESC,"Al entrar en juego, rota el color cromático (o lo crea si no hay ninguno). Rojo: [0/-1] a la mesa {rival:rival}. Verde: [0/+1] a mi mesa. Azul: {draw:robo} una carta y añado una copia mía al {deck:mazo}.","On play, rotate the chromatic color (or create it if none is active). Red: [0/-1] to the {rival:rival}'s board. Green: [0/+1] to my board. Blue: {draw:draw} a card and add a copy of myself to the {deck:deck}."
+CARD_116_NAME,Cambio de Ciclo,Cycle Shift
+CARD_116_DESC,"Rota el color cromático (o lo crea). Rojo: 3 de daño al {rival:rival}. Verde: +3 de vida a mi {player:jugador}. Azul: [+2/0] a las dos primeras unidades de mi {deck:mazo}.","Rotate the chromatic color (or create it). Red: 3 damage to the {rival:rival}. Green: +3 health to my {player:player}. Blue: [+2/0] to the first two units in my {deck:deck}."
+CARD_117_NAME,Guardián Cromático,Chromatic Guardian
+CARD_117_DESC,"Al entrar en juego, mira el color cromático activo (sin rotarlo). Rojo: [0/+1] a la mesa {rival:rival}. Verde: [0/-1] a mi mesa. Azul: {draw:robo} una carta por cada otra unidad en mi mesa.","On play, check the active chromatic color (without rotating it). Red: [0/+1] to the {rival:rival}'s board. Green: [0/-1] to my board. Blue: {draw:draw} a card for each other unit on my board."
+CARD_118_NAME,Ciclo Forzado,Forced Cycle
+CARD_118_DESC,El color cromático rota automáticamente al final de cada turno.,The chromatic color automatically rotates at the end of every turn.
+CARD_119_NAME,Coloso Bermellón,Vermilion Colossus
+CARD_119_DESC,Solo puedo jugarme si el color cromático activo contiene el rojo.,Can only be played while the active chromatic color contains red.
+CARD_120_NAME,Brote Esmeralda,Emerald Sprout
+CARD_120_DESC,"Solo puedo jugarme si el color cromático activo contiene el verde. Cuando el color cromático cambia a verde, curo 4 a mi {player:jugador}.","Can only be played while the active chromatic color contains green. When the chromatic color changes to green, heal my {player:player} for 4."
+CARD_121_NAME,Buceador Zafiro,Sapphire Diver
+CARD_121_DESC,"Solo puedo jugarme si el color cromático activo contiene el azul. {skill:HABILIDAD} (3 cargas): {draw:robo} una carta.","Can only be played while the active chromatic color contains blue. {skill:SKILL} (3 charges): {draw:draw} a card."
+CARD_122_NAME,Fusión de Pigmentos,Pigment Fusion
+CARD_122_DESC,"Solo puedo jugarme si me quedan 20 cartas o menos en el {deck:mazo}. Si el color activo es básico (rojo, verde o azul), lo reemplaza por su color mixto (amarillo, celeste o morado). Si ya había un color mixto activo, ambos se funden en blanco.","Can only be played while my {deck:deck} has 20 cards or fewer left. If the active color is basic (red, green or blue), it's replaced by its mixed color (yellow, cyan or purple). If a mixed color was already active, both merge into white."
+CARD_123_NAME,Última Cosecha,Last Harvest
+CARD_123_DESC,"Solo puedo jugarme si me quedan 10 cartas o menos en el {deck:mazo}. Lleno los huecos libres de mi mesa con dos copias de Espíritu Cromático y dos copias de Guardián Cromático.","Can only be played while my {deck:deck} has 10 cards or fewer left. Fills the empty slots on my board with two copies of Chromatic Spirit and two copies of Chromatic Guardian."

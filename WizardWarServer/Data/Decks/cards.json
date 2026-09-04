@@ -2,9 +2,7 @@
   {
     "Families": [],
     "Id": "1",
-    "Name": "Truco Ratero",
     "Type": 1,
-    "Description": "{draw:Roba} tres cartas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -28,7 +26,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "470c8f53-ec4d-4b0c-873b-92cdac0e33a6"
+        "Id": "56849a27-b99a-46b2-b18f-0ce2e7d41b19"
       }
     ],
     "imageUrl": "",
@@ -38,12 +36,10 @@
   },
   {
     "Families": [
-      "Rata"
+      "RATA"
     ],
     "Id": "2",
-    "Name": "Rata",
     "Type": 0,
-    "Description": "{skill:HABILIDAD}: -1 a su propio {player:jugador}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [],
@@ -60,12 +56,10 @@
   },
   {
     "Families": [
-      "Rata"
+      "RATA"
     ],
     "Id": "3",
-    "Name": "Familia de ratas",
     "Type": 0,
-    "Description": "Cuando {die:muero}, {add:a\u00F1ado} dos {family:ratas} al {deck:mazo} del {rival:rival}.",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -76,7 +70,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "2",
             "CardsAmount": 2,
-            "ToRival": true
+            "ToRival": true,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -90,7 +85,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "07a14a16-46fa-48b3-9a84-973be62ace94"
+        "Id": "d8635172-794f-4dda-a011-b1a9526ed46b"
       }
     ],
     "imageUrl": "",
@@ -101,9 +96,7 @@
   {
     "Families": [],
     "Id": "4",
-    "Name": "Flautista de Hamelin",
     "Type": 0,
-    "Description": "Cuando se {play:juega} una {family:rata} en la {board:mesa} {rival:rival}, {add:consigo} \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [
@@ -131,7 +124,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Rata"
+              "RATA"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -144,7 +137,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4907e83a-0aaf-4d6d-aa80-cb39a66bdc14"
+        "Id": "b46ede54-81bc-49de-a0cb-5ca07668fe10"
       }
     ],
     "imageUrl": "",
@@ -154,12 +147,10 @@
   },
   {
     "Families": [
-      "Rata"
+      "RATA"
     ],
     "Id": "5",
-    "Name": "Mind M\u00E1ster",
     "Type": 0,
-    "Description": "{skill:HABILIDAD}: Activa todas las {skill:habilidades} de la {board:mesa} {rival:rival}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -183,7 +174,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2d5462f6-5c22-4530-94ac-908ac823c0ef"
+        "Id": "2dde7faf-2a5e-462a-b91a-4e2976eefa61"
       }
     ],
     "imageUrl": "",
@@ -194,9 +185,7 @@
   {
     "Families": [],
     "Id": "6",
-    "Name": "Flow rata",
     "Type": 1,
-    "Description": "Curo al {player:jugador} uno por cada {family:rata} que tenga el {rival:rival} en el {deck:mazo}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -217,7 +206,7 @@
                 "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
-                  "Rata"
+                  "RATA"
                 ],
                 "DefinitionId": null,
                 "Id": null,
@@ -244,7 +233,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "76a4510e-4ced-4369-bb1e-3f9bc3720788"
+        "Id": "a860ff5b-df02-484c-a12d-749bc1fd8ce8"
       }
     ],
     "imageUrl": "",
@@ -255,9 +244,7 @@
   {
     "Families": [],
     "Id": "7",
-    "Name": "Queso",
     "Type": 1,
-    "Description": "Curo 3 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -281,7 +268,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "19af2d2c-2fde-4de4-a0ed-24e4f47c54ff"
+        "Id": "69ffe5fb-9cd1-4a1d-a2ed-2828770cf305"
       }
     ],
     "imageUrl": "",
@@ -291,12 +278,10 @@
   },
   {
     "Families": [
-      "Rata"
+      "RATA"
     ],
     "Id": "8",
-    "Name": "Madriguera de ratas",
     "Type": 0,
-    "Description": "{endround:Fin de ronda}: me inflinjo 2 de da\u00F1o y a\u00F1ado 1 {family:rata} al {deck:mazo} {rival:rival}",
     "BaseAttack": 0,
     "BaseHealth": 6,
     "Effects": [
@@ -307,7 +292,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "2",
             "CardsAmount": 1,
-            "ToRival": true
+            "ToRival": true,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -318,7 +304,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "705c2d5b-2104-420d-94f6-0118c5b2143c"
+        "Id": "fa1a3e71-2e12-44e1-80f1-2f6e9a8bd788"
       },
       {
         "Trigger": 0,
@@ -338,7 +324,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9a4e4470-0a14-455f-bda7-a6d54e472629"
+        "Id": "f2aa750f-ba77-4331-8bda-337d1f45c0bb"
       }
     ],
     "imageUrl": "",
@@ -349,9 +335,7 @@
   {
     "Families": [],
     "Id": "9",
-    "Name": "Matarratas defectuoso",
     "Type": 1,
-    "Description": "\u002B1/\u002B1 a todas tus {family:ratas} de la {board:mesa} y el {deck:mazo}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -371,7 +355,7 @@
                 "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
-                  "Rata"
+                  "RATA"
                 ],
                 "DefinitionId": null,
                 "Id": null,
@@ -385,45 +369,10 @@
               "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
-          }
-        ],
-        "Duration": {
-          "$type": "DurationByExecutions",
-          "times": 1
-        },
-        "Condition": {
-          "$type": "IHaveBeenPlayedCondition"
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": "",
-        "Id": "c75de1ab-5f80-4c33-a4b0-c272c81d63fd"
-      }
-    ],
-    "imageUrl": "",
-    "ConditionToPlay": null,
-    "PlayEffects": null,
-    "PlayEffectTriggerTimes": 0
-  },
-  {
-    "Families": [
-      "Rata"
-    ],
-    "Id": "10",
-    "Name": "Primo de Remi",
-    "Type": 0,
-    "Description": "Cuando soy {play:jugado}, planto 3 Quesos en el {deck:mazo} de mi {player:jugador}",
-    "BaseAttack": 2,
-    "BaseHealth": 3,
-    "Effects": [
-      {
-        "Trigger": 5,
-        "Effects": [
+          },
           {
-            "$type": "AppendCardToDeck",
-            "CardId": "7",
-            "CardsAmount": 3,
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": -3,
             "ToRival": false
           }
         ],
@@ -438,7 +387,46 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d093f628-2e19-42e7-935f-75524ec003d2"
+        "Id": "418c28ee-442a-4209-bdf3-992319539cd7"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "RATA"
+    ],
+    "Id": "10",
+    "Type": 0,
+    "BaseAttack": 2,
+    "BaseHealth": 3,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "7",
+            "CardsAmount": 3,
+            "ToRival": false,
+            "TopDeckDepth": 0
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "07f9c797-7533-42b3-984d-f739849128ab"
       }
     ],
     "imageUrl": "",
@@ -449,9 +437,7 @@
   {
     "Families": [],
     "Id": "11",
-    "Name": "El poder de los sumideros",
     "Type": 1,
-    "Description": "Has tenido que {play:jugar} al menos 3 {family:ratas}. A partir de ahora, las cartas {family:Rata} que {play:juegues} {add:ganan} \u002B1/\u002B1",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -460,7 +446,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "\u002B1/\u002B1 Si la carta es una Rata",
+            "Description": "CARD_11_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 5,
               "Effects": [
@@ -485,7 +471,7 @@
                   "CardType": null,
                   "Families": null,
                   "CurrentFamilies": [
-                    "Rata"
+                    "RATA"
                   ],
                   "DefinitionId": null,
                   "Id": null,
@@ -497,8 +483,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "\u002B1/\u002B1 Si la carta es una Rata",
-              "Id": "4449dbd0-799b-47eb-8a9c-ea83fdcb6b7a"
+              "Description": "CARD_11_GLOBAL_EFFECT",
+              "Id": "0a4e43ac-5985-457b-a4b4-bdbfc26e7f27"
             }
           }
         ],
@@ -513,7 +499,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f0ced631-7a93-4eca-9419-d28ca81f8e0f"
+        "Id": "b7280afa-41e8-42c8-8764-d466a9535e5a"
       }
     ],
     "imageUrl": "",
@@ -527,7 +513,7 @@
         "CardType": null,
         "Families": null,
         "CurrentFamilies": [
-          "Rata"
+          "RATA"
         ],
         "DefinitionId": null,
         "Id": null,
@@ -538,7 +524,7 @@
       "Target": 0,
       "Value": {
         "Type": 0,
-        "Amount": 3
+        "Amount": 8
       }
     },
     "PlayEffects": null,
@@ -546,12 +532,10 @@
   },
   {
     "Families": [
-      "Rata"
+      "RATA"
     ],
     "Id": "12",
-    "Name": "Ara\u00F1azos",
     "Type": 1,
-    "Description": "0/-1 a la {deck:mesa} {enemy:enemiga} ahora y al final de este turno",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -586,7 +570,7 @@
           },
           {
             "$type": "AppendGlobalEffect",
-            "Description": "0/-1 en el pr\u00F3ximo final de turno",
+            "Description": "CARD_12_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 0,
               "Effects": [
@@ -625,8 +609,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "0/-1 en el pr\u00F3ximo final de turno",
-              "Id": "85ebd61a-2e92-4075-9a6a-a9f03793c9c8"
+              "Description": "CARD_12_GLOBAL_EFFECT",
+              "Id": "da74b7fa-3a54-4bdc-bd38-e7bb54d7fbb0"
             }
           }
         ],
@@ -641,7 +625,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d3994522-ab90-418a-bb63-525b7da78bde"
+        "Id": "267c7a6b-ccf7-412a-a80f-dcec430edb43"
       }
     ],
     "imageUrl": "",
@@ -651,12 +635,10 @@
   },
   {
     "Families": [
-      "Rata"
+      "RATA"
     ],
     "Id": "13",
-    "Name": "Mordedura de rata",
     "Type": 1,
-    "Description": "0/-3 a un {enemy:enemigo} en la {board:mesa}, el primero a la izquierda. {skill:HABILIDAD}: {draw:Roba} una carta",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -701,7 +683,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "cd1d930e-cd31-4577-b45e-fc17cb7ded81"
+        "Id": "fb525fc3-2f47-4fdf-a51b-52eb74d45357"
       }
     ],
     "imageUrl": "",
@@ -718,9 +700,7 @@
   {
     "Families": [],
     "Id": "13_1",
-    "Name": "Exterminador de plagas",
     "Type": 0,
-    "Description": "Cuando el {rival:rival} {draw:roba} una carta, y es una {family:rata}, le inflinjo 1 de da\u00F1o",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -747,7 +727,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Rata"
+              "RATA"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -760,7 +740,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "005aba8c-8ff9-437d-ba9e-a712373579a9"
+        "Id": "82be0621-e64a-4715-a3e9-b5fef921c543"
       }
     ],
     "imageUrl": "",
@@ -770,12 +750,10 @@
   },
   {
     "Families": [
-      "Rata"
+      "RATA"
     ],
     "Id": "13_2",
-    "Name": "Rey rata",
     "Type": 0,
-    "Description": "Has {play:jugado} 6 {family:ratas} o m\u00E1s. Cuando {attack:golpeo}, {add:a\u00F1ado} una {family:rata} al {deck:mazo} {rival:rival}. Cuando {play:juegas} un queso, consigo \u002B1/\u002B1",
     "BaseAttack": 3,
     "BaseHealth": 3,
     "Effects": [
@@ -814,7 +792,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ffcbf66c-0ecf-4b3e-a0bc-ae323ed08b25"
+        "Id": "1f1eeb62-852e-4a5d-a282-966f9d965baf"
       },
       {
         "Trigger": 10,
@@ -823,7 +801,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "2",
             "CardsAmount": 1,
-            "ToRival": true
+            "ToRival": true,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -836,7 +815,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9098fd83-7a35-4778-b98c-09b5fa0c47f7"
+        "Id": "4adf18d7-e02c-4413-a403-ef8068b758bf"
       }
     ],
     "imageUrl": "",
@@ -850,7 +829,7 @@
         "CardType": null,
         "Families": null,
         "CurrentFamilies": [
-          "Rata"
+          "RATA"
         ],
         "DefinitionId": null,
         "Id": null,
@@ -861,7 +840,7 @@
       "Target": 0,
       "Value": {
         "Type": 0,
-        "Amount": 6
+        "Amount": 8
       }
     },
     "PlayEffects": null,
@@ -869,12 +848,10 @@
   },
   {
     "Families": [
-      "Libro"
+      "LIBRO"
     ],
     "Id": "14",
-    "Name": "Libro de Caballer\u00EDa",
     "Type": 1,
-    "Description": "{draw:Roba} una carta y cura 2 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -903,7 +880,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "38a3c635-3949-43d7-affd-713cd737a4eb"
+        "Id": "232504df-0020-4962-9d1e-99c26041003d"
       }
     ],
     "imageUrl": "",
@@ -914,9 +891,7 @@
   {
     "Families": [],
     "Id": "15",
-    "Name": "La venta",
     "Type": 0,
-    "Description": "Cuando se {play:juega} una unidad, se le otorga \u002B2/-1",
     "BaseAttack": 1,
     "BaseHealth": 4,
     "Effects": [
@@ -942,7 +917,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6bff6ac6-d6a8-47e8-9389-aa9e62b37dfb"
+        "Id": "78926918-98e4-4cc9-8c62-add5040a7799"
       }
     ],
     "imageUrl": "",
@@ -952,12 +927,10 @@
   },
   {
     "Families": [
-      "Paranoia"
+      "PARANOIA"
     ],
     "Id": "16",
-    "Name": "Molino de viento",
     "Type": 0,
-    "Description": "",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [],
@@ -968,12 +941,10 @@
   },
   {
     "Families": [
-      "Paranoia"
+      "PARANOIA"
     ],
     "Id": "17",
-    "Name": "Reba\u00F1o de corderos",
     "Type": 0,
-    "Description": "",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [],
@@ -984,13 +955,11 @@
   },
   {
     "Families": [
-      "Paranoia",
-      "Castellano"
+      "PARANOIA",
+      "CASTELLANO"
     ],
     "Id": "18",
-    "Name": "Dulcinea del Toboso",
     "Type": 0,
-    "Description": "{endround:Final de ronda}: \u002B2/\u002B3 a Don Quijote, si se encuentra en {board:mesa}",
     "BaseAttack": 3,
     "BaseHealth": 1,
     "Effects": [
@@ -1032,7 +1001,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ab4f8cb7-d43b-4e36-9283-d06c087287a4"
+        "Id": "9fbcbb38-37ce-49ad-8975-1e876598de6e"
       }
     ],
     "imageUrl": "",
@@ -1042,13 +1011,11 @@
   },
   {
     "Families": [
-      "Caballero",
-      "Castellano"
+      "CABALLERO",
+      "CASTELLANO"
     ],
     "Id": "19",
-    "Name": "El Ingenioso Hidalgo Don Quijote de la Mancha",
     "Type": 0,
-    "Description": "Has {play:jugado} al menos 5 libros de caballer\u00EDa o una Dulcinea del Toboso. Las {family:Paranoias} ganan \u002B4/\u002B4. Cuando se {play:juega} un libro de caballer\u00EDa, curo otros 2 de vida a mi {player:jugador}",
     "BaseAttack": 5,
     "BaseHealth": 5,
     "Effects": [
@@ -1068,7 +1035,7 @@
                 "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
-                  "Paranoia"
+                  "PARANOIA"
                 ],
                 "DefinitionId": null,
                 "Id": null,
@@ -1095,7 +1062,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "87c40c3b-81f7-4a77-b6bf-77ee447c4979"
+        "Id": "14b167b5-5288-479d-a782-bf5990a87879"
       },
       {
         "Trigger": 6,
@@ -1130,7 +1097,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "cbb5878f-f039-4089-8771-f99f75733b89"
+        "Id": "bf3ef7ba-9ad1-4fea-8f2b-b70d072a0f32"
       }
     ],
     "imageUrl": "",
@@ -1190,9 +1157,7 @@
   {
     "Families": [],
     "Id": "20",
-    "Name": "Locuras de Hidalgo",
     "Type": 1,
-    "Description": "{add:A\u00F1ade} una {family:paranoia} de cada tipo en el {deck:mazo}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1203,19 +1168,22 @@
             "$type": "AppendCardToDeck",
             "CardId": "16",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "17",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "18",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -1227,7 +1195,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ac846bfd-1634-4ea0-aff6-156d06a4b156"
+        "Id": "589eb39b-8954-4026-9e6b-f1d99857d626"
       }
     ],
     "imageUrl": "",
@@ -1237,12 +1205,10 @@
   },
   {
     "Families": [
-      "Caballo"
+      "CABALLO"
     ],
     "Id": "21",
-    "Name": "Rocinante",
     "Type": 0,
-    "Description": "Si {play:juegas} a Don Quijote, consigo \u002B2/\u002B2",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [
@@ -1282,7 +1248,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "07164ab2-348d-450b-a5a3-fbe519fcc461"
+        "Id": "b3c86981-be7f-4e9e-9fc7-1e824559d248"
       }
     ],
     "imageUrl": "",
@@ -1291,13 +1257,9 @@
     "PlayEffectTriggerTimes": 0
   },
   {
-    "Families": [
-      "Caballo"
-    ],
+    "Families": [],
     "Id": "22",
-    "Name": "How Hungry",
     "Type": 1,
-    "Description": "Si hay alg\u00FAn {family:caballo} en tu {board:mesa} o m\u00E1s, el {player:jugador} se cura el total de la vida de todos",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1305,10 +1267,25 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "AlterPlayerBasedOnCardStats",
-            "Relation": 1,
-            "Target": 0,
-            "BoardSearch": 0,
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 7,
+            "ToRival": false
+          },
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "19",
+            "CardsAmount": 1,
+            "ToRival": false,
+            "TopDeckDepth": 0
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "CountCardCondition",
+          "Filter": {
             "Filter": {
               "CurrentAttack": null,
               "CurrentHealth": null,
@@ -1316,16 +1293,51 @@
               "Health": null,
               "CardType": null,
               "Families": null,
-              "CurrentFamilies": [
-                "Caballo"
-              ],
-              "DefinitionId": null,
+              "CurrentFamilies": null,
+              "DefinitionId": "19",
               "Id": null,
               "HasEffect": null,
               "NumberOfTriggersLeft": null,
               "MustMeetAllCriteria": false
             },
-            "Stats": 1
+            "WhichDeckToSearch": 3,
+            "WhichBoardToSearch": 0,
+            "WhichHandToSearch": 3,
+            "WhichPlayedCardsToSearch": 3,
+            "MaxLength": 0
+          },
+          "Value": {
+            "Type": 0,
+            "Amount": 1
+          }
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "61bd6402-620f-4e6e-866e-5afd6dcc7805"
+      },
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "KillCards",
+            "BoardSearch": 2,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": null,
+              "DefinitionId": "19",
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "Count": 4
           }
         ],
         "Duration": {
@@ -1339,7 +1351,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "17549308-8562-4764-ad89-35af73513f17"
+        "Id": "dfe596ed-d9dd-4df5-a65e-9e08b186bd45"
       }
     ],
     "imageUrl": "",
@@ -1353,17 +1365,15 @@
           "Health": null,
           "CardType": null,
           "Families": null,
-          "CurrentFamilies": [
-            "Caballo"
-          ],
-          "DefinitionId": null,
+          "CurrentFamilies": null,
+          "DefinitionId": "19",
           "Id": null,
           "HasEffect": null,
           "NumberOfTriggersLeft": null,
           "MustMeetAllCriteria": false
         },
         "WhichDeckToSearch": 3,
-        "WhichBoardToSearch": 0,
+        "WhichBoardToSearch": 2,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
         "MaxLength": 0
@@ -1378,12 +1388,10 @@
   },
   {
     "Families": [
-      "Caballero"
+      "CABALLERO"
     ],
     "Id": "23",
-    "Name": "Honoroso Caballero",
     "Type": 0,
-    "Description": "Cuando {die:muero}, las pr\u00F3ximas dos unidades que {play:juegues} consiguen \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 3,
     "Effects": [
@@ -1392,14 +1400,14 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
+            "Description": "CARD_23_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 5,
               "Effects": [
                 {
                   "$type": "AlterMySelf",
                   "Damage": 1,
-                  "Health": 1,
+                  "Health": -1,
                   "UseGameEvent": true
                 }
               ],
@@ -1415,8 +1423,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "Las pr\u00F3ximas dos unidades que juegues consiguen \u002B1/\u002B1",
-              "Id": "fba77739-ae08-40ea-8dd3-f3dabb00f6b8"
+              "Description": "CARD_23_GLOBAL_EFFECT",
+              "Id": "022bfc57-0de1-4ede-ae8c-e478f3724a4b"
             }
           }
         ],
@@ -1431,7 +1439,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "203b468c-a811-42cf-ae17-865b06190188"
+        "Id": "d56dcd95-8ed6-40e2-95e4-2bd55d06e1f1"
       }
     ],
     "imageUrl": "",
@@ -1441,12 +1449,10 @@
   },
   {
     "Families": [
-      "Castellano"
+      "CASTELLANO"
     ],
     "Id": "24",
-    "Name": "Cura Pero P\u00E9rez",
     "Type": 0,
-    "Description": "{endround:Fin de ronda}: {add:Creo} un Libro de Caballer\u00EDa en el {deck:mazo}",
     "BaseAttack": 1,
     "BaseHealth": 4,
     "Effects": [
@@ -1457,7 +1463,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "14",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -1468,7 +1475,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "bc979677-b9cf-4f4a-a9fa-4fee5c50ad2a"
+        "Id": "751943d7-d7d8-478c-90da-efd7d25c0029"
       }
     ],
     "imageUrl": "",
@@ -1478,12 +1485,10 @@
   },
   {
     "Families": [
-      "Caballero"
+      "CABALLERO"
     ],
     "Id": "25",
-    "Name": "El Loco de Sierra Morena",
     "Type": 0,
-    "Description": "Si entra Don Quijote o Sancho Panza en {board:mesa}, le inflinjo 4 de da\u00F1o",
     "BaseAttack": 3,
     "BaseHealth": 4,
     "Effects": [
@@ -1546,7 +1551,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "45797de0-c147-4758-8bca-13da002870b8"
+        "Id": "b8dd7c8f-a9bc-4340-9fb9-3f53c1583369"
       }
     ],
     "imageUrl": "",
@@ -1556,12 +1561,10 @@
   },
   {
     "Families": [
-      "Castellano"
+      "CASTELLANO"
     ],
     "Id": "26",
-    "Name": "Sancho Panza",
     "Type": 0,
-    "Description": "{endround:Fin de Ronda}: Si no hay otros {family:Castellanos} en juego, 0/-1 a las cartas en el campo. {skill:HABILIDAD}: \u002B1/\u002B1 a las unidades en {board:mesa}",
     "BaseAttack": 1,
     "BaseHealth": 5,
     "Effects": [
@@ -1609,7 +1612,7 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Castellano"
+                "CASTELLANO"
               ],
               "DefinitionId": null,
               "Id": null,
@@ -1632,7 +1635,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a25175ba-59f6-4f67-88b8-56b6a23591c7"
+        "Id": "cd2f4865-3dd4-4cbf-95b0-b8843d0f0de3"
       }
     ],
     "imageUrl": "",
@@ -1670,9 +1673,7 @@
   {
     "Families": [],
     "Id": "26_1",
-    "Name": "Llamada de auxilio",
     "Type": 1,
-    "Description": "{draw:Roba} dos {family:caballeros}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1690,7 +1691,7 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Caballero"
+                "CABALLERO"
               ],
               "DefinitionId": null,
               "Id": null,
@@ -1709,7 +1710,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "30005a9c-4c43-4700-8023-a987dfc5f50f"
+        "Id": "7e47cab1-9f8c-4a0d-bdcc-17c16fbee8da"
       }
     ],
     "imageUrl": "",
@@ -1719,12 +1720,10 @@
   },
   {
     "Families": [
-      "Ceniza"
+      "CENIZA"
     ],
     "Id": "27",
-    "Name": "Bola de fuego",
     "Type": 1,
-    "Description": "Inflinjo -4 al primer enemigo de la izquierda en {board:mesa}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1769,7 +1768,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "540ba04a-4ff2-4acf-9f3c-8177fa7efc8e"
+        "Id": "e28bc642-1036-4f26-bad8-35b38a7f3e5d"
       }
     ],
     "imageUrl": "",
@@ -1779,12 +1778,10 @@
   },
   {
     "Families": [
-      "Brujo"
+      "BRUJO"
     ],
     "Id": "28",
-    "Name": "Aprendiz de mago",
     "Type": 0,
-    "Description": "Cuando me {play:juegas}, {add:creo} una bola de fuego",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -1795,7 +1792,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "27",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -1809,7 +1807,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f1ebff65-ada9-492f-8d6a-05fe18333ad0"
+        "Id": "41970ed0-323c-4052-ab48-3b3216c0e692"
       }
     ],
     "imageUrl": "",
@@ -1819,13 +1817,11 @@
   },
   {
     "Families": [
-      "Brujo",
-      "Ceniza"
+      "BRUJO",
+      "CENIZA"
     ],
     "Id": "29",
-    "Name": "Maestro de la ceniza",
     "Type": 0,
-    "Description": "Has {play:jugado} 5 bolas de fuego o m\u00E1s. {endround:Fin de Ronda}: {add:creo} una bola de fuego en el mazo",
     "BaseAttack": 6,
     "BaseHealth": 7,
     "Effects": [
@@ -1836,7 +1832,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "27",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -1847,7 +1844,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f3f127c8-6f9d-448d-a462-fc917eb7d79a"
+        "Id": "9cf0f823-ea80-41f9-8cb0-a9557a27e0d9"
       }
     ],
     "imageUrl": "",
@@ -1878,12 +1875,10 @@
   },
   {
     "Families": [
-      "Ceniza"
+      "CENIZA"
     ],
     "Id": "30",
-    "Name": "Esp\u00EDritu del fuego",
     "Type": 0,
-    "Description": "Cuando {play:juegas} una bola de fuego, inflinjo 1 de da\u00F1o al {play:rival}",
     "BaseAttack": 2,
     "BaseHealth": 3,
     "Effects": [
@@ -1921,7 +1916,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "72c1f59a-69c2-456b-83be-7b012e54867e"
+        "Id": "9fa66907-4102-4af9-aeac-b0f021c35a10"
       }
     ],
     "imageUrl": "",
@@ -1931,12 +1926,10 @@
   },
   {
     "Families": [
-      "Destrucci\u00F3n"
+      "DESTRUCCION"
     ],
     "Id": "31",
-    "Name": "Tierras yermas",
     "Type": 1,
-    "Description": "-2/-2 a la {board:mesa} {rival:enemiga}. El {player:jugador} pierde 2 de vida",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -1986,7 +1979,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1c519fe9-8f0a-47a8-bb96-e661f39bd22f"
+        "Id": "b3039f0e-336d-4447-b0f9-83e16bcd8dbc"
       }
     ],
     "imageUrl": "",
@@ -1997,9 +1990,7 @@
   {
     "Families": [],
     "Id": "32",
-    "Name": "Conjuro del dios del fuego",
     "Type": 1,
-    "Description": "{draw:Roba} dos hechizos",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2036,7 +2027,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d06f28b1-48fe-4045-8243-1117b1f28f81"
+        "Id": "fc961fd8-947c-4270-83c6-5c5185925487"
       }
     ],
     "imageUrl": "",
@@ -2047,9 +2038,7 @@
   {
     "Families": [],
     "Id": "33",
-    "Name": "La llamada de la ceniza",
     "Type": 1,
-    "Description": "{draw:Roba} una carta {family:ceniza}. Curo 2 de vida al {player:jugador}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2067,7 +2056,7 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Ceniza"
+                "CENIZA"
               ],
               "DefinitionId": null,
               "Id": null,
@@ -2093,7 +2082,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f4c4ddc8-fc82-4c6b-a86a-6cbf99d92895"
+        "Id": "4fdfec9d-0e71-470e-98b5-07471abd3a67"
       }
     ],
     "imageUrl": "",
@@ -2103,12 +2092,10 @@
   },
   {
     "Families": [
-      "Destrucci\u00F3n"
+      "DESTRUCCION"
     ],
     "Id": "34",
-    "Name": "La ira del dios del fuego",
     "Type": 1,
-    "Description": "{die:MATA} a TODAS las unidades en {board:mesa}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2146,7 +2133,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7caf4e04-e8f7-49cb-8cf2-b585149da369"
+        "Id": "93e1a25b-2394-4445-bb32-e0350fa43668"
       }
     ],
     "imageUrl": "",
@@ -2156,13 +2143,11 @@
   },
   {
     "Families": [
-      "Destrucci\u00F3n",
-      "Maligno"
+      "DESTRUCCION",
+      "MALIGNO"
     ],
     "Id": "35",
-    "Name": "Chispas escurridizas",
     "Type": 0,
-    "Description": "El pr\u00F3ximo hechizo que {play:juegues}, curo 1 y quito 1 al {rival:rival}",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -2171,7 +2156,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
+            "Description": "CARD_35_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 6,
               "Effects": [
@@ -2198,8 +2183,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "El pr\u00F3ximo hechizo que juegue este jugador, consigue 1 de vida y el rival -1",
-              "Id": "1e8e18c5-4ac8-469b-a12f-992fb7527d70"
+              "Description": "CARD_35_GLOBAL_EFFECT",
+              "Id": "2b349c8e-accf-48af-9c67-96b988e36423"
             }
           }
         ],
@@ -2212,7 +2197,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0bf3bcef-6aa4-4574-9660-247baad1a65b"
+        "Id": "ed0dc1c7-0e4c-40b6-a83a-aa63abe0c180"
       }
     ],
     "imageUrl": "",
@@ -2222,12 +2207,10 @@
   },
   {
     "Families": [
-      "Brujo"
+      "BRUJO"
     ],
     "Id": "36",
-    "Name": "Instructor de las llamas",
     "Type": 0,
-    "Description": "Al {die:morir}, {add:creo} una bola de fuego en tu mano si hay espacio disponible.",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -2252,7 +2235,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ea426363-9743-4e8f-854b-7ce49565e694"
+        "Id": "026f3337-b274-49b7-a84d-1a0fadef4006"
       }
     ],
     "imageUrl": "",
@@ -2263,9 +2246,7 @@
   {
     "Families": [],
     "Id": "37",
-    "Name": "Comuni\u00F3n Espiritual",
     "Type": 1,
-    "Description": "Has {play:jugado} una llamada de la ceniza. Los {family:brujos} en tu mazo consiguen \u002B1/\u002B1.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2285,7 +2266,7 @@
                 "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
-                  "Brujo"
+                  "BRUJO"
                 ],
                 "DefinitionId": null,
                 "Id": null,
@@ -2310,7 +2291,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a525ce4c-7f80-4a65-9c6e-361563f23110"
+        "Id": "d9a3fe1a-fb9a-432f-a601-32eea4fd21fd"
       }
     ],
     "imageUrl": "",
@@ -2341,12 +2322,10 @@
   },
   {
     "Families": [
-      "Maligno"
+      "MALIGNO"
     ],
     "Id": "38",
-    "Name": "Gran negador",
     "Type": 0,
-    "Description": "\u002B3/0 si no has {play:jugado} un hechizo antes. Si no, {draw:roba} una carta.",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -2399,7 +2378,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f9ddc39f-4c8b-4545-a557-bec045ddf02f"
+        "Id": "1945974a-3276-4364-b104-f4d05af8f0fc"
       },
       {
         "Trigger": 5,
@@ -2449,7 +2428,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0639426d-fa16-4c41-ac6e-7988a7bb598a"
+        "Id": "6bec5d7e-de58-4e5c-ae16-e25571269a59"
       }
     ],
     "imageUrl": "",
@@ -2459,13 +2438,11 @@
   },
   {
     "Families": [
-      "Brujo",
-      "Maligno"
+      "BRUJO",
+      "MALIGNO"
     ],
     "Id": "39",
-    "Name": "Maquiavelo el maquiav\u00E9lico",
     "Type": 0,
-    "Description": "Cuando {play:juegas} un hechizo, consigo \u002B1/0",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -2491,7 +2468,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "efbd7855-ba6f-499a-ba6d-ce9617a4f3c1"
+        "Id": "71afdb89-57e1-4551-bcf5-f17290fab6a8"
       }
     ],
     "imageUrl": "",
@@ -2501,15 +2478,13 @@
   },
   {
     "Families": [
-      "Gym",
-      "Rata"
+      "GYM",
+      "RATA"
     ],
     "Id": "40",
-    "Name": "GymRat",
     "Type": 0,
-    "Description": "Cuando {die:muero}, {add:creo} un batido de prote\u00EDnas en el {deck:mazo}",
-    "BaseAttack": 1,
-    "BaseHealth": 2,
+    "BaseAttack": 3,
+    "BaseHealth": 1,
     "Effects": [
       {
         "Trigger": 7,
@@ -2518,7 +2493,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "42",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -2532,7 +2508,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e9ff42c4-a58f-4d9c-8e0e-ea23dd0a750f"
+        "Id": "51edb0a6-99d8-4310-84bd-ec19e85dde64"
       }
     ],
     "imageUrl": "",
@@ -2542,12 +2518,10 @@
   },
   {
     "Families": [
-      "Entrenamiento"
+      "ENTRENAMIENTO"
     ],
     "Id": "41",
-    "Name": "D\u00EDa de pierna",
     "Type": 1,
-    "Description": "0/\u002B2 a la {board:mesa} aliada. Las cartas {family:Gym} en {board:mesa} aliada pierden 3 de vida",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2593,7 +2567,7 @@
                 "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
-                  "Gym"
+                  "GYM"
                 ],
                 "DefinitionId": null,
                 "Id": null,
@@ -2620,7 +2594,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7aa2f55f-895f-408b-860c-349ddaaf4dc9"
+        "Id": "7313d4c0-6dc3-4217-87a1-8dd009f3b3c8"
       }
     ],
     "imageUrl": "",
@@ -2630,12 +2604,10 @@
   },
   {
     "Families": [
-      "Entrenamiento"
+      "ENTRENAMIENTO"
     ],
     "Id": "42",
-    "Name": "Batido de prote\u00EDnas",
     "Type": 1,
-    "Description": "La primera unidad en la {board:mesa} del {player:jugador} consigue \u002B1/\u002B2.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2678,7 +2650,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "511400e5-1423-40bc-ae6a-60759a829c2c"
+        "Id": "48ccaa9b-c463-48db-adad-c40a7d530bc4"
       }
     ],
     "imageUrl": "",
@@ -2688,12 +2660,10 @@
   },
   {
     "Families": [
-      "Gym"
+      "GYM"
     ],
     "Id": "43",
-    "Name": "Entrenador personal",
     "Type": 0,
-    "Description": "{add:Crea} dos batidos de prote\u00EDnas en el {board:mazo}",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [
@@ -2704,7 +2674,8 @@
             "$type": "AppendCardToDeck",
             "CardId": "42",
             "CardsAmount": 2,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 0
           }
         ],
         "Duration": {
@@ -2718,7 +2689,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "de539a3d-3955-4fc0-ac92-8d9683024c95"
+        "Id": "0196fd1a-bde1-4311-9e01-c61716e4616e"
       }
     ],
     "imageUrl": "",
@@ -2729,11 +2700,9 @@
   {
     "Families": [],
     "Id": "44",
-    "Name": "El se\u00F1or de las mancuernas",
     "Type": 0,
-    "Description": "Cuando el {player:jugador} {play:juega} un batido de prote\u00EDnas, consigo \u002B1/0",
     "BaseAttack": 0,
-    "BaseHealth": 2,
+    "BaseHealth": 4,
     "Effects": [
       {
         "Trigger": 6,
@@ -2770,7 +2739,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9c4f7917-10d1-4647-8e1d-be4f20f88a56"
+        "Id": "b631695f-f76c-442f-8b66-ccc182284622"
       }
     ],
     "imageUrl": "",
@@ -2780,13 +2749,11 @@
   },
   {
     "Families": [
-      "Gym"
+      "GYM"
     ],
     "Id": "45",
-    "Name": "Gerente del Basic Fit",
     "Type": 0,
-    "Description": "Si hay una carta {family:Gym} en la {board:mesa} del {player:jugador}, {draw:roba} una carta",
-    "BaseAttack": 1,
+    "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
       {
@@ -2813,7 +2780,7 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Gym"
+                "GYM"
               ],
               "DefinitionId": null,
               "Id": null,
@@ -2836,7 +2803,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2b803341-481d-4b44-9933-87414be3b201"
+        "Id": "4c42e1da-055c-4dcc-9f95-6d47d3e34107"
       }
     ],
     "imageUrl": "",
@@ -2846,12 +2813,10 @@
   },
   {
     "Families": [
-      "Motivacion"
+      "MOTIVACION"
     ],
     "Id": "46",
-    "Name": "David Goggins",
     "Type": 0,
-    "Description": "Despu\u00E9s de {attack:golpear}, consigo \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -2875,7 +2840,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "71339d8a-6848-4176-b5e2-318c318be64f"
+        "Id": "7584fe42-203c-4e0e-bfd9-35c237c7de42"
       }
     ],
     "imageUrl": "",
@@ -2885,14 +2850,12 @@
   },
   {
     "Families": [
-      "Motivacion"
+      "MOTIVACION"
     ],
     "Id": "47",
-    "Name": "Gran sabio",
     "Type": 0,
-    "Description": "Cuando recibo da\u00F1o, consigo \u002B1/\u002B1",
     "BaseAttack": 0,
-    "BaseHealth": 2,
+    "BaseHealth": 3,
     "Effects": [
       {
         "Trigger": 3,
@@ -2927,7 +2890,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1d176fec-970c-4a7f-a658-938f9d4b085b"
+        "Id": "197fea91-f74d-49c8-adcb-a69c7aee629a"
       }
     ],
     "imageUrl": "",
@@ -2937,12 +2900,10 @@
   },
   {
     "Families": [
-      "Motivacion"
+      "MOTIVACION"
     ],
     "Id": "48",
-    "Name": "Tik Tok motivacional",
     "Type": 1,
-    "Description": "Necesitas una carta con 1 de da\u00F1o o menos en {board:mesa}. Las dos primeras unidades en la izquierda de tu {board:mesa} ganan \u002B2/\u002B2",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -2985,7 +2946,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "726158c3-26b6-4fc1-a5b9-db99f5f29ba2"
+        "Id": "8bd04488-7361-49eb-97f2-a41f4c28e0eb"
       }
     ],
     "imageUrl": "",
@@ -3025,12 +2986,10 @@
   },
   {
     "Families": [
-      "Motivacion"
+      "MOTIVACION"
     ],
     "Id": "49",
-    "Name": "No pain, no gain",
     "Type": 1,
-    "Description": "Inflinge 1 de da\u00F1o hasta 2 unidades de tu propia {board:mesa}, y {draw:roba} una carta. {skill:HABILIDAD}: inflinge 1 de da\u00F1o a todas las cartas de tu {board:mesa} y les otorgas \u002B2/0",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3078,7 +3037,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2b24529a-a6f4-4e0f-8d03-bd7ec8ed8516"
+        "Id": "82a1c506-8b0d-4daf-b67d-4c9da3cb6e13"
       }
     ],
     "imageUrl": "",
@@ -3169,9 +3128,7 @@
   {
     "Families": [],
     "Id": "50",
-    "Name": "Esteroides",
     "Type": 1,
-    "Description": "Curo la cantidad de vida total de tus unidades en {board:mesa}.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3209,7 +3166,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4c7d12aa-c338-4438-bbb6-2f08c9405f8c"
+        "Id": "a047d049-c905-46cf-9e6a-ec269f33db8f"
       }
     ],
     "imageUrl": "",
@@ -3219,13 +3176,11 @@
   },
   {
     "Families": [
-      "Leyenda",
-      "Motivacion"
+      "LEYENDA",
+      "MOTIVACION"
     ],
     "Id": "51",
-    "Name": "Biscuit Oliva",
     "Type": 0,
-    "Description": "Necesitas al menos 2 tropas de {family:Gym}. Cuando me {play:juegas}, \u002B1/\u002B1 a la {board:mesa} aliada.",
     "BaseAttack": 3,
     "BaseHealth": 3,
     "Effects": [
@@ -3268,7 +3223,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5010f218-550b-464a-8559-6679a6d661af"
+        "Id": "0fe49bf3-df4d-49d5-a167-a7f9ab9a72d3"
       }
     ],
     "imageUrl": "",
@@ -3283,7 +3238,7 @@
           "CardType": null,
           "Families": null,
           "CurrentFamilies": [
-            "Gym"
+            "GYM"
           ],
           "DefinitionId": null,
           "Id": null,
@@ -3308,9 +3263,7 @@
   {
     "Families": [],
     "Id": "52",
-    "Name": "Flexeo de m\u00FAsculos",
     "Type": 1,
-    "Description": "Si tienes 10 de vida o m\u00E1s, {draw:roba} 3 cartas. En caso contrario, te curas 5 de vida.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3339,7 +3292,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7bab7a15-093e-468d-ab23-7a277b5b3a4e"
+        "Id": "b0c2e945-2932-442d-8223-7e392314cbe1"
       },
       {
         "Trigger": 6,
@@ -3366,7 +3319,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "570d84ae-0499-4137-b7d8-fa3b22ccedcc"
+        "Id": "515ae02a-2bd5-4916-95f9-dbd023808f11"
       }
     ],
     "imageUrl": "",
@@ -3376,12 +3329,10 @@
   },
   {
     "Families": [
-      "Hielo"
+      "HIELO"
     ],
     "Id": "53",
-    "Name": "Fragmento helado",
     "Type": 1,
-    "Description": "-4/0 a una unidad enemiga (izq)",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3426,7 +3377,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6115def5-4d14-4296-a25b-36a39ec36544"
+        "Id": "4d76cb78-fda1-4d66-bf8a-e049a0558a6f"
       }
     ],
     "imageUrl": "",
@@ -3436,12 +3387,10 @@
   },
   {
     "Families": [
-      "Brujo"
+      "BRUJO"
     ],
     "Id": "54",
-    "Name": "Aprendiz del invierno",
     "Type": 0,
-    "Description": "Cada vez que juegues un hechizo hielo, -1/0 a un enemigo (IZQ)",
     "BaseAttack": 1,
     "BaseHealth": 3,
     "Effects": [
@@ -3489,7 +3438,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Hielo"
+              "HIELO"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -3502,7 +3451,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2cf0627a-80fd-45f7-a4c5-8cebc7ce0710"
+        "Id": "ae26028e-88e8-4bd8-ada3-88a41afb2245"
       }
     ],
     "imageUrl": "",
@@ -3513,9 +3462,7 @@
   {
     "Families": [],
     "Id": "55",
-    "Name": "Ventisca cruel",
     "Type": 1,
-    "Description": "-1/0 a toda la mesa enemiga. Roba una carta",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3565,7 +3512,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "65fdee19-9e8e-4ef8-92fb-94a738d8e1d5"
+        "Id": "5315bb19-3172-4e2e-a0fa-09250e259dfb"
       }
     ],
     "imageUrl": "",
@@ -3575,12 +3522,10 @@
   },
   {
     "Families": [
-      "Hielo"
+      "HIELO"
     ],
     "Id": "56",
-    "Name": "G\u00F3lem de escarcha",
     "Type": 0,
-    "Description": "Cuando se altera el ataque de las unidades enemigas, consigo \u002B1/0",
     "BaseAttack": 0,
     "BaseHealth": 3,
     "Effects": [
@@ -3619,7 +3564,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e2e5328f-6a58-4216-a032-71398d8c36a7"
+        "Id": "d0fed7b4-7cdf-4808-81fa-fbbbe407ff54"
       }
     ],
     "imageUrl": "",
@@ -3629,12 +3574,10 @@
   },
   {
     "Families": [
-      "Hielo"
+      "HIELO"
     ],
     "Id": "57",
-    "Name": "Prisi\u00F3n glaciar",
     "Type": 1,
-    "Description": "-4/0 a una unidad enemiga (izq)",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3642,30 +3585,14 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "AlterUnitStatsEffect",
-            "Health": 0,
-            "Damage": -4,
-            "Filter": {
-              "Filter": {
-                "CurrentAttack": null,
-                "CurrentHealth": null,
-                "Attack": null,
-                "Health": null,
-                "CardType": null,
-                "Families": null,
-                "CurrentFamilies": null,
-                "DefinitionId": null,
-                "Id": null,
-                "HasEffect": null,
-                "NumberOfTriggersLeft": null,
-                "MustMeetAllCriteria": false
-              },
-              "WhichDeckToSearch": 3,
-              "WhichBoardToSearch": 1,
-              "WhichHandToSearch": 3,
-              "WhichPlayedCardsToSearch": 3,
-              "MaxLength": 1
-            }
+            "$type": "SetUnitToCeroEffect",
+            "Amount": 1,
+            "ToPlayer": true
+          },
+          {
+            "$type": "SetUnitToCeroEffect",
+            "Amount": 1,
+            "ToPlayer": false
           }
         ],
         "Duration": {
@@ -3679,22 +3606,47 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1fff9a76-bd72-4391-83b6-5d45f7f71e38"
+        "Id": "c7c4781b-96ff-425f-9faa-d98c8dc9132b"
       }
     ],
     "imageUrl": "",
-    "ConditionToPlay": null,
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "CardType": null,
+          "Families": null,
+          "CurrentFamilies": null,
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 3,
+        "WhichBoardToSearch": 0,
+        "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
+        "MaxLength": 0
+      },
+      "Value": {
+        "Type": 0,
+        "Amount": 1
+      }
+    },
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   },
   {
     "Families": [
-      "Brujo"
+      "BRUJO"
     ],
     "Id": "58",
-    "Name": "Sabio de la nieve",
     "Type": 0,
-    "Description": "Final de ronda: -1/0 a dos unidades enemigas (izq)",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -3736,7 +3688,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e21aa390-3fef-407b-91b4-fc417feaa762"
+        "Id": "f4954ec6-4a02-4686-8c20-ea2077adb857"
       }
     ],
     "imageUrl": "",
@@ -3746,12 +3698,10 @@
   },
   {
     "Families": [
-      "Hielo"
+      "HIELO"
     ],
     "Id": "59",
-    "Name": "Coraz\u00F3n congelado",
     "Type": 1,
-    "Description": "Roba tantas cartas como unidades con 0 de da\u00F1o tenga el rival. Despu\u00E9s, mata esas unidades.",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3822,7 +3772,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c4f13f9e-859e-4a73-96cc-dde4bcee59ba"
+        "Id": "c0e3ac34-081e-4b66-91ac-3dc64a9958ab"
       }
     ],
     "imageUrl": "",
@@ -3862,12 +3812,10 @@
   },
   {
     "Families": [
-      "Hielo"
+      "HIELO"
     ],
     "Id": "60",
-    "Name": "Elemental de hielo",
     "Type": 0,
-    "Description": "Al jugarme: -1/0 a la mesa rival. Al morir, curo a mi jugador 3 de vida.",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
@@ -3912,7 +3860,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "68963e1b-8531-402b-89f3-79d9ff3d9579"
+        "Id": "edd331eb-e64a-4a55-89d5-3e367735dc21"
       },
       {
         "Trigger": 7,
@@ -3934,7 +3882,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "537b0e74-d20b-482e-86cd-0fd15b2f507b"
+        "Id": "0807c00c-c947-4001-b6b2-19ff784eee04"
       }
     ],
     "imageUrl": "",
@@ -3944,12 +3892,10 @@
   },
   {
     "Families": [
-      "Hielo"
+      "HIELO"
     ],
     "Id": "61",
-    "Name": "Invierno interminable",
     "Type": 1,
-    "Description": "Durante los pr\u00F3ximos dos finales de ronda, -1/0 a la mesa enemiga",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -3958,7 +3904,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "Durante los pr\u00F3ximos dos finales de ronda, -1/0 a la mesa enemiga",
+            "Description": "CARD_61_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 0,
               "Effects": [
@@ -3997,8 +3943,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "Durante los pr\u00F3ximos dos finales de ronda, -1/0 a la mesa enemiga",
-              "Id": "a2d9e03b-b56d-4bc0-bacd-acdae49a2072"
+              "Description": "CARD_61_GLOBAL_EFFECT",
+              "Id": "b19ceaa3-40f3-4f80-9578-baf544a744c8"
             }
           }
         ],
@@ -4011,7 +3957,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "aa05767c-42f1-4b3c-8e79-0b8b6117e654"
+        "Id": "6141f9f9-484a-40f1-9dd2-f6476acd2d21"
       }
     ],
     "imageUrl": "",
@@ -4021,14 +3967,12 @@
   },
   {
     "Families": [
-      "Hielo",
-      "Leyenda",
-      "Drag\u00F3n"
+      "HIELO",
+      "LEYENDA",
+      "DRAGON"
     ],
     "Id": "62",
-    "Name": "Drag\u00F3n boreal",
     "Type": 0,
-    "Description": "No tienes criaturas en mesa, y has jugado 8 cartas de Hielo o m\u00E1s. Final de ronda: si hay hueco, invoco una cr\u00EDa de drag\u00F3n",
     "BaseAttack": 5,
     "BaseHealth": 6,
     "Effects": [
@@ -4050,7 +3994,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "be6ed23f-4e16-4018-89ca-7a17a2df0ed0"
+        "Id": "0189946b-3a8b-4d5e-8fa0-813ece01eeec"
       }
     ],
     "imageUrl": "",
@@ -4067,7 +4011,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Hielo"
+              "HIELO"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -4117,13 +4061,11 @@
   },
   {
     "Families": [
-      "Hielo",
-      "Brujo"
+      "HIELO",
+      "BRUJO"
     ],
     "Id": "63",
-    "Name": "Hechicero del cero absoluto",
     "Type": 0,
-    "Description": "Cuando una unidad enemiga llega a 0 de ataque, le inflinjo 2 de da\u00F1o",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [
@@ -4165,7 +4107,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2d81f4bd-bee5-445d-a71f-67f10a768ea8"
+        "Id": "4373ebcd-3d13-4493-b8a9-dbb629b921b2"
       }
     ],
     "imageUrl": "",
@@ -4175,12 +4117,10 @@
   },
   {
     "Families": [
-      "Hielo"
+      "HIELO"
     ],
     "Id": "64",
-    "Name": "Avalancha",
     "Type": 1,
-    "Description": "Has jugado 5 hechizos de hielo o m\u00E1s. -2/0 a toda la mesa enemiga. Las unidades con 0 de ataque reciben adem\u00E1s -3/-3",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4216,7 +4156,7 @@
           {
             "$type": "AlterUnitStatsEffect",
             "Health": -3,
-            "Damage": -3,
+            "Damage": 0,
             "Filter": {
               "Filter": {
                 "CurrentAttack": {
@@ -4254,7 +4194,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "68fb656c-41f6-4082-87e9-ebf7a4ede494"
+        "Id": "59243d98-446a-4568-b155-26875cade734"
       }
     ],
     "imageUrl": "",
@@ -4268,7 +4208,7 @@
         "CardType": 1,
         "Families": null,
         "CurrentFamilies": [
-          "Hielo"
+          "HIELO"
         ],
         "DefinitionId": null,
         "Id": null,
@@ -4287,13 +4227,11 @@
   },
   {
     "Families": [
-      "Leyenda",
-      "Drag\u00F3n"
+      "LEYENDA",
+      "DRAGON"
     ],
     "Id": "65",
-    "Name": "Cr\u00EDa de drag\u00F3n",
     "Type": 0,
-    "Description": "HABILIDAD: quito 1 de vida al rival y se lo otorgo a mi jugador",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [],
@@ -4315,12 +4253,10 @@
   },
   {
     "Families": [
-      "Capa"
+      "CAPA"
     ],
     "Id": "70",
-    "Name": "RED",
     "Type": 0,
-    "Description": "{add:Crea} ENLACE y BITS en el {deck:mazo}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -4331,13 +4267,15 @@
             "$type": "AppendCardToDeck",
             "CardId": "71",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "72",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           }
         ],
         "Duration": {
@@ -4351,7 +4289,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1aa78c3c-8436-4753-9585-9cd88a8ff998"
+        "Id": "f29e48d3-5f6c-45e5-882e-f526f809a984"
       }
     ],
     "imageUrl": "",
@@ -4361,12 +4299,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "71",
-    "Name": "BITS",
     "Type": 1,
-    "Description": "Curo 2 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4390,7 +4326,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "3cf16919-50c8-4925-8071-9637f09a02c7"
+        "Id": "936bd4ae-2773-443f-8f22-e4eb12d81a6d"
       }
     ],
     "imageUrl": "",
@@ -4400,12 +4336,10 @@
   },
   {
     "Families": [
-      "Capa"
+      "CAPA"
     ],
     "Id": "72",
-    "Name": "ENLACE",
     "Type": 0,
-    "Description": "{add:Crea} RED y Trama en el mazo",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [
@@ -4416,13 +4350,15 @@
             "$type": "AppendCardToDeck",
             "CardId": "73",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "74",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           }
         ],
         "Duration": {
@@ -4436,7 +4372,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "35506a52-8a74-47c4-bcb9-c9b9bb245145"
+        "Id": "cb3e2fee-c941-4a2c-ab33-a1ee70ab4957"
       }
     ],
     "imageUrl": "",
@@ -4446,12 +4382,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "73",
-    "Name": "Trama",
     "Type": 1,
-    "Description": "{draw:Roba} una carta",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4475,7 +4409,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8762941c-193c-4b7c-b9c5-37565b4de2e0"
+        "Id": "27c5b391-0a1c-4496-b68a-e0232189fad7"
       }
     ],
     "imageUrl": "",
@@ -4485,12 +4419,10 @@
   },
   {
     "Families": [
-      "Capa"
+      "CAPA"
     ],
     "Id": "74",
-    "Name": "RED",
     "Type": 0,
-    "Description": "{add:Crea} TRANSPORTE y Paquete en el {deck:mazo}",
     "BaseAttack": 3,
     "BaseHealth": 3,
     "Effects": [
@@ -4501,13 +4433,15 @@
             "$type": "AppendCardToDeck",
             "CardId": "75",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "76",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           }
         ],
         "Duration": {
@@ -4521,7 +4455,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8c7cf305-ec4a-4fde-9c97-d5130a969831"
+        "Id": "4f6a9ae7-6782-497a-a384-45ac5515f24a"
       }
     ],
     "imageUrl": "",
@@ -4531,12 +4465,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "75",
-    "Name": "Paquete",
     "Type": 1,
-    "Description": "0/\u002B1 a las unidades aliadas en {board:mesa}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4581,7 +4513,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "3cd87a14-0a12-4600-bdfd-e1c325612362"
+        "Id": "f55f8ca4-b36d-4fdc-9a85-1102da725f7c"
       }
     ],
     "imageUrl": "",
@@ -4591,12 +4523,10 @@
   },
   {
     "Families": [
-      "Capa"
+      "CAPA"
     ],
     "Id": "76",
-    "Name": "TRANSPORTE",
     "Type": 0,
-    "Description": "{add:Crea} SESI\u00D3N y Datagrama en el {deck:mazo}",
     "BaseAttack": 4,
     "BaseHealth": 4,
     "Effects": [
@@ -4607,13 +4537,15 @@
             "$type": "AppendCardToDeck",
             "CardId": "77",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "78",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           }
         ],
         "Duration": {
@@ -4627,7 +4559,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8c37d82e-1271-4367-832c-bc5b54e0d045"
+        "Id": "441bca7f-52d4-482e-a918-db5c7e528345"
       }
     ],
     "imageUrl": "",
@@ -4637,12 +4569,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "77",
-    "Name": "Datagrama",
     "Type": 1,
-    "Description": "\u002B1/0 a las unidades aliadas en {board:mesa}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4687,7 +4617,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7790a4e7-6f6c-45c8-bede-fae7aeba463c"
+        "Id": "86c4ee30-018a-4ad2-8d98-0f76609a289a"
       }
     ],
     "imageUrl": "",
@@ -4697,12 +4627,10 @@
   },
   {
     "Families": [
-      "Capa"
+      "CAPA"
     ],
     "Id": "78",
-    "Name": "SESI\u00D3N",
     "Type": 0,
-    "Description": "{add:Crea} PRESENTACI\u00D3N y Datos de sesi\u00F3n en el {deck:mazo}",
     "BaseAttack": 5,
     "BaseHealth": 5,
     "Effects": [
@@ -4713,13 +4641,15 @@
             "$type": "AppendCardToDeck",
             "CardId": "79",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "80",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           }
         ],
         "Duration": {
@@ -4733,7 +4663,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "fdddffa9-e5fd-4ccc-a006-971911b358a5"
+        "Id": "795896b6-aa2f-4ea5-a248-0aff1e12c4e4"
       }
     ],
     "imageUrl": "",
@@ -4743,12 +4673,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "79",
-    "Name": "Datos de sesi\u00F3n",
     "Type": 1,
-    "Description": "Curo 4 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4772,7 +4700,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5ee2d100-abec-4b27-bcc9-fb2c46dc3fab"
+        "Id": "db57a693-bf58-46e2-a3df-699424f1d8ce"
       }
     ],
     "imageUrl": "",
@@ -4782,12 +4710,10 @@
   },
   {
     "Families": [
-      "Capa"
+      "CAPA"
     ],
     "Id": "80",
-    "Name": "PRESENTACI\u00D3N",
     "Type": 0,
-    "Description": "{add:Crea} APLICACI\u00D3N y Datos de presentaci\u00F3n en el {deck:mazo}",
     "BaseAttack": 6,
     "BaseHealth": 6,
     "Effects": [
@@ -4798,13 +4724,15 @@
             "$type": "AppendCardToDeck",
             "CardId": "81",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "82",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           }
         ],
         "Duration": {
@@ -4818,7 +4746,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "009ec7b9-f18f-411c-8583-74a0c3c2e5ad"
+        "Id": "1718324a-c7ae-4ebc-ba69-a1f3d3725922"
       }
     ],
     "imageUrl": "",
@@ -4828,12 +4756,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "81",
-    "Name": "Datos de presentaci\u00F3n",
     "Type": 1,
-    "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades aliadas que se {play:jueguen}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4842,7 +4768,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades jugadas",
+            "Description": "[\u002B2/\u002B2] a las dos pr\u00F3ximas unidades jugadas",
             "Effect": {
               "Trigger": 5,
               "Effects": [
@@ -4865,8 +4791,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "\u002B2/\u002B2 a las dos pr\u00F3ximas unidades jugadas",
-              "Id": "3d9e60a8-25e1-4f12-80e9-9349c4a68dcd"
+              "Description": "[\u002B2/\u002B2] a las dos pr\u00F3ximas unidades jugadas",
+              "Id": "07976bce-a142-49fa-9ab8-17b6df182583"
             }
           }
         ],
@@ -4881,7 +4807,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "cf2fa63c-1e17-4a38-8757-c1a2b5af5a9c"
+        "Id": "ad2e8764-9ad5-4170-b338-34c84a27b8fc"
       }
     ],
     "imageUrl": "",
@@ -4891,12 +4817,10 @@
   },
   {
     "Families": [
-      "Capa"
+      "CAPA"
     ],
     "Id": "82",
-    "Name": "APLICACI\u00D3N",
     "Type": 0,
-    "Description": "{add:Crea} Ex Machina y Datos de aplicaci\u00F3n en el {deck:mazo}",
     "BaseAttack": 7,
     "BaseHealth": 7,
     "Effects": [
@@ -4907,13 +4831,15 @@
             "$type": "AppendCardToDeck",
             "CardId": "83",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
             "CardId": "84",
             "CardsAmount": 1,
-            "ToRival": false
+            "ToRival": false,
+            "TopDeckDepth": 10
           }
         ],
         "Duration": {
@@ -4927,7 +4853,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "74da1cfd-a560-47d1-a8c0-e9efc6eb2052"
+        "Id": "81fb286b-fb59-4644-ac66-7c66cd806d88"
       }
     ],
     "imageUrl": "",
@@ -4937,12 +4863,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "83",
-    "Name": "Datos de aplicaci\u00F3n",
     "Type": 1,
-    "Description": "{draw:Roba} 3 cartas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -4966,7 +4890,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f0ecae47-7ecc-4dfd-b678-c1bd2c30369e"
+        "Id": "38aad020-59fd-4b3c-a88e-1b432607e855"
       }
     ],
     "imageUrl": "",
@@ -4976,12 +4900,10 @@
   },
   {
     "Families": [
-      "Machina"
+      "MACHINA"
     ],
     "Id": "84",
-    "Name": "Ex Machina",
     "Type": 0,
-    "Description": "Todas las capas han sido ensambladas. La m\u00E1quina perfecta. {endround:Final de ronda}: decido por el jugador",
     "BaseAttack": 0,
     "BaseHealth": 25,
     "Effects": [
@@ -5000,7 +4922,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e9424fe3-8ba1-4148-9d03-cec8507819b4"
+        "Id": "819799f8-53e5-4050-87c3-ea414b0747c8"
       }
     ],
     "imageUrl": "",
@@ -5010,12 +4932,10 @@
   },
   {
     "Families": [
-      "Nodo"
+      "NODO"
     ],
     "Id": "85",
-    "Name": "HUB",
     "Type": 0,
-    "Description": "Cuando el {player:jugador} {play:juega} un hechizo {family:paquete}, se activa una vez m\u00E1s",
     "BaseAttack": 0,
     "BaseHealth": 6,
     "Effects": [
@@ -5040,7 +4960,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Paquete"
+              "PAQUETE"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -5053,7 +4973,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "85f18475-77fd-494e-9fe0-28b53fdee7cb"
+        "Id": "6ac4ef25-2ba3-45d3-a887-73406bd1fc5d"
       }
     ],
     "imageUrl": "",
@@ -5063,50 +4983,46 @@
   },
   {
     "Families": [
-      "Nodo"
+      "NODO"
     ],
     "Id": "86",
-    "Name": "Router",
     "Type": 0,
-    "Description": "Cuando el {player:jugador} {play:juega} un {family:paquete}, {add:creo} un {family:paquete} de capa menor o igual al jugado y lo {add:a\u00F1ado} al {deck:mazo}",
     "BaseAttack": 1,
     "BaseHealth": 3,
     "Effects": [
       {
-        "Trigger": 6,
+        "Trigger": 0,
         "Effects": [
           {
-            "$type": "GeneratePaqueteEffect"
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "PAQUETE"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            }
           }
         ],
         "Duration": {
           "$type": "Always"
         },
-        "Condition": {
-          "$type": "PlayerCardCondition",
-          "Me": true,
-          "Filter": {
-            "CurrentAttack": null,
-            "CurrentHealth": null,
-            "Attack": null,
-            "Health": null,
-            "CardType": null,
-            "Families": null,
-            "CurrentFamilies": [
-              "Paquete"
-            ],
-            "DefinitionId": null,
-            "Id": null,
-            "HasEffect": null,
-            "NumberOfTriggersLeft": null,
-            "MustMeetAllCriteria": false
-          }
-        },
+        "Condition": null,
         "SourceCard": null,
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "61cd1276-9ef3-40b3-a295-4cc2c81cff03"
+        "Id": "38570f41-1c04-4074-95b5-1de4754c3e6b"
       }
     ],
     "imageUrl": "",
@@ -5117,9 +5033,7 @@
   {
     "Families": [],
     "Id": "87",
-    "Name": "Electricista apa\u00F1ado",
     "Type": 0,
-    "Description": "Cuando me {play:juegas}, {draw:roba} una {family:capa}",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [
@@ -5137,7 +5051,7 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Capa"
+                "CAPA"
               ],
               "DefinitionId": null,
               "Id": null,
@@ -5158,7 +5072,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1fa795c8-3356-4342-9828-afe767486646"
+        "Id": "5a3ef099-02b7-4d95-9867-79bd81dcc903"
       }
     ],
     "imageUrl": "",
@@ -5169,9 +5083,7 @@
   {
     "Families": [],
     "Id": "88",
-    "Name": "Hacker",
     "Type": 0,
-    "Description": "Cuando se {play:juega} un {family:paquete}, {add:creo} un {family:virus} en el {deck:mazo} del {rival:rival}. {skill:HABILIDAD}: da\u00F1o al {rival:rival} 1 por cada {family:virus} que tenga en la mano",
     "BaseAttack": 1,
     "BaseHealth": 2,
     "Effects": [
@@ -5179,7 +5091,7 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "AppendCardToDeck",
+            "$type": "CreateCardInHand",
             "CardId": "89",
             "CardsAmount": 1,
             "ToRival": true
@@ -5199,7 +5111,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Paquete"
+              "PAQUETE"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -5212,7 +5124,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "986eb1fd-665a-4269-b9a7-1816ce4037e0"
+        "Id": "2b8ec646-ab3f-4299-91e2-3d89d0727db2"
       }
     ],
     "imageUrl": "",
@@ -5232,7 +5144,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Virus"
+              "VIRUS"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -5252,12 +5164,10 @@
   },
   {
     "Families": [
-      "Virus"
+      "VIRUS"
     ],
     "Id": "89",
-    "Name": "Malware",
     "Type": 1,
-    "Description": "Inflinjo 1 de da\u00F1o a mi {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5279,7 +5189,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b86b2618-5637-4cd6-9259-abf8d47f554a"
+        "Id": "401db02c-0c78-4482-a8c1-a4d211f6b60d"
       }
     ],
     "imageUrl": "",
@@ -5289,12 +5199,10 @@
   },
   {
     "Families": [
-      "Paquete"
+      "PAQUETE"
     ],
     "Id": "90",
-    "Name": "Mensaje de broadcast",
     "Type": 1,
-    "Description": "{play:Juega} todos los {family:virus} que haya en mano del {rival:rival}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5312,14 +5220,15 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Virus"
+                "VIRUS"
               ],
               "DefinitionId": null,
               "Id": null,
               "HasEffect": null,
               "NumberOfTriggersLeft": null,
               "MustMeetAllCriteria": false
-            }
+            },
+            "MaxCards": 2147483647
           }
         ],
         "Duration": {
@@ -5331,7 +5240,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "04250209-4ae0-42f0-a775-1ea1c83ff2a2"
+        "Id": "19a46a1f-b791-4569-82f4-6c5222ed031c"
       }
     ],
     "imageUrl": "",
@@ -5342,9 +5251,7 @@
   {
     "Families": [],
     "Id": "91",
-    "Name": "Denegaci\u00F3n de servicio",
     "Type": 1,
-    "Description": "-3/0 a la {board:mesa} del {rival:rival}, \u002B1/0 a la {board:mesa} del {rival:rival} dentro de 2 rondas",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5376,55 +5283,6 @@
               "WhichPlayedCardsToSearch": 3,
               "MaxLength": 0
             }
-          },
-          {
-            "$type": "AppendGlobalEffect",
-            "Description": "Las unidades del rival conseguir\u00E1n \u002B1/0 dentro de dos rondas",
-            "Effect": {
-              "Trigger": 0,
-              "Effects": [
-                {
-                  "$type": "AlterUnitStatsEffect",
-                  "Health": 0,
-                  "Damage": 1,
-                  "Filter": {
-                    "Filter": {
-                      "CurrentAttack": null,
-                      "CurrentHealth": null,
-                      "Attack": null,
-                      "Health": null,
-                      "CardType": null,
-                      "Families": null,
-                      "CurrentFamilies": null,
-                      "DefinitionId": null,
-                      "Id": null,
-                      "HasEffect": null,
-                      "NumberOfTriggersLeft": null,
-                      "MustMeetAllCriteria": false
-                    },
-                    "WhichDeckToSearch": 3,
-                    "WhichBoardToSearch": 1,
-                    "WhichHandToSearch": 3,
-                    "WhichPlayedCardsToSearch": 3,
-                    "MaxLength": 0
-                  }
-                }
-              ],
-              "Duration": {
-                "$type": "DurationByExecutions",
-                "times": 1
-              },
-              "Condition": {
-                "$type": "TurnCounterCondition",
-                "Amount": 2,
-                "AmountCounter": 0
-              },
-              "SourceCard": null,
-              "Player": null,
-              "Expired": false,
-              "Description": "Las unidades del rival conseguir\u00E1n \u002B1/0 dentro de dos rondas",
-              "Id": "6ea8c98b-a2cd-4d51-b01f-2f8c1ca69210"
-            }
           }
         ],
         "Duration": {
@@ -5436,7 +5294,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "951bcd52-fb9c-4b53-8de2-ca3d76c9d1f6"
+        "Id": "a0980ee3-3db1-4f70-a481-bb216b76480b"
       }
     ],
     "imageUrl": "",
@@ -5446,12 +5304,10 @@
   },
   {
     "Families": [
-      "Virus"
+      "VIRUS"
     ],
     "Id": "92",
-    "Name": "Troyano",
     "Type": 0,
-    "Description": "Cuando {die:muero}, me agrego al {deck:mazo} {rival:rival}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -5459,8 +5315,8 @@
         "Trigger": 7,
         "Effects": [
           {
-            "$type": "AppendCardToDeck",
-            "CardId": "92",
+            "$type": "CreateCardInHand",
+            "CardId": "89",
             "CardsAmount": 1,
             "ToRival": true
           }
@@ -5475,7 +5331,45 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "47505e65-75c7-4438-9c46-6e0cf78177b7"
+        "Id": "82fc1717-0d4d-4138-9b9e-bf5f4fa6ed39"
+      },
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "ForcePlayCardInHandEffect",
+            "Player": 1,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": [
+                "VIRUS"
+              ],
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "MaxCards": 1
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "a8c0b5fa-f5bc-40fd-b4d8-974fbdba259b"
       }
     ],
     "imageUrl": "",
@@ -5485,12 +5379,10 @@
   },
   {
     "Families": [
-      "Seguridad"
+      "SEGURIDAD"
     ],
     "Id": "93",
-    "Name": "Firewall",
     "Type": 0,
-    "Description": "Cuando el {rival:rival} {play:juega} un {family:virus}, consigo \u002B1/\u002B1",
     "BaseAttack": 2,
     "BaseHealth": 3,
     "Effects": [
@@ -5518,7 +5410,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Virus"
+              "VIRUS"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -5531,7 +5423,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4ea42063-76e3-42e6-a9c9-ee3ae642e0a4"
+        "Id": "e53fe7bb-2396-4166-bca5-a2bba5092545"
       },
       {
         "Trigger": 5,
@@ -5557,7 +5449,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Virus"
+              "VIRUS"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -5570,7 +5462,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e3e02b06-b4cf-4f8b-9240-b6f0d5706ad6"
+        "Id": "8274ebff-4c79-4e9a-aa30-05c2029d15d1"
       }
     ],
     "imageUrl": "",
@@ -5580,12 +5472,10 @@
   },
   {
     "Families": [
-      "Seguridad"
+      "SEGURIDAD"
     ],
     "Id": "94",
-    "Name": "Copia de seguridad",
     "Type": 0,
-    "Description": "{skill:HABILIDAD}: {die:Muero} y curo a mi {player:jugador} el equivalente a mi vida",
     "BaseAttack": 2,
     "BaseHealth": 4,
     "Effects": [],
@@ -5607,9 +5497,7 @@
   {
     "Families": [],
     "Id": "95",
-    "Name": "Prueba Unitaria",
     "Type": 1,
-    "Description": "{draw:Roba} una {family:capa}. Las cartas de tipo {family:Seguridad} ganan 1 de vida",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5629,7 +5517,7 @@
                 "CardType": null,
                 "Families": null,
                 "CurrentFamilies": [
-                  "Seguridad"
+                  "SEGURIDAD"
                 ],
                 "DefinitionId": null,
                 "Id": null,
@@ -5655,7 +5543,7 @@
               "CardType": null,
               "Families": null,
               "CurrentFamilies": [
-                "Capa"
+                "CAPA"
               ],
               "DefinitionId": null,
               "Id": null,
@@ -5674,7 +5562,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "724393fc-b245-486f-9834-a31082862747"
+        "Id": "08f95744-e975-4bc5-9857-c595897bbe53"
       }
     ],
     "imageUrl": "",
@@ -5684,12 +5572,10 @@
   },
   {
     "Families": [
-      "Moneda del caos"
+      "MONEDA_DEL_CAOS"
     ],
     "Id": "96",
-    "Name": "Moneda de la llamada",
     "Type": 1,
-    "Description": "50% de probabilidades de {play:jugar} un terror ag\u00F3nico en la mesa, si hay hueco",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5715,7 +5601,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "39891a47-43dd-4650-bf0b-0c07bd284ff2"
+        "Id": "6867dbc2-6298-4a34-9bc2-c68f992335fa"
       }
     ],
     "imageUrl": "",
@@ -5726,9 +5612,7 @@
   {
     "Families": [],
     "Id": "97",
-    "Name": "Terror Ag\u00F3nico",
     "Type": 0,
-    "Description": "",
     "BaseAttack": 3,
     "BaseHealth": 4,
     "Effects": [],
@@ -5739,12 +5623,10 @@
   },
   {
     "Families": [
-      "Moneda del caos"
+      "MONEDA_DEL_CAOS"
     ],
     "Id": "98",
-    "Name": "Moneda sangrienta",
     "Type": 1,
-    "Description": "50% de probabilidades de curar al jugador 2, y quitarle 2 de vida al rival",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5774,7 +5656,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e8b16957-7121-4133-81be-45a268a9bfd9"
+        "Id": "a6459bf3-5888-4112-be51-0a0de9e2c9c5"
       }
     ],
     "imageUrl": "",
@@ -5784,12 +5666,10 @@
   },
   {
     "Families": [
-      "Moneda del caos"
+      "MONEDA_DEL_CAOS"
     ],
     "Id": "99",
-    "Name": "Moneda de las profundidades",
     "Type": 1,
-    "Description": "50% de probabilidades de -1/-1 a la {board:mesa} {rival:rival}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5835,7 +5715,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "fd442a9c-1f18-4512-9fe5-3430f8b1e107"
+        "Id": "a8443d17-45bc-4fcd-a0c4-83f56ddc44d6"
       }
     ],
     "imageUrl": "",
@@ -5845,12 +5725,10 @@
   },
   {
     "Families": [
-      "Moneda del caos"
+      "MONEDA_DEL_CAOS"
     ],
     "Id": "100",
-    "Name": "Moneda gloriosa",
     "Type": 1,
-    "Description": "50% de probabilidades de \u002B1/\u002B1 a la {board:mesa} del {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5876,7 +5754,7 @@
                 "NumberOfTriggersLeft": null,
                 "MustMeetAllCriteria": false
               },
-              "WhichDeckToSearch": 3,
+              "WhichDeckToSearch": 0,
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
@@ -5896,7 +5774,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2ad20d9f-cfa1-4fec-a269-f171fed8ada2"
+        "Id": "e8e78c50-9f38-4814-aa3f-ce911febfae5"
       }
     ],
     "imageUrl": "",
@@ -5906,12 +5784,10 @@
   },
   {
     "Families": [
-      "Moneda del caos"
+      "MONEDA_DEL_CAOS"
     ],
     "Id": "101",
-    "Name": "Moneda codiciosa",
     "Type": 1,
-    "Description": "50% de probabilidades de curar 4 de vida al {player:jugador}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5936,7 +5812,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "bd5b4885-2dc0-4fe9-8b1a-2705ee27f881"
+        "Id": "73a9140e-e53b-42da-aa24-7fbec372261a"
       }
     ],
     "imageUrl": "",
@@ -5946,12 +5822,10 @@
   },
   {
     "Families": [
-      "Moneda del caos"
+      "MONEDA_DEL_CAOS"
     ],
     "Id": "102",
-    "Name": "Moneda tortuosa",
     "Type": 1,
-    "Description": "50% de probabilidades de quitar 4 de vida al {rival:rival}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -5976,7 +5850,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0e92b4e0-512d-4445-8332-9bff08c4bd0c"
+        "Id": "f0063f75-2664-4704-ae2c-98ef51532191"
       }
     ],
     "imageUrl": "",
@@ -5986,13 +5860,11 @@
   },
   {
     "Families": [
-      "Moneda del caos",
-      "Caos verdadero"
+      "MONEDA_DEL_CAOS",
+      "CAOS_VERDADERO"
     ],
     "Id": "103",
-    "Name": "Moneda de las profundidades",
     "Type": 1,
-    "Description": "Copia un hechizo del {deck:mazo} del {rival:rival} y lo {play:juega}",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -6012,7 +5884,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "92a9668d-5c2d-498c-a26e-1c9bb48d24f9"
+        "Id": "40c42427-ab1a-4298-aa4b-5ce5583ca1d2"
       }
     ],
     "imageUrl": "",
@@ -6023,9 +5895,7 @@
   {
     "Families": [],
     "Id": "104",
-    "Name": "Ladr\u00F3n codicioso",
     "Type": 0,
-    "Description": "Cuando {die:muero}, {add:creo} una moneda del caos en el mazo de mi {player:jugador}",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -6033,7 +5903,8 @@
         "Trigger": 7,
         "Effects": [
           {
-            "$type": "CreateRandomCoin"
+            "$type": "CreateRandomCoin",
+            "Amount": 2
           }
         ],
         "Duration": {
@@ -6047,7 +5918,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b82befe8-fdcc-497f-8f43-a9e903946d97"
+        "Id": "f165e1cd-6d75-4393-9f59-18292f468879"
       }
     ],
     "imageUrl": "",
@@ -6058,9 +5929,7 @@
   {
     "Families": [],
     "Id": "105",
-    "Name": "M\u00E1quina de loter\u00EDa",
     "Type": 0,
-    "Description": "Cuando mi jugador {play:juega} una moneda, la vuelvo a jugar",
     "BaseAttack": 0,
     "BaseHealth": 3,
     "Effects": [
@@ -6085,7 +5954,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Moneda del caos"
+              "MONEDA_DEL_CAOS"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -6098,7 +5967,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0e37dea4-70a5-453e-812e-2bddedcac45e"
+        "Id": "41e413d8-f8c5-44df-81f6-dbf1eb9d0eb6"
       }
     ],
     "imageUrl": "",
@@ -6109,9 +5978,7 @@
   {
     "Families": [],
     "Id": "106",
-    "Name": "Tesoro maldito",
     "Type": 1,
-    "Description": "Creo tres monedas en el mazo del jugador",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -6119,13 +5986,8 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "CreateRandomCoin"
-          },
-          {
-            "$type": "CreateRandomCoin"
-          },
-          {
-            "$type": "CreateRandomCoin"
+            "$type": "CreateRandomCoin",
+            "Amount": 6
           }
         ],
         "Duration": {
@@ -6137,7 +5999,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e5ae3ee0-95fe-47fc-a3f0-2f1ee4a7f0ac"
+        "Id": "e30efac3-b069-44fe-8de9-d5f31560c63f"
       }
     ],
     "imageUrl": "",
@@ -6148,9 +6010,7 @@
   {
     "Families": [],
     "Id": "107",
-    "Name": "Pago de sangre",
     "Type": 1,
-    "Description": "Mata una una unidad aliada. Inflinge 4 de da\u00F1o a una unidad rival y crea una moneda en el mazo del jugador",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -6203,7 +6063,8 @@
             }
           },
           {
-            "$type": "CreateRandomCoin"
+            "$type": "CreateRandomCoin",
+            "Amount": 2
           }
         ],
         "Duration": {
@@ -6217,7 +6078,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4667be14-1eaf-4661-8995-dbff4c90e14b"
+        "Id": "5cc6b2f4-538f-4430-84e3-a5884ec3e417"
       }
     ],
     "imageUrl": "",
@@ -6255,9 +6116,7 @@
   {
     "Families": [],
     "Id": "108",
-    "Name": "Ac\u00F3lito sangriento",
     "Type": 0,
-    "Description": "HABILIDAD: pierdo 1 de vida, -1/0 a la mesa enemiga",
     "BaseAttack": 2,
     "BaseHealth": 2,
     "Effects": [],
@@ -6302,9 +6161,7 @@
   {
     "Families": [],
     "Id": "109",
-    "Name": "Adicto al oro",
     "Type": 0,
-    "Description": "HABILIDAD: Juego una moneda en la mano",
     "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [],
@@ -6322,14 +6179,15 @@
           "CardType": null,
           "Families": null,
           "CurrentFamilies": [
-            "Moneda del caos"
+            "MONEDA_DEL_CAOS"
           ],
           "DefinitionId": null,
           "Id": null,
           "HasEffect": null,
           "NumberOfTriggersLeft": null,
           "MustMeetAllCriteria": false
-        }
+        },
+        "MaxCards": 1
       }
     ],
     "PlayEffectTriggerTimes": 1
@@ -6337,9 +6195,7 @@
   {
     "Families": [],
     "Id": "110",
-    "Name": "Reflejo maldito",
     "Type": 0,
-    "Description": "Cuando mi jugador juega una moneda, creo otra en el mazo",
     "BaseAttack": 0,
     "BaseHealth": 4,
     "Effects": [
@@ -6347,7 +6203,8 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "CreateRandomCoin"
+            "$type": "CreateRandomCoin",
+            "Amount": 2
           }
         ],
         "Duration": {
@@ -6364,7 +6221,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Moneda del caos"
+              "MONEDA_DEL_CAOS"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -6377,7 +6234,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0c23811c-d195-4cd8-a3f2-a4ee0fd52ac6"
+        "Id": "5381c93b-a3ce-408a-87fb-8660a5fc3004"
       }
     ],
     "imageUrl": "",
@@ -6388,9 +6245,7 @@
   {
     "Families": [],
     "Id": "111",
-    "Name": "Auxilio del caos",
     "Type": 1,
-    "Description": "Has jugador 4 monedas o m\u00E1s. Durante los p\u0155oximos 4 turnos, al acabar el turno juega una moneda del caos de la mano de mi jugador",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -6399,7 +6254,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "FINAL DE RONDA: juego una moneda de la mano del jugador",
+            "Description": "CARD_111_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 0,
               "Effects": [
@@ -6414,14 +6269,15 @@
                     "CardType": null,
                     "Families": null,
                     "CurrentFamilies": [
-                      "Moneda del caos"
+                      "MONEDA_DEL_CAOS"
                     ],
                     "DefinitionId": null,
                     "Id": null,
                     "HasEffect": null,
                     "NumberOfTriggersLeft": null,
                     "MustMeetAllCriteria": false
-                  }
+                  },
+                  "MaxCards": 1
                 }
               ],
               "Duration": {
@@ -6436,8 +6292,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "FINAL DE RONDA: juego una moneda de la mano del jugador",
-              "Id": "6cf5ec60-79d5-4e5c-8dfd-d87ac03a4967"
+              "Description": "CARD_111_GLOBAL_EFFECT",
+              "Id": "65957ea5-d6f8-494a-8bfc-05ae6c0b82ef"
             }
           }
         ],
@@ -6450,7 +6306,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ae806f15-b773-42eb-80d8-91457e89f385"
+        "Id": "40a274b3-c96d-4a01-b39b-98fc4aa44981"
       }
     ],
     "imageUrl": "",
@@ -6464,7 +6320,7 @@
         "CardType": null,
         "Families": null,
         "CurrentFamilies": [
-          "Moneda del caos"
+          "MONEDA_DEL_CAOS"
         ],
         "DefinitionId": null,
         "Id": null,
@@ -6484,9 +6340,7 @@
   {
     "Families": [],
     "Id": "112",
-    "Name": "Apostador demacrado",
     "Type": 0,
-    "Description": "Cuando mi jugador juega una moneda, consigo \u002B1/\u002B1",
     "BaseAttack": 1,
     "BaseHealth": 1,
     "Effects": [
@@ -6514,7 +6368,7 @@
             "CardType": null,
             "Families": null,
             "CurrentFamilies": [
-              "Moneda del caos"
+              "MONEDA_DEL_CAOS"
             ],
             "DefinitionId": null,
             "Id": null,
@@ -6527,7 +6381,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "370d7d04-e5f2-4daf-af4f-f134d7971ad7"
+        "Id": "5b5edb93-d103-43f9-802c-1b755bf4b77b"
       }
     ],
     "imageUrl": "",
@@ -6538,9 +6392,7 @@
   {
     "Families": [],
     "Id": "113",
-    "Name": "Invocaci\u00F3n del caos",
     "Type": 1,
-    "Description": "Has jugado 10 mondas del caos o m\u00E1s. Crea tres monedas ca\u00F3ticas en la mano",
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
@@ -6575,7 +6427,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b3ab7443-be5f-408c-a114-1a6a6380a3f9"
+        "Id": "7ef0863e-b0ab-4d4f-a66f-03a20d88d313"
       }
     ],
     "imageUrl": "",
@@ -6589,7 +6441,7 @@
         "CardType": null,
         "Families": null,
         "CurrentFamilies": [
-          "Moneda del caos"
+          "MONEDA_DEL_CAOS"
         ],
         "DefinitionId": null,
         "Id": null,
@@ -6609,10 +6461,8 @@
   {
     "Families": [],
     "Id": "114",
-    "Name": "Invocador de las profundidades",
     "Type": 0,
-    "Description": "Las p\u0155oximas tres monedas que juegue mi jugador, se crea una moneda en el mazo",
-    "BaseAttack": 0,
+    "BaseAttack": 2,
     "BaseHealth": 1,
     "Effects": [
       {
@@ -6620,12 +6470,13 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "Cuando el juagdor juegue una moneda, creo otra y la a\u00F1ado en el mazo\u00BA",
+            "Description": "Cuando el juagdor juegue una moneda, creo otra y la a\u00F1ado en el mazo",
             "Effect": {
               "Trigger": 6,
               "Effects": [
                 {
-                  "$type": "CreateRandomCoin"
+                  "$type": "CreateRandomCoin",
+                  "Amount": 2
                 }
               ],
               "Duration": {
@@ -6643,7 +6494,7 @@
                   "CardType": null,
                   "Families": null,
                   "CurrentFamilies": [
-                    "Moneda del caos"
+                    "MONEDA_DEL_CAOS"
                   ],
                   "DefinitionId": null,
                   "Id": null,
@@ -6655,8 +6506,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "Cuando el juagdor juegue una moneda, creo otra y la a\u00F1ado en el mazo\u00BA",
-              "Id": "6400e953-cdf6-4b98-b027-9d0feedb4230"
+              "Description": "Cuando el juagdor juegue una moneda, creo otra y la a\u00F1ado en el mazo",
+              "Id": "03127245-a527-4691-9eb6-f1dbeebf19b2"
             }
           }
         ],
@@ -6671,11 +6522,561 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f64542a2-be73-4be6-9a6b-30bd95b1869e"
+        "Id": "5da66ab6-ad38-4ad1-8e98-e04dde9e23e4"
       }
     ],
     "imageUrl": "",
     "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "115",
+    "Type": 0,
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "RotateColorAndBranchEffect",
+            "IfRed": [
+              {
+                "$type": "AlterUnitStatsEffect",
+                "Health": -1,
+                "Damage": 0,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": null,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 3,
+                  "WhichBoardToSearch": 1,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "MaxLength": 0
+                }
+              }
+            ],
+            "IfGreen": [
+              {
+                "$type": "AlterUnitStatsEffect",
+                "Health": 1,
+                "Damage": 0,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": null,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 3,
+                  "WhichBoardToSearch": 0,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "MaxLength": 0
+                }
+              }
+            ],
+            "IfBlue": [
+              {
+                "$type": "DrawCardEffect",
+                "CardAmount": 1,
+                "Filter": null
+              },
+              {
+                "$type": "AppendCardToDeck",
+                "CardId": "115",
+                "CardsAmount": 1,
+                "ToRival": false,
+                "TopDeckDepth": 0
+              }
+            ]
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "3c079522-bf9a-44e9-a2ce-89b1b64776d7"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "116",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "RotateColorAndBranchEffect",
+            "IfRed": [
+              {
+                "$type": "AlterPlayerHealthEffect",
+                "Amount": -3,
+                "ToRival": true
+              }
+            ],
+            "IfGreen": [
+              {
+                "$type": "AlterPlayerHealthEffect",
+                "Amount": 3,
+                "ToRival": false
+              }
+            ],
+            "IfBlue": [
+              {
+                "$type": "AlterUnitStatsEffect",
+                "Health": 0,
+                "Damage": 2,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": 0,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 0,
+                  "WhichBoardToSearch": 3,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "MaxLength": 2
+                }
+              }
+            ]
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "9e6b2c39-d81a-4e61-9526-f74f222c8bb4"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "117",
+    "Type": 0,
+    "BaseAttack": 0,
+    "BaseHealth": 3,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "BranchOnColorInclusiveEffect",
+            "IfRed": [
+              {
+                "$type": "AlterUnitStatsEffect",
+                "Health": 1,
+                "Damage": 0,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": null,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 3,
+                  "WhichBoardToSearch": 1,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "MaxLength": 0
+                }
+              }
+            ],
+            "IfGreen": [
+              {
+                "$type": "AlterUnitStatsEffect",
+                "Health": -1,
+                "Damage": 0,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": null,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 3,
+                  "WhichBoardToSearch": 0,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "MaxLength": 0
+                }
+              }
+            ],
+            "IfBlue": [
+              {
+                "$type": "DrawCardPerBoardUnitEffect",
+                "WhichBoard": 0,
+                "ExcludeSelf": true
+              }
+            ]
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "0698507a-523a-4edf-85c0-1a67ef490613"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "118",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AppendGlobalEffect",
+            "Description": "Rota el color crom\u00E1tico al final de cada turno",
+            "Effect": {
+              "Trigger": 0,
+              "Effects": [
+                {
+                  "$type": "RotateColorEffect"
+                }
+              ],
+              "Duration": {
+                "$type": "Always"
+              },
+              "Condition": null,
+              "SourceCard": null,
+              "Player": null,
+              "Expired": false,
+              "Description": "Rota el color crom\u00E1tico al final de cada turno",
+              "Id": "f9dc7ea4-cae7-43a7-b960-ffdcf709219e"
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "36c78f98-09bf-4759-993a-e941e6e25595"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "119",
+    "Type": 0,
+    "BaseAttack": 6,
+    "BaseHealth": 1,
+    "Effects": [],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "PlayerHasColorCondition",
+      "Color": 0
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "120",
+    "Type": 0,
+    "BaseAttack": 0,
+    "BaseHealth": 6,
+    "Effects": [
+      {
+        "Trigger": 12,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 4,
+            "ToRival": false
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "ColorChangedToCondition",
+          "Color": 1
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "ef4ab26d-086e-4ccf-9002-1637402cf02a"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "PlayerHasColorCondition",
+      "Color": 1
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "121",
+    "Type": 0,
+    "BaseAttack": 1,
+    "BaseHealth": 2,
+    "Effects": [],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "PlayerHasColorCondition",
+      "Color": 2
+    },
+    "PlayEffects": [
+      {
+        "$type": "DrawCardEffect",
+        "CardAmount": 1,
+        "Filter": null
+      }
+    ],
+    "PlayEffectTriggerTimes": 3
+  },
+  {
+    "Families": [],
+    "Id": "122",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "MixColorEffect"
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "d2315e21-d884-4476-b230-1b75791c3c91"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "CardType": null,
+          "Families": null,
+          "CurrentFamilies": null,
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 0,
+        "WhichBoardToSearch": 3,
+        "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
+        "MaxLength": 0
+      },
+      "Value": {
+        "Type": 1,
+        "Amount": 20
+      }
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "123",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "PlayCardEffect",
+            "CardId": "115",
+            "FromDeck": false,
+            "ToHand": false
+          },
+          {
+            "$type": "PlayCardEffect",
+            "CardId": "115",
+            "FromDeck": false,
+            "ToHand": false
+          },
+          {
+            "$type": "PlayCardEffect",
+            "CardId": "117",
+            "FromDeck": false,
+            "ToHand": false
+          },
+          {
+            "$type": "PlayCardEffect",
+            "CardId": "117",
+            "FromDeck": false,
+            "ToHand": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "602e146d-0c5e-45e1-899d-4ec17d232ba4"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "CardType": null,
+          "Families": null,
+          "CurrentFamilies": null,
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 0,
+        "WhichBoardToSearch": 3,
+        "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
+        "MaxLength": 0
+      },
+      "Value": {
+        "Type": 1,
+        "Amount": 10
+      }
+    },
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   }

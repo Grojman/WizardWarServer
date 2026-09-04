@@ -386,12 +386,20 @@ public class GameState
             return;
         }
 
-        var card = player.GetFromHand(cardId);
-        if (card is null)
+        var handCard = player.Hand.FirstOrDefault(c => c.Id == cardId);
+        if (handCard is null)
         {
             Log.Warning("Player {PlayerId} tried to play a card not in their hand: {CardId}", p.Guid, cardId);
             return;
         }
+
+        if (handCard.CanPlay is not null && !handCard.CanPlay.Check(player.Id, player.PlayerTarget!.Id, handCard, this, null))
+        {
+            Log.Warning("Player {PlayerId} tried to play card {CardId} without meeting its play condition", p.Guid, cardId);
+            return;
+        }
+
+        var card = player.GetFromHand(cardId)!;
 
         PlayCard(player, card, boardIndex);
     }
@@ -572,6 +580,21 @@ public class GameState
 
         if (enqueueToUsers) GameActionResult.AddEvent(gevent);
         ApplyEffect(TriggerType.PlayerHealthChanged, gevent);
+    }
+
+    public void SetPlayerColor(IdentificableObject source, PlayerState player, ChromaticColor? oldColor, ChromaticColor newColor)
+    {
+        var gevent = new GameEvent.PlayerColorChanged()
+        {
+            PlayerSource = player,
+            Source = source,
+            PlayerId = player.Id,
+            OldColor = oldColor,
+            NewColor = newColor
+        };
+
+        GameActionResult.AddEvent(gevent);
+        ApplyEffect(TriggerType.ColorChanged, gevent);
     }
 
     public void KillUnit(IdentificableObject source, CardInstance Unit)

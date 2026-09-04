@@ -2,10 +2,18 @@
   {
     "Deck": {
       "id": 11,
-      "name": "Gambler",
-      "description": "Esto es una descripci\u00F3n"
+      "name": "Misterioso adicto",
+      "description": "Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias."
     },
     "Cards": {
+      "96": 0,
+      "97": 0,
+      "98": 0,
+      "99": 0,
+      "100": 0,
+      "101": 0,
+      "102": 0,
+      "103": 0,
       "104": 4,
       "105": 2,
       "106": 3,
@@ -23,17 +31,31 @@
     "Deck": {
       "id": 10,
       "name": "Tecnomago",
-      "description": "Una criatura compuesta de metal, cables y energ\u00EDa. No tiene alma. No tiene comuni\u00F3n con el mundo y su energ\u00EDa. Y, de alg\u00FAn modo, es capaz de realizar sus propias obras. Ve por encima del resto, se ha declarado a s\u00ED misma como un hechicero, y nadie entiende cu\u00E1les son sus prop\u00F3sitos."
+      "description": "Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados."
     },
     "Cards": {
-      "70": 3,
+      "70": 2,
+      "71": 0,
+      "72": 0,
+      "73": 0,
+      "74": 0,
+      "75": 0,
+      "76": 0,
+      "77": 0,
+      "78": 0,
+      "79": 0,
+      "80": 0,
+      "81": 0,
+      "82": 0,
+      "83": 0,
+      "84": 0,
       "85": 3,
       "86": 2,
       "87": 4,
       "88": 3,
       "90": 2,
       "91": 3,
-      "92": 3,
+      "92": 2,
       "93": 3,
       "94": 3,
       "95": 3
@@ -43,7 +65,7 @@
     "Deck": {
       "id": 9,
       "name": "Archimago del invierno",
-      "description": "Enterrado bajo toneladas de hielo durante milenios, este ser ha decidido resurgir y traer consigo sus nuevas creaciones. Los escalofr\u00EDos suceden all\u00E1 por donde pasa, y nadie ha sido todav\u00EDa capaz de descifrar esa mirada perdida y vac\u00EDa de vida; no sin haber perdido el juicio antes."
+      "description": "Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad."
     },
     "Cards": {
       "53": 4,
@@ -57,14 +79,15 @@
       "61": 2,
       "62": 1,
       "63": 3,
-      "64": 3
+      "64": 3,
+      "65": 0
     }
   },
   {
     "Deck": {
       "id": 7,
       "name": "Don Bola de Fuego Jr",
-      "description": "Reduce a cenizas a quienes se enfrentan a \u00E9l, y con suerte sus aliados escapan a su c\u00F3lera. Eso s\u00ED: que nadie le pregunte qu\u00E9 le pas\u00F3 a Don Bola de Fuego padre."
+      "description": "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opci\u00F3n a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida."
     },
     "Cards": {
       "27": 4,
@@ -86,7 +109,7 @@
     "Deck": {
       "id": 5,
       "name": "El mago del queso",
-      "description": "\u00BFPero qu\u00E9? \u00BFQui\u00E9n ha dejado una rata entrar en la guerra? Si adem\u00E1s lleva sombrero y todo, y parece que se ha tra\u00EDdo a todos sus parientes. En fin, no ser\u00E9 yo quien la juzgue, pero no parece que trame nada bueno."
+      "description": "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperaci\u00F3n. Perfecto para quien quiera pas\u00E1rselo bien."
     },
     "Cards": {
       "1": 2,
@@ -109,7 +132,7 @@
     "Deck": {
       "id": 6,
       "name": "El Ingenioso Hidalgo Don Quijote de la Mancha",
-      "description": "Primero una rata, y ahora este t\u00EDo. Habla de un modo muy extra\u00F1o, nadie le entiende y... parece que se est\u00E1 pegando con unos molinos. No para de hablar de enemigos y de una tal Dulcinea; menos mal que esos monstruos no son reales, \u00BFVerdad?"
+      "description": "Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve."
     },
     "Cards": {
       "14": 5,
@@ -132,7 +155,7 @@
     "Deck": {
       "id": 8,
       "name": "Mago cachas",
-      "description": "Sus artes son simlpes pero devastadoras. La mancuernamancia ha ganado no pocas guerras, y no se va a contentar con reunir una victoria m\u00E1s: ha apostado con el resto de magos que quien pierda tendr\u00E1 que dar 5 vueltas al campo de batalla."
+      "description": "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria ser\u00E1 tuya. Perfecto para quienes quieren tener una victoria r\u00E1pida."
     },
     "Cards": {
       "40": 4,
@@ -148,6 +171,24 @@
       "50": 2,
       "51": 3,
       "52": 2
+    }
+  },
+  {
+    "Deck": {
+      "id": 12,
+      "name": "El Alquimista Crom\u00E1tico",
+      "description": "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su m\u00E1ximo potencial."
+    },
+    "Cards": {
+      "115": 5,
+      "116": 3,
+      "117": 5,
+      "118": 2,
+      "119": 4,
+      "120": 3,
+      "121": 3,
+      "122": 2,
+      "123": 2
     }
   }
 ]

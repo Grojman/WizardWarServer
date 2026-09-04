@@ -11,6 +11,9 @@ public enum TriggerType
     CardAddedToDeck,
     DeckModified,
     CardAttacked,
-    CardEffectPlayed
-    
+    CardEffectPlayed,
+    ColorChanged,
+    // Nunca se dispara: usado por los marcadores inertes de ChromaticColorHelper.
+    None
+
 }

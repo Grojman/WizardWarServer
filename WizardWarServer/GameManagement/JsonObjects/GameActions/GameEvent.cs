@@ -99,4 +99,11 @@ public abstract class GameEvent
     {
     }
 
+    public class PlayerColorChanged : GameEvent
+    {
+        public required Guid PlayerId { get; set; }
+        public ChromaticColor? OldColor { get; set; }
+        public required ChromaticColor NewColor { get; set; }
+    }
+
 }
