@@ -1426,7 +1426,7 @@ new()
         new(TriggerType.SpellPlayed, [
             new AppendGlobalEffect(
                 new(TriggerType.UnitPlayed, [new AlterMySelf(2, 2, true)], new DurationByExecutions(2), new PlayerCardCondition(true, null)),
-                "[+2/+2] a las dos próximas unidades jugadas"
+                "CARD_81_GLOBAL_EFFECT"
             )
             ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1501,8 +1501,9 @@ new()
 {
     Id = "88",
     BaseAttack = 1,
-    BaseHealth = 2,
+    BaseHealth = 3,
     Type = CardType.Unit,
+    Families = ["SEGURIDAD"],
     Effects = [
         new(TriggerType.SpellPlayed, [new CreateCardInHand(1, "89", true)], new Always(), new PlayerCardCondition(true, new(){CurrentFamilies = ["PAQUETE"]}))
     ],
@@ -1840,7 +1841,7 @@ new()
                 [
                     new CreateRandomCoin(2)
                 ], new DurationByExecutions(3), new PlayerCardCondition(true, new(){CurrentFamilies = ["MONEDA_DEL_CAOS"]})),
-                "Cuando el juagdor juegue una moneda, creo otra y la añado en el mazo"
+                "CARD_114_GLOBAL_EFFECT"
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1903,7 +1904,7 @@ new()
         new(TriggerType.SpellPlayed, [
             new AppendGlobalEffect(
                 new(TriggerType.TurnEnd, [ new RotateColorEffect() ], new Always(), null),
-                "Rota el color cromático al final de cada turno"
+                "CARD_118_GLOBAL_EFFECT"
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]

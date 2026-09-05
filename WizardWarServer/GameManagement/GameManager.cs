@@ -51,21 +51,29 @@ public class GameManager
 
     public async Task<bool> TryResumeGame(PlayerConnection newConnection)
     {
-        if (newConnection.ClientId == Guid.Empty) return false;
-
         (GameSession Session, Guid PlayerGuid)? pending = null;
 
-        lock (_sync)
+        if (newConnection.ClientId != Guid.Empty)
         {
-            if (pendingResumes.Remove(newConnection.ClientId, out var value))
+            lock (_sync)
             {
-                pending = value;
+                if (pendingResumes.Remove(newConnection.ClientId, out var value))
+                {
+                    pending = value;
+                }
             }
         }
 
-        if (pending is null) return false;
+        if (pending is not null && await pending.Value.Session.TryReconnect(newConnection, pending.Value.PlayerGuid))
+        {
+            return true;
+        }
 
-        return await pending.Value.Session.TryReconnect(newConnection, pending.Value.PlayerGuid);
+        // Explicit negative ack: the client may be waiting to find out whether
+        // it should resume a match, and silence is indistinguishable from "the
+        // response just hasn't arrived yet" without this.
+        await newConnection.Send("no_active_match", new { });
+        return false;
     }
 
     public Task AddPlayer(PlayerConnection player)

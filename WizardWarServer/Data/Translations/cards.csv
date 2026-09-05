@@ -188,6 +188,7 @@ CARD_80_NAME,PRESENTACIÓN,PRESENTATION
 CARD_80_DESC,{add:Crea} APLICACIÓN y DATOS DE PRESENTACIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} APPLICATION and PRESENTATION DATA among the first 10 cards of the {deck:deck}
 CARD_81_NAME,DATOS DE PRESENTACIÓN,PRESENTATION DATA
 CARD_81_DESC,[+2/+2] a las dos próximas unidades que {play:juegue} mi {player:jugador},[+2/+2] to the next two units my {player:player} {play:plays}
+CARD_81_GLOBAL_EFFECT,[+2/+2] a las dos próximas unidades jugadas,[+2/+2] to the next 2 units played
 CARD_82_NAME,APLICACIÓN,APPLICATION
 CARD_82_DESC,{add:Crea} Ex Machina y DATOS DE APLICACIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} Ex Machina and APPLICATION DATA among the first 10 cards of the {deck:deck}
 CARD_83_NAME,DATOS DE APLICACIÓN,APPLICATION DATA
@@ -255,6 +256,7 @@ CARD_113_NAME,Invocación del caos,Summoning of Chaos
 CARD_113_DESC,{condition:Mi {player:jugador} ha {play:jugado} 10 {family:monedas del caos} o más}. {add:Creo} tres monedas de las profundidades en su mano,{condition:My {player:player} has {play:played} 10 or more {family:chaos coins}}. I {add:create} three Coins of the Depths in their hand
 CARD_114_NAME,Invocador de las profundidades,Summoner of the Depths
 CARD_114_DESC,"Las pŕoximas tres {family:moneda del caos} que {play:juegue} mi {player:jugador}, {add:creo} dos en su {deck:mazo}","The next three {family:chaos coins} my {player:player} {play:plays}, I {add:create} two in their {deck:deck}"
+CARD_114_GLOBAL_EFFECT,Cuando el juagdor juegue una moneda creo otra y la añado en el mazo,When the player plays a coin I create another one on the deck
 DECK_11_NAME,Misterioso adicto,Mysterious Addict
 DECK_11_DESC,"Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias.","Try your luck. Leave victory in the hands of chance, and play coins that may or may not win you the match. Perfect for forgetting about strategies."
 DECK_10_NAME,Tecnomago,Technomancer
@@ -280,6 +282,7 @@ CARD_117_NAME,Guardián Cromático,Chromatic Guardian
 CARD_117_DESC,"Al entrar en juego, mira el color cromático activo (sin rotarlo). Rojo: [0/+1] a la mesa {rival:rival}. Verde: [0/-1] a mi mesa. Azul: {draw:robo} una carta por cada otra unidad en mi mesa.","On play, check the active chromatic color (without rotating it). Red: [0/+1] to the {rival:rival}'s board. Green: [0/-1] to my board. Blue: {draw:draw} a card for each other unit on my board."
 CARD_118_NAME,Ciclo Forzado,Forced Cycle
 CARD_118_DESC,El color cromático rota automáticamente al final de cada turno.,The chromatic color automatically rotates at the end of every turn.
+CARD_118_GLOBAL_EFFECT,Rota el color cromático al final de cada turno,Rotates the cromatic color on the end of round
 CARD_119_NAME,Coloso Bermellón,Vermilion Colossus
 CARD_119_DESC,Solo puedo jugarme si el color cromático activo contiene el rojo.,Can only be played while the active chromatic color contains red.
 CARD_120_NAME,Brote Esmeralda,Emerald Sprout
