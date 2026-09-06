@@ -99,11 +99,14 @@ public abstract class GameEvent
     {
     }
 
-    public class PlayerColorChanged : GameEvent
+    // Internal-only signal (never broadcast via GameActionResult/GameEventDto): fired
+    // whenever any EffectInstance is appended to a player's PlayerState.GlobalEffects,
+    // for whichever deck. Conditions that care about a specific kind of global effect
+    // (e.g. ColorChangedToCondition) upcast Effect.Effects to find it.
+    public class GlobalEffectAdded : GameEvent
     {
         public required Guid PlayerId { get; set; }
-        public ChromaticColor? OldColor { get; set; }
-        public required ChromaticColor NewColor { get; set; }
+        public required EffectInstance Effect { get; set; }
     }
 
 }

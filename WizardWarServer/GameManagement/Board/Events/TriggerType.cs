@@ -12,7 +12,9 @@ public enum TriggerType
     DeckModified,
     CardAttacked,
     CardEffectPlayed,
-    ColorChanged,
+    // Se dispara cada vez que se añade un EffectInstance a PlayerState.GlobalEffects
+    // (de cualquier mazo). Ver GameState.AddGlobalEffect y GameEvent.GlobalEffectAdded.
+    GlobalEffectAdded,
     // Nunca se dispara: usado por los marcadores inertes de ChromaticColorHelper.
     None
 

@@ -493,9 +493,10 @@ public class GameState
         foreach(var player in Players)
         {
             if (player.Health <= 0) return;
-            foreach(EffectInstance e in player.GlobalEffects)
+            for (int i = 0; i < player.GlobalEffects.Count; i++)
             {
-                if(e.Trigger == type)
+                EffectInstance e = player.GlobalEffects[i];
+                if (e.Trigger == type)
                 {
                     e.TryExecute(this, ev);
                 }
@@ -582,19 +583,19 @@ public class GameState
         ApplyEffect(TriggerType.PlayerHealthChanged, gevent);
     }
 
-    public void SetPlayerColor(IdentificableObject source, PlayerState player, ChromaticColor? oldColor, ChromaticColor newColor)
+    public void AddGlobalEffect(IdentificableObject source, PlayerState player, EffectInstance effect)
     {
-        var gevent = new GameEvent.PlayerColorChanged()
+        player.GlobalEffects.Add(effect);
+
+        var gevent = new GameEvent.GlobalEffectAdded()
         {
             PlayerSource = player,
             Source = source,
             PlayerId = player.Id,
-            OldColor = oldColor,
-            NewColor = newColor
+            Effect = effect
         };
 
-        GameActionResult.AddEvent(gevent);
-        ApplyEffect(TriggerType.ColorChanged, gevent);
+        ApplyEffect(TriggerType.GlobalEffectAdded, gevent);
     }
 
     public void KillUnit(IdentificableObject source, CardInstance Unit)

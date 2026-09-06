@@ -12,12 +12,12 @@ public class RotateColorEffect : IEffect
 
         if (current is null)
         {
-            ChromaticColorHelper.SetColor(state, cardId, player, null, ChromaticColor.Rojo);
+            ChromaticColorHelper.SetColor(state, cardId, player, ChromaticColor.Rojo);
             return;
         }
 
         if (!ChromaticColorHelper.IsBase(current.Value)) return;
 
-        ChromaticColorHelper.SetColor(state, cardId, player, current.Value, ChromaticColorHelper.NextBase(current.Value));
+        ChromaticColorHelper.SetColor(state, cardId, player, ChromaticColorHelper.NextBase(current.Value));
     }
 }

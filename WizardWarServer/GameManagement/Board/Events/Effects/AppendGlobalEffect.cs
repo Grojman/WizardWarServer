@@ -15,6 +15,6 @@ public class AppendGlobalEffect : IEffect
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         cardId.AssignEffect(Effect);
-        state.GetState(playerId).GlobalEffects.Add(Effect);
+        state.AddGlobalEffect(cardId, state.GetState(playerId), Effect);
     }
 }

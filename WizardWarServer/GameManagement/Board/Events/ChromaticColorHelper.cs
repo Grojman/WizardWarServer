@@ -16,18 +16,18 @@ public static class ChromaticColorHelper
 
     static bool IsColorMarkerInstance(EffectInstance e) => e.Effects.Any(f => f is ColorMarkerEffect);
 
-    public static void SetColor(GameState state, CardInstance sourceCard, PlayerState player, ChromaticColor? oldColor, ChromaticColor newColor)
+    public static void SetColor(GameState state, CardInstance sourceCard, PlayerState player, ChromaticColor newColor)
     {
         player.GlobalEffects.RemoveAll(IsColorMarkerInstance);
 
         var marker = new EffectInstance(TriggerType.None, [new ColorMarkerEffect(newColor)], new Always(), null)
         {
             Player = player,
-            SourceCard = sourceCard
-        };
-        player.GlobalEffects.Add(marker);
+            SourceCard = sourceCard,
+            Description = $"GLOBAL_EFFECT_COLOR_{newColor.ToString().ToUpper()}"
+            };
 
-        state.SetPlayerColor(sourceCard, player, oldColor, newColor);
+        state.AddGlobalEffect(sourceCard, player, marker);
     }
 
     public static bool IsBase(ChromaticColor c) => c is ChromaticColor.Rojo or ChromaticColor.Verde or ChromaticColor.Azul;

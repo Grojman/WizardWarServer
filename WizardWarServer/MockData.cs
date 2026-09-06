@@ -1860,7 +1860,7 @@ new()
             new RotateColorAndBranchEffect(
                 [ new AlterUnitStatsEffect(-1, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL }) ],
                 [ new AlterUnitStatsEffect(1, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER }) ],
-                [ new DrawCardEffect(1, null), new AppendCardToDeck(1, "115", false, 0) ]
+                [ new DrawCardEffect(1, null), new AppendCardToDeck(1, "115", false) ]
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1873,7 +1873,7 @@ new()
         new(TriggerType.SpellPlayed, [
             new RotateColorAndBranchEffect(
                 [ new AlterPlayerHealthEffect(-3, true) ],
-                [ new AlterPlayerHealthEffect(3, false) ],
+                [ new AlterUnitStatsEffect(2, 0, new() {Filter = new() { CardType = CardType.Unit }, WhichDeckToSearch = PlayerType.PLAYER, MaxLength = 2}) ],
                 [ new AlterUnitStatsEffect(0, 2, new() { Filter = new() { CardType = CardType.Unit }, WhichDeckToSearch = PlayerType.PLAYER, MaxLength = 2 }) ]
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1889,8 +1889,8 @@ new()
     Effects = [
         new(TriggerType.UnitPlayed, [
             new BranchOnColorInclusiveEffect(
-                [ new AlterUnitStatsEffect(1, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL }) ],
-                [ new AlterUnitStatsEffect(-1, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER }) ],
+                [ new AlterUnitStatsEffect(-3, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL, MaxLength = 1 }) ],
+                [ new AlterUnitStatsEffect(0, 1, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER }) ],
                 [ new DrawCardPerBoardUnitEffect(PlayerType.PLAYER, true) ]
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1903,7 +1903,7 @@ new()
     Effects = [
         new(TriggerType.SpellPlayed, [
             new AppendGlobalEffect(
-                new(TriggerType.TurnEnd, [ new RotateColorEffect() ], new Always(), null),
+                new(TriggerType.TurnEnd, [ new RotateColorEffect() ], new DurationByExecutions(4), null),
                 "CARD_118_GLOBAL_EFFECT"
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
@@ -1913,7 +1913,7 @@ new()
 {
     Id = "119",
     Type = CardType.Unit,
-    BaseAttack = 6,
+    BaseAttack = 5,
     BaseHealth = 1,
     Families = ["CROMATICO"],
     ConditionToPlay = new PlayerHasColorCondition(ChromaticColor.Rojo)
@@ -1923,11 +1923,11 @@ new()
     Id = "120",
     Type = CardType.Unit,
     BaseAttack = 0,
-    BaseHealth = 6,
+    BaseHealth = 2,
     Families = ["CROMATICO"],
     ConditionToPlay = new PlayerHasColorCondition(ChromaticColor.Verde),
     Effects = [
-        new(TriggerType.ColorChanged, [ new AlterPlayerHealthEffect(4, false) ], new Always(), new ColorChangedToCondition(ChromaticColor.Verde))
+        new(TriggerType.GlobalEffectAdded, [ new AlterPlayerHealthEffect(4, false) ], new Always(), new ColorChangedToCondition(ChromaticColor.Verde))
     ]
 },
 new()
@@ -1943,12 +1943,12 @@ new()
 },
 new()
 {
-    Id = "122",
+    Id = "122", 
     Type = CardType.Spell,
     Effects = [
         new(TriggerType.SpellPlayed, [ new MixColorEffect() ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ],
-    ConditionToPlay = new CountCardCondition(new() { Filter = new(), WhichDeckToSearch = PlayerType.PLAYER }, new(CountType.AT_MAX, 20))
+    ConditionToPlay = new CountCardCondition(new() { Filter = new(), WhichDeckToSearch = PlayerType.PLAYER }, new(CountType.AT_MAX, 15))
 },
 new()
 {

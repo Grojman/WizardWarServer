@@ -22,22 +22,33 @@ public class RotateColorAndBranchEffect : IEffect
 
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
 
         var player = state.GetState(playerId);
         var current = ChromaticColorHelper.TryGetSingleColor(player);
-        if (current is null) return;
+        if (current is null)
+        {
+            new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
+            current = ChromaticColor.Rojo;
+        }
 
         IEffect[]? branch = current.Value switch
         {
             ChromaticColor.Rojo => IfRed,
             ChromaticColor.Verde => IfGreen,
             ChromaticColor.Azul => IfBlue,
+            ChromaticColor.Blanco => [.. IfRed, .. IfGreen, .. IfBlue],
+            ChromaticColor.Celeste => [.. IfGreen, .. IfBlue],
+            ChromaticColor.Morado => [.. IfRed, .. IfBlue],
+            ChromaticColor.Amarillo => [.. IfRed, .. IfGreen],
             _ => null
         };
 
-        if (branch is null) return;
+        if (branch is null)
+        {
+            return;
+        }            
 
         foreach (var e in branch) e.Execute(playerId, rivalId, cardId, state, ev);
+        if(current is not null) new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
     }
 }

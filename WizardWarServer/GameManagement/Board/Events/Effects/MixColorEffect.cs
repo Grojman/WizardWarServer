@@ -15,19 +15,19 @@ public class MixColorEffect : IEffect
 
         if (current is null)
         {
-            ChromaticColorHelper.SetColor(state, cardId, player, null, ChromaticColor.Amarillo);
+            ChromaticColorHelper.SetColor(state, cardId, player, ChromaticColor.Amarillo);
             return;
         }
 
         if (ChromaticColorHelper.IsBase(current.Value))
         {
-            ChromaticColorHelper.SetColor(state, cardId, player, current.Value, ChromaticColorHelper.MixOf(current.Value));
+            ChromaticColorHelper.SetColor(state, cardId, player, ChromaticColorHelper.MixOf(current.Value));
             return;
         }
 
         if (ChromaticColorHelper.IsMixed(current.Value))
         {
-            ChromaticColorHelper.SetColor(state, cardId, player, current.Value, ChromaticColor.Blanco);
+            ChromaticColorHelper.SetColor(state, cardId, player, ChromaticColor.Blanco);
         }
     }
 }
