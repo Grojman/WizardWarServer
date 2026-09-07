@@ -1884,7 +1884,7 @@ new()
     Id = "117",
     Type = CardType.Unit,
     BaseAttack = 0,
-    BaseHealth = 3,
+    BaseHealth = 6,
     Families = ["CROMATICO"],
     Effects = [
         new(TriggerType.UnitPlayed, [
