@@ -4,6 +4,7 @@ public class PlayerState : IdentificableObject
     public bool IsMyTurn { get; set; } = false;
     public List<EffectInstance> GlobalEffects { get; set; } = new();
     public List<CardInstance> PlayedCards { get; set; } = new();
+    public List<CardInstance> DeadCards { get; set; } = new();
     public PlayerConnection Connection { get; set; } = null!;
     public required string Name { get; set; }
     public int Health { get; set; } = 20;

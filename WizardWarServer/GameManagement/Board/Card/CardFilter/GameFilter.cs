@@ -6,6 +6,7 @@ public class GameFilter
     public PlayerType WhichBoardToSearch { get; set; } = PlayerType.NONE;
     public PlayerType WhichHandToSearch { get; set; } = PlayerType.NONE;
     public PlayerType WhichPlayedCardsToSearch { get; set; } = PlayerType.NONE;
+    public PlayerType WhichDeadCardsToSearch { get; set; } = PlayerType.NONE;
     public int MaxLength { get; set; } = 0;
 
 
@@ -79,12 +80,28 @@ public class GameFilter
         return cards;
     }
 
+    public IEnumerable<CardInstance> GetDeadCards(GameState state, Guid playerId, Guid rivalId)
+    {
+        IEnumerable<CardInstance> cards = new List<CardInstance>();
+        if (WhichDeadCardsToSearch is PlayerType.PLAYER or PlayerType.BOTH)
+        {
+            cards = cards.Concat(state.GetState(playerId).DeadCards.Where(Filter.Check));
+        }
+        if (WhichDeadCardsToSearch is PlayerType.RIVAL or PlayerType.BOTH)
+        {
+            cards = cards.Concat(state.GetState(rivalId).DeadCards.Where(Filter.Check));
+        }
+
+        return cards;
+    }
+
     public IEnumerable<CardInstance> GetMeetingCards(GameState state, Guid playerId, Guid rivalId)
     {
         var result = GetMeetingCardsOnBoard(state, playerId, rivalId).
                         Concat(GetMeetingCardsOffBoard(state, playerId, rivalId)).
                         Concat(GetCardsOnHand(state, playerId, rivalId)).
-                        Concat(GetPlayedCards(state, playerId, rivalId));
+                        Concat(GetPlayedCards(state, playerId, rivalId)).
+                        Concat(GetDeadCards(state, playerId, rivalId));
         return MaxLength > 0 ? result.Take(MaxLength) : result;
     }
 }

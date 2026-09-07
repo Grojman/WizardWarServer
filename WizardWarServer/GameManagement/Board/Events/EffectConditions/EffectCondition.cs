@@ -16,6 +16,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(RandomCondition), nameof(RandomCondition))]
 [JsonDerivedType(typeof(PlayerHasColorCondition), nameof(PlayerHasColorCondition))]
 [JsonDerivedType(typeof(ColorChangedToCondition), nameof(ColorChangedToCondition))]
+[JsonDerivedType(typeof(PlayerHealthChangedCondition), nameof(PlayerHealthChangedCondition))]
 
 //TODO: ADD DERIVED TYPES HERE
 public abstract class EffectCondition : ICloneable<EffectCondition>

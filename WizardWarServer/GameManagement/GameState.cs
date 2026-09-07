@@ -602,6 +602,7 @@ public class GameState
     {
         if (Unit.DeathChecked) return;
         Unit.DeathChecked = true;
+        Unit.Player.DeadCards.Add(Unit);
         var position = RemoveFromBoard(Unit);
         var gevent = new GameEvent.UnitDeath()
         {

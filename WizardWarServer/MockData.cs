@@ -1963,8 +1963,200 @@ new()
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ],
     ConditionToPlay = new CountCardCondition(new() { Filter = new(), WhichDeckToSearch = PlayerType.PLAYER }, new(CountType.AT_MAX, 10))
-}
+},
 
+// --- Mazo "Culto de los espíritus" ---
+new()
+{
+    Id = "124",
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 4,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.PlayerHealthChanged,
+            [
+                new AlterPlayerHealthEffect(-1, true)
+            ],
+            new Always(),
+            new PlayerHealthChangedCondition(true, new(CountType.AT_MAX_UNDER, 0))
+        )
+    ]
+},
+new()
+{
+    Id = "125",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 3,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [
+                new AlterPlayerHealthEffect(-1, false),
+                new AlterPlayerHealthEffect(-1, true)
+            ],
+            new Always(),
+            null
+        )
+    ]
+},
+new()
+{
+    Id = "126",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [ new AlterPlayerHealthEffect(-1, true) ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "127",
+    Type = CardType.Unit,
+    BaseAttack = 2,
+    BaseHealth = 1,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [ new DrawCardEffect(1, null) ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "128",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [ new PlayCardEffect("129", false, false) ],
+            new DurationByExecutions(1),
+            new MultiEffectCondition(
+                [
+                    new IHaveBeenPlayedCondition(),
+                    new PlayerHealthCondition(true, new(CountType.AT_MAX, 10))
+                ],
+                false
+            )
+        )
+    ]
+},
+new()
+{
+    Id = "129",
+    Type = CardType.Unit,
+    BaseAttack = 4,
+    BaseHealth = 4,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [ new AppendCardToDeck(3, "132", false) ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "130",
+    Type = CardType.Spell,
+    ConditionToPlay = new CountCardCondition(
+        new() { WhichBoardToSearch = PlayerType.PLAYER, Filter = new() },
+        new(CountType.AT_LEAST, 1)
+    ),
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new KillCards(new(), PlayerType.PLAYER, 1),
+                new KillCards(new(), PlayerType.RIVAL, 1)
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "131",
+    Type = CardType.Spell,
+    ConditionToPlay = new CountCardCondition(
+        new() { WhichBoardToSearch = PlayerType.PLAYER, Filter = new() },
+        new(CountType.AT_LEAST, 2)
+    ),
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new KillCards(new(), PlayerType.PLAYER, 2),
+                new AlterUnitStatsEffect(-3, 0, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new() }),
+                new AlterPlayerHealthEffect(3, false),
+                new DrawCardEffect(2, null)
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "132",
+    Type = CardType.Spell,
+    ConditionToPlay = new CountCardCondition(
+        new() { WhichDeadCardsToSearch = PlayerType.PLAYER, Filter = new() { CardType = CardType.Unit } },
+        new(CountType.AT_LEAST, 15)
+    ),
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new ReviveLastDied(new() { CardType = CardType.Unit }, new() { { Destination.BOARD, 3 } }, true)
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "133",
+    Type = CardType.Spell,
+    Effects = [
+        new(
+            TriggerType.SpellPlayed,
+            [
+                new AppendGlobalEffect(
+                    new(
+                        TriggerType.TurnEnd,
+                        [ new ReviveLastDied(new() { CardType = CardType.Unit }, new() { { Destination.BOARD, 1 } }, true) ],
+                        new DurationByExecutions(3),
+                        null
+                    ),
+                    "CARD_133_GLOBAL_EFFECT"
+                )
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+}
 
 ];
     public static Dictionary<DeckDto, Dictionary<string, int>> Decks = new()
@@ -2187,6 +2379,23 @@ new()
                 {"121", 3},
                 {"122", 2},
                 {"123", 2},
+            }
+        },
+        {
+            new DeckDto(13, "Culto de los espíritus", "Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra."),
+            new()
+            {
+                //30
+                {"124", 4},
+                {"125", 4},
+                {"126", 4},
+                {"127", 4},
+                {"128", 3},
+                {"129", 0},
+                {"130", 4},
+                {"131", 3},
+                {"132", 0},
+                {"133", 4},
             }
         }
 

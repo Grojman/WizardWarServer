@@ -300,3 +300,27 @@ GLOBAL_EFFECT_COLOR_AMARILLO,AMARILLO,YELLOW
 GLOBAL_EFFECT_COLOR_CELESTE,CELESTE,CELESTE
 GLOBAL_EFFECT_COLOR_MORADO,MORADO,PURPLE
 GLOBAL_EFFECT_COLOR_BLANCO,BLANCO,WHITE
+FAMILY_ESPIRITU,Espíritu,Spirit
+DECK_13_NAME,Culto de los espíritus,Cult of Spirits
+DECK_13_DESC,"Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra.","Sacrifice your own units to unleash the power of the spirits: every death fuels your revenge, and when the graveyard overflows, revive your fallen. Perfect for those who don't fear losing units to win the war."
+CARD_124_NAME,Espíritu vengador,Vengeful Spirit
+CARD_124_DESC,"Cuando mi {player:jugador} recibe daño, inflinjo 1 de daño al {rival:rival}","When my {player:player} takes damage, I deal 1 damage to the {rival:rival}"
+CARD_125_NAME,Balanza onírica,Oneiric Balance
+CARD_125_DESC,"Cuando {die:muere} una unidad, inflinjo 1 de daño a cada jugador","When a unit {die:dies}, I deal 1 damage to each player"
+CARD_126_NAME,El penitente,The Penitent
+CARD_126_DESC,"Cuando {die:muero}, inflinjo 1 de daño al {rival:rival}","When I {die:die}, I deal 1 damage to the {rival:rival}"
+CARD_127_NAME,El encadenado,The Chained One
+CARD_127_DESC,"Cuando {die:muero}, {draw:robo} una carta","When I {die:die}, I {draw:draw} a card"
+CARD_128_NAME,Pastor de espíritus,Shepherd of Spirits
+CARD_128_DESC,"Cuando {die:muero}, si mi {player:jugador} tiene la mitad de la vida o menos, {play:juego} a La Forjadora en la {board:mesa}","When I {die:die}, if my {player:player} has half life or less, I {play:play} The Forger onto the {board:board}"
+CARD_129_NAME,La forjadora,The Forger
+CARD_129_DESC,"Al {die:morir}, {add:creo} tres La Llamada en el {deck:mazo} de mi {player:jugador}","Upon {die:dying}, I {add:create} three The Calling in my {player:player}'s {deck:deck}"
+CARD_130_NAME,Equilibrio espiritual,Spiritual Balance
+CARD_130_DESC,"{condition:Necesitas una unidad en {board:mesa}}. {die:Mato} una unidad aliada en {board:mesa} para {die:matar} una del {rival:rival}","{condition:You need a unit on the {board:board}}. I {die:kill} an allied unit on the {board:board} to {die:kill} one of the {rival:rival}'s"
+CARD_131_NAME,Sacrificio de honor,Sacrifice of Honor
+CARD_131_DESC,"{condition:Necesitas dos unidades en {board:mesa}}. {die:Mato} dos unidades aliadas, inflinjo 3 de daño a la {board:mesa} {rival:rival}, curo 3 a mi {player:jugador} y {draw:robo} dos cartas","{condition:You need two units on the {board:board}}. I {die:kill} two allied units, deal 3 damage to the {rival:rival}'s {board:board}, heal my {player:player} for 3 and {draw:draw} two cards"
+CARD_132_NAME,La llamada,The Calling
+CARD_132_DESC,"{condition:Tienen que haber muerto al menos 15 criaturas de mi {player:jugador}}. Revivo las últimas tres criaturas que hayan {die:muerto}","{condition:At least 15 of my {player:player}'s creatures must have died}. I revive the last three creatures that {die:died}"
+CARD_133_NAME,Voluntad Inquebrantable,Unbreakable Will
+CARD_133_DESC,"Durante las próximas tres rondas, {endround:al final de ronda} revivo a la última unidad que haya {die:muerto}","For the next three rounds, {endround:at the end of the round} I revive the last unit that {die:died}"
+CARD_133_GLOBAL_EFFECT,Durante 3 rondas: revive a la última unidad muerta al final de ronda,For 3 rounds: revive the last dead unit at the end of the round
