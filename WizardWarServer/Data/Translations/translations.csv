@@ -34,8 +34,8 @@ HOME_SECTION_PRIVATE_WAITING_PLAYERS,Esperando jugadores...,Waiting for players.
 HOME_SECTION_JOIN_PRIVATE,Unirse a una partida privada,Join private match
 HOME_SECTION_JOIN,Unirse,Join
 HOME_SECTION_JOINING,Uniéndose,Joining
-HOME_SECTION_SUGGESTION,Envía una sugerencia / Reportar un error,Envía una sugerencia / Reportar un error,Send a suggestion / Bug report
-HOME_SECTION_SUGGESTION_TEXT,No nos vendría mal algo de ayuda; este juego se encuentra en beta al fin de al cabo. Cualquier tipo de problema que hayas sufrido, o una sugerencia que quieras añadir a nuestro sistema, por favor explícalo en este recuadro de aquí delante (las sugerencias son anónimas. Nos dio pereza añadir un campo de nombre):,We would like some help. Any type of problem you may encountered please feel free to comment it here.
+HOME_SECTION_SUGGESTION,Envía una sugerencia / Reportar un error,Send a suggestion / Bug report
+HOME_SECTION_SUGGESTION_TEXT,No nos vendría mal algo de ayuda; este juego se encuentra en beta al fin de al cabo. Cualquier tipo de problema que hayas sufrido o una sugerencia que quieras añadir a nuestro sistema por favor explícalo en este recuadro de aquí delante (las sugerencias son anónimas. Nos dio pereza añadir un campo de nombre):,We would like some help. Any type of problem you may encountered please feel free to comment it here.
 HOME_SECTION_SUGGESTION_PLACEHOLDER,Escribe aquí...,Write here...
 HOME_SECTION_SEND,Enviar,Send
 HOME_SECTION_ABOUT,Creado por,Created by:
