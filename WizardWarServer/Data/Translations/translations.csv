@@ -87,7 +87,7 @@ STATS_SECTION_LOSSES,Derrotas,Losses
 STATS_SECTION_NO_DECKS,Haz click en una baraja para ver sus estadísticas,Click a deck to see it's stats
 STATS_SECTION_LOADING,Cargando estadísticas...,Loading statistics...
 TEAM_SECTION_TITLE,Conoce al equipo,Meet the team
-TEAM_SECTION_SUBTITLE,Un equipo de decenas de profesionales, que resultan ser las mismas 2 personas.,A team made by lots of professionals. Turns out they are the same 2 people
+TEAM_SECTION_SUBTITLE,Un equipo de decenas de profesionales que resultan ser las mismas 2 personas.,A team made by lots of professionals. Turns out they are the same 2 people
 TEAM_SECTION_BACK,Volver a inicio,Return to the home page
 TEAM_SECTION_COLLABORATORS,COLABORADOR@S,COLLABORATORS
 CARD_CONDITION_PROGRESS,Progreso:,Progress:
@@ -199,3 +199,72 @@ HOME_SECTION_ACTIVE_MATCH_CHECKING,Comprobando si tienes una partida en curso...
 HOME_SECTION_CONTINUE_MATCH,Continuar partida,Continue match
 HOME_SECTION_CANCEL_MATCH,Cancelar partida,Cancel match
 HOME_SECTION_CANCELLING_MATCH,Cancelando partida...,Cancelling match...
+TITLE_HOME,El Bar de los Magos — Juego de cartas online gratis sin registro,El Bar de los Magos — Free online card game with no sign-up
+TITLE_GAME,Partida en curso — El Bar de los Magos,Match in progress — El Bar de los Magos
+TITLE_ERROR,Error de conexión — El Bar de los Magos,Connection error — El Bar de los Magos
+TITLE_GALLERY,Galería de cartas — El Bar de los Magos,Card gallery — El Bar de los Magos
+TITLE_STATS,Estadísticas de mazos — El Bar de los Magos,Deck statistics — El Bar de los Magos
+TITLE_SERIES,Serie al mejor de 3 — El Bar de los Magos,Best-of-3 series — El Bar de los Magos
+TITLE_TEAM,Equipo — El Bar de los Magos,Team — El Bar de los Magos
+TITLE_PRIVACY,Política de privacidad — El Bar de los Magos,Privacy policy — El Bar de los Magos
+COOKIE_CONSENT_MESSAGE,"Usamos almacenamiento local para que el juego funcione y, si nos das tu consentimiento, para mostrar anuncios. Puedes cambiar de opinión cuando quieras.","We use local storage to make the game work and, if you consent, to show ads. You can change your mind at any time."
+COOKIE_CONSENT_REJECT,Rechazar,Reject
+COOKIE_CONSENT_ACCEPT,Aceptar,Accept
+COOKIE_CONSENT_POLICY_LINK,Política de privacidad,Privacy policy
+PRIVACY_TITLE,Política de privacidad,Privacy Policy
+PRIVACY_LAST_UPDATED,Última actualización: 8 de septiembre de 2026,"Last updated: September 8, 2026"
+PRIVACY_BACK,Volver,Back
+PRIVACY_INTRO_1,"El Bar de los Magos (en adelante, ""el juego"" o ""el sitio"") es un juego de cartas online gratuito que no requiere registro ni cuenta de usuario. Esta página explica qué información se procesa cuando juegas, para qué se usa y qué opciones tienes.","El Bar de los Magos (""the game"" or ""the site"") is a free online card game that requires no sign-up or user account. This page explains what information is processed while you play, what it is used for, and what choices you have."
+PRIVACY_INTRO_2,"Responsable del sitio: Summer Productions, contactable en summer.productions.games@gmail.com. Este documento es una explicación en lenguaje llano, no un dictamen legal; para las particularidades fiscales y de consentimiento en España conviene revisarlo con un profesional.","Site operator: Summer Productions, reachable at summer.productions.games@gmail.com. This is a plain-language explanation, not legal advice — for the Spain-specific consent and tax angles it is worth a professional review before going live."
+PRIVACY_SECTION_1_HEADING,1. Qué información se procesa,1. What information is processed
+PRIVACY_SECTION_1_PARA_1,"No pedimos registro, correo electrónico ni contraseña para jugar. La información que se procesa es la mínima necesaria para que la partida funcione:","We don't ask for sign-up, an email address, or a password to play. Only the minimum needed to run a match is processed:"
+PRIVACY_SECTION_1_PARA_2,"• El nombre que escribes para jugar: se usa solo durante tu partida y no se guarda de forma permanente en el servidor.","• The name you type to play: used only for the duration of your match and not permanently stored on the server."
+PRIVACY_SECTION_1_PARA_3,"• Un identificador aleatorio de reconexión, guardado en tu navegador, que permite recuperar una partida en curso si se corta la conexión.","• A random reconnection identifier, stored in your browser, used to resume an in-progress match if the connection drops."
+PRIVACY_SECTION_1_PARA_4,"• Tu dirección IP: el servidor la usa de forma transitoria para limitar conexiones abusivas (rate limiting) y aparece en los registros técnicos (logs) del servidor, que se conservan un máximo de 14 días y después se eliminan automáticamente.","• Your IP address: used transiently by the server to rate-limit abusive connections, and it appears in the server's technical logs, which are kept for at most 14 days and then automatically deleted."
+PRIVACY_SECTION_1_PARA_5,"• Estadísticas agregadas y anónimas de partidas (victorias, derrotas, mazos usados) — no están vinculadas a ninguna persona identificable.","• Anonymous, aggregate match statistics (wins, losses, decks used) — not linked to any identifiable person."
+PRIVACY_SECTION_1_PARA_6,"• Si envías una sugerencia desde el formulario del sitio, el texto se guarda tal cual lo escribes; te pedimos que no incluyas datos personales en él.","• If you submit a suggestion through the site's form, the text is stored as written; please don't include personal data in it."
+PRIVACY_SECTION_2_HEADING,2. Almacenamiento en tu dispositivo,2. Storage on your device
+PRIVACY_SECTION_2_PARA_1,"El sitio usa el almacenamiento local del navegador (localStorage), no cookies tradicionales, para recordar tus preferencias y mantener tu partida. Ninguno de estos datos sale de tu dispositivo salvo el identificador de reconexión, que se envía al servidor solo para recuperar tu partida. Puedes ver el detalle en la tabla más abajo.","The site uses browser local storage (localStorage), not traditional cookies, to remember your preferences and keep your match going. None of this data leaves your device except the reconnection id, which is sent to the server only to resume your match. See the table below for details."
+PRIVACY_SECTION_3_HEADING,3. Publicidad (Google AdSense),3. Advertising (Google AdSense)
+PRIVACY_SECTION_3_PARA_1,"Este sitio no muestra publicidad de terceros en este momento. Si en el futuro se activa Google AdSense, Google y sus socios publicitarios podrán utilizar cookies u otras tecnologías similares en tu navegador para mostrar anuncios, incluyendo, si lo autorizas, anuncios personalizados según tus intereses.","This site does not currently show third-party advertising. If Google AdSense is enabled in the future, Google and its advertising partners may use cookies or similar technology in your browser to serve ads, including, where you allow it, ads personalized to your interests."
+PRIVACY_SECTION_3_PARA_2,"Llegado ese momento, el anuncio solo se cargará si has aceptado la casilla de ""no esenciales"" en el aviso de cookies de este sitio. Puedes cambiar tu decisión en cualquier momento desde la sección ""Gestionar mis preferencias"" al final de esta página.","Once that happens, ads will only load if you have accepted the ""non-essential"" option in this site's cookie notice. You can change that choice at any time from the ""Manage my preferences"" section at the bottom of this page."
+PRIVACY_SECTION_3_PARA_3,"Google Ireland Limited actúa como responsable del tratamiento de los datos que recoge a través de sus propios servicios publicitarios, conforme a su Política de consentimiento de la UE. Puedes consultar cómo Google utiliza los datos en https://policies.google.com/technologies/partner-sites y gestionar la personalización de anuncios en https://myadcenter.google.com/.","Google Ireland Limited acts as the controller for data it collects through its own advertising services, under its EU User Consent Policy. You can read how Google uses this data at https://policies.google.com/technologies/partner-sites and manage ad personalization at https://myadcenter.google.com/."
+PRIVACY_SECTION_3_PARA_4,"No accedemos ni solicitamos tu ubicación precisa. Los sistemas publicitarios de Google, si están activos, pueden inferir una ubicación aproximada a partir de tu IP para mostrar anuncios relevantes; eso lo gestiona Google, no este sitio.","We do not access or request your precise location. Google's advertising systems, if active, may infer an approximate location from your IP to show relevant ads; that is handled by Google, not by this site."
+PRIVACY_SECTION_4_HEADING,4. Base legal,4. Legal basis
+PRIVACY_SECTION_4_PARA_1,"Tratamos tu IP y aplicamos límites de conexión por interés legítimo en mantener el servicio disponible y seguro. El almacenamiento estrictamente necesario para jugar (reconexión, partida activa) se basa en que es imprescindible para el servicio que has solicitado. El almacenamiento no esencial (y cualquier cookie publicitaria futura) se basa en tu consentimiento, que puedes dar o retirar libremente.","We process your IP and apply connection limits under legitimate interest in keeping the service available and secure. Storage that is strictly necessary to play (reconnection, active match) rests on it being required for the service you requested. Non-essential storage (and any future advertising cookie) rests on your consent, which you can give or withdraw freely."
+PRIVACY_SECTION_5_HEADING,5. Tus derechos,5. Your rights
+PRIVACY_SECTION_5_PARA_1,"Como no recogemos cuentas ni datos identificables de forma permanente, hay poco que rectificar o eliminar por nuestra parte. Aun así, puedes escribir a summer.productions.games@gmail.com para solicitar acceso, rectificación o eliminación de cualquier dato personal que consideres que tenemos sobre ti (por ejemplo, el contenido de una sugerencia enviada), o para cualquier duda sobre este documento. Tienes derecho a reclamar ante la Agencia Española de Protección de Datos (aepd.es) si consideras que no se ha atendido tu solicitud.","Since we don't keep accounts or permanent identifiable data, there is little to rectify or delete on our side. Still, you can write to summer.productions.games@gmail.com to request access to, correction of, or deletion of any personal data you believe we hold about you (for example, the content of a submitted suggestion), or with any question about this document. You have the right to file a complaint with the Spanish Data Protection Agency (aepd.es) if you feel your request wasn't addressed."
+PRIVACY_SECTION_6_HEADING,6. Menores,6. Children
+PRIVACY_SECTION_6_PARA_1,Este sitio no está dirigido específicamente a menores de edad y no solicitamos ni recogemos conscientemente datos personales de menores.,"This site is not specifically directed at children, and we do not knowingly request or collect personal data from children."
+PRIVACY_SECTION_7_HEADING,7. Cambios en esta política,7. Changes to this policy
+PRIVACY_SECTION_7_PARA_1,"Podemos actualizar este documento si cambia el funcionamiento del sitio (por ejemplo, al activar la publicidad). La fecha de ""última actualización"" al principio de la página indica la versión vigente.","We may update this document if how the site works changes (for example, when advertising is switched on). The ""last updated"" date at the top of the page marks the current version."
+PRIVACY_STORAGE_TABLE_HEADING,Detalle del almacenamiento local,Local storage detail
+PRIVACY_STORAGE_COL_NAME,Clave,Key
+PRIVACY_STORAGE_COL_PURPOSE,Para qué se usa,What it is for
+PRIVACY_STORAGE_COL_DURATION,Duración,Duration
+PRIVACY_STORAGE_ROW_1_NAME,wizardwar_client_id,wizardwar_client_id
+PRIVACY_STORAGE_ROW_1_PURPOSE,Identificador de reconexión de partida,Match reconnection identifier
+PRIVACY_STORAGE_ROW_1_DURATION,Hasta que borres los datos del sitio,Until you clear site data
+PRIVACY_STORAGE_ROW_2_NAME,wizardwar_active_game,wizardwar_active_game
+PRIVACY_STORAGE_ROW_2_PURPOSE,Recordar si tienes una partida sin terminar,Remembers an unfinished match
+PRIVACY_STORAGE_ROW_2_DURATION,Hasta que termine o abandones la partida,Until the match ends or is abandoned
+PRIVACY_STORAGE_ROW_3_NAME,wizardwar_language,wizardwar_language
+PRIVACY_STORAGE_ROW_3_PURPOSE,Idioma de la interfaz,Interface language
+PRIVACY_STORAGE_ROW_3_DURATION,Hasta que lo cambies o borres los datos del sitio,Until changed or site data is cleared
+PRIVACY_STORAGE_ROW_4_NAME,wizardwar_music_volume / wizardwar_sfx_volume / wizardwar_music_enabled / wizardwar_sfx_enabled,wizardwar_music_volume / wizardwar_sfx_volume / wizardwar_music_enabled / wizardwar_sfx_enabled
+PRIVACY_STORAGE_ROW_4_PURPOSE,Preferencias de audio,Audio preferences
+PRIVACY_STORAGE_ROW_4_DURATION,Hasta que las cambies o borres los datos del sitio,Until changed or site data is cleared
+PRIVACY_STORAGE_ROW_5_NAME,wizardwar_animation_speed,wizardwar_animation_speed
+PRIVACY_STORAGE_ROW_5_PURPOSE,Velocidad de las animaciones,Animation speed
+PRIVACY_STORAGE_ROW_5_DURATION,Hasta que la cambies o borres los datos del sitio,Until changed or site data is cleared
+PRIVACY_STORAGE_ROW_6_NAME,wizardwar_cookie_consent / wizardwar_cookie_consent_date,wizardwar_cookie_consent / wizardwar_cookie_consent_date
+PRIVACY_STORAGE_ROW_6_PURPOSE,Recordar tu decisión sobre este aviso,Remembers your choice on this notice
+PRIVACY_STORAGE_ROW_6_DURATION,"180 días, después se vuelve a preguntar","180 days, then you are asked again"
+PRIVACY_MANAGE_HEADING,Gestionar mis preferencias,Manage my preferences
+PRIVACY_MANAGE_DESCRIPTION,"Puedes aceptar o rechazar el almacenamiento no esencial (incluida la futura publicidad) en cualquier momento.","You can accept or reject non-essential storage (including any future advertising) at any time."
+PRIVACY_MANAGE_CURRENT_LABEL,Tu elección actual:,Your current choice:
+PRIVACY_MANAGE_ACCEPTED,Aceptado,Accepted
+PRIVACY_MANAGE_REJECTED,Rechazado,Rejected
+PRIVACY_MANAGE_NOT_SET,Sin decidir todavía,Not decided yet
+PRIVACY_MANAGE_ACCEPT_BTN,Aceptar,Accept
+PRIVACY_MANAGE_REJECT_BTN,Rechazar,Reject

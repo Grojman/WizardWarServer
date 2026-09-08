@@ -33,6 +33,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(MixColorEffect), nameof(MixColorEffect))]
 [JsonDerivedType(typeof(DrawCardPerBoardUnitEffect), nameof(DrawCardPerBoardUnitEffect))]
 [JsonDerivedType(typeof(ReviveLastDied), nameof(ReviveLastDied))]
+[JsonDerivedType(typeof(CreateCopyOfSelf), nameof(CreateCopyOfSelf))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

@@ -238,7 +238,7 @@ CARD_104_DESC,"Cuando {die:muero}, {add:creo} dos {family:monedas del caos} entr
 CARD_105_NAME,Máquina de lotería,Lottery Machine
 CARD_105_DESC,"Cuando mi jugador {play:juega} una {family:moneda del caos}, la vuelvo a {play:jugar}","When my player {play:plays} a {family:chaos coin}, I {play:play} it again"
 CARD_106_NAME,Tesoro maldito,Cursed Treasure
-CARD_106_DESC,{add:Creo} seis {family:monedas del caos} entre las primeras 15 cartas del mazo ,I {add:create} six {family:chaos coins} in the 15 first cards of the deck
+CARD_106_DESC,{add:Creo} cuatro {family:monedas del caos} entre las primeras 15 cartas del mazo ,I {add:create} four {family:chaos coins} in the 15 first cards of the deck
 CARD_107_NAME,Pago de sangre,Blood Payment
 CARD_107_DESC,"{die:Mato} una una unidad de mi {player:jugador}. [0/-4] a una unidad {rival:rival} y {add:creo} dos {family:monedas del caos} entre las primeras 15 cartas del mazo","I {die:kill} a unit of my {player:player}. [0/-4] to a {rival:rival} unit and I {add:create} two {family:chaos coins} in the 15 first cards of the deck"
 CARD_108_NAME,Acólito sangriento,Bloody Acolyte
@@ -246,7 +246,7 @@ CARD_108_DESC,"{skill:HABILIDAD}: [0/-1] a mí mismo, [-1/0] a la mesa {rival:ri
 CARD_109_NAME,Adicto al oro,Gold Addict
 CARD_109_DESC,{skill:HABILIDAD}: {play:Juego} una {family:moneda del caos} en la mano de mi {player:jugador},{skill:SKILL}: I {play:play} a {family:chaos coin} into my {player:player}'s hand
 CARD_110_NAME,Reflejo maldito,Cursed Reflection
-CARD_110_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, {add:creo} dos {family:monedas del caos} entre las primeras 15 cartas del mazo","When my {player:player} {play:plays} a {family:chaos coin}, I {add:create} two {family:chaos coins} in the 15 first cards of the deck"
+CARD_110_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del caos}, {add:creo} una {family:moneda del caos} entre las primeras 15 cartas del mazo","When my {player:player} {play:plays} a {family:chaos coin}, I {add:create} one {family:chaos coin} in the 15 first cards of the deck"
 CARD_111_NAME,Auxilio del caos,Aid of Chaos
 CARD_111_DESC,"{condition:Mi {player:jugador} ha {play:jugado} 4 {family:monedas del caos} o más}. Durante los pŕoximos 8 turnos, al {endround:acabar el turno} {play:juego} una {family:moneda del caos} de la mano de mi {player:jugador} y {draw:robo} una carta","{condition:My {player:player} has {play:played} 4 or more {family:chaos coins}}. For the next 8 turns, at the {endround:end of turn} I {play:play} a {family:chaos coin} from my {player:player}'s hand and {draw:draw} one"
 CARD_111_GLOBAL_EFFECT,FINAL DE RONDA: juego una moneda de la mano del jugador,END OF ROUND: I play a coin from the hand of the player
@@ -255,7 +255,7 @@ CARD_112_DESC,"Cuando mi {player:jugador} {play:juega} una {family:moneda del ca
 CARD_113_NAME,Invocación del caos,Summoning of Chaos
 CARD_113_DESC,{condition:Mi {player:jugador} ha {play:jugado} 10 {family:monedas del caos} o más}. {add:Creo} tres monedas de las profundidades en su mano,{condition:My {player:player} has {play:played} 10 or more {family:chaos coins}}. I {add:create} three Coins of the Depths in their hand
 CARD_114_NAME,Invocador de las profundidades,Summoner of the Depths
-CARD_114_DESC,"Las pŕoximas tres {family:moneda del caos} que {play:juegue} mi {player:jugador}, {add:creo} dos en su {deck:mazo}","The next three {family:chaos coins} my {player:player} {play:plays}, I {add:create} two in their {deck:deck}"
+CARD_114_DESC,"Las pŕoximas tres {family:moneda del caos} que {play:juegue} mi {player:jugador}, {add:creo} una en su {deck:mazo}","The next three {family:chaos coins} my {player:player} {play:plays}, I {add:create} one in their {deck:deck}"
 CARD_114_GLOBAL_EFFECT,Cuando el juagdor juegue una moneda creo otra y la añado en el mazo,When the player plays a coin I create another one on the deck
 DECK_11_NAME,Misterioso adicto,Mysterious Addict
 DECK_11_DESC,"Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias.","Try your luck. Leave victory in the hands of chance, and play coins that may or may not win you the match. Perfect for forgetting about strategies."
@@ -275,22 +275,22 @@ DECK_12_NAME,El Alquimista Cromático,The Chromatic Alchemist
 DECK_12_DESC,"Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial.","Master the cycle of colors: red strikes, green heals and blue draws cards. Rotate or mix the colors at the right time to unleash their full potential."
 FAMILY_CROMATICO,Cromático,Chromatic
 CARD_115_NAME,Espíritu Cromático,Chromatic Spirit
-CARD_115_DESC,"Al entrar en juego, rota el color cromático (o lo crea si no hay ninguno). Rojo: [0/-1] a la mesa {rival:rival}. Verde: [0/+1] a mi mesa. Azul: {draw:robo} una carta y añado una copia mía al {deck:mazo}.","On play, rotate the chromatic color (or create it if none is active). Red: [0/-1] to the {rival:rival}'s board. Green: [0/+1] to my board. Blue: {draw:draw} a card and add a copy of myself to the {deck:deck}."
+CARD_115_DESC,"Al entrar en juego, rota el color cromático (o lo crea si no hay ninguno). {red:Rojo}: [0/-1] a la mesa {rival:rival}. {green:Verde}: [0/+1] a mi mesa. {blue:Azul}: {draw:robo} una carta y añado una copia mía al {deck:mazo}.","On play, rotate the chromatic color (or create it if none is active). {red:Red}: [0/-1] to the {rival:rival}'s board. {green:Green}: [0/+1] to my board. {blue:Blue}: {draw:draw} a card and add a copy of myself to the {deck:deck}."
 CARD_116_NAME,Cambio de Ciclo,Cycle Shift
-CARD_116_DESC,"Rota el color cromático (o lo crea). Rojo: 3 de daño al {rival:rival}. Verde: [0/+2] a las dos primeras unidades del {deck:mazo}. Azul: [+2/0] a las dos primeras unidades de mi {deck:mazo}.","Rotate the chromatic color (or create it). Red: 3 damage to the {rival:rival}. Green: [0/+2] to the first two units in my {deck:deck}. Blue: [+2/0] to the first two units in my {deck:deck}."
+CARD_116_DESC,"Rota el color cromático (o lo crea). {red:Rojo}: 3 de daño al {rival:rival}. {green:Verde}: [0/+2] a las dos primeras unidades del {deck:mazo}. {blue:Azul}: [+2/0] a las dos primeras unidades de mi {deck:mazo}.","Rotate the chromatic color (or create it). {red:Red}: 3 damage to the {rival:rival}. {green:Green}: [0/+2] to the first two units in my {deck:deck}. {blue:Blue}: [+2/0] to the first two units in my {deck:deck}."
 CARD_117_NAME,Guardián Cromático,Chromatic Guardian
-CARD_117_DESC,"Al entrar en juego, mira el color cromático activo (sin rotarlo). Rojo: [0/-3] a la primera unidad del {rival:rival} en {board:mesa}. Verde: [+1/0] a mi {board:mesa}. Azul: {draw:robo} una carta por cada otra unidad en mi mesa.","On play, check the active chromatic color (without rotating it). Red: [0/-3] to the first unit of the {rival:rival}'s board. Green: [+1/0] to my board. Blue: {draw:draw} a card for each other unit on my board."
+CARD_117_DESC,"Al entrar en juego, mira el color cromático activo (sin rotarlo). {red:Rojo}: [0/-3] a la primera unidad del {rival:rival} en {board:mesa}. {green:Verde}: [+1/0] a mi {board:mesa}. {blue:Azul}: {draw:robo} una carta por cada otra unidad en mi mesa.","On play, check the active chromatic color (without rotating it). {red:Red}: [0/-3] to the first unit of the {rival:rival}'s board. {green:Green}: [+1/0] to my board. {blue:Blue}: {draw:draw} a card for each other unit on my board."
 CARD_118_NAME,Ciclo Forzado,Forced Cycle
 CARD_118_DESC,El color cromático rota automáticamente {endround:al final de cada ronda} durante cuatro rondas.,The chromatic color automatically rotates {endround:at the end of every round} for the next 4 rounds.
 CARD_118_GLOBAL_EFFECT,Rota el color cromático al final de cada turno,Rotates the cromatic color on the end of round
 CARD_119_NAME,Coloso Bermellón,Vermilion Colossus
-CARD_119_DESC,Solo puedo jugarme si el color cromático activo contiene el rojo.,Can only be played while the active chromatic color contains red.
+CARD_119_DESC,Solo puedo jugarme si el color cromático activo contiene el {red:rojo}.,Can only be played while the active chromatic color contains {red:red}.
 CARD_120_NAME,Brote Esmeralda,Emerald Sprout
-CARD_120_DESC,"Solo puedo jugarme si el color cromático activo contiene el verde. Cuando el color cromático cambia a verde, curo 4 a mi {player:jugador}.","Can only be played while the active chromatic color contains green. When the chromatic color changes to green, heal my {player:player} for 4."
+CARD_120_DESC,"Solo puedo jugarme si el color cromático activo contiene el {green:verde}. Cuando el color cromático cambia a {green:verde}, curo 4 a mi {player:jugador}.","Can only be played while the active chromatic color contains {green:green}. When the chromatic color changes to {green:green}, heal my {player:player} for 4."
 CARD_121_NAME,Buceador Zafiro,Sapphire Diver
-CARD_121_DESC,"Solo puedo jugarme si el color cromático activo contiene el azul. {skill:HABILIDAD}: {draw:robo} una carta.","Can only be played while the active chromatic color contains blue. {skill:SKILL}: {draw:draw} a card."
+CARD_121_DESC,"Solo puedo jugarme si el color cromático activo contiene el {blue:azul}. {skill:HABILIDAD}: {draw:robo} una carta.","Can only be played while the active chromatic color contains {blue:blue}. {skill:SKILL}: {draw:draw} a card."
 CARD_122_NAME,Fusión de Pigmentos,Pigment Fusion
-CARD_122_DESC,"Solo puedo jugarme si me quedan 15 cartas o menos en el {deck:mazo}. Si el color activo es básico (rojo, verde o azul), lo reemplaza por su color mixto (amarillo, celeste o morado). Si ya había un color mixto activo, ambos se funden en blanco.","Can only be played while my {deck:deck} has 15 cards or fewer left. If the active color is basic (red, green or blue), it's replaced by its mixed color (yellow, cyan or purple). If a mixed color was already active, both merge into white."
+CARD_122_DESC,"Solo puedo jugarme si me quedan 15 cartas o menos en el {deck:mazo}. Si el color activo es básico ({red:rojo}, {green:verde} o {blue:azul}), lo reemplaza por su color mixto ({yellow:amarillo}, {cyan:celeste} o {purple:morado}). Si ya había un color mixto activo, ambos se funden en {white:blanco}.","Can only be played while my {deck:deck} has 15 cards or fewer left. If the active color is basic ({red:red}, {green:green} or {blue:blue}), it's replaced by its mixed color ({yellow:yellow}, {cyan:cyan} or {purple:purple}). If a mixed color was already active, both merge into {white:white}."
 CARD_123_NAME,Última Cosecha,Last Harvest
 CARD_123_DESC,"Solo puedo jugarme si me quedan 10 cartas o menos en el {deck:mazo}. Lleno los huecos libres de mi mesa con dos copias de Espíritu Cromático y dos copias de Guardián Cromático.","Can only be played while my {deck:deck} has 10 cards or fewer left. Fills the empty slots on my board with two copies of Chromatic Spirit and two copies of Chromatic Guardian."
 GLOBAL_EFFECT_COLOR_ROJO,ROJO,RED
@@ -325,7 +325,7 @@ CARD_133_NAME,Voluntad Inquebrantable,Unbreakable Will
 CARD_133_DESC,"Durante las próximas tres rondas, {endround:al final de ronda} revivo a la última unidad que haya {die:muerto}","For the next three rounds, {endround:at the end of the round} I revive the last unit that {die:died}"
 CARD_133_GLOBAL_EFFECT,Durante 3 rondas: revive a la última unidad muerta al final de ronda,For 3 rounds: revive the last dead unit at the end of the round
 CARD_134_NAME,Criatura fúngica,Fungal Creature
-CARD_134_DESC,"Cuando {die:muero}, {add:creo} una copia mía en el {deck:mazo} del {player:jugador}. Las otras copias mías obtienen [+1/0]","When I {die:die}, I {add:create} a copy of myself in my {player:player}'s {deck:deck}. My other copies get [+1/0]"
+CARD_134_DESC,"Cuando {die:muero}, {add:creo} una copia mía en el {deck:mazo} del {player:jugador} que mantiene mi daño actual.","When I {die:die}, I {add:create} a copy of myself in my {player:player}'s {deck:deck} that keeps my current damage."
 CARD_135_NAME,Defensor de la colmena,Hive Defender
 CARD_135_DESC,"{skill:HABILIDAD}: {die:Muero} e inflinjo 1 de daño a todas las unidades enemigas","{skill:SKILL}: I {die:die} and deal 1 damage to all enemy units"
 CARD_136_NAME,Espíritu heredado,Inherited Spirit

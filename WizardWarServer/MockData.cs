@@ -1746,7 +1746,7 @@ new()
     Id = "105",
     Type = CardType.Unit,
     BaseAttack = 0,
-    BaseHealth = 3,
+    BaseHealth = 6,
     Effects = [
         new(TriggerType.SpellPlayed, [new RetriggerSpellEffect()], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}))
     ]  
@@ -1756,7 +1756,7 @@ new()
     Id = "106",
     Type = CardType.Spell,
     Effects = [
-        new(TriggerType.SpellPlayed, [new CreateRandomCoin(6)], new DurationByExecutions(1), null)
+        new(TriggerType.SpellPlayed, [new CreateRandomCoin(4)], new DurationByExecutions(1), null)
     ]
 },
 new()
@@ -1799,11 +1799,11 @@ new()
 {
     Id = "110",
     Type = CardType.Unit,
-    BaseAttack = 0,
-    BaseHealth = 4,
+    BaseAttack = 2,
+    BaseHealth = 3,
     Effects = [
         new(TriggerType.SpellPlayed, [
-            new CreateRandomCoin(2)
+            new CreateRandomCoin(1)
         ], new Always(), new PlayerCardCondition(true, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}))
     ]
 },
@@ -1858,7 +1858,7 @@ new()
             new AppendGlobalEffect(
                 new(TriggerType.SpellPlayed,
                 [
-                    new CreateRandomCoin(2)
+                    new CreateRandomCoin(1)
                 ], new DurationByExecutions(3), new PlayerCardCondition(true, new(){CurrentFamilies = ["MONEDA_DEL_CAOS"]})),
                 "CARD_114_GLOBAL_EFFECT"
             )
@@ -2187,8 +2187,8 @@ new()
         new(
             TriggerType.UnitDeath,
             [
-                new AppendCardToDeck(1, "134", false),
-                new AlterUnitStatsEffect(0, 1, new() { WhichDeckToSearch = PlayerType.PLAYER, Filter = new() { DefinitionId = "134" } })
+                new CreateCopyOfSelf(true),
+                new AlterUnitStatsEffect(0, 1, new() { WhichDeckToSearch = PlayerType.PLAYER, Filter = new() {DefinitionId = "134"} })
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
@@ -2265,7 +2265,7 @@ new()
                 {"102", 0},
                 {"103", 0},
                 {"104", 4},
-                {"105", 2},
+                {"105", 3},
                 {"106", 3},
                 {"107", 3},
                 {"108", 3},

@@ -26,7 +26,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "56849a27-b99a-46b2-b18f-0ce2e7d41b19"
+        "Id": "7a64a3e9-9c12-4235-a77d-75818287f173"
       }
     ],
     "imageUrl": "",
@@ -85,7 +85,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d8635172-794f-4dda-a011-b1a9526ed46b"
+        "Id": "e5019021-e29e-472f-a108-82cb11617345"
       }
     ],
     "imageUrl": "",
@@ -137,7 +137,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b46ede54-81bc-49de-a0cb-5ca07668fe10"
+        "Id": "a5322be0-45f1-4066-8435-77774d1323bc"
       }
     ],
     "imageUrl": "",
@@ -174,7 +174,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2dde7faf-2a5e-462a-b91a-4e2976eefa61"
+        "Id": "97600f07-b219-4fe7-8590-9a6a60811986"
       }
     ],
     "imageUrl": "",
@@ -218,6 +218,7 @@
               "WhichBoardToSearch": 3,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -233,7 +234,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a860ff5b-df02-484c-a12d-749bc1fd8ce8"
+        "Id": "88c1d73c-3b8c-4685-a5d0-00fd1a57f688"
       }
     ],
     "imageUrl": "",
@@ -268,7 +269,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "69ffe5fb-9cd1-4a1d-a2ed-2828770cf305"
+        "Id": "6175eda3-6033-4599-b14d-8e7621d567d8"
       }
     ],
     "imageUrl": "",
@@ -304,7 +305,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "fa1a3e71-2e12-44e1-80f1-2f6e9a8bd788"
+        "Id": "ca12b4fa-9398-4c1f-80fb-7df14d33ca19"
       },
       {
         "Trigger": 0,
@@ -324,7 +325,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f2aa750f-ba77-4331-8bda-337d1f45c0bb"
+        "Id": "8185f7b7-1085-45d1-a9b8-1bd4e0f698ad"
       }
     ],
     "imageUrl": "",
@@ -367,6 +368,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -387,7 +389,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "418c28ee-442a-4209-bdf3-992319539cd7"
+        "Id": "2060c222-b5aa-465e-bdc3-fd29bf36b380"
       }
     ],
     "imageUrl": "",
@@ -426,7 +428,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "07f9c797-7533-42b3-984d-f739849128ab"
+        "Id": "659ae94d-198f-4bb0-9581-a7173c166197"
       }
     ],
     "imageUrl": "",
@@ -484,7 +486,7 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_11_GLOBAL_EFFECT",
-              "Id": "0a4e43ac-5985-457b-a4b4-bdbfc26e7f27"
+              "Id": "9d2c7f81-02cd-4b1a-9b22-b2d9b4761080"
             }
           }
         ],
@@ -499,7 +501,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b7280afa-41e8-42c8-8764-d466a9535e5a"
+        "Id": "d0f3274d-b223-4570-b09c-34d28ab3a854"
       }
     ],
     "imageUrl": "",
@@ -565,6 +567,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -597,6 +600,7 @@
                     "WhichBoardToSearch": 1,
                     "WhichHandToSearch": 3,
                     "WhichPlayedCardsToSearch": 3,
+                    "WhichDeadCardsToSearch": 3,
                     "MaxLength": 0
                   }
                 }
@@ -610,7 +614,7 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_12_GLOBAL_EFFECT",
-              "Id": "da74b7fa-3a54-4bdc-bd38-e7bb54d7fbb0"
+              "Id": "a62d32c8-d43f-41fc-afbd-bd0f139f20bf"
             }
           }
         ],
@@ -625,7 +629,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "267c7a6b-ccf7-412a-a80f-dcec430edb43"
+        "Id": "d7b55cf6-a715-4b2c-89c6-0615c3bab151"
       }
     ],
     "imageUrl": "",
@@ -668,6 +672,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -683,7 +688,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "fb525fc3-2f47-4fdf-a51b-52eb74d45357"
+        "Id": "35b9c0df-617d-402e-85fe-dfe777147285"
       }
     ],
     "imageUrl": "",
@@ -740,7 +745,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "82be0621-e64a-4715-a3e9-b5fef921c543"
+        "Id": "f686711c-2efc-4ab4-b88d-bbd82aaa22ac"
       }
     ],
     "imageUrl": "",
@@ -792,7 +797,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1f1eeb62-852e-4a5d-a282-966f9d965baf"
+        "Id": "564a877c-b033-4670-a933-29704119ea19"
       },
       {
         "Trigger": 10,
@@ -815,7 +820,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4adf18d7-e02c-4413-a403-ef8068b758bf"
+        "Id": "b0e319b1-c7e5-4e05-9da1-f62cbdc171ed"
       }
     ],
     "imageUrl": "",
@@ -880,7 +885,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "232504df-0020-4962-9d1e-99c26041003d"
+        "Id": "87cfd756-ae57-4c32-b154-1918e2d5c595"
       }
     ],
     "imageUrl": "",
@@ -917,7 +922,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "78926918-98e4-4cc9-8c62-add5040a7799"
+        "Id": "83abbf0b-96ff-4676-809e-4a3826cdc40d"
       }
     ],
     "imageUrl": "",
@@ -989,6 +994,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -1001,7 +1007,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9fbcbb38-37ce-49ad-8975-1e876598de6e"
+        "Id": "6121f84c-e66c-48c0-83e0-13bd5b1140b1"
       }
     ],
     "imageUrl": "",
@@ -1047,6 +1053,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -1062,7 +1069,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "14b167b5-5288-479d-a782-bf5990a87879"
+        "Id": "27937f7c-d9ec-433f-a07f-f5e9c6f77997"
       },
       {
         "Trigger": 6,
@@ -1097,7 +1104,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "bf3ef7ba-9ad1-4fea-8f2b-b70d072a0f32"
+        "Id": "076d905f-1a48-4e3c-977e-356e7c0c6d8a"
       }
     ],
     "imageUrl": "",
@@ -1195,7 +1202,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "589eb39b-8954-4026-9e6b-f1d99857d626"
+        "Id": "22ed9dfe-484e-40d6-9fba-36a763928264"
       }
     ],
     "imageUrl": "",
@@ -1248,7 +1255,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b3c86981-be7f-4e9e-9fc7-1e824559d248"
+        "Id": "785ed0fe-c184-47e0-b7fb-45592b56e0f4"
       }
     ],
     "imageUrl": "",
@@ -1304,6 +1311,7 @@
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
             "WhichPlayedCardsToSearch": 3,
+            "WhichDeadCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -1315,7 +1323,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "61bd6402-620f-4e6e-866e-5afd6dcc7805"
+        "Id": "c5661401-e89f-4b8e-828f-7c4ce0a3598c"
       },
       {
         "Trigger": 6,
@@ -1351,7 +1359,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "dfe596ed-d9dd-4df5-a65e-9e08b186bd45"
+        "Id": "dabaaa40-cf58-4f3d-86ae-2e27a629922e"
       }
     ],
     "imageUrl": "",
@@ -1376,6 +1384,7 @@
         "WhichBoardToSearch": 2,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -1424,7 +1433,7 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_23_GLOBAL_EFFECT",
-              "Id": "022bfc57-0de1-4ede-ae8c-e478f3724a4b"
+              "Id": "a3250576-2198-400b-92d9-08236daad2e1"
             }
           }
         ],
@@ -1439,7 +1448,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d56dcd95-8ed6-40e2-95e4-2bd55d06e1f1"
+        "Id": "28ba4cf6-af2c-48a5-ab88-f2d83d2d34ad"
       }
     ],
     "imageUrl": "",
@@ -1475,7 +1484,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "751943d7-d7d8-478c-90da-efd7d25c0029"
+        "Id": "923b10ae-a3ce-4903-bf31-a16b02840864"
       }
     ],
     "imageUrl": "",
@@ -1551,7 +1560,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b8dd7c8f-a9bc-4340-9fb9-3f53c1583369"
+        "Id": "171829e7-0ea7-4357-93d7-6a83659bf0fd"
       }
     ],
     "imageUrl": "",
@@ -1594,6 +1603,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -1624,6 +1634,7 @@
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
             "WhichPlayedCardsToSearch": 3,
+            "WhichDeadCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -1635,7 +1646,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "cd2f4865-3dd4-4cbf-95b0-b8843d0f0de3"
+        "Id": "9e8f1a55-5f06-4b03-a7dd-f35f419b9359"
       }
     ],
     "imageUrl": "",
@@ -1664,6 +1675,7 @@
           "WhichBoardToSearch": 0,
           "WhichHandToSearch": 3,
           "WhichPlayedCardsToSearch": 3,
+          "WhichDeadCardsToSearch": 3,
           "MaxLength": 0
         }
       }
@@ -1710,7 +1722,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7e47cab1-9f8c-4a0d-bdcc-17c16fbee8da"
+        "Id": "48a965f6-bc47-4c81-a50e-d62f5ec7a212"
       }
     ],
     "imageUrl": "",
@@ -1753,6 +1765,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -1768,7 +1781,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e28bc642-1036-4f26-bad8-35b38a7f3e5d"
+        "Id": "d435ee87-3b9a-41f9-9b6b-c2553bd90df2"
       }
     ],
     "imageUrl": "",
@@ -1807,7 +1820,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "41970ed0-323c-4052-ab48-3b3216c0e692"
+        "Id": "800fa387-808a-4980-90bc-c1b237dd4d3b"
       }
     ],
     "imageUrl": "",
@@ -1844,7 +1857,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9cf0f823-ea80-41f9-8cb0-a9557a27e0d9"
+        "Id": "8029b38c-559e-4d1e-acf9-26bb5a8a74f6"
       }
     ],
     "imageUrl": "",
@@ -1887,7 +1900,7 @@
         "Effects": [
           {
             "$type": "AlterPlayerHealthEffect",
-            "Amount": -1,
+            "Amount": -2,
             "ToRival": true
           }
         ],
@@ -1916,7 +1929,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9fa66907-4102-4af9-aeac-b0f021c35a10"
+        "Id": "0d944361-b125-472c-bafa-d24399add3f7"
       }
     ],
     "imageUrl": "",
@@ -1959,6 +1972,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -1979,7 +1993,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b3039f0e-336d-4447-b0f9-83e16bcd8dbc"
+        "Id": "a9ab362e-9659-4192-9454-3f8223efe8d7"
       }
     ],
     "imageUrl": "",
@@ -2027,7 +2041,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "fc961fd8-947c-4270-83c6-5c5185925487"
+        "Id": "fd63c35d-d15c-4bbc-823e-ae86940fc5f1"
       }
     ],
     "imageUrl": "",
@@ -2082,7 +2096,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4fdfec9d-0e71-470e-98b5-07471abd3a67"
+        "Id": "39d080a6-3f8b-470f-9115-63067c0dee7d"
       }
     ],
     "imageUrl": "",
@@ -2133,7 +2147,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "93e1a25b-2394-4445-bb32-e0350fa43668"
+        "Id": "db277689-ec6b-42ac-9ca7-59aec5abdccc"
       }
     ],
     "imageUrl": "",
@@ -2184,7 +2198,7 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_35_GLOBAL_EFFECT",
-              "Id": "2b349c8e-accf-48af-9c67-96b988e36423"
+              "Id": "4ac883bb-8c0f-4338-95c9-496bf90b9954"
             }
           }
         ],
@@ -2197,7 +2211,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ed0dc1c7-0e4c-40b6-a83a-aa63abe0c180"
+        "Id": "19f53dd8-99b5-4850-88fe-efedf3c9e83e"
       }
     ],
     "imageUrl": "",
@@ -2235,7 +2249,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "026f3337-b274-49b7-a84d-1a0fadef4006"
+        "Id": "dbf9986b-5dd1-4837-85b4-f646d31b37a4"
       }
     ],
     "imageUrl": "",
@@ -2278,6 +2292,7 @@
               "WhichBoardToSearch": 3,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -2291,7 +2306,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d9a3fe1a-fb9a-432f-a601-32eea4fd21fd"
+        "Id": "745a57a5-d4a6-4583-97d6-427d7fd1c737"
       }
     ],
     "imageUrl": "",
@@ -2378,7 +2393,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1945974a-3276-4364-b104-f4d05af8f0fc"
+        "Id": "fd1b1b94-3ecc-4424-94fe-fc4224a15450"
       },
       {
         "Trigger": 5,
@@ -2428,7 +2443,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6bec5d7e-de58-4e5c-ae16-e25571269a59"
+        "Id": "8e63cc3d-0c27-4971-bf2f-acc2b8bba1fa"
       }
     ],
     "imageUrl": "",
@@ -2468,7 +2483,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "71afdb89-57e1-4551-bcf5-f17290fab6a8"
+        "Id": "91aed4df-9598-4509-b989-406bf4bea3fa"
       }
     ],
     "imageUrl": "",
@@ -2508,7 +2523,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "51edb0a6-99d8-4310-84bd-ec19e85dde64"
+        "Id": "daaf6ef5-411a-42fe-b159-53a54b98b635"
       }
     ],
     "imageUrl": "",
@@ -2551,6 +2566,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -2579,6 +2595,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -2594,7 +2611,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7313d4c0-6dc3-4217-87a1-8dd009f3b3c8"
+        "Id": "703966f0-c105-45d4-829b-311f28d8f007"
       }
     ],
     "imageUrl": "",
@@ -2637,6 +2654,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -2650,7 +2668,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "48ccaa9b-c463-48db-adad-c40a7d530bc4"
+        "Id": "6be70ae1-8b26-452f-bc45-3db3648dffc0"
       }
     ],
     "imageUrl": "",
@@ -2689,7 +2707,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0196fd1a-bde1-4311-9e01-c61716e4616e"
+        "Id": "be2334ff-edef-4044-9d70-9d8e03084f7a"
       }
     ],
     "imageUrl": "",
@@ -2739,7 +2757,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b631695f-f76c-442f-8b66-ccc182284622"
+        "Id": "01ddeea9-24ad-4fac-ac35-be790fc6ed50"
       }
     ],
     "imageUrl": "",
@@ -2792,6 +2810,7 @@
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
             "WhichPlayedCardsToSearch": 3,
+            "WhichDeadCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -2803,7 +2822,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4c42e1da-055c-4dcc-9f95-6d47d3e34107"
+        "Id": "999bbb93-5224-47b9-8e5e-8bd8ae9fbe7f"
       }
     ],
     "imageUrl": "",
@@ -2840,7 +2859,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7584fe42-203c-4e0e-bfd9-35c237c7de42"
+        "Id": "6b559d7b-568a-4be5-9745-50f61acaf2e9"
       }
     ],
     "imageUrl": "",
@@ -2890,7 +2909,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "197fea91-f74d-49c8-adcb-a69c7aee629a"
+        "Id": "549410b4-7a1f-450a-a8cc-63bd84cc8061"
       }
     ],
     "imageUrl": "",
@@ -2933,6 +2952,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 2
             }
           }
@@ -2946,7 +2966,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8bd04488-7361-49eb-97f2-a41f4c28e0eb"
+        "Id": "5bc6b090-9c45-4c7e-9e0f-4738d43cf786"
       }
     ],
     "imageUrl": "",
@@ -2974,6 +2994,7 @@
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3019,6 +3040,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 2
             }
           },
@@ -3037,7 +3059,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "82a1c506-8b0d-4daf-b67d-4c9da3cb6e13"
+        "Id": "dd243208-2858-4816-89bd-29ca8ff9a905"
       }
     ],
     "imageUrl": "",
@@ -3062,6 +3084,7 @@
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3093,6 +3116,7 @@
           "WhichBoardToSearch": 0,
           "WhichHandToSearch": 3,
           "WhichPlayedCardsToSearch": 3,
+          "WhichDeadCardsToSearch": 3,
           "MaxLength": 0
         }
       },
@@ -3119,6 +3143,7 @@
           "WhichBoardToSearch": 0,
           "WhichHandToSearch": 3,
           "WhichPlayedCardsToSearch": 3,
+          "WhichDeadCardsToSearch": 3,
           "MaxLength": 0
         }
       }
@@ -3166,7 +3191,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a047d049-c905-46cf-9e6a-ec269f33db8f"
+        "Id": "186b35f8-7ee4-497e-8770-eea02b5b8b49"
       }
     ],
     "imageUrl": "",
@@ -3210,6 +3235,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -3223,7 +3249,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0fe49bf3-df4d-49d5-a167-a7f9ab9a72d3"
+        "Id": "8334a59f-dac3-45d8-bfab-cbeae1a51d44"
       }
     ],
     "imageUrl": "",
@@ -3250,6 +3276,7 @@
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3292,7 +3319,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b0c2e945-2932-442d-8223-7e392314cbe1"
+        "Id": "a450cfde-9012-492a-aaea-5c94e3672643"
       },
       {
         "Trigger": 6,
@@ -3319,7 +3346,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "515ae02a-2bd5-4916-95f9-dbd023808f11"
+        "Id": "f4dde204-3d61-4b3d-8d9f-5955db383773"
       }
     ],
     "imageUrl": "",
@@ -3362,6 +3389,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -3377,7 +3405,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4d76cb78-fda1-4d66-bf8a-e049a0558a6f"
+        "Id": "0814c04f-2a2d-4586-aafa-2931a60bc2f4"
       }
     ],
     "imageUrl": "",
@@ -3420,6 +3448,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 1
             }
           }
@@ -3451,7 +3480,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ae26028e-88e8-4bd8-ada3-88a41afb2245"
+        "Id": "80ed717b-f668-4e97-ba45-5ed0c3761aff"
       }
     ],
     "imageUrl": "",
@@ -3492,6 +3521,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -3512,7 +3542,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5315bb19-3172-4e2e-a0fa-09250e259dfb"
+        "Id": "61b63156-a2ce-4f85-8444-3ce22d9354fe"
       }
     ],
     "imageUrl": "",
@@ -3564,7 +3594,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d0fed7b4-7cdf-4808-81fa-fbbbe407ff54"
+        "Id": "4e99011f-98ac-4d7e-a959-1d691ed5a128"
       }
     ],
     "imageUrl": "",
@@ -3606,7 +3636,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c7c4781b-96ff-425f-9faa-d98c8dc9132b"
+        "Id": "f865d0c1-ca10-4de1-aac1-abf24236bc2c"
       }
     ],
     "imageUrl": "",
@@ -3631,6 +3661,7 @@
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3676,6 +3707,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 2
             }
           }
@@ -3688,7 +3720,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f4954ec6-4a02-4686-8c20-ea2077adb857"
+        "Id": "8f15e261-ee0b-40e7-bd7a-353c781ce0ab"
       }
     ],
     "imageUrl": "",
@@ -3734,6 +3766,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             },
             "FilterDrawedCards": null
@@ -3772,7 +3805,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c0e3ac34-081e-4b66-91ac-3dc64a9958ab"
+        "Id": "49a04645-1aa0-4d34-8585-0e95e5a28858"
       }
     ],
     "imageUrl": "",
@@ -3800,6 +3833,7 @@
         "WhichBoardToSearch": 1,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -3845,6 +3879,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -3860,7 +3895,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "edd331eb-e64a-4a55-89d5-3e367735dc21"
+        "Id": "78fd04fb-5ea4-43dc-948d-95be49dfc82c"
       },
       {
         "Trigger": 7,
@@ -3882,7 +3917,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0807c00c-c947-4001-b6b2-19ff784eee04"
+        "Id": "a8120af9-b48e-4c10-9a93-f98cdf2de82c"
       }
     ],
     "imageUrl": "",
@@ -3931,6 +3966,7 @@
                     "WhichBoardToSearch": 1,
                     "WhichHandToSearch": 3,
                     "WhichPlayedCardsToSearch": 3,
+                    "WhichDeadCardsToSearch": 3,
                     "MaxLength": 0
                   }
                 }
@@ -3944,7 +3980,7 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_61_GLOBAL_EFFECT",
-              "Id": "b19ceaa3-40f3-4f80-9578-baf544a744c8"
+              "Id": "fa755e7e-9932-4937-9212-d8306ac7a9c7"
             }
           }
         ],
@@ -3957,7 +3993,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6141f9f9-484a-40f1-9dd2-f6476acd2d21"
+        "Id": "715e6278-11bb-4e50-9d4a-5f5948c84fdd"
       }
     ],
     "imageUrl": "",
@@ -3994,7 +4030,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0189946b-3a8b-4d5e-8fa0-813ece01eeec"
+        "Id": "a957597b-75b3-4960-b656-d83f0b4c50b9"
       }
     ],
     "imageUrl": "",
@@ -4046,6 +4082,7 @@
             "WhichBoardToSearch": 0,
             "WhichHandToSearch": 3,
             "WhichPlayedCardsToSearch": 3,
+            "WhichDeadCardsToSearch": 3,
             "MaxLength": 0
           },
           "Value": {
@@ -4107,7 +4144,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4373ebcd-3d13-4493-b8a9-dbb629b921b2"
+        "Id": "82358cfe-6220-47d8-88d6-f54c110d4709"
       }
     ],
     "imageUrl": "",
@@ -4150,6 +4187,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -4179,6 +4217,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -4194,7 +4233,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "59243d98-446a-4568-b155-26875cade734"
+        "Id": "60bc4469-b009-4896-b294-edd1876141f1"
       }
     ],
     "imageUrl": "",
@@ -4289,7 +4328,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f29e48d3-5f6c-45e5-882e-f526f809a984"
+        "Id": "10af888c-fb11-4840-a736-6aaa02f5ba87"
       }
     ],
     "imageUrl": "",
@@ -4326,7 +4365,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "936bd4ae-2773-443f-8f22-e4eb12d81a6d"
+        "Id": "62d2af8b-6ac8-45a3-ba0c-c583fc82f5d1"
       }
     ],
     "imageUrl": "",
@@ -4372,7 +4411,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "cb3e2fee-c941-4a2c-ab33-a1ee70ab4957"
+        "Id": "d3f148be-9895-46d2-b22f-7345dd1ae22e"
       }
     ],
     "imageUrl": "",
@@ -4409,7 +4448,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "27c5b391-0a1c-4496-b68a-e0232189fad7"
+        "Id": "744fa451-a05f-4d50-a376-0e1b5271de5a"
       }
     ],
     "imageUrl": "",
@@ -4455,7 +4494,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4f6a9ae7-6782-497a-a384-45ac5515f24a"
+        "Id": "08161e1d-e8b8-4217-8705-b6ff434d0dcd"
       }
     ],
     "imageUrl": "",
@@ -4498,6 +4537,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -4513,7 +4553,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f55f8ca4-b36d-4fdc-9a85-1102da725f7c"
+        "Id": "426a7fd7-f0d9-49fc-9464-2c76434ff698"
       }
     ],
     "imageUrl": "",
@@ -4559,7 +4599,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "441bca7f-52d4-482e-a918-db5c7e528345"
+        "Id": "7f54c913-d071-485b-b542-808b86ba6211"
       }
     ],
     "imageUrl": "",
@@ -4602,6 +4642,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -4617,7 +4658,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "86c4ee30-018a-4ad2-8d98-0f76609a289a"
+        "Id": "4e85e213-d749-4d12-ab82-5715efc5b518"
       }
     ],
     "imageUrl": "",
@@ -4663,7 +4704,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "795896b6-aa2f-4ea5-a248-0aff1e12c4e4"
+        "Id": "c7a94298-689a-4c42-bdc5-b9e0937e4676"
       }
     ],
     "imageUrl": "",
@@ -4700,7 +4741,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "db57a693-bf58-46e2-a3df-699424f1d8ce"
+        "Id": "170dea19-6dcb-4d9c-9e36-9d6c38bc6270"
       }
     ],
     "imageUrl": "",
@@ -4746,7 +4787,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1718324a-c7ae-4ebc-ba69-a1f3d3725922"
+        "Id": "6d81c28f-aeb8-4cd2-94bd-a5d35222525b"
       }
     ],
     "imageUrl": "",
@@ -4768,7 +4809,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "[\u002B2/\u002B2] a las dos pr\u00F3ximas unidades jugadas",
+            "Description": "CARD_81_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 5,
               "Effects": [
@@ -4791,8 +4832,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "[\u002B2/\u002B2] a las dos pr\u00F3ximas unidades jugadas",
-              "Id": "07976bce-a142-49fa-9ab8-17b6df182583"
+              "Description": "CARD_81_GLOBAL_EFFECT",
+              "Id": "3fb1567d-9a67-4188-818b-5a3c37a371de"
             }
           }
         ],
@@ -4807,7 +4848,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ad2e8764-9ad5-4170-b338-34c84a27b8fc"
+        "Id": "1f5ac00e-b2e7-40a1-91bf-b46c8a4f8df2"
       }
     ],
     "imageUrl": "",
@@ -4853,7 +4894,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "81fb286b-fb59-4644-ac66-7c66cd806d88"
+        "Id": "b3ea23b6-3acd-453e-9c73-da73111e7f43"
       }
     ],
     "imageUrl": "",
@@ -4890,7 +4931,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "38aad020-59fd-4b3c-a88e-1b432607e855"
+        "Id": "80cd7b7b-9235-451b-9ca4-010a7c73ccea"
       }
     ],
     "imageUrl": "",
@@ -4922,7 +4963,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "819799f8-53e5-4050-87c3-ea414b0747c8"
+        "Id": "3a374efb-3d51-4285-affd-5c1bb5cf74be"
       }
     ],
     "imageUrl": "",
@@ -4973,7 +5014,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6ac4ef25-2ba3-45d3-a887-73406bd1fc5d"
+        "Id": "ba7935e3-6535-412d-a2f0-8b37d3549d5e"
       }
     ],
     "imageUrl": "",
@@ -5022,7 +5063,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "38570f41-1c04-4074-95b5-1de4754c3e6b"
+        "Id": "59b2737d-6b4a-4224-877a-5ce227b1209c"
       }
     ],
     "imageUrl": "",
@@ -5072,7 +5113,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5a3ef099-02b7-4d95-9867-79bd81dcc903"
+        "Id": "a70f2056-2618-4450-b82e-e7531255a149"
       }
     ],
     "imageUrl": "",
@@ -5081,11 +5122,13 @@
     "PlayEffectTriggerTimes": 0
   },
   {
-    "Families": [],
+    "Families": [
+      "SEGURIDAD"
+    ],
     "Id": "88",
     "Type": 0,
     "BaseAttack": 1,
-    "BaseHealth": 2,
+    "BaseHealth": 3,
     "Effects": [
       {
         "Trigger": 6,
@@ -5124,7 +5167,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2b8ec646-ab3f-4299-91e2-3d89d0727db2"
+        "Id": "b759d911-0d97-4653-990f-bade5c4ee07c"
       }
     ],
     "imageUrl": "",
@@ -5156,6 +5199,7 @@
           "WhichBoardToSearch": 3,
           "WhichHandToSearch": 1,
           "WhichPlayedCardsToSearch": 3,
+          "WhichDeadCardsToSearch": 3,
           "MaxLength": 0
         }
       }
@@ -5189,7 +5233,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "401db02c-0c78-4482-a8c1-a4d211f6b60d"
+        "Id": "a3a20804-ab22-48b3-b196-cd1c10078a0d"
       }
     ],
     "imageUrl": "",
@@ -5240,7 +5284,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "19a46a1f-b791-4569-82f4-6c5222ed031c"
+        "Id": "7ff6cde5-b888-4a13-b4cb-9b44463a4c8e"
       }
     ],
     "imageUrl": "",
@@ -5281,6 +5325,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -5294,7 +5339,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a0980ee3-3db1-4f70-a481-bb216b76480b"
+        "Id": "965551c3-5b3b-4d07-9448-400b7bbe9012"
       }
     ],
     "imageUrl": "",
@@ -5331,7 +5376,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "82fc1717-0d4d-4138-9b9e-bf5f4fa6ed39"
+        "Id": "79f7f7dd-1ab8-45e8-adb3-8255d1753767"
       },
       {
         "Trigger": 5,
@@ -5369,7 +5414,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a8c0b5fa-f5bc-40fd-b4d8-974fbdba259b"
+        "Id": "7d8f201e-f94d-43c9-9a29-71e68d0cf018"
       }
     ],
     "imageUrl": "",
@@ -5423,7 +5468,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e53fe7bb-2396-4166-bca5-a2bba5092545"
+        "Id": "905a405a-8de3-47bd-bdbe-c4add2bc9e47"
       },
       {
         "Trigger": 5,
@@ -5462,7 +5507,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8274ebff-4c79-4e9a-aa30-05c2029d15d1"
+        "Id": "b584f83a-5ad4-44f6-a43c-140a81104b4f"
       }
     ],
     "imageUrl": "",
@@ -5529,6 +5574,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           },
@@ -5562,7 +5608,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "08f95744-e975-4bc5-9857-c595897bbe53"
+        "Id": "ff613fa9-809b-4250-b232-de87a433370e"
       }
     ],
     "imageUrl": "",
@@ -5579,6 +5625,26 @@
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "ce40bf56-c864-4aee-a2b8-097cfab8471c"
+      },
       {
         "Trigger": 6,
         "Effects": [
@@ -5601,7 +5667,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6867dbc2-6298-4a34-9bc2-c68f992335fa"
+        "Id": "dc6349c4-9d95-4836-8618-bdf04430fb5e"
       }
     ],
     "imageUrl": "",
@@ -5634,6 +5700,26 @@
         "Trigger": 6,
         "Effects": [
           {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "e1765501-6a47-47dc-906c-6de718395f84"
+      },
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
             "$type": "AlterPlayerHealthEffect",
             "Amount": 2,
             "ToRival": false
@@ -5656,7 +5742,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a6459bf3-5888-4112-be51-0a0de9e2c9c5"
+        "Id": "e82cc2bb-9cac-4099-b686-dee0fa19c1a2"
       }
     ],
     "imageUrl": "",
@@ -5699,6 +5785,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -5715,7 +5802,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a8443d17-45bc-4fcd-a0c4-83f56ddc44d6"
+        "Id": "95667def-08b6-4ac6-b9c0-4a5457cef056"
       }
     ],
     "imageUrl": "",
@@ -5732,6 +5819,26 @@
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "a4f1725a-7761-413d-b8e4-7835a5104ae8"
+      },
       {
         "Trigger": 6,
         "Effects": [
@@ -5758,6 +5865,7 @@
               "WhichBoardToSearch": 0,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 0
             }
           }
@@ -5774,7 +5882,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e8e78c50-9f38-4814-aa3f-ce911febfae5"
+        "Id": "572d7ff7-f7b1-4b80-95e2-0f158089bab6"
       }
     ],
     "imageUrl": "",
@@ -5791,6 +5899,26 @@
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "537510fc-e70c-47cd-bb6a-52b08b81a159"
+      },
       {
         "Trigger": 6,
         "Effects": [
@@ -5812,7 +5940,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "73a9140e-e53b-42da-aa24-7fbec372261a"
+        "Id": "5054c019-cdd2-440f-8aa6-7f6eb165c015"
       }
     ],
     "imageUrl": "",
@@ -5829,6 +5957,26 @@
     "BaseAttack": 0,
     "BaseHealth": 0,
     "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "e2a12929-9c35-4de6-aaf8-a232217fe869"
+      },
       {
         "Trigger": 6,
         "Effects": [
@@ -5850,7 +5998,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f0063f75-2664-4704-ae2c-98ef51532191"
+        "Id": "419c8fa0-cfa1-4e51-ba18-88aaf3f306d2"
       }
     ],
     "imageUrl": "",
@@ -5872,6 +6020,26 @@
         "Trigger": 6,
         "Effects": [
           {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "bfe1abc4-47d4-4f85-94d1-ee4b0ff9692f"
+      },
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
             "$type": "UseRandomSpellFromEnemyDeck"
           }
         ],
@@ -5884,7 +6052,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "40c42427-ab1a-4298-aa4b-5ce5583ca1d2"
+        "Id": "2282198f-3f9c-45b6-85eb-81b7f75cd2c1"
       }
     ],
     "imageUrl": "",
@@ -5918,7 +6086,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f165e1cd-6d75-4393-9f59-18292f468879"
+        "Id": "da28d8b8-b0f5-4a79-bba7-f3fc974a7925"
       }
     ],
     "imageUrl": "",
@@ -5931,7 +6099,7 @@
     "Id": "105",
     "Type": 0,
     "BaseAttack": 0,
-    "BaseHealth": 3,
+    "BaseHealth": 6,
     "Effects": [
       {
         "Trigger": 6,
@@ -5967,7 +6135,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "41e413d8-f8c5-44df-81f6-dbf1eb9d0eb6"
+        "Id": "595bc27b-95eb-4535-bf46-3911c98bf9ae"
       }
     ],
     "imageUrl": "",
@@ -5987,7 +6155,7 @@
         "Effects": [
           {
             "$type": "CreateRandomCoin",
-            "Amount": 6
+            "Amount": 4
           }
         ],
         "Duration": {
@@ -5999,7 +6167,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e30efac3-b069-44fe-8de9-d5f31560c63f"
+        "Id": "c44c77bc-80eb-440d-bba8-c05d7649511c"
       }
     ],
     "imageUrl": "",
@@ -6059,6 +6227,7 @@
               "WhichBoardToSearch": 1,
               "WhichHandToSearch": 3,
               "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
               "MaxLength": 1
             }
           },
@@ -6078,7 +6247,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5cc6b2f4-538f-4430-84e3-a5884ec3e417"
+        "Id": "3c6336a1-58b0-4ab8-9119-71a76ddbb17a"
       }
     ],
     "imageUrl": "",
@@ -6103,6 +6272,7 @@
         "WhichBoardToSearch": 0,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -6146,6 +6316,7 @@
           "WhichBoardToSearch": 1,
           "WhichHandToSearch": 3,
           "WhichPlayedCardsToSearch": 3,
+          "WhichDeadCardsToSearch": 3,
           "MaxLength": 0
         }
       },
@@ -6196,15 +6367,15 @@
     "Families": [],
     "Id": "110",
     "Type": 0,
-    "BaseAttack": 0,
-    "BaseHealth": 4,
+    "BaseAttack": 2,
+    "BaseHealth": 3,
     "Effects": [
       {
         "Trigger": 6,
         "Effects": [
           {
             "$type": "CreateRandomCoin",
-            "Amount": 2
+            "Amount": 1
           }
         ],
         "Duration": {
@@ -6234,7 +6405,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5381c93b-a3ce-408a-87fb-8660a5fc3004"
+        "Id": "00512536-b6d0-4231-a2a2-1d05bf73f8ef"
       }
     ],
     "imageUrl": "",
@@ -6278,11 +6449,16 @@
                     "MustMeetAllCriteria": false
                   },
                   "MaxCards": 1
+                },
+                {
+                  "$type": "DrawCardEffect",
+                  "CardAmount": 1,
+                  "Filter": null
                 }
               ],
               "Duration": {
                 "$type": "DurationByExecutions",
-                "times": 4
+                "times": 8
               },
               "Condition": {
                 "$type": "TurnCounterCondition",
@@ -6293,7 +6469,7 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_111_GLOBAL_EFFECT",
-              "Id": "65957ea5-d6f8-494a-8bfc-05ae6c0b82ef"
+              "Id": "90e746ec-09a9-4d94-b78a-b9d4c7dfa0b8"
             }
           }
         ],
@@ -6306,7 +6482,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "40a274b3-c96d-4a01-b39b-98fc4aa44981"
+        "Id": "0cb9e738-240a-476a-8c2f-980b2d29fd4a"
       }
     ],
     "imageUrl": "",
@@ -6381,7 +6557,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5b5edb93-d103-43f9-802c-1b755bf4b77b"
+        "Id": "9c8df98f-b8c8-434f-b8ec-58cec186711e"
       }
     ],
     "imageUrl": "",
@@ -6427,7 +6603,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7ef0863e-b0ab-4d4f-a66f-03a20d88d313"
+        "Id": "20943352-3925-4e18-95bc-36b1ccf9ead1"
       }
     ],
     "imageUrl": "",
@@ -6470,13 +6646,13 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "Cuando el juagdor juegue una moneda, creo otra y la a\u00F1ado en el mazo",
+            "Description": "CARD_114_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 6,
               "Effects": [
                 {
                   "$type": "CreateRandomCoin",
-                  "Amount": 2
+                  "Amount": 1
                 }
               ],
               "Duration": {
@@ -6506,8 +6682,8 @@
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "Cuando el juagdor juegue una moneda, creo otra y la a\u00F1ado en el mazo",
-              "Id": "03127245-a527-4691-9eb6-f1dbeebf19b2"
+              "Description": "CARD_114_GLOBAL_EFFECT",
+              "Id": "8ddf4af2-3975-4f9c-b756-eb17fe81fdbe"
             }
           }
         ],
@@ -6522,7 +6698,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5da66ab6-ad38-4ad1-8e98-e04dde9e23e4"
+        "Id": "4edbe480-8cb9-423e-a809-fe3a4568f7a1"
       }
     ],
     "imageUrl": "",
@@ -6568,6 +6744,7 @@
                   "WhichBoardToSearch": 1,
                   "WhichHandToSearch": 3,
                   "WhichPlayedCardsToSearch": 3,
+                  "WhichDeadCardsToSearch": 3,
                   "MaxLength": 0
                 }
               }
@@ -6596,6 +6773,7 @@
                   "WhichBoardToSearch": 0,
                   "WhichHandToSearch": 3,
                   "WhichPlayedCardsToSearch": 3,
+                  "WhichDeadCardsToSearch": 3,
                   "MaxLength": 0
                 }
               }
@@ -6627,7 +6805,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "3c079522-bf9a-44e9-a2ce-89b1b64776d7"
+        "Id": "ca3b3efc-cac4-4def-bd06-1ed7d4f9046c"
       }
     ],
     "imageUrl": "",
@@ -6656,9 +6834,31 @@
             ],
             "IfGreen": [
               {
-                "$type": "AlterPlayerHealthEffect",
-                "Amount": 3,
-                "ToRival": false
+                "$type": "AlterUnitStatsEffect",
+                "Health": 2,
+                "Damage": 0,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": 0,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 0,
+                  "WhichBoardToSearch": 3,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "WhichDeadCardsToSearch": 3,
+                  "MaxLength": 2
+                }
               }
             ],
             "IfBlue": [
@@ -6685,6 +6885,7 @@
                   "WhichBoardToSearch": 3,
                   "WhichHandToSearch": 3,
                   "WhichPlayedCardsToSearch": 3,
+                  "WhichDeadCardsToSearch": 3,
                   "MaxLength": 2
                 }
               }
@@ -6702,7 +6903,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9e6b2c39-d81a-4e61-9526-f74f222c8bb4"
+        "Id": "51257b6c-23bc-4217-8281-1d8b765c7552"
       }
     ],
     "imageUrl": "",
@@ -6717,7 +6918,7 @@
     "Id": "117",
     "Type": 0,
     "BaseAttack": 0,
-    "BaseHealth": 3,
+    "BaseHealth": 6,
     "Effects": [
       {
         "Trigger": 5,
@@ -6727,7 +6928,7 @@
             "IfRed": [
               {
                 "$type": "AlterUnitStatsEffect",
-                "Health": 1,
+                "Health": -3,
                 "Damage": 0,
                 "Filter": {
                   "Filter": {
@@ -6748,15 +6949,16 @@
                   "WhichBoardToSearch": 1,
                   "WhichHandToSearch": 3,
                   "WhichPlayedCardsToSearch": 3,
-                  "MaxLength": 0
+                  "WhichDeadCardsToSearch": 3,
+                  "MaxLength": 1
                 }
               }
             ],
             "IfGreen": [
               {
                 "$type": "AlterUnitStatsEffect",
-                "Health": -1,
-                "Damage": 0,
+                "Health": 0,
+                "Damage": 1,
                 "Filter": {
                   "Filter": {
                     "CurrentAttack": null,
@@ -6776,6 +6978,7 @@
                   "WhichBoardToSearch": 0,
                   "WhichHandToSearch": 3,
                   "WhichPlayedCardsToSearch": 3,
+                  "WhichDeadCardsToSearch": 3,
                   "MaxLength": 0
                 }
               }
@@ -6800,7 +7003,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0698507a-523a-4edf-85c0-1a67ef490613"
+        "Id": "c1640be6-18c3-4df9-b769-82711562b30a"
       }
     ],
     "imageUrl": "",
@@ -6820,7 +7023,7 @@
         "Effects": [
           {
             "$type": "AppendGlobalEffect",
-            "Description": "Rota el color crom\u00E1tico al final de cada turno",
+            "Description": "CARD_118_GLOBAL_EFFECT",
             "Effect": {
               "Trigger": 0,
               "Effects": [
@@ -6829,14 +7032,15 @@
                 }
               ],
               "Duration": {
-                "$type": "Always"
+                "$type": "DurationByExecutions",
+                "times": 4
               },
               "Condition": null,
               "SourceCard": null,
               "Player": null,
               "Expired": false,
-              "Description": "Rota el color crom\u00E1tico al final de cada turno",
-              "Id": "f9dc7ea4-cae7-43a7-b960-ffdcf709219e"
+              "Description": "CARD_118_GLOBAL_EFFECT",
+              "Id": "f596ab32-e047-47ae-9c34-8f34142bb2ba"
             }
           }
         ],
@@ -6851,7 +7055,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "36c78f98-09bf-4759-993a-e941e6e25595"
+        "Id": "78026782-11f8-4e92-bdb3-5a9b3caac9b5"
       }
     ],
     "imageUrl": "",
@@ -6865,7 +7069,7 @@
     ],
     "Id": "119",
     "Type": 0,
-    "BaseAttack": 6,
+    "BaseAttack": 5,
     "BaseHealth": 1,
     "Effects": [],
     "imageUrl": "",
@@ -6883,7 +7087,7 @@
     "Id": "120",
     "Type": 0,
     "BaseAttack": 0,
-    "BaseHealth": 6,
+    "BaseHealth": 2,
     "Effects": [
       {
         "Trigger": 12,
@@ -6905,7 +7109,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ef4ab26d-086e-4ccf-9002-1637402cf02a"
+        "Id": "b8c950d7-9abe-4e31-9db5-b19560665ec2"
       }
     ],
     "imageUrl": "",
@@ -6964,7 +7168,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d2315e21-d884-4476-b230-1b75791c3c91"
+        "Id": "eff64f94-c1e2-4f17-99cd-ffe923cc7081"
       }
     ],
     "imageUrl": "",
@@ -6989,11 +7193,12 @@
         "WhichBoardToSearch": 3,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
         "Type": 1,
-        "Amount": 20
+        "Amount": 15
       }
     },
     "PlayEffects": null,
@@ -7045,7 +7250,7 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "602e146d-0c5e-45e1-899d-4ec17d232ba4"
+        "Id": "58c4d397-2300-4f50-b815-d46d8c443473"
       }
     ],
     "imageUrl": "",
@@ -7070,6 +7275,7 @@
         "WhichBoardToSearch": 3,
         "WhichHandToSearch": 3,
         "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
         "MaxLength": 0
       },
       "Value": {
@@ -7077,6 +7283,754 @@
         "Amount": 10
       }
     },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "124",
+    "Type": 0,
+    "BaseAttack": 0,
+    "BaseHealth": 4,
+    "Effects": [
+      {
+        "Trigger": 2,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": -1,
+            "ToRival": true
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerHealthChangedCondition",
+          "Me": true,
+          "Amount": {
+            "Type": 4,
+            "Amount": 0
+          }
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "c1885810-935b-4686-ba68-861b7f7a6815"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "125",
+    "Type": 0,
+    "BaseAttack": 1,
+    "BaseHealth": 3,
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": -1,
+            "ToRival": false
+          },
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": -1,
+            "ToRival": true
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": true,
+          "Filter": null
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "0f370146-6bca-4a89-a0e1-5b97573039ec"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "126",
+    "Type": 0,
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": -1,
+            "ToRival": true
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "61cfc595-4c8a-49dc-bf5b-3c8f60a34c7c"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "127",
+    "Type": 0,
+    "BaseAttack": 2,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "5cf60a91-247e-463f-a279-1440deb70b5f"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "128",
+    "Type": 0,
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "PlayCardEffect",
+            "CardId": "129",
+            "FromDeck": false,
+            "ToHand": false
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "MultiEffectCondition",
+          "Conditions": [
+            {
+              "$type": "IHaveBeenPlayedCondition"
+            },
+            {
+              "$type": "PlayerHealthCondition",
+              "Me": true,
+              "Value": {
+                "Type": 1,
+                "Amount": 10
+              }
+            }
+          ],
+          "IsOr": false
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "4c04d6cd-130a-4af0-85d9-df19420e10b8"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "129",
+    "Type": 0,
+    "BaseAttack": 4,
+    "BaseHealth": 4,
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "AppendCardToDeck",
+            "CardId": "132",
+            "CardsAmount": 3,
+            "ToRival": false,
+            "TopDeckDepth": 0
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "6b2685d4-8fe3-4625-9342-e42d8325e320"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "130",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "KillCards",
+            "BoardSearch": 0,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": null,
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "Count": 1
+          },
+          {
+            "$type": "KillCards",
+            "BoardSearch": 1,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": null,
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "Count": 1
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "dc6c6129-cc1c-4281-8b79-c8d958f7a9a0"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "CardType": null,
+          "Families": null,
+          "CurrentFamilies": null,
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 3,
+        "WhichBoardToSearch": 0,
+        "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
+        "MaxLength": 0
+      },
+      "Value": {
+        "Type": 0,
+        "Amount": 1
+      }
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "131",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "KillCards",
+            "BoardSearch": 0,
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": null,
+              "Families": null,
+              "CurrentFamilies": null,
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "Count": 2
+          },
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": -3,
+            "Damage": 0,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 1,
+              "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
+              "MaxLength": 0
+            }
+          },
+          {
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 3,
+            "ToRival": false
+          },
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 2,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "163fd214-1ea9-41d9-b701-cc4a5b52a9d0"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "CardType": null,
+          "Families": null,
+          "CurrentFamilies": null,
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 3,
+        "WhichBoardToSearch": 0,
+        "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 3,
+        "MaxLength": 0
+      },
+      "Value": {
+        "Type": 0,
+        "Amount": 2
+      }
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "132",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "ReviveLastDied",
+            "Filter": {
+              "CurrentAttack": null,
+              "CurrentHealth": null,
+              "Attack": null,
+              "Health": null,
+              "CardType": 0,
+              "Families": null,
+              "CurrentFamilies": null,
+              "DefinitionId": null,
+              "Id": null,
+              "HasEffect": null,
+              "NumberOfTriggersLeft": null,
+              "MustMeetAllCriteria": false
+            },
+            "Destinations": {
+              "BOARD": 3
+            },
+            "ToMe": true
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "e73458e5-fbdd-48a5-be7a-c1ad92714e4f"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "CountCardCondition",
+      "Filter": {
+        "Filter": {
+          "CurrentAttack": null,
+          "CurrentHealth": null,
+          "Attack": null,
+          "Health": null,
+          "CardType": 0,
+          "Families": null,
+          "CurrentFamilies": null,
+          "DefinitionId": null,
+          "Id": null,
+          "HasEffect": null,
+          "NumberOfTriggersLeft": null,
+          "MustMeetAllCriteria": false
+        },
+        "WhichDeckToSearch": 3,
+        "WhichBoardToSearch": 3,
+        "WhichHandToSearch": 3,
+        "WhichPlayedCardsToSearch": 3,
+        "WhichDeadCardsToSearch": 0,
+        "MaxLength": 0
+      },
+      "Value": {
+        "Type": 0,
+        "Amount": 15
+      }
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "133",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "AppendGlobalEffect",
+            "Description": "CARD_133_GLOBAL_EFFECT",
+            "Effect": {
+              "Trigger": 0,
+              "Effects": [
+                {
+                  "$type": "ReviveLastDied",
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": 0,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "Destinations": {
+                    "BOARD": 1
+                  },
+                  "ToMe": true
+                }
+              ],
+              "Duration": {
+                "$type": "DurationByExecutions",
+                "times": 3
+              },
+              "Condition": null,
+              "SourceCard": null,
+              "Player": null,
+              "Expired": false,
+              "Description": "CARD_133_GLOBAL_EFFECT",
+              "Id": "78c4af01-c924-4565-aca1-02989fdcd678"
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "695a0862-7bc5-4f7d-ae55-70fba84ee44e"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "134",
+    "Type": 0,
+    "BaseAttack": 1,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "CreateCopyOfSelf",
+            "CopyDamage": true
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "ac3d5a28-8d31-430b-b934-24185c53258e"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "135",
+    "Type": 0,
+    "BaseAttack": 2,
+    "BaseHealth": 1,
+    "Effects": [],
+    "imageUrl": "",
+    "ConditionToPlay": null,
+    "PlayEffects": [
+      {
+        "$type": "KillMySelf"
+      },
+      {
+        "$type": "AlterUnitStatsEffect",
+        "Health": -1,
+        "Damage": 0,
+        "Filter": {
+          "Filter": {
+            "CurrentAttack": null,
+            "CurrentHealth": null,
+            "Attack": null,
+            "Health": null,
+            "CardType": null,
+            "Families": null,
+            "CurrentFamilies": null,
+            "DefinitionId": null,
+            "Id": null,
+            "HasEffect": null,
+            "NumberOfTriggersLeft": null,
+            "MustMeetAllCriteria": false
+          },
+          "WhichDeckToSearch": 3,
+          "WhichBoardToSearch": 1,
+          "WhichHandToSearch": 3,
+          "WhichPlayedCardsToSearch": 3,
+          "WhichDeadCardsToSearch": 3,
+          "MaxLength": 0
+        }
+      }
+    ],
+    "PlayEffectTriggerTimes": 1
+  },
+  {
+    "Families": [
+      "ESPIRITU"
+    ],
+    "Id": "136",
+    "Type": 0,
+    "BaseAttack": 1,
+    "BaseHealth": 2,
+    "Effects": [
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": 0,
+            "Damage": 1,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 0,
+              "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
+              "MaxLength": 1
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "Id": "b07f480d-06c8-405e-b35a-ae8dc4286ed8"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": null,
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   }
