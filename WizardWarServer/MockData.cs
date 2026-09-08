@@ -681,7 +681,7 @@ public static class MockData
         Effects = [
             new(
                 TriggerType.SpellPlayed,
-                [new AlterPlayerHealthEffect(-1, true)],
+                [new AlterPlayerHealthEffect(-2, true)],
                 new Always(),
                 new PlayerCardCondition(true, new() { DefinitionId = "27"})
             )
@@ -1797,8 +1797,9 @@ new()
         new(TriggerType.SpellPlayed, [
             new AppendGlobalEffect(
                 new(TriggerType.TurnEnd, [
-                    new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}, 1)
-                ], new DurationByExecutions(4), new TurnCounterCondition(1)),
+                    new ForcePlayCardInHandEffect(PlayerType.PLAYER, new() { CurrentFamilies = ["MONEDA_DEL_CAOS"]}, 1),
+                    new DrawCardEffect()
+                ], new DurationByExecutions(8), new TurnCounterCondition(1)),
                 "CARD_111_GLOBAL_EFFECT"
             )
         ], new DurationByExecutions(1), null)
@@ -1999,7 +2000,7 @@ new()
                 new AlterPlayerHealthEffect(-1, true)
             ],
             new Always(),
-            null
+            new PlayerCardCondition(true, null)
         )
     ]
 },
@@ -2151,6 +2152,56 @@ new()
                     ),
                     "CARD_133_GLOBAL_EFFECT"
                 )
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "134",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 1,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [
+                new AppendCardToDeck(1, "134", false),
+                new AlterUnitStatsEffect(0, 1, new() { WhichDeckToSearch = PlayerType.PLAYER, Filter = new() { DefinitionId = "134" } })
+            ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        )
+    ]
+},
+new()
+{
+    Id = "135",
+    Type = CardType.Unit,
+    BaseAttack = 2,
+    BaseHealth = 1,
+    Families = ["ESPIRITU"],
+    PlayEffects = [
+        new KillMySelf(),
+        new AlterUnitStatsEffect(-1, 0, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new() })
+    ],
+    PlayEffectTriggerTimes = 1
+},
+new()
+{
+    Id = "136",
+    Type = CardType.Unit,
+    BaseAttack = 1,
+    BaseHealth = 2,
+    Families = ["ESPIRITU"],
+    Effects = [
+        new(
+            TriggerType.UnitDeath,
+            [
+                new AlterUnitStatsEffect(0, 1, new() { WhichBoardToSearch = PlayerType.PLAYER, MaxLength = 1, Filter = new() })
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
@@ -2385,7 +2436,7 @@ new()
             new DeckDto(13, "Culto de los espíritus", "Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra."),
             new()
             {
-                //30
+                //39
                 {"124", 4},
                 {"125", 4},
                 {"126", 4},
@@ -2396,6 +2447,9 @@ new()
                 {"131", 3},
                 {"132", 0},
                 {"133", 4},
+                {"134", 3},
+                {"135", 3},
+                {"136", 3},
             }
         }
 

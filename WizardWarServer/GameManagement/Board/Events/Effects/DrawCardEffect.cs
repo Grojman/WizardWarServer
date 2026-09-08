@@ -3,6 +3,7 @@ public class DrawCardEffect : IEffect
 {
     public DrawCardEffect()
     {
+        CardAmount = 1;
     }
 
     public DrawCardEffect(int cardAmount, CardFilter? filter)

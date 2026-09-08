@@ -479,6 +479,8 @@ public class GameState
 
     public void ApplyEffect(CardInstance card, TriggerType type, GameEvent? ev)
     {
+        if (card.DeathChecked) return;
+
         foreach(EffectInstance ei in card.Effects)
         {
             if(ei.Trigger == type)

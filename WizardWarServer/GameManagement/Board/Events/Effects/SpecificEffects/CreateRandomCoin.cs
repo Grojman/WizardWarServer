@@ -16,7 +16,7 @@ public class CreateRandomCoin : IEffect
         for (int i = 0; i < Amount; i++)
         {
             var card = new CardInstance(CardManager.GetCardById(COINS.GetRandom()), player);
-            state.AddCard(player, player, card, cardId);
+            state.AddCard(player, player, card, cardId, 15);
         }
 
     }
