@@ -218,21 +218,21 @@ CARD_94_DESC,{skill:HABILIDAD}: {die:Muero} y curo a mi {player:jugador} el equi
 CARD_95_NAME,Prueba Unitaria,Unit Test
 CARD_95_DESC,{draw:Roba} una {family:capa}. Las cartas de tipo {family:Seguridad} en el {deck:mazo} y {board:mesa} de mi {player:jugador} ganan 1 de vida,{draw:Draw} a {family:layer}. {family:Security}-type cards in my {player:player}'s {deck:deck} and {board:board} gain 1 life
 CARD_96_NAME,Moneda de la llamada,Coin of the Call
-CARD_96_DESC,"50% de probabilidades de {play:jugar} un terror agónico en la {board:mesa} de mi {player:jugador}, si hay hueco","50% chance to {play:play} an Agonizing Terror on my {player:player}'s {board:board}, if there is space"
+CARD_96_DESC,"{draw:Roba} una carta. 50% de probabilidades de {play:jugar} un terror agónico en la {board:mesa} de mi {player:jugador}, si hay hueco","{draw:Draw} a card. 50% chance to {play:play} an Agonizing Terror on my {player:player}'s {board:board}, if there is space"
 CARD_97_NAME,Terror Agónico,Agonizing Terror
 CARD_97_DESC,,
 CARD_98_NAME,Moneda sangrienta,Bloody Coin
-CARD_98_DESC,"50% de probabilidades de curar a mi {player:juagdor} 2, y quitarle 2 de vida al {rival:rival}","50% chance to heal my {player:player} for 2, and take 2 life from the {rival:rival}"
+CARD_98_DESC,"{draw:Roba} una carta. 50% de probabilidades de curar a mi {player:juagdor} 2, y quitarle 2 de vida al {rival:rival}","{draw:Draw} a card. 50% chance to heal my {player:player} for 2, and take 2 life from the {rival:rival}"
 CARD_99_NAME,Moneda del sufrimiento,Coin of Suffering
-CARD_99_DESC,50% de probabilidades de [-1/-1] a la {board:mesa} {rival:rival},50% chance of [-1/-1] to the {rival:rival} {board:board}
+CARD_99_DESC,{draw:Roba} una carta. 50% de probabilidades de [-1/-1] a la {board:mesa} {rival:rival},{draw:Draw} a card. 50% chance of [-1/-1] to the {rival:rival} {board:board}
 CARD_100_NAME,Moneda gloriosa,Glorious Coin
-CARD_100_DESC,50% de probabilidades de otorgar [+1/+1] a la {board:mesa} y al {deck:mazo} de mi {player:jugador},50% chance to grant [+1/+1] to my {player:player}'s {board:board} and {deck:deck}
+CARD_100_DESC,{draw:Roba} una carta. 50% de probabilidades de otorgar [+1/+1] a la {board:mesa} y al {deck:mazo} de mi {player:jugador},{draw:Draw} a card. 50% chance to grant [+1/+1] to my {player:player}'s {board:board} and {deck:deck}
 CARD_101_NAME,Moneda codiciosa,Greedy Coin
-CARD_101_DESC,50% de probabilidades de curar 4 de vida a mi {player:jugador},50% chance to heal my {player:player} for 4 life
+CARD_101_DESC,{draw:Roba} una carta. 50% de probabilidades de curar 4 de vida a mi {player:jugador},{draw:Draw} a card. 50% chance to heal my {player:player} for 4 life
 CARD_102_NAME,Moneda de la venganza,Coin of Vengeance
-CARD_102_DESC,50% de probabilidades de quitar 4 de vida al {rival:rival},50% chance to take 4 life from the {rival:rival}
+CARD_102_DESC,{draw:Roba} una carta. 50% de probabilidades de quitar 4 de vida al {rival:rival},{draw:Draw} a card. 50% chance to take 4 life from the {rival:rival}
 CARD_103_NAME,Moneda de las profundidades,Coin of the Depths
-CARD_103_DESC,Copio un hechizo del {deck:mazo} {rival:rival} y lo {play:juego},I copy a spell from the {rival:rival}'s {deck:deck} and {play:play} it
+CARD_103_DESC,{draw:Roba} una carta. Copio un hechizo del {deck:mazo} {rival:rival} y lo {play:juego},{draw:Draw} a card. I copy a spell from the {rival:rival}'s {deck:deck} and {play:play} it
 CARD_104_NAME,Ladrón codicioso,Greedy Thief
 CARD_104_DESC,"Cuando {die:muero}, {add:creo} dos {family:monedas del caos} entre las primeras 15 cartas del mazo","When I {die:die}, I {add:create} two {family:chaos coins} into the 15 first cards in the deck"
 CARD_105_NAME,Máquina de lotería,Lottery Machine

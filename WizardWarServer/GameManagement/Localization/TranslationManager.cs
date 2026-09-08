@@ -111,7 +111,7 @@ public static class TranslationManager
         }
 
         WarnMissingKey(key);
-        return key;
+        return string.Empty;
     }
 
     // Only UI/error strings are meant to be pushed to the client wholesale on a language
