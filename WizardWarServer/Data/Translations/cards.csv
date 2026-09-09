@@ -301,7 +301,7 @@ GLOBAL_EFFECT_COLOR_CELESTE,CELESTE,CELESTE
 GLOBAL_EFFECT_COLOR_MORADO,MORADO,PURPLE
 GLOBAL_EFFECT_COLOR_BLANCO,BLANCO,WHITE
 FAMILY_ESPIRITU,Espíritu,Spirit
-DECK_13_NAME,Culto de los espíritus,Cult of Spirits
+DECK_13_NAME,Abominación del más allá,Abomination from the other plane
 DECK_13_DESC,"Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra.","Sacrifice your own units to unleash the power of the spirits: every death fuels your revenge, and when the graveyard overflows, revive your fallen. Perfect for those who don't fear losing units to win the war."
 CARD_124_NAME,Espíritu vengador,Vengeful Spirit
 CARD_124_DESC,"Cuando mi {player:jugador} recibe daño, inflinjo 1 de daño al {rival:rival}","When my {player:player} takes damage, I deal 1 damage to the {rival:rival}"
