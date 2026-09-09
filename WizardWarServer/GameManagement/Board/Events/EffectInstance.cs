@@ -25,6 +25,15 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
 
     public string Description { get; set; } = string.Empty;
 
+    // Set (only) by GameState.AddGlobalEffect, once this instance actually
+    // lives in a PlayerState.GlobalEffects list. Lets TryExecute/ForceExecute
+    // below attribute whatever this effect does back to itself (via
+    // GameState.CurrentGlobalEffectSource) instead of to SourceCard — the
+    // card that originally granted the aura may be long dead/off the board
+    // by the time the aura fires again, so it's not a meaningful animation
+    // source for the client.
+    public bool IsGlobal { get; set; } = false;
+
     public EffectInstance Clone()
     {
         return new()
@@ -52,9 +61,17 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         if (ev is not null && ev.Source.Id == Id)
             return;
 
-        Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
-
-        Duration.NotifyExecution();
+        var previousGlobalSource = state.CurrentGlobalEffectSource;
+        if (IsGlobal) state.CurrentGlobalEffectSource = this;
+        try
+        {
+            Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
+            Duration.NotifyExecution();
+        }
+        finally
+        {
+            state.CurrentGlobalEffectSource = previousGlobalSource;
+        }
     }
 
     public void ForceExecute(
@@ -63,8 +80,16 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         bool notifyExec
     )
     {
-        Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
-
-        if (notifyExec) Duration.NotifyExecution();
+        var previousGlobalSource = state.CurrentGlobalEffectSource;
+        if (IsGlobal) state.CurrentGlobalEffectSource = this;
+        try
+        {
+            Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
+            if (notifyExec) Duration.NotifyExecution();
+        }
+        finally
+        {
+            state.CurrentGlobalEffectSource = previousGlobalSource;
+        }
     }
 }

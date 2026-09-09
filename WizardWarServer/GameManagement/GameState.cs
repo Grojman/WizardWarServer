@@ -12,6 +12,17 @@ public class GameState
 
     public int TurnCounter { get; set; } = 1;
 
+    // Set for the duration of a global (PlayerState.GlobalEffects) EffectInstance's
+    // execution by EffectInstance.TryExecute/ForceExecute. Every mutation method
+    // below that takes an explicit `source` defers to it via ResolveSource, so a
+    // recurring aura's side effects (unit stats, player health, ...) are attributed
+    // back to the aura itself rather than to whatever card originally granted it
+    // (which may be long dead) — that's what lets the client animate the resulting
+    // particle from the global effect's own badge (see PlayerComponent).
+    public EffectInstance? CurrentGlobalEffectSource { get; set; }
+
+    IdentificableObject ResolveSource(IdentificableObject source) => CurrentGlobalEffectSource ?? source;
+
     DateTime Start;
     DateTime End;
 
@@ -525,6 +536,7 @@ public class GameState
 
     public void AlterUnitHealth(IdentificableObject source, CardInstance Unit, int Amount, bool checkKill = true, bool enqueueToUsers = true)
     {
+        source = ResolveSource(source);
         Unit.CurrentHealth += Amount;
         var gevent = new GameEvent.UnitHealthChanged()
         {
@@ -549,6 +561,7 @@ public class GameState
 
     public void AlterUnitDamage(IdentificableObject source, CardInstance Unit, int Amount)
     {
+        source = ResolveSource(source);
         if (Amount == 0 || (Amount < 0 && Unit.CurrentAttack == 0)) return;
         Amount = Unit.CurrentAttack + Amount < 0 ? -Unit.CurrentAttack : Amount;
         Unit.CurrentAttack += Amount;
@@ -567,6 +580,7 @@ public class GameState
 
     public void AlterPlayerHealth(IdentificableObject source, PlayerState player, int Amount, bool enqueueToUsers = true)
     {
+        source = ResolveSource(source);
         player.Health += Amount;
         var gevent = new GameEvent.PlayerHealthChanged()
         {
@@ -587,6 +601,8 @@ public class GameState
 
     public void AddGlobalEffect(IdentificableObject source, PlayerState player, EffectInstance effect)
     {
+        source = ResolveSource(source);
+        effect.IsGlobal = true;
         player.GlobalEffects.Add(effect);
 
         var gevent = new GameEvent.GlobalEffectAdded()
@@ -602,6 +618,7 @@ public class GameState
 
     public void KillUnit(IdentificableObject source, CardInstance Unit)
     {
+        source = ResolveSource(source);
         if (Unit.DeathChecked) return;
         Unit.DeathChecked = true;
         Unit.Player.DeadCards.Add(Unit);

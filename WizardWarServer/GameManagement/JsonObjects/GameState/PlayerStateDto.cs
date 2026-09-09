@@ -1,4 +1,4 @@
-public record PlayerStateDto(Guid Id, Guid TargetPlayer, string Name, CardDto?[] Board, int Health, int HandSize, CardDto[] HandData, DeckStateDto Deck, IEnumerable<string> GlobalEffects, bool IsMyTurn, CardDto? LastSpellPlayed)
+public record PlayerStateDto(Guid Id, Guid TargetPlayer, string Name, CardDto?[] Board, int Health, int HandSize, CardDto[] HandData, DeckStateDto Deck, IEnumerable<GlobalEffectDto> GlobalEffects, bool IsMyTurn, CardDto? LastSpellPlayed)
 {
     public static PlayerStateDto Generate(PlayerState state, bool hidden, GameState gameState, string language)
     {
@@ -10,7 +10,7 @@ public record PlayerStateDto(Guid Id, Guid TargetPlayer, string Name, CardDto?[]
                     state.Hand.Count,
                     hidden ? [] : [.. state.Hand.Select(n => CardDto.Generate(n, gameState, false, language))],
                     DeckStateDto.Generate(state.Deck!),
-                    state.GlobalEffects.Select(n => TranslationManager.Get(n.Description, language)),
+                    state.GlobalEffects.Select(n => GlobalEffectDto.Generate(n, language)),
                     state.IsMyTurn,
                     state.LastSpellPlayed is null ? null : CardDto.Generate(state.LastSpellPlayed, gameState, true, language));
     }
