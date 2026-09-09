@@ -78,6 +78,14 @@ internal class Program
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
+            // Angular client-side routing: a click inside the app never hits the
+            // server (the router intercepts it), but typing a URL like
+            // /team directly, or refreshing on one, is a real HTTP request for
+            // that path. UseStaticFiles only knows the files that actually exist
+            // in wwwroot, so without this fallback any such request 404s instead
+            // of loading index.html and letting Angular's router take over.
+            app.MapFallbackToFile("index.html");
+
             StoringData.Configure(serverOptions);
             StoringData.GetFromFile();
 
