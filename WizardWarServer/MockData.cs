@@ -1633,11 +1633,10 @@ new()
     Type = CardType.Spell,
     Effects = [
         new(TriggerType.SpellPlayed, [
-            new DrawCardEffect(1, null)
-        ], new DurationByExecutions(1), null),
-        new(TriggerType.SpellPlayed,[
-            new PlayCardEffect("97", false, false)
-        ], new DurationByExecutions(1), new RandomCondition(50))
+            new RandomBranchEffect(50,
+                [new PlayCardEffect("97", false, false)],
+                [new DrawCardEffect(1, null)])
+        ], new DurationByExecutions(1), null)
     ]
 },
 new()
@@ -1654,12 +1653,13 @@ new()
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
         new(TriggerType.SpellPlayed, [
-            new DrawCardEffect(1, null)
-        ], new DurationByExecutions(1), null),
-        new(TriggerType.SpellPlayed,[
-            new AlterPlayerHealthEffect(2, false),
-            new AlterPlayerHealthEffect(-2, true)
-        ], new DurationByExecutions(1), new RandomCondition(50))
+            new RandomBranchEffect(50,
+                [
+                    new AlterPlayerHealthEffect(2, false),
+                    new AlterPlayerHealthEffect(-2, true)
+                ],
+                [new DrawCardEffect(1, null)])
+        ], new DurationByExecutions(1), null)
     ]
 },
 new()
@@ -1668,9 +1668,11 @@ new()
     Type = CardType.Spell,
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
-        new(TriggerType.SpellPlayed,[
-            new AlterUnitStatsEffect(-1, -1, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new()})
-        ], new DurationByExecutions(1), new RandomCondition(50))
+        new(TriggerType.SpellPlayed, [
+            new RandomBranchEffect(50,
+                [new AlterUnitStatsEffect(-1, -1, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new()})],
+                [new DrawCardEffect(1, null)])
+        ], new DurationByExecutions(1), null)
     ]
 },
 new()
@@ -1680,11 +1682,10 @@ new()
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
         new(TriggerType.SpellPlayed, [
-            new DrawCardEffect(1, null)
-        ], new DurationByExecutions(1), null),
-        new(TriggerType.SpellPlayed,[
-            new AlterUnitStatsEffect(1, 1, new() { WhichBoardToSearch = PlayerType.PLAYER, WhichDeckToSearch = PlayerType.PLAYER, Filter = new()})
-        ], new DurationByExecutions(1), new RandomCondition(50))
+            new RandomBranchEffect(50,
+                [new AlterUnitStatsEffect(1, 1, new() { WhichBoardToSearch = PlayerType.PLAYER, WhichDeckToSearch = PlayerType.PLAYER, Filter = new()})],
+                [new DrawCardEffect(1, null)])
+        ], new DurationByExecutions(1), null)
     ]
 },
 new()
@@ -1694,11 +1695,10 @@ new()
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
         new(TriggerType.SpellPlayed, [
-            new DrawCardEffect(1, null)
-        ], new DurationByExecutions(1), null),
-        new(TriggerType.SpellPlayed,[
-            new AlterPlayerHealthEffect(4, false)
-        ], new DurationByExecutions(1), new RandomCondition(50))
+            new RandomBranchEffect(50,
+                [new AlterPlayerHealthEffect(4, false)],
+                [new DrawCardEffect(1, null)])
+        ], new DurationByExecutions(1), null)
     ]
 },
 new()
@@ -1708,11 +1708,10 @@ new()
     Families = ["MONEDA_DEL_CAOS"],
     Effects = [
         new(TriggerType.SpellPlayed, [
-            new DrawCardEffect(1, null)
-        ], new DurationByExecutions(1), null),
-        new(TriggerType.SpellPlayed,[
-            new AlterPlayerHealthEffect(-4, true)
-        ], new DurationByExecutions(1), new RandomCondition(50))
+            new RandomBranchEffect(50,
+                [new AlterPlayerHealthEffect(-4, true)],
+                [new DrawCardEffect(1, null)])
+        ], new DurationByExecutions(1), null)
     ]
 },
 new()

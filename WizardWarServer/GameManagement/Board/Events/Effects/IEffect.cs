@@ -34,6 +34,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(DrawCardPerBoardUnitEffect), nameof(DrawCardPerBoardUnitEffect))]
 [JsonDerivedType(typeof(ReviveLastDied), nameof(ReviveLastDied))]
 [JsonDerivedType(typeof(CreateCopyOfSelf), nameof(CreateCopyOfSelf))]
+[JsonDerivedType(typeof(RandomBranchEffect), nameof(RandomBranchEffect))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>
