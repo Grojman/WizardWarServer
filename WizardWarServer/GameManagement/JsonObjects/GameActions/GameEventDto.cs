@@ -40,7 +40,7 @@ public record GameEventDto(Guid Source, Guid PlayerSource)
             GameEvent.SpellPlayed sp => new SpellPlayed(sp.Source.Id, sp.PlayerSource.Id, CardDto.Generate(sp.Card, state, true, language)),
             GameEvent.UnitDeath ud => new UnitDeath(ud.Source.Id, ud.PlayerSource.Id, ud.Card.Id),
             GameEvent.DeckOutOfCards doc => new DeckOutOfCards(doc.Source.Id, doc.PlayerSource.Id),
-            GameEvent.CardAttacked ca => new CardAttacked(ca.Source.Id, ca.PlayerSource.Id, ca.PlayerTarget.Id, ca.Attacker.Id, ca.TargetType.ToString(), ca.TargetIndex, ca.Attacker.CurrentAttack, ca.Deffender?.CurrentAttack ?? 0),
+            GameEvent.CardAttacked ca => new CardAttacked(ca.Source.Id, ca.PlayerSource.Id, ca.PlayerTarget.Id, ca.Attacker.Id, ca.TargetType.ToString(), ca.TargetIndex, ca.AttackerDamage, ca.DefenderDamage),
             GameEvent.AddedCardToDeck acd => new AddedCardToDeck(acd.Source.Id, acd.PlayerSource.Id, acd.TargetedPlayer.Id, acd.Card.Definition.Id),
             GameEvent.DeckModifiedStats dms => new DeckModifiedStats(dms.Source.Id, dms.PlayerSource.Id, dms.TargetedPlayer.Id),
             GameEvent.CardEventPlayed cep => new CardEventPlayed(cep.Source.Id, cep.PlayerSource.Id, cep.Card.Id),

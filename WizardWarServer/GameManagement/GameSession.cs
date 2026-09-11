@@ -126,12 +126,12 @@ public class GameSession
         }
     }
 
-    async Task SendState()
+    async Task SendState(bool isReconnect = false)
     {
         var rawEvents = state.GameActionResult.Events.ToList();
         foreach(var c in Connections)
         {
-            await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state, c.Language));
+            await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state, c.Language, isReconnect));
             await c.Send("game_events", rawEvents.Select(e => GameEventDto.Generate(e, state, c.Language)).ToList());
         }
 
@@ -303,7 +303,7 @@ public class GameSession
             await c.Send("opponent_reconnected", new { playerId = newConnection.Guid });
         }
 
-        await SendState();
+        await SendState(isReconnect: true);
 
         return true;
     }

@@ -82,6 +82,16 @@ public abstract class GameEvent
         public required int TargetIndex { get; set; }
         public required PlayerState PlayerTarget { get; set; }
 
+        // Post-attack effects (e.g. "after attacking, +1/+1") run synchronously
+        // right after this event is queued but before it's ever serialized, and
+        // Attacker/Deffender are live references — so by the time the DTO is
+        // built at broadcast time, CurrentAttack may already include that
+        // effect's change. Captured here, at construction time (see
+        // GameState.Attack), these hold the attack values actually used to
+        // compute the damage dealt, so the client's health change matches
+        // what the server actually applied.
+        public required int AttackerDamage { get; set; }
+        public required int DefenderDamage { get; set; }
     }
 
     public class AddedCardToDeck : GameEventCard

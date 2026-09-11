@@ -447,7 +447,9 @@ public class GameState
                 Attacker = card,
                 TargetIndex = target,
                 TargetType = targetType,
-                Deffender = null
+                Deffender = null,
+                AttackerDamage = card.CurrentAttack,
+                DefenderDamage = 0
             };
             switch (targetType)
             {
@@ -465,6 +467,7 @@ public class GameState
 
                     var cardTarget = targetedPlayer.Board[target];
                     gevent.Deffender = cardTarget;
+                    gevent.DefenderDamage = cardTarget?.CurrentAttack ?? 0;
                     GameActionResult.AddEvent(gevent);
                     if(cardTarget is null)
                     {
