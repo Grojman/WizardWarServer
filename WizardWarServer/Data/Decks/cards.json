@@ -26,7 +26,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7a64a3e9-9c12-4235-a77d-75818287f173"
+        "IsGlobal": false,
+        "Id": "9e336269-69ee-4e8a-b3a1-cbf2c41e52b2"
       }
     ],
     "imageUrl": "",
@@ -85,7 +86,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e5019021-e29e-472f-a108-82cb11617345"
+        "IsGlobal": false,
+        "Id": "5b927bfa-09ac-4d1f-bb7e-b2a6b3033c55"
       }
     ],
     "imageUrl": "",
@@ -137,7 +139,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a5322be0-45f1-4066-8435-77774d1323bc"
+        "IsGlobal": false,
+        "Id": "58d3a704-a52a-4495-a587-a079d3a9fd9d"
       }
     ],
     "imageUrl": "",
@@ -174,7 +177,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "97600f07-b219-4fe7-8590-9a6a60811986"
+        "IsGlobal": false,
+        "Id": "02e974dd-801c-4ca8-b541-43d7e2553831"
       }
     ],
     "imageUrl": "",
@@ -234,7 +238,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "88c1d73c-3b8c-4685-a5d0-00fd1a57f688"
+        "IsGlobal": false,
+        "Id": "245ec093-4313-48a0-a4e7-aa2d8cbb019e"
       }
     ],
     "imageUrl": "",
@@ -269,7 +274,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6175eda3-6033-4599-b14d-8e7621d567d8"
+        "IsGlobal": false,
+        "Id": "677acb05-e894-41ef-9b0e-c1ddc6053d79"
       }
     ],
     "imageUrl": "",
@@ -305,7 +311,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ca12b4fa-9398-4c1f-80fb-7df14d33ca19"
+        "IsGlobal": false,
+        "Id": "909492ca-4c0d-4aab-9b7f-4e36108b8007"
       },
       {
         "Trigger": 0,
@@ -325,7 +332,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8185f7b7-1085-45d1-a9b8-1bd4e0f698ad"
+        "IsGlobal": false,
+        "Id": "a80d7e3b-473f-4ee4-8183-1ed378764e27"
       }
     ],
     "imageUrl": "",
@@ -389,7 +397,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2060c222-b5aa-465e-bdc3-fd29bf36b380"
+        "IsGlobal": false,
+        "Id": "9747e8bc-6b8b-4a21-a9f2-8f2771064cf5"
       }
     ],
     "imageUrl": "",
@@ -428,7 +437,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "659ae94d-198f-4bb0-9581-a7173c166197"
+        "IsGlobal": false,
+        "Id": "64bef183-1897-4d9d-a108-62ed24fdd4bb"
       }
     ],
     "imageUrl": "",
@@ -486,7 +496,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_11_GLOBAL_EFFECT",
-              "Id": "9d2c7f81-02cd-4b1a-9b22-b2d9b4761080"
+              "IsGlobal": false,
+              "Id": "e28de03a-5fa1-4acd-b3fc-41a659df0d56"
             }
           }
         ],
@@ -501,7 +512,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d0f3274d-b223-4570-b09c-34d28ab3a854"
+        "IsGlobal": false,
+        "Id": "ebb01227-f4cb-41c0-84e0-dcb083cf40b0"
       }
     ],
     "imageUrl": "",
@@ -614,7 +626,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_12_GLOBAL_EFFECT",
-              "Id": "a62d32c8-d43f-41fc-afbd-bd0f139f20bf"
+              "IsGlobal": false,
+              "Id": "758f7c04-4757-4357-940c-ea933ccf383c"
             }
           }
         ],
@@ -629,7 +642,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d7b55cf6-a715-4b2c-89c6-0615c3bab151"
+        "IsGlobal": false,
+        "Id": "6c197de2-158a-47b1-941c-23a1df664efc"
       }
     ],
     "imageUrl": "",
@@ -688,7 +702,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "35b9c0df-617d-402e-85fe-dfe777147285"
+        "IsGlobal": false,
+        "Id": "a71e6533-d13f-48a9-98f7-af0e6df2a363"
       }
     ],
     "imageUrl": "",
@@ -745,7 +760,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f686711c-2efc-4ab4-b88d-bbd82aaa22ac"
+        "IsGlobal": false,
+        "Id": "46dce47e-6b03-404c-bd3e-bd9d0f457e09"
       }
     ],
     "imageUrl": "",
@@ -797,7 +813,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "564a877c-b033-4670-a933-29704119ea19"
+        "IsGlobal": false,
+        "Id": "b413d80b-eb01-4036-bc07-fcc7fe52318b"
       },
       {
         "Trigger": 10,
@@ -820,7 +837,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b0e319b1-c7e5-4e05-9da1-f62cbdc171ed"
+        "IsGlobal": false,
+        "Id": "503093c8-a33f-4e98-93d3-5d680fd1bcd9"
       }
     ],
     "imageUrl": "",
@@ -885,7 +903,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "87cfd756-ae57-4c32-b154-1918e2d5c595"
+        "IsGlobal": false,
+        "Id": "d8f4c185-6b87-4caa-8712-6f281112c736"
       }
     ],
     "imageUrl": "",
@@ -922,7 +941,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "83abbf0b-96ff-4676-809e-4a3826cdc40d"
+        "IsGlobal": false,
+        "Id": "7e2c9b0a-0f63-43f2-9e12-6ac789d4122b"
       }
     ],
     "imageUrl": "",
@@ -1007,7 +1027,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6121f84c-e66c-48c0-83e0-13bd5b1140b1"
+        "IsGlobal": false,
+        "Id": "2708c108-28ab-4bf5-ae46-7ad171c24bfc"
       }
     ],
     "imageUrl": "",
@@ -1069,7 +1090,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "27937f7c-d9ec-433f-a07f-f5e9c6f77997"
+        "IsGlobal": false,
+        "Id": "099a1e90-7cca-4fb2-b604-bc1280162bca"
       },
       {
         "Trigger": 6,
@@ -1104,7 +1126,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "076d905f-1a48-4e3c-977e-356e7c0c6d8a"
+        "IsGlobal": false,
+        "Id": "40bdd2c3-8982-45aa-96fa-f33c972c9f1a"
       }
     ],
     "imageUrl": "",
@@ -1202,7 +1225,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "22ed9dfe-484e-40d6-9fba-36a763928264"
+        "IsGlobal": false,
+        "Id": "b25f09b5-097e-4068-a70b-814148d9f077"
       }
     ],
     "imageUrl": "",
@@ -1255,7 +1279,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "785ed0fe-c184-47e0-b7fb-45592b56e0f4"
+        "IsGlobal": false,
+        "Id": "0054546d-dcc3-4031-8fe6-553bb70763f7"
       }
     ],
     "imageUrl": "",
@@ -1323,7 +1348,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c5661401-e89f-4b8e-828f-7c4ce0a3598c"
+        "IsGlobal": false,
+        "Id": "7d68a712-7ea7-43c2-9b4e-bac84f95adae"
       },
       {
         "Trigger": 6,
@@ -1359,7 +1385,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "dabaaa40-cf58-4f3d-86ae-2e27a629922e"
+        "IsGlobal": false,
+        "Id": "f75cf7bd-f71f-4b81-9afe-e7eed22fb15e"
       }
     ],
     "imageUrl": "",
@@ -1433,7 +1460,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_23_GLOBAL_EFFECT",
-              "Id": "a3250576-2198-400b-92d9-08236daad2e1"
+              "IsGlobal": false,
+              "Id": "fba6adb4-ace2-4893-8647-5efa998af32e"
             }
           }
         ],
@@ -1448,7 +1476,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "28ba4cf6-af2c-48a5-ab88-f2d83d2d34ad"
+        "IsGlobal": false,
+        "Id": "4811bf22-aa62-4b1e-ab8a-5fb31aa08d79"
       }
     ],
     "imageUrl": "",
@@ -1484,7 +1513,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "923b10ae-a3ce-4903-bf31-a16b02840864"
+        "IsGlobal": false,
+        "Id": "fc8e2643-c1ed-42d9-adf5-8d0979fe585f"
       }
     ],
     "imageUrl": "",
@@ -1560,7 +1590,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "171829e7-0ea7-4357-93d7-6a83659bf0fd"
+        "IsGlobal": false,
+        "Id": "5d81fb8c-151c-4047-887e-d1cffe5b50af"
       }
     ],
     "imageUrl": "",
@@ -1646,7 +1677,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9e8f1a55-5f06-4b03-a7dd-f35f419b9359"
+        "IsGlobal": false,
+        "Id": "ef5182f4-e251-4faa-8158-f99ad94afabf"
       }
     ],
     "imageUrl": "",
@@ -1722,7 +1754,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "48a965f6-bc47-4c81-a50e-d62f5ec7a212"
+        "IsGlobal": false,
+        "Id": "71f2f8fb-677a-4500-8325-b31b08ef28a2"
       }
     ],
     "imageUrl": "",
@@ -1781,7 +1814,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d435ee87-3b9a-41f9-9b6b-c2553bd90df2"
+        "IsGlobal": false,
+        "Id": "a7bf0703-bf67-4cfa-a8f7-27ae696b9ce0"
       }
     ],
     "imageUrl": "",
@@ -1820,7 +1854,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "800fa387-808a-4980-90bc-c1b237dd4d3b"
+        "IsGlobal": false,
+        "Id": "2d838f1a-4235-49ba-8c48-dc6ec72b5824"
       }
     ],
     "imageUrl": "",
@@ -1857,7 +1892,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8029b38c-559e-4d1e-acf9-26bb5a8a74f6"
+        "IsGlobal": false,
+        "Id": "1c2bcedd-1c31-47dd-9ffb-47783e0a06fa"
       }
     ],
     "imageUrl": "",
@@ -1929,7 +1965,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0d944361-b125-472c-bafa-d24399add3f7"
+        "IsGlobal": false,
+        "Id": "7ddb6041-bf0e-459d-85f1-c078c8e2a026"
       }
     ],
     "imageUrl": "",
@@ -1993,7 +2030,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a9ab362e-9659-4192-9454-3f8223efe8d7"
+        "IsGlobal": false,
+        "Id": "264a4e7f-599e-43d7-b76f-94c9d971099f"
       }
     ],
     "imageUrl": "",
@@ -2041,7 +2079,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "fd63c35d-d15c-4bbc-823e-ae86940fc5f1"
+        "IsGlobal": false,
+        "Id": "f3fed7ec-22bd-4b58-b10e-836f0205de8f"
       }
     ],
     "imageUrl": "",
@@ -2096,7 +2135,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "39d080a6-3f8b-470f-9115-63067c0dee7d"
+        "IsGlobal": false,
+        "Id": "5593e108-dadd-4054-80fa-eaa64f55cb58"
       }
     ],
     "imageUrl": "",
@@ -2147,7 +2187,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "db277689-ec6b-42ac-9ca7-59aec5abdccc"
+        "IsGlobal": false,
+        "Id": "577cf6c5-b0d4-4b0a-9ae4-0f0de21e2da1"
       }
     ],
     "imageUrl": "",
@@ -2198,7 +2239,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_35_GLOBAL_EFFECT",
-              "Id": "4ac883bb-8c0f-4338-95c9-496bf90b9954"
+              "IsGlobal": false,
+              "Id": "6e75e0da-5221-4774-a448-a2253799d1ff"
             }
           }
         ],
@@ -2211,7 +2253,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "19f53dd8-99b5-4850-88fe-efedf3c9e83e"
+        "IsGlobal": false,
+        "Id": "882cc953-f816-4114-a8c8-c077524af636"
       }
     ],
     "imageUrl": "",
@@ -2249,7 +2292,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "dbf9986b-5dd1-4837-85b4-f646d31b37a4"
+        "IsGlobal": false,
+        "Id": "df776bd6-d6e4-4db8-b0e1-35b78e6a466f"
       }
     ],
     "imageUrl": "",
@@ -2306,7 +2350,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "745a57a5-d4a6-4583-97d6-427d7fd1c737"
+        "IsGlobal": false,
+        "Id": "1abf7967-82d3-4d04-a005-4a590cbcb8c5"
       }
     ],
     "imageUrl": "",
@@ -2393,7 +2438,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "fd1b1b94-3ecc-4424-94fe-fc4224a15450"
+        "IsGlobal": false,
+        "Id": "697e893b-cdef-4c0d-a851-8b0f9d178109"
       },
       {
         "Trigger": 5,
@@ -2443,7 +2489,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8e63cc3d-0c27-4971-bf2f-acc2b8bba1fa"
+        "IsGlobal": false,
+        "Id": "2f1d1343-8289-4f0a-a84c-aae0878a68ca"
       }
     ],
     "imageUrl": "",
@@ -2483,7 +2530,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "91aed4df-9598-4509-b989-406bf4bea3fa"
+        "IsGlobal": false,
+        "Id": "5af89aa1-6ecf-414e-96d6-640b970f51dc"
       }
     ],
     "imageUrl": "",
@@ -2523,7 +2571,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "daaf6ef5-411a-42fe-b159-53a54b98b635"
+        "IsGlobal": false,
+        "Id": "ff42eef1-6329-4c1d-9958-37a3faa1cbaa"
       }
     ],
     "imageUrl": "",
@@ -2611,7 +2660,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "703966f0-c105-45d4-829b-311f28d8f007"
+        "IsGlobal": false,
+        "Id": "fda8c978-c07b-466a-aadf-de097fa0ea60"
       }
     ],
     "imageUrl": "",
@@ -2668,7 +2718,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6be70ae1-8b26-452f-bc45-3db3648dffc0"
+        "IsGlobal": false,
+        "Id": "db7f7312-2531-4899-a983-4472e48f5757"
       }
     ],
     "imageUrl": "",
@@ -2707,7 +2758,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "be2334ff-edef-4044-9d70-9d8e03084f7a"
+        "IsGlobal": false,
+        "Id": "90f67fa3-04dd-43af-a75e-aaf5622409f5"
       }
     ],
     "imageUrl": "",
@@ -2757,7 +2809,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "01ddeea9-24ad-4fac-ac35-be790fc6ed50"
+        "IsGlobal": false,
+        "Id": "127fccb1-c8b2-4281-a91d-c852fb625d08"
       }
     ],
     "imageUrl": "",
@@ -2822,7 +2875,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "999bbb93-5224-47b9-8e5e-8bd8ae9fbe7f"
+        "IsGlobal": false,
+        "Id": "36895fe8-9c43-445f-b2f0-cb93714096b9"
       }
     ],
     "imageUrl": "",
@@ -2859,7 +2913,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6b559d7b-568a-4be5-9745-50f61acaf2e9"
+        "IsGlobal": false,
+        "Id": "9841e981-49b4-4e49-8880-535c811e44f3"
       }
     ],
     "imageUrl": "",
@@ -2909,7 +2964,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "549410b4-7a1f-450a-a8cc-63bd84cc8061"
+        "IsGlobal": false,
+        "Id": "a93dd47c-6e69-4e53-a671-21063e98535b"
       }
     ],
     "imageUrl": "",
@@ -2966,7 +3022,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5bc6b090-9c45-4c7e-9e0f-4738d43cf786"
+        "IsGlobal": false,
+        "Id": "aada5f03-d123-4700-b7f3-d4b5c822eff5"
       }
     ],
     "imageUrl": "",
@@ -3059,7 +3116,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "dd243208-2858-4816-89bd-29ca8ff9a905"
+        "IsGlobal": false,
+        "Id": "359607c8-ae57-419f-97b5-42292678025d"
       }
     ],
     "imageUrl": "",
@@ -3191,7 +3249,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "186b35f8-7ee4-497e-8770-eea02b5b8b49"
+        "IsGlobal": false,
+        "Id": "e84be1e0-bba1-4193-9dbe-c08d789c2599"
       }
     ],
     "imageUrl": "",
@@ -3249,7 +3308,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8334a59f-dac3-45d8-bfab-cbeae1a51d44"
+        "IsGlobal": false,
+        "Id": "81b4b065-962d-4550-bc5d-8f1646cd24ec"
       }
     ],
     "imageUrl": "",
@@ -3319,7 +3379,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a450cfde-9012-492a-aaea-5c94e3672643"
+        "IsGlobal": false,
+        "Id": "ae29c286-8b9f-47f6-8d4c-32ea3300e7b6"
       },
       {
         "Trigger": 6,
@@ -3346,7 +3407,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f4dde204-3d61-4b3d-8d9f-5955db383773"
+        "IsGlobal": false,
+        "Id": "50c10c29-24c5-41a4-b9b6-11c667902101"
       }
     ],
     "imageUrl": "",
@@ -3405,7 +3467,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0814c04f-2a2d-4586-aafa-2931a60bc2f4"
+        "IsGlobal": false,
+        "Id": "2fbf49c3-5ff6-4e07-9d79-cf1789f55ca0"
       }
     ],
     "imageUrl": "",
@@ -3480,7 +3543,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "80ed717b-f668-4e97-ba45-5ed0c3761aff"
+        "IsGlobal": false,
+        "Id": "1d201c8b-f96b-41e5-8628-c9908954cab7"
       }
     ],
     "imageUrl": "",
@@ -3542,7 +3606,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "61b63156-a2ce-4f85-8444-3ce22d9354fe"
+        "IsGlobal": false,
+        "Id": "0820fcf5-c57f-4135-8964-fdfd90a62bb3"
       }
     ],
     "imageUrl": "",
@@ -3594,7 +3659,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4e99011f-98ac-4d7e-a959-1d691ed5a128"
+        "IsGlobal": false,
+        "Id": "89bebdd7-d7f3-4b89-b756-732b71e85959"
       }
     ],
     "imageUrl": "",
@@ -3636,7 +3702,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "f865d0c1-ca10-4de1-aac1-abf24236bc2c"
+        "IsGlobal": false,
+        "Id": "c935d68f-7bb7-4a1c-8903-d84b0bff1303"
       }
     ],
     "imageUrl": "",
@@ -3720,7 +3787,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "8f15e261-ee0b-40e7-bd7a-353c781ce0ab"
+        "IsGlobal": false,
+        "Id": "c6e63a19-1f27-460d-938d-73b193aa3d60"
       }
     ],
     "imageUrl": "",
@@ -3805,7 +3873,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "49a04645-1aa0-4d34-8585-0e95e5a28858"
+        "IsGlobal": false,
+        "Id": "c9694259-cc4b-4fff-9551-8bfb42447559"
       }
     ],
     "imageUrl": "",
@@ -3895,7 +3964,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "78fd04fb-5ea4-43dc-948d-95be49dfc82c"
+        "IsGlobal": false,
+        "Id": "94ef3f23-d9db-4fae-a6d7-7516236c8333"
       },
       {
         "Trigger": 7,
@@ -3917,7 +3987,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a8120af9-b48e-4c10-9a93-f98cdf2de82c"
+        "IsGlobal": false,
+        "Id": "fb63dffd-0987-43ef-9b09-e7ec6b7af899"
       }
     ],
     "imageUrl": "",
@@ -3980,7 +4051,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_61_GLOBAL_EFFECT",
-              "Id": "fa755e7e-9932-4937-9212-d8306ac7a9c7"
+              "IsGlobal": false,
+              "Id": "ee26a370-9366-49ae-8384-0531df08cd3d"
             }
           }
         ],
@@ -3993,7 +4065,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "715e6278-11bb-4e50-9d4a-5f5948c84fdd"
+        "IsGlobal": false,
+        "Id": "accf4dc3-e37e-4fce-ae0c-967c04c5afc2"
       }
     ],
     "imageUrl": "",
@@ -4030,7 +4103,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a957597b-75b3-4960-b656-d83f0b4c50b9"
+        "IsGlobal": false,
+        "Id": "bc2d6ced-25ee-4413-8748-371278b43f52"
       }
     ],
     "imageUrl": "",
@@ -4144,7 +4218,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "82358cfe-6220-47d8-88d6-f54c110d4709"
+        "IsGlobal": false,
+        "Id": "6f2600a3-b6eb-4368-b33d-45e7bacc90ca"
       }
     ],
     "imageUrl": "",
@@ -4233,7 +4308,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "60bc4469-b009-4896-b294-edd1876141f1"
+        "IsGlobal": false,
+        "Id": "e0200d8a-2ba2-4619-81ee-781e8b8f5c13"
       }
     ],
     "imageUrl": "",
@@ -4328,7 +4404,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "10af888c-fb11-4840-a736-6aaa02f5ba87"
+        "IsGlobal": false,
+        "Id": "b92ea258-127a-48ab-8f9c-9cf2f707eda9"
       }
     ],
     "imageUrl": "",
@@ -4365,7 +4442,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "62d2af8b-6ac8-45a3-ba0c-c583fc82f5d1"
+        "IsGlobal": false,
+        "Id": "e11e5195-7013-4199-8cfd-98366ac10af8"
       }
     ],
     "imageUrl": "",
@@ -4411,7 +4489,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "d3f148be-9895-46d2-b22f-7345dd1ae22e"
+        "IsGlobal": false,
+        "Id": "bed246a3-f9c4-45c9-945f-2f1e14013a46"
       }
     ],
     "imageUrl": "",
@@ -4448,7 +4527,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "744fa451-a05f-4d50-a376-0e1b5271de5a"
+        "IsGlobal": false,
+        "Id": "def69889-3766-4e5d-bfa8-8ce37f0c2794"
       }
     ],
     "imageUrl": "",
@@ -4494,7 +4574,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "08161e1d-e8b8-4217-8705-b6ff434d0dcd"
+        "IsGlobal": false,
+        "Id": "ec94a11d-c446-43ab-aae9-89be8d7abcc8"
       }
     ],
     "imageUrl": "",
@@ -4553,7 +4634,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "426a7fd7-f0d9-49fc-9464-2c76434ff698"
+        "IsGlobal": false,
+        "Id": "4c6c135e-23da-46d5-84df-67eff2e77984"
       }
     ],
     "imageUrl": "",
@@ -4599,7 +4681,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7f54c913-d071-485b-b542-808b86ba6211"
+        "IsGlobal": false,
+        "Id": "9618adf7-b094-4d75-9739-2283169dcba1"
       }
     ],
     "imageUrl": "",
@@ -4658,7 +4741,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4e85e213-d749-4d12-ab82-5715efc5b518"
+        "IsGlobal": false,
+        "Id": "c77f2ac9-5b71-4944-a00a-f1037f006196"
       }
     ],
     "imageUrl": "",
@@ -4704,7 +4788,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c7a94298-689a-4c42-bdc5-b9e0937e4676"
+        "IsGlobal": false,
+        "Id": "47a87de6-a0bc-465a-ba3d-4625e57d569e"
       }
     ],
     "imageUrl": "",
@@ -4741,7 +4826,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "170dea19-6dcb-4d9c-9e36-9d6c38bc6270"
+        "IsGlobal": false,
+        "Id": "16961429-0735-45ff-9b1f-d22ae2d0640d"
       }
     ],
     "imageUrl": "",
@@ -4787,7 +4873,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6d81c28f-aeb8-4cd2-94bd-a5d35222525b"
+        "IsGlobal": false,
+        "Id": "b3292030-a9a4-40bd-817c-cde59864fd90"
       }
     ],
     "imageUrl": "",
@@ -4833,7 +4920,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_81_GLOBAL_EFFECT",
-              "Id": "3fb1567d-9a67-4188-818b-5a3c37a371de"
+              "IsGlobal": false,
+              "Id": "fa38b634-ed14-4f37-9b27-bd1109373b03"
             }
           }
         ],
@@ -4848,7 +4936,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "1f5ac00e-b2e7-40a1-91bf-b46c8a4f8df2"
+        "IsGlobal": false,
+        "Id": "b62b85af-16a0-4f1f-9181-6aa9acda07ce"
       }
     ],
     "imageUrl": "",
@@ -4894,7 +4983,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b3ea23b6-3acd-453e-9c73-da73111e7f43"
+        "IsGlobal": false,
+        "Id": "669ee3c8-b8b2-4434-8e94-cad4a3644930"
       }
     ],
     "imageUrl": "",
@@ -4931,7 +5021,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "80cd7b7b-9235-451b-9ca4-010a7c73ccea"
+        "IsGlobal": false,
+        "Id": "82d37a06-c565-4f4b-a8ee-8fa036ca7ffc"
       }
     ],
     "imageUrl": "",
@@ -4963,7 +5054,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "3a374efb-3d51-4285-affd-5c1bb5cf74be"
+        "IsGlobal": false,
+        "Id": "25ce96a5-0c69-4e14-b6c1-4d35e5f40831"
       }
     ],
     "imageUrl": "",
@@ -5014,7 +5106,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ba7935e3-6535-412d-a2f0-8b37d3549d5e"
+        "IsGlobal": false,
+        "Id": "21b70b0e-250b-4d3a-a8ff-538840ed09d7"
       }
     ],
     "imageUrl": "",
@@ -5063,7 +5156,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "59b2737d-6b4a-4224-877a-5ce227b1209c"
+        "IsGlobal": false,
+        "Id": "6f742ed1-99c3-4f0d-9498-8d0c9d9fa4a8"
       }
     ],
     "imageUrl": "",
@@ -5113,7 +5207,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a70f2056-2618-4450-b82e-e7531255a149"
+        "IsGlobal": false,
+        "Id": "44cac8a9-25a8-4e25-854a-e182d6cbf0ec"
       }
     ],
     "imageUrl": "",
@@ -5167,7 +5262,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b759d911-0d97-4653-990f-bade5c4ee07c"
+        "IsGlobal": false,
+        "Id": "4355df82-6b33-44c0-be42-ba560813608b"
       }
     ],
     "imageUrl": "",
@@ -5233,7 +5329,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a3a20804-ab22-48b3-b196-cd1c10078a0d"
+        "IsGlobal": false,
+        "Id": "228f2658-df3e-4a6c-9b61-ce19eb35a845"
       }
     ],
     "imageUrl": "",
@@ -5284,7 +5381,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7ff6cde5-b888-4a13-b4cb-9b44463a4c8e"
+        "IsGlobal": false,
+        "Id": "9ce519ad-6c55-4eae-a685-ae6d3c868c0e"
       }
     ],
     "imageUrl": "",
@@ -5339,7 +5437,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "965551c3-5b3b-4d07-9448-400b7bbe9012"
+        "IsGlobal": false,
+        "Id": "565dda51-b3e5-4b3a-aa7e-13d22a23eaa8"
       }
     ],
     "imageUrl": "",
@@ -5376,7 +5475,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "79f7f7dd-1ab8-45e8-adb3-8255d1753767"
+        "IsGlobal": false,
+        "Id": "0d8a6e8b-d9a9-4cfc-9a20-d79d115a2589"
       },
       {
         "Trigger": 5,
@@ -5414,7 +5514,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "7d8f201e-f94d-43c9-9a29-71e68d0cf018"
+        "IsGlobal": false,
+        "Id": "9f25f0ff-43b4-478b-adb2-170e89087ac8"
       }
     ],
     "imageUrl": "",
@@ -5468,7 +5569,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "905a405a-8de3-47bd-bdbe-c4add2bc9e47"
+        "IsGlobal": false,
+        "Id": "d2ed2939-e068-4d5a-949b-6f245b8171be"
       },
       {
         "Trigger": 5,
@@ -5507,7 +5609,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b584f83a-5ad4-44f6-a43c-140a81104b4f"
+        "IsGlobal": false,
+        "Id": "1d0d7f7c-80cb-46ba-a3db-a055850e00f8"
       }
     ],
     "imageUrl": "",
@@ -5608,7 +5711,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ff613fa9-809b-4250-b232-de87a433370e"
+        "IsGlobal": false,
+        "Id": "75691c70-3e2d-4278-a250-507a76bed605"
       }
     ],
     "imageUrl": "",
@@ -5629,9 +5733,23 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "DrawCardEffect",
-            "CardAmount": 1,
-            "Filter": null
+            "$type": "RandomBranchEffect",
+            "Probability": 50,
+            "IfSuccess": [
+              {
+                "$type": "PlayCardEffect",
+                "CardId": "97",
+                "FromDeck": false,
+                "ToHand": false
+              }
+            ],
+            "IfFailure": [
+              {
+                "$type": "DrawCardEffect",
+                "CardAmount": 1,
+                "Filter": null
+              }
+            ]
           }
         ],
         "Duration": {
@@ -5643,31 +5761,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ce40bf56-c864-4aee-a2b8-097cfab8471c"
-      },
-      {
-        "Trigger": 6,
-        "Effects": [
-          {
-            "$type": "PlayCardEffect",
-            "CardId": "97",
-            "FromDeck": false,
-            "ToHand": false
-          }
-        ],
-        "Duration": {
-          "$type": "DurationByExecutions",
-          "times": 1
-        },
-        "Condition": {
-          "$type": "RandomCondition",
-          "Probabilty": 50
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": "",
-        "Id": "dc6349c4-9d95-4836-8618-bdf04430fb5e"
+        "IsGlobal": false,
+        "Id": "9db57f4f-e385-43ea-b65a-44c23b952608"
       }
     ],
     "imageUrl": "",
@@ -5700,9 +5795,27 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "DrawCardEffect",
-            "CardAmount": 1,
-            "Filter": null
+            "$type": "RandomBranchEffect",
+            "Probability": 50,
+            "IfSuccess": [
+              {
+                "$type": "AlterPlayerHealthEffect",
+                "Amount": 2,
+                "ToRival": false
+              },
+              {
+                "$type": "AlterPlayerHealthEffect",
+                "Amount": -2,
+                "ToRival": true
+              }
+            ],
+            "IfFailure": [
+              {
+                "$type": "DrawCardEffect",
+                "CardAmount": 1,
+                "Filter": null
+              }
+            ]
           }
         ],
         "Duration": {
@@ -5714,35 +5827,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e1765501-6a47-47dc-906c-6de718395f84"
-      },
-      {
-        "Trigger": 6,
-        "Effects": [
-          {
-            "$type": "AlterPlayerHealthEffect",
-            "Amount": 2,
-            "ToRival": false
-          },
-          {
-            "$type": "AlterPlayerHealthEffect",
-            "Amount": -2,
-            "ToRival": true
-          }
-        ],
-        "Duration": {
-          "$type": "DurationByExecutions",
-          "times": 1
-        },
-        "Condition": {
-          "$type": "RandomCondition",
-          "Probabilty": 50
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": "",
-        "Id": "e82cc2bb-9cac-4099-b686-dee0fa19c1a2"
+        "IsGlobal": false,
+        "Id": "04d923d3-41f0-4039-8462-715334a0787c"
       }
     ],
     "imageUrl": "",
@@ -5763,46 +5849,57 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "AlterUnitStatsEffect",
-            "Health": -1,
-            "Damage": -1,
-            "Filter": {
-              "Filter": {
-                "CurrentAttack": null,
-                "CurrentHealth": null,
-                "Attack": null,
-                "Health": null,
-                "CardType": null,
-                "Families": null,
-                "CurrentFamilies": null,
-                "DefinitionId": null,
-                "Id": null,
-                "HasEffect": null,
-                "NumberOfTriggersLeft": null,
-                "MustMeetAllCriteria": false
-              },
-              "WhichDeckToSearch": 3,
-              "WhichBoardToSearch": 1,
-              "WhichHandToSearch": 3,
-              "WhichPlayedCardsToSearch": 3,
-              "WhichDeadCardsToSearch": 3,
-              "MaxLength": 0
-            }
+            "$type": "RandomBranchEffect",
+            "Probability": 50,
+            "IfSuccess": [
+              {
+                "$type": "AlterUnitStatsEffect",
+                "Health": -1,
+                "Damage": -1,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": null,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 3,
+                  "WhichBoardToSearch": 1,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "WhichDeadCardsToSearch": 3,
+                  "MaxLength": 0
+                }
+              }
+            ],
+            "IfFailure": [
+              {
+                "$type": "DrawCardEffect",
+                "CardAmount": 1,
+                "Filter": null
+              }
+            ]
           }
         ],
         "Duration": {
           "$type": "DurationByExecutions",
           "times": 1
         },
-        "Condition": {
-          "$type": "RandomCondition",
-          "Probabilty": 50
-        },
+        "Condition": null,
         "SourceCard": null,
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "95667def-08b6-4ac6-b9c0-4a5457cef056"
+        "IsGlobal": false,
+        "Id": "c0e51bb9-5bb3-48ed-8954-1c668a676b1b"
       }
     ],
     "imageUrl": "",
@@ -5823,9 +5920,44 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "DrawCardEffect",
-            "CardAmount": 1,
-            "Filter": null
+            "$type": "RandomBranchEffect",
+            "Probability": 50,
+            "IfSuccess": [
+              {
+                "$type": "AlterUnitStatsEffect",
+                "Health": 1,
+                "Damage": 1,
+                "Filter": {
+                  "Filter": {
+                    "CurrentAttack": null,
+                    "CurrentHealth": null,
+                    "Attack": null,
+                    "Health": null,
+                    "CardType": null,
+                    "Families": null,
+                    "CurrentFamilies": null,
+                    "DefinitionId": null,
+                    "Id": null,
+                    "HasEffect": null,
+                    "NumberOfTriggersLeft": null,
+                    "MustMeetAllCriteria": false
+                  },
+                  "WhichDeckToSearch": 0,
+                  "WhichBoardToSearch": 0,
+                  "WhichHandToSearch": 3,
+                  "WhichPlayedCardsToSearch": 3,
+                  "WhichDeadCardsToSearch": 3,
+                  "MaxLength": 0
+                }
+              }
+            ],
+            "IfFailure": [
+              {
+                "$type": "DrawCardEffect",
+                "CardAmount": 1,
+                "Filter": null
+              }
+            ]
           }
         ],
         "Duration": {
@@ -5837,52 +5969,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "a4f1725a-7761-413d-b8e4-7835a5104ae8"
-      },
-      {
-        "Trigger": 6,
-        "Effects": [
-          {
-            "$type": "AlterUnitStatsEffect",
-            "Health": 1,
-            "Damage": 1,
-            "Filter": {
-              "Filter": {
-                "CurrentAttack": null,
-                "CurrentHealth": null,
-                "Attack": null,
-                "Health": null,
-                "CardType": null,
-                "Families": null,
-                "CurrentFamilies": null,
-                "DefinitionId": null,
-                "Id": null,
-                "HasEffect": null,
-                "NumberOfTriggersLeft": null,
-                "MustMeetAllCriteria": false
-              },
-              "WhichDeckToSearch": 0,
-              "WhichBoardToSearch": 0,
-              "WhichHandToSearch": 3,
-              "WhichPlayedCardsToSearch": 3,
-              "WhichDeadCardsToSearch": 3,
-              "MaxLength": 0
-            }
-          }
-        ],
-        "Duration": {
-          "$type": "DurationByExecutions",
-          "times": 1
-        },
-        "Condition": {
-          "$type": "RandomCondition",
-          "Probabilty": 50
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": "",
-        "Id": "572d7ff7-f7b1-4b80-95e2-0f158089bab6"
+        "IsGlobal": false,
+        "Id": "d2ea4b98-4e82-44c0-8c10-a9c105b799e6"
       }
     ],
     "imageUrl": "",
@@ -5903,9 +5991,22 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "DrawCardEffect",
-            "CardAmount": 1,
-            "Filter": null
+            "$type": "RandomBranchEffect",
+            "Probability": 50,
+            "IfSuccess": [
+              {
+                "$type": "AlterPlayerHealthEffect",
+                "Amount": 4,
+                "ToRival": false
+              }
+            ],
+            "IfFailure": [
+              {
+                "$type": "DrawCardEffect",
+                "CardAmount": 1,
+                "Filter": null
+              }
+            ]
           }
         ],
         "Duration": {
@@ -5917,30 +6018,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "537510fc-e70c-47cd-bb6a-52b08b81a159"
-      },
-      {
-        "Trigger": 6,
-        "Effects": [
-          {
-            "$type": "AlterPlayerHealthEffect",
-            "Amount": 4,
-            "ToRival": false
-          }
-        ],
-        "Duration": {
-          "$type": "DurationByExecutions",
-          "times": 1
-        },
-        "Condition": {
-          "$type": "RandomCondition",
-          "Probabilty": 50
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": "",
-        "Id": "5054c019-cdd2-440f-8aa6-7f6eb165c015"
+        "IsGlobal": false,
+        "Id": "797f2ac0-00fa-4aef-8bd1-6a71b3b33dbe"
       }
     ],
     "imageUrl": "",
@@ -5961,9 +6040,22 @@
         "Trigger": 6,
         "Effects": [
           {
-            "$type": "DrawCardEffect",
-            "CardAmount": 1,
-            "Filter": null
+            "$type": "RandomBranchEffect",
+            "Probability": 50,
+            "IfSuccess": [
+              {
+                "$type": "AlterPlayerHealthEffect",
+                "Amount": -4,
+                "ToRival": true
+              }
+            ],
+            "IfFailure": [
+              {
+                "$type": "DrawCardEffect",
+                "CardAmount": 1,
+                "Filter": null
+              }
+            ]
           }
         ],
         "Duration": {
@@ -5975,30 +6067,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e2a12929-9c35-4de6-aaf8-a232217fe869"
-      },
-      {
-        "Trigger": 6,
-        "Effects": [
-          {
-            "$type": "AlterPlayerHealthEffect",
-            "Amount": -4,
-            "ToRival": true
-          }
-        ],
-        "Duration": {
-          "$type": "DurationByExecutions",
-          "times": 1
-        },
-        "Condition": {
-          "$type": "RandomCondition",
-          "Probabilty": 50
-        },
-        "SourceCard": null,
-        "Player": null,
-        "Expired": false,
-        "Description": "",
-        "Id": "419c8fa0-cfa1-4e51-ba18-88aaf3f306d2"
+        "IsGlobal": false,
+        "Id": "b3089269-8dc2-421c-9205-2abee7227957"
       }
     ],
     "imageUrl": "",
@@ -6034,7 +6104,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "bfe1abc4-47d4-4f85-94d1-ee4b0ff9692f"
+        "IsGlobal": false,
+        "Id": "3fcd8782-5905-44c7-b8e5-207f4b726c76"
       },
       {
         "Trigger": 6,
@@ -6052,7 +6123,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "2282198f-3f9c-45b6-85eb-81b7f75cd2c1"
+        "IsGlobal": false,
+        "Id": "5d237bbf-2e86-40fa-9141-a8971b6a9db9"
       }
     ],
     "imageUrl": "",
@@ -6086,7 +6158,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "da28d8b8-b0f5-4a79-bba7-f3fc974a7925"
+        "IsGlobal": false,
+        "Id": "5ca8f857-a858-4d36-981d-872373e44762"
       }
     ],
     "imageUrl": "",
@@ -6135,7 +6208,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "595bc27b-95eb-4535-bf46-3911c98bf9ae"
+        "IsGlobal": false,
+        "Id": "fa7d04b5-61b6-4b1d-8b05-c83ad0502677"
       }
     ],
     "imageUrl": "",
@@ -6167,7 +6241,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c44c77bc-80eb-440d-bba8-c05d7649511c"
+        "IsGlobal": false,
+        "Id": "38fcbdf2-61aa-464f-b192-31454044a1a3"
       }
     ],
     "imageUrl": "",
@@ -6247,7 +6322,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "3c6336a1-58b0-4ab8-9119-71a76ddbb17a"
+        "IsGlobal": false,
+        "Id": "57289df2-3cd3-494d-aba0-f8d833ed65e5"
       }
     ],
     "imageUrl": "",
@@ -6405,7 +6481,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "00512536-b6d0-4231-a2a2-1d05bf73f8ef"
+        "IsGlobal": false,
+        "Id": "076b112e-4b4b-4449-bc82-0c0bd2f9ec78"
       }
     ],
     "imageUrl": "",
@@ -6469,7 +6546,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_111_GLOBAL_EFFECT",
-              "Id": "90e746ec-09a9-4d94-b78a-b9d4c7dfa0b8"
+              "IsGlobal": false,
+              "Id": "4810731a-d0c7-488b-a47f-484e0378cfef"
             }
           }
         ],
@@ -6482,7 +6560,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0cb9e738-240a-476a-8c2f-980b2d29fd4a"
+        "IsGlobal": false,
+        "Id": "3711754e-4519-4028-a15c-bde598a1260e"
       }
     ],
     "imageUrl": "",
@@ -6557,7 +6636,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "9c8df98f-b8c8-434f-b8ec-58cec186711e"
+        "IsGlobal": false,
+        "Id": "6d98710e-66c0-4814-bcc3-d4fee540cf74"
       }
     ],
     "imageUrl": "",
@@ -6603,7 +6683,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "20943352-3925-4e18-95bc-36b1ccf9ead1"
+        "IsGlobal": false,
+        "Id": "7cda9c94-d1a7-4bdf-9730-473ab6d4ae4e"
       }
     ],
     "imageUrl": "",
@@ -6683,7 +6764,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_114_GLOBAL_EFFECT",
-              "Id": "8ddf4af2-3975-4f9c-b756-eb17fe81fdbe"
+              "IsGlobal": false,
+              "Id": "3ec5d040-713d-4acd-a453-f39298bbc887"
             }
           }
         ],
@@ -6698,7 +6780,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4edbe480-8cb9-423e-a809-fe3a4568f7a1"
+        "IsGlobal": false,
+        "Id": "3ee43a9b-b814-4c03-a57c-25c0e9909c9c"
       }
     ],
     "imageUrl": "",
@@ -6723,7 +6806,7 @@
             "IfRed": [
               {
                 "$type": "AlterUnitStatsEffect",
-                "Health": -1,
+                "Health": -2,
                 "Damage": 0,
                 "Filter": {
                   "Filter": {
@@ -6752,7 +6835,7 @@
             "IfGreen": [
               {
                 "$type": "AlterUnitStatsEffect",
-                "Health": 1,
+                "Health": 2,
                 "Damage": 0,
                 "Filter": {
                   "Filter": {
@@ -6781,15 +6864,8 @@
             "IfBlue": [
               {
                 "$type": "DrawCardEffect",
-                "CardAmount": 1,
+                "CardAmount": 2,
                 "Filter": null
-              },
-              {
-                "$type": "AppendCardToDeck",
-                "CardId": "115",
-                "CardsAmount": 1,
-                "ToRival": false,
-                "TopDeckDepth": 0
               }
             ]
           }
@@ -6805,7 +6881,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ca3b3efc-cac4-4def-bd06-1ed7d4f9046c"
+        "IsGlobal": false,
+        "Id": "7f5a08fc-8dc3-4270-9bf4-96f78acd43d1"
       }
     ],
     "imageUrl": "",
@@ -6834,59 +6911,40 @@
             ],
             "IfGreen": [
               {
-                "$type": "AlterUnitStatsEffect",
-                "Health": 2,
-                "Damage": 0,
-                "Filter": {
-                  "Filter": {
-                    "CurrentAttack": null,
-                    "CurrentHealth": null,
-                    "Attack": null,
-                    "Health": null,
-                    "CardType": 0,
-                    "Families": null,
-                    "CurrentFamilies": null,
-                    "DefinitionId": null,
-                    "Id": null,
-                    "HasEffect": null,
-                    "NumberOfTriggersLeft": null,
-                    "MustMeetAllCriteria": false
-                  },
-                  "WhichDeckToSearch": 0,
-                  "WhichBoardToSearch": 3,
-                  "WhichHandToSearch": 3,
-                  "WhichPlayedCardsToSearch": 3,
-                  "WhichDeadCardsToSearch": 3,
-                  "MaxLength": 2
-                }
+                "$type": "AlterPlayerHealthEffect",
+                "Amount": 3,
+                "ToRival": false
               }
             ],
             "IfBlue": [
               {
-                "$type": "AlterUnitStatsEffect",
-                "Health": 0,
-                "Damage": 2,
-                "Filter": {
-                  "Filter": {
-                    "CurrentAttack": null,
-                    "CurrentHealth": null,
-                    "Attack": null,
-                    "Health": null,
-                    "CardType": 0,
-                    "Families": null,
-                    "CurrentFamilies": null,
-                    "DefinitionId": null,
-                    "Id": null,
-                    "HasEffect": null,
-                    "NumberOfTriggersLeft": null,
-                    "MustMeetAllCriteria": false
+                "$type": "AppendGlobalEffect",
+                "Description": "CARD_116_GLOBAL_EFFECT",
+                "Effect": {
+                  "Trigger": 5,
+                  "Effects": [
+                    {
+                      "$type": "AlterMySelf",
+                      "Damage": 1,
+                      "Health": 1,
+                      "UseGameEvent": true
+                    }
+                  ],
+                  "Duration": {
+                    "$type": "DurationByExecutions",
+                    "times": 1
                   },
-                  "WhichDeckToSearch": 0,
-                  "WhichBoardToSearch": 3,
-                  "WhichHandToSearch": 3,
-                  "WhichPlayedCardsToSearch": 3,
-                  "WhichDeadCardsToSearch": 3,
-                  "MaxLength": 2
+                  "Condition": {
+                    "$type": "PlayerCardCondition",
+                    "Me": true,
+                    "Filter": null
+                  },
+                  "SourceCard": null,
+                  "Player": null,
+                  "Expired": false,
+                  "Description": "CARD_116_GLOBAL_EFFECT",
+                  "IsGlobal": false,
+                  "Id": "168d68f1-05fe-4160-a0d7-cc02061cf08c"
                 }
               }
             ]
@@ -6903,7 +6961,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "51257b6c-23bc-4217-8281-1d8b765c7552"
+        "IsGlobal": false,
+        "Id": "cb9d93ff-dc21-4624-9fc1-de607b530475"
       }
     ],
     "imageUrl": "",
@@ -6918,17 +6977,17 @@
     "Id": "117",
     "Type": 0,
     "BaseAttack": 0,
-    "BaseHealth": 6,
+    "BaseHealth": 3,
     "Effects": [
       {
         "Trigger": 5,
         "Effects": [
           {
-            "$type": "BranchOnColorInclusiveEffect",
+            "$type": "RotateColorAndBranchEffect",
             "IfRed": [
               {
                 "$type": "AlterUnitStatsEffect",
-                "Health": -3,
+                "Health": -4,
                 "Damage": 0,
                 "Filter": {
                   "Filter": {
@@ -7003,7 +7062,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c1640be6-18c3-4df9-b769-82711562b30a"
+        "IsGlobal": false,
+        "Id": "a5de5b02-4bb3-4c9b-abd0-36888c24cd8a"
       }
     ],
     "imageUrl": "",
@@ -7040,7 +7100,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_118_GLOBAL_EFFECT",
-              "Id": "f596ab32-e047-47ae-9c34-8f34142bb2ba"
+              "IsGlobal": false,
+              "Id": "995da073-8196-41d2-abef-2a28acb5135c"
             }
           }
         ],
@@ -7055,7 +7116,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "78026782-11f8-4e92-bdb3-5a9b3caac9b5"
+        "IsGlobal": false,
+        "Id": "45aca6a5-5615-4964-b29c-f12e80809113"
       }
     ],
     "imageUrl": "",
@@ -7087,29 +7149,27 @@
     "Id": "120",
     "Type": 0,
     "BaseAttack": 0,
-    "BaseHealth": 2,
+    "BaseHealth": 3,
     "Effects": [
       {
-        "Trigger": 12,
+        "Trigger": 0,
         "Effects": [
           {
             "$type": "AlterPlayerHealthEffect",
-            "Amount": 4,
+            "Amount": 1,
             "ToRival": false
           }
         ],
         "Duration": {
           "$type": "Always"
         },
-        "Condition": {
-          "$type": "ColorChangedToCondition",
-          "Color": 1
-        },
+        "Condition": null,
         "SourceCard": null,
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b8c950d7-9abe-4e31-9db5-b19560665ec2"
+        "IsGlobal": false,
+        "Id": "6415b81f-1f71-4c6b-a5ad-dbd3ea122477"
       }
     ],
     "imageUrl": "",
@@ -7168,7 +7228,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "eff64f94-c1e2-4f17-99cd-ffe923cc7081"
+        "IsGlobal": false,
+        "Id": "e7d31dad-fa7b-46a9-9b97-e9b9d5d3bcbb"
       }
     ],
     "imageUrl": "",
@@ -7250,7 +7311,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "58c4d397-2300-4f50-b815-d46d8c443473"
+        "IsGlobal": false,
+        "Id": "cd71432b-9949-403d-b48f-9f0b41dd1098"
       }
     ],
     "imageUrl": "",
@@ -7319,7 +7381,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "c1885810-935b-4686-ba68-861b7f7a6815"
+        "IsGlobal": false,
+        "Id": "5af66e9e-b802-4d4f-b2f7-b192805e3309"
       }
     ],
     "imageUrl": "",
@@ -7362,7 +7425,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "0f370146-6bca-4a89-a0e1-5b97573039ec"
+        "IsGlobal": false,
+        "Id": "88c072f3-2048-474a-b744-29484992702e"
       }
     ],
     "imageUrl": "",
@@ -7399,7 +7463,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "61cfc595-4c8a-49dc-bf5b-3c8f60a34c7c"
+        "IsGlobal": false,
+        "Id": "d85845b6-3221-4f06-9e9a-544b7660611c"
       }
     ],
     "imageUrl": "",
@@ -7436,7 +7501,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "5cf60a91-247e-463f-a279-1440deb70b5f"
+        "IsGlobal": false,
+        "Id": "19931b3f-2104-4a2e-a2bf-bc9aeb79b0ec"
       }
     ],
     "imageUrl": "",
@@ -7488,7 +7554,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "4c04d6cd-130a-4af0-85d9-df19420e10b8"
+        "IsGlobal": false,
+        "Id": "f12876a5-d7fc-4fbb-96c1-2848edd876dd"
       }
     ],
     "imageUrl": "",
@@ -7527,7 +7594,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "6b2685d4-8fe3-4625-9342-e42d8325e320"
+        "IsGlobal": false,
+        "Id": "46eee16c-2af3-4543-a738-368904e4a7b6"
       }
     ],
     "imageUrl": "",
@@ -7595,7 +7663,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "dc6c6129-cc1c-4281-8b79-c8d958f7a9a0"
+        "IsGlobal": false,
+        "Id": "9e4ed008-b66c-4d40-ae94-738a5eb15d94"
       }
     ],
     "imageUrl": "",
@@ -7709,7 +7778,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "163fd214-1ea9-41d9-b701-cc4a5b52a9d0"
+        "IsGlobal": false,
+        "Id": "d863efd3-bf21-4410-9b93-23289599c3c3"
       }
     ],
     "imageUrl": "",
@@ -7788,7 +7858,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "e73458e5-fbdd-48a5-be7a-c1ad92714e4f"
+        "IsGlobal": false,
+        "Id": "b5c68b76-156b-4b15-8d10-6a59b9f978ab"
       }
     ],
     "imageUrl": "",
@@ -7871,7 +7942,8 @@
               "Player": null,
               "Expired": false,
               "Description": "CARD_133_GLOBAL_EFFECT",
-              "Id": "78c4af01-c924-4565-aca1-02989fdcd678"
+              "IsGlobal": false,
+              "Id": "3cdb1e87-dda8-452e-b56a-e2b078b57863"
             }
           }
         ],
@@ -7886,7 +7958,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "695a0862-7bc5-4f7d-ae55-70fba84ee44e"
+        "IsGlobal": false,
+        "Id": "b98cc475-3b4b-4852-bb67-ace4874c3db7"
       }
     ],
     "imageUrl": "",
@@ -7909,6 +7982,33 @@
           {
             "$type": "CreateCopyOfSelf",
             "CopyDamage": true
+          },
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": 0,
+            "Damage": 1,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": "134",
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 0,
+              "WhichBoardToSearch": 3,
+              "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
+              "MaxLength": 0
+            }
           }
         ],
         "Duration": {
@@ -7922,7 +8022,8 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "ac3d5a28-8d31-430b-b934-24185c53258e"
+        "IsGlobal": false,
+        "Id": "94c4fb15-2aa5-40aa-ba5f-06301ee65678"
       }
     ],
     "imageUrl": "",
@@ -8026,11 +8127,294 @@
         "Player": null,
         "Expired": false,
         "Description": "",
-        "Id": "b07f480d-06c8-405e-b35a-ae8dc4286ed8"
+        "IsGlobal": false,
+        "Id": "3c4e9e44-c363-47ef-b934-5aaecbfa7059"
       }
     ],
     "imageUrl": "",
     "ConditionToPlay": null,
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "137",
+    "Type": 0,
+    "BaseAttack": 2,
+    "BaseHealth": 3,
+    "Effects": [
+      {
+        "Trigger": 0,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": -2,
+            "Damage": 0,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 1,
+              "WhichBoardToSearch": 3,
+              "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
+              "MaxLength": 1
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "IsGlobal": false,
+        "Id": "cffb5c2e-92a9-4b01-b8ba-826cc63b8f19"
+      },
+      {
+        "Trigger": 7,
+        "Effects": [
+          {
+            "$type": "DrawCardEffect",
+            "CardAmount": 1,
+            "Filter": null
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": {
+          "$type": "PlayerCardCondition",
+          "Me": false,
+          "Filter": null
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "IsGlobal": false,
+        "Id": "10a3d3ed-b227-44e9-850c-a8e8d7752c8a"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "PlayerColorIsCondition",
+      "Colors": [
+        3,
+        6
+      ]
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [],
+    "Id": "138",
+    "Type": 1,
+    "BaseAttack": 0,
+    "BaseHealth": 0,
+    "Effects": [
+      {
+        "Trigger": 6,
+        "Effects": [
+          {
+            "$type": "DamagePlayerBasedOnCards",
+            "RoundedUp": true,
+            "Relation": 2,
+            "TargetPlayer": 0,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 0,
+              "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
+              "MaxLength": 0
+            }
+          },
+          {
+            "$type": "AppendGlobalEffect",
+            "Description": "CARD_138_GLOBAL_EFFECT",
+            "Effect": {
+              "Trigger": 0,
+              "Effects": [
+                {
+                  "$type": "DrawCardEffect",
+                  "CardAmount": 1,
+                  "Filter": null
+                }
+              ],
+              "Duration": {
+                "$type": "DurationByExecutions",
+                "times": 3
+              },
+              "Condition": null,
+              "SourceCard": null,
+              "Player": null,
+              "Expired": false,
+              "Description": "CARD_138_GLOBAL_EFFECT",
+              "IsGlobal": false,
+              "Id": "2d48a3e3-90d5-4285-8a71-41859df67e84"
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "IsGlobal": false,
+        "Id": "f7787863-e867-4984-b922-8c12b4047d9a"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "PlayerColorIsCondition",
+      "Colors": [
+        4,
+        6
+      ]
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "139",
+    "Type": 0,
+    "BaseAttack": 0,
+    "BaseHealth": 1,
+    "Effects": [
+      {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AlterUnitStatsEffect",
+            "Health": 2,
+            "Damage": 3,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": null,
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 0,
+              "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 3,
+              "WhichDeadCardsToSearch": 3,
+              "MaxLength": 0
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "IsGlobal": false,
+        "Id": "6b172be2-3f2c-425a-899d-bce188217c11"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "PlayerColorIsCondition",
+      "Colors": [
+        5,
+        6
+      ]
+    },
+    "PlayEffects": null,
+    "PlayEffectTriggerTimes": 0
+  },
+  {
+    "Families": [
+      "CROMATICO"
+    ],
+    "Id": "140",
+    "Type": 0,
+    "BaseAttack": 0,
+    "BaseHealth": 8,
+    "Effects": [
+      {
+        "Trigger": 0,
+        "Effects": [
+          {
+            "$type": "RetriggerUnitPlayedEffect",
+            "WhichBoard": 1
+          }
+        ],
+        "Duration": {
+          "$type": "Always"
+        },
+        "Condition": null,
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "IsGlobal": false,
+        "Id": "c2a68974-f2e9-40d0-9d3c-210a604675f8"
+      }
+    ],
+    "imageUrl": "",
+    "ConditionToPlay": {
+      "$type": "PlayerColorIsCondition",
+      "Colors": [
+        6
+      ]
+    },
     "PlayEffects": null,
     "PlayEffectTriggerTimes": 0
   }

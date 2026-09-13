@@ -35,6 +35,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(ReviveLastDied), nameof(ReviveLastDied))]
 [JsonDerivedType(typeof(CreateCopyOfSelf), nameof(CreateCopyOfSelf))]
 [JsonDerivedType(typeof(RandomBranchEffect), nameof(RandomBranchEffect))]
+[JsonDerivedType(typeof(RetriggerUnitPlayedEffect), nameof(RetriggerUnitPlayedEffect))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>

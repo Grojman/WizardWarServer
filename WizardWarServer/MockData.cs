@@ -1876,9 +1876,9 @@ new()
     Effects = [
         new(TriggerType.UnitPlayed, [
             new RotateColorAndBranchEffect(
-                [ new AlterUnitStatsEffect(-1, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL }) ],
-                [ new AlterUnitStatsEffect(1, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER }) ],
-                [ new DrawCardEffect(1, null), new AppendCardToDeck(1, "115", false) ]
+                [ new AlterUnitStatsEffect(-2, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL }) ],
+                [ new AlterUnitStatsEffect(2, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER }) ],
+                [ new DrawCardEffect(2, null) ]
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1891,8 +1891,11 @@ new()
         new(TriggerType.SpellPlayed, [
             new RotateColorAndBranchEffect(
                 [ new AlterPlayerHealthEffect(-3, true) ],
-                [ new AlterUnitStatsEffect(2, 0, new() {Filter = new() { CardType = CardType.Unit }, WhichDeckToSearch = PlayerType.PLAYER, MaxLength = 2}) ],
-                [ new AlterUnitStatsEffect(0, 2, new() { Filter = new() { CardType = CardType.Unit }, WhichDeckToSearch = PlayerType.PLAYER, MaxLength = 2 }) ]
+                [ new AlterPlayerHealthEffect(3, false) ],
+                [ new AppendGlobalEffect(
+                    new(TriggerType.UnitPlayed, [ new AlterMySelf(1, 1, true) ], new DurationByExecutions(1), new PlayerCardCondition(true, null)),
+                    "CARD_116_GLOBAL_EFFECT"
+                ) ]
             )
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -1902,12 +1905,12 @@ new()
     Id = "117",
     Type = CardType.Unit,
     BaseAttack = 0,
-    BaseHealth = 6,
+    BaseHealth = 3,
     Families = ["CROMATICO"],
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new BranchOnColorInclusiveEffect(
-                [ new AlterUnitStatsEffect(-3, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL, MaxLength = 1 }) ],
+            new RotateColorAndBranchEffect(
+                [ new AlterUnitStatsEffect(-4, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL, MaxLength = 1 }) ],
                 [ new AlterUnitStatsEffect(0, 1, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER }) ],
                 [ new DrawCardPerBoardUnitEffect(PlayerType.PLAYER, true) ]
             )
@@ -1941,11 +1944,11 @@ new()
     Id = "120",
     Type = CardType.Unit,
     BaseAttack = 0,
-    BaseHealth = 2,
+    BaseHealth = 3,
     Families = ["CROMATICO"],
     ConditionToPlay = new PlayerHasColorCondition(ChromaticColor.Verde),
     Effects = [
-        new(TriggerType.GlobalEffectAdded, [ new AlterPlayerHealthEffect(4, false) ], new Always(), new ColorChangedToCondition(ChromaticColor.Verde))
+        new(TriggerType.TurnEnd, [ new AlterPlayerHealthEffect(1, false) ], new Always(), null)
     ]
 },
 new()
@@ -2224,6 +2227,64 @@ new()
             new IHaveBeenPlayedCondition()
         )
     ]
+},
+
+// ===== Nuevas incorporaciones al mazo cromático =====
+new()
+{
+    Id = "137",
+    Type = CardType.Unit,
+    BaseAttack = 2,
+    BaseHealth = 3,
+    Families = ["CROMATICO"],
+    ConditionToPlay = new PlayerColorIsCondition(ChromaticColor.Amarillo, ChromaticColor.Blanco),
+    Effects = [
+        new(TriggerType.TurnEnd, [
+            new AlterUnitStatsEffect(-2, 0, new() { Filter = new(), WhichDeckToSearch = PlayerType.RIVAL, MaxLength = 1 })
+        ], new Always(), null),
+        new(TriggerType.UnitDeath, [ new DrawCardEffect(1, null) ], new Always(), new PlayerCardCondition(false, null))
+    ]
+},
+new()
+{
+    Id = "138",
+    Type = CardType.Spell,
+    ConditionToPlay = new PlayerColorIsCondition(ChromaticColor.Celeste, ChromaticColor.Blanco),
+    Effects = [
+        new(TriggerType.SpellPlayed, [
+            new DamagePlayerBasedOnCards(true, 2f, PlayerType.PLAYER, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER }),
+            new AppendGlobalEffect(
+                new(TriggerType.TurnEnd, [ new DrawCardEffect(1, null) ], new DurationByExecutions(3), null),
+                "CARD_138_GLOBAL_EFFECT"
+            )
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "139",
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 1,
+    Families = ["CROMATICO"],
+    ConditionToPlay = new PlayerColorIsCondition(ChromaticColor.Morado, ChromaticColor.Blanco),
+    Effects = [
+        new(TriggerType.UnitPlayed, [
+            new AlterUnitStatsEffect(2, 3, new() { Filter = new(), WhichBoardToSearch = PlayerType.PLAYER })
+        ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+    ]
+},
+new()
+{
+    Id = "140",
+    Type = CardType.Unit,
+    BaseAttack = 0,
+    BaseHealth = 8,
+    Families = ["CROMATICO"],
+    ConditionToPlay = new PlayerColorIsCondition(ChromaticColor.Blanco),
+    Effects = [
+        new(TriggerType.TurnEnd, [ new RetriggerUnitPlayedEffect(PlayerType.RIVAL) ], new Always(), null)
+    ]
 }
 
 ];
@@ -2438,7 +2499,7 @@ new()
             new DeckDto(12, "El Alquimista Cromático", "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial."),
             new()
             {
-                //29
+                //37
                 {"115", 5},
                 {"116", 3},
                 {"117", 5},
@@ -2446,8 +2507,12 @@ new()
                 {"119", 4},
                 {"120", 3},
                 {"121", 3},
-                {"122", 2},
+                {"122", 3},
                 {"123", 2},
+                {"137", 2},
+                {"138", 2},
+                {"139", 2},
+                {"140", 1},
             }
         },
         {

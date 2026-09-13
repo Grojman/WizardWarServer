@@ -275,24 +275,34 @@ DECK_12_NAME,El Alquimista Cromático,The Chromatic Alchemist
 DECK_12_DESC,"Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial.","Master the cycle of colors: red strikes, green heals and blue draws cards. Rotate or mix the colors at the right time to unleash their full potential."
 FAMILY_CROMATICO,Cromático,Chromatic
 CARD_115_NAME,Espíritu Cromático,Chromatic Spirit
-CARD_115_DESC,"Al entrar en juego, rota el color cromático (o lo crea si no hay ninguno). {red:Rojo: [0/-1] a la mesa {rival:rival}.} {green:Verde: [0/+1] a mi mesa.} {blue:Azul: {draw:robo} una carta y añado una copia mía al {deck:mazo}.}","On play, rotate the chromatic color (or create it if none is active). {red:Red: [0/-1] to the {rival:rival}'s board.} {green:Green: [0/+1] to my board.} {blue:Blue: {draw:draw} a card and add a copy of myself to the {deck:deck}.}"
+CARD_115_DESC,"Al entrar en juego, rota el color cromático (o lo crea si no hay ninguno). {red:Rojo: [0/-2] a la mesa {rival:rival}.} {green:Verde: [0/+2] a mi mesa.} {blue:Azul: {draw:robo} 2 cartas.}","On play, rotate the chromatic color (or create it if none is active). {red:Red: [0/-2] to the {rival:rival}'s board.} {green:Green: [0/+2] to my board.} {blue:Blue: {draw:draw} 2 cards.}"
 CARD_116_NAME,Cambio de Ciclo,Cycle Shift
-CARD_116_DESC,"Rota el color cromático (o lo crea). {red:Rojo: 3 de daño al {rival:rival}.} {green:Verde: [0/+2] a las dos primeras unidades del {deck:mazo}.} {blue:Azul: [+2/0] a las dos primeras unidades de mi {deck:mazo}.}","Rotate the chromatic color (or create it). {red:Red: 3 damage to the {rival:rival}.} {green:Green: [0/+2] to the first two units in my {deck:deck}.} {blue:Blue: [+2/0] to the first two units in my {deck:deck}.}"
+CARD_116_DESC,"Rota el color cromático (o lo crea). {red:Rojo: 3 de daño al {rival:rival}.} {green:Verde: curo 3 a mi {player:jugador}.} {blue:Azul: añado un efecto global: [+1/+1] a la próxima unidad que juegue.}","Rotate the chromatic color (or create it). {red:Red: 3 damage to the {rival:rival}.} {green:Green: heal my {player:player} for 3.} {blue:Blue: add a global effect: [+1/+1] to the next unit I play.}"
+CARD_116_GLOBAL_EFFECT,La próxima unidad que juegue recibe [+1/+1],The next unit I play gets [+1/+1]
 CARD_117_NAME,Guardián Cromático,Chromatic Guardian
-CARD_117_DESC,"Al entrar en juego, mira el color cromático activo (sin rotarlo). {red:Rojo: [0/-3] a la primera unidad del {rival:rival} en {board:mesa}.} {green:Verde: [+1/0] a mi {board:mesa}.} {blue:Azul: {draw:robo} una carta por cada otra unidad en mi mesa.}","On play, check the active chromatic color (without rotating it). {red:Red: [0/-3] to the first unit of the {rival:rival}'s board.} {green:Green: [+1/0] to my board.} {blue:Blue: {draw:draw} a card for each other unit on my board.}"
+CARD_117_DESC,"Al entrar en juego, rota el color cromático (o lo crea si no hay ninguno). {red:Rojo: [0/-4] a una unidad del {rival:rival} en {board:mesa}.} {green:Verde: [+1/0] a mi {board:mesa}.} {blue:Azul: {draw:robo} una carta por cada otra unidad en mi mesa.}","On play, rotate the chromatic color (or create it if none is active). {red:Red: [0/-4] to one unit on the {rival:rival}'s board.} {green:Green: [+1/0] to my board.} {blue:Blue: {draw:draw} a card for each other unit on my board.}"
 CARD_118_NAME,Ciclo Forzado,Forced Cycle
 CARD_118_DESC,El color cromático rota automáticamente {endround:al final de cada ronda} durante cuatro rondas.,The chromatic color automatically rotates {endround:at the end of every round} for the next 4 rounds.
 CARD_118_GLOBAL_EFFECT,Rota el color cromático al final de cada turno,Rotates the cromatic color on the end of round
 CARD_119_NAME,Coloso Bermellón,Vermilion Colossus
 CARD_119_DESC,Solo puedo jugarme si el color cromático activo contiene el {red:rojo}.,Can only be played while the active chromatic color contains {red:red}.
 CARD_120_NAME,Brote Esmeralda,Emerald Sprout
-CARD_120_DESC,"Solo puedo jugarme si el color cromático activo contiene el {green:verde}. {green:Cuando el color cromático cambia a verde, curo 4 a mi {player:jugador}.}","Can only be played while the active chromatic color contains {green:green}. {green:When the chromatic color changes to green, heal my {player:player} for 4.}"
+CARD_120_DESC,"Solo puedo jugarme si el color cromático activo contiene el {green:verde}. {endround:Al final de la ronda}, curo 1 a mi {player:jugador}.","Can only be played while the active chromatic color contains {green:green}. {endround:At the end of the round}, heal my {player:player} for 1."
 CARD_121_NAME,Buceador Zafiro,Sapphire Diver
 CARD_121_DESC,"Solo puedo jugarme si el color cromático activo contiene el {blue:azul}. {skill:HABILIDAD}: {draw:robo} una carta.","Can only be played while the active chromatic color contains {blue:blue}. {skill:SKILL}: {draw:draw} a card."
 CARD_122_NAME,Fusión de Pigmentos,Pigment Fusion
 CARD_122_DESC,"Solo puedo jugarme si me quedan 15 cartas o menos en el {deck:mazo}. Si el color activo es básico ({red:rojo}, {green:verde} o {blue:azul}), lo reemplaza por su color mixto ({yellow:amarillo}, {cyan:celeste} o {purple:morado}). Si ya había un color mixto activo, ambos se funden en {white:blanco}.","Can only be played while my {deck:deck} has 15 cards or fewer left. If the active color is basic ({red:red}, {green:green} or {blue:blue}), it's replaced by its mixed color ({yellow:yellow}, {cyan:cyan} or {purple:purple}). If a mixed color was already active, both merge into {white:white}."
 CARD_123_NAME,Última Cosecha,Last Harvest
 CARD_123_DESC,"Solo puedo jugarme si me quedan 10 cartas o menos en el {deck:mazo}. Lleno los huecos libres de mi mesa con dos copias de Espíritu Cromático y dos copias de Guardián Cromático.","Can only be played while my {deck:deck} has 10 cards or fewer left. Fills the empty slots on my board with two copies of Chromatic Spirit and two copies of Chromatic Guardian."
+CARD_137_NAME,Dawnbreaker,Dawnbreaker
+CARD_137_DESC,"Solo puedo jugarme si el color cromático activo es {yellow:amarillo} o {white:blanco}. {endround:Al final de la ronda}: [0/-2] a la primera unidad del {rival:rival} en el {deck:mazo}. Si muere una unidad enemiga, {draw:robo} una carta.","Can only be played while the active chromatic color is {yellow:yellow} or {white:white}. {endround:At the end of the round}: [0/-2] to the first enemy unit in the {rival:rival}'s {deck:deck}. If an enemy unit dies, {draw:draw} a card."
+CARD_138_NAME,Force of Nature,Force of Nature
+CARD_138_DESC,"Solo puedo jugarme si el color cromático activo es {cyan:celeste} o {white:blanco}. Curo 2 a mi {player:jugador} por cada unidad en mi {board:mesa}. Añado un efecto global: durante las próximas 3 rondas, {draw:robo} una carta {endround:al final de la ronda}.","Can only be played while the active chromatic color is {cyan:cyan} or {white:white}. Heal my {player:player} for 2 for each unit on my {board:board}. Add a global effect: for the next 3 rounds, {draw:draw} a card {endround:at the end of the round}."
+CARD_138_GLOBAL_EFFECT,Durante 3 rondas: robo una carta al final de la ronda,For 3 rounds: draw a card at the end of the round
+CARD_139_NAME,Warlord of the Primal Colors,Warlord of the Primal Colors
+CARD_139_DESC,"Solo puedo jugarme si el color cromático activo es {purple:morado} o {white:blanco}. Al entrar en juego, doy [+3/+2] a mi {board:mesa}.","Can only be played while the active chromatic color is {purple:purple} or {white:white}. On play, give [+3/+2] to my board."
+CARD_140_NAME,Primatic Titan,Primatic Titan
+CARD_140_DESC,"Solo puedo jugarme si el color cromático activo es {white:blanco}. {endround:Al final de la ronda}: reactivo los efectos de entrada en juego de las unidades del {rival:rival} en {board:mesa}.","Can only be played while the active chromatic color is {white:white}. {endround:At the end of the round}: reactivate the on-play effects of the {rival:rival}'s units on the {board:board}."
 GLOBAL_EFFECT_COLOR_ROJO,ROJO,RED
 GLOBAL_EFFECT_COLOR_AZUL,AZUL,BLUE
 GLOBAL_EFFECT_COLOR_VERDE,VERDE,GREEN
@@ -325,7 +335,7 @@ CARD_133_NAME,Voluntad Inquebrantable,Unbreakable Will
 CARD_133_DESC,"Durante las próximas tres rondas, {endround:al final de ronda} revivo a la última unidad que haya {die:muerto}","For the next three rounds, {endround:at the end of the round} I revive the last unit that {die:died}"
 CARD_133_GLOBAL_EFFECT,Durante 3 rondas: revive a la última unidad muerta al final de ronda,For 3 rounds: revive the last dead unit at the end of the round
 CARD_134_NAME,Criatura fúngica,Fungal Creature
-CARD_134_DESC,"Cuando {die:muero}, {add:creo} una copia mía en el {deck:mazo} del {player:jugador} que mantiene mi daño actual.","When I {die:die}, I {add:create} a copy of myself in my {player:player}'s {deck:deck} that keeps my current damage."
+CARD_134_DESC,"Cuando {die:muero}, {add:creo} una copia mía en el {deck:mazo} del {player:jugador} que mantiene mi daño actual, y doy [+1/0] de daño a mis otras copias en el {deck:mazo}.","When I {die:die}, I {add:create} a copy of myself in my {player:player}'s {deck:deck} that keeps my current damage, and give [+1/0] damage to my other copies in the {deck:deck}."
 CARD_135_NAME,Defensor de la colmena,Hive Defender
 CARD_135_DESC,"{skill:HABILIDAD}: {die:Muero} e inflinjo 1 de daño a todas las unidades enemigas","{skill:SKILL}: I {die:die} and deal 1 damage to all enemy units"
 CARD_136_NAME,Espíritu heredado,Inherited Spirit
