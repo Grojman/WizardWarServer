@@ -2240,7 +2240,7 @@ new()
     ConditionToPlay = new PlayerColorIsCondition(ChromaticColor.Amarillo, ChromaticColor.Blanco),
     Effects = [
         new(TriggerType.TurnEnd, [
-            new AlterUnitStatsEffect(-2, 0, new() { Filter = new(), WhichDeckToSearch = PlayerType.RIVAL, MaxLength = 1 })
+            new AlterUnitStatsEffect(-2, 0, new() { Filter = new(), WhichBoardToSearch = PlayerType.RIVAL, MaxLength = 1 })
         ], new Always(), null),
         new(TriggerType.UnitDeath, [ new DrawCardEffect(1, null) ], new Always(), new PlayerCardCondition(false, null))
     ]
@@ -2283,7 +2283,7 @@ new()
     Families = ["CROMATICO"],
     ConditionToPlay = new PlayerColorIsCondition(ChromaticColor.Blanco),
     Effects = [
-        new(TriggerType.TurnEnd, [ new RetriggerUnitPlayedEffect(PlayerType.RIVAL) ], new Always(), null)
+        new(TriggerType.TurnEnd, [ new RetriggerUnitPlayedEffect(PlayerType.PLAYER) ], new Always(), null)
     ]
 }
 

@@ -14,6 +14,14 @@ public static class ChromaticColorHelper
             .FirstOrDefault();
     }
 
+    public static IEnumerable<ChromaticColor?> TryGetColors(PlayerState player)
+    {
+        return player.GlobalEffects
+            .SelectMany(e => e.Effects)
+            .OfType<ColorMarkerEffect>()
+            .Select(e => (ChromaticColor?)e.Color);
+    }
+
     static bool IsColorMarkerInstance(EffectInstance e) => e.Effects.Any(f => f is ColorMarkerEffect);
 
     public static void SetColor(GameState state, CardInstance sourceCard, PlayerState player, ChromaticColor newColor)
