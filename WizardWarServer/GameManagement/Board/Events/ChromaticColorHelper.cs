@@ -27,7 +27,15 @@ public static class ChromaticColorHelper
     public static void SetColor(GameState state, CardInstance sourceCard, PlayerState player, ChromaticColor newColor)
     {
         player.GlobalEffects.RemoveAll(IsColorMarkerInstance);
+        AddColor(state, sourceCard, player, newColor);
+    }
 
+    // Adds a color marker alongside whatever markers the player already has
+    // (unlike SetColor, this does not clear existing ones) - used to layer a
+    // mixed color on top of an already-active base/mixed color instead of
+    // replacing it.
+    public static void AddColor(GameState state, CardInstance sourceCard, PlayerState player, ChromaticColor newColor)
+    {
         var marker = new EffectInstance(TriggerType.None, [new ColorMarkerEffect(newColor)], new Always(), null)
         {
             Player = player,
@@ -46,6 +54,16 @@ public static class ChromaticColorHelper
         ChromaticColor.Rojo => ChromaticColor.Verde,
         ChromaticColor.Verde => ChromaticColor.Azul,
         ChromaticColor.Azul => ChromaticColor.Rojo,
+        _ => throw new ArgumentOutOfRangeException(nameof(c))
+    };
+
+    // Same rotation as NextBase but applied to a mixed color's two components
+    // (e.g. Amarillo = Rojo+Verde -> component-wise NextBase -> Verde+Azul = Celeste).
+    public static ChromaticColor NextMixed(ChromaticColor c) => c switch
+    {
+        ChromaticColor.Amarillo => ChromaticColor.Celeste,
+        ChromaticColor.Celeste => ChromaticColor.Morado,
+        ChromaticColor.Morado => ChromaticColor.Amarillo,
         _ => throw new ArgumentOutOfRangeException(nameof(c))
     };
 

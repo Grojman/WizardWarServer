@@ -153,11 +153,19 @@ public static class StoringData
             stats.VsDeck[rivalDeck] = sR;
         }
 
+        sR.TotalGames++;
+        sR.TotalSeconds += seconds;
+        sR.TotalTurns += turns;
+
         if (!rivalStats.VsDeck.TryGetValue(deckId, out var sI))
         {
             sI = new();
             rivalStats.VsDeck[deckId] = sI;
         }
+
+        sI.TotalGames++;
+        sI.TotalSeconds += seconds;
+        sI.TotalTurns += turns;
 
 
         if (isWinner)

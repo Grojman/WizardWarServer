@@ -1,8 +1,9 @@
-// Si no hay color activo, crea el primer color mixto (Amarillo).
-// Si el color activo es básico, lo reemplaza por su color mixto derivado
-// (Rojo->Amarillo, Verde->Celeste, Azul->Morado).
-// Si el color activo ya es un mixto, ese sería el segundo mixto distinto que se
-// añade -> ambos se reemplazan de golpe por un único efecto Blanco.
+// Si no hay color activo, crea un color base al azar.
+// Si el color activo es básico, añade un color mixto por encima (sin quitar el
+// básico), en vez de reemplazarlo.
+// Si el color activo ya es un mixto, añade un segundo mixto distinto por encima
+// -> al haber dos mixtos activos a la vez, ambos (y el básico) se reemplazan de
+// golpe por un único efecto Blanco.
 // Si ya es Blanco, es un estado terminal y no hace nada más.
 public class MixColorEffect : IEffect
 {
@@ -29,10 +30,10 @@ public class MixColorEffect : IEffect
         switch (currents.Count(n => n != null && MIXED.Contains(n.Value)))
         {
             case 0:
-                ChromaticColorHelper.SetColor(state, cardId, player, MIXED.GetRandom());
+                ChromaticColorHelper.AddColor(state, cardId, player, MIXED.GetRandom());
                 return;
             case 1:
-                ChromaticColorHelper.SetColor(state, cardId, player, MIXED.Where((c) => c != current).GetRandom());
+                ChromaticColorHelper.AddColor(state, cardId, player, MIXED.Where((c) => c != current).GetRandom());
                 return;
             case 2:
                 ChromaticColorHelper.SetColor(state, cardId, player, ChromaticColor.Blanco);
