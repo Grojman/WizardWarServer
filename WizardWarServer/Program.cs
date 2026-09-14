@@ -113,6 +113,14 @@ internal class Program
 
             GameManager gameManager = new(serverOptions);
 
+            // Deliberately separate from app.Lifetime.ApplicationStopping: that token
+            // cancels at the same time the callback below starts running, which would
+            // otherwise abort every receive loop's socket concurrently with (and racing)
+            // the graceful warn-then-close sequence in ShutdownAllAsync. This token is
+            // only cancelled once that sequence has fully finished, as a fallback for any
+            // socket that didn't respond to its close handshake.
+            var shutdownCts = new CancellationTokenSource();
+
             app.Map("/ws", async context =>
             {
                 if (!context.WebSockets.IsWebSocketRequest)
@@ -145,13 +153,14 @@ internal class Program
                     "Player {PlayerId} connected from {RemoteIp} (resumed: {Resumed})",
                     player.Guid, context.Connection.RemoteIpAddress, resumed);
 
-                await ReceiveLoop(player, gameManager, serverOptions, app.Lifetime.ApplicationStopping);
+                await ReceiveLoop(player, gameManager, serverOptions, shutdownCts.Token);
             }).RequireRateLimiting(ConnectRateLimiterPolicy);
 
             app.Lifetime.ApplicationStopping.Register(() =>
             {
-                Log.Information("Server is stopping, closing active connections...");
-                gameManager.CloseAllConnectionsAsync().GetAwaiter().GetResult();
+                Log.Information("Server is stopping, warning players and closing active connections...");
+                gameManager.ShutdownAllAsync().GetAwaiter().GetResult();
+                shutdownCts.Cancel();
             });
 
             if (app.Environment.IsDevelopment())

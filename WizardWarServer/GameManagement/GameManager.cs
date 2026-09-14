@@ -617,17 +617,43 @@ public class GameManager
         foreach (var c in connections) c.Game = null;
     }
 
-    public async Task CloseAllConnectionsAsync()
+    // Runs on shutdown, in this order: (1) warn every connected player while
+    // their sockets are still fully open, (2) force-end every active game so
+    // nobody is left believing a match is still live (any series round this
+    // finishes falls back to Selecting, and gets forfeited a moment later by
+    // the normal disconnect path once its players' sockets close below), then
+    // only (3) close the sockets. Doing the close last avoids racing the
+    // receive loops' own cancellation-triggered abort against these sends.
+    public async Task ShutdownAllAsync()
     {
-        List<PlayerConnection> snapshot;
+        List<PlayerConnection> playersSnapshot;
+        List<GameSession> gamesSnapshot;
         lock (_sync)
         {
-            snapshot = new List<PlayerConnection>(players);
+            playersSnapshot = new List<PlayerConnection>(players);
+            gamesSnapshot = new List<GameSession>(games);
+        }
+
+        foreach (var player in playersSnapshot)
+        {
+            await player.SendError(TranslationKeys.ErrServerRestarting);
+        }
+
+        foreach (var session in gamesSnapshot)
+        {
+            try
+            {
+                await session.End(null, forced: true);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error force-ending game session during shutdown");
+            }
         }
 
         using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
 
-        foreach (var player in snapshot)
+        foreach (var player in playersSnapshot)
         {
             try
             {

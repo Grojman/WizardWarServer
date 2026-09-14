@@ -1969,7 +1969,6 @@ new()
     Effects = [
         new(TriggerType.SpellPlayed, [ new MixColorEffect() ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ],
-    ConditionToPlay = new CountCardCondition(new() { Filter = new(), WhichDeckToSearch = PlayerType.PLAYER }, new(CountType.AT_MAX, 15))
 },
 new()
 {
@@ -1983,7 +1982,6 @@ new()
             new PlayCardEffect("117", false, false),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ],
-    ConditionToPlay = new CountCardCondition(new() { Filter = new(), WhichDeckToSearch = PlayerType.PLAYER }, new(CountType.AT_MAX, 10))
 },
 
 // --- Mazo "Culto de los espíritus" ---
@@ -2366,6 +2364,7 @@ new()
                 {"86", 2},
                 {"87", 4},
                 {"88", 3},
+                {"89", 0},
                 {"90", 2},
                 {"91", 3},
                 {"92", 2},
@@ -2499,14 +2498,14 @@ new()
             new DeckDto(12, "El Alquimista Cromático", "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial."),
             new()
             {
-                //37
+                //33
                 {"115", 5},
                 {"116", 3},
                 {"117", 5},
                 {"118", 2},
-                {"119", 4},
-                {"120", 3},
-                {"121", 3},
+                {"119", 2},
+                {"120", 2},
+                {"121", 2},
                 {"122", 3},
                 {"123", 2},
                 {"137", 2},

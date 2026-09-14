@@ -539,6 +539,7 @@ public class GameState
 
     public void AlterUnitHealth(IdentificableObject source, CardInstance Unit, int Amount, bool checkKill = true, bool enqueueToUsers = true)
     {
+        if(Unit.CurrentHealth <= 0) return;
         source = ResolveSource(source);
         Unit.CurrentHealth += Amount;
         var gevent = new GameEvent.UnitHealthChanged()

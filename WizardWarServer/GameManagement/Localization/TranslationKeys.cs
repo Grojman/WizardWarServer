@@ -11,4 +11,5 @@ public static class TranslationKeys
     public const string ErrActionNotUnderstood = "ERR_ACTION_NOT_UNDERSTOOD";
     public const string ErrDeckAlreadyUsedInSeries = "ERR_DECK_ALREADY_USED_IN_SERIES";
     public const string ErrRivalAlreadyPickedDeck = "ERR_RIVAL_ALREADY_PICKED_DECK";
+    public const string ErrServerRestarting = "ERR_SERVER_RESTARTING";
 }

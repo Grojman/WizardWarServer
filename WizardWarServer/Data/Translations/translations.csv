@@ -10,6 +10,7 @@ ERR_MESSAGE_NOT_UNDERSTOOD,El servidor no ha podido entender tu último mensaje.
 ERR_ACTION_NOT_UNDERSTOOD,El servidor no ha podido entender tu última acción.,Your last action could not be understood by the server.
 ERR_DECK_ALREADY_USED_IN_SERIES,Ese mazo ya ha sido usado en esta serie.,That deck has already been used in this series.
 ERR_RIVAL_ALREADY_PICKED_DECK,Tu rival ya ha elegido ese mazo.,Your rival has already picked that deck.
+ERR_SERVER_RESTARTING,El servidor se está reiniciando. Tu partida ha terminado; podrás volver a jugar en unos segundos.,The server is restarting. Your match has ended; you'll be able to play again in a few seconds.
 HOME_SECTION_QUICK_MATCH,Partida rápida,Quick match
 HOME_SECTION_BEST_OF_3,Mejor de 3,Best of 3
 HOME_SECTION_REPORT_BUGS,Reportar bugs,Report bugs
