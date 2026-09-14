@@ -15,8 +15,8 @@ public class PlayerColorIsCondition : EffectCondition
     public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
         var player = state.GetState(playerId);
-        var current = ChromaticColorHelper.TryGetSingleColor(player);
-        return current is not null && Colors.Contains(current.Value);
+        return ChromaticColorHelper.TryGetColors(player)
+            .Any(c => c is not null && Colors.Contains(c.Value));
     }
 
     public override EffectCondition Clone() => new PlayerColorIsCondition(Colors);

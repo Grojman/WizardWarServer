@@ -89,7 +89,12 @@ public static class ChromaticColorHelper
 
     public static HashSet<ChromaticColor> GetActiveBaseComponents(PlayerState player)
     {
-        var current = TryGetSingleColor(player);
-        return current is null ? [] : Components(current.Value);
+        var result = new HashSet<ChromaticColor>();
+        foreach (var c in TryGetColors(player))
+        {
+            if (c is not null)
+                result.UnionWith(Components(c.Value));
+        }
+        return result;
     }
 }
