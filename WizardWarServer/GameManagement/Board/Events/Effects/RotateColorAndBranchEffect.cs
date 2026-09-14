@@ -1,7 +1,8 @@
-// Rota el color (ver RotateColorEffect) y, si tras rotar el color activo es
-// exactamente un color básico (Rojo/Verde/Azul), ejecuta la lista de efectos
-// asociada a ese color. Si la rotación no hizo nada (había un color mixto o
-// Blanco activo), no se ejecuta ninguna rama.
+// Rota el color (ver RotateColorEffect) y, tras rotar, ejecuta la lista de
+// efectos asociada a cada componente básico (Rojo/Verde/Azul) de los colores
+// activos - un color mixto o Blanco dispara varias ramas a la vez (sus
+// componentes), pero cada rama básica se ejecuta como máximo una vez aunque
+// varios marcadores activos compartan ese componente.
 public class RotateColorAndBranchEffect : IEffect
 {
     public RotateColorAndBranchEffect(IEffect[] ifRed, IEffect[] ifGreen, IEffect[] ifBlue)
@@ -22,33 +23,36 @@ public class RotateColorAndBranchEffect : IEffect
 
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-
         var player = state.GetState(playerId);
-        var current = ChromaticColorHelper.TryGetSingleColor(player);
-        if (current is null)
+
+        new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
+
+        var currents = ChromaticColorHelper.TryGetColors(player)
+            .Where(c => c is not null)
+            .Select(c => c!.Value);
+
+        var addedComponents = new HashSet<ChromaticColor>();
+        List<IEffect> effects = new();
+        foreach (var c in currents)
         {
-            new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
-            current = ChromaticColor.Rojo;
+            foreach (var component in ChromaticColorHelper.Components(c))
+            {
+                if (!addedComponents.Add(component)) continue;
+
+                var branch = component switch
+                {
+                    ChromaticColor.Rojo => IfRed,
+                    ChromaticColor.Verde => IfGreen,
+                    ChromaticColor.Azul => IfBlue,
+                    _ => null
+                };
+
+                if (branch is not null)
+                    effects.AddRange(branch);
+            }
         }
 
-        IEffect[]? branch = current.Value switch
-        {
-            ChromaticColor.Rojo => IfRed,
-            ChromaticColor.Verde => IfGreen,
-            ChromaticColor.Azul => IfBlue,
-            ChromaticColor.Blanco => [.. IfRed, .. IfGreen, .. IfBlue],
-            ChromaticColor.Celeste => [.. IfGreen, .. IfBlue],
-            ChromaticColor.Morado => [.. IfRed, .. IfBlue],
-            ChromaticColor.Amarillo => [.. IfRed, .. IfGreen],
-            _ => null
-        };
-
-        if (branch is null)
-        {
-            return;
-        }            
-
-        foreach (var e in branch) e.Execute(playerId, rivalId, cardId, state, ev);
-        if(current is not null) new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
+        foreach (var effect in effects)
+            effect.Execute(playerId, rivalId, cardId, state, ev);
     }
 }
