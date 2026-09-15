@@ -532,8 +532,13 @@ public class GameState
     {
         foreach(var player in Players)
         {
+            // Only prune dynamically-added auras (AppendGlobalEffect). A unit's own
+            // Effects are part of its card definition and must stay in the list even
+            // after they expire (TryExecute already refuses to re-fire them) — effects
+            // like RetriggerUnitPlayedEffect/RetriggerSpellEffect rely on ForceExecute
+            // being able to run an already-expired EffectInstance, which is impossible
+            // once it's been removed here.
             player.GlobalEffects.RemoveAll(n => n.Expired);
-            foreach(CardInstance? e in player.Board) e?.Effects.RemoveAll(n => n.Expired);
         }
     }
 

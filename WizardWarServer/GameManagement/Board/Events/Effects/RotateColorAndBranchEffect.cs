@@ -25,11 +25,17 @@ public class RotateColorAndBranchEffect : IEffect
     {
         var player = state.GetState(playerId);
 
-        new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
+
+
 
         var currents = ChromaticColorHelper.TryGetColors(player)
             .Where(c => c is not null)
             .Select(c => c!.Value);
+        
+        if(!currents.Any())
+        {
+            new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
+        }
 
         var addedComponents = new HashSet<ChromaticColor>();
         List<IEffect> effects = new();
@@ -54,5 +60,11 @@ public class RotateColorAndBranchEffect : IEffect
 
         foreach (var effect in effects)
             effect.Execute(playerId, rivalId, cardId, state, ev);
+        
+        if(effects.Any())
+        {
+            new RotateColorEffect().Execute(playerId, rivalId, cardId, state, ev);
+            
+        }
     }
 }

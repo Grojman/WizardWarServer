@@ -87,6 +87,10 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
             Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
             if (notifyExec) Duration.NotifyExecution();
         }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Exception on forceexecute: {e}");
+        }
         finally
         {
             state.CurrentGlobalEffectSource = previousGlobalSource;

@@ -47,7 +47,7 @@ CARD_11_NAME,El poder de los sumideros,The Power of the Sewers
 CARD_11_DESC,"{condition:Has tenido que {play:jugar} al menos 8 {family:ratas}}. A partir de ahora, las {family:ratas} que {play:juegue} mi {player:jugador} consiguen [+1/+1]","{condition:You must have {play:played} at least 8 {family:rats}}. From now on, the {family:rats} my {player:player} {play:plays} get [+1/+1]"
 CARD_11_GLOBAL_EFFECT,+1/+1 Si la carta es una Rata,+1/+1 if the card is a Rat
 CARD_12_NAME,Arañazos,Scratches
-CARD_12_DESC,[0/-1] a la {deck:mesa} {rival:rival} ahora y al final de este turno,[0/-1] to the {rival:rival} {deck:board} now and at the end of this turn
+CARD_12_DESC,[0/-1] a la {deck:mesa} {rival:rival} ahora y al final de esta ronda,[0/-1] to the {rival:rival} {deck:board} now and at the end of this round
 CARD_12_GLOBAL_EFFECT,0/-1 en el próximo final de turno,0/-1 on the next end of turn
 CARD_13_NAME,Mordedura de rata,Rat Bite
 CARD_13_DESC,"[0/-3] a una unidad en la {board:mesa} {rival:rival}, la primera a la izquierda. {skill:HABILIDAD}: {draw:roba} una carta","[0/-3] to a unit on the {rival:rival} {board:board}, the first one on the left. {skill:SKILL}: {draw:draw} a card"
@@ -296,7 +296,7 @@ CARD_123_NAME,Última Cosecha,Last Harvest
 CARD_123_DESC,"Lleno los huecos libres de mi mesa con dos copias de Espíritu Cromático y dos copias de Guardián Cromático.","Fills the empty slots on my board with two copies of Chromatic Spirit and two copies of Chromatic Guardian."
 CARD_137_NAME,Rompedor del alba,Dawnbreaker
 CARD_137_DESC,"Solo puedo jugarme si el color cromático activo es {yellow:amarillo} o {white:blanco}. {endround:Al final de la ronda}: [0/-2] a la primera unidad del {rival:rival} en {board:mesa}. Si muere una unidad enemiga, {draw:robo} una carta.","Can only be played while the active chromatic color is {yellow:yellow} or {white:white}. {endround:At the end of the round}: [0/-2] to the first enemy unit in the {rival:rival}'s {board:board}. If an enemy unit dies, {draw:draw} a card."
-CARD_138_NAME,Force of Nature,Force of Nature
+CARD_138_NAME,Fuerza de la naturaleza,Force of Nature
 CARD_138_DESC,"Solo puedo jugarme si el color cromático activo es {cyan:celeste} o {white:blanco}. Curo 2 a mi {player:jugador} por cada unidad en mi {board:mesa}. Añado un efecto global: durante las próximas 3 rondas, {draw:robo} una carta {endround:al final de la ronda}.","Can only be played while the active chromatic color is {cyan:cyan} or {white:white}. Heal my {player:player} for 2 for each unit on my {board:board}. Add a global effect: for the next 3 rounds, {draw:draw} a card {endround:at the end of the round}."
 CARD_138_GLOBAL_EFFECT,Durante 3 rondas: robo una carta al final de la ronda,For 3 rounds: draw a card at the end of the round
 CARD_139_NAME,El señor de la guerra de los Colores Primarios,Warlord of the Primal Colors

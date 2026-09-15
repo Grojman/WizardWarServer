@@ -30,7 +30,7 @@ public class MixColorEffect : IEffect
         switch (currents.Count(n => n != null && MIXED.Contains(n.Value)))
         {
             case 0:
-                ChromaticColorHelper.AddColor(state, cardId, player, MIXED.GetRandom());
+                ChromaticColorHelper.SetColor(state, cardId, player, MIXED.GetRandom());
                 return;
             case 1:
                 ChromaticColorHelper.AddColor(state, cardId, player, MIXED.Where((c) => c != current).GetRandom());
