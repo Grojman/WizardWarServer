@@ -165,27 +165,27 @@ CARD_64_DESC,{condition:Mi {player:jugador} ha {play:jugado} 5 hechizos {family:
 CARD_65_NAME,Cría de dragón,Dragon Hatchling
 CARD_65_DESC,{skill:HABILIDAD}: quito 1 de vida al {rival:rival} y se lo otorgo a mi {player:jugador},{skill:SKILL}: I take 1 life from the {rival:rival} and grant it to my {player:player}
 CARD_70_NAME,FÍSICO,PHYSICAL
-CARD_70_DESC,{add:Crea} ENLACE y BITS entre las 10 primeras cartas del {deck:mazo},{add:Create} LINK and BITS among the first 10 cards of the {deck:deck}
+CARD_70_DESC,{add:Crea} la Capa 2 (ENLACE y BITS) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Second Layer (LINK and BITS) among the first 10 cards of the {deck:deck}
 CARD_71_NAME,BITS,BITS
 CARD_71_DESC,Curo 2 de vida a mi {player:jugador},I heal my {player:player} for 2 life
 CARD_72_NAME,ENLACE,LINK
-CARD_72_DESC,{add:Crea} RED y TRAMA entre las 10 primeras cartas del {deck:mazo},{add:Create} NETWORK and FRAME among the first 10 cards of the {deck:deck}
+CARD_72_DESC,{add:Crea} la Capa 3 (RED y TRAMA) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Third Layer (NETWORK and FRAME) among the first 10 cards of the {deck:deck}
 CARD_73_NAME,TRAMA,FRAME
 CARD_73_DESC,{draw:Roba} una carta,{draw:Draw} a card
 CARD_74_NAME,RED,NETWORK
-CARD_74_DESC,{add:Crea} TRANSPORTE y PAQUETE entre las 10 primeras cartas del {deck:mazo},{add:Create} TRANSPORT and PACKET among the first 10 cards of the {deck:deck}
+CARD_74_DESC,{add:Crea} la Capa 4 (TRANSPORTE y PAQUETE) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Forth Layer (TRANSPORT and PACKET) among the first 10 cards of the {deck:deck}
 CARD_75_NAME,PAQUETE,PACKET
 CARD_75_DESC,[0/+1] a las unidades de mi {player:jugador} en {board:mesa},[0/+1] to my {player:player}'s units on the {board:board}
 CARD_76_NAME,TRANSPORTE,TRANSPORT
-CARD_76_DESC,{add:Crea} SESIÓN y DATAGRAMA entre las 10 primeras cartas del {deck:mazo},{add:Create} SESSION and DATAGRAM among the first 10 cards of the {deck:deck}
+CARD_76_DESC,{add:Crea} la Capa 5 (SESIÓN y DATAGRAMA) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Fifth Layer (SESSION and DATAGRAM) among the first 10 cards of the {deck:deck}
 CARD_77_NAME,DATAGRAMA,DATAGRAM
 CARD_77_DESC,[+1/0] a las unidades de mi {player:jugador} en {board:mesa},[+1/0] to my {player:player}'s units on the {board:board}
 CARD_78_NAME,SESIÓN,SESSION
-CARD_78_DESC,{add:Crea} PRESENTACIÓN y DATOS DE SESIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} PRESENTATION and SESSION DATA among the first 10 cards of the {deck:deck}
+CARD_78_DESC,{add:Crea} la Capa 6 (PRESENTACIÓN y DATOS DE SESIÓN) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Sixth Layer (PRESENTATION and SESSION DATA) among the first 10 cards of the {deck:deck}
 CARD_79_NAME,DATOS DE SESIÓN,SESSION DATA
 CARD_79_DESC,Curo 4 de vida a mi {player:jugador},I heal my {player:player} for 4 life
 CARD_80_NAME,PRESENTACIÓN,PRESENTATION
-CARD_80_DESC,{add:Crea} APLICACIÓN y DATOS DE PRESENTACIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} APPLICATION and PRESENTATION DATA among the first 10 cards of the {deck:deck}
+CARD_80_DESC,{add:Crea} la Última Capa (APLICACIÓN y DATOS DE PRESENTACIÓN) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Last Layer (APPLICATION and PRESENTATION DATA) among the first 10 cards of the {deck:deck}
 CARD_81_NAME,DATOS DE PRESENTACIÓN,PRESENTATION DATA
 CARD_81_DESC,[+2/+2] a las dos próximas unidades que {play:juegue} mi {player:jugador},[+2/+2] to the next two units my {player:player} {play:plays}
 CARD_81_GLOBAL_EFFECT,[+2/+2] a las dos próximas unidades jugadas,[+2/+2] to the next 2 units played
@@ -194,7 +194,7 @@ CARD_82_DESC,{add:Crea} Ex Machina y DATOS DE APLICACIÓN entre las 10 primeras 
 CARD_83_NAME,DATOS DE APLICACIÓN,APPLICATION DATA
 CARD_83_DESC,{draw:Roba} 3 cartas,{draw:Draw} 3 cards
 CARD_84_NAME,Ex Machina,Ex Machina
-CARD_84_DESC,Todas las capas han sido ensambladas. La máquina perfecta. {endround:Final de ronda}: decido por el jugador,All layers have been assembled. The perfect machine. {endround:End of round}: I decide for the player
+CARD_84_DESC,Todas las capas han sido ensambladas. La máquina perfecta. {endround:Final de ronda}: juego un turno extra por ti,All layers have been assembled. The perfect machine. {endround:End of round}: I play an extra turn for you
 CARD_85_NAME,HUB,HUB
 CARD_85_DESC,"Cuando mi {player:jugador} {play:juega} un hechizo {family:paquete}, se activa una vez más","When my {player:player} {play:plays} a {family:packet} spell, it activates once more"
 CARD_86_NAME,Router,Router
@@ -285,11 +285,11 @@ CARD_118_NAME,Ciclo Forzado,Forced Cycle
 CARD_118_DESC,El color cromático rota automáticamente {endround:al final de cada ronda} durante cuatro rondas.,The chromatic color automatically rotates {endround:at the end of every round} for the next 4 rounds.
 CARD_118_GLOBAL_EFFECT,Rota el color cromático al final de cada turno,Rotates the cromatic color on the end of round
 CARD_119_NAME,Coloso Bermellón,Vermilion Colossus
-CARD_119_DESC,Solo puedo jugarme si el color cromático activo contiene el {red:rojo}.,Can only be played while the active chromatic color contains {red:red}.
+CARD_119_DESC,{endround:Fin de ronda}: consigo [+1/0] si los colores activos contienen o son el {red:rojo}. {skill:HABILIDAD}: cambio el color actual al {red:rojo} si es un color básico,{endround:End of round}: I recieve [+1/0] if the current colors contains {red:red}. {skill:SKILL}: set the current color to {red:red}, if it is a basic color.
 CARD_120_NAME,Brote Esmeralda,Emerald Sprout
-CARD_120_DESC,"Solo puedo jugarme si el color cromático activo contiene el {green:verde}. {endround:Al final de la ronda}, curo 1 a mi {player:jugador}.","Can only be played while the active chromatic color contains {green:green}. {endround:At the end of the round}, heal my {player:player} for 1."
+CARD_120_DESC,"{endround:Al final de la ronda}, curo 1 a mi {player:jugador} si los colores activos contienen o son el {green:verde}. {skill:HABILIDAD}: cambio el color activo al {green:verde} si es un color básico.","{endround:At the end of the round}, heal my {player:player} for 1 if the active colors contains {green:green}. {skill:SKILL}: set the current color to {green:green} if it is a basic color."
 CARD_121_NAME,Buceador Zafiro,Sapphire Diver
-CARD_121_DESC,"Solo puedo jugarme si el color cromático activo contiene el {blue:azul}. {skill:HABILIDAD}: {draw:robo} una carta.","Can only be played while the active chromatic color contains {blue:blue}. {skill:SKILL}: {draw:draw} a card."
+CARD_121_DESC,"{endround:Final de ronda}: {draw:robo} una carta si el color activo contiene o es {blue:azul}. {skill:HABILIDAD}: cambio el color activo al {blue:azul} si es un color basico.","{endround:End of round}: {draw:draw} a card if the active colors contains {blue:blue}. {skill:SKILL}: set the active color to {blue:blue} if it is a basic color."
 CARD_122_NAME,Fusión de Pigmentos,Pigment Fusion
 CARD_122_DESC,"Si el color activo es básico ({red:rojo}, {green:verde} o {blue:azul}), lo reemplaza por su color mixto ({yellow:amarillo}, {cyan:celeste} o {purple:morado}). Si ya había un color mixto activo, se añade otro aleatorio. Si hay dos, ambos se funden en {white:blanco}.","If the active color is basic ({red:red}, {green:green} or {blue:blue}), it's replaced by its mixed color ({yellow:yellow}, {cyan:cyan} or {purple:purple}). If a mixed color was already active, add another random mixed color. If there is two of them, both merge into {white:white}."
 CARD_123_NAME,Última Cosecha,Last Harvest

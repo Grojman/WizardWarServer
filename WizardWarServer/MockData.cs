@@ -1934,9 +1934,19 @@ new()
 {
     Id = "119",
     Type = CardType.Unit,
-    BaseAttack = 5,
+    BaseAttack = 3,
     BaseHealth = 1,
     Families = ["CROMATICO"],
+    Effects = [
+        new(TriggerType.TurnEnd,
+        [
+            new AlterMySelf(1, 0, false)
+        ], new Always(), new PlayerHasColorCondition(ChromaticColor.Rojo))
+    ],
+    PlayEffectTriggerTimes = 1,
+    PlayEffects = [
+        new ForceBasicColorEffect(ChromaticColor.Rojo)
+    ],
     ConditionToPlay = new PlayerHasColorCondition(ChromaticColor.Rojo)
 },
 new()
@@ -1946,9 +1956,12 @@ new()
     BaseAttack = 0,
     BaseHealth = 3,
     Families = ["CROMATICO"],
-    ConditionToPlay = new PlayerHasColorCondition(ChromaticColor.Verde),
+    PlayEffectTriggerTimes = 1,
+    PlayEffects = [
+        new ForceBasicColorEffect(ChromaticColor.Verde)
+    ],
     Effects = [
-        new(TriggerType.TurnEnd, [ new AlterPlayerHealthEffect(1, false) ], new Always(), null)
+        new(TriggerType.TurnEnd, [ new AlterPlayerHealthEffect(1, false) ], new Always(), new PlayerHasColorCondition(ChromaticColor.Verde))
     ]
 },
 new()
@@ -1958,9 +1971,11 @@ new()
     BaseAttack = 1,
     BaseHealth = 2,
     Families = ["CROMATICO"],
-    ConditionToPlay = new PlayerHasColorCondition(ChromaticColor.Azul),
-    PlayEffectTriggerTimes = 3,
-    PlayEffects = [ new DrawCardEffect() ]
+    Effects = [
+        new(TriggerType.TurnEnd, [new DrawCardEffect()], new Always(), new PlayerHasColorCondition(ChromaticColor.Azul))
+    ],
+    PlayEffectTriggerTimes = 1,
+    PlayEffects = [ new ForceBasicColorEffect(ChromaticColor.Azul) ]
 },
 new()
 {
