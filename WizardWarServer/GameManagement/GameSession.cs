@@ -6,7 +6,7 @@ public class GameSession
 {
     bool botSession = false;
     List<PlayerConnection> Connections;
-
+    readonly Guid Id;
     GameState state;
     readonly GameManager manager;
     readonly MatchSeries? series;
@@ -23,6 +23,7 @@ public class GameSession
         MatchSeries? series = null,
         Guid? forcedStarterId = null)
     {
+        Id = Guid.NewGuid();
         Connections = connections;
 
         foreach(var c in Connections) c.Game = this;
@@ -40,7 +41,7 @@ public class GameSession
     {
         Log.Information("Game session starting with {PlayerCount} players (bot session: {IsBotSession})", Connections.Count, botSession);
 
-        foreach(var c in Connections) await c.Send("start_game", new { });
+        foreach(var c in Connections) await c.Send("start_game", new { Id });
 
         state.Initialize(Connections, forcedStarterId);
 
@@ -106,7 +107,7 @@ public class GameSession
                 TranslationManager.TryResolveLanguage(la.Language, out var resolvedLanguage);
                 player.Language = resolvedLanguage;
                 await player.SendTranslations();
-                await player.Send("game_state", GameStateDto.Generate(state.GetState(player.Guid), [.. state.GetRivals(player.Guid)], state, player.Language));
+                await player.Send("game_state", GameStateDto.Generate(state.GetState(player.Guid), [.. state.GetRivals(player.Guid)], state, player.Language, Id));
                 return;
             }
 
@@ -131,7 +132,7 @@ public class GameSession
         var rawEvents = state.GameActionResult.Events.ToList();
         foreach(var c in Connections)
         {
-            await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state, c.Language, isReconnect));
+            await c.Send("game_state", GameStateDto.Generate(state.GetState(c.Guid), [.. state.GetRivals(c.Guid)], state, c.Language, Id, isReconnect));
             await c.Send("game_events", rawEvents.Select(e => GameEventDto.Generate(e, state, c.Language)).ToList());
         }
 
