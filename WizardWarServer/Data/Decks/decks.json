@@ -35,7 +35,7 @@
     },
     "Cards": {
       "70": 2,
-      "71": 0,
+      "71": 2,
       "72": 0,
       "73": 0,
       "74": 0,
@@ -87,7 +87,7 @@
     "Deck": {
       "id": 7,
       "name": "Don Bola de Fuego Jr",
-      "description": "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opci\u00F3n a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida."
+      "description": "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida."
     },
     "Cards": {
       "27": 4,
@@ -109,7 +109,7 @@
     "Deck": {
       "id": 5,
       "name": "El mago del queso",
-      "description": "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperaci\u00F3n. Perfecto para quien quiera pas\u00E1rselo bien."
+      "description": "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien."
     },
     "Cards": {
       "1": 2,
@@ -156,7 +156,7 @@
     "Deck": {
       "id": 8,
       "name": "Mago cachas",
-      "description": "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria ser\u00E1 tuya. Perfecto para quienes quieren tener una victoria r\u00E1pida."
+      "description": "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida."
     },
     "Cards": {
       "40": 4,
@@ -177,8 +177,8 @@
   {
     "Deck": {
       "id": 12,
-      "name": "El Alquimista Crom\u00E1tico",
-      "description": "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su m\u00E1ximo potencial."
+      "name": "El Alquimista Cromático",
+      "description": "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial."
     },
     "Cards": {
       "115": 5,
@@ -199,8 +199,8 @@
   {
     "Deck": {
       "id": 13,
-      "name": "Culto de los esp\u00EDritus",
-      "description": "Sacrifica tus propias unidades para desatar el poder de los esp\u00EDritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus ca\u00EDdos. Perfecto para quien no teme perder unidades para ganar la guerra."
+      "name": "Culto de los espíritus",
+      "description": "Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra."
     },
     "Cards": {
       "124": 4,

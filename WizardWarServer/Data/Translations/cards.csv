@@ -165,32 +165,32 @@ CARD_64_DESC,{condition:Mi {player:jugador} ha {play:jugado} 5 hechizos {family:
 CARD_65_NAME,Cría de dragón,Dragon Hatchling
 CARD_65_DESC,{skill:HABILIDAD}: quito 1 de vida al {rival:rival} y se lo otorgo a mi {player:jugador},{skill:SKILL}: I take 1 life from the {rival:rival} and grant it to my {player:player}
 CARD_70_NAME,FÍSICO,PHYSICAL
-CARD_70_DESC,{add:Crea} la Capa 2 (ENLACE y BITS) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Second Layer (LINK and BITS) among the first 10 cards of the {deck:deck}
+CARD_70_DESC,{add:Crea} la Capa 2 (ENLACE y TRAMA) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Second Layer (LINK and FRAME) among the first 10 cards of the {deck:deck}
 CARD_71_NAME,BITS,BITS
 CARD_71_DESC,Curo 2 de vida a mi {player:jugador},I heal my {player:player} for 2 life
 CARD_72_NAME,ENLACE,LINK
-CARD_72_DESC,{add:Crea} la Capa 3 (RED y TRAMA) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Third Layer (NETWORK and FRAME) among the first 10 cards of the {deck:deck}
+CARD_72_DESC,{add:Crea} la Capa 3 (RED y PAQUETE) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Third Layer (NETWORK and PACKET) among the first 10 cards of the {deck:deck}
 CARD_73_NAME,TRAMA,FRAME
 CARD_73_DESC,{draw:Roba} una carta,{draw:Draw} a card
 CARD_74_NAME,RED,NETWORK
-CARD_74_DESC,{add:Crea} la Capa 4 (TRANSPORTE y PAQUETE) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Forth Layer (TRANSPORT and PACKET) among the first 10 cards of the {deck:deck}
+CARD_74_DESC,{add:Crea} la Capa 4 (TRANSPORTE y DATAGRAMA) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Forth Layer (TRANSPORT and DATAGRAM) among the first 10 cards of the {deck:deck}
 CARD_75_NAME,PAQUETE,PACKET
 CARD_75_DESC,[0/+1] a las unidades de mi {player:jugador} en {board:mesa},[0/+1] to my {player:player}'s units on the {board:board}
 CARD_76_NAME,TRANSPORTE,TRANSPORT
-CARD_76_DESC,{add:Crea} la Capa 5 (SESIÓN y DATAGRAMA) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Fifth Layer (SESSION and DATAGRAM) among the first 10 cards of the {deck:deck}
+CARD_76_DESC,{add:Crea} la Capa 5 (SESIÓN y DATOS DE SESIÓN) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Fifth Layer (SESSION and SESSION DATA) among the first 10 cards of the {deck:deck}
 CARD_77_NAME,DATAGRAMA,DATAGRAM
 CARD_77_DESC,[+1/0] a las unidades de mi {player:jugador} en {board:mesa},[+1/0] to my {player:player}'s units on the {board:board}
 CARD_78_NAME,SESIÓN,SESSION
-CARD_78_DESC,{add:Crea} la Capa 6 (PRESENTACIÓN y DATOS DE SESIÓN) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Sixth Layer (PRESENTATION and SESSION DATA) among the first 10 cards of the {deck:deck}
+CARD_78_DESC,{add:Crea} la Capa 6 (PRESENTACIÓN y DATOS DE PRESENTACIÓN) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Sixth Layer (PRESENTATION and PRESENTATION DATA) among the first 10 cards of the {deck:deck}
 CARD_79_NAME,DATOS DE SESIÓN,SESSION DATA
 CARD_79_DESC,Curo 4 de vida a mi {player:jugador},I heal my {player:player} for 4 life
 CARD_80_NAME,PRESENTACIÓN,PRESENTATION
-CARD_80_DESC,{add:Crea} la Última Capa (APLICACIÓN y DATOS DE PRESENTACIÓN) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Last Layer (APPLICATION and PRESENTATION DATA) among the first 10 cards of the {deck:deck}
+CARD_80_DESC,{add:Crea} la Última Capa (APLICACIÓN y DATOS DE APLICACIÓN) entre las 10 primeras cartas del {deck:mazo},{add:Create} the Last Layer (APPLICATION and APPLICATION DATA) among the first 10 cards of the {deck:deck}
 CARD_81_NAME,DATOS DE PRESENTACIÓN,PRESENTATION DATA
 CARD_81_DESC,[+2/+2] a las dos próximas unidades que {play:juegue} mi {player:jugador},[+2/+2] to the next two units my {player:player} {play:plays}
 CARD_81_GLOBAL_EFFECT,[+2/+2] a las dos próximas unidades jugadas,[+2/+2] to the next 2 units played
 CARD_82_NAME,APLICACIÓN,APPLICATION
-CARD_82_DESC,{add:Crea} Ex Machina y DATOS DE APLICACIÓN entre las 10 primeras cartas del {deck:mazo},{add:Create} Ex Machina and APPLICATION DATA among the first 10 cards of the {deck:deck}
+CARD_82_DESC,{add:Crea} Ex Machina entre las 10 primeras cartas del {deck:mazo},{add:Create} Ex Machina among the first 10 cards of the {deck:deck}
 CARD_83_NAME,DATOS DE APLICACIÓN,APPLICATION DATA
 CARD_83_DESC,{draw:Roba} 3 cartas,{draw:Draw} 3 cards
 CARD_84_NAME,Ex Machina,Ex Machina

@@ -1297,8 +1297,8 @@ new()
     BaseAttack = 1,
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "71", false, 10),
             new AppendCardToDeck(1, "72", false, 10),
+            new AppendCardToDeck(1, "73", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1320,8 +1320,8 @@ new()
     BaseAttack = 2,
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "73", false, 10),
             new AppendCardToDeck(1, "74", false, 10),
+            new AppendCardToDeck(1, "75", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1343,8 +1343,8 @@ new()
     BaseAttack = 3,
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "75", false, 10),
             new AppendCardToDeck(1, "76", false, 10),
+            new AppendCardToDeck(1, "77", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1366,8 +1366,8 @@ new()
     BaseAttack = 4,
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "77", false, 10),
             new AppendCardToDeck(1, "78", false, 10),
+            new AppendCardToDeck(1, "79", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1389,8 +1389,8 @@ new()
     BaseAttack = 5,
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "79", false, 10),
             new AppendCardToDeck(1, "80", false, 10),
+            new AppendCardToDeck(1, "81", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1412,8 +1412,8 @@ new()
     BaseAttack = 6,
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "81", false, 10),
             new AppendCardToDeck(1, "82", false, 10),
+            new AppendCardToDeck(1, "83", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
 },
@@ -1440,7 +1440,6 @@ new()
     BaseAttack = 7,
     Effects = [
         new(TriggerType.UnitPlayed, [
-            new AppendCardToDeck(1, "83", false, 10),
             new AppendCardToDeck(1, "84", false, 10),
         ], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
     ]
@@ -2361,7 +2360,7 @@ new()
             {
                 //32
                 {"70", 2},
-                {"71", 0},
+                {"71", 2},
                 {"72", 0},
                 {"73", 0},
                 {"74", 0},

@@ -4380,14 +4380,14 @@
         "Effects": [
           {
             "$type": "AppendCardToDeck",
-            "CardId": "71",
+            "CardId": "72",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
-            "CardId": "72",
+            "CardId": "73",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
@@ -4465,14 +4465,14 @@
         "Effects": [
           {
             "$type": "AppendCardToDeck",
-            "CardId": "73",
+            "CardId": "74",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
-            "CardId": "74",
+            "CardId": "75",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
@@ -4550,14 +4550,14 @@
         "Effects": [
           {
             "$type": "AppendCardToDeck",
-            "CardId": "75",
+            "CardId": "76",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
-            "CardId": "76",
+            "CardId": "77",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
@@ -4657,14 +4657,14 @@
         "Effects": [
           {
             "$type": "AppendCardToDeck",
-            "CardId": "77",
+            "CardId": "78",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
-            "CardId": "78",
+            "CardId": "79",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
@@ -4764,14 +4764,14 @@
         "Effects": [
           {
             "$type": "AppendCardToDeck",
-            "CardId": "79",
+            "CardId": "80",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
-            "CardId": "80",
+            "CardId": "81",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
@@ -4849,14 +4849,14 @@
         "Effects": [
           {
             "$type": "AppendCardToDeck",
-            "CardId": "81",
+            "CardId": "82",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
           },
           {
             "$type": "AppendCardToDeck",
-            "CardId": "82",
+            "CardId": "83",
             "CardsAmount": 1,
             "ToRival": false,
             "TopDeckDepth": 10
@@ -4957,13 +4957,6 @@
       {
         "Trigger": 5,
         "Effects": [
-          {
-            "$type": "AppendCardToDeck",
-            "CardId": "83",
-            "CardsAmount": 1,
-            "ToRival": false,
-            "TopDeckDepth": 10
-          },
           {
             "$type": "AppendCardToDeck",
             "CardId": "84",

@@ -265,6 +265,21 @@ public class GameState
         }
     }
 
+    public void Surrender(PlayerState player)
+    {
+        if (GameActionResult.GameEnded || !AlivePlayers.Contains(player)) return;
+
+        // KillPlayer clears IsMyTurn before it would look at it, so capture it first.
+        var hadTurn = player.IsMyTurn;
+
+        KillPlayer(player);
+
+        if (hadTurn && !GameActionResult.GameEnded)
+        {
+            NextTurn();
+        }
+    }
+
     public void KillPlayer(PlayerState state, bool forceChangeTurn = false)
     {
         state.IsMyTurn = false;

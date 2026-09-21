@@ -272,3 +272,11 @@ PRIVACY_MANAGE_REJECTED,Rechazado,Rejected
 PRIVACY_MANAGE_NOT_SET,Sin decidir todavía,Not decided yet
 PRIVACY_MANAGE_ACCEPT_BTN,Aceptar,Accept
 PRIVACY_MANAGE_REJECT_BTN,Rechazar,Reject
+SETTINGS_FONT_SIZE,Tamaño de letra,Font size
+SETTINGS_FONT_TITLE,Títulos,Titles
+SETTINGS_FONT_SUBTITLE,Subtítulos,Subtitles
+SETTINGS_FONT_TEXT,Texto normal,Normal text
+SETTINGS_FONT_RESET,Restablecer,Reset
+GAME_SECTION_SURRENDER,Rendirse,Surrender
+SERIES_SECTION_SURRENDER,Terminar la serie,End the series
+SERIES_SECTION_FORFEITED_YOU,Te has rendido,You surrendered

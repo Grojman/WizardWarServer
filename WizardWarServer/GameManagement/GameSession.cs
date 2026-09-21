@@ -102,6 +102,17 @@ public class GameSession
                 series?.MarkDisconnected(player.Guid);
                 await RemovePlayer(player);
                 return;
+            } else if (action is PlayerAction.Surrender)
+            {
+                state.Surrender(state.GetState(player.Guid));
+
+                await SendState();
+
+                if (state.GameActionResult.GameEnded)
+                {
+                    await End(state.GameActionResult.Winner);
+                }
+                return;
             } else if (action is PlayerAction.ChangeLanguageAction la)
             {
                 TranslationManager.TryResolveLanguage(la.Language, out var resolvedLanguage);

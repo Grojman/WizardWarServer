@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(TextMessage), nameof(TextMessage))]
 [JsonDerivedType(typeof(ChangeTarget), nameof(ChangeTarget))]
 [JsonDerivedType(typeof(LeaveGame), nameof(LeaveGame))]
+[JsonDerivedType(typeof(Surrender), nameof(Surrender))]
 [JsonDerivedType(typeof(SelectSeriesDeckAction), nameof(SelectSeriesDeckAction))]
 [JsonDerivedType(typeof(RequestSeriesStateAction), nameof(RequestSeriesStateAction))]
 [JsonDerivedType(typeof(GetDecksAction), nameof(GetDecksAction))]
@@ -15,6 +16,10 @@ using System.Text.Json.Serialization;
 public interface PlayerAction
 {
     public class LeaveGame : PlayerAction {}
+
+    // In-game concession: unlike LeaveGame it keeps the player connected, ends the
+    // current game with the rival(s) winning, and leaves any series running.
+    public class Surrender : PlayerAction {}
 
     public class ChangeLanguageAction : PlayerAction
     {
