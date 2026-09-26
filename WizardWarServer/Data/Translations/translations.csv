@@ -14,6 +14,7 @@ ERR_SERVER_RESTARTING,El servidor se está reiniciando. Tu partida ha terminado;
 HOME_SECTION_QUICK_MATCH,Partida rápida,Quick match
 HOME_SECTION_BEST_OF_3,Mejor de 3,Best of 3
 HOME_SECTION_REPORT_BUGS,Reportar bugs,Report bugs
+HOME_SECTION_HOW_TO_PLAY,Cómo jugar,How to play
 HOME_SECTION_ABOUT_US,Sobre nosotros,About us
 HOME_SECTION_GALLERY,Galería,Gallery
 HOME_SECTION_STATS,Estadísticas,Statistics
@@ -25,6 +26,13 @@ HOME_SECTION_SELECT_DECK,Selecciona tu mazo,Select your deck
 HOME_SECTION_SEARCHING_BOT,Preparando partida contra la máquina...,Creating bot match...
 HOME_SECTION_CREATING_PRIVATE,Creando partida privada...,Creating private match...
 HOME_SECTION_SEARCHING,Buscando partida...,Looking for a match...
+MINIGAME_SECTION_TITLE,Mientras esperas...,While you wait...
+MINIGAME_SECTION_INSTRUCTIONS,Usa las flechas para mover el bloque y esquivar los proyectiles. +50 puntos por cada segundo y cada impacto reinicia la puntuación a 0.,Use the arrows to move the block and dodge the projectiles. +50 points every second and each hit resets the score to 0.
+MINIGAME_SECTION_SCORE,Puntuación,Score
+MINIGAME_SECTION_UP,Mover arriba,Move up
+MINIGAME_SECTION_DOWN,Mover abajo,Move down
+MINIGAME_SECTION_LEFT,Mover a la izquierda,Move left
+MINIGAME_SECTION_RIGHT,Mover a la derecha,Move right
 HOME_SECTION_LOADING_DECKS,Cargando mazos...,Loading decks...
 HOME_SECTION_PRIVATE_TITLE,Partida privada,Private match
 HOME_SECTION_PRIVATE_WAITING,Comparte este código con tus amigos:,Share this code with your friends:
@@ -41,6 +49,8 @@ HOME_SECTION_SUGGESTION_PLACEHOLDER,Escribe aquí...,Write here...
 HOME_SECTION_SEND,Enviar,Send
 HOME_SECTION_ABOUT,Creado por,Created by:
 HOME_SECTION_ABOUT_TEAM,CONOCE AL EQUIPO,MEET THE TEAM
+HOME_SECTION_PRIVACY_POLICY,Política de privacidad,Privacy policy
+HOME_SECTION_ONLINE_PLAYERS,jugadores conectados,players online
 HOME_SECTION_ADS_OPTIN_TEXT,Este juego es gratuito y no requiere registro. Si quieres echarnos una mano de forma totalmente voluntaria puedes ver un anuncio aquí abajo.,This game is free and requires no sign-up. If you'd like to lend a hand completely voluntarily you can view an ad down here.
 HOME_SECTION_ADS_OPTIN_BUTTON,Ver un anuncio,View an ad
 HOME_SECTION_ADS_THANKS,¡Gracias por tu apoyo!,Thanks for your support!
@@ -122,6 +132,8 @@ GAME_SECTION_TARGET_PLAYER,Jugador objetivo:,Target player:
 GAME_SECTION_EFFECTS,Efectos:,Effects:
 ALERT_SECTION_TITLE,Error,Error
 ALERT_SECTION_ACCEPT,Aceptar,Accept
+CONFIRM_SECTION_ACCEPT,Aceptar,Accept
+CONFIRM_SECTION_CANCEL,Cancelar,Cancel
 CHAT_SECTION_MESSAGE_TITLE,Mensaje Arcano,Arcane Message
 CHAT_SECTION_PLACEHOLDER,Escribe un mensaje...,Write a message...
 CHAT_SECTION_SEND,Enviar,Send
@@ -278,5 +290,7 @@ SETTINGS_FONT_SUBTITLE,Subtítulos,Subtitles
 SETTINGS_FONT_TEXT,Texto normal,Normal text
 SETTINGS_FONT_RESET,Restablecer,Reset
 GAME_SECTION_SURRENDER,Rendirse,Surrender
+GAME_SECTION_SURRENDER_CONFIRM_TITLE,¿Rendirse?,Surrender?
+GAME_SECTION_SURRENDER_CONFIRM_MESSAGE,¿Seguro que quieres rendirte? Perderás la partida.,Are you sure you want to surrender? You will lose the match.
 SERIES_SECTION_SURRENDER,Terminar la serie,End the series
 SERIES_SECTION_FORFEITED_YOU,Te has rendido,You surrendered

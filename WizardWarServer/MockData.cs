@@ -1945,8 +1945,7 @@ new()
     PlayEffectTriggerTimes = 1,
     PlayEffects = [
         new ForceBasicColorEffect(ChromaticColor.Rojo)
-    ],
-    ConditionToPlay = new PlayerHasColorCondition(ChromaticColor.Rojo)
+    ]
 },
 new()
 {

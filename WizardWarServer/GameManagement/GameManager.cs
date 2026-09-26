@@ -76,7 +76,7 @@ public class GameManager
         return false;
     }
 
-    public Task AddPlayer(PlayerConnection player)
+    public async Task AddPlayer(PlayerConnection player)
     {
         player.Language = options.DefaultLanguage;
 
@@ -84,7 +84,27 @@ public class GameManager
         {
             players.Add(player);
         }
-        return Task.CompletedTask;
+
+        await BroadcastPlayerCount();
+    }
+
+    // Pushed to every connected player (regardless of whether they're in a
+    // match) whenever the total connection count changes, so the home page's
+    // online-player indicator stays live without polling.
+    async Task BroadcastPlayerCount()
+    {
+        List<PlayerConnection> snapshot;
+        lock (_sync)
+        {
+            snapshot = new List<PlayerConnection>(players);
+        }
+
+        var count = snapshot.Count;
+
+        foreach (var p in snapshot)
+        {
+            await p.Send("player_count", new { count });
+        }
     }
 
     async Task CheckQueue(int n, List<PlayerConnection> queuedPlayers)
@@ -215,6 +235,8 @@ public class GameManager
         }
 
         Log.Information("Player {PlayerId} disconnected", player.Guid);
+
+        await BroadcastPlayerCount();
 
         await LeavePrivateMatch(player);
 
