@@ -99,7 +99,7 @@ CARD_32_DESC,{draw:Roba} dos hechizos,{draw:Draw} two spells
 CARD_33_NAME,La llamada de la ceniza,The Call of Ash
 CARD_33_DESC,{draw:Roba} una carta {family:ceniza}. Curo 2 de vida a mi {player:jugador}.,{draw:Draw} an {family:ash} card. I heal my {player:player} for 2 life.
 CARD_34_NAME,La ira del dios del fuego,The Wrath of the Fire God
-CARD_34_DESC,{die:MATA} a TODAS las unidades en {board:mesa},{die:KILL} ALL units on the {board:board}
+CARD_34_DESC,{die:MATA} a TODAS las unidades de TODAS las {board:mesas},{die:KILL} ALL units on EVERY {board:board}
 CARD_35_NAME,Chispas escurridizas,Slippery Sparks
 CARD_35_DESC,"El próximo hechizo que {play:juegue} mi {player:jugador}, le curo 1 e inflinjo 1 de daño al {rival:rival}","The next spell my {player:player} {play:plays}, I heal them for 1 and deal 1 damage to the {rival:rival}"
 CARD_35_GLOBAL_EFFECT,El próximo hechizo que juegue este jugador consigue 1 de vida y el rival -1,The next spell that my player plays he gets 1 life and -1 for the rival
@@ -324,7 +324,7 @@ CARD_127_DESC,"Cuando {die:muero}, {draw:robo} una carta","When I {die:die}, I {
 CARD_128_NAME,Pastor de espíritus,Shepherd of Spirits
 CARD_128_DESC,"Cuando {die:muero}, si mi {player:jugador} tiene la mitad de la vida o menos, {play:juego} a La Forjadora en la {board:mesa}","When I {die:die}, if my {player:player} has half life or less, I {play:play} The Forger onto the {board:board}"
 CARD_129_NAME,La forjadora,The Forger
-CARD_129_DESC,"Al {die:morir}, {add:creo} tres La Llamada en el {deck:mazo} de mi {player:jugador}","Upon {die:dying}, I {add:create} three The Calling in my {player:player}'s {deck:deck}"
+CARD_129_DESC,"Al {play:jugarme}, gano [+1/+1] por cada otra La forjadora que mi {player:jugador} haya {play:jugado} antes. Al {die:morir}, {add:creo} tres La Llamada en el {deck:mazo} de mi {player:jugador}","When I am {play:played}, I gain [+1/+1] for each other The Forger my {player:player} has {play:played} before. Upon {die:dying}, I {add:create} three The Calling in my {player:player}'s {deck:deck}"
 CARD_130_NAME,Equilibrio espiritual,Spiritual Balance
 CARD_130_DESC,"{condition:Necesitas una unidad en {board:mesa}}. {die:Mato} una unidad aliada en {board:mesa} para {die:matar} una del {rival:rival}","{condition:You need a unit on the {board:board}}. I {die:kill} an allied unit on the {board:board} to {die:kill} one of the {rival:rival}'s"
 CARD_131_NAME,Sacrificio de honor,Sacrifice of Honor
@@ -337,6 +337,6 @@ CARD_133_GLOBAL_EFFECT,Durante 3 rondas: revive a la última unidad muerta al fi
 CARD_134_NAME,Criatura fúngica,Fungal Creature
 CARD_134_DESC,"Cuando {die:muero}, {add:creo} una copia mía en el {deck:mazo} del {player:jugador} que mantiene mi daño actual, y doy [+1/0] de daño a mis otras copias en el {deck:mazo}.","When I {die:die}, I {add:create} a copy of myself in my {player:player}'s {deck:deck} that keeps my current damage, and give [+1/0] damage to my other copies in the {deck:deck}."
 CARD_135_NAME,Defensor de la colmena,Hive Defender
-CARD_135_DESC,"{skill:HABILIDAD}: {die:Muero} e inflinjo 1 de daño a todas las unidades enemigas","{skill:SKILL}: I {die:die} and deal 1 damage to all enemy units"
+CARD_135_DESC,"{skill:HABILIDAD}: {die:Muero} e inflinjo 2 de daño a todas las unidades enemigas","{skill:SKILL}: I {die:die} and deal 2 damage to all enemy units"
 CARD_136_NAME,Espíritu heredado,Inherited Spirit
-CARD_136_DESC,"Cuando {die:muero}, otorgo [+1/0] a la unidad más a la izquierda","When I {die:die}, I grant [+1/0] to the leftmost unit"
+CARD_136_DESC,"Cuando {die:muero}, curo 3 de vida a mi {player:jugador}","When I {die:die}, I heal my {player:player} for 3 life"

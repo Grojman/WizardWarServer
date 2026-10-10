@@ -33,4 +33,7 @@ public class RetriggerUnitPlayedEffect : IEffect
                     e.ForceExecute(state, null, false);
         }
     }
+
+    public IEffect? ForAdditionalTarget() =>
+        WhichBoard is PlayerType.RIVAL or PlayerType.BOTH ? new RetriggerUnitPlayedEffect(PlayerType.RIVAL) : null;
 }

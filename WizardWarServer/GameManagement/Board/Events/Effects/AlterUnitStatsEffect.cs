@@ -64,4 +64,10 @@ public class AlterUnitStatsEffect : IEffect
 
         
     }
+
+    public IEffect? ForAdditionalTarget()
+    {
+        var rivalOnly = Filter.RivalOnly();
+        return rivalOnly is null ? null : new AlterUnitStatsEffect(Health, Damage, rivalOnly);
+    }
 }

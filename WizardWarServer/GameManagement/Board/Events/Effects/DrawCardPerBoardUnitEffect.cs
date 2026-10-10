@@ -28,4 +28,7 @@ public class DrawCardPerBoardUnitEffect : IEffect
         for (int i = 0; i < count; i++)
             state.DrawCard(player.Connection, cardId);
     }
+
+    public IEffect? ForAdditionalTarget() =>
+        WhichBoard is PlayerType.RIVAL or PlayerType.BOTH ? new DrawCardPerBoardUnitEffect(PlayerType.RIVAL, ExcludeSelf) : null;
 }

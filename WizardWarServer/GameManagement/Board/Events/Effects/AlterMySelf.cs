@@ -20,4 +20,7 @@ public class AlterMySelf : IEffect
         state.AlterUnitDamage(cardId, card, Damage);
         state.AlterUnitHealth(cardId, card, Health);
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

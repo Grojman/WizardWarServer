@@ -21,6 +21,12 @@ public class RandomBranchEffect : IEffect
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         var branch = new Random().Next(0, 100) < Probability ? IfSuccess : IfFailure;
+        lastBranch = branch;
         foreach (var e in branch) e.Execute(playerId, rivalId, cardId, state, ev);
     }
+
+    // Extra targets get the branch the first one rolled, not a new roll.
+    IEffect[] lastBranch = [];
+
+    public IEffect? ForAdditionalTarget() => EffectSequence.From(lastBranch.Select(e => e.ForAdditionalTarget()));
 }

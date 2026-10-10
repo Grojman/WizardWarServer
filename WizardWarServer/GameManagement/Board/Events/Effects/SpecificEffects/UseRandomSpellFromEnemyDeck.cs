@@ -12,4 +12,7 @@ public class UseRandomSpellFromEnemyDeck : IEffect
             state.PlayCard(player, copy, -1);
         }
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

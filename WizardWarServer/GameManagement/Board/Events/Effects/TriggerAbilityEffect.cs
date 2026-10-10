@@ -27,14 +27,22 @@ public class TriggerAbilityEffect : IEffect
 
         if(PlayerType is PlayerType.RIVAL or PlayerType.BOTH)
         {
-            for (int i = 0; i < cardId.Player.PlayerTarget.Board.Length; i++)
+            var rival = state.GetState(rivalId);
+            for (int i = 0; i < rival.Board.Length; i++)
             {
-                CardInstance? c = cardId.Player.PlayerTarget.Board[i];
+                CardInstance? c = rival.Board[i];
                 if (c is not null && (Filter?.Check(c) ??  true))
                 {
-                    state.ApplyEffect(cardId.Player.PlayerTarget.Connection, i);
+                    state.ApplyEffect(rival.Connection, i);
                 }
             }
         }
     }
+
+    public IEffect? ForAdditionalTarget() => PlayerType switch
+    {
+        PlayerType.RIVAL => this,
+        PlayerType.BOTH => new TriggerAbilityEffect(PlayerType.RIVAL, Filter),
+        _ => null
+    };
 }

@@ -15,4 +15,7 @@ public class ColorMarkerEffect : IEffect
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

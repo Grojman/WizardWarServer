@@ -10,6 +10,17 @@ public class GameState
 
     public PlayerState CurrentPlayer { get; private set; }
 
+    public IReadOnlyList<PlayerState> AlivePlayersView => AlivePlayers;
+    public bool IsAlive(PlayerState player) => AlivePlayers.Contains(player);
+
+    // Games with more than two players don't let anyone pick a target: each
+    // round one alive player is "hunted" (random on the first round, then
+    // rotating in seat order). The hunted player targets every other alive
+    // player and all of them target the hunted one (see RecomputeTargets).
+    // A 1v1 keeps both players targeting each other.
+    public bool UsesHuntedTargeting => Players.Count > 2;
+    public PlayerState? HuntedPlayer { get; private set; }
+
     public int TurnCounter { get; set; } = 1;
 
     // Set for the duration of a global (PlayerState.GlobalEffects) EffectInstance's
@@ -59,15 +70,14 @@ public class GameState
             players.Add(player);
         }
 
-        for(int i = 0; i < players.Count - 1; i++)
-        {
-            players[i].PlayerTarget = players[i + 1];
-        }
-
-        players[^1].PlayerTarget = players[0];
-
         Players = players;
         AlivePlayers = [.. Players];
+
+        if (UsesHuntedTargeting)
+        {
+            HuntedPlayer = players[Random.Shared.Next(players.Count)];
+        }
+        RecomputeTargets(emitEvents: false);
 
         var starter = forcedStarterId.HasValue
             ? players.First(p => p.Id == forcedStarterId.Value)
@@ -103,7 +113,7 @@ public class GameState
     {
         AlivePlayers.Clear();
         DeadPlayers.Clear();
-        Players.ForEach(n => n.PlayerTarget = null);
+        Players.ForEach(n => n.Targets.Clear());
         Players.Clear();
     }
 
@@ -127,7 +137,7 @@ public class GameState
     {
         var state = GetState(player.Guid);
 
-        if (cardIndex != -1 && (cardIndex < 0 || cardIndex > state.Board.Length))
+        if (cardIndex < 0 || cardIndex > state.Board.Length)
         {
             Log.Warning("Invalid card index for an effect to play: {CardIndex}", cardIndex);
             return;
@@ -149,7 +159,7 @@ public class GameState
             };
 
             GameActionResult.AddEvent(gevent);
-            foreach(var e in activeCard.SpecialEffects ?? []) e.Execute(state.Id, state.PlayerTarget!.Id, activeCard, this, null);
+            EffectFanOut.Execute(activeCard.SpecialEffects ?? [], state, [.. state.Targets.Players], activeCard, this, null);
 
             activeCard.MaxSpecialEffectTimes--;
 
@@ -157,40 +167,89 @@ public class GameState
         }
     }
 
+    // Targets are decided by the game itself now (see RecomputeTargets): a 1v1
+    // can only ever target the other player, and bigger games follow the
+    // hunted-player rotation. Kept so older clients sending it don't error out.
     public void ChangeTarget(PlayerConnection player, Guid target)
     {
-        var state = GetState(player.Guid);
-
-        var newTarget = Players.First(n => n.Id == target);
-
-        if (state.PlayerTarget!.Id != target)
-        {
-            state.PlayerTarget = newTarget;
-
-            GameActionResult.AddEvent(new GameEvent.TargetPlayerChanged()
-            {
-                Source = state,
-                PlayerSource = state,
-                NewTarget = target
-            });
-        }
-        
+        Log.Debug("Ignoring manual target change from player {PlayerId}: targets are assigned by the game", player.Guid);
     }
 
-    public void ApplyAction(
+    // Recomputes every player's TargetGroup from the current alive players and
+    // hunted player, emitting a TargetPlayerChanged for each group that changed.
+    void RecomputeTargets(bool emitEvents)
+    {
+        foreach (var p in Players)
+        {
+            IEnumerable<PlayerState> targets;
+
+            if (Players.Count == 1)
+                targets = [p];
+            else if (!UsesHuntedTargeting)
+                targets = Players.Where(o => o != p);
+            else if (!AlivePlayers.Contains(p) || HuntedPlayer is null)
+                targets = [];
+            else if (p == HuntedPlayer)
+                targets = AliveInSeatOrderAfter(p);
+            else
+                targets = [HuntedPlayer];
+
+            if (p.Targets.Set(targets) && emitEvents)
+            {
+                GameActionResult.AddEvent(new GameEvent.TargetPlayerChanged()
+                {
+                    Source = p,
+                    PlayerSource = p,
+                    NewTarget = p.Targets.Primary?.Id ?? Guid.Empty,
+                    NewTargets = [.. p.Targets.Players.Select(t => t.Id)]
+                });
+            }
+        }
+    }
+
+    // Every other alive player, starting from the one seated right after `player`.
+    IEnumerable<PlayerState> AliveInSeatOrderAfter(PlayerState player)
+    {
+        int start = Players.IndexOf(player);
+        for (int step = 1; step < Players.Count; step++)
+        {
+            var candidate = Players[(start + step) % Players.Count];
+            if (AlivePlayers.Contains(candidate)) yield return candidate;
+        }
+    }
+
+    // A card's play condition is met if it holds against any of its owner's targets.
+    public bool CanPlay(CardInstance card)
+    {
+        if (card.CanPlay is null) return true;
+        return card.Player.Targets.Players.Any(t => card.CanPlay.Check(card.Player.Id, t.Id, card, this, null));
+    }
+
+    // Returns false (and changes nothing) when the action isn't allowed right
+    // now, e.g. it isn't that player's turn.
+    public bool ApplyAction(
         PlayerConnection player,
         PlayerAction action)
     {
+        var actor = Players.FirstOrDefault(n => n.Id == player.Guid);
+        if (actor is null || GameActionResult.GameEnded) return false;
+
+        if (action is not PlayerAction.ChangeTarget && actor != CurrentPlayer)
+        {
+            Log.Warning("Player {PlayerId} sent {Action} outside of their turn", player.Guid, action.GetType().Name);
+            return false;
+        }
+
         try
         {
             switch (action)
             {
             case PlayerAction.ChangeTarget a:
                 ChangeTarget(player, a.NewTarget);
-                return;
+                return true;
             case PlayerAction.CardEffectActivated a:
                 ApplyEffect(player, a.CardIndex);
-                return;
+                return true;
             case PlayerAction.DrawCardAction:
                 DrawCard(player, null);
                 break;
@@ -208,7 +267,7 @@ public class GameState
                 break;
             default:
                 Log.Warning("Illegal action inside game from player {PlayerId}: {Action}", player?.Guid, action);
-                return;
+                return false;
             }
         }
         catch(Exception ex)
@@ -218,31 +277,55 @@ public class GameState
                 Log.Error(ex, "Error while applying action from player {PlayerId}", player?.Guid);
             }
             catch {}
-            return;
+            return true;
         }
 
         NextTurn();
+        return true;
     }
 
     public PlayerState GetState(Guid id) => Players.First(n => n.Id == id);
     public IEnumerable<PlayerState> GetRivals(Guid id) => Players.Where(n => n.Id != id);
 
+    // Hands the turn to the next alive player in seat order. Works even if the
+    // current player has just died (deck out, surrender, disconnect...), which
+    // used to send the turn back to the first player and fire a bogus round end.
     void NextTurn()
     {
-        var idx = AlivePlayers.IndexOf(CurrentPlayer);
+        if (GameActionResult.GameEnded || AlivePlayers.Count == 0) return;
 
-        CurrentPlayer.IsMyTurn = false;
+        var previous = CurrentPlayer;
+        previous.IsMyTurn = false;
 
-        idx = (idx + 1) % AlivePlayers.Count;
+        int start = Players.IndexOf(previous);
+        bool roundEnded = false;
+        PlayerState next = previous;
+        for (int step = 1; step <= Players.Count; step++)
+        {
+            if (start + step >= Players.Count) roundEnded = true;
 
-        CurrentPlayer = AlivePlayers[idx];
+            var candidate = Players[(start + step) % Players.Count];
+            if (AlivePlayers.Contains(candidate))
+            {
+                next = candidate;
+                break;
+            }
+        }
+
+        CurrentPlayer = next;
         CurrentPlayer.IsMyTurn = true;
 
-        if (idx == 0)
+        if (roundEnded)
         {
             ApplyEffect(TriggerType.TurnEnd, null);
 
             TurnCounter++;
+
+            if (UsesHuntedTargeting && HuntedPlayer is not null && !GameActionResult.GameEnded)
+            {
+                HuntedPlayer = AliveInSeatOrderAfter(HuntedPlayer).FirstOrDefault() ?? HuntedPlayer;
+                RecomputeTargets(emitEvents: true);
+            }
 
             if (TurnCounter % 2 == 0)
             {
@@ -250,6 +333,12 @@ public class GameState
             }
         }
         CleanExpiredEffects();
+
+        // A round-end effect may have killed whoever was about to play.
+        if (!GameActionResult.GameEnded && !AlivePlayers.Contains(CurrentPlayer))
+        {
+            NextTurn();
+        }
     }
 
     public void DrawCard(IdentificableObject? source, CardFilter? filter = null)
@@ -267,22 +356,22 @@ public class GameState
 
     public void Surrender(PlayerState player)
     {
-        if (GameActionResult.GameEnded || !AlivePlayers.Contains(player)) return;
+        if (GameActionResult.GameEnded) return;
 
-        // KillPlayer clears IsMyTurn before it would look at it, so capture it first.
-        var hadTurn = player.IsMyTurn;
-
-        KillPlayer(player);
-
-        if (hadTurn && !GameActionResult.GameEnded)
-        {
-            NextTurn();
-        }
+        KillPlayer(player, DefeatReason.Surrender, forceChangeTurn: true);
     }
 
-    public void KillPlayer(PlayerState state, bool forceChangeTurn = false)
+    // forceChangeTurn: pass the turn on if it was this player's (surrender,
+    // disconnect). Deaths in the middle of an action don't need it: the action
+    // itself ends with NextTurn.
+    public void KillPlayer(PlayerState state, DefeatReason reason, bool forceChangeTurn = false)
     {
+        if (!AlivePlayers.Contains(state)) return;
+
+        var hadTurn = state.IsMyTurn;
+
         state.IsMyTurn = false;
+        state.DefeatReason = reason;
         DeadPlayers.Add(state);
         AlivePlayers.Remove(state);
 
@@ -294,39 +383,23 @@ public class GameState
 
         GameActionResult.AddEvent(gevent);
 
-        foreach (var p in AlivePlayers)
-        {
-            if (p.PlayerTarget != state) continue;
-
-            var next = state.PlayerTarget;
-            while (next is not null && next != p && !AlivePlayers.Contains(next))
-            {
-                next = next.PlayerTarget;
-            }
-
-            if (next is null || next == p) continue;
-
-            p.PlayerTarget = next;
-
-            GameActionResult.AddEvent(new GameEvent.TargetPlayerChanged()
-            {
-                Source = p,
-                PlayerSource = p,
-                NewTarget = next.Id
-            });
-        }
-
-        if(forceChangeTurn && state.IsMyTurn)
-        {
-            NextTurn();
-        }
-
-
-        if (AlivePlayers.Count == 1)
+        if (AlivePlayers.Count <= 1)
         {
             GameActionResult.GameEnded = true;
             End = DateTime.Now;
-            GameActionResult.Winner = AlivePlayers[0].Id;
+            GameActionResult.Winner = AlivePlayers.FirstOrDefault()?.Id;
+            return;
+        }
+
+        if (HuntedPlayer == state)
+        {
+            HuntedPlayer = AliveInSeatOrderAfter(state).FirstOrDefault();
+        }
+        RecomputeTargets(emitEvents: true);
+
+        if (forceChangeTurn && hadTurn)
+        {
+            NextTurn();
         }
     }
 
@@ -356,7 +429,7 @@ public class GameState
 
         if(card is null && player.Deck.Count == 0)
         {
-            KillPlayer(player);
+            KillPlayer(player, DefeatReason.OutOfCards);
         } else if (card is not null)
         {
             DrawCard(player, card, source, true);
@@ -419,7 +492,7 @@ public class GameState
             return;
         }
 
-        if (handCard.CanPlay is not null && !handCard.CanPlay.Check(player.Id, player.PlayerTarget!.Id, handCard, this, null))
+        if (!CanPlay(handCard))
         {
             Log.Warning("Player {PlayerId} tried to play card {CardId} without meeting its play condition", p.Guid, cardId);
             return;
@@ -438,7 +511,13 @@ public class GameState
         int target)
     {
         var player = GetState(p.Guid);
-        var targetedPlayer = GetState(targetedPlayerId);
+        var targetedPlayer = Players.FirstOrDefault(n => n.Id == targetedPlayerId);
+
+        if (targetedPlayer is null || targetedPlayer == player || !AlivePlayers.Contains(targetedPlayer))
+        {
+            Log.Warning("Player {PlayerId} attacked an invalid player: {TargetId}", p.Guid, targetedPlayerId);
+            return;
+        }
 
         if (attacker < 0 || attacker >= player.Board.Length)
         {
@@ -452,8 +531,6 @@ public class GameState
             Log.Warning("Player {PlayerId} attacked with a nonexistent card at index {AttackerIndex}", p.Guid, attacker);
         } else
         {
-            ChangeTarget(player.Connection, targetedPlayerId);            
-
             var gevent = new GameEvent.CardAttacked()
             {
                 PlayerSource = player,
@@ -519,11 +596,14 @@ public class GameState
         }   
     }
 
+    // Dead players' auras and units no longer react to anything. This used to
+    // `return` on the first dead player found, which in games with more than
+    // two players silently disabled every effect of everyone listed after them.
     void ApplyEffect(TriggerType type, GameEvent? ev)
     {
-        foreach(var player in Players)
+        foreach(var player in Players.ToList())
         {
-            if (player.Health <= 0) return;
+            if (!AlivePlayers.Contains(player)) continue;
             for (int i = 0; i < player.GlobalEffects.Count; i++)
             {
                 EffectInstance e = player.GlobalEffects[i];
@@ -534,8 +614,9 @@ public class GameState
             }
         }
 
-        foreach(var player in Players)
+        foreach(var player in Players.ToList())
         {
+            if (!AlivePlayers.Contains(player)) continue;
             foreach(CardInstance? e in player.Board)
             {
                 if (e is not null) ApplyEffect(e, type, ev);    
@@ -616,7 +697,7 @@ public class GameState
 
         if (player.Health <= 0)
         {
-            KillPlayer(player);
+            KillPlayer(player, DefeatReason.NoHealth);
         }
 
         if (enqueueToUsers) GameActionResult.AddEvent(gevent);

@@ -42,4 +42,14 @@ public class DamagePlayerBasedOnCards : IEffect
             state.AlterPlayerHealth(cardId, rival, result);
         }
     }
+
+    public IEffect? ForAdditionalTarget()
+    {
+        if (TargetPlayer is PlayerType.RIVAL or PlayerType.BOTH)
+            return new DamagePlayerBasedOnCards(RoundedUp, Relation, PlayerType.RIVAL, Filter);
+
+        // Only I am affected: add whatever this extra rival contributes to the count.
+        var rivalOnly = TargetPlayer == PlayerType.PLAYER ? Filter.RivalOnly() : null;
+        return rivalOnly is null ? null : new DamagePlayerBasedOnCards(RoundedUp, Relation, PlayerType.PLAYER, rivalOnly);
+    }
 }

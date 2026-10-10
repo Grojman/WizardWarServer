@@ -6,4 +6,7 @@ public class KillMySelf : IEffect
     {
         state.KillUnit(cardId, cardId);
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

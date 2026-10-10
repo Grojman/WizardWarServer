@@ -21,7 +21,17 @@ public class KillCards : IEffect
 
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        var list = gameFilter.GetMeetingCardsOnBoard(state, playerId, rivalId);
+        // Materialized first: units placed by death effects while this runs
+        // weren't on the board when it was cast.
+        var list = gameFilter.GetMeetingCardsOnBoard(state, playerId, rivalId).ToList();
         foreach(var a in list) state.KillUnit(cardId, a);
     }
+
+    public IEffect? ForAdditionalTarget() => BoardSearch switch
+    {
+        PlayerType.RIVAL => this,
+        PlayerType.BOTH => new KillCards(Filter, PlayerType.RIVAL, Count),
+        // PLAYER: my own board was already searched; ALL: every board was.
+        _ => null
+    };
 }

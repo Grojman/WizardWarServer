@@ -11,7 +11,7 @@ public class PlayerHealthCondition : EffectCondition
     public NumberFilter Value { get; set; }
     public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
-        var player = Me ? sourceCard.Player : sourceCard.Player.PlayerTarget;
+        var player = Me ? sourceCard.Player : state.GetState(rivalId);
 
         return Value.Compare(player.Health);
     }

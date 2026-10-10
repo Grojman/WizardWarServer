@@ -3,7 +3,8 @@
     "Deck": {
       "id": 11,
       "name": "Misterioso adicto",
-      "description": "Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias."
+      "description": "Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias.",
+      "difficulty": 2
     },
     "Cards": {
       "96": 0,
@@ -31,7 +32,8 @@
     "Deck": {
       "id": 10,
       "name": "Tecnomago",
-      "description": "Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados."
+      "description": "Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados.",
+      "difficulty": 3
     },
     "Cards": {
       "70": 2,
@@ -65,7 +67,8 @@
     "Deck": {
       "id": 9,
       "name": "Archimago del invierno",
-      "description": "Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad."
+      "description": "Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad.",
+      "difficulty": 1
     },
     "Cards": {
       "53": 4,
@@ -87,7 +90,8 @@
     "Deck": {
       "id": 7,
       "name": "Don Bola de Fuego Jr",
-      "description": "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida."
+      "description": "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida.",
+      "difficulty": 1
     },
     "Cards": {
       "27": 4,
@@ -109,7 +113,8 @@
     "Deck": {
       "id": 5,
       "name": "El mago del queso",
-      "description": "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien."
+      "description": "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien.",
+      "difficulty": 2
     },
     "Cards": {
       "1": 2,
@@ -133,7 +138,8 @@
     "Deck": {
       "id": 6,
       "name": "El Ingenioso Hidalgo Don Quijote de la Mancha",
-      "description": "Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve."
+      "description": "Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve.",
+      "difficulty": 2
     },
     "Cards": {
       "14": 5,
@@ -156,7 +162,8 @@
     "Deck": {
       "id": 8,
       "name": "Mago cachas",
-      "description": "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida."
+      "description": "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida.",
+      "difficulty": 1
     },
     "Cards": {
       "40": 4,
@@ -178,7 +185,8 @@
     "Deck": {
       "id": 12,
       "name": "El Alquimista Cromático",
-      "description": "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial."
+      "description": "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial.",
+      "difficulty": 3
     },
     "Cards": {
       "115": 5,
@@ -200,7 +208,8 @@
     "Deck": {
       "id": 13,
       "name": "Culto de los espíritus",
-      "description": "Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra."
+      "description": "Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra.",
+      "difficulty": 3
     },
     "Cards": {
       "124": 4,

@@ -17,7 +17,7 @@ public class PlayerHealthChangedCondition : EffectCondition
     {
         if (ev is not GameEvent.PlayerHealthChanged e) return false;
 
-        var expectedPlayer = Me ? sourceCard.Player : sourceCard.Player.PlayerTarget;
+        var expectedPlayer = Me ? sourceCard.Player : state.GetState(rivalId);
 
         return e.PlayerId == expectedPlayer?.Id && Amount.Compare(e.Amount);
     }

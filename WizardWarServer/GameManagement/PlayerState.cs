@@ -1,6 +1,8 @@
+using System.Text.Json.Serialization;
+
 public class PlayerState : IdentificableObject
 {
-    public PlayerState? PlayerTarget { get; set; }
+    public TargetGroup Targets { get; } = new();
     public bool IsMyTurn { get; set; } = false;
     public List<EffectInstance> GlobalEffects { get; set; } = new();
     public List<CardInstance> PlayedCards { get; set; } = new();
@@ -8,6 +10,9 @@ public class PlayerState : IdentificableObject
     public PlayerConnection Connection { get; set; } = null!;
     public required string Name { get; set; }
     public int Health { get; set; } = 20;
+
+    // Set when the player is knocked out of the match (see GameState.KillPlayer).
+    public DefeatReason? DefeatReason { get; set; }
 
     public Deck? Deck { get; set; }
 
@@ -27,4 +32,12 @@ public class PlayerState : IdentificableObject
         return card;
     }
 
+}
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum DefeatReason
+{
+    NoHealth,
+    OutOfCards,
+    Surrender,
+    Disconnect
 }

@@ -9,13 +9,60 @@ public class GameFilter
     public PlayerType WhichDeadCardsToSearch { get; set; } = PlayerType.NONE;
     public int MaxLength { get; set; } = 0;
 
+    // The players a search covers. ALL looks at every alive player in the game,
+    // regardless of who `playerId` targets; PLAYER/RIVAL/BOTH keep their usual
+    // meaning relative to (playerId, rivalId).
+    static IEnumerable<PlayerState> PlayersFor(PlayerType type, GameState state, Guid playerId, Guid rivalId)
+    {
+        switch (type)
+        {
+            case PlayerType.ALL:
+                return state.AlivePlayersView;
+            case PlayerType.PLAYER:
+                return [state.GetState(playerId)];
+            case PlayerType.RIVAL:
+                return [state.GetState(rivalId)];
+            case PlayerType.BOTH:
+                return [state.GetState(playerId), state.GetState(rivalId)];
+            default:
+                return [];
+        }
+    }
+
+    // Same search, but only over whatever it looks at on the rival's side: what
+    // an extra target adds once the full search already ran against the first
+    // one (see IEffect.ForAdditionalTarget). Null if it doesn't look at the rival.
+    public GameFilter? RivalOnly()
+    {
+        static PlayerType Narrow(PlayerType t) => t is PlayerType.RIVAL or PlayerType.BOTH ? PlayerType.RIVAL : PlayerType.NONE;
+
+        var narrowed = new GameFilter()
+        {
+            Filter = Filter,
+            WhichDeckToSearch = Narrow(WhichDeckToSearch),
+            WhichBoardToSearch = Narrow(WhichBoardToSearch),
+            WhichHandToSearch = Narrow(WhichHandToSearch),
+            WhichPlayedCardsToSearch = Narrow(WhichPlayedCardsToSearch),
+            WhichDeadCardsToSearch = Narrow(WhichDeadCardsToSearch),
+            MaxLength = MaxLength
+        };
+
+        return narrowed.LooksAtRival ? narrowed : null;
+    }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public bool LooksAtRival =>
+        new[] { WhichDeckToSearch, WhichBoardToSearch, WhichHandToSearch, WhichPlayedCardsToSearch, WhichDeadCardsToSearch }
+            .Any(t => t is PlayerType.RIVAL or PlayerType.BOTH);
+
+    IEnumerable<CardInstance> Limit(IEnumerable<CardInstance> result) => MaxLength > 0 ? result.Take(MaxLength) : result;
 
     public IEnumerable<CardInstance> GetMeetingCardsOnRivalBoard(GameState state, Guid rivalPlayer)
     {
         var result = WhichBoardToSearch is PlayerType.RIVAL or PlayerType.BOTH
             ? state.GetState(rivalPlayer).Board.Where(n => n is not null).Select(n => n!).Where(Filter.Check)
             : [];
-        return MaxLength > 0 ? result.Take(MaxLength) : result;
+        return Limit(result);
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnPlayerBoard(GameState state, Guid playerId)
@@ -23,76 +70,50 @@ public class GameFilter
         var result = WhichBoardToSearch is PlayerType.PLAYER or PlayerType.BOTH
             ? state.GetState(playerId).Board.Where(n => n is not null).Select(n => n!).Where(Filter.Check)
             : [];
-        return MaxLength > 0 ? result.Take(MaxLength) : result;
+        return Limit(result);
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnRivalDeck(GameState state, Guid rivalId)
     {
         var result = WhichDeckToSearch is PlayerType.RIVAL or PlayerType.BOTH ? state.GetState(rivalId).Deck!.cards.Where(Filter.Check) : [];
-        return MaxLength > 0 ? result.Take(MaxLength) : result;
+        return Limit(result);
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnPlayerDeck(GameState state, Guid playerId)
     {
         var result = WhichDeckToSearch is PlayerType.PLAYER or PlayerType.BOTH ? state.GetState(playerId).Deck!.cards.Where(Filter.Check) : [];
-        return MaxLength > 0 ? result.Take(MaxLength) : result;
+        return Limit(result);
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOnBoard(GameState state, Guid playerId, Guid rivalId)
     {
-        var result = GetMeetingCardsOnPlayerBoard(state, playerId).Concat(GetMeetingCardsOnRivalBoard(state, rivalId));
-        return MaxLength > 0 ? result.Take(MaxLength) : result;
+        var result = WhichBoardToSearch == PlayerType.ALL
+            ? PlayersFor(PlayerType.ALL, state, playerId, rivalId).SelectMany(p => p.Board).Where(n => n is not null).Select(n => n!).Where(Filter.Check)
+            : GetMeetingCardsOnPlayerBoard(state, playerId).Concat(GetMeetingCardsOnRivalBoard(state, rivalId));
+        return Limit(result);
     }
 
     public IEnumerable<CardInstance> GetMeetingCardsOffBoard(GameState state, Guid playerId, Guid rivalId)
     {
-        var result = GetMeetingCardsOnPlayerDeck(state, playerId).Concat(GetMeetingCardsOnRivalDeck(state, rivalId));
-        return MaxLength > 0 ? result.Take(MaxLength) : result;
+        var result = WhichDeckToSearch == PlayerType.ALL
+            ? PlayersFor(PlayerType.ALL, state, playerId, rivalId).SelectMany(p => p.Deck!.cards).Where(Filter.Check)
+            : GetMeetingCardsOnPlayerDeck(state, playerId).Concat(GetMeetingCardsOnRivalDeck(state, rivalId));
+        return Limit(result);
     }
 
     public IEnumerable<CardInstance> GetCardsOnHand(GameState state, Guid playerId, Guid rivalId)
     {
-        IEnumerable<CardInstance> cards = new List<CardInstance>();
-        if (WhichHandToSearch is PlayerType.PLAYER or PlayerType.BOTH)
-        {
-            cards = cards.Concat(state.GetState(playerId).Hand.Where(Filter.Check));
-        }
-        if (WhichHandToSearch is PlayerType.RIVAL or PlayerType.BOTH)
-        {
-            cards = cards.Concat(state.GetState(rivalId).Hand.Where(Filter.Check));
-        }
-
-        return cards;
+        return PlayersFor(WhichHandToSearch, state, playerId, rivalId).SelectMany(p => p.Hand.Where(Filter.Check));
     }
 
     public IEnumerable<CardInstance> GetPlayedCards(GameState state, Guid playerId, Guid rivalId)
     {
-        IEnumerable<CardInstance> cards = new List<CardInstance>();
-        if (WhichPlayedCardsToSearch is PlayerType.PLAYER or PlayerType.BOTH)
-        {
-            cards = cards.Concat(state.GetState(playerId).PlayedCards.Where(Filter.Check));
-        }
-        if (WhichPlayedCardsToSearch is PlayerType.RIVAL or PlayerType.BOTH)
-        {
-            cards = cards.Concat(state.GetState(rivalId).PlayedCards.Where(Filter.Check));
-        }
-
-        return cards;
+        return PlayersFor(WhichPlayedCardsToSearch, state, playerId, rivalId).SelectMany(p => p.PlayedCards.Where(Filter.Check));
     }
 
     public IEnumerable<CardInstance> GetDeadCards(GameState state, Guid playerId, Guid rivalId)
     {
-        IEnumerable<CardInstance> cards = new List<CardInstance>();
-        if (WhichDeadCardsToSearch is PlayerType.PLAYER or PlayerType.BOTH)
-        {
-            cards = cards.Concat(state.GetState(playerId).DeadCards.Where(Filter.Check));
-        }
-        if (WhichDeadCardsToSearch is PlayerType.RIVAL or PlayerType.BOTH)
-        {
-            cards = cards.Concat(state.GetState(rivalId).DeadCards.Where(Filter.Check));
-        }
-
-        return cards;
+        return PlayersFor(WhichDeadCardsToSearch, state, playerId, rivalId).SelectMany(p => p.DeadCards.Where(Filter.Check));
     }
 
     public IEnumerable<CardInstance> GetMeetingCards(GameState state, Guid playerId, Guid rivalId)
@@ -102,6 +123,6 @@ public class GameFilter
                         Concat(GetCardsOnHand(state, playerId, rivalId)).
                         Concat(GetPlayedCards(state, playerId, rivalId)).
                         Concat(GetDeadCards(state, playerId, rivalId));
-        return MaxLength > 0 ? result.Take(MaxLength) : result;
+        return Limit(result);
     }
 }

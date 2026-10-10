@@ -73,7 +73,15 @@ internal class Program
 
             app.UseRateLimiter();
 
-            app.UseWebSockets();
+            // Without a keep-alive timeout a client that vanished without a close
+            // frame (lost network, sleeping phone, killed tab) keeps its receive
+            // loop waiting forever, so it is never removed and the online player
+            // count never goes down. Browsers answer these pings on their own.
+            app.UseWebSockets(new WebSocketOptions
+            {
+                KeepAliveInterval = TimeSpan.FromSeconds(serverOptions.WebSocketKeepAliveSeconds),
+                KeepAliveTimeout = TimeSpan.FromSeconds(serverOptions.WebSocketKeepAliveTimeoutSeconds)
+            });
 
             app.UseDefaultFiles();
             app.UseStaticFiles();

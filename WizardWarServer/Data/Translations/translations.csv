@@ -86,6 +86,14 @@ GAME_SECTION_DISCONNECTED,se ha desconectado. Finalizando la partida en,has leav
 GAME_SECTION_DISCONNECTED_SUBTEXT,si no vuelve...,if it doesnt come back...
 GAME_SECTION_WINNER,es el ganador y le deben una cerveza.,is the winner and they own a beer
 GAME_SECTION_RETURN_HOME,Aceptar,Accept
+GAME_SECTION_DEFEAT_NO_HEALTH,Has perdido porque tu vida ha llegado a 0.,You lost because your life dropped to 0.
+GAME_SECTION_DEFEAT_OUT_OF_CARDS,Has perdido porque te has quedado sin cartas en el mazo.,You lost because you ran out of cards in your deck.
+GAME_SECTION_DEFEAT_SURRENDER,Has perdido porque te has rendido.,You lost because you surrendered.
+GAME_SECTION_DEFEAT_DISCONNECT,Has perdido porque te has desconectado.,You lost because you disconnected.
+GAME_SECTION_DEFEAT_RIVAL_NO_HEALTH,ha perdido porque su vida ha llegado a 0.,lost because their life dropped to 0.
+GAME_SECTION_DEFEAT_RIVAL_OUT_OF_CARDS,ha perdido porque se ha quedado sin cartas en el mazo.,lost because they ran out of cards in their deck.
+GAME_SECTION_DEFEAT_RIVAL_SURRENDER,ha perdido porque se ha rendido.,lost because they surrendered.
+GAME_SECTION_DEFEAT_RIVAL_DISCONNECT,ha perdido porque se ha desconectado.,lost because they disconnected.
 GAME_SECTION_ROTATE_PHONE,Por favor rota tu teléfono para jugar.,Please rotate your phone in order to play
 STATS_SECTION_TITLE,Estadísticas de las Barajas,Stats of the decks
 STATS_SECTION_SUBTITLE,Partidas totales jugadas:,Total games played:
@@ -107,8 +115,13 @@ TEAM_SECTION_COLLABORATORS,COLABORADOR@S,COLLABORATORS
 CARD_CONDITION_PROGRESS,Progreso:,Progress:
 CHAT_SECTION_TITLE,Chat,Chat
 DECK_SECTION_CARDS,Cartas en el mazo:,Amount of cards:
+DECK_DIFFICULTY_LABEL,Dificultad:,Difficulty:
+DECK_DIFFICULTY_1,Fácil,Easy
+DECK_DIFFICULTY_2,Media,Medium
+DECK_DIFFICULTY_3,Difícil,Hard
 HELP_SECTION_TITLE,CÓMO JUGAR,HOW TO PLAY
 HELP_SECTION_CARD_TYPES,TIPOS DE CARTAS,TYPES OF CARDS
+HELP_SECTION_BOARD,EL TABLERO,THE BOARD
 HELP_CARD_TYPE_SPELL,HECHIZO,SPELL
 HELP_CARD_TYPE_SPELL_DESC,Los hechizos son cartas que se juegan y se descartan inmediatamente después de su uso. Pueden tener efectos que afectan a las unidades en juego al jugador o al oponente.,Spells are cards that can be played and discard inmediatly after its use. They can have effects that alter units or the players
 
@@ -116,6 +129,16 @@ SETTINGS_TITLE,Ajustes,Settings
 SETTINGS_LANGUAGE,Idioma,Language,
 SETTINGS_ANIMATION_SPEED,Velocidad de animación,Animation Speed
 SETTINGS_CURRENT_LABEL,Actual:,Current:
+SETTINGS_SPEED_VERY_SLOW,Muy lenta,Very Slow
+SETTINGS_SPEED_VERY_SLOW_DESC,Animaciones lentas y relajadas,Slow and relaxed animations
+SETTINGS_SPEED_SLOW,Lenta,Slow
+SETTINGS_SPEED_SLOW_DESC,Animaciones más lentas,Slower animations
+SETTINGS_SPEED_NORMAL,Normal,Normal
+SETTINGS_SPEED_NORMAL_DESC,Velocidad de animación por defecto,Default animation speed
+SETTINGS_SPEED_FAST,Rápida,Fast
+SETTINGS_SPEED_FAST_DESC,Animaciones más rápidas,Faster animations
+SETTINGS_SPEED_VERY_FAST,Muy rápida,Very Fast
+SETTINGS_SPEED_VERY_FAST_DESC,Animaciones muy rápidas,Very fast animations
 SETTINGS_MUSIC,Música,Music
 SETTINGS_SOUND_EFFECTS,Efectos de sonido,Sound Effects
 SETTINGS_ENABLED,Activado,Enabled
@@ -129,6 +152,9 @@ HOME_OPTION_JOIN,Unirse,Join
 HOME_OPTION_BOT,Máquina,Bot
 GAME_SECTION_WINNER_PLACEHOLDER,Jugador 1,Player 1
 GAME_SECTION_TARGET_PLAYER,Jugador objetivo:,Target player:
+GAME_SECTION_TARGET_PLAYERS,Objetivos de la ronda:,This round's targets:
+GAME_SECTION_HUNTED,¡Objetivo de todos!,Everyone's target!
+GAME_SECTION_TARGET_RULES,"Con más de 2 jugadores, cada ronda un jugador es el objetivo de todos los demás (el primero al azar y luego por turnos). Ese jugador tiene como objetivo a todos sus rivales: sus efectos se aplican una vez sobre cada uno de ellos.","With more than 2 players, each round one player is everyone else's target (random on the first round, then rotating). That player targets all of their rivals: their effects are applied once to each of them."
 GAME_SECTION_EFFECTS,Efectos:,Effects:
 ALERT_SECTION_TITLE,Error,Error
 ALERT_SECTION_ACCEPT,Aceptar,Accept
@@ -289,8 +315,20 @@ SETTINGS_FONT_TITLE,Títulos,Titles
 SETTINGS_FONT_SUBTITLE,Subtítulos,Subtitles
 SETTINGS_FONT_TEXT,Texto normal,Normal text
 SETTINGS_FONT_RESET,Restablecer,Reset
+SETTINGS_CURSOR,Cursor,Cursor
+SETTINGS_CURSOR_PREVIOUS,Cursor anterior,Previous cursor
+SETTINGS_CURSOR_NEXT,Cursor siguiente,Next cursor
+CURSOR_WIZARD_HAND,Mano de mago,Wizard's hand
+CURSOR_MYSTIC_EYE,Ojo místico,Mystic eye
+CURSOR_HAND,Mano,Hand
+CURSOR_BEER_JAR,Jarra de cerveza,Beer jar
 GAME_SECTION_SURRENDER,Rendirse,Surrender
 GAME_SECTION_SURRENDER_CONFIRM_TITLE,¿Rendirse?,Surrender?
 GAME_SECTION_SURRENDER_CONFIRM_MESSAGE,¿Seguro que quieres rendirte? Perderás la partida.,Are you sure you want to surrender? You will lose the match.
 SERIES_SECTION_SURRENDER,Terminar la serie,End the series
 SERIES_SECTION_FORFEITED_YOU,Te has rendido,You surrendered
+GAME_SECTION_YOUR_TURN,Tu turno,Your turn
+HOME_SECTION_TUTORIAL_TITLE,Aprende a jugar,Learn to play
+HOME_SECTION_TUTORIAL_TEXT,"Un tutorial interactivo que te guía por la mesa, las rondas y todas las acciones del juego con cartas reales. No necesitas rival: juegas contra un mago tabernero de práctica.","An interactive tutorial that walks you through the table, the rounds and every action in the game with real cards. No rival needed: you play against a practice tavern wizard."
+HOME_SECTION_TUTORIAL_PLAY,Jugar tutorial,Play tutorial
+TITLE_TUTORIAL,Tutorial — El Bar de los Magos,Tutorial — El Bar de los Magos

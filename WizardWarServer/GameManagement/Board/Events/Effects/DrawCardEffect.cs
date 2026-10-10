@@ -23,4 +23,7 @@ public class DrawCardEffect : IEffect
             state.DrawCard(state.GetState(player).Connection, card, Filter);
         }
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

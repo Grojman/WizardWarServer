@@ -58,6 +58,7 @@ public class RotateColorAndBranchEffect : IEffect
             }
         }
 
+        lastExecuted = effects;
         foreach (var effect in effects)
             effect.Execute(playerId, rivalId, cardId, state, ev);
         
@@ -67,4 +68,10 @@ public class RotateColorAndBranchEffect : IEffect
             
         }
     }
+
+    // Extra targets get the branches chosen for the first one; the color
+    // itself only rotates once.
+    List<IEffect> lastExecuted = new();
+
+    public IEffect? ForAdditionalTarget() => EffectSequence.From(lastExecuted.Select(e => e.ForAdditionalTarget()));
 }

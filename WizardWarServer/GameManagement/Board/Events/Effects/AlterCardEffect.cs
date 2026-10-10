@@ -25,4 +25,7 @@ public class AlterCardEffect : IEffect
             state.AlterUnitHealth(cardId, card, Health);
         }
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

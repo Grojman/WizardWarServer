@@ -26,4 +26,6 @@ public class SetUnitToCeroEffect : IEffect
             }
         }
     }
+
+    public IEffect? ForAdditionalTarget() => ToPlayer ? null : this;
 }

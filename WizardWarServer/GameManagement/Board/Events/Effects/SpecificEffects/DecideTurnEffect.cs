@@ -1,40 +1,55 @@
+// Plays one random extra action (play a card, attack or draw) for the owner of
+// the card, as if it were their turn. Attacks go to the rival the effect is
+// being run against.
 public class DecideTurnEffect : IEffect
 {
-    private CardInstance card = null!;
     public IEffect Clone() => new DecideTurnEffect();
 
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
-        List<Action<GameState>> options = new();
-        card = cardId;
+        var player = cardId.Player;
+        if (!state.IsAlive(player)) return;
 
-        if(cardId.Player.CanPlayCard(state)) options.Add(PlayCard);
-        if(cardId.Player.CanAttack()) options.Add(Attack);
-        if(cardId.Player.CanDraw(options.Count)) options.Add(DrawCard);
+        List<Action> options = new();
 
-        options.GetRandom()(state);
+        if (player.CanPlayCard(state)) options.Add(() => PlayCard(player, state));
+        if (player.CanAttack() && state.IsAlive(state.GetState(rivalId))) options.Add(() => Attack(player, state.GetState(rivalId), state));
+        if (player.CanDraw(options.Count)) options.Add(() => state.DrawCard(player.Connection, null));
+
+        if (options.Count == 0) return;
+
+        options.GetRandom()();
     }
 
-    void Attack(GameState state)
+    static void Attack(PlayerState player, PlayerState rival, GameState state)
     {
-        var rivalPositions = card.Player.PlayerTarget!.Board.Select((a, b) => new {a, b}).Where(n => n.a is not null).Select(n => n.b);
-        var playerPositions = card.Player.Board.Select((a, b) => new {a, b}).Where(n => n.a is not null).Select(n => n.b);
-        TargetType[] options = !rivalPositions.Any() ? [TargetType.PLAYER] : [TargetType.PLAYER, TargetType.BOARD];
+        var attackers = OccupiedPositions(player.Board, c => c.CurrentAttack > 0);
+        if (attackers.Count == 0) return;
 
-        state.Attack(card.Player.Connection, card.Player.PlayerTarget.Id, playerPositions.GetRandom(), options.GetRandom(), rivalPositions.GetRandom());
+        var defenders = OccupiedPositions(rival.Board, _ => true);
+        var targetType = defenders.Count == 0 || Random.Shared.Next(2) == 0 ? TargetType.PLAYER : TargetType.BOARD;
+        var targetIndex = targetType == TargetType.BOARD ? defenders.GetRandom() : -1;
+
+        state.Attack(player.Connection, rival.Id, attackers.GetRandom(), targetType, targetIndex);
     }
 
-    void DrawCard(GameState state)
+    static void PlayCard(PlayerState player, GameState state)
     {
-        state.DrawCard(card.Player.Connection, null);
+        var freeSlots = player.Board.Select((card, index) => new { card, index }).Where(n => n.card is null).Select(n => n.index).ToList();
+        var playableCards = player.Hand
+            .Where(n => state.CanPlay(n) && (n.Definition.Type == CardType.Spell || freeSlots.Count > 0))
+            .ToList();
+        if (playableCards.Count == 0) return;
+
+        var card = playableCards.GetRandom();
+        var boardIndex = card.Definition.Type == CardType.Spell ? -1 : freeSlots.GetRandom();
+
+        state.PlayCard(player.Connection, card.Id, boardIndex);
     }
 
-    void PlayCard(GameState state)
-    {
-        var isPlace = card.Player.Board.Any(n => n is null);
-        var boardIndexes = card.Player.Board.Select((a,b) => new {a, b}).Where(n => n.a is null).Select(n => n.b);
-        var playableCards = card.Player.Hand.Where(n => (n.CanPlay?.Check(n.Player.Id, n.Player.PlayerTarget!.Id, n, state, null) ?? true) && (n.Definition.Type == CardType.Spell || isPlace));
+    static List<int> OccupiedPositions(CardInstance?[] board, Func<CardInstance, bool> predicate) =>
+        board.Select((card, index) => new { card, index }).Where(n => n.card is not null && predicate(n.card)).Select(n => n.index).ToList();
 
-        state.PlayCard(card.Player.Connection, playableCards.GetRandom().Id, isPlace ? -1 : boardIndexes.GetRandom());
-    }
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

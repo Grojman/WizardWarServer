@@ -20,4 +20,7 @@ public class CreateRandomCoin : IEffect
         }
 
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

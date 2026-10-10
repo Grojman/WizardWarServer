@@ -25,13 +25,21 @@ public class BranchOnColorInclusiveEffect : IEffect
         var player = state.GetState(playerId);
         var active = ChromaticColorHelper.GetActiveBaseComponents(player);
 
-        if (active.Contains(ChromaticColor.Rojo))
-            foreach (var e in IfRed) e.Execute(playerId, rivalId, cardId, state, ev);
+        var branches = new List<IEffect>();
 
-        if (active.Contains(ChromaticColor.Verde))
-            foreach (var e in IfGreen) e.Execute(playerId, rivalId, cardId, state, ev);
+        if (active.Contains(ChromaticColor.Rojo)) branches.AddRange(IfRed);
 
-        if (active.Contains(ChromaticColor.Azul))
-            foreach (var e in IfBlue) e.Execute(playerId, rivalId, cardId, state, ev);
+        if (active.Contains(ChromaticColor.Verde)) branches.AddRange(IfGreen);
+
+        if (active.Contains(ChromaticColor.Azul)) branches.AddRange(IfBlue);
+
+        lastExecuted = branches;
+        foreach (var e in branches) e.Execute(playerId, rivalId, cardId, state, ev);
     }
+
+    // Extra targets get the branches chosen for the first one, even if a
+    // branch changed the active color in between.
+    List<IEffect> lastExecuted = new();
+
+    public IEffect? ForAdditionalTarget() => EffectSequence.From(lastExecuted.Select(e => e.ForAdditionalTarget()));
 }

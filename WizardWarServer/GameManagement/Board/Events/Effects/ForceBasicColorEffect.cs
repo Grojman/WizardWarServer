@@ -28,4 +28,7 @@ public class ForceBasicColorEffect : IEffect
 
         ChromaticColorHelper.SetColor(state, cardId, player, Color);
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

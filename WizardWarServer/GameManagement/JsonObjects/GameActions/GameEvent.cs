@@ -10,7 +10,9 @@ public abstract class GameEvent
     }
     public class TargetPlayerChanged : GameEvent
     {
+        // First of NewTargets (Guid.Empty if none), for single-target consumers.
         public required Guid NewTarget { get; set; }
+        public required List<Guid> NewTargets { get; set; }
     }
 
     public class PlayerDeath : GameEvent

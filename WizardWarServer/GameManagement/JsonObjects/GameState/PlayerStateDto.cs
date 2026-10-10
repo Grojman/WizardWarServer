@@ -1,9 +1,12 @@
-public record PlayerStateDto(Guid Id, Guid TargetPlayer, string Name, CardDto?[] Board, int Health, int HandSize, CardDto[] HandData, DeckStateDto Deck, IEnumerable<GlobalEffectDto> GlobalEffects, bool IsMyTurn, CardDto? LastSpellPlayed)
+// TargetPlayer is the first of TargetPlayers (Guid.Empty if none). TargetPlayers
+// has more than one entry only for the hunted player of a 3+ player game.
+public record PlayerStateDto(Guid Id, Guid TargetPlayer, Guid[] TargetPlayers, string Name, CardDto?[] Board, int Health, int HandSize, CardDto[] HandData, DeckStateDto Deck, IEnumerable<GlobalEffectDto> GlobalEffects, bool IsMyTurn, CardDto? LastSpellPlayed)
 {
     public static PlayerStateDto Generate(PlayerState state, bool hidden, GameState gameState, string language)
     {
         return new(state.Id,
-                    state.PlayerTarget!.Id,
+                    state.Targets.Primary?.Id ?? Guid.Empty,
+                    [.. state.Targets.Players.Select(t => t.Id)],
                     state.Name,
                     [.. state.Board.Select(n => n is null ? null : CardDto.Generate(n, gameState, true, language))],
                     state.Health,

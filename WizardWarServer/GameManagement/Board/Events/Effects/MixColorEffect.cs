@@ -42,4 +42,7 @@ public class MixColorEffect : IEffect
                 return;
         }
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

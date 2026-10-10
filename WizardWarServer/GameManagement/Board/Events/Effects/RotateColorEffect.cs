@@ -31,4 +31,7 @@ public class RotateColorEffect : IEffect
         foreach (var c in rotated.Skip(1))
             ChromaticColorHelper.AddColor(state, cardId, player, c);
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

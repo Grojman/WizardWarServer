@@ -12,19 +12,20 @@ public class TurnCounterCondition : EffectCondition
 
     int currentTurn = -1;
 
+    // Se puede comprobar varias veces en el mismo turno (una por cada objetivo,
+    // ver EffectFanOut): todas tienen que devolver lo mismo que la primera.
+    bool lastResult = true;
+
     public override bool Check(Guid playerId, Guid rivalId, CardInstance sourceCard, GameState state, GameEvent? ev)
     {
-        var result = true;
-
         if (currentTurn != state.TurnCounter)
         {
             if(currentTurn != -1) AmountCounter++; //la primera vez que se comprueba no debe de contar
-            result = AmountCounter >= Amount;
-            currentTurn = state.TurnCounter;   
+            lastResult = AmountCounter >= Amount;
+            currentTurn = state.TurnCounter;
         }
 
-
-        return result;
+        return lastResult;
     }
 
     public override EffectCondition Clone() => new TurnCounterCondition(Amount);

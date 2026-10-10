@@ -17,11 +17,20 @@ public class DrawCardsBasedOnFilter : IEffect
     public void Execute(Guid playerId, Guid rivalId, CardInstance cardId, GameState state, GameEvent? ev)
     {
         var count = (int)(Filter.GetMeetingCards(state, playerId, rivalId).Count() * Relation);
-        var p = Rival ? cardId.Player.PlayerTarget : cardId.Player;
+        var p = Rival ? state.GetState(rivalId) : cardId.Player;
 
         for (int i = 0; i < count; i++)
         {
             state.DrawCard( p.Connection, cardId, FilterDrawedCards);
         }        
+    }
+
+    public IEffect? ForAdditionalTarget()
+    {
+        if (Rival) return this;
+
+        // I draw: add whatever this extra rival contributes to the count.
+        var rivalOnly = Filter.RivalOnly();
+        return rivalOnly is null ? null : new DrawCardsBasedOnFilter(Relation, rivalOnly, Rival, FilterDrawedCards);
     }
 }

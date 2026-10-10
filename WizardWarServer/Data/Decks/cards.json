@@ -2158,7 +2158,7 @@
         "Effects": [
           {
             "$type": "KillCards",
-            "BoardSearch": 2,
+            "BoardSearch": 4,
             "Filter": {
               "CurrentAttack": null,
               "CurrentHealth": null,
@@ -2173,7 +2173,7 @@
               "NumberOfTriggersLeft": null,
               "MustMeetAllCriteria": false
             },
-            "Count": 8
+            "Count": 0
           }
         ],
         "Duration": {
@@ -2188,7 +2188,7 @@
         "Expired": false,
         "Description": "",
         "IsGlobal": false,
-        "Id": "577cf6c5-b0d4-4b0a-9ae4-0f0de21e2da1"
+        "Id": "a42c2e82-b2fc-47f7-a348-924d98c055d0"
       }
     ],
     "imageUrl": "",
@@ -7566,6 +7566,51 @@
     "BaseHealth": 4,
     "Effects": [
       {
+        "Trigger": 5,
+        "Effects": [
+          {
+            "$type": "AlterMySelfPerCardCount",
+            "Damage": 1,
+            "Health": 1,
+            "Filter": {
+              "Filter": {
+                "CurrentAttack": null,
+                "CurrentHealth": null,
+                "Attack": null,
+                "Health": null,
+                "CardType": null,
+                "Families": null,
+                "CurrentFamilies": null,
+                "DefinitionId": "129",
+                "Id": null,
+                "HasEffect": null,
+                "NumberOfTriggersLeft": null,
+                "MustMeetAllCriteria": false
+              },
+              "WhichDeckToSearch": 3,
+              "WhichBoardToSearch": 3,
+              "WhichHandToSearch": 3,
+              "WhichPlayedCardsToSearch": 0,
+              "WhichDeadCardsToSearch": 3,
+              "MaxLength": 0
+            }
+          }
+        ],
+        "Duration": {
+          "$type": "DurationByExecutions",
+          "times": 1
+        },
+        "Condition": {
+          "$type": "IHaveBeenPlayedCondition"
+        },
+        "SourceCard": null,
+        "Player": null,
+        "Expired": false,
+        "Description": "",
+        "IsGlobal": false,
+        "Id": "dcd43870-a5d7-4695-ac7f-c7fd0cd11d59"
+      },
+      {
         "Trigger": 7,
         "Effects": [
           {
@@ -7588,7 +7633,7 @@
         "Expired": false,
         "Description": "",
         "IsGlobal": false,
-        "Id": "46eee16c-2af3-4543-a738-368904e4a7b6"
+        "Id": "98700a51-5f5c-4e18-9bb1-e8894cdb6e1b"
       }
     ],
     "imageUrl": "",
@@ -8041,7 +8086,7 @@
       },
       {
         "$type": "AlterUnitStatsEffect",
-        "Health": -1,
+        "Health": -2,
         "Damage": 0,
         "Filter": {
           "Filter": {
@@ -8082,31 +8127,9 @@
         "Trigger": 7,
         "Effects": [
           {
-            "$type": "AlterUnitStatsEffect",
-            "Health": 0,
-            "Damage": 1,
-            "Filter": {
-              "Filter": {
-                "CurrentAttack": null,
-                "CurrentHealth": null,
-                "Attack": null,
-                "Health": null,
-                "CardType": null,
-                "Families": null,
-                "CurrentFamilies": null,
-                "DefinitionId": null,
-                "Id": null,
-                "HasEffect": null,
-                "NumberOfTriggersLeft": null,
-                "MustMeetAllCriteria": false
-              },
-              "WhichDeckToSearch": 3,
-              "WhichBoardToSearch": 0,
-              "WhichHandToSearch": 3,
-              "WhichPlayedCardsToSearch": 3,
-              "WhichDeadCardsToSearch": 3,
-              "MaxLength": 1
-            }
+            "$type": "AlterPlayerHealthEffect",
+            "Amount": 3,
+            "ToRival": false
           }
         ],
         "Duration": {
@@ -8121,7 +8144,7 @@
         "Expired": false,
         "Description": "",
         "IsGlobal": false,
-        "Id": "3c4e9e44-c363-47ef-b934-5aaecbfa7059"
+        "Id": "87ff1eda-aeec-4c86-b841-f15910813ab9"
       }
     ],
     "imageUrl": "",

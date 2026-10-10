@@ -28,4 +28,6 @@ public class CreateCardInHand : IEffect
             state.DrawCard(target, new CardInstance(cardDefinition, target), cardId, false);
         }
     }
+
+    public IEffect? ForAdditionalTarget() => ToRival ? this : null;
 }

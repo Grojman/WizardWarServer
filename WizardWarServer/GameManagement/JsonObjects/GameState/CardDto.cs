@@ -9,8 +9,8 @@ public record CardDto(string id, string serverId, string name, string descriptio
 
         if (card.CanPlay is CountPlayedCardsCondition cpc)
         {
-            var target = cpc.Target == PlayerType.PLAYER ? card.Player.Id : card.Player.PlayerTarget!.Id;
-            conditionProgress = state.GetState(target).PlayedCards.Count(cpc.Filter.Check);
+            var target = cpc.Target == PlayerType.PLAYER ? card.Player : card.Player.Targets.Primary;
+            conditionProgress = target?.PlayedCards.Count(cpc.Filter.Check) ?? 0;
             conditionTarget = cpc.Value.Amount;
         } else if (card.CanPlay is MultiEffectCondition mec)
         {
@@ -18,8 +18,8 @@ public record CardDto(string id, string serverId, string name, string descriptio
             {
                 if (a is CountPlayedCardsCondition acpc)
                 {
-                    var target = acpc.Target == PlayerType.PLAYER ? card.Player.Id : card.Player.PlayerTarget!.Id;
-                    conditionProgress = state.GetState(target).PlayedCards.Count(acpc.Filter.Check);
+                    var target = acpc.Target == PlayerType.PLAYER ? card.Player : card.Player.Targets.Primary;
+                    conditionProgress = target?.PlayedCards.Count(acpc.Filter.Check) ?? 0;
                     conditionTarget = acpc.Value.Amount;
 
                     break;
@@ -27,7 +27,7 @@ public record CardDto(string id, string serverId, string name, string descriptio
             }
         }
 
-        return new CardDto(card.Id.ToString(), card.Definition.Id, TranslationManager.Get($"CARD_{card.Definition.Id}_NAME", language), TranslationManager.Get($"CARD_{card.Definition.Id}_DESC", language), TranslationManager.TranslateFamilies(card.CurrentFamilies, language), card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), string.IsNullOrWhiteSpace(card.Definition.imageUrl) ? $"{card.Definition.Id}.webp" : card.Definition.imageUrl, dontCheck || (card.CanPlay?.Check(card.Player.Id, card.Player.PlayerTarget!.Id, card, state, null) ?? true), card.SpecialEffects is not null && card.SpecialEffects.Count > 0, card.MaxSpecialEffectTimes, conditionProgress, conditionTarget);
+        return new CardDto(card.Id.ToString(), card.Definition.Id, TranslationManager.Get($"CARD_{card.Definition.Id}_NAME", language), TranslationManager.Get($"CARD_{card.Definition.Id}_DESC", language), TranslationManager.TranslateFamilies(card.CurrentFamilies, language), card.CurrentAttack, card.CurrentHealth, card.Definition.Type.ToString(), string.IsNullOrWhiteSpace(card.Definition.imageUrl) ? $"{card.Definition.Id}.webp" : card.Definition.imageUrl, dontCheck || state.CanPlay(card), card.SpecialEffects is not null && card.SpecialEffects.Count > 0, card.MaxSpecialEffectTimes, conditionProgress, conditionTarget);
     }
 
     public static CardDto Generate(CardDefinition card, string language)

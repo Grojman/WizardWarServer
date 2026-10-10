@@ -21,7 +21,7 @@ public class ReviveLastDied : IEffect
 
         int total = Destinations.Values.Sum();
 
-        var owner = ToMe ? cardId.Player : cardId.Player.PlayerTarget!;
+        var owner = ToMe ? cardId.Player : state.GetState(rivalId);
         var graveyard = owner.DeadCards;
 
         for (int i = graveyard.Count - 1; i >= 0 && cards.Count < total; i--)
@@ -67,4 +67,6 @@ public class ReviveLastDied : IEffect
             }
         }
     }
+
+    public IEffect? ForAdditionalTarget() => ToMe ? null : this;
 }

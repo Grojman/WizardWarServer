@@ -19,7 +19,7 @@ public class ReviveLastPlayed : IEffect
 
         int total = Destinations.Values.Sum();
 
-        var player = ToMe ? cardId.Player : cardId.Player.PlayerTarget;
+        var player = ToMe ? cardId.Player : state.GetState(rivalId);
 
         for(int i = cardId.Player.PlayedCards.Count - 1; i > 0 && cards.Count < total; i--)
         {
@@ -65,4 +65,6 @@ public class ReviveLastPlayed : IEffect
         }
 
     }
+
+    public IEffect? ForAdditionalTarget() => ToMe ? null : this;
 }

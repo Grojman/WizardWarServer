@@ -17,8 +17,8 @@ public class ForcePlayCardInHandEffect : IEffect
     {
         PlayerState[] players = Player switch
         {
-            PlayerType.RIVAL => [cardId.Player.PlayerTarget],
-            PlayerType.BOTH => [cardId.Player.PlayerTarget, cardId.Player],
+            PlayerType.RIVAL => [state.GetState(rivalId)],
+            PlayerType.BOTH => [state.GetState(rivalId), cardId.Player],
             PlayerType.NONE => [],
             PlayerType.PLAYER => [cardId.Player],
             _ => []
@@ -49,4 +49,11 @@ public class ForcePlayCardInHandEffect : IEffect
 
 
     }
+
+    public IEffect? ForAdditionalTarget() => Player switch
+    {
+        PlayerType.RIVAL => this,
+        PlayerType.BOTH => new ForcePlayCardInHandEffect(PlayerType.RIVAL, Filter, MaxCards),
+        _ => null
+    };
 }

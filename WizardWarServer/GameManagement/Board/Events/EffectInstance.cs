@@ -1,3 +1,5 @@
+using Serilog;
+
 public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
 {
     public EffectInstance()
@@ -47,6 +49,9 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         };
     }
 
+    // The condition is checked once per target; the effects run in full
+    // against the first target that passes it and only their rival-facing
+    // part against the rest (see EffectFanOut).
     public void TryExecute(
         GameState state,
         GameEvent? ev,
@@ -55,23 +60,14 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         if (Expired && checkExpiration)
             return;
 
-        if (!(Condition?.Check(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev) ?? true))
+        var targets = EffectFanOut.PassingTargets(Condition, Player, Player.Targets.Players, SourceCard, state, ev);
+        if (targets.Count == 0)
             return;
 
         if (ev is not null && ev.Source.Id == Id)
             return;
 
-        var previousGlobalSource = state.CurrentGlobalEffectSource;
-        if (IsGlobal) state.CurrentGlobalEffectSource = this;
-        try
-        {
-            Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
-            Duration.NotifyExecution();
-        }
-        finally
-        {
-            state.CurrentGlobalEffectSource = previousGlobalSource;
-        }
+        Run(state, ev, targets, notifyExec: true);
     }
 
     public void ForceExecute(
@@ -80,16 +76,23 @@ public class EffectInstance : IdentificableObject, ICloneable<EffectInstance>
         bool notifyExec
     )
     {
+        Run(state, ev, [.. Player.Targets.Players], notifyExec);
+    }
+
+    void Run(GameState state, GameEvent? ev, IReadOnlyList<PlayerState> targets, bool notifyExec)
+    {
         var previousGlobalSource = state.CurrentGlobalEffectSource;
         if (IsGlobal) state.CurrentGlobalEffectSource = this;
         try
         {
-            Effects.ForEach(n => n.Execute(Player.Id, Player.PlayerTarget!.Id, SourceCard, state, ev));
+            EffectFanOut.Execute(Effects, Player, targets, SourceCard, state, ev);
             if (notifyExec) Duration.NotifyExecution();
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Exception on forceexecute: {e}");
+            // A single broken effect must not abort the rest of the action
+            // (and with it the turn change / state broadcast).
+            Log.Error(e, "Effect of card {CardId} failed while executing", SourceCard?.Definition.Id);
         }
         finally
         {

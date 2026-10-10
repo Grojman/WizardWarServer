@@ -17,6 +17,9 @@ public class CreateCopyOfSelf : IEffect
 
         if (CopyDamage) copy.CurrentAttack = cardId.CurrentAttack;
 
-        state.AddCard(player, player.PlayerTarget!, copy, cardId);
+        state.AddCard(player, state.GetState(rivalId), copy, cardId);
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

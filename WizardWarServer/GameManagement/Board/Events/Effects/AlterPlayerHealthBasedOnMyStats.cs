@@ -27,8 +27,10 @@ public class AlterPlayerHealthBasedOnMyStats : IEffect
 
         total = (int)(total * Relatio);
 
-        var target = Rival ? cardId.Player.PlayerTarget : cardId.Player;
+        var target = Rival ? state.GetState(rivalId) : cardId.Player;
         state.AlterPlayerHealth(cardId, target, total);
         
     }
+
+    public IEffect? ForAdditionalTarget() => Rival ? this : null;
 }

@@ -14,6 +14,8 @@ public class ServerOptions
     public bool SeedCardDataIfMissing { get; set; } = true;
     public string DataDirectory { get; set; } = "Data/Decks";
     public int DisconnectGracePeriodSeconds { get; set; } = 30;
+    public int WebSocketKeepAliveSeconds { get; set; } = 15;
+    public int WebSocketKeepAliveTimeoutSeconds { get; set; } = 20;
     public string TranslationsCsvPath { get; set; } = "Data/Translations/translations.csv";
     public string CardTranslationsCsvPath { get; set; } = "Data/Translations/cards.csv";
     public string DefaultLanguage { get; set; } = "es";

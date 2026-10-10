@@ -722,7 +722,8 @@ public static class MockData
         Families = ["DESTRUCCION"],
         Type = CardType.Spell,
         Effects = [
-            new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.BOTH, 8)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
+            // ALL: every alive player's board, not just mine and my targets'. 0 = no limit.
+            new(TriggerType.SpellPlayed, [new KillCards(new(), PlayerType.ALL, 0)], new DurationByExecutions(1), new IHaveBeenPlayedCondition())
         ]
     },
     new()
@@ -2098,6 +2099,12 @@ new()
     Families = ["ESPIRITU"],
     Effects = [
         new(
+            TriggerType.UnitPlayed,
+            [ new AlterMySelfPerCardCount(1, 1, new() { WhichPlayedCardsToSearch = PlayerType.PLAYER, Filter = new() { DefinitionId = "129" } }) ],
+            new DurationByExecutions(1),
+            new IHaveBeenPlayedCondition()
+        ),
+        new(
             TriggerType.UnitDeath,
             [ new AppendCardToDeck(3, "132", false) ],
             new DurationByExecutions(1),
@@ -2217,7 +2224,7 @@ new()
     Families = ["ESPIRITU"],
     PlayEffects = [
         new KillMySelf(),
-        new AlterUnitStatsEffect(-1, 0, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new() })
+        new AlterUnitStatsEffect(-2, 0, new() { WhichBoardToSearch = PlayerType.RIVAL, Filter = new() })
     ],
     PlayEffectTriggerTimes = 1
 },
@@ -2232,7 +2239,7 @@ new()
         new(
             TriggerType.UnitDeath,
             [
-                new AlterUnitStatsEffect(0, 1, new() { WhichBoardToSearch = PlayerType.PLAYER, MaxLength = 1, Filter = new() })
+                new AlterPlayerHealthEffect(3, false)
             ],
             new DurationByExecutions(1),
             new IHaveBeenPlayedCondition()
@@ -2323,7 +2330,7 @@ new()
             new DeckDto(
                 11,
                 "Misterioso adicto",
-                "Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias."
+                "Prueba tu suerte. Deja la victoria en manos del azar, y juega monedas que pueden o no ganarte la partida. Perfecto para olvidarte de las estrategias.", DeckDifficulty.Medium
             ),
             new()
             {
@@ -2353,7 +2360,7 @@ new()
             new DeckDto(
                 10,
                 "Tecnomago",
-                "Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados."
+                "Escala el poder de tus cartas poco a poco mientras utilizas virus y copias de seguridad para mantenerte vivo en la partida. Perfecto para jugadores experimentados.", DeckDifficulty.Hard
             ),
             new()
             {
@@ -2390,7 +2397,7 @@ new()
             new DeckDto(
                 9,
                 "Archimago del invierno",
-                "Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad.") ,
+                "Niega el ataque de las unidades enemigas, controla el terreno de batalla y no dejes que tu rival te abrume. Perfecto para gente con ansiedad.", DeckDifficulty.Easy) ,
             new()
             {
                 //34
@@ -2412,7 +2419,7 @@ new()
         {
             new DeckDto(7,
             "Don Bola de Fuego Jr",
-            "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida."),
+            "Tu fuerza reside en los hechizos. Acaba con las unidades del enemigo sin darles opción a atacar, y ve drenando la vida del rival poco a poco. Perfecto para quienes les gusta controlar la partida.", DeckDifficulty.Easy),
             new()
             {
                 //32
@@ -2443,7 +2450,7 @@ new()
         {
             new DeckDto(5,
             "El mago del queso",
-            "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien."),
+            "Infla de ratas el mazo rival, potencia las tuyas propias y hazle caer en la desesperación. Perfecto para quien quiera pasárselo bien.", DeckDifficulty.Medium),
             new()
             {
                 //34
@@ -2467,7 +2474,7 @@ new()
         {
             new DeckDto(6,
                 "El Ingenioso Hidalgo Don Quijote de la Mancha",
-                "Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve."
+                "Combina los efectos de tus unidades para crear criaturas peligrosas. Encuentra a Don Quijote y destapa la locura. Perfecto para un estilo de bola de nieve.", DeckDifficulty.Medium
             ),
             new()
             {
@@ -2489,7 +2496,7 @@ new()
             }
         },
         {
-            new DeckDto(8, "Mago cachas", "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida."),
+            new DeckDto(8, "Mago cachas", "Entrena con tus cartas y ponlas fuertes. No le des tiempo a tu rival para responder y la victoria será tuya. Perfecto para quienes quieren tener una victoria rápida.", DeckDifficulty.Easy),
             new(){
                 //34
                 {"40", 4},
@@ -2508,7 +2515,7 @@ new()
             }
         },
         {
-            new DeckDto(12, "El Alquimista Cromático", "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial."),
+            new DeckDto(12, "El Alquimista Cromático", "Domina el ciclo de los colores: rojo golpea, verde sana y azul roba cartas. Rota o mezcla los colores en el momento justo para desatar su máximo potencial.", DeckDifficulty.Hard),
             new()
             {
                 //33
@@ -2528,7 +2535,7 @@ new()
             }
         },
         {
-            new DeckDto(13, "Culto de los espíritus", "Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra."),
+            new DeckDto(13, "Culto de los espíritus", "Sacrifica tus propias unidades para desatar el poder de los espíritus: cada muerte alimenta tu venganza, y cuando el cementerio rebosa, revive a tus caídos. Perfecto para quien no teme perder unidades para ganar la guerra.", DeckDifficulty.Hard),
             new()
             {
                 //39

@@ -139,7 +139,12 @@ public class BotConnection : PlayerConnection
         if (Game?.HasEnded ?? true) return;
 
         await Task.Delay(Random.Shared.Next(250, 750));
-        await Game.HandleAction(this, new PlayerAction.TextMessage()
+
+        // The match may have ended (and Game been cleared) during the delay.
+        var game = Game;
+        if (game is null || game.HasEnded) return;
+
+        await game.HandleAction(this, new PlayerAction.TextMessage()
         {
             Message = TEXT_RESPONSES.GetRandom()
         });

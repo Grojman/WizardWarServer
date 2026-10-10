@@ -48,4 +48,13 @@ public class AlterPlayerBasedOnCardStats : IEffect
         if (Target is PlayerType.PLAYER or PlayerType.BOTH) state.AlterPlayerHealth(cardId, state.GetState(playerId), counter);
         if (Target is PlayerType.RIVAL or PlayerType.BOTH) state.AlterPlayerHealth(cardId, state.GetState(rivalId), counter);
     }
+
+    // Against an extra target: hit that rival (counting the same boards), or,
+    // when only I am healed/hurt, count just that rival's board on top.
+    public IEffect? ForAdditionalTarget() => Target switch
+    {
+        PlayerType.RIVAL or PlayerType.BOTH => new AlterPlayerBasedOnCardStats(BoardSearch, Filter, Stats, PlayerType.RIVAL, Relation),
+        PlayerType.PLAYER when BoardSearch is PlayerType.RIVAL or PlayerType.BOTH => new AlterPlayerBasedOnCardStats(PlayerType.RIVAL, Filter, Stats, PlayerType.PLAYER, Relation),
+        _ => null
+    };
 }

@@ -17,4 +17,7 @@ public class AppendGlobalEffect : IEffect
         cardId.AssignEffect(Effect);
         state.AddGlobalEffect(cardId, state.GetState(playerId), Effect);
     }
+
+    // Only touches its own player/card.
+    public IEffect? ForAdditionalTarget() => null;
 }

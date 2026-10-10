@@ -29,4 +29,6 @@ public class AppendCardToDeck : IEffect
     }
 
     public IEffect Clone() => new AppendCardToDeck(CardsAmount, CardId, ToRival, TopDeckDepth);
+
+    public IEffect? ForAdditionalTarget() => ToRival ? this : null;
 }

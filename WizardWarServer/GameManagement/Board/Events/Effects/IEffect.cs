@@ -37,6 +37,7 @@ using System.Text.Json.Serialization;
 [JsonDerivedType(typeof(RandomBranchEffect), nameof(RandomBranchEffect))]
 [JsonDerivedType(typeof(RetriggerUnitPlayedEffect), nameof(RetriggerUnitPlayedEffect))]
 [JsonDerivedType(typeof(ForceBasicColorEffect), nameof(ForceBasicColorEffect))]
+[JsonDerivedType(typeof(AlterMySelfPerCardCount), nameof(AlterMySelfPerCardCount))]
 
 //TODO: ADD DERIVED TYPES HERE
 public interface IEffect : ICloneable<IEffect>
@@ -47,4 +48,11 @@ public interface IEffect : ICloneable<IEffect>
         CardInstance cardId,
         GameState state,
         GameEvent? ev);
+
+    // What this effect still has to do when its player targets more than one
+    // rival and it has already run in full against the first one (see
+    // EffectFanOut): only the rival-facing part, or null if it only touches
+    // its own player. Called after the full run, so it can depend on what
+    // that run decided (e.g. which random branch was taken).
+    IEffect? ForAdditionalTarget();
 }

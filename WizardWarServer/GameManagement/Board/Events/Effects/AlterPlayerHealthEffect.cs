@@ -18,4 +18,6 @@ public class AlterPlayerHealthEffect : IEffect
     }
 
     public IEffect Clone() => new AlterPlayerHealthEffect(Amount, ToRival);
+
+    public IEffect? ForAdditionalTarget() => ToRival ? this : null;
 }
